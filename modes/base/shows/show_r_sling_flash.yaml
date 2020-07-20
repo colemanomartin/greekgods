@@ -1,0 +1,52 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_revealed_slingshot_flasher:
+      color: 000000
+      fade: 5ms
+    l_jupiter_plastic:
+      color: 000000
+      fade: 5ms
+    l_distal_drop_arrow:
+      color: 000000
+      fade: 5ms
+    l_middle_drop_arrow:
+      color: 000000
+      fade: 5ms
+    l_prox_drop_arrow:
+      color: 000000
+      fade: 5ms
+- duration: 4
+  lights:
+    l_revealed_slingshot_flasher:
+      color: ffffff
+      fade: 5ms
+    l_jupiter_plastic:
+      color: ffffff
+      fade: 5ms
+    l_distal_drop_arrow:
+      color: ffffff
+      fade: 5ms
+    l_middle_drop_arrow:
+      color: ffffff
+      fade: 5ms
+    l_prox_drop_arrow:
+      color: ffffff
+      fade: 5ms
+- duration: 1
+  lights:
+    l_revealed_slingshot_flasher:
+      color: 000000
+      fade: 5ms
+    l_jupiter_plastic:
+      color: 000000
+      fade: 5ms
+    l_distal_drop_arrow:
+      color: 000000
+      fade: 5ms
+    l_middle_drop_arrow:
+      color: 000000
+      fade: 5ms
+    l_prox_drop_arrow:
+      color: 000000
+      fade: 5ms

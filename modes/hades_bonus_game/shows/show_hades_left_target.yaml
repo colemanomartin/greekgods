@@ -1,0 +1,11 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+
+- duration: 1
+  lights:
+    l_u_left_corner_rgb:
+      color: white
+- duration: 1
+  lights:
+    l_u_left_corner_rgb:
+      color: black

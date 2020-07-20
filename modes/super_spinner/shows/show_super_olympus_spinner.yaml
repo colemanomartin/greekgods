@@ -1,0 +1,11 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_olympus_spinner: 0000FF
+    l_olympus_gate_triangle: 0000FF
+    l_right_sis_arrow: 0000FF
+- duration: 1
+  lights:
+    l_olympus_spinner: 000000
+    l_olympus_gate_triangle: 000000
+    l_right_sis_arrow: 000000

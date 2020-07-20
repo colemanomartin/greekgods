@@ -1,0 +1,25 @@
+#show_version=5
+# l_hydra_bottom: l_hydra_7: l_hydra_10: l_hydra_top: l_hydra_2: l_hydra_4: l_hydra_center:
+- duration: 1
+  lights:
+    l_hydra_bottom:
+      color: 550000
+      fade: 200ms
+    l_hydra_7:
+      color: 550000
+      fade: 200ms
+    l_hydra_4:
+      color: green
+      fade: 200ms
+    l_hydra_10:
+      color: green
+      fade: 200ms
+    l_hydra_2:
+      color: green
+      fade: 200ms
+    l_hydra_top:
+      color: green
+      fade: 200ms
+    l_hydra_center:
+      color: green
+      fade: 200ms

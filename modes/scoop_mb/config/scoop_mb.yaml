@@ -1,0 +1,112 @@
+#config_version=5
+#scoop mb mode
+#Enter mode from mystery. post is enabled by mode. mystery is kept running until 2 balls are served then
+#mystery is stopped and ball is released serving 3 balls to player. Jackpot with every scoop shot.
+#Do give it a light show
+mode:
+  priority: 650
+  start_events:
+    - mystery_says_scoop_mb # {device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0}
+  stop_events:
+#    - timer_scoop_mb_placeholder_completed
+    - multiball_scoop_mb_ended
+
+#timers:
+#  scoop_mb_placeholder: # used to allow ball block to register hit and activate timer in mode_scoop so timer can be paused. Replace this timer with show when appropriate
+#    #This timer was used when the scoop shot activated the multiball.  But this presented a problem for qualifying the other ramp's locks and was removed.
+#    start_value: 1
+#    end_value: 0
+#    direction: down
+#    tick_interval: 1s
+#    control_events:
+#      - event: mode_scoop_mb_starting
+#        action: restart #reset to starting value and start
+
+variable_player:
+  scoop_mb_distal_hole_received_ball_hit:
+    score: 5000 #* current_player.multiplier #page 506 dev
+  scoop_mb_proximal_hole_received_ball:
+    score: 5000
+  base_scoop_from_pf_hit:
+    score: 5000
+
+
+multiballs:
+  scoop_mb:
+    source_playfield: earth_pf
+    ball_count: 2
+    ball_count_type: add  # increase number of playfield balls by couny
+    shoot_again: 14s #ball save for MB 10 sec is default
+    start_events: mode_scoop_mb_started
+    enable_events: mode_scoop_mb_starting
+    debug: true
+
+sequence_shots:
+  scoop_mb_distal_hole_received_ball:  #used for jackpot
+    playfield: earth_pf
+    switch_sequence:
+      - s_hole_distal
+      - s_scoop_lock_0
+    sequence_timeout: 2s
+  scoop_mb_proximal_hole_received_ball:  #used for jackpot
+    playfield: earth_pf
+    switch_sequence:
+      - s_hole_distal
+      - s_scoop_lock_0
+    sequence_timeout: 2s
+
+
+show_player:
+  mode_mystery_stopping: #dont start the ball timer until after ball hold ends
+#    show_rainbow_all_but_bs:
+#      speed: 2
+    countdown99_white:
+      speed: 10
+      loops: 0
+
+event_player:
+  mode_scoop_mb_started:
+    - force_bb_down
+  mode_scoop_mb_ending:
+    - release_bb_override
+
+slide_player:
+  scoop_mb_distal_hole_received_ball_hit:
+    pf_celestial_mb_started_slide:
+      target: playfield_lcd
+      background_color: black
+      expire: 1s
+      widgets:
+      - type: text
+        text: Jackpot!
+        color: white
+        y: 50%
+        anchor_x: center
+        anchor_y: center
+        font_size: 85
+  scoop_mb_proximal_hole_received_ball:
+    pf_celestial_mb_started_slide:
+      target: playfield_lcd
+      background_color: black
+      expire: 1s
+      widgets:
+      - type: text
+        text: Jackpot!
+        color: white
+        y: 50%
+        anchor_x: center
+        anchor_y: center
+        font_size: 85
+  base_scoop_from_pf_hit:
+    pf_celestial_mb_started_slide:
+      target: playfield_lcd
+      background_color: black
+      expire: 1s
+      widgets:
+      - type: text
+        text: Jackpot!
+        color: white
+        y: 50%
+        anchor_x: center
+        anchor_y: center
+        font_size: 85

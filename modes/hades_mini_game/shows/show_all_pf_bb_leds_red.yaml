@@ -1,0 +1,9 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+# lock 0 is the upper, 1 is the lower
+- duration: 1
+  lights:
+    gi: FF0000
+    insert: FF0000
+    pop: FF0000
+    shooter: FF0000

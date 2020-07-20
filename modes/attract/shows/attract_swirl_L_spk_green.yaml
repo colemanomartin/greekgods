@@ -1,0 +1,64 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_serial_0: 000f00
+    l_serial_1: 002200
+    l_serial_2: 004400
+    l_serial_3: 008800
+    l_serial_4: 00cc00
+    l_serial_5: 00ee00
+    l_serial_6: 44ff44
+- duration: 1
+  lights:
+    l_serial_0: 002200
+    l_serial_1: 004400
+    l_serial_2: 008800
+    l_serial_3: 00cc00
+    l_serial_4: 00ee00
+    l_serial_5: 44ff44
+    l_serial_6: 000f00
+- duration: 1
+  lights:
+    l_serial_0: 004400
+    l_serial_1: 008800
+    l_serial_2: 00cc00
+    l_serial_3: 00ee00
+    l_serial_4: 44ff44
+    l_serial_5: 000f00
+    l_serial_6: 002200
+- duration: 1
+  lights:
+    l_serial_0: 008800
+    l_serial_1: 00cc00
+    l_serial_2: 00ee00
+    l_serial_3: 44ff44
+    l_serial_4: 000f00
+    l_serial_5: 002200
+    l_serial_6: 004400
+- duration: 1
+  lights:
+    l_serial_0: 00cc00
+    l_serial_1: 00ee00
+    l_serial_2: 44ff44
+    l_serial_3: 000f00
+    l_serial_4: 002200
+    l_serial_5: 004400
+    l_serial_6: 008800
+- duration: 1
+  lights:
+    l_serial_0: 00ee00
+    l_serial_1: 44ff44
+    l_serial_2: 000f00
+    l_serial_3: 002200
+    l_serial_4: 004400
+    l_serial_5: 008800
+    l_serial_6: 00cc00
+- duration: 1
+  lights:
+    l_serial_0: 44ff44
+    l_serial_1: 000f00
+    l_serial_2: 002200
+    l_serial_3: 004400
+    l_serial_4: 008800
+    l_serial_5: 00cc00
+    l_serial_6: 00ee00

@@ -1,0 +1,7 @@
+#show_version=5
+- duration: 1
+  lights:
+      l_sis_flash_left: white
+- duration: 2
+  lights:
+      l_sis_flash_left: black

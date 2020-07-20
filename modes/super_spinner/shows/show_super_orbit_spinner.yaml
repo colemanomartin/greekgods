@@ -1,0 +1,23 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_left_orbit_spinner: FF0000
+    l_orbit_65: FF0000
+    l_orbit_66: FF0000
+    l_orbit_67: FF0000
+    l_orbit_68: FF0000 #serial chain LED 84 Last led on orbit at spinner.
+    l_left_pop_13: FF0000
+    l_left_pop_12: FF0000
+    l_left_pop_11: FF0000
+    l_left_pop_10: FF0000
+- duration: 1
+  lights:
+    l_left_orbit_spinner: 000000
+    l_orbit_65: 000000
+    l_orbit_66: 000000
+    l_orbit_67: 000000
+    l_orbit_68: 000000 #serial chain LED 84 Last led on orbit at spinner.
+    l_left_pop_13: 000000
+    l_left_pop_12: 000000
+    l_left_pop_11: 000000
+    l_left_pop_10: 000000

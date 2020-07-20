@@ -1,0 +1,5 @@
+#show_version=5
+- duration: 3
+  events: launch_says_disable_poseidon_mag
+- duration: 50ms
+  events: launch_says_enable_poseidon_mag 

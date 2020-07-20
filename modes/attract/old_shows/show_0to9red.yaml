@@ -1,0 +1,27 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+- duration: 1
+  lights:
+    l_serial_0: red
+    l_serial_1: red
+    l_serial_2: red
+    l_serial_3: red
+    l_serial_4: red
+    l_serial_5: red
+    l_serial_6: red
+    l_serial_7: red
+    l_serial_8: red
+    l_serial_9: red
+
+- duration: 1
+  lights:
+    l_serial_0: black
+    l_serial_1: black
+    l_serial_2: black
+    l_serial_3: black
+    l_serial_4: black
+    l_serial_5: black
+    l_serial_6: black
+    l_serial_7: black
+    l_serial_8: black
+    l_serial_9: black

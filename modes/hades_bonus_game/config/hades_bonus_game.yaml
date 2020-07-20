@@ -1,0 +1,507 @@
+#config_version=5
+#
+# http://docs.missionpinball.org/en/latest/config/mode.html?highlight=pause%20mode use wait queue
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+mode:
+  priority: 1500 # range 100-1M
+  start_events:
+#    - game_ending
+#    - ball_ending
+#    - ball_hold_hades_door_held_ball
+#     - mode_bonus_starting # enter_hades_from_bonus_mode
+     - enter_hades_from_relay_player #posted from base
+#    - mode_base_started
+#     - s_centuar_skilltarget_active     #Remove when testing done
+  stop_events: extra_ball_earned, extra_ball_not_earned
+#  use_wait_queue: true
+
+multiballs:
+  hades_play:
+    source_playfield: hades_pf
+    ball_count: 1
+    ball_count_type: add  # increase number of playfield balls by couny
+    shoot_again: 24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
+    start_events: hades_bonus_intro_show_done
+    debug: true
+#
+#coil_player:
+#  mode_hades_bonus_game_started:
+#
+#  s_u_trough_1_
+#  machine_reset_phase_1: #drop when starting so if ball in sub, it can escape
+#    c_ballblock_fall:
+#      action: pulse
+
+
+variable_player:
+  s_u_left_slingshot_active:
+    score: 500
+  s_u_right_slingshot_active:
+    score: 500
+  s_u_left_target_active:
+    score: 1000
+  s_u_middle_target_active:
+    score: 1000
+  s_u_right_target_active:
+    score: 1000
+  left_river_top_to_bottom_hit: #River A
+    score: 750
+  left_river_bottom_to_top_hit: # River B
+    score: 750
+  right_river_top_to_bottom_hit: #River C
+    score: 750
+  right_river_bottom_to_top_hit: #River D
+    score: 750
+  ball_started:                  # reset rivers to 0 with ball start
+    rivers_lit:
+      int: 0
+      action: set
+  timer_river_a_started:
+    rivers_lit: 1
+  timer_river_a_complete:
+    rivers_lit: -1
+  timer_river_b_started:
+    rivers_lit: 1
+  timer_river_b_complete:
+    rivers_lit: -1
+  timer_river_c_started:
+    rivers_lit: 1
+  timer_river_c_complete:
+    rivers_lit: -1
+  timer_river_d_started:
+    rivers_lit: 1
+  timer_river_d_complete:
+    rivers_lit: -1
+
+accruals:
+  mag_holds:
+    events: #first line AND second line both registered results in turn on the bounce
+      - diverter_grab_a_deactivating, diverter_grab_b_deactivating # A OR B
+      - diverter_grab_c_deactivating, diverter_grab_d_deactivating # C OR D
+    events_when_complete: accelerate_rivers #All river fast modes activate when this is posted rules are cleared when this mode ends
+
+event_player:
+  timer_river_a_started{device.timers.river_b.running and device.timers.river_c.running and device.timers.river_d.running}: extra_ball_earned
+  timer_river_b_started{device.timers.river_a.running and device.timers.river_c.running and device.timers.river_d.running}: extra_ball_earned
+  timer_river_c_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_d.running}: extra_ball_earned
+  timer_river_d_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_c.running}: extra_ball_earned
+
+sequence_shots: #using to activate timers
+  left_river_top_to_bottom: #River A
+    playfield: hades_pf
+    switch_sequence:
+      - s_u_left_ear_3
+      - s_u_left_ear_0
+    sequence_timeout: 1s
+  left_river_bottom_to_top: # River B
+    playfield: hades_pf
+    switch_sequence:
+      - s_u_left_ear_0
+      - s_u_left_ear_3
+    sequence_timeout: 1s
+  right_river_top_to_bottom: #River C
+    playfield: hades_pf
+    switch_sequence:
+      - s_u_right_ear_3
+      - s_u_right_ear_0
+    sequence_timeout: 1s
+  right_river_bottom_to_top: #River D
+    playfield: hades_pf
+    switch_sequence:
+      - s_u_right_ear_0
+      - s_u_right_ear_3
+    sequence_timeout: 1s
+
+shot_profiles:
+  progression:
+    states:
+      - name: first_pass
+        show: off #safe to remove?
+      - name: additional_pass
+        show: on #safe to remove?
+    loop: no
+
+shots: #writing to control diverter activity in hardeare
+  river_a: #top left to bottom left
+     playfield: hades_pf
+     enable_events: mode_hades_bonus_game_started
+     disable_events: accelerate_rivers
+     hit_events: left_river_top_to_bottom_hit
+#     show_tokens:
+#       lights: u_mouth_A_flasher
+     profile: progression
+     reset_events: mode_hades_bonus_game_started
+#       - ball_started
+#       - timer_river_a_complete
+  river_b: #bottom left to top left
+     playfield: hades_pf
+     enable_events: mode_hades_bonus_game_started
+     disable_events: accelerate_rivers
+     hit_events: left_river_bottom_to_top_hit
+#     show_tokens:
+#       lights: u_mouth_B_flasher
+     profile: progression
+     reset_events: mode_hades_bonus_game_started
+  river_c: #top right to bottom right
+     playfield: hades_pf
+     enable_events: mode_hades_bonus_game_started
+     disable_events: accelerate_rivers
+     hit_events: right_river_top_to_bottom_hit
+#     show_tokens:
+#       lights: u_mouth_C_flasher
+     profile: progression
+     reset_events: mode_hades_bonus_game_started
+  river_d: #bottom right to top right
+     playfield: hades_pf
+     enable_events: mode_hades_bonus_game_started
+     disable_events: accelerate_rivers
+     hit_events: right_river_bottom_to_top_hit
+#     show_tokens:
+#       lights: u_mouth_D_flasher
+     profile: progression
+     reset_events: mode_hades_bonus_game_started
+
+timers:
+  river_a: #activates on sequence shot not shot
+    debug: true
+#    restart_on_complete: yes
+    start_value: 20
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: left_river_top_to_bottom_hit
+      - action: restart
+        event: left_river_top_to_bottom_hit
+      - action: reset
+        event: timer_river_a_complete
+      - action: stop
+        event: mode_hades_bonus_game_stopping
+#      - action: paues
+#        event: diverter_left_mag_A_disabling
+#        value: 2 s
+#      - action: jump
+#        value: 0
+#        event: diverter_left_grab_A_deactivating
+  river_b:
+    debug: true
+    start_value: 30
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: left_river_bottom_to_top_hit
+      - action: restart
+        event: left_river_bottom_to_top_hit
+      - action: reset
+        event: timer_river_b_complete
+      - action: stop
+        event: mode_hades_bonus_game_stopping
+#      - action: jump
+#        value: 0
+#        event: diverter_left_grab_B_deactivating
+  river_c:
+    debug: true
+    start_value: 20
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: right_river_top_to_bottom_hit
+      - action: restart
+        event: right_river_top_to_bottom_hit
+      - action: reset
+        event: timer_river_c_complete
+      - action: stop
+        event: mode_hades_bonus_game_stopping
+#      - action: jump
+#        value: 0
+#        event: diverter_left_grab_C_deactivating
+  river_d:
+    debug: true
+    start_value: 30
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: right_river_bottom_to_top_hit
+      - action: restart
+        event: right_river_bottom_to_top_hit
+      - action: reset
+        event: timer_river_d_complete
+      - action: stop
+        event: mode_hades_bonus_game_stopping
+#      - action: jump
+#        value: 0
+#        event: diverter_left_grab_D_deactivating
+
+extra_balls:
+    my_mode_eb:
+      award_events: extra_ball_earned
+sequences:
+    failing_path:
+       events:
+         - multiball_hades_play_shoot_again_ended
+         - balldevice_bd_u_trough_ball_enter
+       events_when_complete: extra_ball_not_earned
+
+
+
+
+slide_player:
+  start_countdown_movie:
+    hades_playfield_slide:
+      target: playfield_lcd
+      background_color: black
+      widgets:
+      - type: video
+        video: hadescntdown710^2h264fps30 # hadescountdown
+        auto_play: true
+        z: 200
+        y: 50%
+        anchor_x: center
+        anchor_y: center
+  hades_bonus_intro_show_done:
+    hades_playfield_slide:
+      target: playfield_lcd
+      background_color: white
+      widgets:
+      - type: text
+        text: Get All 4 Bats Flying
+        color: black
+        y: 2%
+        anchor_x: center
+        anchor_y: bottom
+        font_size: 50
+      - type: image
+        image: bat
+        scale: 0.3
+        y: 88%
+        x: 65%
+        anchor_x: center
+        anchor_y: center
+        opacity: 0
+        animations:
+          timer_river_c_started:
+            - property: opacity
+              value: 1
+              duration:  .3s
+              easing: linear
+            - property: opacity
+              value: 1
+              duration:  14s
+              easing: out_back
+            - property: opacity
+              value: 0
+              duration:  .5s
+      - type: image
+        image: bat
+        scale: 0.3
+        y: 65%
+        x: 80%
+        anchor_x: center
+        anchor_y: center
+        opacity: 0
+        animations:
+          timer_river_d_started:
+            - property: opacity
+              value: 1
+              duration:  .3s
+              easing: linear
+            - property: opacity
+              value: 1
+              duration:  14s
+              easing: out_back
+            - property: opacity
+              value: 0
+              duration:  .5s
+      - type: image
+        image: bat
+        scale: 0.3
+        y: 65%
+        x: 20%
+        anchor_x: center
+        anchor_y: center
+        opacity: 0
+        animations:
+          timer_river_b_started:
+            - property: opacity
+              value: 1
+              duration:  .3s
+              easing: linear
+            - property: opacity
+              value: 1
+              duration:  14s
+              easing: out_back
+            - property: opacity
+              value: 0
+              duration:  .5s
+      - type: image
+        image: bat
+        scale: 0.3
+        y: 88%
+        x: 35%
+        anchor_x: center
+        anchor_y: center
+        opacity: 0
+        animations:
+          timer_river_a_started:
+            - property: opacity
+              value: 1
+              duration:  .3s
+              easing: linear
+            - property: opacity
+              value: 1
+              duration:  14s
+              easing: out_back
+            - property: opacity
+              value: 0
+              duration:  .5s
+  accelerate_rivers:
+    bb_accelerate_slide:
+      target: score_lcd
+      expire: 3s
+      background_color: black
+      widgets:
+      - type: text
+        text: Acceleration Mode!
+        color: red
+        font_size: 300
+
+
+show_player:
+  mode_hades_bonus_game_started:
+    show_all_pf_bb_leds_red:
+      speed: 1
+    show_four_flashes_mini_pf:
+      speed: 14
+      loops: 0
+      events_when_played: start_countdown_movie
+      events_when_completed: hades_bonus_intro_show_done
+  multiball_hades_play_started:
+    countdown20_red:
+      speed: 1
+      loops: 0
+  accelerate_rivers:
+    show_pulse_leds_red:
+      speed: 10 #Default loops=-1 meaning until the calling mode ends
+  s_u_left_slingshot_active:
+    show_hades_left_ss:
+      speed: 20
+      loops: 0
+  s_u_right_slingshot_active:
+    show_hades_right_ss:
+      speed: 20
+      loops: 0
+  s_u_left_target_active:
+    show_hades_left_target:
+      speed: 20
+      loops: 0
+  s_u_right_target_active:
+    show_hades_right_target:
+      speed: 20
+      loops: 0
+  s_u_middle_target_active:
+    show_hades_middle_target:
+      speed: 20
+      loops: 0
+  #Next 4 shows give a 1 sec flash when a grab event happens
+  diverter_grab_a_activating:
+    show_hades_left_ss_red:
+      speed: 1
+      loops: 0
+  diverter_grab_b_activating:
+    show_hades_left_ss_red:
+      speed: 1
+      loops: 0
+  diverter_grab_c_activating:
+    show_hades_right_ss_red:
+      speed: 1
+      loops: 0
+  diverter_grab_d_activating:
+    show_hades_right_ss_red:
+      speed: 1
+      loops: 0
+  #Next 4 shows give a red flash with an accelerate triggering event but flash unnecessarily if time out prevents a trigger
+#  left_river_top_to_bottom_hit{device.accruals.mag_holds.completed}:
+#    show_hades_left_ss_red:
+#      speed: 10
+#      loops: 0
+#  left_river_bottom_to_top_hit{device.accruals.mag_holds.completed}:
+#    show_hades_left_ss_red:
+#      speed: 10
+#      loops: 0
+#  right_river_top_to_bottom_hit{device.accruals.mag_holds.completed}:
+#    show_hades_right_ss_red:
+#      speed: 10
+#      loops: 0
+#  right_river_bottom_to_top_hit{device.accruals.mag_holds.completed}:
+#    show_hades_right_ss_red:
+#      speed: 10
+#      loops: 0
+sound_player:
+  timer_river_a_started: snd_bat1
+  timer_river_b_started: snd_bat2
+  timer_river_c_started: snd_bat3
+  timer_river_d_started: snd_bat4
+  s_u_left_target_active: snd_hades_target
+  s_u_middle_target_active: snd_hades_target
+  s_u_right_target_active: snd_hades_target
+
+
+
+light_player:
+  mode_hades_bonus_game_started:
+    l_backlight_rgb:
+      color: 0000ff #000000
+    l_backlight_w:
+      color: A0
+  timer_river_a_started:
+    l_mouth_a:
+      color: white
+  timer_river_a_complete:
+    l_mouth_a:
+      color: black
+  timer_river_b_started:
+    l_mouth_b:
+      color: white
+  timer_river_b_complete:
+    l_mouth_b:
+      color: black
+  timer_river_c_started:
+    l_mouth_c:
+      color: white
+  timer_river_c_complete:
+    l_mouth_c:
+      color: black
+  timer_river_d_started:
+    l_mouth_d:
+      color: white
+  timer_river_d_complete:
+    l_mouth_d:
+      color: black
+  extra_ball_earned:
+    u_left_ss_red:
+      color: white
+      fade: 0 ms
+    u_right_ss_red:
+      color: white
+      fade: 0 ms

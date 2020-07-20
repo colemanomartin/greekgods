@@ -1,0 +1,75 @@
+#config_version=5
+#Base mode has
+#              - shots defined for playfield switches
+#              - Basic scoring
+#              - Handles scoop
+#              - Handles cooldown on malstrom magnet and left poseidon SS
+#              - Handles score screen
+
+mode:
+  start_events: ball_started #maybe game started, non-game mode?
+  priority: 175 # range 100-1M
+
+
+sound_player:
+  mode_sound_controller_started{player==1 and ball==1}: welcomeback # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
+
+#  mode_av_server_2k_started: snd_startbutton
+  player_added: snd_startbutton
+  base_right_slingshot_hit: snd_right_main_ss
+  base_left_slingshot_hit: snd_left_main_ss
+  base_left_inlane_hit: snd_shield
+  base_left_outlane_hit: snd_shield
+  base_right_inlane_hit: snd_shield
+  base_right_outlane_hit: snd_shield
+  base_hole_distal_hit: snd_shield
+  base_hole_proximal_hit: snd_shield
+  base_orbit_spinner_hit: snd_spinner
+  base_olympus_spinner_hit: snd_spinner
+  base_poseidon_gate: snd_poseidon_mech
+  base_olympus_lower_pop_hit: snd_olympus_mech
+  base_olympus_left_pop_hit: snd_olympus_mech
+  base_olympus_right_pop_hit: snd_olympus_mech
+  base_poseidon_pop_hit: snd_poseidon_mech
+  base_poseidon_right_slingshot_hit: snd_poseidon_mech
+  base_poseidon_left_slingshot_hit: snd_poseidon_mech
+  base_left_side_pop_hit: snd_scott_pop
+  base_hydra_hit: snd_hydra
+  base_ramp_hit: snd_spinner
+  base_revealed_slingshot_hit: snd_scott_pop
+  left_ramp_hit{not (mode.olympus_ramp_mb.active or mode.poseidon_ramp_mb.active)}: snd_ramp_1  #used for lock flash show and banked ball save
+  right_ramphit{not (mode.olympus_ramp_mb.active or mode.poseidon_ramp_mb.active)}: snd_ramp_2 #used for lock flash show and banked ball save
+  bonus_orbit_counter_clockwise_hit: snd_orbit #used in bonus counting, for other orbit purposes, see field
+  bonus_orbit_clockwise_hit: snd_orbit #used in bonus counting, for other orbit purposes, see field
+  ballblock_hit: snd_drop_3 #records hit to the ball block drop target. control of the drop is via bd events in mode scoop.
+#  base_scoop_from_pf: #This logs hits only when the scoop receives the ball from the front. Alternatively might be able to code this using delay_switch
+  ball_waiting_to_eject_from_scoop: explosionlong
+  base_sis_left_arrived_hit: snd_sis #divert_left
+  base_sis_right_arrived_hit: snd_sis #divert_right
+
+
+#  river_a_hit: snd_river
+#  river_b_hit: snd_river
+#  river_c_hit: snd_river
+#  river_d_hit: snd_river
+#  river_a_mini_hit: snd_river
+#  river_b_mini_hit: snd_river
+#  river_c_mini_hit: snd_river
+#  river_d_mini_hit: snd_river
+#  s_right_drop_target_proximal_active: snd_drop_1
+#  s_right_drop_target_middle_active: snd_drop_2
+#  s_right_drop_target_distal_active: snd_drop_3
+#  multiball_celest_mb_started: multiball
+#  multiball_celest_mb_shoot_again: ballsave
+#  multiball_poseidon_ramp_shoot_again: ballsave
+#  multiball_olympus_ramp_shoot_again: ballsave
+#  multiball_hades_play_shoot_again: ballsave
+#  multiball_olympus_feast_shoot_again: ballsave
+#  multiball_poseidon_feast_shoot_again: ballsave
+#  ball_save_bs_default_saving_ball: ballsave
+#  ball_save_bs_left_side_pop_saving_ball: ballsave
+#  ball_save_bs_malstrom_saving_ball: ballsave
+#  mode_hades_bonus_game_started: hadeshasyou
+#  mode_hades_mini_game_started: hadeshasyou
+#  all_bugs_smashed: youreturnfromtheunderworld
+

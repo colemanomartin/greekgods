@@ -1,0 +1,7 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_left_orbit_spinner: FF0000
+- duration: 1
+  lights:
+    l_left_orbit_spinner: 000000

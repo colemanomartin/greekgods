@@ -1,0 +1,7 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+
+- duration: 1
+  lights:
+    l_u_right_ss_red:
+      color: white

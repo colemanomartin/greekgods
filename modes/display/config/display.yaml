@@ -1,0 +1,39 @@
+#config_version=5
+#Not part of the game, just used to test light fades
+#test playfield as display  mode
+#This maps the pf display to the entire PF LED set and uses kivi to draw some moving shapes.
+#http://docs.missionpinball.org/en/latest/config_players/display_light_player.html?highlight=as%20display
+mode:
+  priority: 10000
+  start_events:
+    - ds_accessory_active # for testing
+  stop_events:
+    - ball_drain{balls_in_play==1}
+
+display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
+  mode_display_started:
+    led_matrix:
+      lights: "*"
+
+slide_player:
+  mode_display_started:
+    first_slide:
+      target: led_matrix
+      background_color: 00000000 #Black no opacity
+      expire: 10s
+      widgets:
+      - type: rectangle
+        x: 0
+        y: 0
+        width: 768
+        height: 100
+        color: white
+        anchor_x: left
+        anchor_y: bottom
+        animations:
+          show_slide:
+            - property: y
+              value: 1224
+              relative: false
+              duration: 2s
+              repeat: true

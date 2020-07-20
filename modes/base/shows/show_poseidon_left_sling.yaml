@@ -1,0 +1,8 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_poseidon_band_left_prox: white
+    l_poseidon_fish_left: white
+    l_poseidon_left_sling_distal: white
+    l_poseidon_left_sling_middle: white
+    l_poseidon_left_sling_prox: white

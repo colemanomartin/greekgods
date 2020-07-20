@@ -1,0 +1,43 @@
+  sp:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: %
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: %
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+
+  counter_field_spins_hit{current_player.player_base_spins==}:
+    sp:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=}:
+    sp:
+      slide: basic_score_slide

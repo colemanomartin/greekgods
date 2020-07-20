@@ -1,0 +1,8 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_malstrom_0: FFFFFF
+    l_malstrom_1: FFFFFF
+    l_malstrom_2: FFFFFF
+    l_malstrom_3: FFFFFF
+    l_malstrom_4: FFFFFF

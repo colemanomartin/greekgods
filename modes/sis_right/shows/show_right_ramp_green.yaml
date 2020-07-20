@@ -1,0 +1,23 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_ramp_right:
+      color: 00FF00
+      fade: 950
+    l_olympus_lock_distal:
+      color: 00FF00
+      fade: 950
+    l_olympus_lock_prox:
+      color: 00FF00
+      fade: 950
+- duration: 1
+  lights:
+    l_ramp_right:
+      color: 002000
+      fade: 950
+    l_olympus_lock_distal:
+      color: 002000
+      fade: 950
+    l_olympus_lock_prox:
+      color: 002000
+      fade: 950

@@ -1,0 +1,275 @@
+#config_version=5
+#battle hydra mode
+#Enter mode from mystery or after hitting hydra prox sensor 25 x during field while no balls locked.
+#Start with one ball, with every ball hit an extra ball is served up to 6 balls. Hit hydra n more times
+#and hydra is defeated. When back down to one ball mode terminates. Variations: no hold flippers
+# hydra starts and maxes at 100 HP HP regenerate 1 per second
+#When reaches 0 HP light show and 100K points and 5 second ballsave
+#
+# problem, can win but when ball lost hydra is defeated slide shown anyway.
+# If it keeps serving balls when it should not it is probably because there are not six balls in the trough.
+#
+
+mode:
+  priority: 700
+  start_events:
+    - mystery_says_battle_hydra
+    - field_invite_hydra_at_scoop_hit #This is the entry point from field.
+#    - s_accessory_active # for testing
+  stop_events:
+    - multiball_hydra_mb_ended
+#    - ball_drain{balls_in_play==2} #switched from ==1 to get mode to end when down to a single ball. Might be better to use MB ended.
+
+multiballs:
+  hydra_mb:
+    source_playfield: earth_pf
+    ball_count: 2
+    ball_count_type: total # add  # increase number of playfield balls by count
+    shoot_again: 0 #No shoot again because when ball lost hydra won
+    add_a_ball_events:
+      - base_hydra_hit{device.counters.hydra_health.value==12}
+      - base_hydra_hit{device.counters.hydra_health.value==9}
+      - base_hydra_hit{device.counters.hydra_health.value==6}
+      - base_hydra_hit{device.counters.hydra_health.value==3}
+    start_events: base_hydra_hit
+    disable_events: ball_drain
+    enable_events: mode_hydra_starting
+    debug: true
+
+counters:
+  hydra_health:
+    count_events:
+      - mode_hydra_started #Get a value logged so fist slide looks right.
+      - base_hydra_hit
+      - timer_hydra_super_spinner_extra_hit_complete #need a few ticks so ad a ball events can keep up
+    disable_events: ball_drain
+    count_complete_value: 0
+    direction: down
+    starting_count: 15
+    reset_on_complete: false
+
+timers:
+  hydra_super_spinner_extra_hit:
+    start_value: 1
+    end_value: 0
+    tick_interval: 1s
+    direction: down
+    control_events:
+      - action: restart
+        event: base_hydra_hit{mode.super_spinner.active}
+
+variable_player:
+  base_hydra_hit:
+    score: 900 #Plus the extra 100 in base
+  mode_hydra_starting:
+    hydra_hp:
+      int: 15
+      action: set
+  counter_hydra_health_hit:
+    hydra_hp:
+      int: device.counters.hydra_health.value
+      action: set
+  logicblock_hydra_health_complete:
+    score: 200000
+#show_player:
+#  mode_hydra_started:
+#    show_super_spinner_start:
+#      speed: 1
+#      loops: 0
+#      events_when_completed: hydra_start_show_completed #releases ball hold in mode scoop.yaml
+
+
+#  mode_hydra_starting: #change to red
+#    show_rainbow_all_but_bs:
+#      speed: 2
+#    countdown99_white: #change to red
+#      speed: 10
+#      loops: 0
+show_player:
+  mode_hydra_started: #15 HP
+    show_battle_hydra_heart_slow:
+      speed: 1
+      action: play
+    show_battle_hydra_13:
+      speed: 1
+      action: play
+  logicblock_hydra_health_updated{device.counters.hydra_health.value==13}:
+    show_battle_hydra_13:
+      action: stop
+    show_battle_hydra_11:
+      speed: 1
+      action: play
+  logicblock_hydra_health_updated{device.counters.hydra_health.value==11}:
+    show_battle_hydra_heart_slow:
+      action: stop
+    show_battle_hydra_heart_medium:
+      action: play
+    show_battle_hydra_11:
+      action: stop
+    show_battle_hydra_09:
+      speed: 2
+      action: play
+  logicblock_hydra_health_updated{device.counters.hydra_health.value==9}:
+    show_battle_hydra_09:
+      action: stop
+    show_battle_hydra_07:
+      speed: 2
+      action: play
+  logicblock_hydra_health_updated{device.counters.hydra_health.value==7}:
+    show_battle_hydra_heart_medium:
+      action: stop
+    show_battle_hydra_heart_fast:
+      action: play
+    show_battle_hydra_07:
+      action: stop
+    show_battle_hydra_05:
+      speed: 3
+      action: play
+  logicblock_hydra_health_updated{device.counters.hydra_health.value==5}:
+    show_battle_hydra_05:
+      action: stop
+    show_battle_hydra_03:
+      speed: 3
+      action: play
+  logicblock_hydra_health_updated{device.counters.hydra_health.value==3}:
+    show_battle_hydra_heart_fast:
+      action: stop
+    show_battle_hydra_heart_critical:
+      action: play
+    show_battle_hydra_03:
+      action: stop
+    show_battle_hydra_01:
+      speed: 3
+      action: play
+  logicblock_hydra_health_updated{device.counters.hydra_health.value==1}:
+    show_battle_hydra_01:
+      action: stop
+    show_battle_hydra_00:
+      speed: 3
+      action: play
+  logicblock_hydra_health_updated{device.counters.hydra_health.value==0}:
+    show_battle_hydra_00:
+      action: stop
+    show_battle_hydra_heart_critical:
+      action: stop
+    show_battle_hydra_heart_dead:
+      action: play
+  ball_drain{not device.counters.hydra_health.completed}:
+    show_battle_hydra_heart_slow:
+      action: stop
+    show_battle_hydra_heart_medium:
+      action: stop
+    show_battle_hydra_heart_fast:
+      action: stop
+    show_battle_hydra_heart_critical:
+      action: stop
+    show_battle_hydra_00:
+      action: stop
+    show_battle_hydra_01:
+      action: stop
+    show_battle_hydra_03:
+      action: stop
+    show_battle_hydra_05:
+      action: stop
+    show_battle_hydra_07:
+      action: stop
+    show_battle_hydra_09:
+      action: stop
+    show_battle_hydra_11:
+      action: stop
+    show_battle_hydra_13:
+      action: stop
+    show_battle_hydra_heart_dead:
+      action: play
+      priority: 1
+
+slide_player:
+  mode_hydra_started: #counter_hydra_health_hit:
+    hydra_health_slide:
+      target: playfield_lcd
+      background_color: black
+      widgets:
+      - type: text
+        text: BATTLE HYDRA
+        font_name: GreekGods2
+        color: red
+        y: 90%
+        anchor_x: center
+        anchor_y: center
+        font_size: 80
+      - type: text
+        text: UNTIL BALL LOST
+        font_name: GreekGods2
+        color: red
+        y: 65%
+        anchor_x: center
+        anchor_y: center
+        font_size: 70
+      - type: text
+        text: MONSTER HEALTH
+        font_name: GreekGods2
+        color: red
+        y: 40%
+        anchor_x: center
+        anchor_y: center
+        font_size: 70
+      - type: text
+        text: (hydra_hp) #(device.counters.hydra_health.value)
+        number_grouping: true
+        min_digits: 2
+        color: red
+        y: 25%
+        anchor_x: center
+        anchor_y: center
+        font_size: 200
+        font_name: GreekGods2
+  ball_drain{not device.counters.hydra_health.completed}:
+    hydra_health_slide:
+      action: remove
+    hydra_got_away:
+      target: playfield_lcd
+      background_color: black
+      widgets:
+      - type: text
+        text: BALL LOST
+        font_name: GreekGods2
+        color: red
+        y: 65%
+        anchor_x: center
+        anchor_y: center
+        font_size: 85
+      - type: text
+        text: HYDRA ESCAPED!
+        font_name: GreekGods2
+        number_grouping: true
+        min_digits: 2
+        color: red
+        y: 40%
+        anchor_x: center
+        anchor_y: center
+        font_size: 50
+  logicblock_hydra_health_complete:
+    hydra_health_slide:
+      action: remove
+    player_beat_hydra:
+      target: playfield_lcd
+      background_color: black
+      widgets:
+      - type: text
+        text: HYDRA DEFEATED
+        font_name: GreekGods2
+        color: red
+        y: 65%
+        anchor_x: center
+        anchor_y: center
+        font_size: 80
+      - type: text
+        text: YOU ROCK!
+        font_name: GreekGods2
+        number_grouping: true
+        min_digits: 2
+        color: red
+        y: 35%
+        anchor_x: center
+        anchor_y: center
+        font_size: 80

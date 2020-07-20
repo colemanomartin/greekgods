@@ -1,0 +1,109 @@
+#config_version=5
+# This mode runs the scoop and balldrop. It should be running at all time.
+# It also flashes the lighting and drop target tongue on eject. This could propbably live in base.
+mode:
+  priority: 10000 # range 100-1M
+  start_events:
+    - mode_base_started
+#    - scoop_hold_open_released
+#  stop_events:
+#    - scoop_hold_open
+timers:
+  scoop_drop: # used to raise ball block after every drop except when keeping door open
+    start_value: 2
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - event: mode_bb_down_started #Not sure when this would come up
+        action: pause
+      - event: balldevice_bd_scoop_ball_eject_success{mode.bb_down.active == False} #ball_waiting_to_eject_from_scoop_done
+        action: restart #reset to starting value and start
+      - event: ballblock_hit{mode.bb_down.active == False} #Start the timer to raise ballblock when mode bb_down is not running.
+        action: restart #reset to starting value and start
+      - event: timer_scoop_drop_complete #Reset timer when it counts down to 0
+        action: reset #Goes back to starting value
+      - event: mode_open_hades_door_starting
+        action: pause
+      - event: pause_ballblock_timer #broadcasted when P and O mb ready to start
+        action: pause
+      - event: mode_scoop_mb_started #Hold open for jackpot shots
+        action: pause
+      - event: mode_scoop_mb_ending
+        action: restart
+      - event: o_locking_elgible #Reset and start timer (if not already running) to raise ball block in case other lock qualifies
+        action: restart
+      - event: p_locking_elgible #Reset and start timer (if not already running) to raise ball block in case other lock qualifies
+        action: restart
+      - event: resume_ballblock_timer #broadcasted when P and O MB starts
+        action: start
+      - event: ball_waiting_to_eject_from_scoop{mode.bb_down.active == False}
+        action: jump
+        value: 5
+      - event: invite_a_scoop_shot_10s #Not currently being used
+        action: jump
+        value: 10
+      - event: jump_ballblock_timer_to_1 #used to raise quickly when using BB as a shot by ramp_mb modes
+        action: jump
+        value: 1
+      - event: jump_ballblock_timer_to_0 #used to raise imeadiately when using BB as a shot by ramp_mb modes
+        action: jump
+        value: 0
+  sweep_hold:
+    end_value: 1
+    tick_interval: 200ms
+    control_events:
+      - event: ball_waiting_to_eject_from_scoop
+        action: restart
+#ball_holds:
+#  hades_door:
+#    source_playfield: earth_pf
+#    hold_devices: bd_scoop
+#    balls_to_hold: 1
+#    enable_events: wake_up_hades_flashing_fast_hit
+#    release_one_events: extra_ball_earned, extra_ball_not_earned
+#    disable_events: extra_ball_earned, extra_ball_not_earned
+
+#queue_event_player:
+#  balldevice_bd_scoop_ball_eject_attempt:
+#    queue_event: ball_waiting_to_eject_from_scoop
+#    events_when_finished: ball_waiting_to_eject_from_scoop_done
+queue_relay_player:
+    balldevice_bd_scoop_ball_eject_attempt:
+        post: ball_waiting_to_eject_from_scoop
+        wait_for: timer_sweep_hold_complete
+
+ball_holds:
+  mystery_hold:
+    source_playfield: earth_pf
+    hold_devices: bd_scoop
+    balls_to_hold: 1
+    enable_events: mystery_hole_received_ball_hit
+    release_all_events: mode_mystery_stopping
+    disable_events: mode_mystery_stopping
+#  super_spinner_hold:  THIS WORKS BUT INTERFERS WITH MYSTERY SHOW WHEN ENTERING FROM MYSTERY
+#    source_playfield: earth_pf
+#    hold_devices: bd_scoop
+#    balls_to_hold: 1
+#    enable_events: field_invite_super_spinner_at_scoop_hit
+#    release_all_events: super_spinner_start_show_completed
+#    disable_events: super_spinner_start_show_completed
+
+#  display_hold:
+#    source_playfield: earth_pf
+#    hold_devices: bd_scoop
+#    balls_to_hold: 1
+#    enable_events: s_hole_distal_active #balldevice_bd_scoop_ball_eject_attempt
+#    release_all_events: timer_sweep_hold_complete
+#    disable_events: timer_sweep_hold_complete
+
+coil_player:
+  balldevice_bd_scoop_ball_eject_attempt:
+#  ball_waiting_to_eject_from_scoop:
+    c_ballblock_fall:
+      action: pulse
+show_player:
+  balldevice_bd_scoop_ball_eject_attempt:
+    show_tongue_lightning:
+      speed: 20
+      loops: 0

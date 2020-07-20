@@ -1,0 +1,17 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_orbit_43:
+      color: red
+      fade: 200
+    l_orbit_44:
+      color: red
+      fade: 200
+- duration: 1
+  lights:
+    l_orbit_43:
+      color: 000033
+      fade: 200
+    l_orbit_44:
+      color: 000033
+      fade: 200

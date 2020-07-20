@@ -1,0 +1,36 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_malstrom_0: 001111
+    l_malstrom_1: 003333
+    l_malstrom_2: 005555
+    l_malstrom_3: 008888
+    l_malstrom_4: 00FFFF
+- duration: 1
+  lights:
+    l_malstrom_0: 003333
+    l_malstrom_1: 005555
+    l_malstrom_2: 008888
+    l_malstrom_3: 00FFFF
+    l_malstrom_4: 001111
+- duration: 1
+  lights:
+    l_malstrom_0: 005555
+    l_malstrom_1: 008888
+    l_malstrom_2: 00FFFF
+    l_malstrom_3: 001111
+    l_malstrom_4: 003333
+- duration: 1
+  lights:
+    l_malstrom_0: 008888
+    l_malstrom_1: 00FFFF
+    l_malstrom_2: 001111
+    l_malstrom_3: 003333
+    l_malstrom_4: 005555
+- duration: 1
+  lights:
+    l_malstrom_0: 00FFFF
+    l_malstrom_1: 001111
+    l_malstrom_2: 003333
+    l_malstrom_3: 005555
+    l_malstrom_4: 008888

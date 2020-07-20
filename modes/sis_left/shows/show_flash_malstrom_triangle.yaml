@@ -1,0 +1,11 @@
+#show_version=5
+- duration: 2
+  lights:
+    l_malstrom_triangle:
+      color: 0000FF
+      fade: 500
+- duration: 1
+  lights:
+    l_malstrom_triangle:
+      color: 000000
+      fade: 500

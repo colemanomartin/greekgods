@@ -1,0 +1,229 @@
+#config_version=5
+# Mode activates when field_spins = 100 or mystery award show_award_super_spinner posts.
+# After every 25 hits to a spinner, shooting the ramp will collect an extra bonus.
+# If the ramp shot is hit, the mode continues, otherwise the mode ends without bonus.
+# It doubles the points and lightshow on the spinners. Autofire coil knocker
+# has enables that look for this mode to start which makes the c_u_knocker
+# gently pulses with each spinner activation. Sound will also give a thump
+# lastly when super spinner is active hits to either olympus or poseidon area
+# gives extra ticks on the excitement timers on base.
+# It also doubles hits to hydra in field or in battle hydra mode
+mode:
+  priority: 1400 # Run over base and MB modes so lights show
+  start_events:
+    - mystery_super_spinner #Award from mode_mystery
+    - field_invite_super_spinner_at_scoop_hit #Threshold set in field in counters section
+  stop_events:
+    - ball_ended
+    - timer_super_spinner_countdown_complete
+
+variable_player:
+  base_orbit_spinner_hit:
+    score: 25 #give additional 25 points per spin
+  base_olympus_spinner_hit:
+    score: 50
+  super_spinner_bonus_hit:
+    score: 50000
+  timer_super_spinner_countdown_tick:
+    super_spinner_collect_time_remaining: #Cant show timer value directly on a slide, has to be through a player variable
+      int: device.timers.super_spinner_countdown.ticks
+      action: set
+  counter_super_spinner_count_hit:
+    rotations_display_variable:
+      int: device.counters.super_spinner_count.value
+      action: set
+
+shot_profiles:
+  flash_only:
+    states:
+      - name: flash  # step 2
+        show: on
+    loop: false
+
+shots:
+  super_spinner_bonus:
+    playfield: earth_pf
+    profile: flash_only
+    switch: s_ramp_opto
+    enable_events: super_spinner_bonus_threshold
+    disable_events:
+      - timer_super_spinner_countdown_complete
+      - super_spinner_bonus_hit
+  super_spinner_poseidon_mech:
+    playfield: earth_pf
+    profile: one_state #defigned in base
+    hit_events:
+      - base_poseidon_pop_hit
+      - base_poseidon_left_slingshot_hit
+      - base_poseidon_right_slingshot_hit
+      - base_poseidon_gate_hit
+    enable_events:
+      - mode_super_spinner_started
+  super_spinner_olympus_mech:
+    playfield: earth_pf
+    profile: one_state #defigned in base
+    hit_events:
+      #- base_olympus_spinner_hit
+      - base_olympus_right_pop_hit
+      - base_olympus_lower_pop_hit
+      - base_olympus_left_pop_hit
+      - base_hole_proximal_hit
+    enable_events:
+      - mode_super_spinner_started
+
+counters:
+  super_spinner_count:
+    count_events:
+      - base_orbit_spinner_hit
+      - base_olympus_spinner_hit
+    persist_state: false #does not reset when ball drains
+    disable_events: mode_hydra_started #Turn off the bonus shots if in hydra mb
+    enable_events:
+      - mode_super_spinner_started
+      - mode_hydra_stopping #Turn it back on when mode hydra finished
+    count_complete_value: 25
+    restart_events: super_spinner_bonus_hit
+#    reset_on_complete: true
+    events_when_complete: super_spinner_bonus_threshold
+    debug: true
+
+timers:
+  super_spinner_countdown:
+    start_value: 12
+    end_value: -1
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: restart
+        event:  super_spinner_bonus_threshold
+      - action: stop
+        event: super_spinner_bonus_hit
+show_player:
+  base_orbit_spinner_hit:
+    show_super_orbit_spinner:
+      speed: 10
+      loops: 0
+  base_olympus_spinner_hit:
+    show_super_olympus_spinner:
+      speed: 10
+      loops: 0
+  super_spinner_bonus_threshold:
+    show_invite_ramp_shot:
+      speed: 2
+  timer_super_spinner_countdown_complete:
+    show_invite_ramp_shot:
+      action: stop
+  super_spinner_bonus_hit:
+    show_invite_ramp_shot:
+      action: stop
+#  mode_super_spinner_started:
+#    show_super_spinner_start:
+#      speed: 1
+#      loops: 0
+#      events_when_completed: super_spinner_start_show_completed #releases ball hold in mode scoop.yaml
+
+widgets:
+  invite_super_spinner_ramp_shot:
+    - type: image
+      image: wedge_collect_ss_bonus
+      scale: 0.36
+      rotation: 0
+      x: 400
+      y: 658
+      anchor_x: center
+      anchor_y: center
+      z: 4
+  super_spinner_bonus_count:
+    - type: text
+      text: (player|rotations_display_variable)
+      y: 88%
+      font_size: 90
+      color: red
+      font_name: GreekGods2
+      expire: 2s
+      z: 3 #Temple layer is 2
+      animations:
+        add_to_slide:
+          - property: rotation
+            value: 360
+            relative: false
+            duration: 2s
+            easing: out_bounce #in_out_elastic #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  super_spinner_time_remaining:
+    - type: text
+      text: (player|super_spinner_collect_time_remaining)
+      font_size: 60
+      color: black
+      anchor_x: center
+      anchor_y: center
+      y: 35%
+      x: 52%
+      z: 5
+  super_spinner_bonus_collected:
+    - type: text
+      text: Bonus Collected
+      y: 77%
+      font_size: 80
+      color: green
+      font_name: GreekGods2
+      expire: 2s
+      z: 4 #Temple layer is 2
+      animations:
+        add_to_slide:
+          - property: rotation
+            value: 360
+            relative: false
+            duration: 1s
+            easing: out_bounce #in_out_elastic #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+widget_player:
+  counter_super_spinner_count_hit:
+    super_spinner_bonus_count:
+      slide: show_progress_to_ramp_mb
+  super_spinner_bonus_threshold:
+    invite_super_spinner_ramp_shot:
+      slide: show_progress_to_ramp_mb
+    super_spinner_time_remaining:
+      slide: show_progress_to_ramp_mb
+  timer_super_spinner_countdown_complete:
+    invite_super_spinner_ramp_shot:
+      slide: show_progress_to_ramp_mb
+      action: remove
+  super_spinner_bonus_hit:
+    invite_super_spinner_ramp_shot:
+      slide: show_progress_to_ramp_mb
+      action: remove
+    super_spinner_bonus_collected:
+      slide: show_progress_to_ramp_mb
+      action: add
+
+slide_player:
+  mode_super_spinner_started:
+    tada_super_spinner:
+      target: playfield_lcd
+      background_color: black
+      expire: 4s
+      widgets:
+      - type: image
+        image: meander_circle1invert
+        scale: 0.75
+        z: 1
+        animations:
+          add_to_slide:
+          - property: rotation
+            value: 0
+            relative: false
+            duration: 0
+          - property: rotation
+            value: 360
+            relative: false
+            duration: 4s
+            easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+            repeat: true
+      - type: text
+        text: "SUPER\nSPINNER\nACTIVE"
+        font_name: GreekGods2
+        color: white
+        y: 50%
+        anchor_x: center
+        anchor_y: center
+        font_size: 60

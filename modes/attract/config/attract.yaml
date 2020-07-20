@@ -1,0 +1,46 @@
+#config_version=5
+#https://htmlcolorcodes.com/color-names/
+#show_player:
+#  mode_attract_started:
+#    show_poppers:
+#      speed: 1
+coil_player:
+  mode_attract_started: #drop when starting attract so if ball in sub, it can escape
+    c_ballblock_fall:
+      action: pulse
+
+show_player:
+  mode_attract_started:
+    attract_display_loop:
+      speed: 1
+    show_rand_paralell:
+      speed: 1
+#    show_olympus_spinner:
+#      speed: 2
+#      priority: 200
+    show_poppers:
+      speed: 1
+      priority: 100
+    attract_GG_logo_sparker:
+      speed: 5
+    attract_swirl_L_spk_green:
+      speed: 10
+    attract_swirl_R_spk_green:
+      speed: 10
+    attract_start_launch:
+      speed: 50
+    show_hades_lights:
+      speed: 1
+#light_player:
+#  mode_attract_started:
+#    gi: on
+#    ramp: on
+#    lanes: 002400
+#    ball_save_display: 008800
+#    insert: on
+#    orbit: 000022
+#    shooter: 990000
+#    right_ballguide: 002400
+#    left_ballguide: 002400
+#    spinner_strip: orangered
+#    pop_strip: yellow

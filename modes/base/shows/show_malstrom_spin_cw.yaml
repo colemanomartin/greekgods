@@ -1,0 +1,36 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_malstrom_0: 000011
+    l_malstrom_1: 000033
+    l_malstrom_2: 000055
+    l_malstrom_3: 000088
+    l_malstrom_4: 0000FF
+- duration: 1
+  lights:
+    l_malstrom_0: 000033
+    l_malstrom_1: 000055
+    l_malstrom_2: 000088
+    l_malstrom_3: 0000FF
+    l_malstrom_4: 000011
+- duration: 1
+  lights:
+    l_malstrom_0: 000055
+    l_malstrom_1: 000088
+    l_malstrom_2: 0000FF
+    l_malstrom_3: 000011
+    l_malstrom_4: 000033
+- duration: 1
+  lights:
+    l_malstrom_0: 000088
+    l_malstrom_1: 0000FF
+    l_malstrom_2: 000011
+    l_malstrom_3: 000033
+    l_malstrom_4: 000055
+- duration: 1
+  lights:
+    l_malstrom_0: 0000FF
+    l_malstrom_1: 000011
+    l_malstrom_2: 000033
+    l_malstrom_3: 000055
+    l_malstrom_4: 000088

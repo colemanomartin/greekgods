@@ -1,0 +1,11 @@
+#show_version=5
+- duration: 2
+  lights:
+    l_olympus_gate_triangle:
+      color: FFFF00
+      fade: 500
+- duration: 1
+  lights:
+    l_olympus_gate_triangle:
+      color: 000000
+      fade: 500

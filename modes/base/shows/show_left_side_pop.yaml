@@ -1,0 +1,9 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_left_side_pop: FFFFFF
+    l_left_pop_lower_arrow: ff0000
+    l_left_pop_upper_arrow: ff0000
+    l_left_pop_band: ff0000
+    l_left_spinner_band_prox: ff0000
+    l_left_orbit_lower_triangle: ff0000

@@ -1,0 +1,77 @@
+#config_version=5
+# This mode is meant to be running when field is running and ball is in left sis position.
+# It give a double registration to hits to the poseidon excitement timer in base. If this mode is not running,
+# the poseidon counter still gets hits, just not as many. It also lights up the 2x when hits are made
+# and it lights up the sis arrow if hits are made on the wrong side.
+# magnet diverters are controlled by state machine in config.yaml
+# Shows relating to qualifying shot and locking balls are all handled in p_ramp_mb
+mode:
+  priority: 300 # range 100-1M
+  start_events:
+    - mode_field_started{device.switches.s_sis_left.state==1}
+    - field_sis_right_to_left_hit
+  stop_events:
+    - field_sis_left_to_right_hit
+    - mode_field_stopped
+
+sequence_shots:
+  sis_left_orbit_counter_clockwise:
+    playfield: earth_pf
+    switch_sequence:
+      - s_posideon_rollover
+      - s_olympus_rollover
+    sequence_timeout: 2s
+  sis_left_orbit_clockwise:
+    playfield: earth_pf
+    switch_sequence:
+      - s_olympus_rollover
+      - s_posideon_rollover
+    sequence_timeout: 2s
+shots:
+  sis_left_poseidon_mech:
+    playfield: earth_pf
+    profile: one_state #defigned in base
+    hit_events:
+      - base_poseidon_pop_hit
+      - base_poseidon_left_slingshot_hit
+      - base_poseidon_right_slingshot_hit
+      - base_poseidon_gate_hit
+    enable_events:
+      - mode_sis_left_started
+
+#counters: removed in 2011
+#  sis_left_orbit_loops:
+#    count_events:
+#      - sis_left_orbit_counter_clockwise_hit{mode.mystery.active == False}
+#      - sis_left_orbit_clockwise_hit{mode.mystery.active == False}
+#    reset_on_complete: true
+#    persist_state: false
+#    restart_events: diverter_feed_poseidon_mag_deactivating #ball_started
+#    enable_events:
+#      - mode_sis_left_started
+#    disable_events:
+#      - mode_field_stopped
+#      - mode_sis_left_stopped
+#    events_when_complete: sis_left_says_feed_poseidon #used by diverter
+#    count_complete_value: 1
+
+variable_player:
+  sis_left_poseidon_mech_hit: #Gives the double scoring
+    score: 300
+
+show_player:
+  mode_sis_left_started:
+    show_flash_malstrom_triangle:
+      speed: 2
+    show_left_ramp_green:
+      speed: 1
+  sis_left_poseidon_mech_hit:
+    show_flash_2x:
+      show_tokens:
+        color: blue
+      speed: 2
+      loops: 0
+  field_olympus_mech_hit:
+    show_left_sis_arrow_flash:
+      speed: 2
+      loops: 1

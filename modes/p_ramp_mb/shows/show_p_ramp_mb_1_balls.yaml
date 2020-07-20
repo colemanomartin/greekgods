@@ -1,0 +1,123 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+# lock light 0 is the upper, 1 is the lower
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000000
+    l_poseidon_lock_distal: 000000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000011
+    l_poseidon_lock_distal: 110000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000022
+    l_poseidon_lock_distal: 220000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000033
+    l_poseidon_lock_distal: 330000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000044
+    l_poseidon_lock_distal: 440000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000055
+    l_poseidon_lock_distal: 550000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000066
+    l_poseidon_lock_distal: 660000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000077
+    l_poseidon_lock_distal: 770000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000088
+    l_poseidon_lock_distal: 880000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000099
+    l_poseidon_lock_distal: 990000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 0000AA
+    l_poseidon_lock_distal: AA0000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 0000BB
+    l_poseidon_lock_distal: BB0000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 0000CC
+    l_poseidon_lock_distal: CC0000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 0000DD
+    l_poseidon_lock_distal: DD0000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 0000EE
+    l_poseidon_lock_distal: EE0000
+- duration: 2
+  lights:
+    l_poseidon_lock_prox: 0000FF
+    l_poseidon_lock_distal: FF0000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 0000EE
+    l_poseidon_lock_distal: EE0000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 0000DD
+    l_poseidon_lock_distal: DD0000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 0000CC
+    l_poseidon_lock_distal: CC0000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 0000BB
+    l_poseidon_lock_distal: BB0000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 0000AA
+    l_poseidon_lock_distal: AA0000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000099
+    l_poseidon_lock_distal: 990000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000088
+    l_poseidon_lock_distal: 880000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000077
+    l_poseidon_lock_distal: 770000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000066
+    l_poseidon_lock_distal: 660000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000055
+    l_poseidon_lock_distal: 550000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000044
+    l_poseidon_lock_distal: 440000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000033
+    l_poseidon_lock_distal: 330000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000022
+    l_poseidon_lock_distal: 220000
+- duration: 1
+  lights:
+    l_poseidon_lock_prox: 000011
+    l_poseidon_lock_distal: 110000

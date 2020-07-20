@@ -1,0 +1,1168 @@
+#config_version=5
+#
+# http://docs.missionpinball.org/en/latest/config/mode.html?highlight=pause%20mode use wait queue
+# This hades modes activates via mystery mode.  The goal is to smash all the bugs
+# The bugs crawl in from the edges and dance near each of the targets, rivers and slings.
+# When all the bugs are smashed a bonus is awarded
+# Do: set target switches as shots
+#     Set sling lights as autofire
+mode:
+  priority: 1500 # range 100-1M
+  start_events:
+    - s_accessory_active
+    - ball_hold_hades_door_held_ball
+#    - mode_base_starting
+#    - s_centuar_skilltarget_active     #Remove when testing done
+
+  stop_events: all_bugs_smashed, lost_the_ball
+
+multiballs:
+#  hades_mini_play:
+#  mode_hades_mini_game_started:
+  hades_backlight_show_done:
+    source_playfield: hades_pf
+    ball_count: 1
+    ball_count_type: add  # increase number of playfield balls by couny
+    shoot_again: 21s #24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
+    start_events: hades_backlight_show_done #mode_hades_mini_game_started
+    debug: true
+
+variable_player:
+  s_u_left_slingshot_active:
+    score: 500
+  s_u_right_slingshot_active:
+    score: 500
+  s_u_left_target_active:
+    score: 1000
+  s_u_middle_target_active:
+    score: 1000
+  s_u_right_target_active:
+    score: 1000
+  left_river_top_to_bottom_hit: #River A
+    score: 750
+  left_river_bottom_to_top_hit: # River B
+    score: 750
+  right_river_top_to_bottom_hit: #River C
+    score: 750
+  right_river_bottom_to_top_hit: #River D
+    score: 750
+
+sequence_shots: #using to activate timers
+  left_river_top_to_bottom_mini: #River A
+    playfield: hades_pf
+    switch_sequence:
+      - s_u_left_ear_3
+      - s_u_left_ear_0
+    sequence_timeout: 1s
+  left_river_bottom_to_top_mini: # River B
+    playfield: hades_pf
+    switch_sequence:
+      - s_u_left_ear_0
+      - s_u_left_ear_3
+    sequence_timeout: 1s
+  right_river_top_to_bottom_mini: #River C
+    playfield: hades_pf
+    switch_sequence:
+      - s_u_right_ear_3
+      - s_u_right_ear_0
+    sequence_timeout: 1s
+  right_river_bottom_to_top_mini: #River D
+    playfield: hades_pf
+    switch_sequence:
+      - s_u_right_ear_0
+      - s_u_right_ear_3
+    sequence_timeout: 1s
+
+
+shot_profiles:
+  bugs_x_3:
+    states:
+      - name: first
+#        show: on #safe to remove?
+      - name: second
+#        show: flash #safe to remove?
+      - name: third
+#        show: off #safe to remove?
+      - name: additional
+    loop: no
+
+shots:
+  river_a_mini: #top left to bottom left
+     playfield: hades_pf
+     enable_events: mode_hades_mini_game_started
+     hit_events: left_river_top_to_bottom_mini_hit
+#     show_tokens:
+#       lights: l_mouth_a
+     profile: bugs_x_3
+     restart_events: mode_hades_mini_game_started  #Restart=reset and enable
+     disable_events: river_a_mini_additional_hit
+  river_b_mini: #bottom left to top left
+     playfield: hades_pf
+     enable_events: mode_hades_mini_game_started
+     hit_events: left_river_bottom_to_top_mini_hit
+#     show_tokens:
+#       lights: l_mouth_b
+     profile: bugs_x_3
+     restart_events: mode_hades_mini_game_started
+     disable_events: river_b_mini_additional_hit
+  river_c_mini: #top right to bottom right
+     playfield: hades_pf
+     enable_events: mode_hades_mini_game_started
+     hit_events: right_river_top_to_bottom_mini_hit
+#     show_tokens:
+#       lights: l_mouth_c
+     profile: bugs_x_3
+     restart_events: mode_hades_mini_game_started
+     disable_events: river_c_mini_additional_hit
+  river_d_mini: #bottom right to top right
+     playfield: hades_pf
+     enable_events: mode_hades_mini_game_started
+     hit_events: right_river_bottom_to_top_mini_hit
+#     show_tokens:
+#       lights: l_mouth_d
+     profile: bugs_x_3
+     restart_events: mode_hades_mini_game_started
+     disable_events: river_d_mini_additional_hit
+  left_corner_target:
+     playfield: hades_pf
+     enable_events: mode_hades_mini_game_started
+     hit_events: s_u_left_target_active
+     profile: bugs_x_3
+     restart_events: mode_hades_mini_game_started
+     disable_events: keft_corner_target_additional_hit
+#     show_tokens:
+#       lights: l_u_left_corner_rgb
+  right_corner_target:
+     playfield: hades_pf
+     enable_events: mode_hades_mini_game_started
+     hit_events: s_u_right_target_active
+     profile: bugs_x_3
+     restart_events: mode_hades_mini_game_started
+     disable_events: right_corner_target_additional_hit
+#     show_tokens:
+#       lights: l_u_right_corner_rgb
+  middle_target:
+     playfield: hades_pf
+     enable_events: mode_hades_mini_game_started
+     hit_events: s_u_middle_target_active
+     profile: bugs_x_3
+     restart_events: mode_hades_mini_game_started
+     disable_events: middle_target_additional_hit
+#     show_tokens:  #No flasher for this one add hardware?
+#       lights:
+  left_sling:
+     playfield: hades_pf
+     enable_events: mode_hades_mini_game_started
+     hit_events: s_u_left_slingshot_active
+     profile: bugs_x_3
+     restart_events: mode_hades_mini_game_started
+     disable_events: left_sling_additional_hit
+#     show_tokens:
+#       lights:   l_u_left_ss_rgb
+  right_sling:
+     playfield: hades_pf
+     enable_events: mode_hades_mini_game_started
+     hit_events: s_u_right_slingshot_active
+     profile: bugs_x_3
+     restart_events: mode_hades_mini_game_started
+     disable_events: right_sling_additional_hit
+#     show_tokens:
+#       lights:   l_u_right_ss_rgb
+
+sequences:
+    mini_game_exit:
+       events:
+         - multiball_hades_mini_play_shoot_again_ended
+         - balldevice_bd_u_trough_ball_enter
+       events_when_complete: lost_the_ball
+
+accruals:
+  extermination: #tracks when all bugs splatted
+    events: #first line AND second line both registered results in turn on the bounce
+      - left_corner_target_third_hit
+      - middle_target_third_hit
+      - right_corner_target_third_hit
+      - river_a_mini_second_hit
+      - river_b_mini_second_hit
+      - river_c_mini_second_hit
+      - river_d_mini_second_hit
+    events_when_complete: all_bugs_smashed #All river fast modes activate when this is posted rules are cleared when this mode ends
+  monitor_rivers: #When any of the rivers hit get a one time event to change music.
+    events:
+      - river_a_mini_hit, river_b_mini_hit, river_c_mini_hit, river_d_mini_hit
+    events_when_complete: we_have_a_river
+    reset_on_complete: false
+
+
+slide_player:
+  mode_hades_mini_game_started:
+    hades_playfield_slide:
+      target: playfield_lcd
+      background_color: white
+      widgets:
+      - type: text
+        text: Smash the bugs
+        color: black
+        y: 2%
+        z: 2
+        anchor_x: center
+        anchor_y: bottom
+        font_size: 50
+
+show_player:
+  mode_hades_mini_game_started:
+    show_all_pf_bb_leds_red:
+      speed: 1
+    show_pulse_mini_pf:
+      speed: 10
+      loops: 0
+      events_when_played: start_bug_march
+      events_when_completed: hades_backlight_show_done
+  multiball_hades_mini_play_started:
+    countdown20_red:
+      speed: 1
+      loops: 0
+  s_u_left_slingshot_active:
+    show_hades_left_ss:
+      speed: 20
+      loops: 0
+  s_u_right_slingshot_active:
+    show_hades_right_ss:
+      speed: 20
+      loops: 0
+
+
+#light_player:
+#  mode_hades_mini_game_started:
+#    l_backlight_rgb:
+#      color: 0000ff #000000
+#    l_backlight_w:
+#      color: A0
+#sound_player:
+#  river_a_mini_hit: splat-and-crunch
+#  river_b_mini_hit: splat-and-crunch
+#  river_c_mini_hit: splat-and-crunch
+#  river_d_mini_hit: splat-and-crunch
+#  left_corner_target_hit: splat-and-crunch
+#  right_corner_target_hit: splat-and-crunch
+#  middle_target_hit: splat-and-crunch
+
+widget_player: #http://docs.missionpinball.org/en/latest/config/widget_player.html
+  start_bug_march:
+    bug_left_target:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+    bug_right_target:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+    bug_middle_target:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+    bug_river_a:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+    bug_river_b:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+    bug_river_c:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+    bug_river_d:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+
+
+  left_corner_target_first_hit:
+    bug_left_target:
+      target: playfield_lcd
+      action: update
+    splat_left_target:
+      target: playfield_lcd
+  left_corner_target_second_hit:
+    bug_left_target:
+      target: playfield_lcd
+      action: update
+    splat_left_target:
+      target: playfield_lcd
+  left_corner_target_third_hit:
+    bug_left_target:
+      target: playfield_lcd
+      action: remove
+    splat_left_target:
+      target: playfield_lcd
+
+  middle_target_first_hit:
+    bug_middle_target:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+      action: update
+    splat_middle_target:
+      target: playfield_lcd
+  middle_target_second_hit:
+    bug_middle_target:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+      action: update
+    splat_middle_target:
+      target: playfield_lcd
+  middle_target_third_hit:
+    bug_middle_target:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+      action: remove
+    splat_middle_target:
+      target: playfield_lcd
+
+  right_corner_target_first_hit:
+    bug_right_target:
+      target: playfield_lcd
+      action: update
+    splat_right_target:
+      target: playfield_lcd
+  right_corner_target_second_hit:
+    bug_right_target:
+      target: playfield_lcd
+      action: update
+    splat_right_target:
+      target: playfield_lcd
+  right_corner_target_third_hit:
+    bug_right_target:
+      target: playfield_lcd
+      action: remove
+    splat_right_target:
+      target: playfield_lcd
+
+  river_a_mini_first_hit:
+    bug_river_a:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+      action: update
+    splat_river_a:
+      target: playfield_lcd
+  river_a_mini_second_hit:
+    bug_river_a:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+      action: remove
+    splat_river_a:
+      target: playfield_lcd
+
+  river_b_mini_first_hit:
+    bug_river_b:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+      action: update
+    splat_river_b:
+      target: playfield_lcd
+  river_b_mini_second_hit:
+    bug_river_b:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+      action: remove
+    splat_river_b:
+      target: playfield_lcd
+
+  river_c_mini_first_hit:
+    bug_river_c:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+      action: update
+    splat_river_c:
+      target: playfield_lcd
+  river_c_mini_second_hit:
+    bug_river_c:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+      action: remove
+    splat_river_c:
+      target: playfield_lcd
+
+  river_d_mini_first_hit:
+    bug_river_d:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+      action: update
+    splat_river_d:
+      target: playfield_lcd
+  river_d_mini_second_hit:
+    bug_river_d:
+      target: playfield_lcd #hades_playfield_slide # playfield_lcd
+      action: remove
+    splat_river_d:
+      target: playfield_lcd
+
+widgets:
+  splat_left_target:
+      type: image
+      image: splat
+      scale: 0.5
+      y: 85%
+      x: 8%
+      anchor_x: center
+      anchor_y: top
+      rotation: 0
+      loops: 0
+      expire: 2s
+
+  bug_left_target:
+      type: image
+      image: claireroach
+      scale: 0.5
+      y: 99%
+      x: 9%
+      anchor_x: center
+      anchor_y: top
+      rotation: 180
+      animations:
+        add_to_slide:
+          - property: y, rotation
+            value: -1%, 3
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -3
+            relative: true
+            duration:  50ms
+
+  splat_right_target:
+      type: image
+      image: splat
+      scale: 0.5
+      y: 86%
+      x: 92%
+      anchor_x: center
+      anchor_y: top
+      rotation: 0
+      loops: 0
+      expire: 2s
+
+  bug_right_target:
+      type: image
+      image: scorpion
+      scale: 0.45
+      y: 99%
+      x: 90%
+      anchor_x: center
+      anchor_y: top
+      rotation: 180
+      animations:
+        add_to_slide:
+          - property: y, rotation
+            value: -1%, 3
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -3
+            relative: true
+            duration:  50ms
+
+  splat_middle_target:
+      type: image
+      image: splat
+      scale: 0.5
+      y: 93%
+      x: 47%
+      anchor_x: center
+      anchor_y: top
+      rotation: 0
+      loops: 0
+      expire: 2s
+
+  bug_middle_target:
+      type: image
+      image: tigerbug
+      scale: 0.7
+      y: 99%
+      x: 47%
+      anchor_x: center
+      anchor_y: top
+      rotation: 180
+      animations:
+        add_to_slide:
+          - property: y, rotation
+            value: -1%, 3
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -3
+            relative: true
+            duration:  50ms
+
+  splat_river_a:
+      type: image
+      image: splat
+      scale: 0.5
+      y: 100%
+      x: 27%
+      anchor_x: center
+      anchor_y: top
+      rotation: 0
+      loops: 0
+      expire: 2s
+
+  bug_river_a:
+      type: image
+      image: roachcrawl
+      scale: 0.5
+      y: 99%
+      x: 27%
+      anchor_x: center
+      anchor_y: top
+      rotation: 180
+      animations:
+        add_to_slide:
+          - property: y, rotation
+            value: -1%, 3
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -3
+            relative: true
+            duration:  50ms
+
+  splat_river_c:
+      type: image
+      image: splat
+      scale: 0.5
+      y: 100%
+      x: 67%
+      anchor_x: center
+      anchor_y: top
+      rotation: 0
+      loops: 0
+      expire: 2s
+
+  bug_river_c:
+      type: image
+      image: longbug
+      scale: 0.5
+      y: 99%
+      x: 67%
+      anchor_x: center
+      anchor_y: top
+      rotation: 180
+      animations:
+        add_to_slide:
+          - property: y, rotation
+            value: -1%, 3
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, 6
+            relative: true
+            duration:  50ms
+          - property: y, rotation
+            value: -1%, -3
+            relative: true
+            duration:  50ms
+
+  splat_river_b:
+      type: image
+      image: splat
+      scale: 0.5
+      y: 70%
+      x: 0%
+      anchor_x: center
+      anchor_y: top
+      rotation: 30
+      loops: 0
+      expire: 2s
+
+  bug_river_b:
+      type: image
+      image: centipede
+      scale: 0.5
+      y: 70%
+      x: 0%
+      anchor_x: center
+      anchor_y: top
+      rotation: -120
+      animations:
+        add_to_slide:
+          - property: x, y, rotation
+            value: 1%, -1%, 3
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: 1%, -1%, -3
+            relative: true
+            duration:  50ms
+
+  splat_river_d:
+      type: image
+      image: splat
+      scale: 0.5
+      y: 70%
+      x: 99%
+      anchor_x: center
+      anchor_y: top
+      rotation: -30
+      loops: 0
+      expire: 2s
+
+  bug_river_d:
+      type: image
+      image: scarab
+      scale: 0.6
+      y: 73%
+      x: 100%
+      anchor_x: center
+      anchor_y: top
+      rotation: 120
+      animations:
+        add_to_slide:
+          - property: x, y, rotation
+            value: -1%, -1%, 3
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, -6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, 6
+            relative: true
+            duration:  50ms
+          - property: x, y, rotation
+            value: -1%, -1%, -3
+            relative: true
+            duration:  50ms

@@ -1,0 +1,28 @@
+#show_version=5
+# see section on shows beginning on pg 554
+- duration: 1000ms
+  slides:
+    super_spinner_starting:
+      target: playfield_lcd
+      widgets:
+      - type: text
+        text: Super Spinner Started
+        font_name: GreekGods2
+        font_size: 65
+        y: 60%
+        color: green
+      transition:
+        type: move_in
+        duration: 1s
+        direction: top
+- duration: 500ms
+  slides:
+    super_spinner_starting_2:
+      target: playfield_lcd
+      widgets:
+      - type: text
+        text: Super Spinner Started
+        font_name: GreekGods2
+        font_size: 65
+        y: 60%
+        color: green

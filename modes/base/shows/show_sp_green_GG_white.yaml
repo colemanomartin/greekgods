@@ -1,0 +1,162 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+
+- duration: 1
+  lights:
+    l_serial_7:  White
+    l_serial_8:  White
+    l_serial_9:  White
+    l_serial_10: White
+    l_serial_11: White
+    l_serial_12: White
+    l_serial_13: White
+    l_serial_14: White
+    l_serial_15: White
+    l_serial_16: White
+    l_serial_17: White
+    l_serial_18: White
+    l_serial_19: White
+    l_serial_20: White
+    l_serial_21: White
+    l_serial_22: White
+    l_serial_23: White
+    l_serial_24: White
+    l_serial_25: White
+    l_serial_26: White
+    l_serial_27: White
+    l_serial_28: White
+    l_serial_29: White
+    l_serial_30: White
+    l_serial_31: White
+    l_serial_32: White
+    l_serial_33: White
+    l_serial_34: White
+    l_serial_35: White
+    l_serial_36: White
+    l_serial_37: White
+    l_serial_38: White
+    l_serial_39: White
+    l_serial_40: White
+    l_serial_41: White
+    l_serial_42: White
+    l_serial_0: Green
+    l_serial_1: Green
+    l_serial_2: Green
+    l_serial_3: Green
+    l_serial_4: Green
+    l_serial_5: Green
+    l_serial_6: Green
+    l_serial_43: Green
+    l_serial_44: Green
+    l_serial_45: Green
+    l_serial_46: Green
+    l_serial_47: Green
+    l_serial_48: Green
+    l_serial_49: Green
+- duration: 1
+  lights:
+    l_serial_10: Yellow
+    l_serial_35: Yellow
+- duration: 1
+  lights:
+    l_serial_10: White
+    l_serial_12: Aqua
+    l_serial_35: White
+- duration: 1
+  lights:
+    l_serial_12: White
+    l_serial_36: Palegreen
+- duration: 1
+  lights:
+    l_serial_8:  Wheat
+    l_serial_36: White
+- duration: 1
+  lights:
+    l_serial_8:  White
+    l_serial_29: Aqua
+- duration: 1
+  lights:
+    l_serial_15: Yellowgreen
+    l_serial_29: White
+- duration: 1
+  lights:
+    l_serial_15: White
+    l_serial_36: Lavenderblush
+- duration: 1
+  lights:
+    l_serial_16: Lightcyan
+    l_serial_36: White
+- duration: 1
+  lights:
+    l_serial_16: White
+    l_serial_40: Lavender
+- duration: 1
+  lights:
+    l_serial_17: Greenyellow
+    l_serial_40: White
+- duration: 1
+  lights:
+    l_serial_17: White
+    l_serial_40: Lemonchiffon
+- duration: 1
+  lights:
+    l_serial_31: Aqua
+    l_serial_40: White
+- duration: 1
+  lights:
+    l_serial_26: Lavender
+    l_serial_31: White
+- duration: 1
+  lights:
+    l_serial_26: White
+- duration: 1
+  lights:
+    l_serial_10: Coral
+- duration: 1
+  lights:
+    l_serial_10: White
+    l_serial_34: Khaki
+- duration: 1
+  lights:
+    l_serial_10: White
+    l_serial_25: Violet
+- duration: 1
+  lights:
+    l_serial_25: White
+    l_serial_42: Palegreen
+- duration: 1
+  lights:
+    l_serial_37: Pink
+    l_serial_42: White
+- duration: 1
+  lights:
+    l_serial_33: Aqua
+    l_serial_37: White
+- duration: 1
+  lights:
+    l_serial_8:  Lavender
+    l_serial_33: White
+- duration: 1
+  lights:
+    l_serial_8:  White
+    l_serial_17: Lemonchiffon
+- duration: 1
+  lights:
+    l_serial_17: White
+    l_serial_35: Powderblue
+- duration: 1
+  lights:
+    l_serial_11: Bisque
+    l_serial_35: White
+- duration: 1
+  lights:
+    l_serial_11: White
+    l_serial_15: Seashell
+- duration: 1
+  lights:
+    l_serial_15: White
+    l_serial_35: Lightblue
+- duration: 1
+  lights:
+    l_serial_35: White
+    l_serial_38: Pink

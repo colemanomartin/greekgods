@@ -1,0 +1,239 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_right_orbit_triangle:
+      color: FFFFFF
+      fade: 950ms
+    l_orbit_0:
+      color: 666666
+      fade: 950ms
+    l_orbit_1:
+      color: 666666
+      fade: 950ms
+    l_orbit_2:
+      color: 666666
+      fade: 950ms
+    l_orbit_3:
+      color: 666666
+      fade: 950ms
+    l_orbit_4:
+      color: 666666
+      fade: 950ms
+    l_orbit_5:
+      color: 666666
+      fade: 950ms
+    l_orbit_6:
+      color: 666666
+      fade: 950ms
+    l_orbit_7:
+      color: 666666
+      fade: 950ms
+    l_orbit_8:
+      color: 666666
+      fade: 950ms
+    l_orbit_9:
+      color: 666666
+      fade: 950ms
+    l_orbit_10:
+      color: 666666
+      fade: 950ms
+    l_orbit_11:
+      color: 666666
+      fade: 950ms
+    l_orbit_12:
+      color: 666666
+      fade: 950ms
+    l_orbit_13:
+      color: 666666
+      fade: 950ms
+    l_orbit_14:
+      color: 666666
+      fade: 950ms
+    l_orbit_15:
+      color: 666666
+      fade: 950ms
+    l_orbit_16:
+      color: 666666
+      fade: 950ms
+    l_orbit_17:
+      color: 666666
+      fade: 950ms
+    l_orbit_18:
+      color: 666666
+      fade: 950ms
+    l_orbit_19:
+      color: 666666
+      fade: 950ms
+    l_orbit_20:
+      color: 666666
+      fade: 950ms
+    l_orbit_21:
+      color: 666666
+      fade: 950ms
+    l_orbit_22:
+      color: 666666
+      fade: 950ms
+    l_orbit_23:
+      color: 666666
+      fade: 950ms
+    l_orbit_24:
+      color: 666666
+      fade: 950ms
+    l_orbit_25:
+      color: 666666
+      fade: 950ms
+    l_orbit_26:
+      color: 666666
+      fade: 950ms
+    l_orbit_27:
+      color: 666666
+      fade: 950ms
+    l_orbit_28:
+      color: 666666
+      fade: 950ms
+    l_orbit_29:
+      color: 666666
+      fade: 950ms
+    l_orbit_30:
+      color: 666666
+      fade: 950ms
+    l_orbit_31:
+      color: 666666
+      fade: 950ms
+    l_orbit_32:
+      color: 666666
+      fade: 950ms
+    l_orbit_33:
+      color: 666666
+      fade: 950ms
+    l_orbit_34:
+      color: 666666
+      fade: 950ms
+    l_orbit_35:
+      color: 666666
+      fade: 950ms
+    l_orbit_36:
+      color: 666666
+      fade: 950ms
+    l_orbit_37:
+      color: 666666
+      fade: 950ms
+- duration: 1
+  lights:
+    l_right_orbit_triangle:
+      color: 222222
+      fade: 950ms
+    l_orbit_0:
+      color: 111111
+      fade: 950ms
+    l_orbit_1:
+      color: 111111
+      fade: 950ms
+    l_orbit_2:
+      color: 111111
+      fade: 950ms
+    l_orbit_3:
+      color: 111111
+      fade: 950ms
+    l_orbit_4:
+      color: 111111
+      fade: 950ms
+    l_orbit_5:
+      color: 111111
+      fade: 950ms
+    l_orbit_6:
+      color: 111111
+      fade: 950ms
+    l_orbit_7:
+      color: 111111
+      fade: 950ms
+    l_orbit_8:
+      color: 111111
+      fade: 950ms
+    l_orbit_9:
+      color: 111111
+      fade: 950ms
+    l_orbit_10:
+      color: 111111
+      fade: 950ms
+    l_orbit_11:
+      color: 111111
+      fade: 950ms
+    l_orbit_12:
+      color: 111111
+      fade: 950ms
+    l_orbit_13:
+      color: 111111
+      fade: 950ms
+    l_orbit_14:
+      color: 111111
+      fade: 950ms
+    l_orbit_15:
+      color: 111111
+      fade: 950ms
+    l_orbit_16:
+      color: 111111
+      fade: 950ms
+    l_orbit_17:
+      color: 111111
+      fade: 950ms
+    l_orbit_18:
+      color: 111111
+      fade: 950ms
+    l_orbit_19:
+      color: 111111
+      fade: 950ms
+    l_orbit_20:
+      color: 111111
+      fade: 950ms
+    l_orbit_21:
+      color: 111111
+      fade: 950ms
+    l_orbit_22:
+      color: 111111
+      fade: 950ms
+    l_orbit_23:
+      color: 111111
+      fade: 950ms
+    l_orbit_24:
+      color: 111111
+      fade: 950ms
+    l_orbit_25:
+      color: 111111
+      fade: 950ms
+    l_orbit_26:
+      color: 111111
+      fade: 950ms
+    l_orbit_27:
+      color: 111111
+      fade: 950ms
+    l_orbit_28:
+      color: 111111
+      fade: 950ms
+    l_orbit_29:
+      color: 111111
+      fade: 950ms
+    l_orbit_30:
+      color: 111111
+      fade: 950ms
+    l_orbit_31:
+      color: 111111
+      fade: 950ms
+    l_orbit_32:
+      color: 111111
+      fade: 950ms
+    l_orbit_33:
+      color: 111111
+      fade: 950ms
+    l_orbit_34:
+      color: 111111
+      fade: 950ms
+    l_orbit_35:
+      color: 111111
+      fade: 950ms
+    l_orbit_36:
+      color: 111111
+      fade: 950ms
+    l_orbit_37:
+      color: 111111
+      fade: 950ms

@@ -1,0 +1,129 @@
+#config_version=5
+#Base mode has
+#              - shots defined for playfield switches
+#              - Basic scoring
+#              - Handles scoop
+#              - Handles cooldown on malstrom magnet and left poseidon SS
+#              - Handles score screen
+
+mode:
+  start_events: ball_started #maybe game started, non-game mode?
+  priority: 150 # range 100-1M
+
+
+
+sound_loop_player:
+#  mode_av_server_2k_started:
+  mode_base_started:
+    music:
+      sound_loop_set: base_start
+      action: play
+      timing: now #now #was loop end but that made no sense because bonus music does not come through loop player
+  mode_ball_just_launched_started{not(mode.p_ramp_mb.active or mode.o_ramp_mb.active)}:
+    music:
+      sound_loop_set: base_running
+      action: play
+      timing: loop_end
+#      fade_in: 200ms
+  mode_mystery_started:
+    music:
+      sound_loop_set: one_ball_mb
+      action: play
+      timing: loop_end
+#      fade_in: 200ms
+  mode_mystery_stopped:
+    music:
+      sound_loop_set: base_running
+      action: play
+      timing: loop_end
+#      fade_in: 200ms
+  mode_p_ramp_mb_started:
+    music:
+      sound_loop_set: ramp_lock_music
+      action: play
+      timing: loop_end
+  mode_o_ramp_mb_started:
+    music:
+      sound_loop_set: ramp_lock_music
+      action: play
+      timing: loop_end
+  multiball_poseidon_ramp_started:
+    music:
+      sound_loop_set: three_ball_mb
+      action: play
+      timing: loop_end
+  multiball_poseidon_ramp_ended:
+    music:
+      sound_loop_set: base_running
+      action: play
+      timing: loop_end
+  multiball_olympus_ramp_started:
+    music:
+      sound_loop_set: three_ball_mb
+      action: play
+      timing: loop_end
+  multiball_olympus_ramp_ended:
+    music:
+      sound_loop_set: base_running
+      action: play
+      timing: loop_end
+
+
+#  mode_hades_mini_game_will_start:
+#    music:
+#      action: stop
+#      fade_out: 1 #sec
+  mode_hades_mini_game_started:
+    music:
+      sound_loop_set: bug_game_intro
+      action: play
+      timing: now
+      fade_in: 200ms
+      events_when_played: playing_minigame_intro_riff
+  we_have_a_river: #triggered from mini-game to start longer riff once a river has been hit.
+    music:
+      sound_loop_set: bug_game_riff
+      action: play
+      timing: loop_end
+  mode_hades_mini_game_stopped:
+    music:
+      sound_loop_set: base_running
+      action: play
+      timing: now
+      fade_in: 1
+#  enter_hades_from_relay_player:
+#    music:
+#      action: stop
+#      timing: now
+#      fade_out: 1s
+  mode_hades_bonus_game_will_start:
+    music:
+      action: stop
+      fade_out: 1 #sec
+  mode_hades_bonus_game_started:
+    music:
+      sound_loop_set: bonus_intro
+      action: play
+      timing: now
+      events_when_played: playing_bonusgame_intro_riff
+  playing_bonusgame_intro_riff:
+    music:
+      sound_loop_set: bonus_riff
+      action: play
+      timing: loop_end
+  mode_base_will_stop:
+    music:
+      action: stop
+      fade_out: 2 #sec
+#  extra_ball_not_earned:
+#    music:
+#      sound_loop_set: bonus_game_over
+#      action: play
+#      timing: now
+#      fade_in: 333ms
+#  ball_ending{current_player.ball==3 and current_player.score < 20000}:
+#    music:
+#      sound_loop_set: game_over_without_bonus
+#      action: play
+#      timing: loop_end
+#      fade_in: 333ms

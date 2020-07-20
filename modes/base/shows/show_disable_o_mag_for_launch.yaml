@@ -1,0 +1,5 @@
+#show_version=5
+- duration: 3
+  events: launch_says_disable_olympus_mag 
+- duration: 50ms
+  events: launch_says_enable_olympus_mag

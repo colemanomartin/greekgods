@@ -1,0 +1,11 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_hideyhole:
+      color: FFFFFF
+      fade: 100ms
+- duration: 1
+  lights:
+    l_hideyhole:
+      color: 000010
+      fade: 100ms

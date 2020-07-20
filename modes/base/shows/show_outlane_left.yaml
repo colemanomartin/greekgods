@@ -1,0 +1,50 @@
+#show_version=5
+# https://htmlcolorcodes.com/color-names/
+
+- duration: 1
+  lights:
+    l_left_outlane:
+      color: red
+      fade: 100 ms
+    l_l_outlane_0:
+      color: red
+      fade: 100 ms
+    l_l_outlane_1:
+      color: red
+      fade: 100 ms
+    l_l_outlane_2:
+      color: red
+      fade: 100 ms
+    l_l_outlane_3:
+      color: red
+      fade: 100 ms
+    l_l_outlane_4:
+      color: red
+      fade: 100 ms
+    l_l_outlane_5:
+      color: red
+      fade: 100 ms
+    l_l_outlane_6:
+      color: red
+      fade: 100 ms
+    l_l_outlane_7:
+      color: red
+      fade: 100 ms
+    l_l_outlane_8:
+      color: red
+      fade: 100 ms
+    l_l_outlane_9:
+      color: red
+      fade: 100 ms
+    l_l_outlane_10:
+      color: red
+      fade: 100 ms
+    l_l_outlane_11:
+      color: red
+      fade: 100 ms
+    l_l_outlane_12:
+      color: red
+      fade: 100 ms
+    l_l_outlane_13:
+      color: red
+      fade: 100 ms

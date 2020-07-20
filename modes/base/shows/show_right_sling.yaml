@@ -1,0 +1,6 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_right_sling_prox: FF0000
+    l_right_sling_middle: FF0000
+    l_right_sling_distal: FF0000

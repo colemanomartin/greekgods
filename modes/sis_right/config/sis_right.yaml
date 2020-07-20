@@ -1,0 +1,84 @@
+#config_version=5
+# This mode is meant to be running when field is running and ball is in right sis position.
+#
+# Also It give a double registration to hits to the olympus excitement timer in base. If this mode is not running,
+# the olympus counter still gets hits, just not as many. It also lights up the 2x when hits are made
+# and it lights up the sis arrow if hits are made on the wrong side.
+# Arrow showing direction of diverter shown in this mode.
+# If a collect mystery is pending, it stops counting orbit shots so as not to activate the diverter
+# magnet excessively.  The mag will still fire is orbit shot qualifies magnet before spinner hits
+# threshold.
+# Shows relating to qualifying shot and locking balls are all handled in o_ramp_mb
+mode:
+  priority: 350 # range 100-1M
+  start_events:
+    - mode_field_started{device.switches.s_sis_right.state==1}
+    - field_sis_left_to_right_hit
+  stop_events:
+    - field_sis_right_to_left_hit
+    - mode_field_stopped #kills mode during P and O MB
+
+sequence_shots:
+  sis_right_orbit_counter_clockwise:
+    playfield: earth_pf
+    switch_sequence:
+      - s_posideon_rollover
+      - s_olympus_rollover
+    sequence_timeout: 2s
+  sis_right_orbit_clockwise:
+    playfield: earth_pf
+    switch_sequence:
+      - s_olympus_rollover
+      - s_posideon_rollover
+    sequence_timeout: 2s
+shots:
+  sis_right_olympus_mech:
+    playfield: earth_pf
+    profile: one_state #defigned in base
+    hit_events:
+      #- base_olympus_spinner_hit
+      - base_olympus_right_pop_hit
+      - base_olympus_lower_pop_hit
+      - base_olympus_left_pop_hit
+      - base_hole_proximal_hit
+    enable_events:
+      - mode_sis_right_started
+
+#counters: removed in 2011
+#  sis_right_orbit_loops:
+#    count_events:
+#      - sis_right_orbit_counter_clockwise_hit{mode.mystery.active == False}
+#      - sis_right_orbit_clockwise_hit{mode.mystery.active == False}
+#    reset_on_complete: true
+#    persist_state: false
+#    restart_events: diverter_feed_olympus_mag_deactivating
+#    enable_events:
+#      - mode_sis_right_started
+#    disable_events:
+#      - mode_field_stopped
+#      - mode_sis_right_stopped
+#    events_when_complete: sis_right_says_feed_olympus #used by diverter
+#    count_complete_value: 1
+
+variable_player:
+  sis_left_olympus_mech_hit: #Gives the double scoring
+    score: 400
+  base_olympus_spinner_hit:
+    score: 100
+
+show_player:
+  mode_sis_right_started:
+    show_flash_olympus_gate_triangle:
+      speed: 2
+    show_right_ramp_green:
+      speed: 1
+  sis_right_olympus_mech_hit:
+    show_flash_2x:
+      show_tokens:
+        color: white
+      speed: 2
+      loops: 0
+  field_poseidon_mech_hit: #hitting wrong side
+    show_right_sis_arrow_flash:
+      speed: 2
+      loops: 1

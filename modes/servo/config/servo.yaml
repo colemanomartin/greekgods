@@ -1,0 +1,21 @@
+#config_version=5
+# This mode runs the servo when the one ball game is running. I spun this into its own mode I can stop the servo from running
+# during MB so a sis hit does not pinch a ball on the ramp or trap the ball on a bounce off the post. Servo control is also
+# run by the modes p_ramb_mb and o_ramp_mb.
+mode:
+  priority: 10000 # range 100-1M
+  start_events:
+    - mode_base_started{device.ball_devices.bd_poseidon_ramp.balls<2 and device.ball_devices.bd_olympus_ramp.balls<2}
+    - multiball_poseidon_ramp_ended
+    - multiball_olympus_ramp_ended
+  stop_events:
+    - multiball_lock_poseidon_lock_full #Allow p_ramp_mb mode to controll servo until MB done
+    - multiball_lock_olympus_lock_full #Allow p_ramp_mb mode to controll servo until MB done
+
+event_player:
+  #These should be handled in the sis lat and medial modes or possibly field
+  mode_servo_started{device.switches.s_sis_left.state==1}: ramp_servo_divert_left #divert_left
+  mode_servo_started{device.switches.s_sis_right.state==1}: ramp_servo_divert_right #divert_right
+  #This might be better dealt with using a diverter construct http://docs.missionpinball.org/en/dev/mechs/diverters/servo_as_diverter.html
+  base_sis_left_arrived_hit: ramp_servo_divert_left #divert_left
+  base_sis_right_arrived_hit: ramp_servo_divert_right #divert_right

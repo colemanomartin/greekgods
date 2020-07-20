@@ -1,0 +1,83 @@
+#config_version=5
+#This is the mode for generating the triangular light sweep of the scoop eject. It uses
+#display_light_player and sends a kivi output to the playfield lights
+#After the triangle sweep animation is complete it issues the event triangle_sweep_complete
+#which ends the mode, shuts down the display_light_player and causes the scoop to eject the ball.
+#http://docs.missionpinball.org/en/latest/config_players/display_light_player.html?highlight=as%20display
+#    width: 508
+#    height: 1190
+#Above 1000 or 84% is BB
+#Below 980 upper apron
+#Below 920 orbit
+mode:
+  priority: 2000
+  start_events:
+#    - balldevice_bd_scoop_ball_eject_attempt Starting from here crashes mode because AssertionError: Target <playfield.earth_pf> not ready
+#    - ball_waiting_to_eject_from_scoop
+    - ball_waiting_to_eject_from_scoop
+  stop_events:
+    - triangle_sweep_complete
+
+
+display_light_player:
+  mode_scoop_eject_display_started:
+    led_matrix:
+      action: play
+      lights: insert, gi #All lights
+  mode_scoop_eject_display_ending:
+    led_matrix:
+      action: stop
+      lights: insert, gi #All lights
+#  mode_display_stopping:
+#    action: stop
+
+slide_player:
+  mode_scoop_eject_display_started:
+    blank_transparent:
+      target: led_matrix
+      background_color: 00000000 #Background with no opacity required
+      widgets:
+      - type: quad
+        points: 0, 200, 0,900, 508,900,  508,0
+        color: red
+        opacity: 0
+        expire: 5s
+
+widget_player:
+  slide_blank_transparent_active:
+    triangle_scoop_sweep:
+      target: led_matrix
+widgets:
+  triangle_scoop_sweep:
+  - type: triangle
+    color: white
+    points: 254,700,  0,1290, 508,1290 #254,600,  0,1290, 508,1290 ##289,618,  137,1000,  442,1000 #57%,52%,  27%,84%,  87%,84%
+    anchor_x: center
+    anchor_y: bottom
+    rotation: 0
+    z: 1
+    expire: 0.5s
+    events_when_removed: triangle_sweep_complete
+    animations:
+      add_to_slide:
+        - property: points
+          value: 0, -1200, 0,-1290, 0,-1290
+          relative: true
+          duration: 0.5s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+        - property: opacity
+          value: 0.6
+          relative: false
+          duration: 0.5s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+          timing: with_previous
+  quad_test:
+  - type: quad
+    points: 300, 100, 350, 200, 500, 150, 450, 50
+    color: cornflowerblue
+    animations:
+      add_to_slide:
+        - property: points
+          value: 50, -50, -50, 50, 50, -50, -50, 50
+          duration: 1.5
+          relative: true

@@ -1,0 +1,1809 @@
+#show_version=5
+#  aa
+# f  b
+#  gg
+# e  c
+#  dd
+#
+- duration: 1
+  lights:
+# i =  99
+    l_tens_a: 00FF80
+    l_tens_f: 00FF80
+    l_tens_b: 00FF80
+    l_tens_g: 00FF80
+    l_tens_e: 000000
+    l_tens_c: 00FF80
+    l_tens_d: 000000
+    l_ones_a: 00FF80
+    l_ones_f: 00FF80
+    l_ones_b: 00FF80
+    l_ones_g: 00FF80
+    l_ones_e: 000000
+    l_ones_c: 00FF80
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  98
+    l_tens_a: 00FF80
+    l_tens_f: 00FF80
+    l_tens_b: 00FF80
+    l_tens_g: 00FF80
+    l_tens_e: 000000
+    l_tens_c: 00FF80
+    l_tens_d: 000000
+    l_ones_a: 00FF80
+    l_ones_f: 00FF80
+    l_ones_b: 00FF80
+    l_ones_g: 00FF80
+    l_ones_e: 00FF80
+    l_ones_c: 00FF80
+    l_ones_d: 00FF80
+- duration: 1
+  lights:
+# i =  97
+    l_tens_a: 00FF80
+    l_tens_f: 00FF80
+    l_tens_b: 00FF80
+    l_tens_g: 00FF80
+    l_tens_e: 000000
+    l_tens_c: 00FF80
+    l_tens_d: 000000
+    l_ones_a: 00FF80
+    l_ones_f: 000000
+    l_ones_b: 00FF80
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 00FF80
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  96
+    l_tens_a: 00FF80
+    l_tens_f: 00FF80
+    l_tens_b: 00FF80
+    l_tens_g: 00FF80
+    l_tens_e: 000000
+    l_tens_c: 00FF80
+    l_tens_d: 000000
+    l_ones_a: 00FF80
+    l_ones_f: 00FF80
+    l_ones_b: 000000
+    l_ones_g: 00FF80
+    l_ones_e: 00FF80
+    l_ones_c: 00FF80
+    l_ones_d: 00FF80
+- duration: 1
+  lights:
+# i =  95
+    l_tens_a: 00FF80
+    l_tens_f: 00FF80
+    l_tens_b: 00FF80
+    l_tens_g: 00FF80
+    l_tens_e: 000000
+    l_tens_c: 00FF80
+    l_tens_d: 000000
+    l_ones_a: 00FF80
+    l_ones_f: 00FF80
+    l_ones_b: 000000
+    l_ones_g: 00FF80
+    l_ones_e: 000000
+    l_ones_c: 00FF80
+    l_ones_d: 00FF80
+- duration: 1
+  lights:
+# i =  94
+    l_tens_a: 00FF80
+    l_tens_f: 00FF80
+    l_tens_b: 00FF80
+    l_tens_g: 00FF80
+    l_tens_e: 000000
+    l_tens_c: 00FF80
+    l_tens_d: 000000
+    l_ones_a: 000000
+    l_ones_f: 00FF80
+    l_ones_b: 00FF80
+    l_ones_g: 00FF80
+    l_ones_e: 000000
+    l_ones_c: 00FF80
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  93
+    l_tens_a: 00FF80
+    l_tens_f: 00FF80
+    l_tens_b: 00FF80
+    l_tens_g: 00FF80
+    l_tens_e: 000000
+    l_tens_c: 00FF80
+    l_tens_d: 000000
+    l_ones_a: 00FF80
+    l_ones_f: 000000
+    l_ones_b: 00FF80
+    l_ones_g: 00FF80
+    l_ones_e: 000000
+    l_ones_c: 00FF80
+    l_ones_d: 00FF80
+- duration: 1
+  lights:
+# i =  92
+    l_tens_a: 00FF80
+    l_tens_f: 00FF80
+    l_tens_b: 00FF80
+    l_tens_g: 00FF80
+    l_tens_e: 000000
+    l_tens_c: 00FF80
+    l_tens_d: 000000
+    l_ones_a: 00FF80
+    l_ones_f: 000000
+    l_ones_b: 00FF80
+    l_ones_g: 00FF80
+    l_ones_e: 00FF80
+    l_ones_c: 000000
+    l_ones_d: 00FF80
+- duration: 1
+  lights:
+# i =  91
+    l_tens_a: 00FF80
+    l_tens_f: 00FF80
+    l_tens_b: 00FF80
+    l_tens_g: 00FF80
+    l_tens_e: 000000
+    l_tens_c: 00FF80
+    l_tens_d: 000000
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: 00FF80
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 00FF80
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  90
+    l_tens_a: 00FF80
+    l_tens_f: 00FF80
+    l_tens_b: 00FF80
+    l_tens_g: 00FF80
+    l_tens_e: 000000
+    l_tens_c: 00FF80
+    l_tens_d: 000000
+    l_ones_a: 00FF80
+    l_ones_f: 00FF80
+    l_ones_b: 00FF80
+    l_ones_g: 000000
+    l_ones_e: 00FF80
+    l_ones_c: 00FF80
+    l_ones_d: 00FF80
+- duration: 1
+  lights:
+# i =  89
+    l_tens_a: 00FF40
+    l_tens_f: 00FF40
+    l_tens_b: 00FF40
+    l_tens_g: 00FF40
+    l_tens_e: 00FF40
+    l_tens_c: 00FF40
+    l_tens_d: 00FF40
+    l_ones_a: 00FF40
+    l_ones_f: 00FF40
+    l_ones_b: 00FF40
+    l_ones_g: 00FF40
+    l_ones_e: 000000
+    l_ones_c: 00FF40
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  88
+    l_tens_a: 00FF40
+    l_tens_f: 00FF40
+    l_tens_b: 00FF40
+    l_tens_g: 00FF40
+    l_tens_e: 00FF40
+    l_tens_c: 00FF40
+    l_tens_d: 00FF40
+    l_ones_a: 00FF40
+    l_ones_f: 00FF40
+    l_ones_b: 00FF40
+    l_ones_g: 00FF40
+    l_ones_e: 00FF40
+    l_ones_c: 00FF40
+    l_ones_d: 00FF40
+- duration: 1
+  lights:
+# i =  87
+    l_tens_a: 00FF40
+    l_tens_f: 00FF40
+    l_tens_b: 00FF40
+    l_tens_g: 00FF40
+    l_tens_e: 00FF40
+    l_tens_c: 00FF40
+    l_tens_d: 00FF40
+    l_ones_a: 00FF40
+    l_ones_f: 000000
+    l_ones_b: 00FF40
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 00FF40
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  86
+    l_tens_a: 00FF40
+    l_tens_f: 00FF40
+    l_tens_b: 00FF40
+    l_tens_g: 00FF40
+    l_tens_e: 00FF40
+    l_tens_c: 00FF40
+    l_tens_d: 00FF40
+    l_ones_a: 00FF40
+    l_ones_f: 00FF40
+    l_ones_b: 000000
+    l_ones_g: 00FF40
+    l_ones_e: 00FF40
+    l_ones_c: 00FF40
+    l_ones_d: 00FF40
+- duration: 1
+  lights:
+# i =  85
+    l_tens_a: 00FF40
+    l_tens_f: 00FF40
+    l_tens_b: 00FF40
+    l_tens_g: 00FF40
+    l_tens_e: 00FF40
+    l_tens_c: 00FF40
+    l_tens_d: 00FF40
+    l_ones_a: 00FF40
+    l_ones_f: 00FF40
+    l_ones_b: 000000
+    l_ones_g: 00FF40
+    l_ones_e: 000000
+    l_ones_c: 00FF40
+    l_ones_d: 00FF40
+- duration: 1
+  lights:
+# i =  84
+    l_tens_a: 00FF40
+    l_tens_f: 00FF40
+    l_tens_b: 00FF40
+    l_tens_g: 00FF40
+    l_tens_e: 00FF40
+    l_tens_c: 00FF40
+    l_tens_d: 00FF40
+    l_ones_a: 000000
+    l_ones_f: 00FF40
+    l_ones_b: 00FF40
+    l_ones_g: 00FF40
+    l_ones_e: 000000
+    l_ones_c: 00FF40
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  83
+    l_tens_a: 00FF40
+    l_tens_f: 00FF40
+    l_tens_b: 00FF40
+    l_tens_g: 00FF40
+    l_tens_e: 00FF40
+    l_tens_c: 00FF40
+    l_tens_d: 00FF40
+    l_ones_a: 00FF40
+    l_ones_f: 000000
+    l_ones_b: 00FF40
+    l_ones_g: 00FF40
+    l_ones_e: 000000
+    l_ones_c: 00FF40
+    l_ones_d: 00FF40
+- duration: 1
+  lights:
+# i =  82
+    l_tens_a: 00FF40
+    l_tens_f: 00FF40
+    l_tens_b: 00FF40
+    l_tens_g: 00FF40
+    l_tens_e: 00FF40
+    l_tens_c: 00FF40
+    l_tens_d: 00FF40
+    l_ones_a: 00FF40
+    l_ones_f: 000000
+    l_ones_b: 00FF40
+    l_ones_g: 00FF40
+    l_ones_e: 00FF40
+    l_ones_c: 000000
+    l_ones_d: 00FF40
+- duration: 1
+  lights:
+# i =  81
+    l_tens_a: 00FF40
+    l_tens_f: 00FF40
+    l_tens_b: 00FF40
+    l_tens_g: 00FF40
+    l_tens_e: 00FF40
+    l_tens_c: 00FF40
+    l_tens_d: 00FF40
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: 00FF40
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 00FF40
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  80
+    l_tens_a: 00FF40
+    l_tens_f: 00FF40
+    l_tens_b: 00FF40
+    l_tens_g: 00FF40
+    l_tens_e: 00FF40
+    l_tens_c: 00FF40
+    l_tens_d: 00FF40
+    l_ones_a: 00FF40
+    l_ones_f: 00FF40
+    l_ones_b: 00FF40
+    l_ones_g: 000000
+    l_ones_e: 00FF40
+    l_ones_c: 00FF40
+    l_ones_d: 00FF40
+- duration: 1
+  lights:
+# i =  79
+    l_tens_a: 00FF00
+    l_tens_f: 000000
+    l_tens_b: 00FF00
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 00FF00
+    l_tens_d: 000000
+    l_ones_a: 00FF00
+    l_ones_f: 00FF00
+    l_ones_b: 00FF00
+    l_ones_g: 00FF00
+    l_ones_e: 000000
+    l_ones_c: 00FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  78
+    l_tens_a: 00FF00
+    l_tens_f: 000000
+    l_tens_b: 00FF00
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 00FF00
+    l_tens_d: 000000
+    l_ones_a: 00FF00
+    l_ones_f: 00FF00
+    l_ones_b: 00FF00
+    l_ones_g: 00FF00
+    l_ones_e: 00FF00
+    l_ones_c: 00FF00
+    l_ones_d: 00FF00
+- duration: 1
+  lights:
+# i =  77
+    l_tens_a: 00FF00
+    l_tens_f: 000000
+    l_tens_b: 00FF00
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 00FF00
+    l_tens_d: 000000
+    l_ones_a: 00FF00
+    l_ones_f: 000000
+    l_ones_b: 00FF00
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 00FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  76
+    l_tens_a: 00FF00
+    l_tens_f: 000000
+    l_tens_b: 00FF00
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 00FF00
+    l_tens_d: 000000
+    l_ones_a: 00FF00
+    l_ones_f: 00FF00
+    l_ones_b: 000000
+    l_ones_g: 00FF00
+    l_ones_e: 00FF00
+    l_ones_c: 00FF00
+    l_ones_d: 00FF00
+- duration: 1
+  lights:
+# i =  75
+    l_tens_a: 00FF00
+    l_tens_f: 000000
+    l_tens_b: 00FF00
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 00FF00
+    l_tens_d: 000000
+    l_ones_a: 00FF00
+    l_ones_f: 00FF00
+    l_ones_b: 000000
+    l_ones_g: 00FF00
+    l_ones_e: 000000
+    l_ones_c: 00FF00
+    l_ones_d: 00FF00
+- duration: 1
+  lights:
+# i =  74
+    l_tens_a: 00FF00
+    l_tens_f: 000000
+    l_tens_b: 00FF00
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 00FF00
+    l_tens_d: 000000
+    l_ones_a: 000000
+    l_ones_f: 00FF00
+    l_ones_b: 00FF00
+    l_ones_g: 00FF00
+    l_ones_e: 000000
+    l_ones_c: 00FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  73
+    l_tens_a: 00FF00
+    l_tens_f: 000000
+    l_tens_b: 00FF00
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 00FF00
+    l_tens_d: 000000
+    l_ones_a: 00FF00
+    l_ones_f: 000000
+    l_ones_b: 00FF00
+    l_ones_g: 00FF00
+    l_ones_e: 000000
+    l_ones_c: 00FF00
+    l_ones_d: 00FF00
+- duration: 1
+  lights:
+# i =  72
+    l_tens_a: 00FF00
+    l_tens_f: 000000
+    l_tens_b: 00FF00
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 00FF00
+    l_tens_d: 000000
+    l_ones_a: 00FF00
+    l_ones_f: 000000
+    l_ones_b: 00FF00
+    l_ones_g: 00FF00
+    l_ones_e: 00FF00
+    l_ones_c: 000000
+    l_ones_d: 00FF00
+- duration: 1
+  lights:
+# i =  71
+    l_tens_a: 00FF00
+    l_tens_f: 000000
+    l_tens_b: 00FF00
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 00FF00
+    l_tens_d: 000000
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: 00FF00
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 00FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  70
+    l_tens_a: 00FF00
+    l_tens_f: 000000
+    l_tens_b: 00FF00
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 00FF00
+    l_tens_d: 000000
+    l_ones_a: 00FF00
+    l_ones_f: 00FF00
+    l_ones_b: 00FF00
+    l_ones_g: 000000
+    l_ones_e: 00FF00
+    l_ones_c: 00FF00
+    l_ones_d: 00FF00
+- duration: 1
+  lights:
+# i =  69
+    l_tens_a: 40FF00
+    l_tens_f: 40FF00
+    l_tens_b: 000000
+    l_tens_g: 40FF00
+    l_tens_e: 40FF00
+    l_tens_c: 40FF00
+    l_tens_d: 40FF00
+    l_ones_a: 40FF00
+    l_ones_f: 40FF00
+    l_ones_b: 40FF00
+    l_ones_g: 40FF00
+    l_ones_e: 000000
+    l_ones_c: 40FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  68
+    l_tens_a: 40FF00
+    l_tens_f: 40FF00
+    l_tens_b: 000000
+    l_tens_g: 40FF00
+    l_tens_e: 40FF00
+    l_tens_c: 40FF00
+    l_tens_d: 40FF00
+    l_ones_a: 40FF00
+    l_ones_f: 40FF00
+    l_ones_b: 40FF00
+    l_ones_g: 40FF00
+    l_ones_e: 40FF00
+    l_ones_c: 40FF00
+    l_ones_d: 40FF00
+- duration: 1
+  lights:
+# i =  67
+    l_tens_a: 40FF00
+    l_tens_f: 40FF00
+    l_tens_b: 000000
+    l_tens_g: 40FF00
+    l_tens_e: 40FF00
+    l_tens_c: 40FF00
+    l_tens_d: 40FF00
+    l_ones_a: 40FF00
+    l_ones_f: 000000
+    l_ones_b: 40FF00
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 40FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  66
+    l_tens_a: 40FF00
+    l_tens_f: 40FF00
+    l_tens_b: 000000
+    l_tens_g: 40FF00
+    l_tens_e: 40FF00
+    l_tens_c: 40FF00
+    l_tens_d: 40FF00
+    l_ones_a: 40FF00
+    l_ones_f: 40FF00
+    l_ones_b: 000000
+    l_ones_g: 40FF00
+    l_ones_e: 40FF00
+    l_ones_c: 40FF00
+    l_ones_d: 40FF00
+- duration: 1
+  lights:
+# i =  65
+    l_tens_a: 40FF00
+    l_tens_f: 40FF00
+    l_tens_b: 000000
+    l_tens_g: 40FF00
+    l_tens_e: 40FF00
+    l_tens_c: 40FF00
+    l_tens_d: 40FF00
+    l_ones_a: 40FF00
+    l_ones_f: 40FF00
+    l_ones_b: 000000
+    l_ones_g: 40FF00
+    l_ones_e: 000000
+    l_ones_c: 40FF00
+    l_ones_d: 40FF00
+- duration: 1
+  lights:
+# i =  64
+    l_tens_a: 40FF00
+    l_tens_f: 40FF00
+    l_tens_b: 000000
+    l_tens_g: 40FF00
+    l_tens_e: 40FF00
+    l_tens_c: 40FF00
+    l_tens_d: 40FF00
+    l_ones_a: 000000
+    l_ones_f: 40FF00
+    l_ones_b: 40FF00
+    l_ones_g: 40FF00
+    l_ones_e: 000000
+    l_ones_c: 40FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  63
+    l_tens_a: 40FF00
+    l_tens_f: 40FF00
+    l_tens_b: 000000
+    l_tens_g: 40FF00
+    l_tens_e: 40FF00
+    l_tens_c: 40FF00
+    l_tens_d: 40FF00
+    l_ones_a: 40FF00
+    l_ones_f: 000000
+    l_ones_b: 40FF00
+    l_ones_g: 40FF00
+    l_ones_e: 000000
+    l_ones_c: 40FF00
+    l_ones_d: 40FF00
+- duration: 1
+  lights:
+# i =  62
+    l_tens_a: 40FF00
+    l_tens_f: 40FF00
+    l_tens_b: 000000
+    l_tens_g: 40FF00
+    l_tens_e: 40FF00
+    l_tens_c: 40FF00
+    l_tens_d: 40FF00
+    l_ones_a: 40FF00
+    l_ones_f: 000000
+    l_ones_b: 40FF00
+    l_ones_g: 40FF00
+    l_ones_e: 40FF00
+    l_ones_c: 000000
+    l_ones_d: 40FF00
+- duration: 1
+  lights:
+# i =  61
+    l_tens_a: 40FF00
+    l_tens_f: 40FF00
+    l_tens_b: 000000
+    l_tens_g: 40FF00
+    l_tens_e: 40FF00
+    l_tens_c: 40FF00
+    l_tens_d: 40FF00
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: 40FF00
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 40FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  60
+    l_tens_a: 40FF00
+    l_tens_f: 40FF00
+    l_tens_b: 000000
+    l_tens_g: 40FF00
+    l_tens_e: 40FF00
+    l_tens_c: 40FF00
+    l_tens_d: 40FF00
+    l_ones_a: 40FF00
+    l_ones_f: 40FF00
+    l_ones_b: 40FF00
+    l_ones_g: 000000
+    l_ones_e: 40FF00
+    l_ones_c: 40FF00
+    l_ones_d: 40FF00
+- duration: 1
+  lights:
+# i =  59
+    l_tens_a: 80FF00
+    l_tens_f: 80FF00
+    l_tens_b: 000000
+    l_tens_g: 80FF00
+    l_tens_e: 000000
+    l_tens_c: 80FF00
+    l_tens_d: 80FF00
+    l_ones_a: 80FF00
+    l_ones_f: 80FF00
+    l_ones_b: 80FF00
+    l_ones_g: 80FF00
+    l_ones_e: 000000
+    l_ones_c: 80FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  58
+    l_tens_a: 80FF00
+    l_tens_f: 80FF00
+    l_tens_b: 000000
+    l_tens_g: 80FF00
+    l_tens_e: 000000
+    l_tens_c: 80FF00
+    l_tens_d: 80FF00
+    l_ones_a: 80FF00
+    l_ones_f: 80FF00
+    l_ones_b: 80FF00
+    l_ones_g: 80FF00
+    l_ones_e: 80FF00
+    l_ones_c: 80FF00
+    l_ones_d: 80FF00
+- duration: 1
+  lights:
+# i =  57
+    l_tens_a: 80FF00
+    l_tens_f: 80FF00
+    l_tens_b: 000000
+    l_tens_g: 80FF00
+    l_tens_e: 000000
+    l_tens_c: 80FF00
+    l_tens_d: 80FF00
+    l_ones_a: 80FF00
+    l_ones_f: 000000
+    l_ones_b: 80FF00
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 80FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  56
+    l_tens_a: 80FF00
+    l_tens_f: 80FF00
+    l_tens_b: 000000
+    l_tens_g: 80FF00
+    l_tens_e: 000000
+    l_tens_c: 80FF00
+    l_tens_d: 80FF00
+    l_ones_a: 80FF00
+    l_ones_f: 80FF00
+    l_ones_b: 000000
+    l_ones_g: 80FF00
+    l_ones_e: 80FF00
+    l_ones_c: 80FF00
+    l_ones_d: 80FF00
+- duration: 1
+  lights:
+# i =  55
+    l_tens_a: 80FF00
+    l_tens_f: 80FF00
+    l_tens_b: 000000
+    l_tens_g: 80FF00
+    l_tens_e: 000000
+    l_tens_c: 80FF00
+    l_tens_d: 80FF00
+    l_ones_a: 80FF00
+    l_ones_f: 80FF00
+    l_ones_b: 000000
+    l_ones_g: 80FF00
+    l_ones_e: 000000
+    l_ones_c: 80FF00
+    l_ones_d: 80FF00
+- duration: 1
+  lights:
+# i =  54
+    l_tens_a: 80FF00
+    l_tens_f: 80FF00
+    l_tens_b: 000000
+    l_tens_g: 80FF00
+    l_tens_e: 000000
+    l_tens_c: 80FF00
+    l_tens_d: 80FF00
+    l_ones_a: 000000
+    l_ones_f: 80FF00
+    l_ones_b: 80FF00
+    l_ones_g: 80FF00
+    l_ones_e: 000000
+    l_ones_c: 80FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  53
+    l_tens_a: 80FF00
+    l_tens_f: 80FF00
+    l_tens_b: 000000
+    l_tens_g: 80FF00
+    l_tens_e: 000000
+    l_tens_c: 80FF00
+    l_tens_d: 80FF00
+    l_ones_a: 80FF00
+    l_ones_f: 000000
+    l_ones_b: 80FF00
+    l_ones_g: 80FF00
+    l_ones_e: 000000
+    l_ones_c: 80FF00
+    l_ones_d: 80FF00
+- duration: 1
+  lights:
+# i =  52
+    l_tens_a: 80FF00
+    l_tens_f: 80FF00
+    l_tens_b: 000000
+    l_tens_g: 80FF00
+    l_tens_e: 000000
+    l_tens_c: 80FF00
+    l_tens_d: 80FF00
+    l_ones_a: 80FF00
+    l_ones_f: 000000
+    l_ones_b: 80FF00
+    l_ones_g: 80FF00
+    l_ones_e: 80FF00
+    l_ones_c: 000000
+    l_ones_d: 80FF00
+- duration: 1
+  lights:
+# i =  51
+    l_tens_a: 80FF00
+    l_tens_f: 80FF00
+    l_tens_b: 000000
+    l_tens_g: 80FF00
+    l_tens_e: 000000
+    l_tens_c: 80FF00
+    l_tens_d: 80FF00
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: 80FF00
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 80FF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  50
+    l_tens_a: 80FF00
+    l_tens_f: 80FF00
+    l_tens_b: 000000
+    l_tens_g: 80FF00
+    l_tens_e: 000000
+    l_tens_c: 80FF00
+    l_tens_d: 80FF00
+    l_ones_a: 80FF00
+    l_ones_f: 80FF00
+    l_ones_b: 80FF00
+    l_ones_g: 000000
+    l_ones_e: 80FF00
+    l_ones_c: 80FF00
+    l_ones_d: 80FF00
+- duration: 1
+  lights:
+# i =  49
+    l_tens_a: 000000
+    l_tens_f: FFFF00
+    l_tens_b: FFFF00
+    l_tens_g: FFFF00
+    l_tens_e: 000000
+    l_tens_c: FFFF00
+    l_tens_d: 000000
+    l_ones_a: FFFF00
+    l_ones_f: FFFF00
+    l_ones_b: FFFF00
+    l_ones_g: FFFF00
+    l_ones_e: 000000
+    l_ones_c: FFFF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  48
+    l_tens_a: 000000
+    l_tens_f: FFFF00
+    l_tens_b: FFFF00
+    l_tens_g: FFFF00
+    l_tens_e: 000000
+    l_tens_c: FFFF00
+    l_tens_d: 000000
+    l_ones_a: FFFF00
+    l_ones_f: FFFF00
+    l_ones_b: FFFF00
+    l_ones_g: FFFF00
+    l_ones_e: FFFF00
+    l_ones_c: FFFF00
+    l_ones_d: FFFF00
+- duration: 1
+  lights:
+# i =  47
+    l_tens_a: 000000
+    l_tens_f: FFFF00
+    l_tens_b: FFFF00
+    l_tens_g: FFFF00
+    l_tens_e: 000000
+    l_tens_c: FFFF00
+    l_tens_d: 000000
+    l_ones_a: FFFF00
+    l_ones_f: 000000
+    l_ones_b: FFFF00
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: FFFF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  46
+    l_tens_a: 000000
+    l_tens_f: FFFF00
+    l_tens_b: FFFF00
+    l_tens_g: FFFF00
+    l_tens_e: 000000
+    l_tens_c: FFFF00
+    l_tens_d: 000000
+    l_ones_a: FFFF00
+    l_ones_f: FFFF00
+    l_ones_b: 000000
+    l_ones_g: FFFF00
+    l_ones_e: FFFF00
+    l_ones_c: FFFF00
+    l_ones_d: FFFF00
+- duration: 1
+  lights:
+# i =  45
+    l_tens_a: 000000
+    l_tens_f: FFFF00
+    l_tens_b: FFFF00
+    l_tens_g: FFFF00
+    l_tens_e: 000000
+    l_tens_c: FFFF00
+    l_tens_d: 000000
+    l_ones_a: FFFF00
+    l_ones_f: FFFF00
+    l_ones_b: 000000
+    l_ones_g: FFFF00
+    l_ones_e: 000000
+    l_ones_c: FFFF00
+    l_ones_d: FFFF00
+- duration: 1
+  lights:
+# i =  44
+    l_tens_a: 000000
+    l_tens_f: FFFF00
+    l_tens_b: FFFF00
+    l_tens_g: FFFF00
+    l_tens_e: 000000
+    l_tens_c: FFFF00
+    l_tens_d: 000000
+    l_ones_a: 000000
+    l_ones_f: FFFF00
+    l_ones_b: FFFF00
+    l_ones_g: FFFF00
+    l_ones_e: 000000
+    l_ones_c: FFFF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  43
+    l_tens_a: 000000
+    l_tens_f: FFFF00
+    l_tens_b: FFFF00
+    l_tens_g: FFFF00
+    l_tens_e: 000000
+    l_tens_c: FFFF00
+    l_tens_d: 000000
+    l_ones_a: FFFF00
+    l_ones_f: 000000
+    l_ones_b: FFFF00
+    l_ones_g: FFFF00
+    l_ones_e: 000000
+    l_ones_c: FFFF00
+    l_ones_d: FFFF00
+- duration: 1
+  lights:
+# i =  42
+    l_tens_a: 000000
+    l_tens_f: FFFF00
+    l_tens_b: FFFF00
+    l_tens_g: FFFF00
+    l_tens_e: 000000
+    l_tens_c: FFFF00
+    l_tens_d: 000000
+    l_ones_a: FFFF00
+    l_ones_f: 000000
+    l_ones_b: FFFF00
+    l_ones_g: FFFF00
+    l_ones_e: FFFF00
+    l_ones_c: 000000
+    l_ones_d: FFFF00
+- duration: 1
+  lights:
+# i =  41
+    l_tens_a: 000000
+    l_tens_f: FFFF00
+    l_tens_b: FFFF00
+    l_tens_g: FFFF00
+    l_tens_e: 000000
+    l_tens_c: FFFF00
+    l_tens_d: 000000
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: FFFF00
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: FFFF00
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  40
+    l_tens_a: 000000
+    l_tens_f: FFFF00
+    l_tens_b: FFFF00
+    l_tens_g: FFFF00
+    l_tens_e: 000000
+    l_tens_c: FFFF00
+    l_tens_d: 000000
+    l_ones_a: FFFF00
+    l_ones_f: FFFF00
+    l_ones_b: FFFF00
+    l_ones_g: 000000
+    l_ones_e: FFFF00
+    l_ones_c: FFFF00
+    l_ones_d: FFFF00
+- duration: 1
+  lights:
+# i =  39
+    l_tens_a: FFC000
+    l_tens_f: 000000
+    l_tens_b: FFC000
+    l_tens_g: FFC000
+    l_tens_e: 000000
+    l_tens_c: FFC000
+    l_tens_d: FFC000
+    l_ones_a: FFC000
+    l_ones_f: FFC000
+    l_ones_b: FFC000
+    l_ones_g: FFC000
+    l_ones_e: 000000
+    l_ones_c: FFC000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  38
+    l_tens_a: FFC000
+    l_tens_f: 000000
+    l_tens_b: FFC000
+    l_tens_g: FFC000
+    l_tens_e: 000000
+    l_tens_c: FFC000
+    l_tens_d: FFC000
+    l_ones_a: FFC000
+    l_ones_f: FFC000
+    l_ones_b: FFC000
+    l_ones_g: FFC000
+    l_ones_e: FFC000
+    l_ones_c: FFC000
+    l_ones_d: FFC000
+- duration: 1
+  lights:
+# i =  37
+    l_tens_a: FFC000
+    l_tens_f: 000000
+    l_tens_b: FFC000
+    l_tens_g: FFC000
+    l_tens_e: 000000
+    l_tens_c: FFC000
+    l_tens_d: FFC000
+    l_ones_a: FFC000
+    l_ones_f: 000000
+    l_ones_b: FFC000
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: FFC000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  36
+    l_tens_a: FFC000
+    l_tens_f: 000000
+    l_tens_b: FFC000
+    l_tens_g: FFC000
+    l_tens_e: 000000
+    l_tens_c: FFC000
+    l_tens_d: FFC000
+    l_ones_a: FFC000
+    l_ones_f: FFC000
+    l_ones_b: 000000
+    l_ones_g: FFC000
+    l_ones_e: FFC000
+    l_ones_c: FFC000
+    l_ones_d: FFC000
+- duration: 1
+  lights:
+# i =  35
+    l_tens_a: FFC000
+    l_tens_f: 000000
+    l_tens_b: FFC000
+    l_tens_g: FFC000
+    l_tens_e: 000000
+    l_tens_c: FFC000
+    l_tens_d: FFC000
+    l_ones_a: FFC000
+    l_ones_f: FFC000
+    l_ones_b: 000000
+    l_ones_g: FFC000
+    l_ones_e: 000000
+    l_ones_c: FFC000
+    l_ones_d: FFC000
+- duration: 1
+  lights:
+# i =  34
+    l_tens_a: FFC000
+    l_tens_f: 000000
+    l_tens_b: FFC000
+    l_tens_g: FFC000
+    l_tens_e: 000000
+    l_tens_c: FFC000
+    l_tens_d: FFC000
+    l_ones_a: 000000
+    l_ones_f: FFC000
+    l_ones_b: FFC000
+    l_ones_g: FFC000
+    l_ones_e: 000000
+    l_ones_c: FFC000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  33
+    l_tens_a: FFC000
+    l_tens_f: 000000
+    l_tens_b: FFC000
+    l_tens_g: FFC000
+    l_tens_e: 000000
+    l_tens_c: FFC000
+    l_tens_d: FFC000
+    l_ones_a: FFC000
+    l_ones_f: 000000
+    l_ones_b: FFC000
+    l_ones_g: FFC000
+    l_ones_e: 000000
+    l_ones_c: FFC000
+    l_ones_d: FFC000
+- duration: 1
+  lights:
+# i =  32
+    l_tens_a: FFC000
+    l_tens_f: 000000
+    l_tens_b: FFC000
+    l_tens_g: FFC000
+    l_tens_e: 000000
+    l_tens_c: FFC000
+    l_tens_d: FFC000
+    l_ones_a: FFC000
+    l_ones_f: 000000
+    l_ones_b: FFC000
+    l_ones_g: FFC000
+    l_ones_e: FFC000
+    l_ones_c: 000000
+    l_ones_d: FFC000
+- duration: 1
+  lights:
+# i =  31
+    l_tens_a: FFC000
+    l_tens_f: 000000
+    l_tens_b: FFC000
+    l_tens_g: FFC000
+    l_tens_e: 000000
+    l_tens_c: FFC000
+    l_tens_d: FFC000
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: FFC000
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: FFC000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  30
+    l_tens_a: FFC000
+    l_tens_f: 000000
+    l_tens_b: FFC000
+    l_tens_g: FFC000
+    l_tens_e: 000000
+    l_tens_c: FFC000
+    l_tens_d: FFC000
+    l_ones_a: FFC000
+    l_ones_f: FFC000
+    l_ones_b: FFC000
+    l_ones_g: 000000
+    l_ones_e: FFC000
+    l_ones_c: FFC000
+    l_ones_d: FFC000
+- duration: 1
+  lights:
+# i =  29
+    l_tens_a: FF8000
+    l_tens_f: 000000
+    l_tens_b: FF8000
+    l_tens_g: FF8000
+    l_tens_e: FF8000
+    l_tens_c: 000000
+    l_tens_d: FF8000
+    l_ones_a: FF8000
+    l_ones_f: FF8000
+    l_ones_b: FF8000
+    l_ones_g: FF8000
+    l_ones_e: 000000
+    l_ones_c: FF8000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  28
+    l_tens_a: FF8000
+    l_tens_f: 000000
+    l_tens_b: FF8000
+    l_tens_g: FF8000
+    l_tens_e: FF8000
+    l_tens_c: 000000
+    l_tens_d: FF8000
+    l_ones_a: FF8000
+    l_ones_f: FF8000
+    l_ones_b: FF8000
+    l_ones_g: FF8000
+    l_ones_e: FF8000
+    l_ones_c: FF8000
+    l_ones_d: FF8000
+- duration: 1
+  lights:
+# i =  27
+    l_tens_a: FF8000
+    l_tens_f: 000000
+    l_tens_b: FF8000
+    l_tens_g: FF8000
+    l_tens_e: FF8000
+    l_tens_c: 000000
+    l_tens_d: FF8000
+    l_ones_a: FF8000
+    l_ones_f: 000000
+    l_ones_b: FF8000
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: FF8000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  26
+    l_tens_a: FF8000
+    l_tens_f: 000000
+    l_tens_b: FF8000
+    l_tens_g: FF8000
+    l_tens_e: FF8000
+    l_tens_c: 000000
+    l_tens_d: FF8000
+    l_ones_a: FF8000
+    l_ones_f: FF8000
+    l_ones_b: 000000
+    l_ones_g: FF8000
+    l_ones_e: FF8000
+    l_ones_c: FF8000
+    l_ones_d: FF8000
+- duration: 1
+  lights:
+# i =  25
+    l_tens_a: FF8000
+    l_tens_f: 000000
+    l_tens_b: FF8000
+    l_tens_g: FF8000
+    l_tens_e: FF8000
+    l_tens_c: 000000
+    l_tens_d: FF8000
+    l_ones_a: FF8000
+    l_ones_f: FF8000
+    l_ones_b: 000000
+    l_ones_g: FF8000
+    l_ones_e: 000000
+    l_ones_c: FF8000
+    l_ones_d: FF8000
+- duration: 1
+  lights:
+# i =  24
+    l_tens_a: FF8000
+    l_tens_f: 000000
+    l_tens_b: FF8000
+    l_tens_g: FF8000
+    l_tens_e: FF8000
+    l_tens_c: 000000
+    l_tens_d: FF8000
+    l_ones_a: 000000
+    l_ones_f: FF8000
+    l_ones_b: FF8000
+    l_ones_g: FF8000
+    l_ones_e: 000000
+    l_ones_c: FF8000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  23
+    l_tens_a: FF8000
+    l_tens_f: 000000
+    l_tens_b: FF8000
+    l_tens_g: FF8000
+    l_tens_e: FF8000
+    l_tens_c: 000000
+    l_tens_d: FF8000
+    l_ones_a: FF8000
+    l_ones_f: 000000
+    l_ones_b: FF8000
+    l_ones_g: FF8000
+    l_ones_e: 000000
+    l_ones_c: FF8000
+    l_ones_d: FF8000
+- duration: 1
+  lights:
+# i =  22
+    l_tens_a: FF8000
+    l_tens_f: 000000
+    l_tens_b: FF8000
+    l_tens_g: FF8000
+    l_tens_e: FF8000
+    l_tens_c: 000000
+    l_tens_d: FF8000
+    l_ones_a: FF8000
+    l_ones_f: 000000
+    l_ones_b: FF8000
+    l_ones_g: FF8000
+    l_ones_e: FF8000
+    l_ones_c: 000000
+    l_ones_d: FF8000
+- duration: 1
+  lights:
+# i =  21
+    l_tens_a: FF8000
+    l_tens_f: 000000
+    l_tens_b: FF8000
+    l_tens_g: FF8000
+    l_tens_e: FF8000
+    l_tens_c: 000000
+    l_tens_d: FF8000
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: FF8000
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: FF8000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  20
+    l_tens_a: FF8000
+    l_tens_f: 000000
+    l_tens_b: FF8000
+    l_tens_g: FF8000
+    l_tens_e: FF8000
+    l_tens_c: 000000
+    l_tens_d: FF8000
+    l_ones_a: FF8000
+    l_ones_f: FF8000
+    l_ones_b: FF8000
+    l_ones_g: 000000
+    l_ones_e: FF8000
+    l_ones_c: FF8000
+    l_ones_d: FF8000
+- duration: 1
+  lights:
+# i =  19
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: FF4000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: FF4000
+    l_tens_d: 000000
+    l_ones_a: FF4000
+    l_ones_f: FF4000
+    l_ones_b: FF4000
+    l_ones_g: FF4000
+    l_ones_e: 000000
+    l_ones_c: FF4000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  18
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: FF4000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: FF4000
+    l_tens_d: 000000
+    l_ones_a: FF4000
+    l_ones_f: FF4000
+    l_ones_b: FF4000
+    l_ones_g: FF4000
+    l_ones_e: FF4000
+    l_ones_c: FF4000
+    l_ones_d: FF4000
+- duration: 1
+  lights:
+# i =  17
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: FF4000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: FF4000
+    l_tens_d: 000000
+    l_ones_a: FF4000
+    l_ones_f: 000000
+    l_ones_b: FF4000
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: FF4000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  16
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: FF4000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: FF4000
+    l_tens_d: 000000
+    l_ones_a: FF4000
+    l_ones_f: FF4000
+    l_ones_b: 000000
+    l_ones_g: FF4000
+    l_ones_e: FF4000
+    l_ones_c: FF4000
+    l_ones_d: FF4000
+- duration: 1
+  lights:
+# i =  15
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: FF4000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: FF4000
+    l_tens_d: 000000
+    l_ones_a: FF4000
+    l_ones_f: FF4000
+    l_ones_b: 000000
+    l_ones_g: FF4000
+    l_ones_e: 000000
+    l_ones_c: FF4000
+    l_ones_d: FF4000
+- duration: 1
+  lights:
+# i =  14
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: FF4000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: FF4000
+    l_tens_d: 000000
+    l_ones_a: 000000
+    l_ones_f: FF4000
+    l_ones_b: FF4000
+    l_ones_g: FF4000
+    l_ones_e: 000000
+    l_ones_c: FF4000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  13
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: FF4000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: FF4000
+    l_tens_d: 000000
+    l_ones_a: FF4000
+    l_ones_f: 000000
+    l_ones_b: FF4000
+    l_ones_g: FF4000
+    l_ones_e: 000000
+    l_ones_c: FF4000
+    l_ones_d: FF4000
+- duration: 1
+  lights:
+# i =  12
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: FF4000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: FF4000
+    l_tens_d: 000000
+    l_ones_a: FF4000
+    l_ones_f: 000000
+    l_ones_b: FF4000
+    l_ones_g: FF4000
+    l_ones_e: FF4000
+    l_ones_c: 000000
+    l_ones_d: FF4000
+- duration: 1
+  lights:
+# i =  11
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: FF4000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: FF4000
+    l_tens_d: 000000
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: FF4000
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: FF4000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  10
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: FF4000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: FF4000
+    l_tens_d: 000000
+    l_ones_a: FF4000
+    l_ones_f: FF4000
+    l_ones_b: FF4000
+    l_ones_g: 000000
+    l_ones_e: FF4000
+    l_ones_c: FF4000
+    l_ones_d: FF4000
+- duration: 1
+  lights:
+# i =  9
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: FF0000
+    l_ones_f: FF0000
+    l_ones_b: FF0000
+    l_ones_g: FF0000
+    l_ones_e: 000000
+    l_ones_c: FF0000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  8
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: FF0000
+    l_ones_f: FF0000
+    l_ones_b: FF0000
+    l_ones_g: FF0000
+    l_ones_e: FF0000
+    l_ones_c: FF0000
+    l_ones_d: FF0000
+- duration: 1
+  lights:
+# i =  7
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: FF0000
+    l_ones_f: 000000
+    l_ones_b: FF0000
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: FF0000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  6
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: FF0000
+    l_ones_f: FF0000
+    l_ones_b: 000000
+    l_ones_g: FF0000
+    l_ones_e: FF0000
+    l_ones_c: FF0000
+    l_ones_d: FF0000
+- duration: 1
+  lights:
+# i =  5
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: FF0000
+    l_ones_f: FF0000
+    l_ones_b: 000000
+    l_ones_g: FF0000
+    l_ones_e: 000000
+    l_ones_c: FF0000
+    l_ones_d: FF0000
+- duration: 1
+  lights:
+# i =  4
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: 000000
+    l_ones_f: FF0000
+    l_ones_b: FF0000
+    l_ones_g: FF0000
+    l_ones_e: 000000
+    l_ones_c: FF0000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  3
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: FF0000
+    l_ones_f: 000000
+    l_ones_b: FF0000
+    l_ones_g: FF0000
+    l_ones_e: 000000
+    l_ones_c: FF0000
+    l_ones_d: FF0000
+- duration: 1
+  lights:
+# i =  2
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: FF0000
+    l_ones_f: 000000
+    l_ones_b: FF0000
+    l_ones_g: FF0000
+    l_ones_e: FF0000
+    l_ones_c: 000000
+    l_ones_d: FF0000
+- duration: 1
+  lights:
+# i =  1
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: FF0000
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: FF0000
+    l_ones_d: 000000
+- duration: 1
+  lights:
+# i =  0
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: FF0000
+    l_ones_f: FF0000
+    l_ones_b: FF0000
+    l_ones_g: 000000
+    l_ones_e: FF0000
+    l_ones_c: FF0000
+    l_ones_d: FF0000
+- duration: 4
+  lights:
+# timer expired blinks
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: FF0000
+    l_ones_f: FF0000
+    l_ones_b: FF0000
+    l_ones_g: 000000
+    l_ones_e: FF0000
+    l_ones_c: FF0000
+    l_ones_d: FF0000
+- duration: 4
+  lights:
+# timer expired blinks
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: 000000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 000000
+    l_tens_d: 000000
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: 000000
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 000000
+    l_ones_d: 000000
+- duration: 4
+  lights:
+# timer expired blinks
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: FF0000
+    l_ones_f: FF0000
+    l_ones_b: FF0000
+    l_ones_g: 000000
+    l_ones_e: FF0000
+    l_ones_c: FF0000
+    l_ones_d: FF0000
+- duration: 4
+  lights:
+# timer expired blinks
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: 000000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 000000
+    l_tens_d: 000000
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: 000000
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 000000
+    l_ones_d: 000000
+- duration: 4
+  lights:
+# timer expired blinks
+    l_tens_a: FF0000
+    l_tens_f: FF0000
+    l_tens_b: FF0000
+    l_tens_g: 000000
+    l_tens_e: FF0000
+    l_tens_c: FF0000
+    l_tens_d: FF0000
+    l_ones_a: FF0000
+    l_ones_f: FF0000
+    l_ones_b: FF0000
+    l_ones_g: 000000
+    l_ones_e: FF0000
+    l_ones_c: FF0000
+    l_ones_d: FF0000
+- duration: 20
+  lights:
+# timer expired blinks
+    l_tens_a: 000000
+    l_tens_f: 000000
+    l_tens_b: 000000
+    l_tens_g: 000000
+    l_tens_e: 000000
+    l_tens_c: 000000
+    l_tens_d: 000000
+    l_ones_a: 000000
+    l_ones_f: 000000
+    l_ones_b: 000000
+    l_ones_g: 000000
+    l_ones_e: 000000
+    l_ones_c: 000000
+    l_ones_d: 000000

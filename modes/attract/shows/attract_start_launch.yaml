@@ -1,0 +1,123 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+#Show which alternates pulses for start and launch button LEDs
+- duration: 1
+  lights:
+    l_start_button: 00
+    l_launch_button: FF
+- duration: 1
+  lights:
+    l_start_button: 11
+    l_launch_button: EE
+- duration: 1
+  lights:
+    l_start_button: 22
+    l_launch_button: DD
+- duration: 1
+  lights:
+    l_start_button: 33
+    l_launch_button: CC
+- duration: 1
+  lights:
+    l_start_button: 44
+    l_launch_button: BB
+- duration: 1
+  lights:
+    l_start_button: 55
+    l_launch_button: AA
+- duration: 1
+  lights:
+    l_start_button: 66
+    l_launch_button: 99
+- duration: 1
+  lights:
+    l_start_button: 77
+    l_launch_button: 88
+- duration: 1
+  lights:
+    l_start_button: 88
+    l_launch_button: 77
+- duration: 1
+  lights:
+    l_start_button: 99
+    l_launch_button: 66
+- duration: 1
+  lights:
+    l_start_button: AA
+    l_launch_button: 55
+- duration: 1
+  lights:
+    l_start_button: BB
+    l_launch_button: 44
+- duration: 1
+  lights:
+    l_start_button: CC
+    l_launch_button: 33
+- duration: 1
+  lights:
+    l_start_button: DD
+    l_launch_button: 22
+- duration: 1
+  lights:
+    l_start_button: EE
+    l_launch_button: 11
+- duration: 1
+  lights:
+    l_start_button: FF
+    l_launch_button: 00
+- duration: 1
+  lights:
+    l_start_button: EE
+    l_launch_button: 11
+- duration: 1
+  lights:
+    l_start_button: DD
+    l_launch_button: 22
+- duration: 1
+  lights:
+    l_start_button: CC
+    l_launch_button: 33
+- duration: 1
+  lights:
+    l_start_button: BB
+    l_launch_button: 44
+- duration: 1
+  lights:
+    l_start_button: AA
+    l_launch_button: 55
+- duration: 1
+  lights:
+    l_start_button: 99
+    l_launch_button: 66
+- duration: 1
+  lights:
+    l_start_button: 88
+    l_launch_button: 77
+- duration: 1
+  lights:
+    l_start_button: 77
+    l_launch_button: 88
+- duration: 1
+  lights:
+    l_start_button: 66
+    l_launch_button: 99
+- duration: 1
+  lights:
+    l_start_button: 55
+    l_launch_button: AA
+- duration: 1
+  lights:
+    l_start_button: 44
+    l_launch_button: BB
+- duration: 1
+  lights:
+    l_start_button: 33
+    l_launch_button: CC
+- duration: 1
+  lights:
+    l_start_button: 22
+    l_launch_button: DD
+- duration: 1
+  lights:
+    l_start_button: 11
+    l_launch_button: EE

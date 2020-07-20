@@ -1,0 +1,17 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_left_orbit_spinner:
+      color: FFFF00
+      fade: 200ms
+    l_olympus_spinner:
+      color: 444444
+      fade: 200ms
+- duration: 1
+  lights:
+    l_left_orbit_spinner:
+      color: 000000
+      fade: 200ms
+    l_olympus_spinner:
+      color: 000000
+      fade: 200ms

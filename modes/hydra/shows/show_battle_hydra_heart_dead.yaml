@@ -1,0 +1,28 @@
+#show_version=5
+# l_hydra_bottom: l_hydra_7: l_hydra_10: l_hydra_top: l_hydra_2: l_hydra_4: l_hydra_center:
+- duration: 1
+  lights:
+    l_hydra_bottom:
+      color: green
+    l_hydra_7:
+      color: green
+    l_hydra_4:
+      color: green
+    l_hydra_10:
+      color: green
+    l_hydra_2:
+      color: green
+    l_hydra_top:
+      color: green
+    l_hydra_center:
+      color: green
+    orbit:
+      color: ff0000
+    left_ballguide:
+      color: ff0000
+    right_ballguide:
+      color: ff0000
+    pop_strip:
+      color: ff0000
+    spinner_strip:
+      color: ff0000

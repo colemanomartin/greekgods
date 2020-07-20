@@ -1,0 +1,21 @@
+#show_version=5
+#  l_orbit_30: #serial chain led 46 at right edge of olympus magnet
+#  l_orbit_31: #serial chain led 47 at left edge of olympus magnet
+#  l_orbit_44: #serial chain LED 60 at right edge of poseidon magnet
+#  l_orbit_45: #serial chain LED 61 at left edge of poseidon magnet
+- duration: 1
+  lights:
+    l_orbit_30:
+      color: red
+      fade: 200
+    l_orbit_31:
+      color: red
+      fade: 200
+- duration: 1
+  lights:
+    l_orbit_30:
+      color: 000033
+      fade: 200
+    l_orbit_31:
+      color: 000033
+      fade: 200

@@ -1,0 +1,122 @@
+#show_version=5
+# https://htmlcolorcodes.com/color-names/
+- duration: 2
+  lights:
+    l_olympus_lower_pop:
+      color: Steelblue
+    l_olympus_left_pop:
+      color: Lightcyan
+      fade: 995 ms
+    l_olympus_right_pop:
+      color: Lemonchiffon
+      fade: 995 ms
+    l_poseidon_pop:
+      color: Aqua
+      fade: 995 ms
+    l_left_side_pop:
+      color: Goldenrod
+      fade: 995 ms
+    l_zeus_eyes_flasher:
+      color: red
+      fade: 50
+    l_revealed_slingshot_flasher:
+      color: red
+      fade: 950 ms
+    l_jupiter_plastic:
+      color: red
+      fade: 100 ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: Lightblue
+      fade: 995 ms
+    l_olympus_left_pop:
+      color: Lightgreen
+      fade: 995 ms
+    l_olympus_right_pop:
+      color: Tan
+      fade: 995 ms
+    l_poseidon_pop:
+      color: Cadetblue
+      fade: 995 ms
+    l_left_side_pop:
+      color: Cornsilk
+      fade: 995 ms
+    l_zeus_eyes_flasher:
+      color: AAAAAA
+      fade: 50
+    l_revealed_slingshot_flasher:
+      color: green
+      fade: 950 ms
+    l_jupiter_plastic:
+      color: green
+      fade: 100 ms
+- duration: 2
+  lights:
+    l_olympus_lower_pop:
+      color: Royalblue
+      fade: 995 ms
+    l_olympus_left_pop:
+      color: Yellowgreen
+      fade: 995 ms
+    l_olympus_right_pop:
+      color: Lightblue
+      fade: 995 ms
+    l_poseidon_pop:
+      color: Dodgerblue
+      fade: 995 ms
+    l_left_side_pop:
+      color: Yellow
+      fade: 995 ms
+    l_revealed_slingshot_flasher:
+      color: blue
+      fade: 950 ms
+    l_jupiter_plastic:
+      color: blue
+      fade: 100 ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: Navy
+      fade: 995 ms
+    l_olympus_left_pop:
+      color: Moccasin
+      fade: 995 ms
+    l_olympus_right_pop:
+      color: Cornsilk
+      fade: 995 ms
+    l_poseidon_pop:
+      color: Blue
+      fade: 995 ms
+    l_left_side_pop:
+      color: Brown
+      fade: 995 ms
+    l_revealed_slingshot_flasher:
+      color: white
+      fade: 950 ms
+    l_jupiter_plastic:
+      color: white
+      fade: 100 ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: Darkcyan
+      fade: 995 ms
+    l_olympus_left_pop:
+      color: Lavender
+      fade: 995 ms
+    l_olympus_right_pop:
+      color: Sienna
+      fade: 995 ms
+    l_poseidon_pop:
+      color: Midnightblue
+      fade: 995 ms
+    l_left_side_pop:
+      color: Coral
+      fade: 995 ms
+    l_revealed_slingshot_flasher:
+      color: black
+      fade: 950 ms
+    l_jupiter_plastic:
+      color: white
+      fade: 100 ms

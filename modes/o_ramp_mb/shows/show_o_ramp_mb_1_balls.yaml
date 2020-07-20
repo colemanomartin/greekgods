@@ -1,0 +1,124 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+# lock 0 is the upper, 1 is the lower
+
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 000000
+    l_olympus_lock_distal: 000000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 111100
+    l_olympus_lock_distal: 110000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 222200
+    l_olympus_lock_distal: 220000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 333300
+    l_olympus_lock_distal: 330000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 444400
+    l_olympus_lock_distal: 440000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 555500
+    l_olympus_lock_distal: 550000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 666600
+    l_olympus_lock_distal: 660000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 777700
+    l_olympus_lock_distal: 770000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 888800
+    l_olympus_lock_distal: 880000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 999900
+    l_olympus_lock_distal: 990000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: AAAA00
+    l_olympus_lock_distal: AA0000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: BBBB00
+    l_olympus_lock_distal: BB0000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: CCCC00
+    l_olympus_lock_distal: CC0000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: DDDD00
+    l_olympus_lock_distal: DD0000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: EEEE00
+    l_olympus_lock_distal: EE0000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: FFFF00
+    l_olympus_lock_distal: FF0000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: EEEE00
+    l_olympus_lock_distal: EE0000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: DDDD00
+    l_olympus_lock_distal: DD0000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: CCCC00
+    l_olympus_lock_distal: CC0000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: BBBB00
+    l_olympus_lock_distal: BB0000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: AAAA00
+    l_olympus_lock_distal: AA0000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 999900
+    l_olympus_lock_distal: 990000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 888800
+    l_olympus_lock_distal: 880000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 777700
+    l_olympus_lock_distal: 770000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 666600
+    l_olympus_lock_distal: 660000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 555500
+    l_olympus_lock_distal: 550000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 444400
+    l_olympus_lock_distal: 440000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 333300
+    l_olympus_lock_distal: 330000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 222200
+    l_olympus_lock_distal: 220000
+- duration: 1
+  lights:
+    l_olympus_lock_prox: 111100
+    l_olympus_lock_distal: 110000

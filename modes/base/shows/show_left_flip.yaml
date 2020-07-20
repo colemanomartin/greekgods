@@ -1,0 +1,212 @@
+#show_version=5
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: red
+    l_l_inlane_1: red
+    l_l_inlane_2: red
+    l_l_inlane_3: red
+    l_l_inlane_4: green
+    l_l_inlane_5: green
+    l_l_inlane_6: green
+    l_l_inlane_7: green
+    l_l_inlane_8: green
+    l_l_inlane_9: green
+    l_l_inlane_10: green
+    l_l_inlane_11: green
+    l_l_inlane_12: green
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: red
+    l_l_inlane_2: red
+    l_l_inlane_3: red
+    l_l_inlane_4: red
+    l_l_inlane_5: green
+    l_l_inlane_6: green
+    l_l_inlane_7: green
+    l_l_inlane_8: green
+    l_l_inlane_9: green
+    l_l_inlane_10: green
+    l_l_inlane_11: green
+    l_l_inlane_12: green
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: red
+    l_l_inlane_3: red
+    l_l_inlane_4: red
+    l_l_inlane_5: red
+    l_l_inlane_6: green
+    l_l_inlane_7: green
+    l_l_inlane_8: green
+    l_l_inlane_9: green
+    l_l_inlane_10: green
+    l_l_inlane_11: green
+    l_l_inlane_12: green
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: green
+    l_l_inlane_3: red
+    l_l_inlane_4: red
+    l_l_inlane_5: red
+    l_l_inlane_6: red
+    l_l_inlane_7: green
+    l_l_inlane_8: green
+    l_l_inlane_9: green
+    l_l_inlane_10: green
+    l_l_inlane_11: green
+    l_l_inlane_12: green
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: green
+    l_l_inlane_3: green
+    l_l_inlane_4: red
+    l_l_inlane_5: red
+    l_l_inlane_6: red
+    l_l_inlane_7: red
+    l_l_inlane_8: green
+    l_l_inlane_9: green
+    l_l_inlane_10: green
+    l_l_inlane_11: green
+    l_l_inlane_12: green
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: green
+    l_l_inlane_3: green
+    l_l_inlane_4: green
+    l_l_inlane_5: red
+    l_l_inlane_6: red
+    l_l_inlane_7: red
+    l_l_inlane_8: red
+    l_l_inlane_9: green
+    l_l_inlane_10: green
+    l_l_inlane_11: green
+    l_l_inlane_12: green
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: green
+    l_l_inlane_3: green
+    l_l_inlane_4: green
+    l_l_inlane_5: green
+    l_l_inlane_6: red
+    l_l_inlane_7: red
+    l_l_inlane_8: red
+    l_l_inlane_9: red
+    l_l_inlane_10: green
+    l_l_inlane_11: green
+    l_l_inlane_12: green
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: green
+    l_l_inlane_3: green
+    l_l_inlane_4: green
+    l_l_inlane_5: green
+    l_l_inlane_6: green
+    l_l_inlane_7: red
+    l_l_inlane_8: red
+    l_l_inlane_9: red
+    l_l_inlane_10: red
+    l_l_inlane_11: green
+    l_l_inlane_12: green
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: green
+    l_l_inlane_3: green
+    l_l_inlane_4: green
+    l_l_inlane_5: green
+    l_l_inlane_6: green
+    l_l_inlane_7: green
+    l_l_inlane_8: red
+    l_l_inlane_9: red
+    l_l_inlane_10: red
+    l_l_inlane_11: red
+    l_l_inlane_12: green
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: green
+    l_l_inlane_3: green
+    l_l_inlane_4: green
+    l_l_inlane_5: green
+    l_l_inlane_6: green
+    l_l_inlane_7: green
+    l_l_inlane_8: green
+    l_l_inlane_9: red
+    l_l_inlane_10: red
+    l_l_inlane_11: red
+    l_l_inlane_12: red
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: green
+    l_l_inlane_3: green
+    l_l_inlane_4: green
+    l_l_inlane_5: green
+    l_l_inlane_6: green
+    l_l_inlane_7: green
+    l_l_inlane_8: green
+    l_l_inlane_9: green
+    l_l_inlane_10: red
+    l_l_inlane_11: red
+    l_l_inlane_12: red
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: green
+    l_l_inlane_3: green
+    l_l_inlane_4: green
+    l_l_inlane_5: green
+    l_l_inlane_6: green
+    l_l_inlane_7: green
+    l_l_inlane_8: green
+    l_l_inlane_9: green
+    l_l_inlane_10: green
+    l_l_inlane_11: red
+    l_l_inlane_12: red
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: green
+    l_l_inlane_3: green
+    l_l_inlane_4: green
+    l_l_inlane_5: green
+    l_l_inlane_6: green
+    l_l_inlane_7: green
+    l_l_inlane_8: green
+    l_l_inlane_9: green
+    l_l_inlane_10: green
+    l_l_inlane_11: green
+    l_l_inlane_12: red
+- duration: 50 ms
+  lights:
+    l_l_inlane_0: green
+    l_l_inlane_1: green
+    l_l_inlane_2: green
+    l_l_inlane_3: green
+    l_l_inlane_4: green
+    l_l_inlane_5: green
+    l_l_inlane_6: green
+    l_l_inlane_7: green
+    l_l_inlane_8: green
+    l_l_inlane_9: green
+    l_l_inlane_10: green
+    l_l_inlane_11: green
+    l_l_inlane_12: green
+

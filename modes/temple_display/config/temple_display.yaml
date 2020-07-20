@@ -1,0 +1,195 @@
+#config_version=5
+# This mode listens for the state machine in the main config which tracks servo position.
+#Statue moves in accordance with state machine.  Bar graphs behind temple pillars are added here.
+# Text is added to temple from o and o multiball
+# Scoop invited shot banners are added in field and by super spionner mode.
+# Bars 0, temple 2, statue 0 mb message for ramp mb modes 1
+mode:
+  priority: 400 # places it above p and o ramp mb also has to be above field.
+  start_events:
+    - ball_started
+  stop_events:
+
+#timers:
+#  starting_clicker:
+#    start_value: 1
+#    end_value: 0
+#    tick_interval: 100ms
+#    direction: down
+#    control_events:
+#      - action: start
+#        event: woot_left
+#      - action: start
+#        event: woot_right
+
+
+widgets: #http://docs.missionpinball.org/en/dev/displays/widgets/common_settings.html
+  middle:
+    type: text
+    text: State Machine Middle
+    font_size: 70
+    z: 4
+    events_when_added: woot_added_a_middle
+  start:
+    type: text
+    text: State Machine Start
+    font_size: 70
+    z: 4
+    events_when_added: woot_added_a_start
+  left_pointing_statue:
+    type: image
+    image: statue_left
+    x: 384
+    y: 154
+    anchor_x: center
+    anchor_y: bottom
+    z: 0
+  right_pointing_statue:
+    type: image
+    image: statue_right
+    x: 384
+    y: 154
+    anchor_x: center
+    anchor_y: bottom
+    z: 0
+
+widget_player:
+  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "start"}:
+    middle:
+      slide: show_progress_to_ramp_mb
+  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "divert_middle"}:
+    middle:
+      slide: show_progress_to_ramp_mb
+#  mode_temple_display_started{device.state_machines.ramp_flap.state == "divert_left"}:
+#    left_arrow_head:
+#      target: playfield_lcd
+#    left_arrow_line:
+#      target: playfield_lcd
+#  mode_temple_display_started{device.state_machines.ramp_flap.state == "divert_right"}:
+#    right_arrow_head:
+#      target: playfield_lcd
+#    right_arrow_line:
+#      target: playfield_lcd
+
+#  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "divert_left"}:
+#  timer_starting_clicker_complete{device.state_machines.ramp_flap.state == "divert_left"}:
+  woot_left:
+    left_pointing_statue:
+      slide: show_progress_to_ramp_mb
+#  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "divert_right"}:
+#  timer_starting_clicker_complete{device.state_machines.ramp_flap.state == "divert_right"}:
+  woot_right:
+    right_pointing_statue:
+      slide: show_progress_to_ramp_mb
+  ramp_flap_tracking_diverting_left:
+    left_pointing_statue:
+      slide: show_progress_to_ramp_mb
+    right_pointing_statue:
+      slide: show_progress_to_ramp_mb
+      action: remove
+  ramp_flap_tracking_diverting_right:
+    right_pointing_statue:
+      slide: show_progress_to_ramp_mb
+    left_pointing_statue:
+      slide: show_progress_to_ramp_mb
+      action: remove
+  mode_temple_display_will_stop:
+    left_pointing_statue:
+      slide: show_progress_to_ramp_mb
+      action: remove
+    right_pointing_statue:
+      slide: show_progress_to_ramp_mb
+      action: remove
+
+slides: #Eventually move these widgets over to widgets and call individually
+  show_progress_to_ramp_mb:
+#    target: playfield_lcd
+    background_color: black
+    widgets:
+    - type: image
+      image: temple0
+      scale: 1.0
+      z: 2 #ride on top of status bars
+    - type: rectangle
+      x: 56
+      y: 151
+      width: 154
+      height: 1 #536
+      color: blue
+      z: 0 #200
+      anchor_x: left
+      anchor_y: bottom
+      animations:
+        player_p_excitement:
+        - property: height
+          value: (value)
+          duration:  .3s
+    - type: rectangle
+      x: 557
+      y: 151
+      width: 154
+      height: 1 #536
+      color: yellow
+      z: 0 #200
+      anchor_x: left
+      anchor_y: bottom
+      animations:
+        player_o_excitement:
+        - property: height
+          value: (value)
+          duration:  .3s
+#    - type: rectangle
+#      x: 400
+#      y: 300
+#      width: 400
+#      height: 200
+#      corner_radius: 50
+#      corner_segments: 3
+#      color: yellow
+#    - type: image
+#      image: mask_left
+#      scale: 1.02
+#      y: -300
+#      x: -1
+#      anchor_x: left
+#      anchor_y: bottom
+#      rotation: 0
+#      z: 2 #200
+#      animations:
+#        player_p_excitement:
+#        - property: y
+#          value: (value)
+#          duration:  .3s
+#    - type: image
+#      image: mask_right
+#      scale: 1.02
+#      y: -300
+#      x: 768
+#      anchor_x: right
+#      anchor_y: bottom
+#      rotation: 0
+#      z: 3 #201
+#      animations:
+#        player_o_excitement:
+#        - property: y
+#          value: (value)
+#          duration:  .3s
+
+
+slide_player:
+#  mode_field_started:
+  mode_temple_display_started:
+    show_progress_to_ramp_mb:
+      target: playfield_lcd
+  mode_temple_display_stopping:
+    show_progress_to_ramp_mb:
+      target: playfield_lcd
+      action: remove
+event_player:
+  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "divert_left"}: woot_left
+  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "divert_right"}: woot_right
+  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "start"}: woot_start
+  mode_diverter_arrow_started{device.state_machines.ramp_flap.state == "divert_left"}: woot_mode_start_left
+  mode_diverter_arrow_started{device.state_machines.ramp_flap.state == "divert_right"}: woot_mode_start_right
+  mode_diverter_arrow_started{device.state_machines.ramp_flap.state == "start"}: woot_mode_start_start
+  mode_diverter_arrow_started: woot_mode_is_started

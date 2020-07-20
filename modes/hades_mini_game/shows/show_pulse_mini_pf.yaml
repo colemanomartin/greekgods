@@ -1,0 +1,221 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+
+- duration: 1
+  lights:
+    l_backlight_rgb:
+      color: 000000
+      fade: 10ms
+    l_backlight_w:
+      color: 00
+      fade: 10ms
+    l_mouth_d:
+      color: 000000
+      fade: 10ms
+    l_mouth_c:
+      color: 000000
+      fade: 10ms
+    l_mouth_a:
+      color: 000000
+      fade: 10ms
+    l_mouth_b:
+      color: 000000
+      fade: 10ms
+    l_u_left_ss_red: black
+    l_u_right_ss_red: black
+
+- duration: 10
+  lights:
+    l_backlight_rgb:
+      color: ff0000 #000000
+      fade: 1s
+    l_backlight_w:
+      color: 00
+      fade: 1s
+    l_mouth_d:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_c:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_a:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_b:
+      color: ff0000 #000000
+      fade: 1s
+
+- duration: 1
+  lights:
+    l_u_left_ss_red: white
+    l_u_right_ss_red: white
+
+- duration: 1
+  lights:
+    l_backlight_rgb:
+      color: 000000
+      fade: 10ms
+    l_backlight_w:
+      color: 00
+      fade: 10ms
+    l_mouth_d:
+      color: 000000
+      fade: 10ms
+    l_mouth_c:
+      color: 000000
+      fade: 10ms
+    l_mouth_a:
+      color: 000000
+      fade: 10ms
+    l_mouth_b:
+      color: 000000
+      fade: 10ms
+    l_u_left_ss_red: black
+    l_u_right_ss_red: black
+
+- duration: 10
+  lights:
+    l_backlight_rgb:
+      color: ff0000 #000000
+      fade: 1s
+    l_backlight_w:
+      color: 00
+      fade: 1s
+    l_mouth_d:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_c:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_a:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_b:
+      color: ff0000 #000000
+      fade: 1s
+
+- duration: 1
+  lights:
+    l_u_left_ss_red: white
+    l_u_right_ss_red: white
+
+- duration: 1
+  lights:
+    l_backlight_rgb:
+      color: 000000
+      fade: 10ms
+    l_backlight_w:
+      color: 00
+      fade: 10ms
+    l_mouth_d:
+      color: 000000
+      fade: 10ms
+    l_mouth_c:
+      color: 000000
+      fade: 10ms
+    l_mouth_a:
+      color: 000000
+      fade: 10ms
+    l_mouth_b:
+      color: 000000
+      fade: 10ms
+    l_u_left_ss_red: black
+    l_u_right_ss_red: black
+
+- duration: 10
+  lights:
+    l_backlight_rgb:
+      color: ff0000 #000000
+      fade: 1s
+    l_backlight_w:
+      color: 00
+      fade: 1s
+    l_mouth_d:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_c:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_a:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_b:
+      color: ff0000 #000000
+      fade: 1s
+
+- duration: 1
+  lights:
+    l_u_left_ss_red: white
+    l_u_right_ss_red: white
+
+- duration: 1
+  lights:
+    l_backlight_rgb:
+      color: 000000
+      fade: 10ms
+    l_backlight_w:
+      color: 00
+      fade: 10ms
+    l_mouth_d:
+      color: 000000
+      fade: 10ms
+    l_mouth_c:
+      color: 000000
+      fade: 10ms
+    l_mouth_a:
+      color: 000000
+      fade: 10ms
+    l_mouth_b:
+      color: 000000
+      fade: 10ms
+    l_u_left_ss_red: black
+    l_u_right_ss_red: black
+
+- duration: 10
+  lights:
+    l_backlight_rgb:
+      color: ff0000 #000000
+      fade: 1s
+    l_backlight_w:
+      color: 00
+      fade: 1s
+    l_mouth_d:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_c:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_a:
+      color: ff0000 #000000
+      fade: 1s
+    l_mouth_b:
+      color: ff0000 #000000
+      fade: 1s
+
+- duration: 1
+  lights:
+    l_u_left_ss_red: white
+    l_u_right_ss_red: white
+
+- duration: 1
+  lights:
+    l_backlight_rgb:
+      color: 0000ff
+      fade: 10ms
+    l_backlight_w:
+      color: A0
+      fade: 10ms
+    l_mouth_d:
+      color: 0000ff
+      fade: 10ms
+    l_mouth_c:
+      color: 0000ff
+      fade: 10ms
+    l_mouth_a:
+      color: 0000ff
+      fade: 10ms
+    l_mouth_b:
+      color: 0000ff
+      fade: 10ms
+    l_u_left_ss_red: black
+    l_u_right_ss_red: black

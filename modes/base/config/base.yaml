@@ -1,0 +1,1973 @@
+#config_version=5
+#Base mode has
+#              - shots defined for playfield switches
+#              - Basic scoring
+#              - Handles scoop
+#              - Handles cooldown on malstrom magnet and left poseidon SS
+#              - Handles score screen
+
+mode:
+  start_events: ball_starting
+  priority: 100 # range 100-1M
+
+accruals:  # Has to live in base since field shuts down during mb
+  base_p_locking_engaged: #This remembers that p_locking_elgible has fired so that if ball is lost p_ramp_mb can start with next ball.
+    events: p_locking_elgible
+    restart_events:
+#      - multiball_poseidon_ramp_ended #reset and enable
+      - multiball_lock_poseidon_lock_locked_ball
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: false
+#    reset_events:
+#might need a reset event for when mb finished
+  base_o_locking_engaged: #This remembers that o_locking_elgible has fired so that if ball is lost o_ramp_mb can start with next ball.
+    # format for use {device.accruals.base_o_locking_engaged.completed==False} #False means that o_locking_engaded has not been triggered
+    # format for use {device.accruals.base_o_locking_engaged.completed==True} #True means that o_locking_engaded was triggered by o_locking_elgible
+    events: o_locking_elgible
+    restart_events:
+      - multiball_lock_olympus_lock_locked_ball
+#      - multiball_olympus_ramp_ended
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: false
+
+counters:
+  base_malstrom_magnet_activation:
+    #Purpose, count number of fires in 2s window after magnet fires if counter detects an additional fire
+    #event logicblock_base_malstrom_magnet_activation_complete is broadcasted causing magnet to disable
+    #magnet is re-enabled by timer_base_malstrom_magnet_cooldown_complete
+    count_events:
+      - diverter_malstrom_mag_deactivating
+    enable_events:
+      - timer_base_malstrom_magnet_cooldown_started #Otherwise enables when ball starts
+    restart_events: #enables the counter and resets it to count 0
+      - timer_base_malstrom_magnet_cooldown_started
+    disable_events:
+      - timer_base_malstrom_magnet_cooldown_complete
+    count_complete_value: 1
+    reset_on_complete: true
+    disable_on_complete: true
+    persist_state: false #resets with each new ball
+  base_left_poseidon_sling_fire:
+    #Problem: ball can get trapped bouncing between left P sling and opposite band.
+    #Purpose, count number of hits in 4s window on left poseidon sling. If counter detects too many hits
+    #event logicblock_base_left_poseidon_sling_activation_complete is broadcasted causing sling to disable
+    #sling is re-enabled by timer_base_left_poseidon_sling_cooldown_complete
+    count_events:
+      - s_poseidon_left_slingshot_active{device.switches.s_accessory.state==0}
+    enable_events:
+      - timer_base_left_poseidon_sling_cooldown_started #Otherwise enables when ball starts
+    restart_events: #enables the counter and resets it to count 0
+      - timer_base_left_poseidon_sling_cooldown_started
+    disable_events:
+      - timer_base_left_poseidon_sling_cooldown_complete
+    count_complete_value: 3
+    reset_on_complete: true
+    disable_on_complete: true
+    persist_state: false #resets with each new ball
+
+
+timers:
+  base_timer_ball_launching:
+    start_value: 1
+    end_value: 0
+    tick_interval: 3s
+    direction: down
+    control_events:
+      - action: restart
+        event: s_shooterlane_inactive
+
+  base_malstrom_magnet_cooldown:
+    #Purposes, open a timing window which starts base_malstrom_magnet_activation counting hits and
+    #re-enable magnet if shutdown by counter by broadcasting timer_base_malstrom_magnet_cooldown_complete
+    start_value: 1
+    end_value: 0
+    tick_interval: 2s #effectively making this timer a 2 second timer, (fewer log entires)
+    direction: down
+    control_events:
+      - action: restart
+        event: diverter_malstrom_mag_deactivating
+  base_left_poseidon_sling_cooldown:
+    #Purposes, open a timing window which starts base_left_poseidon_sling_fire counting hits and
+    #re-enable sling if was shutdown by counter by broadcasting timer_base_left_poseidon_sling_cooldown_complete
+    start_value: 1
+    end_value: 0
+    tick_interval: 2s #effectively making this timer a 2 second timer, (fewer log entires)
+    direction: down
+    control_events:
+      - action: restart
+        event: s_poseidon_left_slingshot_active{device.switches.s_accessory.state==0}
+# Removed in v2003
+#  base_bank_reset: #This timer resets the drop target bank (named cluster) 5 seconds after the bank is down which activates the revealed slingshot shot Timer is suspended during celest mb and maybe should be for all mb
+#    start_value: 5
+#    end_value: 0
+#    tick_interval: 1s
+#    direction: down
+#    control_events:
+#      - event: base_revealed_slingshot_hit
+#        action: restart
+#      - event: mode_celestial_mb_starting
+#        action: pause
+#      - event: mode_celestial_mb_stopped
+#        action: restart
+#The following two timers work like counters that automatically decrement as the game progresses.
+#If the player can make enough hits before the timer decaus to get to 25 it qualifies the locks on the ramps.
+
+extra_balls:
+  mystery_pathway:
+    award_events: mystery_gives_eb
+    max_per_game: 3
+    enabled: True
+  score_one:
+    enabled: true
+    award_events: player_score{value>=250000}
+  score_two:
+    enabled: true
+    award_events: player_score{value>=500000}
+  score_three:
+    enabled: true
+    award_events: player_score{value>=750000}
+  score_four:
+    enabled: true
+    award_events: player_score{value>=1000000}
+  hades_bonus_game_pathway: #add in
+    award_events: extra_ball_earned
+    enabled: True
+
+coil_player:
+  extra_ball_awarded:
+    c_u_knocker:
+      action: pulse
+      pulse_ms: 30
+
+shot_profiles:
+  off_on_flash:
+    states:
+      - name: unlit  # step 1
+        show: off
+      - name: lit  # step 2
+        show: on
+      - name: flashing  # step 3
+        show: flash
+    loop: true
+  one_state:
+    advance_on_hit: false
+    loop: false
+    states:
+      - name: default_one_state
+  off_on:
+    states:
+      - name: unlit  # step 1
+        show: off
+      - name: lit  # step 2
+        show: on
+    loop: false
+
+shots:
+  #for inlane and outlane see http://docs.missionpinball.org/en/latest/mechs/switches/rollover_switches.html
+  # Lane change skill shot http://docs.missionpinball.org/en/latest/game_logic/skill_shot/index.html
+  ballblock: #records hit to the ball block drop target. control of the drop is via bd events in mode scoop.
+    enable_events:
+      - mode_base_started
+      #- mode_hades_door_stopping
+      - balldevice_bd_scoop_ball_eject_success
+    disable_events:
+      - mode_open_hades_door_starting
+      - ball_waiting_to_eject_from_scoop #Dont count a hit if machine drops it as part of eject sequence
+    playfield: earth_pf
+    switches: s_ballblock
+  base_scoop_from_pf: #This logs hits only when the scoop receives the ball from the front. Alternatively might be able to code this using delay_switch
+    playfield: earth_pf
+    profile: one_state
+    switch: s_scoop_chamber
+    enable_events:
+      - mode_base_started
+      - balldevice_bd_scoop_ball_eject_success
+    disable_events:
+      - s_scoop_lock_0_active
+      - s_scoop_lock_1_active
+  base_right_slingshot:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_right_slingshot
+  base_left_slingshot:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_left_slingshot
+  base_poseidon_gate:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_poseidon_gate
+  base_orbit_spinner:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_orbit_spinner
+  base_orbit_spinner_2: #Double count hits to this spinner to advance game faster used by counter in field
+    playfield: earth_pf
+    profile: one_state
+    switch: s_orbit_spinner
+  base_olympus_spinner:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_olympus_spinner
+  base_olympus_lower_pop:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_olympus_lower_pop
+  base_olympus_left_pop:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_olympus_left_pop
+  base_olympus_right_pop:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_olympus_right_pop
+  base_poseidon_pop:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_poseidon_pop
+  base_sis_left_vacated:
+    playfield: earth_pf
+    profile: one_state
+    hit_events: s_sis_left_inactive
+  base_sis_left_arrived:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_sis_left
+  base_sis_right_vacated:
+    playfield: earth_pf
+    profile: one_state
+    hit_events: s_sis_right_inactive
+  base_sis_right_arrived:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_sis_right
+  base_poseidon_right_slingshot:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_poseidon_right_slingshot
+  base_poseidon_left_slingshot:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_poseidon_left_slingshot
+  base_left_inlane:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_left_inlane
+  base_left_outlane:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_left_outlane
+  base_right_inlane:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_right_inlane
+  base_right_outlane:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_right_outlane
+  base_hydra:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_hydra
+  base_ramp:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_ramp_opto
+  base_hole_distal:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_hole_distal
+  base_hole_proximal:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_hole_proximal
+  base_revealed_slingshot:
+    playfield: earth_pf
+    profile: off_on
+    switch: s_revealed_slingshot
+    enable_events:
+      - drop_target_bank_cluster_down
+    disable_events:
+      - drop_target_bank_cluster_up
+      - drop_target_bank_cluster_mixed
+      - mode_celestial_mb_starting
+  base_left_side_pop:
+    playfield: earth_pf
+    profile: one_state
+    switch: s_left_side_pop
+
+sequence_shots:
+  star_double_down_a:
+    playfield: earth_pf
+    event_sequence:
+      - drop_target_star_proximal_down
+      - drop_target_star_middle_down
+    sequence_timeout: 1s
+  star_double_down_b:
+    playfield: earth_pf
+    event_sequence:
+      - drop_target_star_middle_down
+      - drop_target_star_distal_down
+    sequence_timeout: 1s
+  star_tripple_down:
+    playfield: earth_pf
+    event_sequence:
+      - drop_target_star_proximal_down
+      - drop_target_star_middle_down
+      - drop_target_star_distal_down
+    sequence_timeout: 1s
+  left_ramp:  #used for lock flash show poseidon_mech banked ball save
+    playfield: earth_pf
+    switch_sequence:
+      - s_poseidon_lock_distal
+      - s_poseidon_lock_proximal
+    sequence_timeout: 1s
+  right_ramp: #used for lock flash show, olympus_mech and banked ball save
+    playfield: earth_pf
+    switch_sequence:
+      - s_olympus_lock_distal
+      - s_olympus_lock_proximal
+    sequence_timeout: 1s
+  double_left_ramp:  #used to activate banked ball save mode
+    playfield: earth_pf
+    event_sequence:
+      - left_ramp_hit
+      - s_poseidon_lock_distal_active
+    sequence_timeout: 12s
+  double_right_ramp: #used to activate banked ball save mode
+    playfield: earth_pf
+    event_sequence:
+      - right_ramp_hit                     #cant use same event twice
+      - s_olympus_lock_distal_active
+    sequence_timeout: 6s
+  bonus_orbit_counter_clockwise: #used in bonus counting, for other orbit purposes, see field
+    playfield: earth_pf
+    switch_sequence:
+      - s_posideon_rollover
+      - s_olympus_rollover
+    sequence_timeout: 3s
+  bonus_orbit_clockwise: #used in bonus counting, for other orbit purposes, see field
+    playfield: earth_pf
+    switch_sequence:
+      - s_olympus_rollover
+      - s_posideon_rollover
+    sequence_timeout: 3s
+
+variable_player:
+  "{device.state_machines.ramp_flap.state}":
+    ramp_flap_player_variable:
+      action: set
+      string: "{value}"
+  "{device.state_machines.feeder_magnets.state}":
+    feeders_player_variable:
+      action: set
+      string: "{value}"
+#
+#  ball_started:
+#    ramp_flap_player_variable:
+#      string: device.state_machines.ramp_flap.state
+#      action: set
+#  game_started:
+#    ramp_flap_player_variable:
+#      string: device.state_machines.ramp_flap.state
+#      action: set
+#  ramp_flap_changing_state:
+#    ramp_flap_player_variable:
+#      string: device.state_machines.ramp_flap.state
+#      action: set
+  logicblock_field_olympus_excitement_updated:
+    o_excitement: # For animated bar graph of o area points
+      int: device.counters.field_olympus_excitement.value * 21 # 55 - 300
+      action: set
+  logicblock_field_poseidon_excitement_updated:
+    p_excitement: # For animated bar graph of p area points
+      int: device.counters.field_poseidon_excitement.value * 21 # 55 - 300
+      action: set
+  logicblock_field_spins_updated:
+    player_base_spins:
+      int: device.counters.field_spins.value
+      action: set
+  logicblock_field_hydra_hits_updated:
+    player_base_hydras:
+      int: device.counters.field_hydra_hits.value
+      action: set
+  bonus_orbit_clockwise_hit:
+    score: 1000
+  bonus_orbit_counter_clockwise_hit:
+    score: 1500
+  base_right_slingshot_hit:
+    score: 100 #* current_player.multiplier #page 506 dev
+  base_left_slingshot_hit:
+    score: 100
+  drop_target_star_proximal_down:
+    score: 150
+  drop_target_star_middle_down:
+    score: 150
+  drop_target_star_distal_down:
+    score: 150
+  star_double_down_a:
+    score: 100
+  star_double_down_b:
+    score: 100
+  star_tripple_down:
+    score: 200
+  drop_target_bank_cluster_down: #Completed all 3 down
+    score: 300
+  base_revieled_slingshot_hit:
+    score: 1000
+  base_posideon_rollover_hit:
+    score: 400
+  base_olympus_rollover_hit:
+    score: 400
+  base_olympus_lower_pop_hit:
+    score: 400
+  base_olympus_right_pop_hit:
+    score: 400
+  base_olympus_left_pop_hit:
+    score: 400
+  base_hole_proximal_hit:
+    score: 400
+  base_hole_distal_hit:
+    score: 1000
+  ballblock_hit:
+    score: 500
+  base_scoop_from_pf_hit:
+    score: 500
+  base_poseidon_right_slingshot_hit:
+    score: 300
+  base_poseidon_left_slingshot_hit:
+    score: 300
+  base_poseidon_pop_hit:
+    score: 300
+  base_left_side_pop_hit:
+    score: 200
+  base_left_inlane_hit:
+    score: 100
+  base_left_outlane_hit:
+    score: 200
+  base_right_inlane_hit:
+    score: 100
+  base_right_outlane_hit:
+    score: 200
+  base_ramp_opto_hit:
+    score: 300
+  base_orbit_spinner_hit:
+    score: 25
+  base_olympus_spinner_hit:
+    score: 50
+  base_medial_sis_hit:
+    score: 400
+  base_lateral_sis_hit:
+    score: 400
+  base_poseidon_gate_hit:
+    score: 250
+  mouth_open_hit:
+    score: 250
+  left_ramp_hit:
+    score: 600
+  right_ramp_hit:
+    score: 600
+  field_sis_left_to_right_hit:
+    score: 2000
+  field_sis_right_to_left_hit:
+    score: 2000
+  base_hydra_hit:
+    score: 100
+
+show_player:
+  mode_base_started:
+    show_malstrom_spin_ccw_blue:
+      speed: 8
+    show_poppers2:
+      speed: 2
+    show_base_lights:
+      speed: 1
+    show_sp_green_GG_white:
+      speed: 20
+    show_blink_all_orbit_arrows:
+      show_tokens:
+        color: green
+      speed: 1
+      loops: 6
+  ball_save_bs_default_timer_start:  #  balldevice_bd_plunger_ball_eject_success:
+    countdown99:
+      speed: 10
+      loops: 0
+      priority: 50
+  base_left_side_pop_hit:
+    show_left_side_pop:
+      speed: 5
+      loops: 0
+  s_right_flipper_active:
+    show_right_flip:
+      speed: 3
+      loops: 0
+  s_left_flipper_active:
+    show_left_flip:
+      speed: 3
+      loops: 0
+  s_shooterlane_inactive: #balldevice_bd_plunger_ball_eject_success: # s_launch_active:
+    show_shooter_launch:
+      speed: 10
+      loops: 0
+  s_shooterlane_inactive{device.diverters.feed_olympus_mag.enabled}: #balldevice_bd_plunger_ball_eject_success: # s_launch_active:
+    show_disable_o_mag_for_launch:
+      speed: 1
+      loops: 0
+  s_shooterlane_inactive{device.diverters.feed_poseidon_mag.enabled}: #balldevice_bd_plunger_ball_eject_success: # s_launch_active:
+    show_disable_p_mag_for_launch:
+      speed: 1
+      loops: 0
+  base_right_slingshot_hit:
+    show_right_sling:
+      speed: 5
+      loops: 0
+      priority: 2000
+  base_left_slingshot_hit:
+    show_left_sling:
+      speed: 5
+      loops: 0
+      priority: 2000
+  base_poseidon_gate_hit:
+    show_malstrom_spin_cw_aqua:
+      speed: 20
+      loops: 0
+      priority: 2000
+  mode_super_spinner_started:
+    show_super_spinner_running:
+      speed: 2
+      priority: 10
+  mode_super_spinner_stopped:
+    show_super_spinner_running:
+      action: stop
+  base_orbit_spinner_hit:
+    show_orbit_spinner:
+      speed: 10
+      loops: 0
+      priority: 2000
+  base_olympus_spinner_hit:
+    show_olympus_spinner:
+      speed: 10
+      loops: 0
+      priority: 2000
+  base_olympus_lower_pop_hit:
+    show_olympus_lower_pop:
+      speed: 10
+      loops: 0
+      priority: 2000
+  base_olympus_left_pop_hit:
+    show_olympus_left_pop:
+      speed: 10
+      loops: 0
+      priority: 2000
+  base_olympus_right_pop_hit:
+    show_olympus_right_pop:
+      speed: 10
+      loops: 0
+      priority: 2000
+  base_poseidon_pop_hit:
+    show_poseidon_pop:
+      speed: 10
+      loops: 0
+      priority: 2000
+  base_sis_left_vacated_hit:
+    show_sis_left_flasher:
+      speed: 10
+      loops: 0
+      priority: 2000
+  base_sis_left_arrived_hit:
+    show_sis_left_flasher:
+      speed: 10
+      loops: 1
+      priority: 2000
+  base_sis_right_vacated_hit:
+    show_sis_right_flasher:
+      speed: 10
+      loops: 0
+      priority: 2000
+  base_sis_right_arrived_hit:
+    show_sis_right_flasher:
+      speed: 10
+      loops: 1
+      priority: 2000
+  base_poseidon_right_slingshot_hit:
+    show_poseidon_right_sling:
+      speed: 5
+      loops: 0
+      priority: 2000
+  base_poseidon_left_slingshot_hit:
+    show_poseidon_left_sling:
+      speed: 5
+      loops: 0
+      priority: 2000
+  base_left_inlane_hit:
+    show_inlane_left:
+      speed: 1
+      loops: 0
+      priority: 2000
+  base_left_outlane_hit:
+    show_outlane_left:
+      speed: 1
+      loops: 0
+      priority: 2000
+  base_right_inlane_hit:
+    show_inlane_right:
+      speed: 1
+      loops: 0
+      priority: 2000
+  base_right_outlane_hit:
+    show_outlane_right:
+      speed: 1
+      loops: 0
+      priority: 2000
+  base_hydra_hit:
+    show_hydra:
+      speed: 20
+      loops: 0
+      priority: 2000
+  base_revealed_slingshot_hit:
+    show_r_sling_flash:
+      speed: 20
+      loops: 0
+      priority: 2000
+  state_olympus_to_posidon:
+    show_blink_all_orbit_arrows:
+      show_tokens:
+        color: green
+      speed: 1
+      loops: 4
+  state_all_off_to_feed_poseidon:
+    show_blink_all_orbit_arrows:
+      show_tokens:
+        color: green
+      speed: 1
+      loops: 4
+  state_poseidon_to_olympus:
+    show_blink_all_orbit_arrows:
+      show_tokens:
+        color: green
+      speed: 1
+      loops: 4
+  state_all_off_to_feed_olympus:
+    show_blink_all_orbit_arrows:
+      show_tokens:
+        color: green
+      speed: 1
+      loops: 4
+  state_says_enable_poseidon_mag:
+    show_p_mag_enabled:
+      speed: 1
+      priority: 1
+  state_says_disable_poseidon_mag:
+    show_p_mag_enabled:
+      action: stop
+  state_says_enable_olympus_mag:
+    show_o_mag_enabled:
+      speed: 1
+      priority: 1
+  state_says_disable_olympus_mag:
+    show_o_mag_enabled:
+      action: stop
+  mode_base_started{device.state_machines.feeder_magnets.state=="feed_poseidon"}:
+    show_p_mag_enabled:
+      speed: 1
+      priority: 1
+  mode_base_started{device.state_machines.feeder_magnets.state=="feed_olympus"}:
+    show_o_mag_enabled:
+      speed: 1
+      priority: 1
+
+slide_player:
+  mode_base_started:
+    basic_score_slide:
+      target: score_lcd
+      widgets:
+#      Add back for debugging ramp mb qualification
+      - type: text
+        text: Poseidon (p_excitement)  # (base_poseidon_excitement_tick)
+        number_grouping: true
+        min_digits: 2
+        y: 84%
+        x: 82%
+        font_size: 50
+        anchor_x: left #anchor relates to the text not the screen x,y origin
+        anchor_y: top
+      - type: text
+        text: Olympus (o_excitement)
+        number_grouping: true
+        min_digits: 2
+        y: 80%
+        x: 82%
+        font_size: 50
+        anchor_x: left #anchor relates to the text not the screen x,y origin
+        anchor_y: top
+      - type: text
+        text: (feeders_player_variable) #(player|ramp_flap_player_variable)
+        y: 76%
+        x: 82%
+        font_size: 50
+        anchor_x: left #anchor relates to the text not the screen x,y origin
+        anchor_y: top
+#      - type: text
+#        text: (ramp_flap_player_variable) #(player|ramp_flap_player_variable)
+#        y: 76%
+#        x: 82%
+#        font_size: 50
+#        anchor_x: left #anchor relates to the text not the screen x,y origin
+#        anchor_y: top
+#      - type: text
+#        text: Spins (player_base_spins)
+#        y: 72%
+#        x: 82%
+#        font_size: 50
+#        anchor_x: left #anchor relates to the text not the screen x,y origin
+#        anchor_y: top
+#      - type: text
+#        text: Hydra hits (player_base_hydras)
+#        y: 68%
+#        x: 82%
+#        font_size: 50
+#        anchor_x: left #anchor relates to the text not the screen x,y origin
+#        anchor_y: top
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        font_size: 500
+        y: 55%
+        x: 50%
+        font_name: GreekGods2
+      - type: text
+        text: PLAYER  (number)
+        y: 19%
+        x: 20%
+        font_size: 150
+        font_name: GreekGods2
+      - type: text
+        text: BALL  (ball)
+        y: 19%
+        x: 80%
+        font_size: 150
+        font_name: GreekGods2
+    basic_playfield_slide:
+      target: playfield_lcd
+      widgets:
+      - type: text
+        text: Greek Gods
+        font_size: 130
+        font_name: GreekGods2
+
+widgets:
+  sp01:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 46.875%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp02:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 53.125%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp03:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 40.625%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp04:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 59.375%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp05:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 34.375%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp06:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 65.625%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp07:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 28.125%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp08:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 71.875%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp09:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 21.875%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp10:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 78.125%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp11:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 15.625%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp12:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 84.375%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp13:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 9.375%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp14:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 90.625%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp15:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 3.125%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp16:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 96.875%
+    y: 5.56%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  #Sides
+  sp17:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 3.125%
+    y: 16.66%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp18:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 96.875%
+    y: 16.66%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+
+  sp19:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 3.125%
+    y: 27.76%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp20:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 96.875%
+    y: 27.76%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+
+  sp21:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 3.125%
+    y: 38.86%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp22:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 96.875%
+    y: 38.86%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+
+  sp23:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 3.125%
+    y: 49.96%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp24:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 96.875%
+    y: 49.96%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+
+  sp25:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 3.125%
+    y: 61.06%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp26:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 96.875%
+    y: 61.06%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+
+  sp27:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 3.125%
+    y: 72.16%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp28:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 96.875%
+    y: 72.16%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+
+  sp29:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 3.125%
+    y: 83.26%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp30:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 96.875%
+    y: 83.26%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  #Top
+  sp31:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 3.125%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp32:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 96.875%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp33:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 9.375%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp34:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 90.625%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp35:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 15.625%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp36:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 84.375%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp37:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 21.875%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp38:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 78.125%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp39:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 28.125%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp40:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 71.875%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp41:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 34.375%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp42:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 65.625%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp43:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 40.625%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp44:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 59.375%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp45:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 46.875%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+  sp46:
+  - type: image
+    image: meander_circle1invert
+    scale: 0.15
+    z: 1
+    x: 53.125%
+    y: 94.36%
+    animations:
+      add_to_slide:
+      - property: rotation
+        value: 0
+        relative: false
+        duration: 0
+      - property: rotation
+        value: 360
+        relative: false
+        duration: 4s
+        repeat: true
+
+
+
+widget_player:
+  counter_field_spins_hit{current_player.player_base_spins==2}:
+    sp01:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=2}:
+    sp01:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==4}:
+    sp02:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=4}:
+    sp02:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==6}:
+    sp03:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=6}:
+    sp03:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==8}:
+    sp04:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=8}:
+    sp04:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==10}:
+    sp05:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=10}:
+    sp05:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==12}:
+    sp06:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=12}:
+    sp06:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==14}:
+    sp07:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=14}:
+    sp07:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==16}:
+    sp08:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=16}:
+    sp08:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==18}:
+    sp09:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=18}:
+    sp09:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==20}:
+    sp10:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=20}:
+    sp10:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==22}:
+    sp11:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=22}:
+    sp11:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==24}:
+    sp12:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=24}:
+    sp12:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==26}:
+    sp13:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=26}:
+    sp13:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==28}:
+    sp14:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=28}:
+    sp14:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==30}:
+    sp15:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=30}:
+    sp15:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==32}:
+    sp16:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=32}:
+    sp16:
+      slide: basic_score_slide
+  #sides
+  counter_field_spins_hit{current_player.player_base_spins==34}:
+    sp17:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=34}:
+    sp17:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==36}:
+    sp18:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=36}:
+    sp18:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==38}:
+    sp19:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=38}:
+    sp19:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==40}:
+    sp20:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=40}:
+    sp20:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==42}:
+    sp21:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=42}:
+    sp21:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==44}:
+    sp22:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=44}:
+    sp22:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==46}:
+    sp23:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=46}:
+    sp23:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==48}:
+    sp24:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=48}:
+    sp24:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==50}:
+    sp25:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=50}:
+    sp25:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==52}:
+    sp26:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=52}:
+    sp26:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==54}:
+    sp27:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=54}:
+    sp27:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==56}:
+    sp28:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=56}:
+    sp28:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==58}:
+    sp29:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=58}:
+    sp29:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==60}:
+    sp30:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=60}:
+    sp30:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==62}:
+    sp31:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=62}:
+    sp31:
+      slide: basic_score_slide
+  #top
+  counter_field_spins_hit{current_player.player_base_spins==64}:
+    sp32:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=64}:
+    sp32:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==66}:
+    sp33:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=66}:
+    sp33:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==68}:
+    sp34:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=68}:
+    sp34:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==70}:
+    sp35:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=70}:
+    sp35:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==72}:
+    sp36:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=72}:
+    sp36:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==74}:
+    sp37:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=74}:
+    sp37:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==76}:
+    sp38:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=76}:
+    sp38:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==78}:
+    sp39:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=78}:
+    sp39:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==80}:
+    sp40:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=80}:
+    sp40:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==82}:
+    sp41:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=82}:
+    sp41:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==84}:
+    sp42:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=84}:
+    sp42:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==86}:
+    sp43:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=86}:
+    sp43:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==88}:
+    sp44:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=88}:
+    sp44:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==90}:
+    sp45:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=90}:
+    sp45:
+      slide: basic_score_slide
+  counter_field_spins_hit{current_player.player_base_spins==92}:
+    sp46:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{current_player.player_base_spins>=92}:
+    sp46:
+      slide: basic_score_slide
+  mode_super_spinner_stopped:
+    sp01:
+      action: remove
+    sp02:
+      action: remove
+    sp03:
+      action: remove
+    sp04:
+      action: remove
+    sp05:
+      action: remove
+    sp06:
+      action: remove
+    sp07:
+      action: remove
+    sp08:
+      action: remove
+    sp09:
+      action: remove
+    sp10:
+      action: remove
+    sp11:
+      action: remove
+    sp12:
+      action: remove
+    sp13:
+      action: remove
+    sp14:
+      action: remove
+    sp15:
+      action: remove
+    sp16:
+      action: remove
+    sp17:
+      action: remove
+    sp18:
+      action: remove
+    sp19:
+      action: remove
+    sp20:
+      action: remove
+    sp21:
+      action: remove
+    sp22:
+      action: remove
+    sp23:
+      action: remove
+    sp24:
+      action: remove
+    sp25:
+      action: remove
+    sp26:
+      action: remove
+    sp27:
+      action: remove
+    sp28:
+      action: remove
+    sp29:
+      action: remove
+    sp30:
+      action: remove
+    sp31:
+      action: remove
+    sp32:
+      action: remove
+    sp33:
+      action: remove
+    sp34:
+      action: remove
+    sp35:
+      action: remove
+    sp36:
+      action: remove
+    sp37:
+      action: remove
+    sp38:
+      action: remove
+    sp39:
+      action: remove
+    sp40:
+      action: remove
+    sp41:
+      action: remove
+    sp42:
+      action: remove
+    sp43:
+      action: remove
+    sp44:
+      action: remove
+    sp45:
+      action: remove
+    sp46:
+      action: remove

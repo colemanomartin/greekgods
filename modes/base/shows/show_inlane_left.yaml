@@ -1,0 +1,48 @@
+#show_version=5
+# https://htmlcolorcodes.com/color-names/
+
+
+- duration: 1
+  lights:
+    l_left_inlane:
+      color: red
+      fade: 100 ms
+    l_l_inlane_0:
+      color: red
+      fade: 100 ms
+    l_l_inlane_1:
+      color: red
+      fade: 100 ms
+    l_l_inlane_2:
+      color: red
+      fade: 100 ms
+    l_l_inlane_3:
+      color: red
+      fade: 100 ms
+    l_l_inlane_4:
+      color: red
+      fade: 100 ms
+    l_l_inlane_5:
+      color: red
+      fade: 100 ms
+    l_l_inlane_6:
+      color: red
+      fade: 100 ms
+    l_l_inlane_7:
+      color: red
+      fade: 100 ms
+    l_l_inlane_8:
+      color: red
+      fade: 100 ms
+    l_l_inlane_9:
+      color: red
+      fade: 100 ms
+    l_l_inlane_10:
+      color: red
+      fade: 100 ms
+    l_l_inlane_11:
+      color: red
+      fade: 100 ms
+    l_l_inlane_12:
+      color: red
+      fade: 100 ms

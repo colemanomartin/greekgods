@@ -1,0 +1,607 @@
+#config_version=5
+# mystery awards entered by dropping all targets and n hits to the hidden sling.
+# Once running it invites shots to the right orbit making the hiden hole diverter
+# fire when the right orbit switch is active. Also, the right orbit magnet is
+# disabled when mystery is inviting a shot so as not to steel a ball from a
+# qualifying right orbit hit. While inviting a shot display light player shows
+# ligths strobing in the right orbit. When the player makes the mystery shot
+# by shooting right orbit or dropping in hole from left , the shot mystery_
+# hole received ball shows mystery intro slide and activates a timer with each tick
+# it shows a random slide showing the menu options. When timer complete
+# a second list of actual awards is randomly chosen.
+# awards: enable P lock, enable o lock, enable other lock if one already active,
+# enter hades minigame, enable scoop lock (one ball already in)
+# 50K points, 100 K points, serve extra ball
+# To do: hades mini game, light shows, sound,
+# activate alternate lock when a ball locked on one side already
+# rare fill all the locks, starting with scoop (2 balls) then each ramp and release all
+# Eventually block super spinner option if mode superspinner is running.
+# Eventually block extra ball if 3 or more already awarded
+mode:
+  priority: 2000 # runs above the mb modes
+  start_events:
+    - mystery_time
+    #- mode_field_started{device.counters.drop_hits.completed} #Field is where the counter lives
+  stop_events:
+    - mystery_solved
+    - mode_field_ending
+    - ball_drain
+
+sequence_shots:
+  mystery_hole_received_ball:  #used for lock flash show and banked ball save
+    playfield: earth_pf
+    switch_sequence:
+      - s_hole_distal
+      - s_scoop_lock_0
+    sequence_timeout: 2s
+
+variable_player:
+  award_10000_points:
+    score: 10000
+  award_50000_points:
+    score: 50000
+  award_100000_points:
+    score: 100000
+
+timers:
+  mystery_slide_number: #This generates events for the random event player to show possible mystery awards
+    start_value: 0
+    end_value: 3
+    tick_interval: 1200ms
+    control_events:
+      - action: restart
+        event: mystery_hole_received_ball_hit
+
+random_event_player:
+  player_mystery_mystery_slide_number_tick:
+    events: #have list add up to 100
+      menu_10000_points: 8
+      menu_50000_points: 8
+      menu_100000_points: 6
+      menu_lion_man: 2
+      menu_light_p_lock: 8
+      menu_light_o_lock: 8
+      menu_lock_swap: 8
+      menu_hydra_battle: 13
+      menu_extra_ball: 8
+      menu_scoop_mb: 8
+      menu_super_spinner: 13
+  timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and not(mode.o_ramp_mb.active)}: #nothing locked, sis on left, no mb modes qualified or running
+    events:
+      award_10000_points: 10
+      award_50000_points: 10
+      award_100000_points: 8
+      award_extra_ball: 2
+      award_light_p_lock: 40
+      award_battle_hydra: 10
+      award_scoop_mb: 10
+      award_super_spinner: 10
+  timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, no mb modes qualified or running
+    events:
+      award_10000_points: 10
+      award_50000_points: 10
+      award_100000_points: 8
+      award_extra_ball: 2
+      award_light_o_lock: 40
+      award_battle_hydra: 10
+      award_scoop_mb: 10
+      award_super_spinner: 10
+  timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on left, p_ramp_mb running & sis on correct side
+    events:
+      award_10000_points: 40
+      award_50000_points: 20
+      award_100000_points: 8
+      award_extra_ball: 2
+      award_super_spinner: 30
+  timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, p_ramp_mb running but sis on wrong side
+    events:
+      award_10000_points: 20
+      award_50000_points: 10
+      award_100000_points: 5
+      award_swap_locks_p_to_o: 65
+  timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and mode.o_ramp_mb.active}: #nothing locked, sis on left, o_ramp_mb running but sis on wrong side
+    events:
+      award_10000_points: 20
+      award_50000_points: 10
+      award_100000_points: 5
+      award_swap_locks_o_to_p: 65
+  timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and mode.o_ramp_mb.active}: #nothing locked, sis on right, o_ramp_mb running & sis on correct side
+    events:
+      award_10000_points: 40
+      award_50000_points: 20
+      award_100000_points: 8
+      award_extra_ball: 2
+      award_super_spinner: 30
+  timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and mode.o_ramp_mb.active}: #nothing locked, sis on left, both modes qualified or running
+    events:
+      award_10000_points: 20
+      award_50000_points: 30
+      award_100000_points: 18
+      award_extra_ball: 2
+      award_super_spinner: 30
+  timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and mode.o_ramp_mb.active}: #nothing locked, sis on right, both modes qualified or running
+    events:
+      award_50000_points: 40
+      award_100000_points: 28
+      award_extra_ball: 2
+      award_super_spinner: 30
+  timer_mystery_slide_number_complete{device.ball_devices.bd_poseidon_ramp.balls>0 or device.ball_devices.bd_olympus_ramp.balls>0}: #something is locked somewhere
+    events:
+      award_10000_points: 30
+      award_50000_points: 20
+      award_100000_points: 18
+      award_extra_ball: 2
+      award_super_spinner: 30
+
+
+display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
+  mode_mystery_started:
+    led_matrix:
+      action: play  #Default
+      lights: gi, insert  #right_orbit
+#  mystery_hole_received_ball_hit: does not seem to be a way to update the player without stopping it
+#    led_matrix:
+#      action: play  #Default
+#      lights: "*"
+
+  mode_mystery_ended: #Otherwise the mode hangs
+    led_matrix:
+      action: stop
+      lights: gi, insert
+
+show_player: #Have a different slide show for each event hit last slide showing event chosen
+#  mode_mystery_started:
+#    show_invite_mystery_hole:
+#      speed: 6
+#    show_invite_right_orbit:
+#      speed: 1
+#  mode_mystery_stopping: #Weird but game hangs if these shows not explicitly stopped
+#    show_invite_mystery_hole:
+#      action: stop
+#    show_invite_right_orbit:
+#      action: stop
+  award_10000_points:
+    show_award_10000_points:
+      speed: 1
+      loops: 0
+  award_50000_points:
+    show_award_50000_points:
+      speed: 1
+      loops: 0
+  award_100000_points:
+    show_award_100000_points:
+      speed: 1
+      loops: 0
+  award_light_p_lock:
+    show_award_light_p_lock:
+      speed: 1
+      loops: 0
+  award_light_o_lock:
+    show_award_light_o_lock:
+      speed: 1
+      loops: 0
+  award_swap_locks_p_to_o:
+    show_swap_locks_p_to_o:
+      speed: 1
+      loops: 0
+  award_swap_locks_o_to_p:
+    show_swap_locks_o_to_p:
+      speed: 1
+      loops: 0
+  award_scoop_mb:
+    show_award_scoop_mb:
+      speed: 1
+      loops: 0
+  award_extra_ball:
+    show_award_extra_ball:
+      speed: 1
+      loops: 0
+  award_battle_hydra:
+    show_award_battle_hydra:
+      speed: 1
+      loops: 0
+  award_super_spinner:
+    show_award_super_spinner:
+      speed: 1
+      loops: 0
+slides:
+  mystery_award_available:
+    expire: 4s
+    priority: 100
+    widgets:
+    - type: text
+      text: Shoot Right Orbit
+      color: white
+      y: 65%
+      font_size: 60
+      font_name: GreekGods2
+      expire: 3s
+    - type: text
+      text: for Mystery Award
+      color: white
+      y: 35%
+      font_size: 60
+      font_name: GreekGods2
+      expire: 3s
+  mystery_award_menu_header:
+    priority: 100
+    widgets:
+    - type: text
+      text: Mystery Award
+      color: white
+      y: 80%
+      font_size: 80
+      font_name: GreekGods2
+
+slide_player:
+  mode_mystery_started:
+    mystery_award_available:
+      target: playfield_lcd
+      action: play
+    shoot_right_orbit: #Specify lights: right_orbit in display_light_player:
+      target: led_matrix
+      background_color: 00000000 #Background with no opacity required
+      widgets:
+      - type: ellipse
+        x: 254
+        y: 500
+        width: 1000
+        height: 1000
+        angle_start: 90
+        angle_end: 110
+        color: 333333
+        anchor_x: center
+        anchor_y: center
+        rotation: 0
+        z: 0
+        animations:
+          show_slide:
+            - property: rotation
+              value: 90
+              relative: false
+              duration: .5s
+              easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+              repeat: true
+            - property: rotation
+              value: 0
+              relative: false
+              duration: 0s
+              easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+              repeat: true
+  mystery_hole_received_ball_hit:
+    mystery_award_available:
+      target: playfield_lcd
+      action: remove
+    shoot_right_orbit:
+      target: led_matrix
+      action: remove
+    mystery_award_menu_header:
+      target: playfield_lcd
+      action: play
+    rotating_faded_bar:
+      target: led_matrix
+      background_color: 00000000 #Background with no opacity required
+      widgets:
+      - type: rectangle
+        x: 254
+        y: 500
+        width: 1000
+        height: 200
+        color: 08080808
+        anchor_x: center
+        anchor_y: center
+        rotation: 0
+        z: 1
+        animations:
+          show_slide:
+            - property: rotation
+              value: 90
+              relative: false
+              duration: .7s
+              easing: in_out_back #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+            - property: rotation
+              value: 180
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 270
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 360
+              relative: false
+              duration: .7s
+              easing: in_out_back
+      - type: rectangle
+        x: 254
+        y: 500
+        width: 1000
+        height: 170
+        color: 222222
+        anchor_x: center
+        anchor_y: center
+        rotation: 0
+        z: 2
+        animations:
+          show_slide:
+            - property: rotation
+              value: 90
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 180
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 270
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 360
+              relative: false
+              duration: .7s
+              easing: in_out_back
+      - type: rectangle
+        x: 254
+        y: 500
+        width: 1000
+        height: 140
+        color: 666666
+        anchor_x: center
+        anchor_y: center
+        rotation: 0
+        z: 3
+        animations:
+          show_slide:
+            - property: rotation
+              value: 90
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 180
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 270
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 360
+              relative: false
+              duration: .7s
+              easing: in_out_back
+      - type: rectangle
+        x: 254
+        y: 500
+        width: 1000
+        height: 110
+        color: FFFFFF
+        anchor_x: center
+        anchor_y: center
+        rotation: 0
+        z: 4
+        animations:
+          show_slide:
+            - property: rotation
+              value: 90
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 180
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 270
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 360
+              relative: false
+              duration: .7s
+              easing: in_out_back
+  mode_mystery_ending: #timer_mystery_slide_number_complete:
+    shoot_right_orbit: #rotating_faded_bar: # shoot_right_orbit:
+      target: led_matrix
+      action: remove
+
+widgets:
+  10000_points:
+    type: text
+    text: 10,000 points
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  50000_points:
+    type: text
+    text: 50,000 points
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  100000_points:
+    type: text
+    text: 100,000 points
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  lion_man:
+    type: text
+    text: Lion Man!
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  light_p_lock:
+    type: text
+    text: Poseidon's Lock
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  light_o_lock:
+    type: text
+    text: Olympus Lock
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  swap_locks:
+    type: text
+    text: Light Other Lock
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  hydra_battle:
+    type: text
+    text: Battle Hydra
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  extra_ball:
+    type: text
+    text: Extra Ball
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  scoop_mb:
+    type: text
+    text: Scoop Multiball
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  super_spinner:
+    type: text
+    text: Super Spinner
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+
+widget_player: #To play the menu items
+  menu_10000_points:
+    10000_points:
+      target: playfield_lcd
+  menu_50000_points:
+    50000_points:
+      target: playfield_lcd
+  menu_100000_points:
+    100000_points:
+      target: playfield_lcd
+  menu_lion_man:
+    lion_man:
+      target: playfield_lcd
+  menu_light_p_lock:
+    light_p_lock:
+      target: playfield_lcd
+  menu_light_o_lock:
+    light_o_lock:
+      target: playfield_lcd
+  menu_swap_locks:
+    swap_locks:
+      target: playfield_lcd
+  menu_hydra_battle:
+    hydra_battle:
+      target: playfield_lcd
+  menu_extra_ball:
+    extra_ball:
+      target: playfield_lcd
+  menu_scoop_mb:
+    scoop_mb:
+      target: playfield_lcd
+  menu_super_spinner:
+    super_spinner:
+      target: playfield_lcd

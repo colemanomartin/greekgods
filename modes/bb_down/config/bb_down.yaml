@@ -1,0 +1,27 @@
+#config_version=5
+# This mode runs works similar to a simple state machine. I am unsing it over a state machine so it
+# will show up on the mode running list.  When shots to the scoop are invited by
+# p_ramp_mb, o_ramp_mb and scoop_mb this mode lowers the ballblock drop target In p_ramp and o_ramp,
+# the scoop should be kept down after ball ends so the player can still have the scoop shot open
+# without having to knock the drop target again. The following situations release the ball block:
+# p_ramp_multimall_starting (issued by event player inside the mode)
+# o_ramp_multiball_starting (issued by event player inside the mode)
+# scoop_mb ending (issued by event player inside the mode)
+# p or o locking qualified (issued by event player inside field)
+# scoop drop timer listens for this mode to end and restarts its timer to raise BB drop
+mode:
+  priority: 200 # range 100-1M
+  start_events:
+    - force_bb_down
+  stop_events:
+    - release_bb_override
+    - game_ending
+  restart_on_next_ball: TRUE
+
+coil_player:
+  mode_bb_down_started:
+    c_ballblock_fall:
+      action: pulse
+  ball_started{device.switches.s_ballblock.state==1}: #Drop the ballblock target again if player is restarting in a multiplayer game
+    c_ballblock_fall:
+      action: pulse
