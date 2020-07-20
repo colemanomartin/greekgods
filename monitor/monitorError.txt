@@ -1,0 +1,17 @@
+Was dropping a light....
+INFO : root : Loading MPF Monitor
+INFO : Core : Looking for MPF at localhost:5051
+INFO : BCP Client : Connected to MPF
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/mpfmonitor/core/mpfmon.py", line 628, in dropEvent
+    drop_y)
+  File "/usr/local/lib/python3.6/dist-packages/mpfmonitor/core/mpfmon.py", line 633, in create_pf_widget
+    drop_y, save)
+  File "/usr/local/lib/python3.6/dist-packages/mpfmonitor/core/mpfmon.py", line 643, in __init__
+    widget.set_change_callback(self.notify)
+  File "/usr/local/lib/python3.6/dist-packages/mpfmonitor/core/mpfmon.py", line 44, in set_change_callback
+    raise AssertionError("Can only have one callback")
+AssertionError: Can only have one callback
+INFO : root : MPF Monitor run loop ended.
+INFO : root : Stopping child threads... (2 remaining)
+INFO : root : All child threads stopped.
