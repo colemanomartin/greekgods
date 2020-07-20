@@ -1,0 +1,13 @@
+#show_version=5
+- duration: 2
+  lights:
+    l_zeus_eyes_flasher: white
+    l_lightning: (color1)
+    l_scoop_tongue:
+      color: (color1)
+      fade: 00 ms
+- duration: 2
+  lights:
+    l_scoop_tongue:
+      color: (color2)
+      fade: 00 ms

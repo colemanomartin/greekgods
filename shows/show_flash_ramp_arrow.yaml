@@ -1,0 +1,23 @@
+#show_version=5
+- duration: 2
+  lights:
+    l_ramp_arrow:
+      color: (color)
+      fade: 200ms
+    l_ramp_left:
+      color: (color)
+      fade: 200ms
+    l_ramp_right:
+      color: (color)
+      fade: 200ms
+- duration: 1
+  lights:
+    l_ramp_arrow:
+      color: black
+      fade: 200ms
+    l_ramp_left:
+      color: black
+      fade: 200ms
+    l_ramp_right:
+      color: black
+      fade: 200ms

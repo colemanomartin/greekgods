@@ -1,0 +1,178 @@
+machinegg2005 scrapping pf screen for temple graphic 6/6/2020
+machinegg2004 added code to mystery to switch locks if sis on wrong side
+machinegg2003 working version coded for 0.53 dev.41 It is using spinner to earn mystery award. Retired 5-21-2020
+Machinegg2005 worked out some logic in excitement timers and fixed widget player and show player logic in p and o ramp mb. bit of work on super spinner too. retired 6-13
+Machinegg2007 worked to call super spinner and hydra from field using counters.  Both use a scoop shot to start the mode. Retired June 20,2020
+Machinegg2008 adds light shows to super spinner and hydra. Retired June 21
+Machinegg2009 adds sound and animation announcement to super spinner. Machine2009 is mostly stable
+MachineGG2010 Changed p and o excitement to counters not timers. Reduced mystery threshold. Retired July 1. Mostly stable
+MachineGG2011 Reduced hydra threshold. upper magnet diverters control by state machine in congig.yaml Retired 4 July
+MachineGG2012 Cleaning up logic of widgets and shows in p_ramp_mb and o_ramp_mb
+MachineGG2012 More cleaning up logic of widgets and shows in p_ramp_mb and o_ramp_mb
+MPF Notes
+mpf -x runs without attempting to connect to the P-ROC hardware
+mpf -X use smart virtual hardware'
+mpf -b dont connect to media controller
+mpf -t dont show asciimatics screen with switch summary
+mpf mc connects to media controller only
+mpf both -x runs both without connecting to hardware
+mpf both -X -t smart virtual and Text output or errors
+mpf game -v -V run mpf with extra verbose logging
+autocomplete-plus is a free plug in reccommended by MPF for faster coding.
+there is test code for each of the steps in the tutorial.
+iMC is interactive MC which allows changing slides and parameters while
+  MC is running allowing the changes to be seen in real time.
+Install mpf-monitor see chapter 17, or pg 708 in Dev PDF. This stand alone
+  program allows a graphical mouse click to trigger switches on the virtual
+  play field and is better for debugging.  Will need an image of the playfield.
+  It also shows LED's.
+
+Tags
+  Home: when MPF first starts up, and after a game ends, it will automatically eject any
+balls from any devices that are not tagged with “home.” When a player tries to start a game,
+MPF will also make sure all the balls in the machine are contained in devices tagged with “home.”
+Troughs and sometimes shooter lanes are tagged home.
+  Trough:  Tells MPF that a ball device wants to hold as many balls as it can.
+This probably doesn’t make sense right now, which is fine, but without this tag then MPF won’t know
+what to do with all the balls that are sitting in the trough waiting to be launched. This tag tells MPF
+that it’s fine for this device to hold lots of balls.
+  Drain: used to tell MPF that a ball entering this device
+means that a live ball has drained from the playfield.
+
+Details on positioning text on slides and how dynamic player variables
+work can be found on page 125.
+
+I have a part MPF, part Ubuntu question. Being that I am not a big Linux user,
+I cannot get my Ubuntu 18.0.4 to start MPF on bootup. I have tried crons, ic.
+local files, bash, and the "startup app preferences". What are you guys doing
+to start it up? It just boots up to the desktop, and nothing...
+jwilson [7:16 PM]
+Well, Ubuntu is using systemd so you need to enable rc.local support first,
+then you can start it from /etc/rc.local.
+sudo systemctl enable rc-local.service
+I had some weird performance issues running MPF as a systemd
+service so I use supervisord to manage it.  I run supervisord from
+rc.local and then start/stop MPF with supervisorctl.
+
+
+event handling
+In a mode with slides "first_ball_intro" and lets_go defigned this would call
+those slides with the following values of ball_started
+slide_player:
+  ball_started{ball==1}: first_ball_intro
+  ball_started{ball>1}: lets_go
+  ball_started{ball==1 or ball==3}: special_slide   # != is not equal
+  ball_started{current_player.score > 1000000}: you_rule
+ball_started{current_player.score < 10000 and ball == 3}: you_stink
+
+
+you can set up 2 devices that use the same coil  (example regular flipper and
+NO-HOLD flipper) and disable/enable them when needed but, I haven't seen a
+config where you have 2 different rules (different pulse times, or different
+control switches) that would require the rule to be re-written to the hardware
+mid-game (edited)
+jwilson [9:51 AM]
+Pulse times are set in the coil definition, not the device one unfortunately.
+jab [10:23 AM]
+@Coleman you can also set two pulse times in MPF
+most common thing is flippers like @markinc mentioned
+@jwilson you can overwrite the pulse time in most devices
+
+Maybe this is how I enable????
+#config_version=5
+mode:
+  start_events: start_mode1
+  stop_events: stop_mode1
+  game_mode: False
+
+coil_player:
+  event1_mode:
+    coil_3: enable
+
+User guide
+Page 1019 in dev talks about timer modes
+Events 1470
+
+
+event_player:
+reenable_nonrecruit_modes:
+- start_mode_shadowbroker_base
+- start_mode_n7_assignments
+- start_mode_overlordlight{device.achievements.collectorship.state!="complete"}
+- start_mode_arrival{device.achievements.collectorship.state=="complete"}
+- start_mode_shopping{current_player.cash>=1000}
+
+see page 1047 about achievements
+achievements:
+  ach_poseidon_mb:
+    show_tokens:
+      leds: l_left_pop_high
+    show_when_selected: flash
+    show_when_started: flash
+    show_when_completed: on
+    events_when_started: start_world_tour_mode
+    restart_after_stop_possible: true
+    restart_on_next_ball_when_started: true #default true
+    enable_on_next_ball_when_enabled: true #default true
+    debug: true
+    enable_events: world_tour_fail, ball_will_end
+    select_events: #Events in this list, when posted, cause this achievement to switch to its “selected” state. These events will also cause the achievement to play the show defined in the show_when_selected:
+    start_events: #Events in this list, when posted, cause this achievement to switch to its “started” state.
+    complete_events: #Events in this list, when posted, cause this achievement to switch to its “completed” state
+    disable_events: #Events in this list, when posted, cause this achievement to switch to its "disabled" state
+    stop_events: #Events in this list, when posted, cause this achievement to switch to its “stopped” state
+    reset_events: #Events in this list, when posted, cause this achievement to reset back to its default state (which will either be “disabled” or, if you have start_enabled: true , “enabled”)
+    #Events posted by achievements when they change state in the form achievement_(name)_state_(state)
+    #The events listed below, if defined, will replace the default event.
+    events_when_enabled: # Default: achievement_(name)_state_enabled A single event, or a list of events, that will be posted when this achievement is enabled.
+    events_when_selected: # Default: achievement_(name)_state_selected A single event, or a list of events, that will be posted when this achievement is selected.
+    events_when_started: # Default: achievement_(name)_state_started A single event, or a list of events, that will be posted when this achievement is started.
+    events_when_completed: # Default: achievement_(name)_state_completed A single event, or a list of events, that will be posted when this achievement is complete.
+    events_when_disabled: #
+    events_when_stopped: #  Shows
+    # The following settings control which show is played when this achievement switches to a new state.
+    show_when_enabled:
+    show_when_selected:
+    show_when_started:
+    show_when_completed:
+    show_when_disabled:
+    show_when_stopped:
+sudo pip3 install mpf==0.52.0-dev.0 --user
+sudo pip3 install mpf-mc==0.52.0-dev2.0 --user
+
+sudo pip3 install mpf==0.52.1 --user
+sudo pip3 install mpf-mc==0.52.1 --user
+
+sudo pip3 install mpf-mc==0.52.1 --user
+
+Wireshark
+  packet sniffer.
+  When installing select Y to grant group access to sniffing.
+  Add myself to the group after installing by sudo adduser $USER wireshark
+  To capture under ubuntu issue the following commands at the beginning of the session:
+    sudo modprobe usbmon
+    sudo setfacl -m u:$USER:r /dev/usbmon*
+  Then fire up wireshark.
+
+How  to install a branch from github:
+  go to the branch and down load the folder. unzip the folder and enter it with terminal. issue the command "sudo pip3 install -e ."  Dont forget the "." it designates the directory.
+
+MPF Test environment:
+http://developer.missionpinball.org/en/latest/api/tests_overview.html
+http://developer.missionpinball.org/en/latest/api/MockBcpClient.html
+Available commands: remove command from object call https://github.com/missionpinball/mpf/blob/dc83dc4be6f6cfbb96ce346a50d28e801fa93884/mpf/tests/MpfDocTestCase.py#L191-L304
+
+Flashing the P3-ROC
+move to directory /libpinproc/bin
+Copy firmware to that location
+power off
+set P3-ROC dips 5 and 6 to on
+sudo ./pinprocfw p3_roc_v2r14.p-roc
+Ignore verification failed error.
+Power off and set dips back to off
+
+Wish list:
+  multiple_hits_window in shots
+  reset event for state machines that brings it back to start
+  ability to repeat last n steps in an animation
+  tie light activation sequence to a range on a counter

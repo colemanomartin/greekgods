@@ -1,0 +1,6189 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_hydra_2:
+      color: FF0000
+      fade: 500ms
+    l_scoop_tongue:
+      color: FF0000
+      fade: 500ms
+    l_left_side_pop:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_pop:
+      color: FF0000
+      fade: 500ms
+    l_olympus_lower_pop:
+      color: FF0000
+      fade: 500ms
+    l_olympus_right_pop:
+      color: FF0000
+      fade: 500ms
+    l_olympus_left_pop:
+      color: FF0000
+      fade: 500ms
+    l_hydra_center:
+      color: FF0000
+      fade: 500ms
+    l_hydra_top:
+      color: FF0000
+      fade: 500ms
+    l_hydra_7:
+      color: FF0000
+      fade: 500ms
+    l_hydra_10:
+      color: FF0000
+      fade: 500ms
+    l_left_sling_prox:
+      color: FF0000
+      fade: 500ms
+    l_left_sling_middle:
+      color: FF0000
+      fade: 500ms
+    l_left_sling_distal:
+      color: FF0000
+      fade: 500ms
+    l_hydra_4:
+      color: FF0000
+      fade: 500ms
+    l_hydra_bottom:
+      color: FF0000
+      fade: 500ms
+    l_3xflasher:
+      color: FF0000
+      fade: 500ms
+    l_2xflasher:
+      color: FF0000
+      fade: 500ms
+    l_left_inlane:
+      color: FF0000
+      fade: 500ms
+    l_left_pop_band:
+      color: FF0000
+      fade: 500ms
+    l_left_pop_lower_arrow:
+      color: FF0000
+      fade: 500ms
+    l_left_pop_upper_arrow:
+      color: FF0000
+      fade: 500ms
+    l_left_outlane:
+      color: FF0000
+      fade: 500ms
+    l_left_spinner_band_prox:
+      color: FF0000
+      fade: 500ms
+    l_left_orbit_spinner:
+      color: FF0000
+      fade: 500ms
+    l_left_spinner_band_distal:
+      color: FF0000
+      fade: 500ms
+    l_left_orbit_lower_triangle:
+      color: FF0000
+      fade: 500ms
+    l_malstrom_4:
+      color: FF0000
+      fade: 500ms
+    l_malstrom_3:
+      color: FF0000
+      fade: 500ms
+    l_left_sis_arrow:
+      color: FF0000
+      fade: 500ms
+    l_malstrom_triangle:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_fish_right:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_right_sling:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_fish_left:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_left_sling_distal:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_left_sling_middle:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_left_sling_prox:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_fish_middle:
+      color: FF0000
+      fade: 500ms
+    l_malstrom_2:
+      color: FF0000
+      fade: 500ms
+    l_malstrom_1:
+      color: FF0000
+      fade: 500ms
+    l_malstrom_0:
+      color: FF0000
+      fade: 500ms
+    l_left_orbit_upper_triangle:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_band_right_prox:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_band_left_prox:
+      color: FF0000
+      fade: 500ms
+    l_ramp_left:
+      color: FF0000
+      fade: 500ms
+    l_ramp_right:
+      color: FF0000
+      fade: 500ms
+    l_olympus_magnet:
+      color: FF0000
+      fade: 500ms
+    l_olympus_band_upper_left:
+      color: FF0000
+      fade: 500ms
+    l_roof_left_2:
+      color: FF0000
+      fade: 500ms
+    l_roof_left_3:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_lock_distal:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_lock_prox:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_magnet:
+      color: FF0000
+      fade: 500ms
+    l_poseidon_band_left_distal:
+      color: FF0000
+      fade: 500ms
+    l_roof_left_5:
+      color: FF0000
+      fade: 500ms
+    l_roof_left_4:
+      color: FF0000
+      fade: 500ms
+    l_roof_center:
+      color: FF0000
+      fade: 500ms
+    l_hideyhole:
+      color: FF0000
+      fade: 500ms
+    l_roof_left_1:
+      color: FF0000
+      fade: 500ms
+    l_poseidion_band_right_distal:
+      color: FF0000
+      fade: 500ms
+    l_roof_right_2:
+      color: FF0000
+      fade: 500ms
+    l_roof_right_3:
+      color: FF0000
+      fade: 500ms
+    l_roof_right_4:
+      color: FF0000
+      fade: 500ms
+    l_roof_right_1:
+      color: FF0000
+      fade: 500ms
+    l_roof_right_5:
+      color: FF0000
+      fade: 500ms
+    l_olympus_band_upper_right:
+      color: FF0000
+      fade: 500ms
+    l_olympus_band_lower_right:
+      color: FF0000
+      fade: 500ms
+    l_olympus_cloud:
+      color: FF0000
+      fade: 500ms
+    l_revealed_slingshot_flasher:
+      color: FF0000
+      fade: 500ms
+    l_olympus_lock_distal:
+      color: FF0000
+      fade: 500ms
+    l_olympus_lock_prox:
+      color: FF0000
+      fade: 500ms
+    l_right_sis_arrow:
+      color: FF0000
+      fade: 500ms
+    l_middle_drop_arrow:
+      color: FF0000
+      fade: 500ms
+    l_right_outlane:
+      color: FF0000
+      fade: 500ms
+    l_distal_drop_arrow:
+      color: FF0000
+      fade: 500ms
+    l_prox_drop_arrow:
+      color: FF0000
+      fade: 500ms
+    l_ramp_arrow:
+      color: FF0000
+      fade: 500ms
+    l_right_sling_prox:
+      color: FF0000
+      fade: 500ms
+    l_right_sling_middle:
+      color: FF0000
+      fade: 500ms
+    l_right_sling_distal:
+      color: FF0000
+      fade: 500ms
+    l_right_inlane:
+      color: FF0000
+      fade: 500ms
+    l_lightning:
+      color: FF0000
+      fade: 500ms
+    l_olympus_gate_triangle:
+      color: FF0000
+      fade: 500ms
+    l_olympus_spinner:
+      color: FF0000
+      fade: 500ms
+    l_right_orbit_triangle:
+      color: FF0000
+      fade: 500ms
+    l_r_inlane_1:
+      color: 360000
+      fade: 500ms
+    l_r_inlane_2:
+      color: 360000
+      fade: 500ms
+    l_r_inlane_3:
+      color: 360000
+      fade: 500ms
+    l_r_inlane_4:
+      color: 360000
+      fade: 500ms
+    l_r_inlane_5:
+      color: 360000
+      fade: 500ms
+    l_r_inlane_6:
+      color: 360000
+      fade: 500ms
+    l_r_inlane_7:
+      color: 360000
+      fade: 500ms
+    l_r_inlane_8:
+      color: 360000
+      fade: 500ms
+    l_r_inlane_9:
+      color: 360000
+      fade: 500ms
+    l_r_inlane_10:
+      color: 360000
+      fade: 500ms
+    l_r_inlane_11:
+      color: 360000
+      fade: 500ms
+    l_r_inlane_12:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_0:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_1:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_2:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_3:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_4:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_5:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_6:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_7:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_8:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_9:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_10:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_11:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_12:
+      color: 360000
+      fade: 500ms
+    l_r_outlane_13:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_0:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_1:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_2:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_3:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_4:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_5:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_6:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_7:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_8:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_9:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_10:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_11:
+      color: 360000
+      fade: 500ms
+    l_l_inlane_12:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_0:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_1:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_2:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_3:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_4:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_5:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_6:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_7:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_8:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_9:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_10:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_11:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_12:
+      color: 360000
+      fade: 500ms
+    l_l_outlane_13:
+      color: 360000
+      fade: 500ms
+    l_shooter_0:
+      color: 360000
+      fade: 500ms
+    l_shooter_1:
+      color: 360000
+      fade: 500ms
+    l_shooter_2:
+      color: 360000
+      fade: 500ms
+    l_shooter_3:
+      color: 360000
+      fade: 500ms
+    l_shooter_4:
+      color: 360000
+      fade: 500ms
+    l_shooter_5:
+      color: 360000
+      fade: 500ms
+    l_shooter_6:
+      color: 360000
+      fade: 500ms
+    l_shooter_7:
+      color: 360000
+      fade: 500ms
+    l_shooter_8:
+      color: 360000
+      fade: 500ms
+    l_shooter_9:
+      color: 360000
+      fade: 500ms
+    l_shooter_10:
+      color: 360000
+      fade: 500ms
+    l_shooter_11:
+      color: 360000
+      fade: 500ms
+    l_shooter_12:
+      color: 360000
+      fade: 500ms
+    l_shooter_13:
+      color: 360000
+      fade: 500ms
+    l_shooter_14:
+      color: 360000
+      fade: 500ms
+    l_shooter_15:
+      color: 360000
+      fade: 500ms
+    l_shooter_16:
+      color: 360000
+      fade: 500ms
+    l_shooter_17:
+      color: 360000
+      fade: 500ms
+    l_shooter_18:
+      color: 360000
+      fade: 500ms
+    l_shooter_19:
+      color: 360000
+      fade: 500ms
+    l_shooter_20:
+      color: 360000
+      fade: 500ms
+    l_shooter_21:
+      color: 360000
+      fade: 500ms
+    l_shooter_22:
+      color: 360000
+      fade: 500ms
+    l_shooter_23:
+      color: 360000
+      fade: 500ms
+    l_shooter_24:
+      color: 360000
+      fade: 500ms
+    l_shooter_25:
+      color: 360000
+      fade: 500ms
+    l_shooter_26:
+      color: 360000
+      fade: 500ms
+    l_shooter_27:
+      color: 360000
+      fade: 500ms
+    l_shooter_28:
+      color: 360000
+      fade: 500ms
+    l_shooter_29:
+      color: 360000
+      fade: 500ms
+    l_shooter_30:
+      color: 360000
+      fade: 500ms
+    l_shooter_31:
+      color: 360000
+      fade: 500ms
+    l_shooter_32:
+      color: 360000
+      fade: 500ms
+    l_shooter_33:
+      color: 360000
+      fade: 500ms
+    l_shooter_34:
+      color: 360000
+      fade: 500ms
+    l_shooter_35:
+      color: 360000
+      fade: 500ms
+    l_shooter_36:
+      color: 360000
+      fade: 500ms
+    l_shooter_37:
+      color: 360000
+      fade: 500ms
+    l_shooter_38:
+      color: 360000
+      fade: 500ms
+    l_shooter_39:
+      color: 360000
+      fade: 500ms
+    l_shooter_40:
+      color: 360000
+      fade: 500ms
+    l_shooter_41:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_15:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_14:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_13:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_12:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_11:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_10:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_9:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_8:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_7:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_6:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_5:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_4:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_3:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_2:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_1:
+      color: 360000
+      fade: 500ms
+    l_right_shoulder_0:
+      color: 360000
+      fade: 500ms
+    l_orbit_0:
+      color: 360000
+      fade: 500ms
+    l_orbit_1:
+      color: 360000
+      fade: 500ms
+    l_orbit_2:
+      color: 360000
+      fade: 500ms
+    l_orbit_3:
+      color: 360000
+      fade: 500ms
+    l_orbit_4:
+      color: 360000
+      fade: 500ms
+    l_orbit_5:
+      color: 360000
+      fade: 500ms
+    l_orbit_6:
+      color: 360000
+      fade: 500ms
+    l_orbit_7:
+      color: 360000
+      fade: 500ms
+    l_orbit_8:
+      color: 360000
+      fade: 500ms
+    l_orbit_9:
+      color: 360000
+      fade: 500ms
+    l_orbit_10:
+      color: 360000
+      fade: 500ms
+    l_orbit_11:
+      color: 360000
+      fade: 500ms
+    l_orbit_12:
+      color: 360000
+      fade: 500ms
+    l_orbit_13:
+      color: 360000
+      fade: 500ms
+    l_orbit_14:
+      color: 360000
+      fade: 500ms
+    l_orbit_15:
+      color: 360000
+      fade: 500ms
+    l_orbit_16:
+      color: 360000
+      fade: 500ms
+    l_orbit_17:
+      color: 360000
+      fade: 500ms
+    l_orbit_18:
+      color: 360000
+      fade: 500ms
+    l_orbit_19:
+      color: 360000
+      fade: 500ms
+    l_orbit_20:
+      color: 360000
+      fade: 500ms
+    l_orbit_21:
+      color: 360000
+      fade: 500ms
+    l_orbit_22:
+      color: 360000
+      fade: 500ms
+    l_orbit_23:
+      color: 360000
+      fade: 500ms
+    l_orbit_24:
+      color: 360000
+      fade: 500ms
+    l_orbit_25:
+      color: 360000
+      fade: 500ms
+    l_orbit_26:
+      color: 360000
+      fade: 500ms
+    l_orbit_27:
+      color: 360000
+      fade: 500ms
+    l_orbit_28:
+      color: 360000
+      fade: 500ms
+    l_orbit_29:
+      color: 360000
+      fade: 500ms
+    l_orbit_30:
+      color: 360000
+      fade: 500ms
+    l_orbit_31:
+      color: 360000
+      fade: 500ms
+    l_orbit_32:
+      color: 360000
+      fade: 500ms
+    l_orbit_33:
+      color: 360000
+      fade: 500ms
+    l_orbit_34:
+      color: 360000
+      fade: 500ms
+    l_orbit_35:
+      color: 360000
+      fade: 500ms
+    l_orbit_36:
+      color: 360000
+      fade: 500ms
+    l_orbit_37:
+      color: 360000
+      fade: 500ms
+    l_orbit_38:
+      color: 360000
+      fade: 500ms
+    l_orbit_39:
+      color: 360000
+      fade: 500ms
+    l_orbit_40:
+      color: 360000
+      fade: 500ms
+    l_orbit_41:
+      color: 360000
+      fade: 500ms
+    l_orbit_42:
+      color: 360000
+      fade: 500ms
+    l_orbit_43:
+      color: 360000
+      fade: 500ms
+    l_orbit_44:
+      color: 360000
+      fade: 500ms
+    l_orbit_45:
+      color: 360000
+      fade: 500ms
+    l_orbit_46:
+      color: 360000
+      fade: 500ms
+    l_orbit_47:
+      color: 360000
+      fade: 500ms
+    l_orbit_48:
+      color: 360000
+      fade: 500ms
+    l_orbit_49:
+      color: 360000
+      fade: 500ms
+    l_orbit_50:
+      color: 360000
+      fade: 500ms
+    l_orbit_51:
+      color: 360000
+      fade: 500ms
+    l_orbit_52:
+      color: 360000
+      fade: 500ms
+    l_orbit_53:
+      color: 360000
+      fade: 500ms
+    l_orbit_54:
+      color: 360000
+      fade: 500ms
+    l_orbit_55:
+      color: 360000
+      fade: 500ms
+    l_orbit_56:
+      color: 360000
+      fade: 500ms
+    l_orbit_57:
+      color: 360000
+      fade: 500ms
+    l_orbit_58:
+      color: 360000
+      fade: 500ms
+    l_orbit_59:
+      color: 360000
+      fade: 500ms
+    l_orbit_60:
+      color: 360000
+      fade: 500ms
+    l_orbit_61:
+      color: 360000
+      fade: 500ms
+    l_orbit_62:
+      color: 360000
+      fade: 500ms
+    l_orbit_63:
+      color: 360000
+      fade: 500ms
+    l_orbit_64:
+      color: 360000
+      fade: 500ms
+    l_orbit_65:
+      color: 360000
+      fade: 500ms
+    l_orbit_66:
+      color: 360000
+      fade: 500ms
+    l_orbit_67:
+      color: 360000
+      fade: 500ms
+    l_orbit_68:
+      color: 360000
+      fade: 500ms
+    l_left_pop_13:
+      color: 360000
+      fade: 500ms
+    l_left_pop_12:
+      color: 360000
+      fade: 500ms
+    l_left_pop_11:
+      color: 360000
+      fade: 500ms
+    l_left_pop_10:
+      color: 360000
+      fade: 500ms
+    l_left_pop_9:
+      color: 360000
+      fade: 500ms
+    l_left_pop_8:
+      color: 360000
+      fade: 500ms
+    l_left_pop_7:
+      color: 360000
+      fade: 500ms
+    l_left_pop_6:
+      color: 360000
+      fade: 500ms
+    l_left_pop_5:
+      color: 360000
+      fade: 500ms
+    l_left_pop_4:
+      color: 360000
+      fade: 500ms
+    l_left_pop_3:
+      color: 360000
+      fade: 500ms
+    l_left_pop_2:
+      color: 360000
+      fade: 500ms
+    l_left_pop_1:
+      color: 360000
+      fade: 500ms
+    l_left_pop_0:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_14:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_13:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_12:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_11:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_10:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_9:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_8:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_7:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_6:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_5:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_4:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_3:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_2:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_1:
+      color: 360000
+      fade: 500ms
+    l_left_shoulder_0:
+      color: 360000
+      fade: 500ms
+- duration: 1
+  lights:
+    l_hydra_2:
+      color: FFA500
+      fade: 500ms
+    l_scoop_tongue:
+      color: FFA500
+      fade: 500ms
+    l_left_side_pop:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_pop:
+      color: FFA500
+      fade: 500ms
+    l_olympus_lower_pop:
+      color: FFA500
+      fade: 500ms
+    l_olympus_right_pop:
+      color: FFA500
+      fade: 500ms
+    l_olympus_left_pop:
+      color: FFA500
+      fade: 500ms
+    l_hydra_center:
+      color: FFA500
+      fade: 500ms
+    l_hydra_top:
+      color: FFA500
+      fade: 500ms
+    l_hydra_7:
+      color: FFA500
+      fade: 500ms
+    l_hydra_10:
+      color: FFA500
+      fade: 500ms
+    l_left_sling_prox:
+      color: FFA500
+      fade: 500ms
+    l_left_sling_middle:
+      color: FFA500
+      fade: 500ms
+    l_left_sling_distal:
+      color: FFA500
+      fade: 500ms
+    l_hydra_4:
+      color: FFA500
+      fade: 500ms
+    l_hydra_bottom:
+      color: FFA500
+      fade: 500ms
+    l_3xflasher:
+      color: FFA500
+      fade: 500ms
+    l_2xflasher:
+      color: FFA500
+      fade: 500ms
+    l_left_inlane:
+      color: FFA500
+      fade: 500ms
+    l_left_pop_band:
+      color: FFA500
+      fade: 500ms
+    l_left_pop_lower_arrow:
+      color: FFA500
+      fade: 500ms
+    l_left_pop_upper_arrow:
+      color: FFA500
+      fade: 500ms
+    l_left_outlane:
+      color: FFA500
+      fade: 500ms
+    l_left_spinner_band_prox:
+      color: FFA500
+      fade: 500ms
+    l_left_orbit_spinner:
+      color: FFA500
+      fade: 500ms
+    l_left_spinner_band_distal:
+      color: FFA500
+      fade: 500ms
+    l_left_orbit_lower_triangle:
+      color: FFA500
+      fade: 500ms
+    l_malstrom_4:
+      color: FFA500
+      fade: 500ms
+    l_malstrom_3:
+      color: FFA500
+      fade: 500ms
+    l_left_sis_arrow:
+      color: FFA500
+      fade: 500ms
+    l_malstrom_triangle:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_fish_right:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_right_sling:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_fish_left:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_left_sling_distal:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_left_sling_middle:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_left_sling_prox:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_fish_middle:
+      color: FFA500
+      fade: 500ms
+    l_malstrom_2:
+      color: FFA500
+      fade: 500ms
+    l_malstrom_1:
+      color: FFA500
+      fade: 500ms
+    l_malstrom_0:
+      color: FFA500
+      fade: 500ms
+    l_left_orbit_upper_triangle:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_band_right_prox:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_band_left_prox:
+      color: FFA500
+      fade: 500ms
+    l_ramp_left:
+      color: FFA500
+      fade: 500ms
+    l_ramp_right:
+      color: FFA500
+      fade: 500ms
+    l_olympus_magnet:
+      color: FFA500
+      fade: 500ms
+    l_olympus_band_upper_left:
+      color: FFA500
+      fade: 500ms
+    l_roof_left_2:
+      color: FFA500
+      fade: 500ms
+    l_roof_left_3:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_lock_distal:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_lock_prox:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_magnet:
+      color: FFA500
+      fade: 500ms
+    l_poseidon_band_left_distal:
+      color: FFA500
+      fade: 500ms
+    l_roof_left_5:
+      color: FFA500
+      fade: 500ms
+    l_roof_left_4:
+      color: FFA500
+      fade: 500ms
+    l_roof_center:
+      color: FFA500
+      fade: 500ms
+    l_hideyhole:
+      color: FFA500
+      fade: 500ms
+    l_roof_left_1:
+      color: FFA500
+      fade: 500ms
+    l_poseidion_band_right_distal:
+      color: FFA500
+      fade: 500ms
+    l_roof_right_2:
+      color: FFA500
+      fade: 500ms
+    l_roof_right_3:
+      color: FFA500
+      fade: 500ms
+    l_roof_right_4:
+      color: FFA500
+      fade: 500ms
+    l_roof_right_1:
+      color: FFA500
+      fade: 500ms
+    l_roof_right_5:
+      color: FFA500
+      fade: 500ms
+    l_olympus_band_upper_right:
+      color: FFA500
+      fade: 500ms
+    l_olympus_band_lower_right:
+      color: FFA500
+      fade: 500ms
+    l_olympus_cloud:
+      color: FFA500
+      fade: 500ms
+    l_revealed_slingshot_flasher:
+      color: FFA500
+      fade: 500ms
+    l_olympus_lock_distal:
+      color: FFA500
+      fade: 500ms
+    l_olympus_lock_prox:
+      color: FFA500
+      fade: 500ms
+    l_right_sis_arrow:
+      color: FFA500
+      fade: 500ms
+    l_middle_drop_arrow:
+      color: FFA500
+      fade: 500ms
+    l_right_outlane:
+      color: FFA500
+      fade: 500ms
+    l_distal_drop_arrow:
+      color: FFA500
+      fade: 500ms
+    l_prox_drop_arrow:
+      color: FFA500
+      fade: 500ms
+    l_ramp_arrow:
+      color: FFA500
+      fade: 500ms
+    l_right_sling_prox:
+      color: FFA500
+      fade: 500ms
+    l_right_sling_middle:
+      color: FFA500
+      fade: 500ms
+    l_right_sling_distal:
+      color: FFA500
+      fade: 500ms
+    l_right_inlane:
+      color: FFA500
+      fade: 500ms
+    l_lightning:
+      color: FFA500
+      fade: 500ms
+    l_olympus_gate_triangle:
+      color: FFA500
+      fade: 500ms
+    l_olympus_spinner:
+      color: FFA500
+      fade: 500ms
+    l_right_orbit_triangle:
+      color: FFA500
+      fade: 500ms
+    l_r_inlane_1:
+      color: 362900
+      fade: 500ms
+    l_r_inlane_2:
+      color: 362900
+      fade: 500ms
+    l_r_inlane_3:
+      color: 362900
+      fade: 500ms
+    l_r_inlane_4:
+      color: 362900
+      fade: 500ms
+    l_r_inlane_5:
+      color: 362900
+      fade: 500ms
+    l_r_inlane_6:
+      color: 362900
+      fade: 500ms
+    l_r_inlane_7:
+      color: 362900
+      fade: 500ms
+    l_r_inlane_8:
+      color: 362900
+      fade: 500ms
+    l_r_inlane_9:
+      color: 362900
+      fade: 500ms
+    l_r_inlane_10:
+      color: 362900
+      fade: 500ms
+    l_r_inlane_11:
+      color: 362900
+      fade: 500ms
+    l_r_inlane_12:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_0:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_1:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_2:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_3:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_4:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_5:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_6:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_7:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_8:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_9:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_10:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_11:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_12:
+      color: 362900
+      fade: 500ms
+    l_r_outlane_13:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_0:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_1:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_2:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_3:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_4:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_5:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_6:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_7:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_8:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_9:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_10:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_11:
+      color: 362900
+      fade: 500ms
+    l_l_inlane_12:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_0:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_1:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_2:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_3:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_4:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_5:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_6:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_7:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_8:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_9:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_10:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_11:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_12:
+      color: 362900
+      fade: 500ms
+    l_l_outlane_13:
+      color: 362900
+      fade: 500ms
+    l_shooter_0:
+      color: 362900
+      fade: 500ms
+    l_shooter_1:
+      color: 362900
+      fade: 500ms
+    l_shooter_2:
+      color: 362900
+      fade: 500ms
+    l_shooter_3:
+      color: 362900
+      fade: 500ms
+    l_shooter_4:
+      color: 362900
+      fade: 500ms
+    l_shooter_5:
+      color: 362900
+      fade: 500ms
+    l_shooter_6:
+      color: 362900
+      fade: 500ms
+    l_shooter_7:
+      color: 362900
+      fade: 500ms
+    l_shooter_8:
+      color: 362900
+      fade: 500ms
+    l_shooter_9:
+      color: 362900
+      fade: 500ms
+    l_shooter_10:
+      color: 362900
+      fade: 500ms
+    l_shooter_11:
+      color: 362900
+      fade: 500ms
+    l_shooter_12:
+      color: 362900
+      fade: 500ms
+    l_shooter_13:
+      color: 362900
+      fade: 500ms
+    l_shooter_14:
+      color: 362900
+      fade: 500ms
+    l_shooter_15:
+      color: 362900
+      fade: 500ms
+    l_shooter_16:
+      color: 362900
+      fade: 500ms
+    l_shooter_17:
+      color: 362900
+      fade: 500ms
+    l_shooter_18:
+      color: 362900
+      fade: 500ms
+    l_shooter_19:
+      color: 362900
+      fade: 500ms
+    l_shooter_20:
+      color: 362900
+      fade: 500ms
+    l_shooter_21:
+      color: 362900
+      fade: 500ms
+    l_shooter_22:
+      color: 362900
+      fade: 500ms
+    l_shooter_23:
+      color: 362900
+      fade: 500ms
+    l_shooter_24:
+      color: 362900
+      fade: 500ms
+    l_shooter_25:
+      color: 362900
+      fade: 500ms
+    l_shooter_26:
+      color: 362900
+      fade: 500ms
+    l_shooter_27:
+      color: 362900
+      fade: 500ms
+    l_shooter_28:
+      color: 362900
+      fade: 500ms
+    l_shooter_29:
+      color: 362900
+      fade: 500ms
+    l_shooter_30:
+      color: 362900
+      fade: 500ms
+    l_shooter_31:
+      color: 362900
+      fade: 500ms
+    l_shooter_32:
+      color: 362900
+      fade: 500ms
+    l_shooter_33:
+      color: 362900
+      fade: 500ms
+    l_shooter_34:
+      color: 362900
+      fade: 500ms
+    l_shooter_35:
+      color: 362900
+      fade: 500ms
+    l_shooter_36:
+      color: 362900
+      fade: 500ms
+    l_shooter_37:
+      color: 362900
+      fade: 500ms
+    l_shooter_38:
+      color: 362900
+      fade: 500ms
+    l_shooter_39:
+      color: 362900
+      fade: 500ms
+    l_shooter_40:
+      color: 362900
+      fade: 500ms
+    l_shooter_41:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_15:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_14:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_13:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_12:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_11:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_10:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_9:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_8:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_7:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_6:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_5:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_4:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_3:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_2:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_1:
+      color: 362900
+      fade: 500ms
+    l_right_shoulder_0:
+      color: 362900
+      fade: 500ms
+    l_orbit_0:
+      color: 362900
+      fade: 500ms
+    l_orbit_1:
+      color: 362900
+      fade: 500ms
+    l_orbit_2:
+      color: 362900
+      fade: 500ms
+    l_orbit_3:
+      color: 362900
+      fade: 500ms
+    l_orbit_4:
+      color: 362900
+      fade: 500ms
+    l_orbit_5:
+      color: 362900
+      fade: 500ms
+    l_orbit_6:
+      color: 362900
+      fade: 500ms
+    l_orbit_7:
+      color: 362900
+      fade: 500ms
+    l_orbit_8:
+      color: 362900
+      fade: 500ms
+    l_orbit_9:
+      color: 362900
+      fade: 500ms
+    l_orbit_10:
+      color: 362900
+      fade: 500ms
+    l_orbit_11:
+      color: 362900
+      fade: 500ms
+    l_orbit_12:
+      color: 362900
+      fade: 500ms
+    l_orbit_13:
+      color: 362900
+      fade: 500ms
+    l_orbit_14:
+      color: 362900
+      fade: 500ms
+    l_orbit_15:
+      color: 362900
+      fade: 500ms
+    l_orbit_16:
+      color: 362900
+      fade: 500ms
+    l_orbit_17:
+      color: 362900
+      fade: 500ms
+    l_orbit_18:
+      color: 362900
+      fade: 500ms
+    l_orbit_19:
+      color: 362900
+      fade: 500ms
+    l_orbit_20:
+      color: 362900
+      fade: 500ms
+    l_orbit_21:
+      color: 362900
+      fade: 500ms
+    l_orbit_22:
+      color: 362900
+      fade: 500ms
+    l_orbit_23:
+      color: 362900
+      fade: 500ms
+    l_orbit_24:
+      color: 362900
+      fade: 500ms
+    l_orbit_25:
+      color: 362900
+      fade: 500ms
+    l_orbit_26:
+      color: 362900
+      fade: 500ms
+    l_orbit_27:
+      color: 362900
+      fade: 500ms
+    l_orbit_28:
+      color: 362900
+      fade: 500ms
+    l_orbit_29:
+      color: 362900
+      fade: 500ms
+    l_orbit_30:
+      color: 362900
+      fade: 500ms
+    l_orbit_31:
+      color: 362900
+      fade: 500ms
+    l_orbit_32:
+      color: 362900
+      fade: 500ms
+    l_orbit_33:
+      color: 362900
+      fade: 500ms
+    l_orbit_34:
+      color: 362900
+      fade: 500ms
+    l_orbit_35:
+      color: 362900
+      fade: 500ms
+    l_orbit_36:
+      color: 362900
+      fade: 500ms
+    l_orbit_37:
+      color: 362900
+      fade: 500ms
+    l_orbit_38:
+      color: 362900
+      fade: 500ms
+    l_orbit_39:
+      color: 362900
+      fade: 500ms
+    l_orbit_40:
+      color: 362900
+      fade: 500ms
+    l_orbit_41:
+      color: 362900
+      fade: 500ms
+    l_orbit_42:
+      color: 362900
+      fade: 500ms
+    l_orbit_43:
+      color: 362900
+      fade: 500ms
+    l_orbit_44:
+      color: 362900
+      fade: 500ms
+    l_orbit_45:
+      color: 362900
+      fade: 500ms
+    l_orbit_46:
+      color: 362900
+      fade: 500ms
+    l_orbit_47:
+      color: 362900
+      fade: 500ms
+    l_orbit_48:
+      color: 362900
+      fade: 500ms
+    l_orbit_49:
+      color: 362900
+      fade: 500ms
+    l_orbit_50:
+      color: 362900
+      fade: 500ms
+    l_orbit_51:
+      color: 362900
+      fade: 500ms
+    l_orbit_52:
+      color: 362900
+      fade: 500ms
+    l_orbit_53:
+      color: 362900
+      fade: 500ms
+    l_orbit_54:
+      color: 362900
+      fade: 500ms
+    l_orbit_55:
+      color: 362900
+      fade: 500ms
+    l_orbit_56:
+      color: 362900
+      fade: 500ms
+    l_orbit_57:
+      color: 362900
+      fade: 500ms
+    l_orbit_58:
+      color: 362900
+      fade: 500ms
+    l_orbit_59:
+      color: 362900
+      fade: 500ms
+    l_orbit_60:
+      color: 362900
+      fade: 500ms
+    l_orbit_61:
+      color: 362900
+      fade: 500ms
+    l_orbit_62:
+      color: 362900
+      fade: 500ms
+    l_orbit_63:
+      color: 362900
+      fade: 500ms
+    l_orbit_64:
+      color: 362900
+      fade: 500ms
+    l_orbit_65:
+      color: 362900
+      fade: 500ms
+    l_orbit_66:
+      color: 362900
+      fade: 500ms
+    l_orbit_67:
+      color: 362900
+      fade: 500ms
+    l_orbit_68:
+      color: 362900
+      fade: 500ms
+    l_left_pop_13:
+      color: 362900
+      fade: 500ms
+    l_left_pop_12:
+      color: 362900
+      fade: 500ms
+    l_left_pop_11:
+      color: 362900
+      fade: 500ms
+    l_left_pop_10:
+      color: 362900
+      fade: 500ms
+    l_left_pop_9:
+      color: 362900
+      fade: 500ms
+    l_left_pop_8:
+      color: 362900
+      fade: 500ms
+    l_left_pop_7:
+      color: 362900
+      fade: 500ms
+    l_left_pop_6:
+      color: 362900
+      fade: 500ms
+    l_left_pop_5:
+      color: 362900
+      fade: 500ms
+    l_left_pop_4:
+      color: 362900
+      fade: 500ms
+    l_left_pop_3:
+      color: 362900
+      fade: 500ms
+    l_left_pop_2:
+      color: 362900
+      fade: 500ms
+    l_left_pop_1:
+      color: 362900
+      fade: 500ms
+    l_left_pop_0:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_14:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_13:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_12:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_11:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_10:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_9:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_8:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_7:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_6:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_5:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_4:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_3:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_2:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_1:
+      color: 362900
+      fade: 500ms
+    l_left_shoulder_0:
+      color: 362900
+      fade: 500ms
+- duration: 1
+  lights:
+    l_hydra_2:
+      color: FFFF00
+      fade: 500ms
+    l_scoop_tongue:
+      color: FFFF00
+      fade: 500ms
+    l_left_side_pop:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_pop:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_lower_pop:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_right_pop:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_left_pop:
+      color: FFFF00
+      fade: 500ms
+    l_hydra_center:
+      color: FFFF00
+      fade: 500ms
+    l_hydra_top:
+      color: FFFF00
+      fade: 500ms
+    l_hydra_7:
+      color: FFFF00
+      fade: 500ms
+    l_hydra_10:
+      color: FFFF00
+      fade: 500ms
+    l_left_sling_prox:
+      color: FFFF00
+      fade: 500ms
+    l_left_sling_middle:
+      color: FFFF00
+      fade: 500ms
+    l_left_sling_distal:
+      color: FFFF00
+      fade: 500ms
+    l_hydra_4:
+      color: FFFF00
+      fade: 500ms
+    l_hydra_bottom:
+      color: FFFF00
+      fade: 500ms
+    l_3xflasher:
+      color: FFFF00
+      fade: 500ms
+    l_2xflasher:
+      color: FFFF00
+      fade: 500ms
+    l_left_inlane:
+      color: FFFF00
+      fade: 500ms
+    l_left_pop_band:
+      color: FFFF00
+      fade: 500ms
+    l_left_pop_lower_arrow:
+      color: FFFF00
+      fade: 500ms
+    l_left_pop_upper_arrow:
+      color: FFFF00
+      fade: 500ms
+    l_left_outlane:
+      color: FFFF00
+      fade: 500ms
+    l_left_spinner_band_prox:
+      color: FFFF00
+      fade: 500ms
+    l_left_orbit_spinner:
+      color: FFFF00
+      fade: 500ms
+    l_left_spinner_band_distal:
+      color: FFFF00
+      fade: 500ms
+    l_left_orbit_lower_triangle:
+      color: FFFF00
+      fade: 500ms
+    l_malstrom_4:
+      color: FFFF00
+      fade: 500ms
+    l_malstrom_3:
+      color: FFFF00
+      fade: 500ms
+    l_left_sis_arrow:
+      color: FFFF00
+      fade: 500ms
+    l_malstrom_triangle:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_fish_right:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_right_sling:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_fish_left:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_left_sling_distal:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_left_sling_middle:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_left_sling_prox:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_fish_middle:
+      color: FFFF00
+      fade: 500ms
+    l_malstrom_2:
+      color: FFFF00
+      fade: 500ms
+    l_malstrom_1:
+      color: FFFF00
+      fade: 500ms
+    l_malstrom_0:
+      color: FFFF00
+      fade: 500ms
+    l_left_orbit_upper_triangle:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_band_right_prox:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_band_left_prox:
+      color: FFFF00
+      fade: 500ms
+    l_ramp_left:
+      color: FFFF00
+      fade: 500ms
+    l_ramp_right:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_magnet:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_band_upper_left:
+      color: FFFF00
+      fade: 500ms
+    l_roof_left_2:
+      color: FFFF00
+      fade: 500ms
+    l_roof_left_3:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_lock_distal:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_lock_prox:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_magnet:
+      color: FFFF00
+      fade: 500ms
+    l_poseidon_band_left_distal:
+      color: FFFF00
+      fade: 500ms
+    l_roof_left_5:
+      color: FFFF00
+      fade: 500ms
+    l_roof_left_4:
+      color: FFFF00
+      fade: 500ms
+    l_roof_center:
+      color: FFFF00
+      fade: 500ms
+    l_hideyhole:
+      color: FFFF00
+      fade: 500ms
+    l_roof_left_1:
+      color: FFFF00
+      fade: 500ms
+    l_poseidion_band_right_distal:
+      color: FFFF00
+      fade: 500ms
+    l_roof_right_2:
+      color: FFFF00
+      fade: 500ms
+    l_roof_right_3:
+      color: FFFF00
+      fade: 500ms
+    l_roof_right_4:
+      color: FFFF00
+      fade: 500ms
+    l_roof_right_1:
+      color: FFFF00
+      fade: 500ms
+    l_roof_right_5:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_band_upper_right:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_band_lower_right:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_cloud:
+      color: FFFF00
+      fade: 500ms
+    l_revealed_slingshot_flasher:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_lock_distal:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_lock_prox:
+      color: FFFF00
+      fade: 500ms
+    l_right_sis_arrow:
+      color: FFFF00
+      fade: 500ms
+    l_middle_drop_arrow:
+      color: FFFF00
+      fade: 500ms
+    l_right_outlane:
+      color: FFFF00
+      fade: 500ms
+    l_distal_drop_arrow:
+      color: FFFF00
+      fade: 500ms
+    l_prox_drop_arrow:
+      color: FFFF00
+      fade: 500ms
+    l_ramp_arrow:
+      color: FFFF00
+      fade: 500ms
+    l_right_sling_prox:
+      color: FFFF00
+      fade: 500ms
+    l_right_sling_middle:
+      color: FFFF00
+      fade: 500ms
+    l_right_sling_distal:
+      color: FFFF00
+      fade: 500ms
+    l_right_inlane:
+      color: FFFF00
+      fade: 500ms
+    l_lightning:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_gate_triangle:
+      color: FFFF00
+      fade: 500ms
+    l_olympus_spinner:
+      color: FFFF00
+      fade: 500ms
+    l_right_orbit_triangle:
+      color: FFFF00
+      fade: 500ms
+    l_r_inlane_1:
+      color: 363600
+      fade: 500ms
+    l_r_inlane_2:
+      color: 363600
+      fade: 500ms
+    l_r_inlane_3:
+      color: 363600
+      fade: 500ms
+    l_r_inlane_4:
+      color: 363600
+      fade: 500ms
+    l_r_inlane_5:
+      color: 363600
+      fade: 500ms
+    l_r_inlane_6:
+      color: 363600
+      fade: 500ms
+    l_r_inlane_7:
+      color: 363600
+      fade: 500ms
+    l_r_inlane_8:
+      color: 363600
+      fade: 500ms
+    l_r_inlane_9:
+      color: 363600
+      fade: 500ms
+    l_r_inlane_10:
+      color: 363600
+      fade: 500ms
+    l_r_inlane_11:
+      color: 363600
+      fade: 500ms
+    l_r_inlane_12:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_0:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_1:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_2:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_3:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_4:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_5:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_6:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_7:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_8:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_9:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_10:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_11:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_12:
+      color: 363600
+      fade: 500ms
+    l_r_outlane_13:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_0:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_1:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_2:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_3:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_4:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_5:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_6:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_7:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_8:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_9:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_10:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_11:
+      color: 363600
+      fade: 500ms
+    l_l_inlane_12:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_0:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_1:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_2:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_3:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_4:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_5:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_6:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_7:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_8:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_9:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_10:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_11:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_12:
+      color: 363600
+      fade: 500ms
+    l_l_outlane_13:
+      color: 363600
+      fade: 500ms
+    l_shooter_0:
+      color: 363600
+      fade: 500ms
+    l_shooter_1:
+      color: 363600
+      fade: 500ms
+    l_shooter_2:
+      color: 363600
+      fade: 500ms
+    l_shooter_3:
+      color: 363600
+      fade: 500ms
+    l_shooter_4:
+      color: 363600
+      fade: 500ms
+    l_shooter_5:
+      color: 363600
+      fade: 500ms
+    l_shooter_6:
+      color: 363600
+      fade: 500ms
+    l_shooter_7:
+      color: 363600
+      fade: 500ms
+    l_shooter_8:
+      color: 363600
+      fade: 500ms
+    l_shooter_9:
+      color: 363600
+      fade: 500ms
+    l_shooter_10:
+      color: 363600
+      fade: 500ms
+    l_shooter_11:
+      color: 363600
+      fade: 500ms
+    l_shooter_12:
+      color: 363600
+      fade: 500ms
+    l_shooter_13:
+      color: 363600
+      fade: 500ms
+    l_shooter_14:
+      color: 363600
+      fade: 500ms
+    l_shooter_15:
+      color: 363600
+      fade: 500ms
+    l_shooter_16:
+      color: 363600
+      fade: 500ms
+    l_shooter_17:
+      color: 363600
+      fade: 500ms
+    l_shooter_18:
+      color: 363600
+      fade: 500ms
+    l_shooter_19:
+      color: 363600
+      fade: 500ms
+    l_shooter_20:
+      color: 363600
+      fade: 500ms
+    l_shooter_21:
+      color: 363600
+      fade: 500ms
+    l_shooter_22:
+      color: 363600
+      fade: 500ms
+    l_shooter_23:
+      color: 363600
+      fade: 500ms
+    l_shooter_24:
+      color: 363600
+      fade: 500ms
+    l_shooter_25:
+      color: 363600
+      fade: 500ms
+    l_shooter_26:
+      color: 363600
+      fade: 500ms
+    l_shooter_27:
+      color: 363600
+      fade: 500ms
+    l_shooter_28:
+      color: 363600
+      fade: 500ms
+    l_shooter_29:
+      color: 363600
+      fade: 500ms
+    l_shooter_30:
+      color: 363600
+      fade: 500ms
+    l_shooter_31:
+      color: 363600
+      fade: 500ms
+    l_shooter_32:
+      color: 363600
+      fade: 500ms
+    l_shooter_33:
+      color: 363600
+      fade: 500ms
+    l_shooter_34:
+      color: 363600
+      fade: 500ms
+    l_shooter_35:
+      color: 363600
+      fade: 500ms
+    l_shooter_36:
+      color: 363600
+      fade: 500ms
+    l_shooter_37:
+      color: 363600
+      fade: 500ms
+    l_shooter_38:
+      color: 363600
+      fade: 500ms
+    l_shooter_39:
+      color: 363600
+      fade: 500ms
+    l_shooter_40:
+      color: 363600
+      fade: 500ms
+    l_shooter_41:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_15:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_14:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_13:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_12:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_11:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_10:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_9:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_8:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_7:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_6:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_5:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_4:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_3:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_2:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_1:
+      color: 363600
+      fade: 500ms
+    l_right_shoulder_0:
+      color: 363600
+      fade: 500ms
+    l_orbit_0:
+      color: 363600
+      fade: 500ms
+    l_orbit_1:
+      color: 363600
+      fade: 500ms
+    l_orbit_2:
+      color: 363600
+      fade: 500ms
+    l_orbit_3:
+      color: 363600
+      fade: 500ms
+    l_orbit_4:
+      color: 363600
+      fade: 500ms
+    l_orbit_5:
+      color: 363600
+      fade: 500ms
+    l_orbit_6:
+      color: 363600
+      fade: 500ms
+    l_orbit_7:
+      color: 363600
+      fade: 500ms
+    l_orbit_8:
+      color: 363600
+      fade: 500ms
+    l_orbit_9:
+      color: 363600
+      fade: 500ms
+    l_orbit_10:
+      color: 363600
+      fade: 500ms
+    l_orbit_11:
+      color: 363600
+      fade: 500ms
+    l_orbit_12:
+      color: 363600
+      fade: 500ms
+    l_orbit_13:
+      color: 363600
+      fade: 500ms
+    l_orbit_14:
+      color: 363600
+      fade: 500ms
+    l_orbit_15:
+      color: 363600
+      fade: 500ms
+    l_orbit_16:
+      color: 363600
+      fade: 500ms
+    l_orbit_17:
+      color: 363600
+      fade: 500ms
+    l_orbit_18:
+      color: 363600
+      fade: 500ms
+    l_orbit_19:
+      color: 363600
+      fade: 500ms
+    l_orbit_20:
+      color: 363600
+      fade: 500ms
+    l_orbit_21:
+      color: 363600
+      fade: 500ms
+    l_orbit_22:
+      color: 363600
+      fade: 500ms
+    l_orbit_23:
+      color: 363600
+      fade: 500ms
+    l_orbit_24:
+      color: 363600
+      fade: 500ms
+    l_orbit_25:
+      color: 363600
+      fade: 500ms
+    l_orbit_26:
+      color: 363600
+      fade: 500ms
+    l_orbit_27:
+      color: 363600
+      fade: 500ms
+    l_orbit_28:
+      color: 363600
+      fade: 500ms
+    l_orbit_29:
+      color: 363600
+      fade: 500ms
+    l_orbit_30:
+      color: 363600
+      fade: 500ms
+    l_orbit_31:
+      color: 363600
+      fade: 500ms
+    l_orbit_32:
+      color: 363600
+      fade: 500ms
+    l_orbit_33:
+      color: 363600
+      fade: 500ms
+    l_orbit_34:
+      color: 363600
+      fade: 500ms
+    l_orbit_35:
+      color: 363600
+      fade: 500ms
+    l_orbit_36:
+      color: 363600
+      fade: 500ms
+    l_orbit_37:
+      color: 363600
+      fade: 500ms
+    l_orbit_38:
+      color: 363600
+      fade: 500ms
+    l_orbit_39:
+      color: 363600
+      fade: 500ms
+    l_orbit_40:
+      color: 363600
+      fade: 500ms
+    l_orbit_41:
+      color: 363600
+      fade: 500ms
+    l_orbit_42:
+      color: 363600
+      fade: 500ms
+    l_orbit_43:
+      color: 363600
+      fade: 500ms
+    l_orbit_44:
+      color: 363600
+      fade: 500ms
+    l_orbit_45:
+      color: 363600
+      fade: 500ms
+    l_orbit_46:
+      color: 363600
+      fade: 500ms
+    l_orbit_47:
+      color: 363600
+      fade: 500ms
+    l_orbit_48:
+      color: 363600
+      fade: 500ms
+    l_orbit_49:
+      color: 363600
+      fade: 500ms
+    l_orbit_50:
+      color: 363600
+      fade: 500ms
+    l_orbit_51:
+      color: 363600
+      fade: 500ms
+    l_orbit_52:
+      color: 363600
+      fade: 500ms
+    l_orbit_53:
+      color: 363600
+      fade: 500ms
+    l_orbit_54:
+      color: 363600
+      fade: 500ms
+    l_orbit_55:
+      color: 363600
+      fade: 500ms
+    l_orbit_56:
+      color: 363600
+      fade: 500ms
+    l_orbit_57:
+      color: 363600
+      fade: 500ms
+    l_orbit_58:
+      color: 363600
+      fade: 500ms
+    l_orbit_59:
+      color: 363600
+      fade: 500ms
+    l_orbit_60:
+      color: 363600
+      fade: 500ms
+    l_orbit_61:
+      color: 363600
+      fade: 500ms
+    l_orbit_62:
+      color: 363600
+      fade: 500ms
+    l_orbit_63:
+      color: 363600
+      fade: 500ms
+    l_orbit_64:
+      color: 363600
+      fade: 500ms
+    l_orbit_65:
+      color: 363600
+      fade: 500ms
+    l_orbit_66:
+      color: 363600
+      fade: 500ms
+    l_orbit_67:
+      color: 363600
+      fade: 500ms
+    l_orbit_68:
+      color: 363600
+      fade: 500ms
+    l_left_pop_13:
+      color: 363600
+      fade: 500ms
+    l_left_pop_12:
+      color: 363600
+      fade: 500ms
+    l_left_pop_11:
+      color: 363600
+      fade: 500ms
+    l_left_pop_10:
+      color: 363600
+      fade: 500ms
+    l_left_pop_9:
+      color: 363600
+      fade: 500ms
+    l_left_pop_8:
+      color: 363600
+      fade: 500ms
+    l_left_pop_7:
+      color: 363600
+      fade: 500ms
+    l_left_pop_6:
+      color: 363600
+      fade: 500ms
+    l_left_pop_5:
+      color: 363600
+      fade: 500ms
+    l_left_pop_4:
+      color: 363600
+      fade: 500ms
+    l_left_pop_3:
+      color: 363600
+      fade: 500ms
+    l_left_pop_2:
+      color: 363600
+      fade: 500ms
+    l_left_pop_1:
+      color: 363600
+      fade: 500ms
+    l_left_pop_0:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_14:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_13:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_12:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_11:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_10:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_9:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_8:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_7:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_6:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_5:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_4:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_3:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_2:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_1:
+      color: 363600
+      fade: 500ms
+    l_left_shoulder_0:
+      color: 363600
+      fade: 500ms
+- duration: 1
+  lights:
+    l_hydra_2:
+      color: 00FF00
+      fade: 500ms
+    l_scoop_tongue:
+      color: 00FF00
+      fade: 500ms
+    l_left_side_pop:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_pop:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_lower_pop:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_right_pop:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_left_pop:
+      color: 00FF00
+      fade: 500ms
+    l_hydra_center:
+      color: 00FF00
+      fade: 500ms
+    l_hydra_top:
+      color: 00FF00
+      fade: 500ms
+    l_hydra_7:
+      color: 00FF00
+      fade: 500ms
+    l_hydra_10:
+      color: 00FF00
+      fade: 500ms
+    l_left_sling_prox:
+      color: 00FF00
+      fade: 500ms
+    l_left_sling_middle:
+      color: 00FF00
+      fade: 500ms
+    l_left_sling_distal:
+      color: 00FF00
+      fade: 500ms
+    l_hydra_4:
+      color: 00FF00
+      fade: 500ms
+    l_hydra_bottom:
+      color: 00FF00
+      fade: 500ms
+    l_3xflasher:
+      color: 00FF00
+      fade: 500ms
+    l_2xflasher:
+      color: 00FF00
+      fade: 500ms
+    l_left_inlane:
+      color: 00FF00
+      fade: 500ms
+    l_left_pop_band:
+      color: 00FF00
+      fade: 500ms
+    l_left_pop_lower_arrow:
+      color: 00FF00
+      fade: 500ms
+    l_left_pop_upper_arrow:
+      color: 00FF00
+      fade: 500ms
+    l_left_outlane:
+      color: 00FF00
+      fade: 500ms
+    l_left_spinner_band_prox:
+      color: 00FF00
+      fade: 500ms
+    l_left_orbit_spinner:
+      color: 00FF00
+      fade: 500ms
+    l_left_spinner_band_distal:
+      color: 00FF00
+      fade: 500ms
+    l_left_orbit_lower_triangle:
+      color: 00FF00
+      fade: 500ms
+    l_malstrom_4:
+      color: 00FF00
+      fade: 500ms
+    l_malstrom_3:
+      color: 00FF00
+      fade: 500ms
+    l_left_sis_arrow:
+      color: 00FF00
+      fade: 500ms
+    l_malstrom_triangle:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_fish_right:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_right_sling:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_fish_left:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_left_sling_distal:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_left_sling_middle:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_left_sling_prox:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_fish_middle:
+      color: 00FF00
+      fade: 500ms
+    l_malstrom_2:
+      color: 00FF00
+      fade: 500ms
+    l_malstrom_1:
+      color: 00FF00
+      fade: 500ms
+    l_malstrom_0:
+      color: 00FF00
+      fade: 500ms
+    l_left_orbit_upper_triangle:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_band_right_prox:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_band_left_prox:
+      color: 00FF00
+      fade: 500ms
+    l_ramp_left:
+      color: 00FF00
+      fade: 500ms
+    l_ramp_right:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_magnet:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_band_upper_left:
+      color: 00FF00
+      fade: 500ms
+    l_roof_left_2:
+      color: 00FF00
+      fade: 500ms
+    l_roof_left_3:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_lock_distal:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_lock_prox:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_magnet:
+      color: 00FF00
+      fade: 500ms
+    l_poseidon_band_left_distal:
+      color: 00FF00
+      fade: 500ms
+    l_roof_left_5:
+      color: 00FF00
+      fade: 500ms
+    l_roof_left_4:
+      color: 00FF00
+      fade: 500ms
+    l_roof_center:
+      color: 00FF00
+      fade: 500ms
+    l_hideyhole:
+      color: 00FF00
+      fade: 500ms
+    l_roof_left_1:
+      color: 00FF00
+      fade: 500ms
+    l_poseidion_band_right_distal:
+      color: 00FF00
+      fade: 500ms
+    l_roof_right_2:
+      color: 00FF00
+      fade: 500ms
+    l_roof_right_3:
+      color: 00FF00
+      fade: 500ms
+    l_roof_right_4:
+      color: 00FF00
+      fade: 500ms
+    l_roof_right_1:
+      color: 00FF00
+      fade: 500ms
+    l_roof_right_5:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_band_upper_right:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_band_lower_right:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_cloud:
+      color: 00FF00
+      fade: 500ms
+    l_revealed_slingshot_flasher:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_lock_distal:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_lock_prox:
+      color: 00FF00
+      fade: 500ms
+    l_right_sis_arrow:
+      color: 00FF00
+      fade: 500ms
+    l_middle_drop_arrow:
+      color: 00FF00
+      fade: 500ms
+    l_right_outlane:
+      color: 00FF00
+      fade: 500ms
+    l_distal_drop_arrow:
+      color: 00FF00
+      fade: 500ms
+    l_prox_drop_arrow:
+      color: 00FF00
+      fade: 500ms
+    l_ramp_arrow:
+      color: 00FF00
+      fade: 500ms
+    l_right_sling_prox:
+      color: 00FF00
+      fade: 500ms
+    l_right_sling_middle:
+      color: 00FF00
+      fade: 500ms
+    l_right_sling_distal:
+      color: 00FF00
+      fade: 500ms
+    l_right_inlane:
+      color: 00FF00
+      fade: 500ms
+    l_lightning:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_gate_triangle:
+      color: 00FF00
+      fade: 500ms
+    l_olympus_spinner:
+      color: 00FF00
+      fade: 500ms
+    l_right_orbit_triangle:
+      color: 00FF00
+      fade: 500ms
+    l_r_inlane_1:
+      color: 003600
+      fade: 500ms
+    l_r_inlane_2:
+      color: 003600
+      fade: 500ms
+    l_r_inlane_3:
+      color: 003600
+      fade: 500ms
+    l_r_inlane_4:
+      color: 003600
+      fade: 500ms
+    l_r_inlane_5:
+      color: 003600
+      fade: 500ms
+    l_r_inlane_6:
+      color: 003600
+      fade: 500ms
+    l_r_inlane_7:
+      color: 003600
+      fade: 500ms
+    l_r_inlane_8:
+      color: 003600
+      fade: 500ms
+    l_r_inlane_9:
+      color: 003600
+      fade: 500ms
+    l_r_inlane_10:
+      color: 003600
+      fade: 500ms
+    l_r_inlane_11:
+      color: 003600
+      fade: 500ms
+    l_r_inlane_12:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_0:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_1:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_2:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_3:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_4:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_5:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_6:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_7:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_8:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_9:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_10:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_11:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_12:
+      color: 003600
+      fade: 500ms
+    l_r_outlane_13:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_0:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_1:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_2:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_3:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_4:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_5:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_6:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_7:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_8:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_9:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_10:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_11:
+      color: 003600
+      fade: 500ms
+    l_l_inlane_12:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_0:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_1:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_2:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_3:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_4:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_5:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_6:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_7:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_8:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_9:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_10:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_11:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_12:
+      color: 003600
+      fade: 500ms
+    l_l_outlane_13:
+      color: 003600
+      fade: 500ms
+    l_shooter_0:
+      color: 003600
+      fade: 500ms
+    l_shooter_1:
+      color: 003600
+      fade: 500ms
+    l_shooter_2:
+      color: 003600
+      fade: 500ms
+    l_shooter_3:
+      color: 003600
+      fade: 500ms
+    l_shooter_4:
+      color: 003600
+      fade: 500ms
+    l_shooter_5:
+      color: 003600
+      fade: 500ms
+    l_shooter_6:
+      color: 003600
+      fade: 500ms
+    l_shooter_7:
+      color: 003600
+      fade: 500ms
+    l_shooter_8:
+      color: 003600
+      fade: 500ms
+    l_shooter_9:
+      color: 003600
+      fade: 500ms
+    l_shooter_10:
+      color: 003600
+      fade: 500ms
+    l_shooter_11:
+      color: 003600
+      fade: 500ms
+    l_shooter_12:
+      color: 003600
+      fade: 500ms
+    l_shooter_13:
+      color: 003600
+      fade: 500ms
+    l_shooter_14:
+      color: 003600
+      fade: 500ms
+    l_shooter_15:
+      color: 003600
+      fade: 500ms
+    l_shooter_16:
+      color: 003600
+      fade: 500ms
+    l_shooter_17:
+      color: 003600
+      fade: 500ms
+    l_shooter_18:
+      color: 003600
+      fade: 500ms
+    l_shooter_19:
+      color: 003600
+      fade: 500ms
+    l_shooter_20:
+      color: 003600
+      fade: 500ms
+    l_shooter_21:
+      color: 003600
+      fade: 500ms
+    l_shooter_22:
+      color: 003600
+      fade: 500ms
+    l_shooter_23:
+      color: 003600
+      fade: 500ms
+    l_shooter_24:
+      color: 003600
+      fade: 500ms
+    l_shooter_25:
+      color: 003600
+      fade: 500ms
+    l_shooter_26:
+      color: 003600
+      fade: 500ms
+    l_shooter_27:
+      color: 003600
+      fade: 500ms
+    l_shooter_28:
+      color: 003600
+      fade: 500ms
+    l_shooter_29:
+      color: 003600
+      fade: 500ms
+    l_shooter_30:
+      color: 003600
+      fade: 500ms
+    l_shooter_31:
+      color: 003600
+      fade: 500ms
+    l_shooter_32:
+      color: 003600
+      fade: 500ms
+    l_shooter_33:
+      color: 003600
+      fade: 500ms
+    l_shooter_34:
+      color: 003600
+      fade: 500ms
+    l_shooter_35:
+      color: 003600
+      fade: 500ms
+    l_shooter_36:
+      color: 003600
+      fade: 500ms
+    l_shooter_37:
+      color: 003600
+      fade: 500ms
+    l_shooter_38:
+      color: 003600
+      fade: 500ms
+    l_shooter_39:
+      color: 003600
+      fade: 500ms
+    l_shooter_40:
+      color: 003600
+      fade: 500ms
+    l_shooter_41:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_15:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_14:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_13:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_12:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_11:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_10:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_9:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_8:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_7:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_6:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_5:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_4:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_3:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_2:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_1:
+      color: 003600
+      fade: 500ms
+    l_right_shoulder_0:
+      color: 003600
+      fade: 500ms
+    l_orbit_0:
+      color: 003600
+      fade: 500ms
+    l_orbit_1:
+      color: 003600
+      fade: 500ms
+    l_orbit_2:
+      color: 003600
+      fade: 500ms
+    l_orbit_3:
+      color: 003600
+      fade: 500ms
+    l_orbit_4:
+      color: 003600
+      fade: 500ms
+    l_orbit_5:
+      color: 003600
+      fade: 500ms
+    l_orbit_6:
+      color: 003600
+      fade: 500ms
+    l_orbit_7:
+      color: 003600
+      fade: 500ms
+    l_orbit_8:
+      color: 003600
+      fade: 500ms
+    l_orbit_9:
+      color: 003600
+      fade: 500ms
+    l_orbit_10:
+      color: 003600
+      fade: 500ms
+    l_orbit_11:
+      color: 003600
+      fade: 500ms
+    l_orbit_12:
+      color: 003600
+      fade: 500ms
+    l_orbit_13:
+      color: 003600
+      fade: 500ms
+    l_orbit_14:
+      color: 003600
+      fade: 500ms
+    l_orbit_15:
+      color: 003600
+      fade: 500ms
+    l_orbit_16:
+      color: 003600
+      fade: 500ms
+    l_orbit_17:
+      color: 003600
+      fade: 500ms
+    l_orbit_18:
+      color: 003600
+      fade: 500ms
+    l_orbit_19:
+      color: 003600
+      fade: 500ms
+    l_orbit_20:
+      color: 003600
+      fade: 500ms
+    l_orbit_21:
+      color: 003600
+      fade: 500ms
+    l_orbit_22:
+      color: 003600
+      fade: 500ms
+    l_orbit_23:
+      color: 003600
+      fade: 500ms
+    l_orbit_24:
+      color: 003600
+      fade: 500ms
+    l_orbit_25:
+      color: 003600
+      fade: 500ms
+    l_orbit_26:
+      color: 003600
+      fade: 500ms
+    l_orbit_27:
+      color: 003600
+      fade: 500ms
+    l_orbit_28:
+      color: 003600
+      fade: 500ms
+    l_orbit_29:
+      color: 003600
+      fade: 500ms
+    l_orbit_30:
+      color: 003600
+      fade: 500ms
+    l_orbit_31:
+      color: 003600
+      fade: 500ms
+    l_orbit_32:
+      color: 003600
+      fade: 500ms
+    l_orbit_33:
+      color: 003600
+      fade: 500ms
+    l_orbit_34:
+      color: 003600
+      fade: 500ms
+    l_orbit_35:
+      color: 003600
+      fade: 500ms
+    l_orbit_36:
+      color: 003600
+      fade: 500ms
+    l_orbit_37:
+      color: 003600
+      fade: 500ms
+    l_orbit_38:
+      color: 003600
+      fade: 500ms
+    l_orbit_39:
+      color: 003600
+      fade: 500ms
+    l_orbit_40:
+      color: 003600
+      fade: 500ms
+    l_orbit_41:
+      color: 003600
+      fade: 500ms
+    l_orbit_42:
+      color: 003600
+      fade: 500ms
+    l_orbit_43:
+      color: 003600
+      fade: 500ms
+    l_orbit_44:
+      color: 003600
+      fade: 500ms
+    l_orbit_45:
+      color: 003600
+      fade: 500ms
+    l_orbit_46:
+      color: 003600
+      fade: 500ms
+    l_orbit_47:
+      color: 003600
+      fade: 500ms
+    l_orbit_48:
+      color: 003600
+      fade: 500ms
+    l_orbit_49:
+      color: 003600
+      fade: 500ms
+    l_orbit_50:
+      color: 003600
+      fade: 500ms
+    l_orbit_51:
+      color: 003600
+      fade: 500ms
+    l_orbit_52:
+      color: 003600
+      fade: 500ms
+    l_orbit_53:
+      color: 003600
+      fade: 500ms
+    l_orbit_54:
+      color: 003600
+      fade: 500ms
+    l_orbit_55:
+      color: 003600
+      fade: 500ms
+    l_orbit_56:
+      color: 003600
+      fade: 500ms
+    l_orbit_57:
+      color: 003600
+      fade: 500ms
+    l_orbit_58:
+      color: 003600
+      fade: 500ms
+    l_orbit_59:
+      color: 003600
+      fade: 500ms
+    l_orbit_60:
+      color: 003600
+      fade: 500ms
+    l_orbit_61:
+      color: 003600
+      fade: 500ms
+    l_orbit_62:
+      color: 003600
+      fade: 500ms
+    l_orbit_63:
+      color: 003600
+      fade: 500ms
+    l_orbit_64:
+      color: 003600
+      fade: 500ms
+    l_orbit_65:
+      color: 003600
+      fade: 500ms
+    l_orbit_66:
+      color: 003600
+      fade: 500ms
+    l_orbit_67:
+      color: 003600
+      fade: 500ms
+    l_orbit_68:
+      color: 003600
+      fade: 500ms
+    l_left_pop_13:
+      color: 003600
+      fade: 500ms
+    l_left_pop_12:
+      color: 003600
+      fade: 500ms
+    l_left_pop_11:
+      color: 003600
+      fade: 500ms
+    l_left_pop_10:
+      color: 003600
+      fade: 500ms
+    l_left_pop_9:
+      color: 003600
+      fade: 500ms
+    l_left_pop_8:
+      color: 003600
+      fade: 500ms
+    l_left_pop_7:
+      color: 003600
+      fade: 500ms
+    l_left_pop_6:
+      color: 003600
+      fade: 500ms
+    l_left_pop_5:
+      color: 003600
+      fade: 500ms
+    l_left_pop_4:
+      color: 003600
+      fade: 500ms
+    l_left_pop_3:
+      color: 003600
+      fade: 500ms
+    l_left_pop_2:
+      color: 003600
+      fade: 500ms
+    l_left_pop_1:
+      color: 003600
+      fade: 500ms
+    l_left_pop_0:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_14:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_13:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_12:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_11:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_10:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_9:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_8:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_7:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_6:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_5:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_4:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_3:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_2:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_1:
+      color: 003600
+      fade: 500ms
+    l_left_shoulder_0:
+      color: 003600
+      fade: 500ms
+- duration: 1
+  lights:
+    l_hydra_2:
+      color: 0000FF
+      fade: 500ms
+    l_scoop_tongue:
+      color: 0000FF
+      fade: 500ms
+    l_left_side_pop:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_pop:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_lower_pop:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_right_pop:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_left_pop:
+      color: 0000FF
+      fade: 500ms
+    l_hydra_center:
+      color: 0000FF
+      fade: 500ms
+    l_hydra_top:
+      color: 0000FF
+      fade: 500ms
+    l_hydra_7:
+      color: 0000FF
+      fade: 500ms
+    l_hydra_10:
+      color: 0000FF
+      fade: 500ms
+    l_left_sling_prox:
+      color: 0000FF
+      fade: 500ms
+    l_left_sling_middle:
+      color: 0000FF
+      fade: 500ms
+    l_left_sling_distal:
+      color: 0000FF
+      fade: 500ms
+    l_hydra_4:
+      color: 0000FF
+      fade: 500ms
+    l_hydra_bottom:
+      color: 0000FF
+      fade: 500ms
+    l_3xflasher:
+      color: 0000FF
+      fade: 500ms
+    l_2xflasher:
+      color: 0000FF
+      fade: 500ms
+    l_left_inlane:
+      color: 0000FF
+      fade: 500ms
+    l_left_pop_band:
+      color: 0000FF
+      fade: 500ms
+    l_left_pop_lower_arrow:
+      color: 0000FF
+      fade: 500ms
+    l_left_pop_upper_arrow:
+      color: 0000FF
+      fade: 500ms
+    l_left_outlane:
+      color: 0000FF
+      fade: 500ms
+    l_left_spinner_band_prox:
+      color: 0000FF
+      fade: 500ms
+    l_left_orbit_spinner:
+      color: 0000FF
+      fade: 500ms
+    l_left_spinner_band_distal:
+      color: 0000FF
+      fade: 500ms
+    l_left_orbit_lower_triangle:
+      color: 0000FF
+      fade: 500ms
+    l_malstrom_4:
+      color: 0000FF
+      fade: 500ms
+    l_malstrom_3:
+      color: 0000FF
+      fade: 500ms
+    l_left_sis_arrow:
+      color: 0000FF
+      fade: 500ms
+    l_malstrom_triangle:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_fish_right:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_right_sling:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_fish_left:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_left_sling_distal:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_left_sling_middle:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_left_sling_prox:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_fish_middle:
+      color: 0000FF
+      fade: 500ms
+    l_malstrom_2:
+      color: 0000FF
+      fade: 500ms
+    l_malstrom_1:
+      color: 0000FF
+      fade: 500ms
+    l_malstrom_0:
+      color: 0000FF
+      fade: 500ms
+    l_left_orbit_upper_triangle:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_band_right_prox:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_band_left_prox:
+      color: 0000FF
+      fade: 500ms
+    l_ramp_left:
+      color: 0000FF
+      fade: 500ms
+    l_ramp_right:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_magnet:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_band_upper_left:
+      color: 0000FF
+      fade: 500ms
+    l_roof_left_2:
+      color: 0000FF
+      fade: 500ms
+    l_roof_left_3:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_lock_distal:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_lock_prox:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_magnet:
+      color: 0000FF
+      fade: 500ms
+    l_poseidon_band_left_distal:
+      color: 0000FF
+      fade: 500ms
+    l_roof_left_5:
+      color: 0000FF
+      fade: 500ms
+    l_roof_left_4:
+      color: 0000FF
+      fade: 500ms
+    l_roof_center:
+      color: 0000FF
+      fade: 500ms
+    l_hideyhole:
+      color: 0000FF
+      fade: 500ms
+    l_roof_left_1:
+      color: 0000FF
+      fade: 500ms
+    l_poseidion_band_right_distal:
+      color: 0000FF
+      fade: 500ms
+    l_roof_right_2:
+      color: 0000FF
+      fade: 500ms
+    l_roof_right_3:
+      color: 0000FF
+      fade: 500ms
+    l_roof_right_4:
+      color: 0000FF
+      fade: 500ms
+    l_roof_right_1:
+      color: 0000FF
+      fade: 500ms
+    l_roof_right_5:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_band_upper_right:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_band_lower_right:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_cloud:
+      color: 0000FF
+      fade: 500ms
+    l_revealed_slingshot_flasher:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_lock_distal:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_lock_prox:
+      color: 0000FF
+      fade: 500ms
+    l_right_sis_arrow:
+      color: 0000FF
+      fade: 500ms
+    l_middle_drop_arrow:
+      color: 0000FF
+      fade: 500ms
+    l_right_outlane:
+      color: 0000FF
+      fade: 500ms
+    l_distal_drop_arrow:
+      color: 0000FF
+      fade: 500ms
+    l_prox_drop_arrow:
+      color: 0000FF
+      fade: 500ms
+    l_ramp_arrow:
+      color: 0000FF
+      fade: 500ms
+    l_right_sling_prox:
+      color: 0000FF
+      fade: 500ms
+    l_right_sling_middle:
+      color: 0000FF
+      fade: 500ms
+    l_right_sling_distal:
+      color: 0000FF
+      fade: 500ms
+    l_right_inlane:
+      color: 0000FF
+      fade: 500ms
+    l_lightning:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_gate_triangle:
+      color: 0000FF
+      fade: 500ms
+    l_olympus_spinner:
+      color: 0000FF
+      fade: 500ms
+    l_right_orbit_triangle:
+      color: 0000FF
+      fade: 500ms
+    l_r_inlane_1:
+      color: 000036
+      fade: 500ms
+    l_r_inlane_2:
+      color: 000036
+      fade: 500ms
+    l_r_inlane_3:
+      color: 000036
+      fade: 500ms
+    l_r_inlane_4:
+      color: 000036
+      fade: 500ms
+    l_r_inlane_5:
+      color: 000036
+      fade: 500ms
+    l_r_inlane_6:
+      color: 000036
+      fade: 500ms
+    l_r_inlane_7:
+      color: 000036
+      fade: 500ms
+    l_r_inlane_8:
+      color: 000036
+      fade: 500ms
+    l_r_inlane_9:
+      color: 000036
+      fade: 500ms
+    l_r_inlane_10:
+      color: 000036
+      fade: 500ms
+    l_r_inlane_11:
+      color: 000036
+      fade: 500ms
+    l_r_inlane_12:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_0:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_1:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_2:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_3:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_4:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_5:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_6:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_7:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_8:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_9:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_10:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_11:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_12:
+      color: 000036
+      fade: 500ms
+    l_r_outlane_13:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_0:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_1:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_2:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_3:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_4:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_5:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_6:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_7:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_8:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_9:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_10:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_11:
+      color: 000036
+      fade: 500ms
+    l_l_inlane_12:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_0:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_1:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_2:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_3:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_4:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_5:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_6:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_7:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_8:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_9:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_10:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_11:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_12:
+      color: 000036
+      fade: 500ms
+    l_l_outlane_13:
+      color: 000036
+      fade: 500ms
+    l_shooter_0:
+      color: 000036
+      fade: 500ms
+    l_shooter_1:
+      color: 000036
+      fade: 500ms
+    l_shooter_2:
+      color: 000036
+      fade: 500ms
+    l_shooter_3:
+      color: 000036
+      fade: 500ms
+    l_shooter_4:
+      color: 000036
+      fade: 500ms
+    l_shooter_5:
+      color: 000036
+      fade: 500ms
+    l_shooter_6:
+      color: 000036
+      fade: 500ms
+    l_shooter_7:
+      color: 000036
+      fade: 500ms
+    l_shooter_8:
+      color: 000036
+      fade: 500ms
+    l_shooter_9:
+      color: 000036
+      fade: 500ms
+    l_shooter_10:
+      color: 000036
+      fade: 500ms
+    l_shooter_11:
+      color: 000036
+      fade: 500ms
+    l_shooter_12:
+      color: 000036
+      fade: 500ms
+    l_shooter_13:
+      color: 000036
+      fade: 500ms
+    l_shooter_14:
+      color: 000036
+      fade: 500ms
+    l_shooter_15:
+      color: 000036
+      fade: 500ms
+    l_shooter_16:
+      color: 000036
+      fade: 500ms
+    l_shooter_17:
+      color: 000036
+      fade: 500ms
+    l_shooter_18:
+      color: 000036
+      fade: 500ms
+    l_shooter_19:
+      color: 000036
+      fade: 500ms
+    l_shooter_20:
+      color: 000036
+      fade: 500ms
+    l_shooter_21:
+      color: 000036
+      fade: 500ms
+    l_shooter_22:
+      color: 000036
+      fade: 500ms
+    l_shooter_23:
+      color: 000036
+      fade: 500ms
+    l_shooter_24:
+      color: 000036
+      fade: 500ms
+    l_shooter_25:
+      color: 000036
+      fade: 500ms
+    l_shooter_26:
+      color: 000036
+      fade: 500ms
+    l_shooter_27:
+      color: 000036
+      fade: 500ms
+    l_shooter_28:
+      color: 000036
+      fade: 500ms
+    l_shooter_29:
+      color: 000036
+      fade: 500ms
+    l_shooter_30:
+      color: 000036
+      fade: 500ms
+    l_shooter_31:
+      color: 000036
+      fade: 500ms
+    l_shooter_32:
+      color: 000036
+      fade: 500ms
+    l_shooter_33:
+      color: 000036
+      fade: 500ms
+    l_shooter_34:
+      color: 000036
+      fade: 500ms
+    l_shooter_35:
+      color: 000036
+      fade: 500ms
+    l_shooter_36:
+      color: 000036
+      fade: 500ms
+    l_shooter_37:
+      color: 000036
+      fade: 500ms
+    l_shooter_38:
+      color: 000036
+      fade: 500ms
+    l_shooter_39:
+      color: 000036
+      fade: 500ms
+    l_shooter_40:
+      color: 000036
+      fade: 500ms
+    l_shooter_41:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_15:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_14:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_13:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_12:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_11:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_10:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_9:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_8:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_7:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_6:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_5:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_4:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_3:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_2:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_1:
+      color: 000036
+      fade: 500ms
+    l_right_shoulder_0:
+      color: 000036
+      fade: 500ms
+    l_orbit_0:
+      color: 000036
+      fade: 500ms
+    l_orbit_1:
+      color: 000036
+      fade: 500ms
+    l_orbit_2:
+      color: 000036
+      fade: 500ms
+    l_orbit_3:
+      color: 000036
+      fade: 500ms
+    l_orbit_4:
+      color: 000036
+      fade: 500ms
+    l_orbit_5:
+      color: 000036
+      fade: 500ms
+    l_orbit_6:
+      color: 000036
+      fade: 500ms
+    l_orbit_7:
+      color: 000036
+      fade: 500ms
+    l_orbit_8:
+      color: 000036
+      fade: 500ms
+    l_orbit_9:
+      color: 000036
+      fade: 500ms
+    l_orbit_10:
+      color: 000036
+      fade: 500ms
+    l_orbit_11:
+      color: 000036
+      fade: 500ms
+    l_orbit_12:
+      color: 000036
+      fade: 500ms
+    l_orbit_13:
+      color: 000036
+      fade: 500ms
+    l_orbit_14:
+      color: 000036
+      fade: 500ms
+    l_orbit_15:
+      color: 000036
+      fade: 500ms
+    l_orbit_16:
+      color: 000036
+      fade: 500ms
+    l_orbit_17:
+      color: 000036
+      fade: 500ms
+    l_orbit_18:
+      color: 000036
+      fade: 500ms
+    l_orbit_19:
+      color: 000036
+      fade: 500ms
+    l_orbit_20:
+      color: 000036
+      fade: 500ms
+    l_orbit_21:
+      color: 000036
+      fade: 500ms
+    l_orbit_22:
+      color: 000036
+      fade: 500ms
+    l_orbit_23:
+      color: 000036
+      fade: 500ms
+    l_orbit_24:
+      color: 000036
+      fade: 500ms
+    l_orbit_25:
+      color: 000036
+      fade: 500ms
+    l_orbit_26:
+      color: 000036
+      fade: 500ms
+    l_orbit_27:
+      color: 000036
+      fade: 500ms
+    l_orbit_28:
+      color: 000036
+      fade: 500ms
+    l_orbit_29:
+      color: 000036
+      fade: 500ms
+    l_orbit_30:
+      color: 000036
+      fade: 500ms
+    l_orbit_31:
+      color: 000036
+      fade: 500ms
+    l_orbit_32:
+      color: 000036
+      fade: 500ms
+    l_orbit_33:
+      color: 000036
+      fade: 500ms
+    l_orbit_34:
+      color: 000036
+      fade: 500ms
+    l_orbit_35:
+      color: 000036
+      fade: 500ms
+    l_orbit_36:
+      color: 000036
+      fade: 500ms
+    l_orbit_37:
+      color: 000036
+      fade: 500ms
+    l_orbit_38:
+      color: 000036
+      fade: 500ms
+    l_orbit_39:
+      color: 000036
+      fade: 500ms
+    l_orbit_40:
+      color: 000036
+      fade: 500ms
+    l_orbit_41:
+      color: 000036
+      fade: 500ms
+    l_orbit_42:
+      color: 000036
+      fade: 500ms
+    l_orbit_43:
+      color: 000036
+      fade: 500ms
+    l_orbit_44:
+      color: 000036
+      fade: 500ms
+    l_orbit_45:
+      color: 000036
+      fade: 500ms
+    l_orbit_46:
+      color: 000036
+      fade: 500ms
+    l_orbit_47:
+      color: 000036
+      fade: 500ms
+    l_orbit_48:
+      color: 000036
+      fade: 500ms
+    l_orbit_49:
+      color: 000036
+      fade: 500ms
+    l_orbit_50:
+      color: 000036
+      fade: 500ms
+    l_orbit_51:
+      color: 000036
+      fade: 500ms
+    l_orbit_52:
+      color: 000036
+      fade: 500ms
+    l_orbit_53:
+      color: 000036
+      fade: 500ms
+    l_orbit_54:
+      color: 000036
+      fade: 500ms
+    l_orbit_55:
+      color: 000036
+      fade: 500ms
+    l_orbit_56:
+      color: 000036
+      fade: 500ms
+    l_orbit_57:
+      color: 000036
+      fade: 500ms
+    l_orbit_58:
+      color: 000036
+      fade: 500ms
+    l_orbit_59:
+      color: 000036
+      fade: 500ms
+    l_orbit_60:
+      color: 000036
+      fade: 500ms
+    l_orbit_61:
+      color: 000036
+      fade: 500ms
+    l_orbit_62:
+      color: 000036
+      fade: 500ms
+    l_orbit_63:
+      color: 000036
+      fade: 500ms
+    l_orbit_64:
+      color: 000036
+      fade: 500ms
+    l_orbit_65:
+      color: 000036
+      fade: 500ms
+    l_orbit_66:
+      color: 000036
+      fade: 500ms
+    l_orbit_67:
+      color: 000036
+      fade: 500ms
+    l_orbit_68:
+      color: 000036
+      fade: 500ms
+    l_left_pop_13:
+      color: 000036
+      fade: 500ms
+    l_left_pop_12:
+      color: 000036
+      fade: 500ms
+    l_left_pop_11:
+      color: 000036
+      fade: 500ms
+    l_left_pop_10:
+      color: 000036
+      fade: 500ms
+    l_left_pop_9:
+      color: 000036
+      fade: 500ms
+    l_left_pop_8:
+      color: 000036
+      fade: 500ms
+    l_left_pop_7:
+      color: 000036
+      fade: 500ms
+    l_left_pop_6:
+      color: 000036
+      fade: 500ms
+    l_left_pop_5:
+      color: 000036
+      fade: 500ms
+    l_left_pop_4:
+      color: 000036
+      fade: 500ms
+    l_left_pop_3:
+      color: 000036
+      fade: 500ms
+    l_left_pop_2:
+      color: 000036
+      fade: 500ms
+    l_left_pop_1:
+      color: 000036
+      fade: 500ms
+    l_left_pop_0:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_14:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_13:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_12:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_11:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_10:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_9:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_8:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_7:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_6:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_5:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_4:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_3:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_2:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_1:
+      color: 000036
+      fade: 500ms
+    l_left_shoulder_0:
+      color: 000036
+      fade: 500ms
+- duration: 1
+  lights:
+    l_hydra_2:
+      color: 4B0082
+      fade: 500ms
+    l_scoop_tongue:
+      color: 4B0082
+      fade: 500ms
+    l_left_side_pop:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_pop:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_lower_pop:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_right_pop:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_left_pop:
+      color: 4B0082
+      fade: 500ms
+    l_hydra_center:
+      color: 4B0082
+      fade: 500ms
+    l_hydra_top:
+      color: 4B0082
+      fade: 500ms
+    l_hydra_7:
+      color: 4B0082
+      fade: 500ms
+    l_hydra_10:
+      color: 4B0082
+      fade: 500ms
+    l_left_sling_prox:
+      color: 4B0082
+      fade: 500ms
+    l_left_sling_middle:
+      color: 4B0082
+      fade: 500ms
+    l_left_sling_distal:
+      color: 4B0082
+      fade: 500ms
+    l_hydra_4:
+      color: 4B0082
+      fade: 500ms
+    l_hydra_bottom:
+      color: 4B0082
+      fade: 500ms
+    l_3xflasher:
+      color: 4B0082
+      fade: 500ms
+    l_2xflasher:
+      color: 4B0082
+      fade: 500ms
+    l_left_inlane:
+      color: 4B0082
+      fade: 500ms
+    l_left_pop_band:
+      color: 4B0082
+      fade: 500ms
+    l_left_pop_lower_arrow:
+      color: 4B0082
+      fade: 500ms
+    l_left_pop_upper_arrow:
+      color: 4B0082
+      fade: 500ms
+    l_left_outlane:
+      color: 4B0082
+      fade: 500ms
+    l_left_spinner_band_prox:
+      color: 4B0082
+      fade: 500ms
+    l_left_orbit_spinner:
+      color: 4B0082
+      fade: 500ms
+    l_left_spinner_band_distal:
+      color: 4B0082
+      fade: 500ms
+    l_left_orbit_lower_triangle:
+      color: 4B0082
+      fade: 500ms
+    l_malstrom_4:
+      color: 4B0082
+      fade: 500ms
+    l_malstrom_3:
+      color: 4B0082
+      fade: 500ms
+    l_left_sis_arrow:
+      color: 4B0082
+      fade: 500ms
+    l_malstrom_triangle:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_fish_right:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_right_sling:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_fish_left:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_left_sling_distal:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_left_sling_middle:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_left_sling_prox:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_fish_middle:
+      color: 4B0082
+      fade: 500ms
+    l_malstrom_2:
+      color: 4B0082
+      fade: 500ms
+    l_malstrom_1:
+      color: 4B0082
+      fade: 500ms
+    l_malstrom_0:
+      color: 4B0082
+      fade: 500ms
+    l_left_orbit_upper_triangle:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_band_right_prox:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_band_left_prox:
+      color: 4B0082
+      fade: 500ms
+    l_ramp_left:
+      color: 4B0082
+      fade: 500ms
+    l_ramp_right:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_magnet:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_band_upper_left:
+      color: 4B0082
+      fade: 500ms
+    l_roof_left_2:
+      color: 4B0082
+      fade: 500ms
+    l_roof_left_3:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_lock_distal:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_lock_prox:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_magnet:
+      color: 4B0082
+      fade: 500ms
+    l_poseidon_band_left_distal:
+      color: 4B0082
+      fade: 500ms
+    l_roof_left_5:
+      color: 4B0082
+      fade: 500ms
+    l_roof_left_4:
+      color: 4B0082
+      fade: 500ms
+    l_roof_center:
+      color: 4B0082
+      fade: 500ms
+    l_hideyhole:
+      color: 4B0082
+      fade: 500ms
+    l_roof_left_1:
+      color: 4B0082
+      fade: 500ms
+    l_poseidion_band_right_distal:
+      color: 4B0082
+      fade: 500ms
+    l_roof_right_2:
+      color: 4B0082
+      fade: 500ms
+    l_roof_right_3:
+      color: 4B0082
+      fade: 500ms
+    l_roof_right_4:
+      color: 4B0082
+      fade: 500ms
+    l_roof_right_1:
+      color: 4B0082
+      fade: 500ms
+    l_roof_right_5:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_band_upper_right:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_band_lower_right:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_cloud:
+      color: 4B0082
+      fade: 500ms
+    l_revealed_slingshot_flasher:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_lock_distal:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_lock_prox:
+      color: 4B0082
+      fade: 500ms
+    l_right_sis_arrow:
+      color: 4B0082
+      fade: 500ms
+    l_middle_drop_arrow:
+      color: 4B0082
+      fade: 500ms
+    l_right_outlane:
+      color: 4B0082
+      fade: 500ms
+    l_distal_drop_arrow:
+      color: 4B0082
+      fade: 500ms
+    l_prox_drop_arrow:
+      color: 4B0082
+      fade: 500ms
+    l_ramp_arrow:
+      color: 4B0082
+      fade: 500ms
+    l_right_sling_prox:
+      color: 4B0082
+      fade: 500ms
+    l_right_sling_middle:
+      color: 4B0082
+      fade: 500ms
+    l_right_sling_distal:
+      color: 4B0082
+      fade: 500ms
+    l_right_inlane:
+      color: 4B0082
+      fade: 500ms
+    l_lightning:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_gate_triangle:
+      color: 4B0082
+      fade: 500ms
+    l_olympus_spinner:
+      color: 4B0082
+      fade: 500ms
+    l_right_orbit_triangle:
+      color: 4B0082
+      fade: 500ms
+    l_r_inlane_1:
+      color: 130061
+      fade: 500ms
+    l_r_inlane_2:
+      color: 130061
+      fade: 500ms
+    l_r_inlane_3:
+      color: 130061
+      fade: 500ms
+    l_r_inlane_4:
+      color: 130061
+      fade: 500ms
+    l_r_inlane_5:
+      color: 130061
+      fade: 500ms
+    l_r_inlane_6:
+      color: 130061
+      fade: 500ms
+    l_r_inlane_7:
+      color: 130061
+      fade: 500ms
+    l_r_inlane_8:
+      color: 130061
+      fade: 500ms
+    l_r_inlane_9:
+      color: 130061
+      fade: 500ms
+    l_r_inlane_10:
+      color: 130061
+      fade: 500ms
+    l_r_inlane_11:
+      color: 130061
+      fade: 500ms
+    l_r_inlane_12:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_0:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_1:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_2:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_3:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_4:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_5:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_6:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_7:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_8:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_9:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_10:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_11:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_12:
+      color: 130061
+      fade: 500ms
+    l_r_outlane_13:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_0:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_1:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_2:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_3:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_4:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_5:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_6:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_7:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_8:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_9:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_10:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_11:
+      color: 130061
+      fade: 500ms
+    l_l_inlane_12:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_0:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_1:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_2:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_3:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_4:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_5:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_6:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_7:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_8:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_9:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_10:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_11:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_12:
+      color: 130061
+      fade: 500ms
+    l_l_outlane_13:
+      color: 130061
+      fade: 500ms
+    l_shooter_0:
+      color: 130061
+      fade: 500ms
+    l_shooter_1:
+      color: 130061
+      fade: 500ms
+    l_shooter_2:
+      color: 130061
+      fade: 500ms
+    l_shooter_3:
+      color: 130061
+      fade: 500ms
+    l_shooter_4:
+      color: 130061
+      fade: 500ms
+    l_shooter_5:
+      color: 130061
+      fade: 500ms
+    l_shooter_6:
+      color: 130061
+      fade: 500ms
+    l_shooter_7:
+      color: 130061
+      fade: 500ms
+    l_shooter_8:
+      color: 130061
+      fade: 500ms
+    l_shooter_9:
+      color: 130061
+      fade: 500ms
+    l_shooter_10:
+      color: 130061
+      fade: 500ms
+    l_shooter_11:
+      color: 130061
+      fade: 500ms
+    l_shooter_12:
+      color: 130061
+      fade: 500ms
+    l_shooter_13:
+      color: 130061
+      fade: 500ms
+    l_shooter_14:
+      color: 130061
+      fade: 500ms
+    l_shooter_15:
+      color: 130061
+      fade: 500ms
+    l_shooter_16:
+      color: 130061
+      fade: 500ms
+    l_shooter_17:
+      color: 130061
+      fade: 500ms
+    l_shooter_18:
+      color: 130061
+      fade: 500ms
+    l_shooter_19:
+      color: 130061
+      fade: 500ms
+    l_shooter_20:
+      color: 130061
+      fade: 500ms
+    l_shooter_21:
+      color: 130061
+      fade: 500ms
+    l_shooter_22:
+      color: 130061
+      fade: 500ms
+    l_shooter_23:
+      color: 130061
+      fade: 500ms
+    l_shooter_24:
+      color: 130061
+      fade: 500ms
+    l_shooter_25:
+      color: 130061
+      fade: 500ms
+    l_shooter_26:
+      color: 130061
+      fade: 500ms
+    l_shooter_27:
+      color: 130061
+      fade: 500ms
+    l_shooter_28:
+      color: 130061
+      fade: 500ms
+    l_shooter_29:
+      color: 130061
+      fade: 500ms
+    l_shooter_30:
+      color: 130061
+      fade: 500ms
+    l_shooter_31:
+      color: 130061
+      fade: 500ms
+    l_shooter_32:
+      color: 130061
+      fade: 500ms
+    l_shooter_33:
+      color: 130061
+      fade: 500ms
+    l_shooter_34:
+      color: 130061
+      fade: 500ms
+    l_shooter_35:
+      color: 130061
+      fade: 500ms
+    l_shooter_36:
+      color: 130061
+      fade: 500ms
+    l_shooter_37:
+      color: 130061
+      fade: 500ms
+    l_shooter_38:
+      color: 130061
+      fade: 500ms
+    l_shooter_39:
+      color: 130061
+      fade: 500ms
+    l_shooter_40:
+      color: 130061
+      fade: 500ms
+    l_shooter_41:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_15:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_14:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_13:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_12:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_11:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_10:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_9:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_8:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_7:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_6:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_5:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_4:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_3:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_2:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_1:
+      color: 130061
+      fade: 500ms
+    l_right_shoulder_0:
+      color: 130061
+      fade: 500ms
+    l_orbit_0:
+      color: 130061
+      fade: 500ms
+    l_orbit_1:
+      color: 130061
+      fade: 500ms
+    l_orbit_2:
+      color: 130061
+      fade: 500ms
+    l_orbit_3:
+      color: 130061
+      fade: 500ms
+    l_orbit_4:
+      color: 130061
+      fade: 500ms
+    l_orbit_5:
+      color: 130061
+      fade: 500ms
+    l_orbit_6:
+      color: 130061
+      fade: 500ms
+    l_orbit_7:
+      color: 130061
+      fade: 500ms
+    l_orbit_8:
+      color: 130061
+      fade: 500ms
+    l_orbit_9:
+      color: 130061
+      fade: 500ms
+    l_orbit_10:
+      color: 130061
+      fade: 500ms
+    l_orbit_11:
+      color: 130061
+      fade: 500ms
+    l_orbit_12:
+      color: 130061
+      fade: 500ms
+    l_orbit_13:
+      color: 130061
+      fade: 500ms
+    l_orbit_14:
+      color: 130061
+      fade: 500ms
+    l_orbit_15:
+      color: 130061
+      fade: 500ms
+    l_orbit_16:
+      color: 130061
+      fade: 500ms
+    l_orbit_17:
+      color: 130061
+      fade: 500ms
+    l_orbit_18:
+      color: 130061
+      fade: 500ms
+    l_orbit_19:
+      color: 130061
+      fade: 500ms
+    l_orbit_20:
+      color: 130061
+      fade: 500ms
+    l_orbit_21:
+      color: 130061
+      fade: 500ms
+    l_orbit_22:
+      color: 130061
+      fade: 500ms
+    l_orbit_23:
+      color: 130061
+      fade: 500ms
+    l_orbit_24:
+      color: 130061
+      fade: 500ms
+    l_orbit_25:
+      color: 130061
+      fade: 500ms
+    l_orbit_26:
+      color: 130061
+      fade: 500ms
+    l_orbit_27:
+      color: 130061
+      fade: 500ms
+    l_orbit_28:
+      color: 130061
+      fade: 500ms
+    l_orbit_29:
+      color: 130061
+      fade: 500ms
+    l_orbit_30:
+      color: 130061
+      fade: 500ms
+    l_orbit_31:
+      color: 130061
+      fade: 500ms
+    l_orbit_32:
+      color: 130061
+      fade: 500ms
+    l_orbit_33:
+      color: 130061
+      fade: 500ms
+    l_orbit_34:
+      color: 130061
+      fade: 500ms
+    l_orbit_35:
+      color: 130061
+      fade: 500ms
+    l_orbit_36:
+      color: 130061
+      fade: 500ms
+    l_orbit_37:
+      color: 130061
+      fade: 500ms
+    l_orbit_38:
+      color: 130061
+      fade: 500ms
+    l_orbit_39:
+      color: 130061
+      fade: 500ms
+    l_orbit_40:
+      color: 130061
+      fade: 500ms
+    l_orbit_41:
+      color: 130061
+      fade: 500ms
+    l_orbit_42:
+      color: 130061
+      fade: 500ms
+    l_orbit_43:
+      color: 130061
+      fade: 500ms
+    l_orbit_44:
+      color: 130061
+      fade: 500ms
+    l_orbit_45:
+      color: 130061
+      fade: 500ms
+    l_orbit_46:
+      color: 130061
+      fade: 500ms
+    l_orbit_47:
+      color: 130061
+      fade: 500ms
+    l_orbit_48:
+      color: 130061
+      fade: 500ms
+    l_orbit_49:
+      color: 130061
+      fade: 500ms
+    l_orbit_50:
+      color: 130061
+      fade: 500ms
+    l_orbit_51:
+      color: 130061
+      fade: 500ms
+    l_orbit_52:
+      color: 130061
+      fade: 500ms
+    l_orbit_53:
+      color: 130061
+      fade: 500ms
+    l_orbit_54:
+      color: 130061
+      fade: 500ms
+    l_orbit_55:
+      color: 130061
+      fade: 500ms
+    l_orbit_56:
+      color: 130061
+      fade: 500ms
+    l_orbit_57:
+      color: 130061
+      fade: 500ms
+    l_orbit_58:
+      color: 130061
+      fade: 500ms
+    l_orbit_59:
+      color: 130061
+      fade: 500ms
+    l_orbit_60:
+      color: 130061
+      fade: 500ms
+    l_orbit_61:
+      color: 130061
+      fade: 500ms
+    l_orbit_62:
+      color: 130061
+      fade: 500ms
+    l_orbit_63:
+      color: 130061
+      fade: 500ms
+    l_orbit_64:
+      color: 130061
+      fade: 500ms
+    l_orbit_65:
+      color: 130061
+      fade: 500ms
+    l_orbit_66:
+      color: 130061
+      fade: 500ms
+    l_orbit_67:
+      color: 130061
+      fade: 500ms
+    l_orbit_68:
+      color: 130061
+      fade: 500ms
+    l_left_pop_13:
+      color: 130061
+      fade: 500ms
+    l_left_pop_12:
+      color: 130061
+      fade: 500ms
+    l_left_pop_11:
+      color: 130061
+      fade: 500ms
+    l_left_pop_10:
+      color: 130061
+      fade: 500ms
+    l_left_pop_9:
+      color: 130061
+      fade: 500ms
+    l_left_pop_8:
+      color: 130061
+      fade: 500ms
+    l_left_pop_7:
+      color: 130061
+      fade: 500ms
+    l_left_pop_6:
+      color: 130061
+      fade: 500ms
+    l_left_pop_5:
+      color: 130061
+      fade: 500ms
+    l_left_pop_4:
+      color: 130061
+      fade: 500ms
+    l_left_pop_3:
+      color: 130061
+      fade: 500ms
+    l_left_pop_2:
+      color: 130061
+      fade: 500ms
+    l_left_pop_1:
+      color: 130061
+      fade: 500ms
+    l_left_pop_0:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_14:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_13:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_12:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_11:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_10:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_9:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_8:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_7:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_6:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_5:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_4:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_3:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_2:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_1:
+      color: 130061
+      fade: 500ms
+    l_left_shoulder_0:
+      color: 130061
+      fade: 500ms
+- duration: 1
+  lights:
+    l_hydra_2:
+      color: EE82EE
+      fade: 500ms
+    l_scoop_tongue:
+      color: EE82EE
+      fade: 500ms
+    l_left_side_pop:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_pop:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_lower_pop:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_right_pop:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_left_pop:
+      color: EE82EE
+      fade: 500ms
+    l_hydra_center:
+      color: EE82EE
+      fade: 500ms
+    l_hydra_top:
+      color: EE82EE
+      fade: 500ms
+    l_hydra_7:
+      color: EE82EE
+      fade: 500ms
+    l_hydra_10:
+      color: EE82EE
+      fade: 500ms
+    l_left_sling_prox:
+      color: EE82EE
+      fade: 500ms
+    l_left_sling_middle:
+      color: EE82EE
+      fade: 500ms
+    l_left_sling_distal:
+      color: EE82EE
+      fade: 500ms
+    l_hydra_4:
+      color: EE82EE
+      fade: 500ms
+    l_hydra_bottom:
+      color: EE82EE
+      fade: 500ms
+    l_3xflasher:
+      color: EE82EE
+      fade: 500ms
+    l_2xflasher:
+      color: EE82EE
+      fade: 500ms
+    l_left_inlane:
+      color: EE82EE
+      fade: 500ms
+    l_left_pop_band:
+      color: EE82EE
+      fade: 500ms
+    l_left_pop_lower_arrow:
+      color: EE82EE
+      fade: 500ms
+    l_left_pop_upper_arrow:
+      color: EE82EE
+      fade: 500ms
+    l_left_outlane:
+      color: EE82EE
+      fade: 500ms
+    l_left_spinner_band_prox:
+      color: EE82EE
+      fade: 500ms
+    l_left_orbit_spinner:
+      color: EE82EE
+      fade: 500ms
+    l_left_spinner_band_distal:
+      color: EE82EE
+      fade: 500ms
+    l_left_orbit_lower_triangle:
+      color: EE82EE
+      fade: 500ms
+    l_malstrom_4:
+      color: EE82EE
+      fade: 500ms
+    l_malstrom_3:
+      color: EE82EE
+      fade: 500ms
+    l_left_sis_arrow:
+      color: EE82EE
+      fade: 500ms
+    l_malstrom_triangle:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_fish_right:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_right_sling:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_fish_left:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_left_sling_distal:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_left_sling_middle:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_left_sling_prox:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_fish_middle:
+      color: EE82EE
+      fade: 500ms
+    l_malstrom_2:
+      color: EE82EE
+      fade: 500ms
+    l_malstrom_1:
+      color: EE82EE
+      fade: 500ms
+    l_malstrom_0:
+      color: EE82EE
+      fade: 500ms
+    l_left_orbit_upper_triangle:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_band_right_prox:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_band_left_prox:
+      color: EE82EE
+      fade: 500ms
+    l_ramp_left:
+      color: EE82EE
+      fade: 500ms
+    l_ramp_right:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_magnet:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_band_upper_left:
+      color: EE82EE
+      fade: 500ms
+    l_roof_left_2:
+      color: EE82EE
+      fade: 500ms
+    l_roof_left_3:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_lock_distal:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_lock_prox:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_magnet:
+      color: EE82EE
+      fade: 500ms
+    l_poseidon_band_left_distal:
+      color: EE82EE
+      fade: 500ms
+    l_roof_left_5:
+      color: EE82EE
+      fade: 500ms
+    l_roof_left_4:
+      color: EE82EE
+      fade: 500ms
+    l_roof_center:
+      color: EE82EE
+      fade: 500ms
+    l_hideyhole:
+      color: EE82EE
+      fade: 500ms
+    l_roof_left_1:
+      color: EE82EE
+      fade: 500ms
+    l_poseidion_band_right_distal:
+      color: EE82EE
+      fade: 500ms
+    l_roof_right_2:
+      color: EE82EE
+      fade: 500ms
+    l_roof_right_3:
+      color: EE82EE
+      fade: 500ms
+    l_roof_right_4:
+      color: EE82EE
+      fade: 500ms
+    l_roof_right_1:
+      color: EE82EE
+      fade: 500ms
+    l_roof_right_5:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_band_upper_right:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_band_lower_right:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_cloud:
+      color: EE82EE
+      fade: 500ms
+    l_revealed_slingshot_flasher:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_lock_distal:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_lock_prox:
+      color: EE82EE
+      fade: 500ms
+    l_right_sis_arrow:
+      color: EE82EE
+      fade: 500ms
+    l_middle_drop_arrow:
+      color: EE82EE
+      fade: 500ms
+    l_right_outlane:
+      color: EE82EE
+      fade: 500ms
+    l_distal_drop_arrow:
+      color: EE82EE
+      fade: 500ms
+    l_prox_drop_arrow:
+      color: EE82EE
+      fade: 500ms
+    l_ramp_arrow:
+      color: EE82EE
+      fade: 500ms
+    l_right_sling_prox:
+      color: EE82EE
+      fade: 500ms
+    l_right_sling_middle:
+      color: EE82EE
+      fade: 500ms
+    l_right_sling_distal:
+      color: EE82EE
+      fade: 500ms
+    l_right_inlane:
+      color: EE82EE
+      fade: 500ms
+    l_lightning:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_gate_triangle:
+      color: EE82EE
+      fade: 500ms
+    l_olympus_spinner:
+      color: EE82EE
+      fade: 500ms
+    l_right_orbit_triangle:
+      color: EE82EE
+      fade: 500ms
+    l_r_inlane_1:
+      color: 392139
+      fade: 500ms
+    l_r_inlane_2:
+      color: 392139
+      fade: 500ms
+    l_r_inlane_3:
+      color: 392139
+      fade: 500ms
+    l_r_inlane_4:
+      color: 392139
+      fade: 500ms
+    l_r_inlane_5:
+      color: 392139
+      fade: 500ms
+    l_r_inlane_6:
+      color: 392139
+      fade: 500ms
+    l_r_inlane_7:
+      color: 392139
+      fade: 500ms
+    l_r_inlane_8:
+      color: 392139
+      fade: 500ms
+    l_r_inlane_9:
+      color: 392139
+      fade: 500ms
+    l_r_inlane_10:
+      color: 392139
+      fade: 500ms
+    l_r_inlane_11:
+      color: 392139
+      fade: 500ms
+    l_r_inlane_12:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_0:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_1:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_2:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_3:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_4:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_5:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_6:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_7:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_8:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_9:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_10:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_11:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_12:
+      color: 392139
+      fade: 500ms
+    l_r_outlane_13:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_0:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_1:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_2:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_3:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_4:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_5:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_6:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_7:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_8:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_9:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_10:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_11:
+      color: 392139
+      fade: 500ms
+    l_l_inlane_12:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_0:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_1:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_2:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_3:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_4:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_5:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_6:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_7:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_8:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_9:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_10:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_11:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_12:
+      color: 392139
+      fade: 500ms
+    l_l_outlane_13:
+      color: 392139
+      fade: 500ms
+    l_shooter_0:
+      color: 392139
+      fade: 500ms
+    l_shooter_1:
+      color: 392139
+      fade: 500ms
+    l_shooter_2:
+      color: 392139
+      fade: 500ms
+    l_shooter_3:
+      color: 392139
+      fade: 500ms
+    l_shooter_4:
+      color: 392139
+      fade: 500ms
+    l_shooter_5:
+      color: 392139
+      fade: 500ms
+    l_shooter_6:
+      color: 392139
+      fade: 500ms
+    l_shooter_7:
+      color: 392139
+      fade: 500ms
+    l_shooter_8:
+      color: 392139
+      fade: 500ms
+    l_shooter_9:
+      color: 392139
+      fade: 500ms
+    l_shooter_10:
+      color: 392139
+      fade: 500ms
+    l_shooter_11:
+      color: 392139
+      fade: 500ms
+    l_shooter_12:
+      color: 392139
+      fade: 500ms
+    l_shooter_13:
+      color: 392139
+      fade: 500ms
+    l_shooter_14:
+      color: 392139
+      fade: 500ms
+    l_shooter_15:
+      color: 392139
+      fade: 500ms
+    l_shooter_16:
+      color: 392139
+      fade: 500ms
+    l_shooter_17:
+      color: 392139
+      fade: 500ms
+    l_shooter_18:
+      color: 392139
+      fade: 500ms
+    l_shooter_19:
+      color: 392139
+      fade: 500ms
+    l_shooter_20:
+      color: 392139
+      fade: 500ms
+    l_shooter_21:
+      color: 392139
+      fade: 500ms
+    l_shooter_22:
+      color: 392139
+      fade: 500ms
+    l_shooter_23:
+      color: 392139
+      fade: 500ms
+    l_shooter_24:
+      color: 392139
+      fade: 500ms
+    l_shooter_25:
+      color: 392139
+      fade: 500ms
+    l_shooter_26:
+      color: 392139
+      fade: 500ms
+    l_shooter_27:
+      color: 392139
+      fade: 500ms
+    l_shooter_28:
+      color: 392139
+      fade: 500ms
+    l_shooter_29:
+      color: 392139
+      fade: 500ms
+    l_shooter_30:
+      color: 392139
+      fade: 500ms
+    l_shooter_31:
+      color: 392139
+      fade: 500ms
+    l_shooter_32:
+      color: 392139
+      fade: 500ms
+    l_shooter_33:
+      color: 392139
+      fade: 500ms
+    l_shooter_34:
+      color: 392139
+      fade: 500ms
+    l_shooter_35:
+      color: 392139
+      fade: 500ms
+    l_shooter_36:
+      color: 392139
+      fade: 500ms
+    l_shooter_37:
+      color: 392139
+      fade: 500ms
+    l_shooter_38:
+      color: 392139
+      fade: 500ms
+    l_shooter_39:
+      color: 392139
+      fade: 500ms
+    l_shooter_40:
+      color: 392139
+      fade: 500ms
+    l_shooter_41:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_15:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_14:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_13:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_12:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_11:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_10:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_9:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_8:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_7:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_6:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_5:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_4:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_3:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_2:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_1:
+      color: 392139
+      fade: 500ms
+    l_right_shoulder_0:
+      color: 392139
+      fade: 500ms
+    l_orbit_0:
+      color: 392139
+      fade: 500ms
+    l_orbit_1:
+      color: 392139
+      fade: 500ms
+    l_orbit_2:
+      color: 392139
+      fade: 500ms
+    l_orbit_3:
+      color: 392139
+      fade: 500ms
+    l_orbit_4:
+      color: 392139
+      fade: 500ms
+    l_orbit_5:
+      color: 392139
+      fade: 500ms
+    l_orbit_6:
+      color: 392139
+      fade: 500ms
+    l_orbit_7:
+      color: 392139
+      fade: 500ms
+    l_orbit_8:
+      color: 392139
+      fade: 500ms
+    l_orbit_9:
+      color: 392139
+      fade: 500ms
+    l_orbit_10:
+      color: 392139
+      fade: 500ms
+    l_orbit_11:
+      color: 392139
+      fade: 500ms
+    l_orbit_12:
+      color: 392139
+      fade: 500ms
+    l_orbit_13:
+      color: 392139
+      fade: 500ms
+    l_orbit_14:
+      color: 392139
+      fade: 500ms
+    l_orbit_15:
+      color: 392139
+      fade: 500ms
+    l_orbit_16:
+      color: 392139
+      fade: 500ms
+    l_orbit_17:
+      color: 392139
+      fade: 500ms
+    l_orbit_18:
+      color: 392139
+      fade: 500ms
+    l_orbit_19:
+      color: 392139
+      fade: 500ms
+    l_orbit_20:
+      color: 392139
+      fade: 500ms
+    l_orbit_21:
+      color: 392139
+      fade: 500ms
+    l_orbit_22:
+      color: 392139
+      fade: 500ms
+    l_orbit_23:
+      color: 392139
+      fade: 500ms
+    l_orbit_24:
+      color: 392139
+      fade: 500ms
+    l_orbit_25:
+      color: 392139
+      fade: 500ms
+    l_orbit_26:
+      color: 392139
+      fade: 500ms
+    l_orbit_27:
+      color: 392139
+      fade: 500ms
+    l_orbit_28:
+      color: 392139
+      fade: 500ms
+    l_orbit_29:
+      color: 392139
+      fade: 500ms
+    l_orbit_30:
+      color: 392139
+      fade: 500ms
+    l_orbit_31:
+      color: 392139
+      fade: 500ms
+    l_orbit_32:
+      color: 392139
+      fade: 500ms
+    l_orbit_33:
+      color: 392139
+      fade: 500ms
+    l_orbit_34:
+      color: 392139
+      fade: 500ms
+    l_orbit_35:
+      color: 392139
+      fade: 500ms
+    l_orbit_36:
+      color: 392139
+      fade: 500ms
+    l_orbit_37:
+      color: 392139
+      fade: 500ms
+    l_orbit_38:
+      color: 392139
+      fade: 500ms
+    l_orbit_39:
+      color: 392139
+      fade: 500ms
+    l_orbit_40:
+      color: 392139
+      fade: 500ms
+    l_orbit_41:
+      color: 392139
+      fade: 500ms
+    l_orbit_42:
+      color: 392139
+      fade: 500ms
+    l_orbit_43:
+      color: 392139
+      fade: 500ms
+    l_orbit_44:
+      color: 392139
+      fade: 500ms
+    l_orbit_45:
+      color: 392139
+      fade: 500ms
+    l_orbit_46:
+      color: 392139
+      fade: 500ms
+    l_orbit_47:
+      color: 392139
+      fade: 500ms
+    l_orbit_48:
+      color: 392139
+      fade: 500ms
+    l_orbit_49:
+      color: 392139
+      fade: 500ms
+    l_orbit_50:
+      color: 392139
+      fade: 500ms
+    l_orbit_51:
+      color: 392139
+      fade: 500ms
+    l_orbit_52:
+      color: 392139
+      fade: 500ms
+    l_orbit_53:
+      color: 392139
+      fade: 500ms
+    l_orbit_54:
+      color: 392139
+      fade: 500ms
+    l_orbit_55:
+      color: 392139
+      fade: 500ms
+    l_orbit_56:
+      color: 392139
+      fade: 500ms
+    l_orbit_57:
+      color: 392139
+      fade: 500ms
+    l_orbit_58:
+      color: 392139
+      fade: 500ms
+    l_orbit_59:
+      color: 392139
+      fade: 500ms
+    l_orbit_60:
+      color: 392139
+      fade: 500ms
+    l_orbit_61:
+      color: 392139
+      fade: 500ms
+    l_orbit_62:
+      color: 392139
+      fade: 500ms
+    l_orbit_63:
+      color: 392139
+      fade: 500ms
+    l_orbit_64:
+      color: 392139
+      fade: 500ms
+    l_orbit_65:
+      color: 392139
+      fade: 500ms
+    l_orbit_66:
+      color: 392139
+      fade: 500ms
+    l_orbit_67:
+      color: 392139
+      fade: 500ms
+    l_orbit_68:
+      color: 392139
+      fade: 500ms
+    l_left_pop_13:
+      color: 392139
+      fade: 500ms
+    l_left_pop_12:
+      color: 392139
+      fade: 500ms
+    l_left_pop_11:
+      color: 392139
+      fade: 500ms
+    l_left_pop_10:
+      color: 392139
+      fade: 500ms
+    l_left_pop_9:
+      color: 392139
+      fade: 500ms
+    l_left_pop_8:
+      color: 392139
+      fade: 500ms
+    l_left_pop_7:
+      color: 392139
+      fade: 500ms
+    l_left_pop_6:
+      color: 392139
+      fade: 500ms
+    l_left_pop_5:
+      color: 392139
+      fade: 500ms
+    l_left_pop_4:
+      color: 392139
+      fade: 500ms
+    l_left_pop_3:
+      color: 392139
+      fade: 500ms
+    l_left_pop_2:
+      color: 392139
+      fade: 500ms
+    l_left_pop_1:
+      color: 392139
+      fade: 500ms
+    l_left_pop_0:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_14:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_13:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_12:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_11:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_10:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_9:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_8:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_7:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_6:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_5:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_4:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_3:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_2:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_1:
+      color: 392139
+      fade: 500ms
+    l_left_shoulder_0:
+      color: 392139
+      fade: 500ms

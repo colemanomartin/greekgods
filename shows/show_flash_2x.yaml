@@ -1,0 +1,11 @@
+#show_version=5
+- duration: 2
+  lights:
+    l_2xflasher:
+      color: (color)
+      fade: 50
+- duration: 1
+  lights:
+    l_2xflasher:
+      color: 000000
+      fade: 50
