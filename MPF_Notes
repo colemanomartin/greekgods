@@ -172,6 +172,9 @@ sudo ./pinprocfw p3_roc_v2r14.p-roc
 Ignore verification failed error.
 Power off and set dips back to off
 
+GitHub notes:
+1. create repo on github. Its tied to hotmail address. GH username is colemanomartin
+
 Wish list:
   multiple_hits_window in shots
   reset event for state machines that brings it back to start
