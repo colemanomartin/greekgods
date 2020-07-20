@@ -1,0 +1,219 @@
+#config_version=5
+
+sound_system:  #http://docs.missionpinball.org/en/latest/sound/basic_setup.html?highlight=sound%20player
+    frequency: 44100
+    buffer: 512
+    channels: 2
+    master_volume: 1
+    tracks:
+       music:
+          type: sound_loop #standard #sound_loop  Have to change it back to sound_loop if using them
+          simultaneous_sounds: 1
+          volume: 0.6
+       voice:
+          type: standard
+          simultaneous_sounds: 1
+          volume: 0.7
+       sfx:
+          type: standard
+          simultaneous_sounds: 4
+          volume: 1
+assets:
+    sounds:
+        default:
+            load: preload #on_demand
+        music:
+            track: music
+            load: preload #on_demand
+        sfx:
+            track: sfx
+#            load: preload #on_demand
+        voice:
+            track: voice
+#            load: preload #on_demand
+
+sounds:
+  slingshot:
+    file: little_metal.ogg
+    volume: 1
+    max_queue_time: 0
+    track: sfx
+  shoot_ramp_mb:
+    file: shootrampmultiball.ogg
+    volume: 1
+    max_queue_time: 2s
+    track: voice
+  hitagain:
+    file: hititagain.ogg
+    volume: 1
+    max_queue_time: 100ms
+    track: voice
+  shootblinkingtarget:
+    file: shoottheblinkingtarget.ogg
+    volume: 1
+    track: voice
+  snd_bat1:
+    file: bat1.ogg
+  snd_bat2:
+    file: bat2.ogg
+  snd_bat3:
+    file: bat3.ogg
+  snd_bat4:
+    file: bat4.ogg
+  snd_hades_target:
+    file: hades_target1.ogg
+  snd_left_main_ss:
+    file: little_metal_left44k.ogg
+#    volume: 1
+    max_queue_time: 500ms
+    track: sfx
+  snd_right_main_ss:
+    file: little_metal_right44k.ogg
+#    volume: 1
+    max_queue_time: 500ms
+    track: sfx
+  snd_ramp_1:
+    file: ramp_1.ogg
+    track: sfx
+  snd_ramp_2:
+    file: ramp_2.ogg
+    track: sfx
+  snd_poseidon_mech:
+    file: little_metal_poseidon44k.ogg
+    track: sfx
+    max_queue_time: 500ms
+  snd_olympus_mech:
+    file: little_metal_olympus_pops44k.ogg
+    track: sfx
+    max_queue_time: 500ms
+  snd_orbit:
+    file: big_swoosh.ogg
+    track: sfx
+  snd_river:
+    file: little_swoosh.ogg
+    track: sfx
+  snd_spinner:
+    file: tiny_laser.ogg
+    track: sfx
+    max_queue_time: 500ms
+  snd_drop_1:
+    file: little_metal_dropdown1.ogg
+    track: sfx
+  snd_drop_2:
+    file: little_metal_dropdown2.ogg
+    track: sfx
+  snd_drop_3:
+    file: little_metal_dropdown3.ogg
+    track: sfx
+  snd_drop_up:
+    file: little_metal_dropup.ogg
+    track: sfx
+  snd_scott_pop:
+    file: little_metal_scottpop44k.ogg
+    track: sfx
+  snd_sis:
+    file: medium_swoosh.ogg
+    track: sfx
+  snd_hydra:
+    file: medium_metal.ogg
+    track: sfx
+  snd_shield:
+    file: shield.ogg
+    track: sfx
+  snd_sledge_riff_pre_0:
+    file: sledge_riff_pre_0.ogg
+#    volume: 1
+    track: music
+    streaming: false
+    loops: -1    #This is needed
+    mode_end_action: stop_looping
+  snd_sledge_riff_0:
+    file: sledge_riff_0.ogg
+#    volume: 1
+    track: music
+    loops: -1
+    mode_end_action: stop_looping
+  snd_sledge_riff_1:
+    file: sledge_riff_1.ogg
+#    volume: 1
+    track: music
+    loops: -1
+    mode_end_action: stop_looping
+  snd_sledge_riff_3_symbol:
+    file: sledge_riff_3_symbol.ogg
+#    volume: 1
+    track: music
+    loops: -1
+    mode_end_action: stop_looping
+  snd_sledge_riff_2:
+    file: sledge_riff_2.ogg
+#    volume: 1
+    track: music
+    loops: -1
+    mode_end_action: stop_looping
+  snd_sledge_tail:
+    file: sledge_tail.ogg
+#    volume: 1
+    track: music
+    loops: 1
+  snd_startbutton:                      #### Add to attract
+    file: startbutton.ogg
+    volume: 0.6
+    track: sfx
+  snd_deadmans_intro:
+    file: deadmans_intro.ogg
+#    volume: 1
+    track: music
+  snd_deadmansparty_riff:
+    file: deadmansparty_riff.ogg
+#    volume: 1
+    track: music
+  snd_deadmans_tail:
+    file: deadmans_tail.ogg
+#    volume: 1
+    track: music
+  snd_greymattershort1:
+    file: greymattershort1.ogg
+#    volume: 1
+    track: music
+  snd_greymatterlong:
+    file: greymatterlong.ogg
+#    volume: 1
+    track: music
+  snd_bonus_riff3:
+    file: bonus_riff3.ogg
+    volume: 0.4
+    track: sfx
+    ducking:
+      target: music
+      delay: 0 sec
+      attack: 0.3 sec #cross fade onset
+      release_point: 1 sec
+      release: 1 sec
+      attenuation: 0 #multiply music track by this
+
+sound_loop_sets:
+  base_start:
+    sound: snd_sledge_riff_pre_0
+  base_running:
+    sound: snd_sledge_riff_0
+  one_ball_mb:
+    sound: snd_sledge_riff_1
+  three_ball_mb:
+    sound: snd_sledge_riff_3_symbol
+  game_over_without_bonus:
+    sound: snd_sledge_tail
+  ramp_lock_music:
+    sound: snd_sledge_riff_2
+#  start_button_chord:
+#    sound: snd_startbutton
+  bonus_intro:
+    sound: snd_deadmans_intro
+  bonus_riff:
+    sound: snd_deadmansparty_riff
+  bonus_game_over:
+    sound: snd_deadmans_tail
+  bug_game_intro:
+    sound: snd_greymattershort1
+  bug_game_riff:
+    sound: snd_greymatterlong

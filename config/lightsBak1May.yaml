@@ -1,0 +1,2875 @@
+#config_version=5
+
+light_settings:
+   default_fade_ms: 50
+
+lights:
+#paralell leds
+  l_hydra_2: #J5
+    number: 0-0-1-2
+    type: rgb
+    subtype: led
+    default_on_color: orange
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.5126383658564418
+    y: 0.8144927536231883
+  l_hydra_center:
+    number: 0-3-4-5
+    type: grb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.4345543763551295
+    y: 0.8347826086956521
+  l_hydra_top:
+    number: 0-6-7-8
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.4369634740279371
+    y: 0.7960080200640715
+  l_hydra_7:
+    number: 0-9-10-11
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.35647038685381716
+    y: 0.8521739130434781
+  l_hydra_10: #J9
+    number: 0-12-13-14
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.35690909710678836
+    y: 0.81312647210846
+  l_left_sling_prox:
+    number: 0-15-16-17 # left sling
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: gi, left_sling
+    x: 0.23349193268668397
+    y: 0.8330979994935801
+  l_left_sling_middle:
+    number: 0-18-19-20 # L sling
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: gi, left_sling
+    x: 0.21681393749477798
+    y: 0.8116999344380943
+  l_left_sling_distal:
+    number: 0-21-22-23
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: gi, left_sling
+    x: 0.19560256859103622
+    y: 0.7884057971014493
+  #     aaaa     RBG 7 segment display key
+  #     f  b
+  #     f  b
+  #     gggg
+  #     e  c
+  #     e  c
+  #     dddd
+  l_ones_a:
+    number: 0-24-25-26
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.47365506345013036
+    y: 0.9215433350562547
+  l_ones_b:
+    number: 0-27-28-29
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.49366865768041757
+    y: 0.9315290987488147
+  l_ones_c:
+    number: 0-30-31-32
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.4970042567187987
+    y: 0.9486475507932033
+  l_ones_d:
+    number: 0-33-34-35
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.47031946441174916
+    y: 0.955780239145032
+  l_ones_e:
+    number: 0-36-37-38
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.44697027114308074
+    y: 0.9472210131228377
+  l_ones_f:
+    number: 0-39-40-41
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.45030587018146195
+    y: 0.9315290987488147
+  l_ones_g:
+    number: 0-42-43-44
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.47031946441174916
+    y: 0.940088324771009
+  l_tens_a:
+    number: 0-48-49-50
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.400271884605744
+    y: 0.9201167973858889
+  l_tens_b:
+    number: 0-51-52-53
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.4202854788360311
+    y: 0.9315290987488147
+  l_tens_c:
+    number: 0-54-55-56
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.4202854788360311
+    y: 0.9472210131228377
+  l_tens_d:
+    number: 0-57-58-59
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.39360068652898156
+    y: 0.955780239145032
+  l_tens_e:
+    number: 0-60-61-62
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.37025149326031315
+    y: 0.9486475507932033
+  l_tens_f:
+    number: 0-63-64-65
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.37358709229869436
+    y: 0.9315290987488147
+  l_tens_g:
+    number: 0-66-67-68
+    default_on_color: 00FF00
+    platform_settings:
+      polarity: true
+    tags: ball_save_display
+    x: 0.39360068652898156
+    y: 0.940088324771009
+  l_hydra_4: #from J 10 connected to ball timer break out board
+    number: 0-45-46-47 #bottom right hydra
+    type: rgb
+    subtype: led
+    default_on_color: teal
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.5070110538339423
+    y: 0.8573491398897973
+  l_hydra_bottom: #from J11 connected to ball timer break out board
+    number: 0-69-70-71 #bottom hydra
+    type: rgb
+    subtype: led
+    default_on_color: purple
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.42695667691279354
+    y: 0.8716145165934545
+  l_3xflasher: #Driver 0 J8
+    number: 0-72-73-74 #3x flasher
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.7138181942135767
+    y: 0.7232545988754198
+  l_2xflasher:
+    number: 0-75-76-77 #2x flasher
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.18679354614934718
+    y: 0.7189749858643225
+  l_left_inlane:
+    number: 0-78-79-80 #left inlane
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.14009515961201036
+    y: 0.7717568796678541
+  #Driver 0 Last J8 pins used for serial
+  l_left_pop_upper_arrow:
+    number: 1-3-4-5 # 1-72-73-74 #Driver 1 J8
+    type: rgb
+    subtype: led
+    default_on_color: teal
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.20236076219152735
+    y: 0.6420289855072463
+  l_left_pop_lower_arrow:
+    number: 1-72-73-74 #1-75-76-77
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.1618886097532219
+    y: 0.6608695652173913
+  l_left_pop_band:
+    number: 1-78-79-80
+    type: rgb
+    subtype: led
+    default_on_color: orange
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.07419894613689336
+    y: 0.6797101449275361
+  l_left_outlane:
+    number: 1-81-82-83
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.05002972694192204
+    y: 0.7814285714285714
+  l_left_spinner_band_prox: #Driver1 J 5
+    number: 1-0-1-2
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.06744916158311594
+    y: 0.581159420289855
+  l_left_orbit_lower_triangle:
+    number: 1-75-76-77 #1-3-4-5
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.20030240785119252
+    y: 0.6072463768115941
+  l_left_spinner_band_distal:
+    number: 1-6-7-8
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.047214413108181155
+    y: 0.5521739130434783
+  l_left_orbit_spinner:
+    number: 1-9-10-11
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.12221841834988016
+    y: 0.5478260869565218
+  l_malstrom_4: # Driver 1 header 9
+    number: 1-12-13-14
+    type: rgb
+    subtype: led
+    default_on_color: orangered
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.35995160314579555
+    y: 0.48941318814277074
+  l_malstrom_3:
+    number: 1-15-16-17
+    type: rgb
+    subtype: led
+    default_on_color: teal
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.3542830739623972
+    y: 0.5142165759225651
+  l_left_sis_arrow:
+    number: 1-18-19-20
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.2124648589868152
+    y: 0.5420289855072463
+  l_malstrom_triangle:
+    number: 1-21-22-23
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.34061826599473544
+    y: 0.5594202898550724
+  l_scoop_tongue:  #Driver 1 header 6
+    number: 1-24-25-26 #4 pirahana flasher
+    type: grb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: false
+    tags: gi
+    x: 0.5733178734564854
+    y: 0.52 #best guess
+  l_poseidon_right_sling: #Note this is the only sling with 1 LED
+    number: 1-27-28-29
+    type: grb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: false  #Flasher
+    tags: gi
+    x: 0.38692948845221914
+    y: 0.45363897917629886
+  l_poseidon_fish_right:
+    number: 1-30-31-32
+    type: rgb
+    subtype: led
+    default_on_color: orange
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.4069430826825064
+    y: 0.39943054770240144
+  l_poseidon_fish_left:
+    number: 1-33-34-35
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.22348513557154037
+    y: 0.4037101607134986
+  l_poseidon_left_sling_distal: #Driver 1 header 10
+    number: 1-36-37-38
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.133423961535248
+    y: 0.40656323605423
+  l_poseidon_left_sling_middle:
+    number: 1-39-40-41
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.18345794711096597
+    y: 0.4265347634393501
+  l_poseidon_left_sling_prox:
+    number: 1-42-43-44
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.2568411259553524
+    y: 0.4579185921873959
+  l_poseidon_fish_middle:
+    number: 1-45-46-47
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.31688190864621396
+    y: 0.4293878387800815
+  l_malstrom_2: #Driver 1 header 7
+    number: 1-48-49-50
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.3004320467201128
+    y: 0.5208711433756806
+  l_malstrom_1:
+    number: 1-51-52-53
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.272089400803121
+    y: 0.5015124016938899
+  l_malstrom_0:
+    number: 1-54-55-56
+    type: rgb
+    subtype: led
+    default_on_color: purple
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.3102661432823333
+    y: 0.48260869565217385
+  l_left_orbit_upper_triangle:
+    number: 1-57-58-59
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.08826885769713567
+    y: 0.45217391304347826
+  l_poseidon_band_right_prox: #Driver 1 J 11
+    number: 1-60-61-62
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.4302922759511747
+    y: 0.3295302018544812
+  l_poseidon_band_left_prox:
+    number: 1-63-64-65
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.1534375557655352
+    y: 0.35948749293216126
+  l_driver_1_extra:
+    number: 1-69-70-71
+    type: rbg
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: false
+    tags: service_test
+  l_left_side_pop:
+    number: 1-66-67-68
+    type: rbg
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: false
+    tags: pop, service_test
+    x: 0.10117374237467389
+    y: 0.6289855072463768
+  l_ramp_right:
+    number: 2-0-1-2 #Driver 2 J5
+    type: rgb
+    subtype: led
+    default_on_color: Red
+    platform_settings:
+      polarity: true
+    tags: ramp
+    x: 0.5070110538339423
+    y: 0.46505128053922445
+  l_ramp_left:
+    number: 2-3-4-5
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: ramp
+    x: 0.42695667691279354
+    y: 0.46505128053922445
+  l_olympus_magnet:
+    number: 2-6-7-8
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.6737910057530023
+    y: 0.3057142857142857
+  l_olympus_band_upper_left:
+    number: 2-9-10-11
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.5837298317167099
+    y: 0.2971428571428571
+  l_roof_left_2:    #Driver 2 Header 9
+    number: 2-12-13-14
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.23015633364830276
+    y: 0.23395217793997802
+  l_roof_left_3:
+    number: 2-15-16-17
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.133423961535248
+    y: 0.20256834919193215
+  l_poseidon_lock_distal:
+    number: 2-18-19-20
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: ramp
+    x: 0.11341036730496078
+    y: 0.27104215736948667
+  l_poseidon_lock_prox:
+    number: 2-21-22-23
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: ramp
+    x: 0.100067971151436
+    y: 0.2881606094138753
+  l_poseidon_magnet: # driver 2 header 6
+    number: 2-24-25-26
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.31688190864621396
+    y: 0.3095586744693611
+  l_poseidon_band_left_distal:
+    number: 2-27-28-29
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.2034715413412532
+    y: 0.315264825150824
+  l_roof_left_5:
+    number: 2-30-31-32
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.07004757980600518
+    y: 0.30242598611753246
+  l_roof_left_4:
+    number: 2-33-34-35
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.10340357018981718
+    y: 0.24821755464363515
+  l_poseidon_pop:
+    number: 2-36-37-38 # Driver 2 Header 10 to FET breakout
+    subtype: led
+    default_on_color: 000080
+    type: rbg
+    platform_settings:
+      polarity: false
+    tags: pop, service_test
+    x: 0.31688190864621396
+    y: 0.36091403060252697
+  l_olympus_lower_pop:
+    number: 2-39-40-41
+    default_on_color: FF2050
+    type: rbg
+    platform_settings:
+      polarity: false
+    tags: pop, service_test
+    x: 0.6571130105610963
+    y: 0.44
+  l_olympus_right_pop:
+    number: 2-42-43-44
+    default_on_color: FF2050
+    type: rbg
+    platform_settings:
+      polarity: false
+    tags: pop, service_test
+    x: 0.7972081701731067
+    y: 0.3528571428571428
+  l_olympus_left_pop:
+    number: 2-45-46-47
+    default_on_color: FF2050
+    type: rbg
+    platform_settings:
+      polarity: false
+    tags: pop, service_test
+    x: 0.6070790249853782
+    y: 0.3457142857142857
+  l_roof_center: #Driver 2 J7
+    number: 2-48-49-50
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.5070110538339423
+    y: 0.2139806505548579
+  l_hideyhole:
+    number: 2-51-52-53
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.4970042567187987
+    y: 0.25535024299546377
+  l_roof_left_1:
+    number: 2-54-55-56
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.3602446961451696
+    y: 0.2139806505548579
+  l_poseidion_band_right_distal:
+    number: 2-57-58-59
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.4069430826825064
+    y: 0.289587147084241
+  l_roof_right_2: #Driver 2 J11
+    number: 2-60-61-62
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.7505097836357699
+    y: 0.22681948958814943
+  l_roof_right_3:
+    number: 2-63-64-65
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.8839337451710179
+    y: 0.19400912316973784
+  l_roof_right_4:
+    number: 2-66-67-68
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.9139541365164487
+    y: 0.24108486629180656
+  l_roof_right_1:
+    number: 2-69-70-71
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.6370994163308091
+    y: 0.21540718822522364
+  #Driver 2 J8 is for cabinet LEDs and servos
+  #Servo is on LED78 Serial back cab is on 83
+  l_start_button:
+    channels:
+      white:
+        - number: 2-81 # J8 pin 17
+#    platform_settings:
+#      polarity: false
+    x: 0.08338997595952999
+    y: 0.9686190781783234
+#    default_on_color: FF
+    subtype: led
+  l_launch_button:
+    channels:
+      white:
+        - number: 2-82 # J8 pin 18
+#    platform_settings:
+#      polarity: false
+    x: 0.8725037087755335
+    y: 0.9579710144927536
+  #Driver 4 J5 LEDs 0-11 go to break out board for underworld
+  l_roof_right_5: #Driver 4 J9
+    number: 4-12-13-14
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.9272965326699735
+    y: 0.2938667600953382
+  l_olympus_band_upper_right:
+    number: 4-15-16-17
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.7805206853680048
+    y: 0.30867709815078237
+  l_olympus_band_lower_right:
+    number: 4-18-19-20
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.8329971455514817
+    y: 0.4043478260869565
+  l_olympus_cloud:
+    number: 4-21-22-23
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.6742370175732126
+    y: 0.4011379800853485
+  l_revealed_slingshot_flasher: #Driver 4 J6
+    number: 4-24-25-26
+    type: rgb
+    subtype: led
+    default_on_color: VIOLET
+    platform_settings:
+      polarity: false
+    tags: service_test
+    x: 0.9006117403629239
+    y: 0.6276765749609166
+  l_zeus_eyes_flasher:
+    number: 4-27-28-29
+    default_on_color: AAAAAA
+    type: rgb
+    platform_settings:
+      polarity: false
+    tags: service_test
+    x: 0.6237570201772843
+    y: 0.5007147222983674
+  l_olympus_lock_distal:
+    number: 4-30-31-32
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: ramp
+    x: 0.8739269480558742
+    y: 0.25535024299546377
+  l_olympus_lock_prox:
+    number: 4-33-34-35
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: ramp
+    x: 0.8605845519023494
+    y: 0.26961561969912096
+  l_right_sis_arrow: #Driver 4 J10
+    number: 4-36-37-38
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.7571809817125322
+    y: 0.5406577770686076
+  l_middle_drop_arrow:
+    number: 4-39-40-41
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.7738589769044383
+    y: 0.6433684893349394
+  l_right_outlane:
+    number: 4-42-43-44
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.840499405541225
+    y: 0.7885714285714286
+  l_distal_drop_arrow:
+    number: 4-45-46-47
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.7638521797892948
+    y: 0.6219704242794536
+  l_backlight_rgb: #Driver 4 J7
+    number: 4-48-49-50
+    fade_ms: 200
+    default_on_color: white
+    platform_settings:
+      polarity: false
+    tags: service_test
+    x: 0.4536414692198431
+    y: 0.7071428571428572
+  l_backlight_w:
+    channels:
+      white:
+        - number: 4-51
+    default_on_color: white
+    tags: service_test
+    x: 0.45152915668150173
+    y: 0.6695652173913043
+  l_sis_flash_left:
+    channels:
+      white:
+        - number: 4-52
+    default_on_color: white
+    tags: service_test
+    x: 0.14676635768877277
+    y: 0.4564920545170302
+  l_sis_flash_right:
+    channels:
+      white:
+        - number: 4-53
+    default_on_color: white
+    tags: service_test
+    x: 0.8238929624801563
+    y: 0.4664778182095902
+  l_prox_drop_arrow:
+    number: 4-54-55-56
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.7872013730579631
+    y: 0.6647665543904252
+  l_ramp_arrow:
+    number: 4-57-58-59
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: insert
+    x: 0.4970042567187987
+    y: 0.5577762291129962
+  l_right_sling_prox: #Driver 4 J11
+    number: 4-60-61-62
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: true
+    tags: gi, right_sling
+    x: 0.6304282182540467
+    y: 0.8388041501750431
+  l_right_sling_middle:
+    number: 4-63-64-65
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: true
+    tags: gi, , right_sling
+    x: 0.6571130105610963
+    y: 0.8159795474491914
+  l_right_sling_distal:
+    number: 4-66-67-68
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: true
+    tags: gi, right_sling
+    x: 0.683797802868146
+    y: 0.7931549447233399
+  l_right_inlane:
+    number: 4-69-70-71
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: true
+    tags: gi
+    x: 0.7404399587404461
+    y: 0.7785714285714286
+  l_lightning: #Driver 4 J8
+    number: 4-72-73-74
+    type: rgb
+    subtype: led
+    default_on_color: red
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.5733178734564854
+    y: 0.5594202898550724
+  l_olympus_gate_triangle:
+    number: 4-75-76-77
+    type: rgb
+    subtype: led
+    default_on_color: green
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.6704554067146211
+    y: 0.5585714285714285
+  l_olympus_spinner:
+    number: 4-78-79-80
+    type: rgb
+    subtype: led
+    default_on_color: blue
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.7004757980600519
+    y: 0.51
+  l_right_orbit_triangle:
+    number: 4-81-82-83
+    type: rgb
+    subtype: led
+    default_on_color: white
+    platform_settings:
+      polarity: false
+    tags: insert
+    x: 0.8705913490174931
+    y: 0.477890119572516
+#flippers
+#right inlane serial leds
+  l_r_inlane_0:
+    number: 0-578-579-580 #flipper string LED 26
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.6003567182437322
+    y: 0.8871428571428572
+  l_r_inlane_1:
+    number: 0-500-501-502 #flipper string LED 0
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.6237039239532106
+    y: 0.8828571428571428
+  l_r_inlane_2:
+    number: 0-503-504-505 #flipper string LED 1
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.6503864447640432
+    y: 0.8785714285714286
+  l_r_inlane_3:
+    number: 0-506-507-508 #flipper string LED 2
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.6804042806762298
+    y: 0.8742857142857142
+  l_r_inlane_4:
+    number: 0-509-510-511 #flipper string LED 3
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.7037514863857083
+    y: 0.867142857142857
+  l_r_inlane_5:
+    number: 0-512-513-514 #flipper string LED 4
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.7304340071965408
+    y: 0.86
+  l_r_inlane_6:
+    number: 0-515-516-517 #flipper string LED 5
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.7537812129060193
+    y: 0.8514285714285714
+  l_r_inlane_7:
+    number: 0-518-519-520 #flipper string LED 6
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.7671224733114356
+    y: 0.84
+  l_r_inlane_8:
+    number: 0-521-522-523 #flipper string LED 7
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.7704577884127897
+    y: 0.8257142857142857
+  l_r_inlane_9:
+    number: 0-524-525-526 #flipper string LED 8
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.7804637337168518
+    y: 0.8128571428571428
+  l_r_inlane_10:
+    number: 0-527-528-529 #flipper string LED 9
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.7804637337168518
+    y: 0.7971428571428572
+  l_r_inlane_11:
+    number: 0-530-531-532 #flipper string LED 10
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.7737931035141437
+    y: 0.7842857142857143
+  l_r_inlane_12:
+    number: 0-533-534-535 #flipper string LED 11
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.7771284186154978
+    y: 0.7699999999999999
+  l_r_outlane_0:
+    number: 0-575-576-577 #flipper string LED 12
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.6370451843586269
+    y: 0.9042857142857142
+  l_r_outlane_1:
+    number: 0-572-573-574 #flipper string LED 13
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.6670630202708135
+    y: 0.8985714285714286
+  l_r_outlane_2:
+    number: 0-569-570-571 #flipper string LED 14
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.693745541081646
+    y: 0.8914285714285713
+  l_r_outlane_3:
+    number: 0-566-567-568 #flipper string LED 15
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.7170927467911246
+    y: 0.8857142857142857
+  l_r_outlane_4:
+    number: 0-563-564-565 #flipper string LED 16
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.743775267601957
+    y: 0.88
+  l_r_outlane_5:
+    number: 0-560-561-562 #flipper string LED 17
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.7637871582100816
+    y: 0.8742857142857142
+  l_r_outlane_6:
+    number: 0-557-558-559 #flipper string LED 18
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.783799048818206
+    y: 0.8628571428571428
+  l_r_outlane_7:
+    number: 0-554-555-556 #flipper string LED 19
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.8004756243249762
+    y: 0.8528571428571429
+  l_r_outlane_8:
+    number: 0-551-552-553 #flipper string LED 20
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.8071462545276844
+    y: 0.8385714285714285
+  l_r_outlane_9:
+    number: 0-548-549-550 #flipper string LED 21
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.8038109394263303
+    y: 0.8257142857142857
+  l_r_outlane_10:
+    number: 0-545-546-547 #flipper string LED 22
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.8071462545276844
+    y: 0.8099999999999999
+  l_r_outlane_11:
+    number: 0-542-543-544 #flipper string LED 23
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.8071462545276844
+    y: 0.7985714285714285
+  l_r_outlane_12:
+    number: 0-539-540-541 #flipper string LED 24
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.8038109394263303
+    y: 0.7857142857142857
+  l_r_outlane_13:
+    number: 0-536-537-538 #flipper string LED 25
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.8038109394263303
+    y: 0.7714285714285715
+
+  l_l_inlane_0:
+    number: 0-656-657-658 #flipper string LED 52
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.2601545779056173
+    y: 0.8857142857142857
+  l_l_inlane_1:
+    number: 0-659-660-661 #flipper string LED 53
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.23680737219613882
+    y: 0.88
+  l_l_inlane_2:
+    number: 0-581-582-583 #flipper string LED 27
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.21012485138530626
+    y: 0.8728571428571429
+  l_l_inlane_3:
+    number: 0-584-585-586 #flipper string LED 28
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.18344233057447373
+    y: 0.8685714285714285
+  l_l_inlane_4:
+    number: 0-587-588-589 #flipper string LED 29
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.16009512486499525
+    y: 0.8628571428571428
+  l_l_inlane_5:
+    number: 0-590-591-592 #flipper string LED 30
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.13341260405416272
+    y: 0.8542857142857143
+  l_l_inlane_6:
+    number: 0-593-594-595  #flipper string LED 31
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.1134007134460383
+    y: 0.8442857142857142
+  l_l_inlane_7:
+    number: 0-596-597-598  #flipper string LED 32
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.1033947681419761
+    y: 0.83
+  l_l_inlane_8:
+    number: 0-599-600-601  #flipper string LED 33
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.10005945304062203
+    y: 0.8185714285714286
+  l_l_inlane_9:
+    number: 0-602-603-604  #flipper string LED 34
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.10005945304062203
+    y: 0.8028571428571428
+  l_l_inlane_10:
+    number: 0-605-606-607  #flipper string LED 35
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.10005945304062203
+    y: 0.7885714285714286
+  l_l_inlane_11:
+    number: 0-608-609-610  #flipper string LED 36
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.1033947681419761
+    y: 0.7742857142857142
+  l_l_inlane_12:
+    number: 0-611-612-613  #flipper string LED 37
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.10673008324333016
+    y: 0.7614285714285715
+
+  l_l_outlane_0:
+    number: 0-653-654-655 #flipper string LED 51
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.2268014268920766
+    y: 0.9
+  l_l_outlane_1:
+    number: 0-650-651-652 #flipper string LED 50
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.20011890608124405
+    y: 0.8928571428571429
+  l_l_outlane_2:
+    number: 0-647-648-649 #flipper string LED 49
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.17677170037176557
+    y: 0.8857142857142857
+  l_l_outlane_3:
+    number: 0-444-645-646 #flipper string LED 48
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.15008917956093304
+    y: 0.8814285714285713
+  l_l_outlane_4:
+    number: 0-641-642-643 #flipper string LED 47
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.13007728895280865
+    y: 0.8742857142857142
+  l_l_outlane_5:
+    number: 0-638-639-640 #flipper string LED 46
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.1134007134460383
+    y: 0.8657142857142858
+  l_l_outlane_6:
+    number: 0-635-636-637 #flipper string LED 45
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.09005350773655983
+    y: 0.8585714285714285
+  l_l_outlane_7:
+    number: 0-632-633-634 #flipper string LED 44
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.07337693222978948
+    y: 0.8457142857142856
+  l_l_outlane_8:
+    number: 0-629-630-631 #flipper string LED 43
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.06670630202708136
+    y: 0.8314285714285714
+  l_l_outlane_9:
+    number: 0-626-627-628 #flipper string LED 42
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.06337098692572728
+    y: 0.8171428571428572
+  l_l_outlane_10:
+    number: 0-623-624-625 #flipper string LED 41
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.06670630202708136
+    y: 0.8042857142857143
+  l_l_outlane_11:
+    number: 0-620-621-622 #flipper string LED 40
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.07004161712843542
+    y: 0.7928571428571428
+  l_l_outlane_12:
+    number: 0-617-618-619 #flipper string LED 39
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.07004161712843542
+    y: 0.7757142857142857
+  l_l_outlane_13:
+    number: 0-614-615-616 #flipper string LED 38
+    type: grb
+    subtype: led
+    tags: gi, lanes
+    x: 0.07337693222978948
+    y: 0.7614285714285715
+
+  l_shooter_0:
+    number: 0-800-801-802
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.9329556364191804
+  l_shooter_1:
+    number: 0-803-804-805
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.9201167973858889
+  l_shooter_2:
+    number: 0-806-807-808
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.9072779583525977
+  l_shooter_3:
+    number: 0-809-810-811
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.8958656569896717
+  l_shooter_4:
+    number: 0-812-813-814
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.8830268179563803
+  l_shooter_5:
+    number: 0-815-816-817
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.8701879789230889
+  l_shooter_6:
+    number: 0-818-819-820
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.8544960645490659
+  l_shooter_7:
+    number: 0-821-822-823
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.8416572255157745
+  l_shooter_8:
+    number: 0-824-825-826
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.828818386482483
+  l_shooter_9:
+    number: 0-827-828-829
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.8145530097788257
+  l_shooter_10: #Note this one was not assigned under monitor and the position is a little crowded between 9 and 11
+    number: 0-830-831-832
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.810
+  l_shooter_11:
+    number: 0-833-834-835
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.8002876330751685
+  l_shooter_12:
+    number: 0-836-837-838
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.7888753317122429
+  l_shooter_13:
+    number: 0-839-840-841
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.7760364926789514
+  l_shooter_14:
+    number: 0-842-843-844
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.7631976536456598
+  l_shooter_15:
+    number: 0-845-846-847
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.7517853522827341
+  l_shooter_16:
+    number: 0-848-849-850
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.7389465132494427
+  l_shooter_17:
+    number: 0-851-852-853
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.7246811365457855
+  l_shooter_18:
+    number: 0-854-855-856
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.711842297512494
+  l_shooter_19:
+    number: 0-857-858-859
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.6990034584792025
+  l_shooter_20:
+    number: 0-860-861-862
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.6847380817755453
+  l_shooter_21:
+    number: 0-863-864-865
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.6704727050718882
+  l_shooter_22:
+    number: 0-866-867-868
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.6576338660385965
+  l_shooter_23:
+    number: 0-869-870-871
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.6447950270053051
+  l_shooter_24:
+    number: 0-872-873-874
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.630529650301648
+  l_shooter_25:
+    number: 0-875-876-877
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.6176908112683566
+  l_shooter_26:
+    number: 0-878-879-880
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.6048519722350649
+  l_shooter_27:
+    number: 0-881-882-883
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.5920131332017735
+  l_shooter_28:
+    number: 0-884-885-886
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.579174294168482
+  l_shooter_29:
+    number: 0-887-888-889
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.5663354551351906
+  l_shooter_30:
+    number: 0-890-891-892
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.5534966161018992
+  l_shooter_31:
+    number: 0-893-894-895
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.5406577770686076
+  l_shooter_32:
+    number: 0-896-897-898
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.5278189380353162
+  l_shooter_33:
+    number: 0-899-900-901
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.5149800990020247
+  l_shooter_34:
+    number: 0-902-903-904
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.49928818462800184
+  l_shooter_35:
+    number: 0-905-906-907
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.4850228079243446
+  l_shooter_36:
+    number: 0-908-909-910
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.4693308935503217
+  l_shooter_37:
+    number: 0-911-912-913
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.45363897917629886
+  l_shooter_38:
+    number: 0-914-915-916
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.43857142857142856
+  l_shooter_39:
+    number: 0-917-918-919
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.42
+  l_shooter_40:
+    number: 0-920-921-922
+    type: grb
+    subtype: led
+    tags: shooter
+    x: 0.9736
+    y: 0.40428571428571425
+  l_shooter_41:
+    number: 0-923-924-925
+    type: grb
+    subtype: led
+    x: 0.9736
+    y: 0.35714285714285715
+  #Long serial loop from bottom to top and back.  Starts with right shoulder which is wired backwards hense the numbering.
+  l_right_shoulder_15: #Serial chain LED 0 most distal LED right shoulder near bottom drop
+    number: 0-100-101-102
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.8911114536893133
+    y: 0.6890176947866424
+  l_right_shoulder_14:
+    number: 0-103-104-105
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.8746093897321038
+    y: 0.7004299961495681
+  l_right_shoulder_13:
+    number: 0-106-107-108
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.7132688351828597
+  l_right_shoulder_12:
+    number: 0-109-110-111
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.7289607495568825
+  l_right_shoulder_11:
+    number: 0-112-113-114
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.7446526639309055
+  l_right_shoulder_10: # serial chain LED 5
+    number: 0-115-116-117
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.7603445783049284
+  l_right_shoulder_9:
+    number: 0-118-119-120
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.7746099550085856
+  l_right_shoulder_8:
+    number: 0-121-122-123
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.7917284070529743
+  l_right_shoulder_7:
+    number: 0-124-125-126
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.8059937837566314
+  l_right_shoulder_6:
+    number: 0-127-128-129
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.8202591604602887
+  l_right_shoulder_5: # serial chain LED 10
+    number: 0-130-131-132
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.8330979994935801
+  l_right_shoulder_4:
+    number: 0-133-134-135
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.8457142857142856
+  l_right_shoulder_3:
+    number: 0-136-137-138
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.8585714285714285
+  l_right_shoulder_2:
+    number: 0-139-140-141
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.87
+  l_right_shoulder_1:
+    number: 0-142-143-144
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.868
+    y: 0.8830268179563803
+  l_right_shoulder_0: #Serial LED number 15 most proximal right shoulder near trough
+    number: 0-145-146-147
+    type: grb
+    subtype: led
+    tags: gi, right_ballguide
+    x: 0.8478647787052369
+    y: 0.8884120171673818
+
+  #Orbit serial LEDs
+  l_orbit_0: #Serial Chain LED #16 bottom right orbit LED near top drop
+    number: 0-148-149-150
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.8171521998317466
+    y: 0.5828571428571429
+  l_orbit_1:
+    number: 0-151-152-153
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.8304934602371629
+    y: 0.5728571428571428
+  l_orbit_2:
+    number: 0-154-155-156
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.840499405541225
+    y: 0.5614285714285715
+  l_orbit_3:
+    number: 0-157-158-159
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.8505053508452873
+    y: 0.5485714285714285
+  l_orbit_4: # serial chain LED 20
+    number: 0-160-161-162
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.8638466112507036
+    y: 0.5357142857142857
+  l_orbit_5:
+    number: 0-163-164-165
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.8738525565547657
+    y: 0.5228571428571428
+  l_orbit_6:
+    number: 0-166-167-168
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.883858501858828
+    y: 0.51
+  l_orbit_7: #serial chain LED number 23 just below bottom edge of shooter ramp
+    number: 0-169-170-171
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.89386444716289
+    y: 0.49714285714285716
+  l_orbit_8: #Serial chain LED # 24 hidden by metal
+    number: 0-172-173-174
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9072057075683064
+    y: 0.48142857142857143
+  l_orbit_9: #serial chain LED # 25 bottom edge of shooter ramp
+    number: 0-175-176-177
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9205469679737227
+    y: 0.46714285714285714
+  l_orbit_10:
+    number: 0-178-179-180
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.933888228379139
+    y: 0.45142857142857135
+  l_orbit_11:
+    number: 0-181-182-183
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.937223543480493
+    y: 0.4357142857142857
+  l_orbit_12: #serial chain LED 28 top edge of shooter ramp
+    number: 0-184-185-186
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9472294887845553
+    y: 0.42142857142857143
+  l_orbit_13: #serial chain LED 29 hidden by metal
+    number: 0-187-188-189
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9539001189872633
+    y: 0.40428571428571425
+  l_orbit_14: #serial chain LED 30 first led above shooter ramp
+    number: 0-190-191-192
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9572354340886174
+    y: 0.38999999999999996
+  l_orbit_15:
+    number: 0-193-194-195
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9606525230537855
+    y: 0.37803248264691564
+  l_orbit_16:
+    number: 0-196-197-198
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9605707491899714
+    y: 0.3671428571428571
+  l_orbit_17:
+    number: 0-199-200-201
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9572354340886174
+    y: 0.35428571428571426
+  l_orbit_18:
+    number: 0-202-203-204
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9539001189872633
+    y: 0.34428571428571425
+  l_orbit_19: # serial chain LED 35
+    number: 0-205-206-207
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9472294887845553
+    y: 0.3342857142857143
+  l_orbit_20:
+    number: 0-208-209-210
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.933888228379139
+    y: 0.3242857142857143
+  l_orbit_21:
+    number: 0-211-212-213
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9172116528723686
+    y: 0.3157142857142857
+  l_orbit_22:
+    number: 0-214-215-216
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.9038703924669523
+    y: 0.30714285714285716
+  l_orbit_23:
+    number: 0-217-218-219
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.887193816960182
+    y: 0.2985714285714286
+  l_orbit_24: # serial chain LED 40
+    number: 0-220-221-222
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.8638466112507036
+    y: 0.29
+  l_orbit_25:
+    number: 0-223-224-225
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.8439065567104435
+    y: 0.2810279210620467
+  l_orbit_26:
+    number: 0-226-227-228
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.8204875149331007
+    y: 0.2757142857142857
+  l_orbit_27:
+    number: 0-229-230-231
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.8004756243249762
+    y: 0.2685714285714285
+  l_orbit_28:
+    number: 0-232-233-234
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.7737931035141437
+    y: 0.2642857142857143
+  l_orbit_29: # serial chain LED 45
+    number: 0-235-236-237
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.7471105827033112
+    y: 0.25857142857142856
+  l_orbit_30: #serial chain led 46 at right edge of olympus magnet
+    number: 0-238-239-240
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.7237633769938326
+    y: 0.25285714285714284
+  l_orbit_31: #serial chain led 47 at left edge of olympus magnet
+    number: 0-241-242-243
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.6970808561830002
+    y: 0.2471428571428571
+  l_orbit_32:
+    number: 0-244-245-246
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.6703983353721676
+    y: 0.24142857142857144
+  l_orbit_33:
+    number: 0-247-248-249
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.640380499459981
+    y: 0.23857142857142855
+  l_orbit_34: # serial chain LED 50
+    number: 0-250-251-252
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.6070273484464402
+    y: 0.2357142857142857
+  l_orbit_35:
+    number: 0-253-254-255
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.5770095125342537
+    y: 0.2342857142857143
+  l_orbit_36:
+    number: 0-256-257-258
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.5503269917234211
+    y: 0.2314285714285714
+  l_orbit_37: #serial chain LED 53 at hidey hole
+    number: 0-259-260-261
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.5203091558112346
+    y: 0.22999999999999998
+  l_orbit_38:
+    number: 0-262-263-264
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.48695600479769385
+    y: 0.22857142857142856
+  l_orbit_39: # serial chain LED 55
+    number: 0-265-266-267
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.4569381688855073
+    y: 0.22857142857142856
+  l_orbit_40:
+    number: 0-268-269-270
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.42692033297332066
+    y: 0.22857142857142856
+  l_orbit_41:
+    number: 0-271-272-273
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.4002378121624881
+    y: 0.22999999999999998
+  l_orbit_42:
+    number: 0-274-275-276
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.3735552913516556
+    y: 0.2314285714285714
+  l_orbit_43:
+    number: 0-277-278-279
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.34353745543946895
+    y: 0.2342857142857143
+  l_orbit_44: #serial chain LED 60 at right edge of poseidon magnet
+    number: 0-280-281-282
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.31685493462863645
+    y: 0.24142857142857144
+  l_orbit_45: #serial chain LED 61 at left edge of poseidon magnet
+    number: 0-283-284-285
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.28350178361509576
+    y: 0.2471428571428571
+  l_orbit_46:
+    number: 0-286-287-288
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.2568192628042632
+    y: 0.2542857142857143
+  l_orbit_47:
+    number: 0-289-290-291
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.2234661117907225
+    y: 0.2614285714285714
+  l_orbit_48:
+    number: 0-292-293-294
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.20011890608124405
+    y: 0.2685714285714285
+  l_orbit_49: # serial chain LED 65
+    number: 0-295-296-297
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.17677170037176557
+    y: 0.2757142857142857
+  l_orbit_50:
+    number: 0-298-299-300
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.15677315480391638
+    y: 0.28530753407314385
+  l_orbit_51:
+    number: 0-301-302-303
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.13341260405416272
+    y: 0.29285714285714287
+  l_orbit_52:
+    number: 0-304-305-306
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.12007134364874643
+    y: 0.3
+  l_orbit_53:
+    number: 0-307-308-309
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.10005945304062203
+    y: 0.31
+  l_orbit_54: # serial chain LED 70
+    number: 0-310-311-312
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.0833828775338517
+    y: 0.32
+  l_orbit_55:
+    number: 0-313-314-315
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.06337098692572728
+    y: 0.32857142857142857
+  l_orbit_56:
+    number: 0-316-317-318
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.05002972652031101
+    y: 0.33999999999999997
+  l_orbit_57:
+    number: 0-319-320-321
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.043359096317602874
+    y: 0.35
+  l_orbit_58:
+    number: 0-322-323-324
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.03335315101354068
+    y: 0.3628571428571429
+  l_orbit_59: # serial chain LED 75
+    number: 0-325-326-327
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.030017835912186607
+    y: 0.37857142857142856
+  l_orbit_60:
+    number: 0-328-329-330
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.026684792307049596
+    y: 0.3980040100320357
+  l_orbit_61:
+    number: 0-331-332-333
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.023347205709478475
+    y: 0.4142857142857143
+  l_orbit_62:
+    number: 0-334-335-336
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.01667657550677034
+    y: 0.43
+  l_orbit_63:
+    number: 0-337-338-339
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.01667657550677034
+    y: 0.44428571428571423
+  l_orbit_64: # serial chain LED 80
+    number: 0-340-341-342
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.020011890608124406
+    y: 0.4585714285714285
+  l_orbit_65:
+    number: 0-343-344-345
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.020011890608124406
+    y: 0.4728571428571428
+  l_orbit_66:
+    number: 0-346-347-348
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.020011890608124406
+    y: 0.4914285714285714
+  l_orbit_67:
+    number: 0-349-350-351
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.023347205709478475
+    y: 0.5057142857142857
+  l_orbit_68: #serial chain LED 84 Last led on orbit at spinner.
+    number: 0-352-353-354
+    type: grb
+    subtype: led
+    tags: gi, orbit
+    x: 0.02668252081083254
+    y: 0.5214285714285715
+  #Serial LEDs around the left side pop
+  l_left_pop_13: #serial chain LED 85 top LED above the left side pop
+    number: 0-355-356-357
+    type: grb
+    subtype: led
+    tags: gi, spinner_strip
+    x: 0.01667657550677034
+    y: 0.5385714285714286
+  l_left_pop_12:
+    number: 0-358-359-360
+    type: grb
+    subtype: led
+    tags: gi, spinner_strip
+    x: 0.01667657550677034
+    y: 0.55
+  l_left_pop_11:
+    number: 0-361-362-363
+    type: grb
+    subtype: led
+    tags: gi, spinner_strip
+    x: 0.020011890608124406
+    y: 0.5642857142857143
+  l_left_pop_10:
+    number: 0-364-365-366
+    type: grb
+    subtype: led
+    tags: gi, spinner_strip
+    x: 0.023347205709478475
+    y: 0.5785714285714286
+  l_left_pop_9:
+    number: 0-367-368-369
+    type: grb
+    subtype: led
+    tags: gi, spinner_strip
+    x: 0.02668252081083254
+    y: 0.59
+  l_left_pop_8: # serial chain LED 90
+    number: 0-370-371-372
+    type: grb
+    subtype: led
+    tags: gi, spinner_strip
+    x: 0.043359096317602874
+    y: 0.6
+  l_left_pop_7:
+    number: 0-373-374-375
+    type: grb
+    subtype: led
+    tags: gi, pop, pop_strip
+    x: 0.05002972652031101
+    y: 0.6085714285714285
+  l_left_pop_6:
+    number: 0-376-377-378
+    type: grb
+    subtype: led
+    tags: gi, pop, pop_strip
+    x: 0.03335315101354068
+    y: 0.6157142857142857
+  l_left_pop_5: #serial chain LED 93 even with left side pop.
+    number: 0-379-380-381
+    type: grb
+    subtype: led
+    tags: gi, pop, pop_strip
+    x: 0.020011890608124406
+    y: 0.6257142857142858
+  l_left_pop_4:
+    number: 0-382-383-384
+    type: grb
+    subtype: led
+    tags: gi, pop, pop_strip
+    x: 0.02668252081083254
+    y: 0.6357142857142857
+  l_left_pop_3: # serial chain LED 95
+    number: 0-385-386-387
+    type: grb
+    subtype: led
+    tags: gi, pop, pop_strip
+    x: 0.03668846611489474
+    y: 0.6457142857142857
+  l_left_pop_2:
+    number: 0-388-389-390
+    type: grb
+    subtype: led
+    tags: gi, pop_strip
+    x: 0.05670035672301915
+    y: 0.6528571428571428
+  l_left_pop_1:
+    number: 0-391-392-393
+    type: grb
+    subtype: led
+    tags: gi, pop_strip
+    x: 0.043359096317602874
+    y: 0.6614285714285715
+  l_left_pop_0:
+    number: 0-394-395-396
+    type: grb
+    subtype: led
+    tags: gi, pop_strip
+    x: 0.030017835912186607
+    y: 0.6714285714285714
+  #serial LEDs on the left shoulder ball guide
+  l_left_shoulder_14: # serial chain LED 99 most distal LED on left shoulder on ball guide by left side pop
+    number: 0-397-398-399
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.010005945304062203
+    y: 0.6785714285714286
+  l_left_shoulder_13: # serial chain LED  100
+    number: 0-400-401-402
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.6914285714285714
+  l_left_shoulder_12:
+    number: 0-403-404-405
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.7042857142857143
+  l_left_shoulder_11:
+    number: 0-406-407-408
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.7171428571428571
+  l_left_shoulder_10:
+    number: 0-409-410-411
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.73
+  l_left_shoulder_9:
+    number: 0-412-413-414
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.7442857142857142
+  l_left_shoulder_8: # serial chain LED 105
+    number: 0-415-416-417
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.7571428571428571
+  l_left_shoulder_7:
+    number: 0-418-419-420
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.7728571428571428
+  l_left_shoulder_6:
+    number: 0-421-422-423
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.7857142857142857
+  l_left_shoulder_5:
+    number: 0-424-425-426
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.8
+  l_left_shoulder_4:
+    number: 0-427-428-429
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.8157142857142856
+  l_left_shoulder_3:
+    number: 0-430-431-432
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.83
+  l_left_shoulder_2:
+    number: 0-433-434-435
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.0133
+    y: 0.8428571428571429
+  l_left_shoulder_1:
+    number: 0-436-437-438
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.01664554873408224
+    y: 0.8569384835479256
+  l_left_shoulder_0: # serial chain LED 113 most proximal LED on left shoulder by trough
+    number: 0-439-440-441
+    type: grb
+    subtype: led
+    tags: gi, left_ballguide
+    x: 0.040027188460574396
+    y: 0.8642857142857143
+#Backbox Driver 2
+  l_serial_0:
+    number: 2-100-101-102
+    default_on_color: white
+    subtype: led
+    tags: backbox, leftspeaker
+    x: 0.0900611740362924
+    y: 0.04564920545170302
+  l_serial_1:
+    number: 2-103-104-105
+    default_on_color: white
+    subtype: led
+    tags: backbox, leftspeaker
+    x: 0.16010875384229759
+    y: 0.03566344175914298
+  l_serial_2:
+    number: 2-106-107-108
+    default_on_color: white
+    subtype: led
+    tags: backbox, leftspeaker
+    x: 0.21347833845639677
+    y: 0.05135535613316589
+  l_serial_3:
+    number: 2-109-110-111
+    default_on_color: white
+    subtype: led
+    tags: backbox, leftspeaker
+    x: 0.22348513557154037
+    y: 0.081312647210846
+  l_serial_4:
+    number: 2-112-113-114
+    default_on_color: white
+    subtype: led
+    tags: backbox, leftspeaker
+    x: 0.18679354614934718
+    y: 0.10556378760706323
+  l_serial_5:
+    number: 2-115-116-117
+    default_on_color: white
+    subtype: led
+    tags: backbox, leftspeaker
+    x: 0.12008156538172318
+    y: 0.10128417459596607
+  l_serial_6:
+    number: 2-118-119-120
+    default_on_color: white
+    subtype: led
+    tags: backbox, leftspeaker
+    x: 0.08338997595952999
+    y: 0.07845957187011457
+  l_serial_7:
+    number: 2-121-122-123
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.35023789903002595
+    y: 0.06276765749609164
+  l_serial_8:
+    number: 2-124-125-126
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.36691589422193194
+    y: 0.07275342118865169
+  l_serial_9:
+    number: 2-127-128-129
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.39360068652898156
+    y: 0.06704727050718881
+  l_serial_10:
+    number: 2-130-131-132
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.3802582903754567
+    y: 0.04707574312206874
+  l_serial_11:
+    number: 2-133-134-135
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.4202854788360311
+    y: 0.04564920545170302
+  l_serial_12:
+    number: 2-136-137-138
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.4236210778744124
+    y: 0.07132688351828596
+  l_serial_13:
+    number: 2-139-140-141
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.4202854788360311
+    y: 0.08987187323304031
+  l_serial_14:
+    number: 2-142-143-144
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.3802582903754567
+    y: 0.10128417459596607
+  l_serial_15:
+    number: 2-145-146-147
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.4069430826825064
+    y: 0.11269647595889182
+  l_serial_16:
+    number: 2-148-149-150
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.4302922759511747
+    y: 0.10413724993669751
+  l_serial_17:
+    number: 2-151-152-153
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.48032626152689273
+    y: 0.11269647595889182
+  l_serial_18:
+    number: 2-154-155-156
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.4603126672966055
+    y: 0.09985763692560036
+  l_serial_19:
+    number: 2-157-158-159
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.4569770682582244
+    y: 0.07275342118865169
+  l_serial_20:
+    number: 2-160-161-162
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.45030587018146195
+    y: 0.05420843147389733
+  l_serial_21:
+    number: 2-163-164-165
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.49033305864203636
+    y: 0.05278189380353161
+  l_serial_22:
+    number: 2-166-167-168
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.49033305864203636
+    y: 0.06419419516645737
+  l_serial_23:
+    number: 2-169-170-171
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.48366186056527394
+    y: 0.09129841090340604
+  l_serial_24:
+    number: 2-172-173-174
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5036754547955611
+    y: 0.09985763692560036
+  l_serial_25:
+    number: 2-175-176-177
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5270246480642294
+    y: 0.11697608896998901
+  l_serial_26:
+    number: 2-178-179-180
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5303602471026108
+    y: 0.10271071226633179
+  l_serial_27:
+    number: 2-181-182-183
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5270246480642294
+    y: 0.08987187323304031
+  l_serial_28:
+    number: 2-184-185-186
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5170178509490859
+    y: 0.07275342118865169
+  l_serial_29:
+    number: 2-187-188-189
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5070110538339423
+    y: 0.04279613011097158
+  l_serial_30:
+    number: 2-190-191-192
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5470382422945168
+    y: 0.05420843147389733
+  l_serial_31:
+    number: 2-193-194-195
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5437026432561355
+    y: 0.0656207328368231
+  l_serial_32:
+    number: 2-196-197-198
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5603806384480414
+    y: 0.10271071226633179
+  l_serial_33:
+    number: 2-199-200-201
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5637162374864227
+    y: 0.07275342118865169
+  l_serial_34:
+    number: 2-202-203-204
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5637162374864227
+    y: 0.04279613011097158
+  l_serial_35:
+    number: 2-205-206-207
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.6004078269086159
+    y: 0.04564920545170302
+  l_serial_36:
+    number: 2-208-209-210
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5970722278702347
+    y: 0.07132688351828596
+  l_serial_37:
+    number: 2-211-212-213
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.5904010297934723
+    y: 0.0955780239145032
+  l_serial_38:
+    number: 2-214-215-216
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.6004078269086159
+    y: 0.11554955129962326
+  l_serial_39:
+    number: 2-217-218-219
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.6237570201772843
+    y: 0.10699032527742895
+  l_serial_40:
+    number: 2-220-221-222
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.6137502230621408
+    y: 0.0884453355626746
+  l_serial_41:
+    number: 2-223-224-225
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.6237570201772843
+    y: 0.05420843147389733
+  l_serial_42:
+    number: 2-226-227-228
+    default_on_color: white
+    subtype: led
+    tags: backbox, logo
+    x: 0.6337638172924279
+    y: 0.06704727050718881
+  l_serial_43:
+    number: 2-229-230-231
+    default_on_color: white
+    subtype: led
+    tags: backbox, rightspeaker
+    x: 0.7705233778660571
+    y: 0.07845957187011457
+  l_serial_44:
+    number: 2-232-233-234
+    default_on_color: white
+    subtype: led
+    tags: backbox, rightspeaker
+    x: 0.8138861653650128
+    y: 0.10271071226633179
+  l_serial_45:
+    number: 2-235-236-237
+    default_on_color: white
+    subtype: led
+    tags: backbox, rightspeaker
+    x: 0.8906049432477803
+    y: 0.10413724993669751
+  l_serial_46:
+    number: 2-238-239-240
+    default_on_color: white
+    subtype: led
+    tags: backbox, rightspeaker
+    x: 0.9306321317083547
+    y: 0.08273918488121172
+  l_serial_47:
+    number: 2-241-242-243
+    default_on_color: white
+    subtype: led
+    tags: backbox, rightspeaker
+    x: 0.9239609336315923
+    y: 0.04850228079243446
+  l_serial_48:
+    number: 2-244-245-246
+    default_on_color: white
+    subtype: led
+    tags: backbox, rightspeaker
+    x: 0.8572489528639683
+    y: 0.03566344175914298
+  l_serial_49:
+    number: 2-247-248-249
+    default_on_color: white
+    subtype: led
+    tags: backbox, rightspeaker
+    x: 0.7905369720963443
+    y: 0.05278189380353161

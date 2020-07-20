@@ -1,0 +1,283 @@
+#config_version=5
+hardware:
+  platform: p3_roc
+  driverboards: pdb
+
+p_roc:
+#  driverboards: pdb
+  pd_led_boards:
+    0: # ws281x_0 = flippers;  ws281x_1 = out lains and orbit;  ws281x_2 = shooter lane
+       use_ws281x_1: TRUE
+       ws281x_1_first_address: 100
+       ws281x_1_last_address: 441
+       use_ws281x_0: TRUE
+       ws281x_0_first_address: 500
+       ws281x_0_last_address: 661
+       use_ws281x_2: TRUE
+       ws281x_2_first_address: 800
+       ws281x_2_last_address: 925
+    2: # ws281x_0 = back box
+       use_ws281x_0: TRUE
+       ws281x_0_first_address: 100 #Data 0 J8 pin 19
+       ws281x_0_last_address: 249
+       use_servo_6: TRUE
+       max_servo_value: 300
+
+machine:
+  balls_installed: 7 #Including hades
+  min_balls: 1
+
+config:
+- hardware
+- lights
+- video
+- sound
+
+
+modes:
+  - base #100
+  - servo #10000 Manager
+  - scoop #10000 Manager
+  - bb_down #Manager
+  - temple_display # 400 adds widgets to playfield display to show where ball will go in response to ramp diverter flap
+  - scoop_eject_display #2000
+  - field #200
+  - p_ramp_mb #1000
+  - o_ramp_mb #1100
+  - celestial_mb
+  - sis_left #J 300 ust for showing slides associated with getting points in P area and enabling loop counts to feed mag diverter
+  - sis_right #350 Just for showing slides associated with getting points in O area and enabling loop counts to feed mag diverter
+  - mystery #2000
+  - hydra #700
+  - scoop_mb #650
+  - super_spinner #1400
+#  - sound_loops #150
+  - sound_effects # 175
+#  - display
+#  - hades_mini_game
+coil_player:
+  machine_reset_phase_2: #drops block at startup in case a ball is in subway
+    c_ballblock_fall:
+      action: pulse
+
+ball_saves:
+  bs_default:
+    source_playfield: earth_pf
+    active_time: 10s
+    hurry_up_time: 1s #does not add to BS, just posts for light
+    grace_period: 1s
+    early_ball_save_events:
+      - s_left_outlane_active
+      - s_right_outlane_active
+    enable_events: mode_base_started
+    timer_start_events: balldevice_bd_plunger_ball_eject_success
+    auto_launch: yes
+    balls_to_save: 1
+    debug: no
+#  bs_malstrom:
+#    source_playfield: earth_pf
+#    active_time: 2s
+#    hurry_up_time: 0s
+#    grace_period: 0s
+#    early_ball_save_events:
+#      - s_left_outlane_active
+#      - s_right_outlane_active
+#    enable_events: mode_base_started
+#    timer_start_events: diverter_malstrom_mag_activating #ball_started
+#    auto_launch: yes
+#    balls_to_save: 1
+#    debug: yes
+#  bs_left_side_pop:
+#    source_playfield: earth_pf
+#    active_time: 2s
+#    hurry_up_time: 0s
+#    grace_period: 0s
+#    enable_events: mode_base_started
+#    early_ball_save_events:
+#      - s_left_outlane_active
+#      - s_right_outlane_active
+#    timer_start_events: shot_left_side_pop_hit
+#    auto_launch: yes
+#    balls_to_save: 1
+#    debug: yes
+
+state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines.html
+# This state machine activates the magnet on the side of the powerball to feed the mechs on that side of the upper playfield.
+# When either the poseidon area or olympus area are maxed, the magnets switch to feed the other side.
+# magnets deactivate with MB and with calls for a mystery mode top of the orbit shot.
+# Also in hardware.yaml the magnets respond to a show played in base to deactivate in response to
+# shooter lane fire events.  Might be better to reset start state with each ball. Will have to test.
+  feeder_magnets:
+    states:
+      start:
+        label: undefigned
+      feed_poseidon:
+        label: feed_p
+      feed_olympus:
+        label: feed_o
+      magnets_off:
+        label: off
+    transitions:
+      - source: start
+        target: feed_poseidon
+        events: ball_starting{device.switches.s_sis_left.state==1} #mode_game_started{device.switches.s_sis_left.state==1}
+        events_when_transitioning:
+          - state_start_to_feed_poseidon
+          - state_says_enable_poseidon_mag
+          - state_says_disable_olympus_mag
+      - source: start
+        target: feed_olympus
+        events: ball_starting{device.switches.s_sis_right.state==1} #mode_game_started{device.switches.s_sis_right.state==1}
+        events_when_transitioning:
+          - state_start_to_feed_olympus
+          - state_says_enable_olympus_mag
+          - state_says_disable_poseidon_mag
+
+      - source: feed_poseidon
+        target: feed_olympus
+        events:
+          - mode_p_ramp_mb_started{not mode.o_ramp_mb.active} #triggered by p_locking_elgible but not if other side also elgible/active then mags off
+          - field_sis_left_to_right_hit{not mode.o_ramp_mb.active}
+          - mode_o_ramp_mb_stopped{device.switches.s_sis_left==1} #o ramp mb either drained or locked a ball so return to diverting to olympus 7-4-20
+          - multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1 and device.switches.s_sis_right==1}
+          - ball_starting{device.switches.s_sis_right.state==1 and not device.shots.ormb_light_o_lock.enabled} #If starting a new ball go back to power ball side unless that side already qualified
+        events_when_transitioning:
+          - state_poseidon_to_olympus
+          - state_says_enable_olympus_mag
+          - state_says_disable_poseidon_mag
+
+      - source: feed_olympus
+        target: feed_poseidon
+        events:
+          - mode_o_ramp_mb_started{not mode.p_ramp_mb.active} #triggered by o_locking_elgible but not if other side also eligble/active then mags off
+          - field_sis_right_to_left_hit{not mode.p_ramp_mb.active}
+          - mode_p_ramp_mb_stopped{device.switches.s_sis_right==1} #p ramp mb either drained or locked a ball so return to diverting to poseidon 7-4-20
+          - multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1 and device.switches.s_sis_left==1}          
+          - ball_starting{device.switches.s_sis_right.state==1 and not device.shots.prmb_light_p_lock.enabled} #If starting a new ball go back to power ball side unless that side already qualified
+        events_when_transitioning:
+          - state_olympus_to_posidon
+          - state_says_enable_poseidon_mag
+          - state_says_disable_olympus_mag
+      - source: feed_poseidon
+        target: magnets_off
+        events:
+          - mode_p_ramp_mb_started{mode.o_ramp_mb.active} #triggered by p_locking_elgible and other side does not need balls either
+          - field_sis_left_to_right_hit{mode.o_ramp_mb.active} #triggered by sis hit but other side cant use balls.
+          - mode_mystery_started
+          - multiball_poseidon_ramp_started
+          - multiball_olympus_ramp_started
+          - multiball_scoop_started
+        events_when_transitioning:
+          - state_feed_poseidon_to_all_off
+          - state_says_disable_poseidon_mag
+          - state_says_disable_olympus_mag
+      - source: feed_olympus
+        target: magnets_off
+        events:
+          - mode_o_ramp_mb_started{mode.p_ramp_mb.active} #triggered by o_locking_elgible and other side does not need ball either
+          - field_sis_right_to_left_hit{mode.p_ramp_mb.active} #triggered by sis hit but other side cant use balls
+          - mode_mystery_started
+          - multiball_poseidon_ramp_started
+          - multiball_olympus_ramp_started
+          - multiball_scoop_started
+        events_when_transitioning:
+          - state_feed_olympus_to_all_off
+          - state_says_disable_poseidon_mag
+          - state_says_disable_olympus_mag
+      - source: magnets_off
+        target: feed_poseidon
+        events:
+          - multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1 and device.switches.s_sis_left.state==1}
+          - multiball_poseidon_ramp_ended{device.switches.s_sis_left.state==1}
+          - multiball_olympus_ramp_ended{device.switches.s_sis_left.state==1}
+          - multiball_scoop_ended{device.switches.s_sis_left.state==1}
+          - mode_mystery_stopped{device.switches.s_sis_left.state==1}
+          - ball_starting{device.switches.s_sis_left.state==1} #in case game ends with mags in the off state this brings it back
+        events_when_transitioning:
+          - state_all_off_to_feed_poseidon
+          - state_says_enable_poseidon_mag
+          - state_says_disable_olympus_mag
+      - source: magnets_off
+        target: feed_olympus
+        events:
+          - multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1 and device.switches.s_sis_right.state==1}
+          - multiball_poseidon_ramp_ended{device.switches.s_sis_right.state==1}
+          - multiball_olympus_ramp_ended{device.switches.s_sis_right.state==1}
+          - multiball_scoop_ended{device.switches.s_sis_right.state==1}
+          - mode_mystery_stopped{device.switches.s_sis_right.state==1}
+          - ball_starting{device.switches.s_sis_right.state==1} #in case game ends with mags in the off state this brings it back
+        events_when_transitioning:
+          - state_all_off_to_feed_olympus
+          - state_says_enable_olympus_mag
+          - state_says_disable_poseidon_mag
+    debug: True
+    file_log: full #none basic full
+    console_log: full
+    persist_state: False # cant be True in config
+
+
+  ramp_flap: #http://docs.missionpinball.org/en/latest/config/state_machine_states.html
+    states:
+      start: #required as a starting state for all state machines
+        label: undefigned
+      divert_left:
+        label: left
+      divert_right:
+        label: right
+      divert_middle:
+        label: middle
+    transitions:
+      - source: start
+        target: divert_left
+        events: ramp_servo_divert_left
+        events_when_transitioning:
+          - ramp_flap_changing_state
+          - ramp_flap_tracking_started
+          - ramp_flap_tracking_diverting_left
+      - source: start
+        target: divert_right
+        events: ramp_servo_divert_right
+        events_when_transitioning:
+          - ramp_flap_changing_state
+          - ramp_flap_tracking_started
+          - ramp_flap_tracking_diverting_right
+      - source: divert_left
+        target: divert_right
+        events: ramp_servo_divert_right
+        events_when_transitioning:
+          - ramp_flap_changing_state
+          - ramp_flap_tracking_diverting_right
+      - source: divert_middle
+        target: divert_right
+        events: ramp_servo_divert_right
+        events_when_transitioning:
+          - ramp_flap_changing_state
+          - ramp_flap_tracking_diverting_right
+      - source: divert_right
+        target: divert_middle
+        events: ramp_servo_divert_middle
+        events_when_transitioning:
+          - ramp_flap_changing_state
+          - ramp_flap_tracking_diverting_middle
+      - source: divert_left
+        target: divert_middle
+        events: ramp_servo_divert_middle
+        events_when_transitioning:
+          - ramp_flap_changing_state
+          - ramp_flap_tracking_diverting_middle
+      - source: divert_right
+        target: divert_left
+        events: ramp_servo_divert_left
+        events_when_transitioning:
+          - ramp_flap_changing_state
+          - ramp_flap_tracking_diverting_left
+      - source: divert_middle
+        target: divert_left
+        events: ramp_servo_divert_left
+        events_when_transitioning:
+          - ramp_flap_changing_state
+          - ramp_flap_tracking_diverting_left
+    debug: True
+    file_log: full #none basic full
+    console_log: full
+    persist_state: False # cant be True in config

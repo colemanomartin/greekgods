@@ -1,0 +1,95 @@
+#config_version=5
+#Set second monitor to just below first monitor along left edge with settings-> deviced -> displays rotation: portrait left
+#This is where kivy is configured and a couple booting slides are placed.
+#To allow the display to be windowed graphics-> fullscreen has to be true and window->borderless has to be false.
+#To see the switch status screen go to the top middle of the score display with mouse and grab the window bar pulling it downward
+
+kivy_config:
+  kivy: # https://kivy.org/doc/stable/api-kivy.config.html#available-configuration-tokens
+    desktop: 1 # use 1. This option controls desktop OS specific features, such as enabling drag-able scroll-bar in scroll views, disabling of bubbles in TextInput etc. 0 is disabled, 1 is enabled.
+    exit_on_escape: true # Enables exiting kivy when escape is pressed. 0 is disabled, 1 is enabled.
+    pause_on_minimize: 0 # If set to 1, the main loop is paused and the on_pause event is dispatched when the window is minimized. This option is intended for desktop use only. Defaults to 0.
+  graphics:  # https://kivy.org/doc/stable/api-kivy.config.html#available-configuration-tokens
+    borderless: true # If set to True, removes the window border/decoration. Window resizing must also be disabled to hide the resizing border.
+    window_state: visible # and maximized allows it to exist in a window. Visible = whole screen visible, also valid: hidden, minimized
+    fbo: hardware  # uese hardware # also valid software, force-hardware
+    left: 0
+    top: 0
+    width: 3840 # 4K monitor is 3840x2160 Playfield jpg is 508x1190
+    height: 3184 #  2160+1024 of pf monitor
+    maxfps: 30
+    multisamples: 2
+    position: custom # use custom # auto, custom
+    show_cursor: false #use false
+    rotation: 0
+#**********************************************************************************************************************************************
+# !!!!set resizable: false ; fullscreen: true to have window extend over both monitors with a title bar that can be grabbed                ****
+# ****set resizable: true ; fullscreen: true to have window covering upper monitor that can be grabbed/resized. Good 4 debugging           ****
+# ****set resizable: false ; fullscreen: false to have window extend over both monitors with a title bar that can be grabbed (same as 1)   ****
+# ****set resizable: true ; fullscreen: false to have window limited to top screen. No bar. Can't be grabbed or changed. Not useful        ****
+# !!!!set resizable: false ; fullscreen: fake to have window covering both, no menu bar, no grabbing. Use for production.                  ****
+#**********************************************************************************************************************************************
+    resizable: false #use false when true after title bar grabbed, the window can be resized. false=no resizing
+    fullscreen:  true #use true leaves a title bar which can be grabbed allowing display to be windowed. False no title bar, no grabbing, fake
+
+window: #should be same as graphics above
+  width: 3840 # 1920 #768 works
+  height: 3184 #Was 3184 under GG1
+  top: 0
+  left: 0 #0 works
+  borderless: false #This is what gives the bar at the top of the window allowing grabbbing
+
+displays:
+  window: #should be same as window above
+    width: 3840 # 1920 # 768 works
+    height: 3184 # 2104 #2104 works
+  score_lcd: #size of primary monitor
+    width: 3840 # 1920 # 768 works
+    height: 2160 # 1080 # 1080 works
+  playfield_lcd:
+    width: 768
+    height: 1024
+# Aspect ratio of playfield picture is 508Wide by 1190 high
+  led_matrix:
+    width: 508
+    height: 1190
+
+slides:
+  layout_split:
+    background_color: black
+    widgets:
+      - type: display #Kivi sees the small display as above the large display
+        width: 3840 # 1920 # 768 works
+        height: 2160 # 1080
+        x: 0
+        y: 1024
+        anchor_x: left
+        anchor_y: bottom #bottom works
+        source_display: score_lcd
+      - type: display
+        width: 768
+        height: 1024 #1016 works
+        x: 0
+        y: 0
+        anchor_x: left
+        anchor_y: bottom # bottom works
+        source_display: playfield_lcd
+  slide_1:
+    background_color: blue
+    widgets:
+      - type: text
+        text: Scoring Assets Loading
+  slide_2:
+    background_color: teal
+    widgets:
+      - type: text
+        text: Playfield Assets Loading
+
+slide_player:
+  mc_ready: #event which triggers layout and two booting slides
+    layout_split:
+      target: window
+    slide_1:
+      target: score_lcd
+    slide_2:
+      target: playfield_lcd
