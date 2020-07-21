@@ -188,6 +188,7 @@ GitHub notes:
 
 To get to the repo from ssh have to generate a local ssh public and private key this is described on right side upper right of github under settings
     https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+    https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
     It allows a secure connection from this computer without entering username and password each time.
     On Ubuntu
     ssh-keygen -t rsa -b 4096 -C "colemanomartin@hotmail.com"
@@ -196,6 +197,8 @@ To get to the repo from ssh have to generate a local ssh public and private key 
     eval "$(ssh-agent -s)"    Will have to enter password
     sudo apt-get install xclip   Install this and myabe a package too.
     xclip -sel clip < ~/.ssh/id_rsa.pub   This copies the key to the clipboard so the key can be pasted into the account, Title the key for the name of the compter
+    ssh -T git@github.com  should verify that a SSH connection exists
+
     git remote -v  shows the web location of the account pre...
        origin	https://github.com/colemanomartin/greekgods (fetch)
        origin	https://github.com/colemanomartin/greekgods (push)
