@@ -206,7 +206,11 @@ To get to the repo from ssh have to generate a local ssh public and private key 
 
 6. Setting up Atom.  File-> Add project file   select the location of the local repo.
    Packages -> toggle Github tab.
-   Edit a file and save. 
+   Edit a file and save.
+   Stage all
+   Add a commit message.
+   Commit to master
+   Push
 
 
 
