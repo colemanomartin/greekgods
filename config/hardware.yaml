@@ -460,7 +460,7 @@ coils:
         number: A3-B1-5
         label:
         tags:
-        default_pulse_ms: 100
+        default_pulse_ms: 65
         default_hold_power: 0.4 #Has to have a hold power to be used as a diverter.
 
     #PD 16 Address = 6 Hades Bank 0 = A running 12V
@@ -768,7 +768,7 @@ ball_devices:
     ball_missing_target: earth_pf
     eject_coil: c_poseidon_lock_ball_release
     ball_switches: s_poseidon_lock_proximal, s_poseidon_lock_distal
-    eject_coil_enable_time: 180ms
+    eject_coil_enable_time: 190ms, 150ms #180,155
     eject_coil_retry_pulse: 300ms
     eject_timeouts: 1500ms
     entrance_count_delay: 1000ms
@@ -783,7 +783,7 @@ ball_devices:
     ball_missing_target: earth_pf
     eject_coil: c_olympus_lock_ball_release
     ball_switches: s_olympus_lock_proximal, s_olympus_lock_distal #0 is closer to the release solinoid
-    eject_coil_enable_time: 230ms
+    eject_coil_enable_time: 230ms, 200ms
     eject_coil_retry_pulse: 500ms
     eject_timeouts: 1500ms
     entrance_count_delay: 1000ms
