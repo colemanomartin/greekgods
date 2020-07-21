@@ -173,7 +173,46 @@ Ignore verification failed error.
 Power off and set dips back to off
 
 GitHub notes:
-1. create repo on github. Its tied to hotmail address. GH username is colemanomartin
+1. create repo on github. Its tied to junkmail address. GH username is colemanomartin password G with numbers x2
+2. go to a target directory for the local repo and at command line enter git clone https://github.com/colemanomartin/greekgods
+3. When adding to the local repo
+    git add .
+    git commit -m "notes on this commit are required"
+    git push and enter colemanomartin and github pw
+
+    git add -A stages all changes
+    git add . stages new files and modifications, without deletions
+    git add -u stages modifications and deletions, without new files
+4. To get the latest from the repo go to the target directory
+    git pull
+
+To get to the repo from ssh have to generate a local ssh public and private key this is described on right side upper right of github under settings
+    https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+    It allows a secure connection from this computer without entering username and password each time.
+    On Ubuntu
+    ssh-keygen -t rsa -b 4096 -C "colemanomartin@hotmail.com"
+    Enter for default file in which to save key
+    Enter a passphrase (this will be used when setting up link in atom)
+    eval "$(ssh-agent -s)"    Will have to enter password
+    sudo apt-get install xclip   Install this and myabe a package too.
+    xclip -sel clip < ~/.ssh/id_rsa.pub   This copies the key to the clipboard so the key can be pasted into the account, Title the key for the name of the compter
+    git remote -v  shows the web location of the account pre...
+       origin	https://github.com/colemanomartin/greekgods (fetch)
+       origin	https://github.com/colemanomartin/greekgods (push)
+    git remote set-url origin git@github.com:colemanomartin/greekgods.git     moves it over to a ssh location
+       origin	git@github.com:colemanomartin/greekgods.git (fetch)
+       origin	git@github.com:colemanomartin/greekgods.git (push)
+    git pull   the next time will complane that the authenticity of the host cannot be established.  Its OK to add it permanently to the list of known hosts.
+
+6. Setting up Atom.  File-> Add project file   select the location of the local repo.
+   Packages -> toggle Github tab.
+   Edit a file and save. 
+
+
+
+
+
+
 
 Wish list:
   multiple_hits_window in shots
