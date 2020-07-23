@@ -768,7 +768,8 @@ ball_devices:
     ball_missing_target: earth_pf
     eject_coil: c_poseidon_lock_ball_release
     ball_switches: s_poseidon_lock_proximal, s_poseidon_lock_distal
-    eject_coil_enable_time: 190ms, 150ms #180,155
+#    eject_coil_enable_time: 190ms, 150ms #180,155
+    eject_times: 100ms, 60ms #180,155
     eject_coil_retry_pulse: 300ms
     eject_timeouts: 1500ms
     entrance_count_delay: 1000ms
@@ -783,7 +784,7 @@ ball_devices:
     ball_missing_target: earth_pf
     eject_coil: c_olympus_lock_ball_release
     ball_switches: s_olympus_lock_proximal, s_olympus_lock_distal #0 is closer to the release solinoid
-    eject_coil_enable_time: 230ms, 200ms
+    eject_coil_enable_time: 230ms
     eject_coil_retry_pulse: 500ms
     eject_timeouts: 1500ms
     entrance_count_delay: 1000ms
