@@ -10,6 +10,7 @@ MachineGG2011 Reduced hydra threshold. upper magnet diverters control by state m
 MachineGG2012 Cleaning up logic of widgets and shows in p_ramp_mb and o_ramp_mb
 MachineGG2012 More cleaning up logic of widgets and shows in p_ramp_mb and o_ramp_mb
 MachineGG2013 last local copy before moving to Github
+Oct23: installed orbit_post_left, renamed original to orbit_post_right
 MPF Notes
 mpf -x runs without attempting to connect to the P-ROC hardware
 mpf -X use smart virtual hardware'

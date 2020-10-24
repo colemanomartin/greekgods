@@ -344,14 +344,14 @@ coils:
         label:
         tags:  earth_pf_active, jet
         default_pulse_ms: 25
-    # A5-B0-4 seemed to be dead but passes light test.
+    # A5-B0-4 seems to be dead.
     c_poseidon_magnet:
         number: A5-B0-6
         label:
         tags:
         default_pulse_ms: 140
         default_hold_power: 0.4
-    c_orbit_post_left:
+    c_post:
         number: A5-B0-7
         label:
         tags:
@@ -411,12 +411,11 @@ coils:
         label:
         tags: earth_pf_active, jet
         default_pulse_ms: 40
-    c_orbit_post_right:
-        number: A3-B0-5
-        label:
-        tags:
-        default_pulse_ms: 10
-        default_hold_power: 0.3
+#    c_scoop_eject:
+#        number: A3-B0-5    #5 might be dead
+#        label:
+#        tags:
+#        default_pulse_ms: 60
     c_ballblock_rise:
         number: A3-B0-6
         label:
@@ -611,29 +610,15 @@ diverters:
       - ball_ended
       - logicblock_base_malstrom_magnet_activation_complete #counter in base hit it limit. enter cooldown period
     debug: true
-  apearing_post_left:
+  apearing_post:
     playfield: earth_pf
     feeder_devices: earth_pf
     targets_when_active: earth_pf
     targets_when_inactive: earth_pf
-    activation_coil: c_orbit_post_left
+    activation_coil: c_post
     type: hold
     activation_time: 2000 ms
     activation_switches: s_olympus_rollover
-    enable_events: mystery_time
-    disable_events:
-      - mode_mystery_stopped
-      - ball_ended
-    debug: true
-  apearing_post_right:
-    playfield: earth_pf
-    feeder_devices: earth_pf
-    targets_when_active: earth_pf
-    targets_when_inactive: earth_pf
-    activation_coil: c_orbit_post_right
-    type: hold
-    activation_time: 2000 ms
-    activation_switches: s_posideon_rollover
     enable_events: mystery_time
     disable_events:
       - mode_mystery_stopped
