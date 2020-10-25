@@ -215,9 +215,19 @@ To get to the repo from ssh have to generate a local ssh public and private key 
    Add a commit message.
    Commit to master
    Push
+   To pull, click Fetch and then Pull.
 
+Things to add:
+  Orbit light show for ramp shots
+  For hydra and scoop MB, take over diverter 
+  and shunt to unused ramp if ball locked. If ball locked, prevent.
+  Double ramp ball save, stack if multiple earned.
+  Right down the middle ball save.
+  Eject time outs for ramps
+  Minimum balls
 
-
+Hardware:
+  Check trough switches.
 
 
 
