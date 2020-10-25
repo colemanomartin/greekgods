@@ -18,8 +18,8 @@ for i in range(7,40):
      print('    l_orbit_{0}: FFFFFFFF'.format(r+2))
    print('    l_orbit_{0}: FFFFFF00'.format(i-3))
    print('    l_orbit_{0}: FFFFFF00'.format(r+3))
-   print('    l_orbit_{0}: FFFFFF00'.format(i-4))
-   print('    l_orbit_{0}: FFFFFF00'.format(r+4))
-   print('    l_orbit_{0}: FFFFFF00'.format(i-5))
-   print('    l_orbit_{0}: FFFFFF00'.format(r+5))
+#   print('    l_orbit_{0}: FFFFFF00'.format(i-4))
+#   print('    l_orbit_{0}: FFFFFF00'.format(r+4))
+#   print('    l_orbit_{0}: FFFFFF00'.format(i-5))
+#   print('    l_orbit_{0}: FFFFFF00'.format(r+5))
    r = r -1

@@ -135,24 +135,22 @@ random_event_player:
 
 
 display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
-  mode_mystery_started:
+  mystery_hole_received_ball_hit: #mode_mystery_started:
     led_matrix:
       action: play  #Default
       lights: gi, insert  #right_orbit
-#  mystery_hole_received_ball_hit: does not seem to be a way to update the player without stopping it
-#    led_matrix:
-#      action: play  #Default
-#      lights: "*"
-
   mode_mystery_ended: #Otherwise the mode hangs
     led_matrix:
       action: stop
       lights: gi, insert
 
-show_player: #Have a different slide show for each event hit last slide showing event chosen
-#  mode_mystery_started:
-#    show_invite_mystery_hole:
-#      speed: 6
+show_player:
+  mode_mystery_started:
+    show_invite_both_orbits:
+      speed: 24
+  mystery_hole_received_ball_hit:
+    show_invite_both_orbits:
+      action: stop
 #    show_invite_right_orbit:
 #      speed: 1
 #  mode_mystery_stopping: #Weird but game hangs if these shows not explicitly stopped
@@ -238,43 +236,43 @@ slide_player:
     mystery_award_available:
       target: playfield_lcd
       action: play
-    shoot_right_orbit: #Specify lights: right_orbit in display_light_player:
-      target: led_matrix
-      background_color: 00000000 #Background with no opacity required
-      widgets:
-      - type: ellipse
-        x: 254
-        y: 500
-        width: 1000
-        height: 1000
-        angle_start: 90
-        angle_end: 110
-        color: 333333
-        anchor_x: center
-        anchor_y: center
-        rotation: 0
-        z: 0
-        animations:
-          show_slide:
-            - property: rotation
-              value: 90
-              relative: false
-              duration: .5s
-              easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
-              repeat: true
-            - property: rotation
-              value: 0
-              relative: false
-              duration: 0s
-              easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
-              repeat: true
+#    shoot_right_orbit: #Specify lights: right_orbit in display_light_player:
+#      target: led_matrix
+#      background_color: 00000000 #Background with no opacity required
+#      widgets:
+#      - type: ellipse
+#        x: 254
+#        y: 500
+#        width: 1000
+#        height: 1000
+#        angle_start: 90
+#        angle_end: 110
+#        color: 333333
+#        anchor_x: center
+#        anchor_y: center
+#        rotation: 0
+#        z: 0
+#        animations:
+#          show_slide:
+#            - property: rotation
+#              value: 90
+#              relative: false
+#              duration: .5s
+#              easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+#              repeat: true
+#            - property: rotation
+#              value: 0
+#              relative: false
+#              duration: 0s
+#              easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+#              repeat: true
   mystery_hole_received_ball_hit:
     mystery_award_available:
       target: playfield_lcd
       action: remove
-    shoot_right_orbit:
-      target: led_matrix
-      action: remove
+#    shoot_right_orbit:
+#      target: led_matrix
+#      action: remove
     mystery_award_menu_header:
       target: playfield_lcd
       action: play
