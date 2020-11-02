@@ -219,12 +219,19 @@ To get to the repo from ssh have to generate a local ssh public and private key 
 
 Things to add:
   Orbit light show for ramp shots
-  For hydra and scoop MB, take over diverter 
+  For hydra and scoop MB, take over diverter
   and shunt to unused ramp if ball locked. If ball locked, prevent.
   Double ramp ball save, stack if multiple earned.
   Right down the middle ball save.
   Eject time outs for ramps
   Minimum balls
+  increase eject time for right ramp
+  block hydra from starting when ball locked
+  block scoop MB from starting when ball locked.
+  adjust probabilities on mystery depending on locking
+  Dont raise BB after ball starts when a ramp is qualified.
+  Dont raise BB after starting super spinner.
+  Make scoop shot a qualifying equivelent if starting super spinner of hydra.
 
 Hardware:
   Check trough switches.

@@ -287,9 +287,9 @@ keyboard:
   p:
       switch: s_olympus_rollover
   1:
-    switch: s_u_left_ear_0 #Proximal opto
+    event: p_locking_elgible
   2:
-    switch: s_u_left_ear_1
+    switch: o_locking_elgible
   3:
     switch: s_u_left_ear_2
   4:
@@ -455,8 +455,8 @@ coils:
         number: A3-B1-4
         label:
         tags:
-        default_pulse_ms: 100
-        default_hold_power: 0.4 #Has to have a hold power to be used as a diverter.
+        default_pulse_ms: 45
+        default_hold_power: 0.5 #Has to have a hold power to be used as a diverter.
     c_poseidon_lock_ball_release: #used by the ball device and the diverter. Because of this cant use pulse power since it is incompatible with hold power
         number: A3-B1-5
         label:

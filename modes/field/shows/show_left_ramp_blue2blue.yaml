@@ -1,0 +1,157 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_orbit_39: 0000FF
+    l_orbit_38: 0000FF
+    l_orbit_37: 0000FF
+    l_orbit_36: 000033
+- duration: 1
+  lights:
+    l_orbit_40: 0000FF
+    l_orbit_39: 0000FF
+    l_orbit_38: 0000FF
+    l_orbit_37: 000033
+- duration: 1
+  lights:
+    l_orbit_41: 0000FF
+    l_orbit_40: 0000FF
+    l_orbit_39: 0000FF
+    l_orbit_38: 000033
+- duration: 1
+  lights:
+    l_orbit_42: 0000FF
+    l_orbit_41: 0000FF
+    l_orbit_40: 0000FF
+    l_orbit_39: 000033
+- duration: 1
+  lights:
+    l_orbit_43: 0000FF
+    l_orbit_42: 0000FF
+    l_orbit_41: 0000FF
+    l_orbit_40: 000033
+- duration: 1
+  lights:
+    l_orbit_44: 0000FF
+    l_orbit_43: 0000FF
+    l_orbit_42: 0000FF
+    l_orbit_41: 000033
+- duration: 1
+  lights:
+    l_orbit_45: 0000FF
+    l_orbit_44: 0000FF
+    l_orbit_43: 0000FF
+    l_orbit_42: 000033
+- duration: 1
+  lights:
+    l_orbit_46: 0000FF
+    l_orbit_45: 0000FF
+    l_orbit_44: 0000FF
+    l_orbit_43: 000033
+- duration: 1
+  lights:
+    l_orbit_47: 0000FF
+    l_orbit_46: 0000FF
+    l_orbit_45: 0000FF
+    l_orbit_44: 000033
+- duration: 1
+  lights:
+    l_orbit_48: 0000FF
+    l_orbit_47: 0000FF
+    l_orbit_46: 0000FF
+    l_orbit_45: 000033
+- duration: 1
+  lights:
+    l_orbit_49: 0000FF
+    l_orbit_48: 0000FF
+    l_orbit_47: 0000FF
+    l_orbit_46: 000033
+- duration: 1
+  lights:
+    l_orbit_50: 0000FF
+    l_orbit_49: 0000FF
+    l_orbit_48: 0000FF
+    l_orbit_47: 000033
+- duration: 1
+  lights:
+    l_orbit_51: 0000FF
+    l_orbit_50: 0000FF
+    l_orbit_49: 0000FF
+    l_orbit_48: 000033
+- duration: 1
+  lights:
+    l_orbit_52: 0000FF
+    l_orbit_51: 0000FF
+    l_orbit_50: 0000FF
+    l_orbit_49: 000033
+- duration: 1
+  lights:
+    l_orbit_53: 0000FF
+    l_orbit_52: 0000FF
+    l_orbit_51: 0000FF
+    l_orbit_50: 000033
+- duration: 1
+  lights:
+    l_orbit_54: 0000FF
+    l_orbit_53: 0000FF
+    l_orbit_52: 0000FF
+    l_orbit_51: 000033
+- duration: 1
+  lights:
+    l_orbit_55: 0000FF
+    l_orbit_54: 0000FF
+    l_orbit_53: 0000FF
+    l_orbit_52: 000033
+- duration: 1
+  lights:
+    l_orbit_56: 0000FF
+    l_orbit_55: 0000FF
+    l_orbit_54: 0000FF
+    l_orbit_53: 000033
+- duration: 1
+  lights:
+    l_orbit_57: 0000FF
+    l_orbit_56: 0000FF
+    l_orbit_55: 0000FF
+    l_orbit_54: 000033
+- duration: 1
+  lights:
+    l_orbit_58: 0000FF
+    l_orbit_57: 0000FF
+    l_orbit_56: 0000FF
+    l_orbit_55: 000033
+- duration: 1
+  lights:
+    l_orbit_59: 0000FF
+    l_orbit_58: 0000FF
+    l_orbit_57: 0000FF
+    l_orbit_56: 000033
+- duration: 1
+  lights:
+    l_orbit_60: 0000FF
+    l_orbit_59: 0000FF
+    l_orbit_58: 0000FF
+    l_orbit_57: 000033
+- duration: 1
+  lights:
+    l_orbit_61: 0000FF
+    l_orbit_60: 0000FF
+    l_orbit_59: 0000FF
+    l_orbit_58: 000033
+- duration: 1
+  lights:
+    l_orbit_62: 0000FF
+    l_orbit_61: 0000FF
+    l_orbit_60: 0000FF
+    l_orbit_59: 000033
+- duration: 1
+  lights:
+    l_orbit_63: 0000FF
+    l_orbit_62: 0000FF
+    l_orbit_61: 0000FF
+    l_orbit_60: 000033
+- duration: 1
+  lights:
+    l_orbit_64: 0000FF
+    l_orbit_63: 0000FF
+    l_orbit_62: 0000FF
+    l_orbit_61: 000033

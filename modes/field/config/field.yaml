@@ -89,6 +89,18 @@ sequence_shots:
       - base_sis_right_vacated_hit
       - base_sis_left_arrived_hit
     sequence_timeout: 3s
+  field_orbit_counter_clockwise: #used for light show
+    playfield: earth_pf
+    switch_sequence:
+      - s_olympus_rollover
+      - s_posideon_rollover
+    sequence_timeout: 1.5s
+  field_orbit_clockwise: #used for light show
+    playfield: earth_pf
+    switch_sequence:
+      - s_posideon_rollover
+      - s_olympus_rollover
+    sequence_timeout: 1.5s
 
 shots:
   field_poseidon_mech: #Hits recorded in base timer section
@@ -299,6 +311,31 @@ counters:
 
 
 show_player:
+  field_orbit_counter_clockwise_hit:
+    show_orbit_counter_clockwise_blue2blue:
+      speed: 120
+      loops: 0
+  field_orbit_clockwise_hit:
+    show_orbit_clockwise_blue2blue:
+      speed: 120
+      loops: 0
+  field_sis_left_to_right_hit:
+    show_orbit_clockwise_white2blue:
+      speed: 90
+      loops: 0
+  field_sis_right_to_left_hit:
+    show_orbit_counter_clockwise_white2blue:
+      speed: 90
+      loops: 0
+  left_ramp_hit: #Sequence shot from base
+    show_left_ramp_blue2blue:
+      speed: 120
+      loops: 0
+  right_ramp_hit: #sequence shot from base
+    show_right_ramp_blue2blue:
+      speed: 120
+      loops: 0
+
   drop_target_bank_cluster_down:
     show_r_sling_pulse:
       speed: 3

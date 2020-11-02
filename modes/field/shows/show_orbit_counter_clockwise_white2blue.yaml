@@ -1,27 +1,27 @@
 #show_version=5
-- duration: 1
-  lights:
-    l_orbit_2: FFFFFF
-    l_orbit_1: FFFFFF
-    l_orbit_0: FFFFFF
-- duration: 1
-  lights:
-    l_orbit_3: FFFFFF
-    l_orbit_2: FFFFFF
-    l_orbit_1: FFFFFF
-    l_orbit_0: 000033
-- duration: 1
-  lights:
-    l_orbit_4: FFFFFF
-    l_orbit_3: FFFFFF
-    l_orbit_2: FFFFFF
-    l_orbit_1: 000033
+#- duration: 1
+#  lights:
+#    l_orbit_2: FFFFFF
+#    l_orbit_1: FFFFFF
+#    l_orbit_0: FFFFFF
+#- duration: 1
+#  lights:
+#    l_orbit_3: FFFFFF
+#    l_orbit_2: FFFFFF
+#    l_orbit_1: FFFFFF
+#    l_orbit_0: 000033
+#- duration: 1
+#  lights:
+#    l_orbit_4: FFFFFF
+#    l_orbit_3: FFFFFF
+#    l_orbit_2: FFFFFF
+#    l_orbit_1: 000033
 - duration: 1
   lights:
     l_orbit_5: FFFFFF
     l_orbit_4: FFFFFF
     l_orbit_3: FFFFFF
-    l_orbit_2: 000033
+#    l_orbit_2: 000033
 - duration: 1
   lights:
     l_orbit_6: FFFFFF

@@ -1,0 +1,211 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_orbit_37: 000033
+    l_orbit_36: 0000FF
+    l_orbit_35: 0000FF
+    l_orbit_34: 0000FF
+- duration: 1
+  lights:
+    l_orbit_36: 000033
+    l_orbit_35: 0000FF
+    l_orbit_34: 0000FF
+    l_orbit_33: 0000FF
+- duration: 1
+  lights:
+    l_orbit_35: 000033
+    l_orbit_34: 0000FF
+    l_orbit_33: 0000FF
+    l_orbit_32: 0000FF
+- duration: 1
+  lights:
+    l_orbit_34: 000033
+    l_orbit_33: 0000FF
+    l_orbit_32: 0000FF
+    l_orbit_31: 0000FF
+- duration: 1
+  lights:
+    l_orbit_33: 000033
+    l_orbit_32: 0000FF
+    l_orbit_31: 0000FF
+    l_orbit_30: 0000FF
+- duration: 1
+  lights:
+    l_orbit_32: 000033
+    l_orbit_31: 0000FF
+    l_orbit_30: 0000FF
+    l_orbit_29: 0000FF
+- duration: 1
+  lights:
+    l_orbit_31: 000033
+    l_orbit_30: 0000FF
+    l_orbit_29: 0000FF
+    l_orbit_28: 0000FF
+- duration: 1
+  lights:
+    l_orbit_30: 000033
+    l_orbit_29: 0000FF
+    l_orbit_28: 0000FF
+    l_orbit_27: 0000FF
+- duration: 1
+  lights:
+    l_orbit_29: 000033
+    l_orbit_28: 0000FF
+    l_orbit_27: 0000FF
+    l_orbit_26: 0000FF
+- duration: 1
+  lights:
+    l_orbit_28: 000033
+    l_orbit_27: 0000FF
+    l_orbit_26: 0000FF
+    l_orbit_25: 0000FF
+- duration: 1
+  lights:
+    l_orbit_27: 000033
+    l_orbit_26: 0000FF
+    l_orbit_25: 0000FF
+    l_orbit_24: 0000FF
+- duration: 1
+  lights:
+    l_orbit_26: 000033
+    l_orbit_25: 0000FF
+    l_orbit_24: 0000FF
+    l_orbit_23: 0000FF
+- duration: 1
+  lights:
+    l_orbit_25: 000033
+    l_orbit_24: 0000FF
+    l_orbit_23: 0000FF
+    l_orbit_22: 0000FF
+- duration: 1
+  lights:
+    l_orbit_24: 000033
+    l_orbit_23: 0000FF
+    l_orbit_22: 0000FF
+    l_orbit_21: 0000FF
+- duration: 1
+  lights:
+    l_orbit_23: 000033
+    l_orbit_22: 0000FF
+    l_orbit_21: 0000FF
+    l_orbit_20: 0000FF
+- duration: 1
+  lights:
+    l_orbit_22: 000033
+    l_orbit_21: 0000FF
+    l_orbit_20: 0000FF
+    l_orbit_19: 0000FF
+- duration: 1
+  lights:
+    l_orbit_21: 000033
+    l_orbit_20: 0000FF
+    l_orbit_19: 0000FF
+    l_orbit_18: 0000FF
+- duration: 1
+  lights:
+    l_orbit_20: 000033
+    l_orbit_19: 0000FF
+    l_orbit_18: 0000FF
+    l_orbit_17: 0000FF
+- duration: 1
+  lights:
+    l_orbit_19: 000033
+    l_orbit_18: 0000FF
+    l_orbit_17: 0000FF
+    l_orbit_16: 0000FF
+- duration: 1
+  lights:
+    l_orbit_18: 000033
+    l_orbit_17: 0000FF
+    l_orbit_16: 0000FF
+    l_orbit_15: 0000FF
+- duration: 1
+  lights:
+    l_orbit_17: 000033
+    l_orbit_16: 0000FF
+    l_orbit_15: 0000FF
+    l_orbit_14: 0000FF
+- duration: 1
+  lights:
+    l_orbit_16: 000033
+    l_orbit_15: 0000FF
+    l_orbit_14: 0000FF
+    l_orbit_13: 0000FF
+- duration: 1
+  lights:
+    l_orbit_15: 000033
+    l_orbit_14: 0000FF
+    l_orbit_13: 0000FF
+    l_orbit_12: 0000FF
+- duration: 1
+  lights:
+    l_orbit_14: 000033
+    l_orbit_13: 0000FF
+    l_orbit_12: 0000FF
+    l_orbit_11: 0000FF
+- duration: 1
+  lights:
+    l_orbit_13: 000033
+    l_orbit_12: 0000FF
+    l_orbit_11: 0000FF
+    l_orbit_10: 0000FF
+- duration: 1
+  lights:
+    l_orbit_12: 000033
+    l_orbit_11: 0000FF
+    l_orbit_10: 0000FF
+    l_orbit_9: 0000FF
+- duration: 1
+  lights:
+    l_orbit_11: 000033
+    l_orbit_10: 0000FF
+    l_orbit_9: 0000FF
+    l_orbit_8: 0000FF
+- duration: 1
+  lights:
+    l_orbit_10: 000033
+    l_orbit_9: 0000FF
+    l_orbit_8: 0000FF
+    l_orbit_7: 0000FF
+- duration: 1
+  lights:
+    l_orbit_9: 000033
+    l_orbit_8: 0000FF
+    l_orbit_7: 0000FF
+    l_orbit_6: 0000FF
+- duration: 1
+  lights:
+    l_orbit_8: 000033
+    l_orbit_7: 0000FF
+    l_orbit_6: 0000FF
+    l_orbit_5: 0000FF
+- duration: 1
+  lights:
+    l_orbit_7: 000033
+    l_orbit_6: 0000FF
+    l_orbit_5: 0000FF
+    l_orbit_4: 0000FF
+- duration: 1
+  lights:
+    l_orbit_6: 000033
+    l_orbit_5: 0000FF
+    l_orbit_4: 0000FF
+    l_orbit_3: 0000FF
+- duration: 1
+  lights:
+    l_orbit_5: 000033
+    l_orbit_4: 0000FF
+    l_orbit_3: 0000FF
+    l_orbit_2: 0000FF
+- duration: 1
+  lights:
+    l_orbit_4: 000033
+    l_orbit_3: 0000FF
+    l_orbit_2: 0000FF
+    l_orbit_1: 0000FF
+- duration: 1
+  lights:
+    l_orbit_3: 000033
+    l_orbit_2: 0000FF
+    l_orbit_1: 0000FF
+    l_orbit_0: 0000FF

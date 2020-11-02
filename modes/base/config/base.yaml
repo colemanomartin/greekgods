@@ -345,14 +345,14 @@ sequence_shots:
   bonus_orbit_counter_clockwise: #used in bonus counting, for other orbit purposes, see field
     playfield: earth_pf
     switch_sequence:
-      - s_posideon_rollover
       - s_olympus_rollover
+      - s_posideon_rollover
     sequence_timeout: 3s
   bonus_orbit_clockwise: #used in bonus counting, for other orbit purposes, see field
     playfield: earth_pf
     switch_sequence:
-      - s_olympus_rollover
       - s_posideon_rollover
+      - s_olympus_rollover
     sequence_timeout: 3s
 
 variable_player:
