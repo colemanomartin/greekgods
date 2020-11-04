@@ -321,14 +321,14 @@ sequence_shots:
   left_ramp:  #used for lock flash show poseidon_mech banked ball save
     playfield: earth_pf
     switch_sequence:
+      - s_ramp_opto
       - s_poseidon_lock_distal
-      - s_poseidon_lock_proximal
     sequence_timeout: 1s
   right_ramp: #used for lock flash show, olympus_mech and banked ball save
     playfield: earth_pf
     switch_sequence:
+      - s_ramp_opto
       - s_olympus_lock_distal
-      - s_olympus_lock_proximal
     sequence_timeout: 1s
   double_left_ramp:  #used to activate banked ball save mode
     playfield: earth_pf

@@ -54,6 +54,9 @@ modes:
 #  - sound_loops #150
   - sound_effects # 175
   - drain_display #2000
+  - banked_l_bs #150
+  - banked_r_bs #150
+
 #  - hades_mini_game
 coil_player:
   machine_reset_phase_2: #drops block at startup in case a ball is in subway

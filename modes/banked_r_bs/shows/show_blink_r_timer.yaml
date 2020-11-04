@@ -1,0 +1,23 @@
+#show_version=5
+#  aa
+# f  b
+#  gg
+# e  c
+#  dd
+#
+- duration: 1
+  lights:
+    l_ones_a: FF0000
+    l_ones_b: FF0000
+- duration: 10
+  lights:                #The way this works is that it fades from the old color to the new color over the fade time.
+    l_ones_a:
+      color: 000000
+      fade: 1s
+    l_ones_b:
+      color: 000000
+      fade: 1s
+- duration: 1
+  lights:
+    l_ones_a: 000000
+    l_ones_b: 000000
