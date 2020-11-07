@@ -6,101 +6,116 @@
     l_left_shoulder_9: FF0000
     l_left_shoulder_8: FF0000
     l_left_shoulder_7: FF0000
-    l_left_shoulder_6: 000000
-    l_left_shoulder_5: 000000
-    l_left_shoulder_4: 000000
-    l_left_shoulder_3: 000000
-    l_left_shoulder_2: 000000
-    l_left_shoulder_1: 000000
-    l_left_shoulder_0: FF0000
+    l_left_shoulder_6: stop
+    l_left_shoulder_5: stop
+    l_left_shoulder_4: stop
+    l_left_shoulder_3: stop
+    l_left_shoulder_2: stop
+    l_left_shoulder_1: stop
+    l_left_shoulder_0:
+      color: FF0000
+      fade: 125ms
+
 - duration: 1
   lights:
     l_left_shoulder_10: FF0000
     l_left_shoulder_9: FF0000
     l_left_shoulder_8: FF0000
     l_left_shoulder_7: FF0000
-    l_left_shoulder_6: 000000
-    l_left_shoulder_5: 000000
-    l_left_shoulder_4: 000000
-    l_left_shoulder_3: 000000
-    l_left_shoulder_2: 000000
-    l_left_shoulder_1: FF0000
-    l_left_shoulder_0: 000000
+    l_left_shoulder_6: stop
+    l_left_shoulder_5: stop
+    l_left_shoulder_4: stop
+    l_left_shoulder_3: stop
+    l_left_shoulder_2: stop
+    l_left_shoulder_1: 
+      color: FF0000
+      fade: 125ms
+    l_left_shoulder_0: stop
 - duration: 1
   lights:
     l_left_shoulder_10: FF0000
     l_left_shoulder_9: FF0000
     l_left_shoulder_8: FF0000
     l_left_shoulder_7: FF0000
-    l_left_shoulder_6: 000000
-    l_left_shoulder_5: 000000
-    l_left_shoulder_4: 000000
-    l_left_shoulder_3: 000000
-    l_left_shoulder_2: FF0000
-    l_left_shoulder_1: 000000
-    l_left_shoulder_0: 000000
+    l_left_shoulder_6: stop
+    l_left_shoulder_5: stop
+    l_left_shoulder_4: stop
+    l_left_shoulder_3: stop
+    l_left_shoulder_2:
+      color: FF0000
+      fade: 125ms
+    l_left_shoulder_1: stop
+    l_left_shoulder_0: stop
 - duration: 1
   lights:
     l_left_shoulder_10: FF0000
     l_left_shoulder_9: FF0000
     l_left_shoulder_8: FF0000
     l_left_shoulder_7: FF0000
-    l_left_shoulder_6: 000000
-    l_left_shoulder_5: 000000
-    l_left_shoulder_4: 000000
-    l_left_shoulder_3: FF0000
-    l_left_shoulder_2: 000000
-    l_left_shoulder_1: 000000
-    l_left_shoulder_0: 000000
+    l_left_shoulder_6: stop
+    l_left_shoulder_5: stop
+    l_left_shoulder_4: stop
+    l_left_shoulder_3:
+      color: FF0000
+      fade: 125ms
+    l_left_shoulder_2: stop
+    l_left_shoulder_1: stop
+    l_left_shoulder_0: stop
 - duration: 1
   lights:
     l_left_shoulder_10: FF0000
     l_left_shoulder_9: FF0000
     l_left_shoulder_8: FF0000
     l_left_shoulder_7: FF0000
-    l_left_shoulder_6: 000000
-    l_left_shoulder_5: 000000
-    l_left_shoulder_4: FF0000
-    l_left_shoulder_3: 000000
-    l_left_shoulder_2: 000000
-    l_left_shoulder_1: 000000
-    l_left_shoulder_0: 000000
+    l_left_shoulder_6: stop
+    l_left_shoulder_5: stop
+    l_left_shoulder_4:
+      color: FF0000
+      fade: 125ms
+    l_left_shoulder_3: stop
+    l_left_shoulder_2: stop
+    l_left_shoulder_1: stop
+    l_left_shoulder_0: stop
 - duration: 1
   lights:
     l_left_shoulder_10: FF0000
     l_left_shoulder_9: FF0000
     l_left_shoulder_8: FF0000
     l_left_shoulder_7: FF0000
-    l_left_shoulder_6: 000000
-    l_left_shoulder_5: FF0000
-    l_left_shoulder_4: 000000
-    l_left_shoulder_3: 000000
-    l_left_shoulder_2: 000000
-    l_left_shoulder_1: 000000
-    l_left_shoulder_0: 000000
+    l_left_shoulder_6: stop
+    l_left_shoulder_5:
+      color: FF0000
+      fade: 125ms
+    l_left_shoulder_4: stop
+    l_left_shoulder_3: stop
+    l_left_shoulder_2: stop
+    l_left_shoulder_1: stop
+    l_left_shoulder_0: stop
 - duration: 1
   lights:
     l_left_shoulder_10: FF0000
     l_left_shoulder_9: FF0000
     l_left_shoulder_8: FF0000
     l_left_shoulder_7: FF0000
-    l_left_shoulder_6: FF0000
-    l_left_shoulder_5: 000000
-    l_left_shoulder_4: 000000
-    l_left_shoulder_3: 000000
-    l_left_shoulder_2: 000000
-    l_left_shoulder_1: 000000
-    l_left_shoulder_0: 000000
+    l_left_shoulder_6:
+      color: FF0000
+      fade: 125ms
+    l_left_shoulder_5: stop
+    l_left_shoulder_4: stop
+    l_left_shoulder_3: stop
+    l_left_shoulder_2: stop
+    l_left_shoulder_1: stop
+    l_left_shoulder_0: stop
 - duration: 1
   lights:
     l_left_shoulder_10: FF0000
     l_left_shoulder_9: FF0000
     l_left_shoulder_8: FF0000
     l_left_shoulder_7: FF0000
-    l_left_shoulder_6: 000000
-    l_left_shoulder_5: 000000
-    l_left_shoulder_4: 000000
-    l_left_shoulder_3: 000000
-    l_left_shoulder_2: 000000
-    l_left_shoulder_1: 000000
-    l_left_shoulder_0: 000000
+    l_left_shoulder_6: stop
+    l_left_shoulder_5: stop
+    l_left_shoulder_4: stop
+    l_left_shoulder_3: stop
+    l_left_shoulder_2: stop
+    l_left_shoulder_1: stop
+    l_left_shoulder_0: stop
