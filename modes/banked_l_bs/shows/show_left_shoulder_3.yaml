@@ -1,0 +1,119 @@
+#show_version=5
+#  Show 11 lights 0-10 Full on
+- duration: 1
+  lights:
+    l_left_shoulder_10: FF0000
+    l_left_shoulder_9: FF0000
+    l_left_shoulder_8: FF0000
+    l_left_shoulder_7: 000000
+    l_left_shoulder_6: 000000
+    l_left_shoulder_5: 000000
+    l_left_shoulder_4: 000000
+    l_left_shoulder_3: 000000
+    l_left_shoulder_2: 000000
+    l_left_shoulder_1: 000000
+    l_left_shoulder_0: FF0000
+- duration: 1
+  lights:
+    l_left_shoulder_10: FF0000
+    l_left_shoulder_9: FF0000
+    l_left_shoulder_8: FF0000
+    l_left_shoulder_7: 000000
+    l_left_shoulder_6: 000000
+    l_left_shoulder_5: 000000
+    l_left_shoulder_4: 000000
+    l_left_shoulder_3: 000000
+    l_left_shoulder_2: 000000
+    l_left_shoulder_1: FF0000
+    l_left_shoulder_0: 000000
+- duration: 1
+  lights:
+    l_left_shoulder_10: FF0000
+    l_left_shoulder_9: FF0000
+    l_left_shoulder_8: FF0000
+    l_left_shoulder_7: 000000
+    l_left_shoulder_6: 000000
+    l_left_shoulder_5: 000000
+    l_left_shoulder_4: 000000
+    l_left_shoulder_3: 000000
+    l_left_shoulder_2: FF0000
+    l_left_shoulder_1: 000000
+    l_left_shoulder_0: 000000
+- duration: 1
+  lights:
+    l_left_shoulder_10: FF0000
+    l_left_shoulder_9: FF0000
+    l_left_shoulder_8: FF0000
+    l_left_shoulder_7: 000000
+    l_left_shoulder_6: 000000
+    l_left_shoulder_5: 000000
+    l_left_shoulder_4: 000000
+    l_left_shoulder_3: FF0000
+    l_left_shoulder_2: 000000
+    l_left_shoulder_1: 000000
+    l_left_shoulder_0: 000000
+- duration: 1
+  lights:
+    l_left_shoulder_10: FF0000
+    l_left_shoulder_9: FF0000
+    l_left_shoulder_8: FF0000
+    l_left_shoulder_7: 000000
+    l_left_shoulder_6: 000000
+    l_left_shoulder_5: 000000
+    l_left_shoulder_4: FF0000
+    l_left_shoulder_3: 000000
+    l_left_shoulder_2: 000000
+    l_left_shoulder_1: 000000
+    l_left_shoulder_0: 000000
+- duration: 1
+  lights:
+    l_left_shoulder_10: FF0000
+    l_left_shoulder_9: FF0000
+    l_left_shoulder_8: FF0000
+    l_left_shoulder_7: 000000
+    l_left_shoulder_6: 000000
+    l_left_shoulder_5: FF0000
+    l_left_shoulder_4: 000000
+    l_left_shoulder_3: 000000
+    l_left_shoulder_2: 000000
+    l_left_shoulder_1: 000000
+    l_left_shoulder_0: 000000
+- duration: 1
+  lights:
+    l_left_shoulder_10: FF0000
+    l_left_shoulder_9: FF0000
+    l_left_shoulder_8: FF0000
+    l_left_shoulder_7: 000000
+    l_left_shoulder_6: FF0000
+    l_left_shoulder_5: 000000
+    l_left_shoulder_4: 000000
+    l_left_shoulder_3: 000000
+    l_left_shoulder_2: 000000
+    l_left_shoulder_1: 000000
+    l_left_shoulder_0: 000000
+- duration: 1
+  lights:
+    l_left_shoulder_10: FF0000
+    l_left_shoulder_9: FF0000
+    l_left_shoulder_8: FF0000
+    l_left_shoulder_7: FF0000
+    l_left_shoulder_6: 000000
+    l_left_shoulder_5: 000000
+    l_left_shoulder_4: 000000
+    l_left_shoulder_3: 000000
+    l_left_shoulder_2: 000000
+    l_left_shoulder_1: 000000
+    l_left_shoulder_0: 000000
+- duration: 1
+  lights:
+    l_left_shoulder_10: FF0000
+    l_left_shoulder_9: FF0000
+    l_left_shoulder_8: FF0000
+    l_left_shoulder_7: 000000
+    l_left_shoulder_6: 000000
+    l_left_shoulder_5: 000000
+    l_left_shoulder_4: 000000
+    l_left_shoulder_3: 000000
+    l_left_shoulder_2: 000000
+    l_left_shoulder_1: 000000
+    l_left_shoulder_0: 000000

@@ -231,7 +231,8 @@ Things to add:
   Dont raise BB after ball starts when a ramp is qualified.
   Dont raise BB after starting super spinner.
   Make scoop shot a qualifying equivelent if starting super spinner of hydra.
-
+  Check log to see what raised BB when ball starts after BB dropped and what starts timer if hit.
+  Countdown timer on double ramp ball save 12 on right 11 on left
 Hardware:
   Check trough switches.
 

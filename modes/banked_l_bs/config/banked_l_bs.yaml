@@ -28,6 +28,8 @@ timers:
     control_events:
       - action: restart #reset to starting value and start
         event: mode_banked_l_bs_started #ball_waiting_to_eject_from_scoop_done
+      - action: restart
+        event: double_left_ramp_hit #reset the timer if hit again
 
 shots:
   left_outlane_banked_ballsave:  #This shots with a 2x shot to the left ramp. When shot is hit it triggers a 1 ball MB effectively returning ball to play
@@ -69,9 +71,37 @@ slide_player:
         z: 200
 
 show_player:
-  mode_banked_l_bs_started:
-    show_blink_l_timer:
+  left_bs_expiration{device.timers.left_bs_expiration.ticks==4}:
+    show_left_shoulder_1: #Stop an old show if timer reset
+      action: stop
+    show_left_shoulder_2:
+      action: stop
+    show_left_shoulder_3:
+      action: stop
+    show_left_shoulder_4: #Start the beginning show
       speed: 10
+      action: play
+  left_bs_expiration{device.timers.left_bs_expiration.ticks==3}:
+    show_left_shoulder_4:
+      action: stop
+    show_left_shoulder_3:
+      speed: 10
+      action: play
+  left_bs_expiration{device.timers.left_bs_expiration.ticks==2}:
+    show_left_shoulder_3:
+      action: stop
+    show_left_shoulder_2:
+      speed: 10
+      action: play
+  left_bs_expiration{device.timers.left_bs_expiration.ticks==1}:
+    show_left_shoulder_2:
+      action: stop
+    show_left_shoulder_1:
+      speed: 10
+      action: play
+  left_bs_expiration{device.timers.left_bs_expiration.ticks==0}:
+    show_left_shoulder_1:
+      action: stop
 
 sound_player:
   mode_banked_l_bs_started: comboballsavelocked

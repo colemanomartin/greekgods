@@ -9,6 +9,9 @@
 # scoop_mb ending (issued by event player inside the mode)
 # p or o locking qualified (issued by event player inside field)
 # scoop drop timer listens for this mode to end and restarts its timer to raise BB drop
+# Might need game_mode: false and stop_on_ball_end: false under mode.
+# In hardware these reset BB: - field_says_raise_bb - timer_scoop_drop_complete # this timer resets to very short when locking ball in subway
+
 mode:
   priority: 200 # range 100-1M
   start_events:

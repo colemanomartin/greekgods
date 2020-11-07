@@ -1,6 +1,7 @@
 #config_version=5
 # This mode runs the scoop and balldrop. It should be running at all time.
 # It also flashes the lighting and drop target tongue on eject. This could propbably live in base.
+# Fix: IF BB was raised on new ball start dont restart the timer when something needs the scoop exposed to start a mode.
 mode:
   priority: 10000 # range 100-1M
   start_events:

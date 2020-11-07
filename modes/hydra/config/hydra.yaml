@@ -9,6 +9,9 @@
 # problem, can win but when ball lost hydra is defeated slide shown anyway.
 # If it keeps serving balls when it should not it is probably because there are not six balls in the trough.
 #
+# Things to fix: Don't start if a ball is locked. If one ball is locked somewhere
+# When started divert the ramp and hold it diverted away from the lock. Might run
+# out of balls in this circumstance.
 
 mode:
   priority: 700
