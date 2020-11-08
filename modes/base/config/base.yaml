@@ -98,6 +98,27 @@ timers:
     control_events:
       - action: restart
         event: s_poseidon_left_slingshot_active{device.switches.s_accessory.state==0}
+  base_left_ramp:
+    #Purpose: This timer starts with a left ramp combo shot and is used to fine tune
+    #the sequence shot of the left outlane ballsave.
+    start_value: 7
+    end_value: 0
+    tick_interval: 2s
+    direction: down
+    control_events:
+      - event: left_ramp_hit
+        action: restart
+  base_right_ramp:
+    #Purpose: This timer starts with a right ramp combo shot and is used to fine tune
+    #the sequence shot of the right outlane ballsave.
+    start_value: 4
+    end_value: 0
+    tick_interval: 2s
+    direction: down
+    control_events:
+      - event: right_ramp_hit
+        action: restart
+
 # Removed in v2003
 #  base_bank_reset: #This timer resets the drop target bank (named cluster) 5 seconds after the bank is down which activates the revealed slingshot shot Timer is suspended during celest mb and maybe should be for all mb
 #    start_value: 5
@@ -297,6 +318,24 @@ shots:
     playfield: earth_pf
     profile: one_state
     switch: s_left_side_pop
+  double_left_ramp:  #used to activate banked ball save mode
+    playfield: earth_pf
+    profile: off_on
+    enable_events:
+      - timer_base_left_ramp_tick{device.timers.base_left_ramp.ticks==6}
+    disable_events:
+      - timer_base_left_ramp_complete
+    hit_events:
+      - left_ramp_hit
+  double_right_ramp: #used to activate banked ball save mode
+    playfield: earth_pf
+    profile: off_on
+    enable_events:
+      - timer_base_right_ramp_tick{device.timers.base_left_ramp.ticks==3}
+    disable_events:
+      - timer_base_right_ramp_complete
+    hit_events:
+      - right_ramp_hit
 
 sequence_shots:
   left_ramp:  #used for lock flash show poseidon_mech banked ball save
@@ -311,22 +350,22 @@ sequence_shots:
       - s_ramp_opto
       - s_olympus_lock_distal
     sequence_timeout: 1s
-  double_left_ramp:  #used to activate banked ball save mode
-    playfield: earth_pf
-    delay_event_list:
-      left_ramp_hit: 2s #Dont start timing the sequence until 2 sec post this event
-    event_sequence:
-      - left_ramp_hit
-      - s_poseidon_lock_distal_active
-    sequence_timeout: 12s
-  double_right_ramp: #used to activate banked ball save mode
-    playfield: earth_pf
-    delay_event_list:
-      right_ramp_hit: 2s #Dont start timing the sequence until 2 sec post this event
-    event_sequence:
-      - right_ramp_hit                     #cant use same event twice
-      - s_olympus_lock_distal_active
-    sequence_timeout: 6s
+#  double_left_ramp:  #used to activate banked ball save mode
+#    playfield: earth_pf
+#    delay_event_list:
+#      left_ramp_hit: 2s #Dont start timing the sequence until 2 sec post this event
+#    event_sequence:
+#      - left_ramp_hit
+#      - s_poseidon_lock_distal_active
+#    sequence_timeout: 12s
+#  double_right_ramp: #used to activate banked ball save mode
+#    playfield: earth_pf
+#    delay_event_list:
+#      right_ramp_hit: 2s #Dont start timing the sequence until 2 sec post this event
+#    event_sequence:
+#      - right_ramp_hit                     #cant use same event twice
+#      - s_olympus_lock_distal_active
+#    sequence_timeout: 6s
   star_double_down_a:
     playfield: earth_pf
     event_sequence:
