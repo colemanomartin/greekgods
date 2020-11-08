@@ -26,11 +26,11 @@ timers:
     direction: down
     tick_interval: 15s
     control_events:
-      - action: restart #reset to starting value and start
-        event: mode_banked_l_bs_started #ball_waiting_to_eject_from_scoop_done
-      - action: restart
-        event: double_left_ramp_hit #reset the timer if hit again
-
+      - event: mode_banked_l_bs_started #ball_waiting_to_eject_from_scoop_done
+        action: restart #reset to starting value and start
+      - event: banked_l_ballsave_double_left_ramp_hit
+        action: add
+        value: 2
 shots:
   left_outlane_banked_ballsave:  #This shots with a 2x shot to the left ramp. When shot is hit it triggers a 1 ball MB effectively returning ball to play
     playfield: earth_pf
@@ -45,7 +45,14 @@ shots:
       - multiball_olympus_ramp_ended  #add hidden hole mb when written
     switches:
       - s_left_outlane
-    # reset_events: ball_started
+
+sequence_shots:
+  banked_l_ballsave_double_left_ramp: #used to add time to banked ball save mode
+    playfield: earth_pf
+    event_sequence:
+      - left_ramp_hit                     #cant use same event twice
+      - s_poseidon_lock_distal_active
+    sequence_timeout: 12s
 
 slide_player:
   mode_banked_l_bs_started:
@@ -71,6 +78,32 @@ slide_player:
         z: 200
 
 show_player:
+  timer_left_bs_expiration_tick{device.timers.left_bs_expiration.ticks>5}:
+    show_left_shoulder_1: #Stop an old show if timer reset
+      action: stop
+    show_left_shoulder_2:
+      action: stop
+    show_left_shoulder_3:
+      action: stop
+    show_left_shoulder_4:
+      action: stop
+    show_left_shoulder_5:
+      action: stop
+    show_left_shoulder_6: #Start the beginning show
+      speed: 10
+      action: play
+  timer_left_bs_expiration_tick{device.timers.left_bs_expiration.ticks==5}:
+    show_left_shoulder_1: #Stop an old show if timer reset
+      action: stop
+    show_left_shoulder_2:
+      action: stop
+    show_left_shoulder_3:
+      action: stop
+    show_left_shoulder_4:
+      action: stop
+    show_left_shoulder_5: #Start the beginning show
+      speed: 10
+      action: play
   timer_left_bs_expiration_tick{device.timers.left_bs_expiration.ticks==4}:
     show_left_shoulder_1: #Stop an old show if timer reset
       action: stop

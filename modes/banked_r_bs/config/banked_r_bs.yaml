@@ -2,7 +2,7 @@
 # This mode starts on a double hit to the right ramp.  It shuts down if the ball save is used or a 1 min timer expires. It set up a shot for the right outlane that will disable during mb.
 # It uses a multiball without a shoot again to serve the ball.
 mode:
-  priority: 150 # range 100-1M
+  priority: 250 # range 100-1M
   start_events:
     - double_right_ramp_hit
   stop_events:
@@ -26,25 +26,32 @@ timers:
     direction: down
     tick_interval: 15s
     control_events:
-      - action: restart #reset to starting value and start
-        event: mode_banked_r_bs_started #ball_waiting_to_eject_from_scoop_done
+      - event: mode_banked_r_bs_started
+        action: restart #reset to starting value and start
+      - event: banked_r_ballsave_double_right_ramp{device.timers.right_bs_expiration.ticks<6}
+        action: add
+        value: 2
 
 shots:
-  right_outlane_banked_ballsave:  #This shots with a 2x shot to the left ramp. When shot is hit it triggers a 1 ball MB effectively returning ball to play
+  right_outlane_banked_ballsave:  #This shots with a 2x shot to the right ramp. When shot is hit it triggers a 1 ball MB effectively returning ball to play
     playfield: earth_pf
     disable_events:
-      - multiball_celest_mb_started      #disable when a mb starts.
-      - multiball_poseidon_ramp_started
+      - multiball_poseidon_ramp_started #disable when a mb starts.
       - multiball_olympus_ramp_started  #add hidden hole mb when written
     enable_events:
       - mode_banked_r_bs_started
-      - multiball_celest_mb_ended      #re-enable when a mb ends.  This should not start the mode if not already running.
-      - multiball_poseidon_ramp_ended
+      - multiball_poseidon_ramp_ended #re-enable when a mb ends.  This should not start the mode if not already running.
       - multiball_olympus_ramp_ended  #add hidden hole mb when written
     switches:
       - s_right_outlane
-    # reset_events: ball_started
 
+sequence_shots:
+  banked_r_ballsave_double_right_ramp: #used to add time to banked ball save mode
+    playfield: earth_pf
+    event_sequence:
+      - right_ramp_hit                     #cant use same event twice
+      - s_olympus_lock_distal_active
+    sequence_timeout: 6s
 
 slide_player:
   mode_banked_r_bs_started:
@@ -70,9 +77,64 @@ slide_player:
         z: 200
 
 show_player:
-  mode_banked_r_bs_started:
-    show_blink_r_timer:
+  timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks>5}:
+    show_right_shoulder_1: #Stop an old show if timer reset
+      action: stop
+    show_right_shoulder_2:
+      action: stop
+    show_right_shoulder_3:
+      action: stop
+    show_right_shoulder_4:
+      action: stop
+    show_right_shoulder_5:
+      action: stop
+    show_right_shoulder_6: #Start the beginning show
       speed: 10
-#Add a flash to the locks
+      action: play
+  timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks==5}:
+    show_right_shoulder_1: #Stop an old show if timer reset
+      action: stop
+    show_right_shoulder_2:
+      action: stop
+    show_right_shoulder_3:
+      action: stop
+    show_right_shoulder_4:
+      action: stop
+    show_right_shoulder_5: #Start the beginning show
+      speed: 10
+      action: play
+  timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks==4}:
+    show_right_shoulder_1: #Stop an old show if timer reset
+      action: stop
+    show_right_shoulder_2:
+      action: stop
+    show_right_shoulder_3:
+      action: stop
+    show_right_shoulder_4: #Start the beginning show
+      speed: 10
+      action: play
+  timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks==3}:
+    show_right_shoulder_4:
+      action: stop
+    show_right_shoulder_3:
+      speed: 10
+      action: play
+  timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks==2}:
+    show_right_shoulder_3:
+      action: stop
+    show_right_shoulder_2:
+      speed: 10
+      action: play
+  timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks==1}:
+    show_right_shoulder_2:
+      action: stop
+    show_right_shoulder_1:
+      speed: 10
+      action: play
+  timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks==0}:
+    show_right_shoulder_1:
+      action: stop
+
 sound_player:
   mode_banked_r_bs_started: comboballsavelocked
+  banked_r_ballsave_double_right_ramp{device.timers.right_bs_expiration.ticks<6}: timeadded

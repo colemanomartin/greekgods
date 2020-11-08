@@ -1,0 +1,193 @@
+#show_version=5
+#  Show 11 lights 0-10 Full on
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10: stop
+    l_right_shoulder_9: stop
+    l_right_shoulder_8: stop
+    l_right_shoulder_7: stop
+    l_right_shoulder_6: stop
+    l_right_shoulder_5: stop
+    l_right_shoulder_4: stop
+    l_right_shoulder_3: stop
+    l_right_shoulder_2: stop
+    l_right_shoulder_1: stop
+    l_right_shoulder_0:
+      color: FF0000
+      fade: 125ms
+
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10: stop
+    l_right_shoulder_9: stop
+    l_right_shoulder_8: stop
+    l_right_shoulder_7: stop
+    l_right_shoulder_6: stop
+    l_right_shoulder_5: stop
+    l_right_shoulder_4: stop
+    l_right_shoulder_3: stop
+    l_right_shoulder_2: stop
+    l_right_shoulder_1:
+      color: FF0000
+      fade: 125ms
+    l_right_shoulder_0: stop
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10: stop
+    l_right_shoulder_9: stop
+    l_right_shoulder_8: stop
+    l_right_shoulder_7: stop
+    l_right_shoulder_6: stop
+    l_right_shoulder_5: stop
+    l_right_shoulder_4: stop
+    l_right_shoulder_3: stop
+    l_right_shoulder_2:
+      color: FF0000
+      fade: 125ms
+    l_right_shoulder_1: stop
+    l_right_shoulder_0: stop
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10: stop
+    l_right_shoulder_9: stop
+    l_right_shoulder_8: stop
+    l_right_shoulder_7: stop
+    l_right_shoulder_6: stop
+    l_right_shoulder_5: stop
+    l_right_shoulder_4: stop
+    l_right_shoulder_3:
+      color: FF0000
+      fade: 125ms
+    l_right_shoulder_2: stop
+    l_right_shoulder_1: stop
+    l_right_shoulder_0: stop
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10: stop
+    l_right_shoulder_9: stop
+    l_right_shoulder_8: stop
+    l_right_shoulder_7: stop
+    l_right_shoulder_6: stop
+    l_right_shoulder_5: stop
+    l_right_shoulder_4:
+      color: FF0000
+      fade: 125ms
+    l_right_shoulder_3: stop
+    l_right_shoulder_2: stop
+    l_right_shoulder_1: stop
+    l_right_shoulder_0: stop
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10: stop
+    l_right_shoulder_9: stop
+    l_right_shoulder_8: stop
+    l_right_shoulder_7: stop
+    l_right_shoulder_6: stop
+    l_right_shoulder_5:
+      color: FF0000
+      fade: 125ms
+    l_right_shoulder_4: stop
+    l_right_shoulder_3: stop
+    l_right_shoulder_2: stop
+    l_right_shoulder_1: stop
+    l_right_shoulder_0: stop
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10: stop
+    l_right_shoulder_9: stop
+    l_right_shoulder_8: stop
+    l_right_shoulder_7: stop
+    l_right_shoulder_6:
+      color: FF0000
+      fade: 125ms
+    l_right_shoulder_5: stop
+    l_right_shoulder_4: stop
+    l_right_shoulder_3: stop
+    l_right_shoulder_2: stop
+    l_right_shoulder_1: stop
+    l_right_shoulder_0: stop
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10: stop
+    l_right_shoulder_9: stop
+    l_right_shoulder_8: stop
+    l_right_shoulder_7:
+      color: FF0000
+      fade: 125ms
+    l_right_shoulder_6: stop
+    l_right_shoulder_5: stop
+    l_right_shoulder_4: stop
+    l_right_shoulder_3: stop
+    l_right_shoulder_2: stop
+    l_right_shoulder_1: stop
+    l_right_shoulder_0: stop
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10: stop
+    l_right_shoulder_9: stop
+    l_right_shoulder_8:
+      color: FF0000
+      fade: 125ms
+    l_right_shoulder_7: stop
+    l_right_shoulder_6: stop
+    l_right_shoulder_5: stop
+    l_right_shoulder_4: stop
+    l_right_shoulder_3: stop
+    l_right_shoulder_2: stop
+    l_right_shoulder_1: stop
+    l_right_shoulder_0: stop
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10: stop
+    l_right_shoulder_9:
+      color: FF0000
+      fade: 125ms
+    l_right_shoulder_8: stop
+    l_right_shoulder_7: stop
+    l_right_shoulder_6: stop
+    l_right_shoulder_5: stop
+    l_right_shoulder_4: stop
+    l_right_shoulder_3: stop
+    l_right_shoulder_2: stop
+    l_right_shoulder_1: stop
+    l_right_shoulder_0: stop
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10:
+      color: FF0000
+      fade: 125ms
+    l_right_shoulder_9: stop
+    l_right_shoulder_8: stop
+    l_right_shoulder_7: stop
+    l_right_shoulder_6: stop
+    l_right_shoulder_5: stop
+    l_right_shoulder_4: stop
+    l_right_shoulder_3: stop
+    l_right_shoulder_2: stop
+    l_right_shoulder_1: stop
+    l_right_shoulder_0: stop
+- duration: 1
+  lights:
+    l_right_shoulder_11: FF0000
+    l_right_shoulder_10: stop
+    l_right_shoulder_9: stop
+    l_right_shoulder_8: stop
+    l_right_shoulder_7: stop
+    l_right_shoulder_6: stop
+    l_right_shoulder_5: stop
+    l_right_shoulder_4: stop
+    l_right_shoulder_3: stop
+    l_right_shoulder_2: stop
+    l_right_shoulder_1: stop
+    l_right_shoulder_0: stop
