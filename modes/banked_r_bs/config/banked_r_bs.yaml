@@ -2,7 +2,7 @@
 # This mode starts on a double hit to the right ramp.  It shuts down if the ball save is used or a 1 min timer expires. It set up a shot for the right outlane that will disable during mb.
 # It uses a multiball without a shoot again to serve the ball.
 mode:
-  priority: 250 # range 100-1M
+  priority: 280 # range 100-1M
   start_events:
     - double_right_ramp_hit
   stop_events:
@@ -28,12 +28,12 @@ timers:
     control_events:
       - event: mode_banked_r_bs_started
         action: restart #reset to starting value and start
-      - event: banked_r_ballsave_double_right_ramp{device.timers.right_bs_expiration.ticks<6}
+      - event: banked_r_ballsave_double_right_ramp_hit{device.timers.right_bs_expiration.ticks<6}
         action: add
         value: 2
 
 shots:
-  right_outlane_banked_ballsave:  #This shots with a 2x shot to the right ramp. When shot is hit it triggers a 1 ball MB effectively returning ball to play
+  right_outlane_banked_ballsave:  # When shot is hit it triggers a 1 ball MB effectively returning ball to play
     playfield: earth_pf
     disable_events:
       - multiball_poseidon_ramp_started #disable when a mb starts.
@@ -48,33 +48,35 @@ shots:
 sequence_shots:
   banked_r_ballsave_double_right_ramp: #used to add time to banked ball save mode
     playfield: earth_pf
+    delay_event_list:
+      right_ramp_hit: 2s #Dont start timing the sequence until 2 sec post this event
     event_sequence:
       - right_ramp_hit                     #cant use same event twice
       - s_olympus_lock_distal_active
     sequence_timeout: 6s
-
-slide_player:
-  mode_banked_r_bs_started:
-    tell_player_banked_r_bs:
-      target: playfield_lcd
-      background_color: black
-      widgets:
-      - type: text
-        text: Right Outlane
-        color: FFFFFF
-        y: 60%
-        anchor_x: center
-        anchor_y: bottom
-        font_size: 60
-        z: 200
-      - type: text
-        text: Ballsave Engaged!
-        color: FFFFFF
-        y: 40%
-        anchor_x: center
-        anchor_y: bottom
-        font_size: 60
-        z: 200
+#Instead add a widget to the BB screen
+#slide_player:
+#  mode_banked_r_bs_started:
+#    tell_player_banked_r_bs:
+#      target: playfield_lcd
+#      background_color: black
+#      widgets:
+#      - type: text
+#        text: Right Outlane
+#        color: FFFFFF
+#        y: 60%
+#        anchor_x: center
+#        anchor_y: bottom
+#        font_size: 60
+#        z: 200
+#      - type: text
+#        text: Ballsave Engaged!
+#        color: FFFFFF
+#        y: 40%
+#        anchor_x: center
+#        anchor_y: bottom
+#        font_size: 60
+#        z: 200
 
 show_player:
   timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks>5}:
@@ -100,6 +102,8 @@ show_player:
       action: stop
     show_right_shoulder_4:
       action: stop
+    show_right_shoulder_6:
+      action: stop
     show_right_shoulder_5: #Start the beginning show
       speed: 10
       action: play
@@ -110,23 +114,51 @@ show_player:
       action: stop
     show_right_shoulder_3:
       action: stop
+    show_right_shoulder_5:
+      action: stop
+    show_right_shoulder_6:
+      action: stop
     show_right_shoulder_4: #Start the beginning show
       speed: 10
       action: play
   timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks==3}:
+    show_right_shoulder_1:
+      action: stop
+    show_right_shoulder_2:
+      action: stop
     show_right_shoulder_4:
+      action: stop
+    show_right_shoulder_5:
+      action: stop
+    show_right_shoulder_6:
       action: stop
     show_right_shoulder_3:
       speed: 10
       action: play
   timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks==2}:
+    show_right_shoulder_1:
+      action: stop
     show_right_shoulder_3:
+      action: stop
+    show_right_shoulder_4:
+      action: stop
+    show_right_shoulder_5:
+      action: stop
+    show_right_shoulder_6:
       action: stop
     show_right_shoulder_2:
       speed: 10
       action: play
   timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks==1}:
     show_right_shoulder_2:
+      action: stop
+    show_right_shoulder_3:
+      action: stop
+    show_right_shoulder_4:
+      action: stop
+    show_right_shoulder_5:
+      action: stop
+    show_right_shoulder_6:
       action: stop
     show_right_shoulder_1:
       speed: 10
@@ -137,4 +169,4 @@ show_player:
 
 sound_player:
   mode_banked_r_bs_started: comboballsavelocked
-  banked_r_ballsave_double_right_ramp{device.timers.right_bs_expiration.ticks<6}: timeadded
+  banked_r_ballsave_double_right_ramp_hit{device.timers.right_bs_expiration.ticks<6}: timeadded

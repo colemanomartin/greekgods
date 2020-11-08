@@ -299,6 +299,34 @@ shots:
     switch: s_left_side_pop
 
 sequence_shots:
+  left_ramp:  #used for lock flash show poseidon_mech banked ball save
+    playfield: earth_pf
+    switch_sequence:
+      - s_ramp_opto
+      - s_poseidon_lock_distal #uphill
+    sequence_timeout: 1s
+  right_ramp: #used for lock flash show, olympus_mech and banked ball save
+    playfield: earth_pf
+    switch_sequence:
+      - s_ramp_opto
+      - s_olympus_lock_distal
+    sequence_timeout: 1s
+  double_left_ramp:  #used to activate banked ball save mode
+    playfield: earth_pf
+    delay_event_list:
+      left_ramp_hit: 2s #Dont start timing the sequence until 2 sec post this event
+    event_sequence:
+      - left_ramp_hit
+      - s_poseidon_lock_distal_active
+    sequence_timeout: 12s
+  double_right_ramp: #used to activate banked ball save mode
+    playfield: earth_pf
+    delay_event_list:
+      right_ramp_hit: 2s #Dont start timing the sequence until 2 sec post this event
+    event_sequence:
+      - right_ramp_hit                     #cant use same event twice
+      - s_olympus_lock_distal_active
+    sequence_timeout: 6s
   star_double_down_a:
     playfield: earth_pf
     event_sequence:
@@ -318,30 +346,6 @@ sequence_shots:
       - drop_target_star_middle_down
       - drop_target_star_distal_down
     sequence_timeout: 1s
-  left_ramp:  #used for lock flash show poseidon_mech banked ball save
-    playfield: earth_pf
-    switch_sequence:
-      - s_ramp_opto
-      - s_poseidon_lock_distal
-    sequence_timeout: 1s
-  right_ramp: #used for lock flash show, olympus_mech and banked ball save
-    playfield: earth_pf
-    switch_sequence:
-      - s_ramp_opto
-      - s_olympus_lock_distal
-    sequence_timeout: 1s
-  double_left_ramp:  #used to activate banked ball save mode
-    playfield: earth_pf
-    event_sequence:
-      - left_ramp_hit
-      - s_poseidon_lock_distal_active
-    sequence_timeout: 12s
-  double_right_ramp: #used to activate banked ball save mode
-    playfield: earth_pf
-    event_sequence:
-      - right_ramp_hit                     #cant use same event twice
-      - s_olympus_lock_distal_active
-    sequence_timeout: 6s
   bonus_orbit_counter_clockwise: #used in bonus counting, for other orbit purposes, see field
     playfield: earth_pf
     switch_sequence:
