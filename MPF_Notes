@@ -147,6 +147,34 @@ sudo pip3 install mpf-mc==0.52.1 --user
 
 sudo pip3 install mpf-mc==0.52.1 --user
 
+Setting delays:
+In event_player, Specify a delay by using a pipe. For example:
+event_player:
+  triggering_event:
+     event_to_be_triggered|250ms
+
+That will delay the event by the time specified.
+
+Can also set delays by priority which has different syntax: the priority of an incoming handler is specified with a period after the event name. Higher priority events will be handled first, so you can avoid race conditions and have a guaranteed order of operations.
+
+event_player:
+  mode_something_started.100:
+    - event_thats_posted_first
+  mode_something_started.50:
+    - event_thats_posted_second
+
+Priorities on outgoing events are done with an argument in the event body. This is applicable not just to event player, but sound player, show player, and any other player.
+
+event_player:
+  mode_something_started:
+    event_thats_posted_one:
+      priority: 20
+    event_thats_posted_two:
+      priority: 10
+
+
+
+
 Wireshark
   packet sniffer.
   When installing select Y to grant group access to sniffing.
@@ -172,6 +200,8 @@ set P3-ROC dips 5 and 6 to on
 sudo ./pinprocfw p3_roc_v2r14.p-roc
 Ignore verification failed error.
 Power off and set dips back to off
+
+
 
 GitHub notes:
 1. create repo on github. Its tied to junkmail address. GH username is colemanomartin password G with numbers x2
