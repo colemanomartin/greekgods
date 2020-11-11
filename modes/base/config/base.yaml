@@ -331,7 +331,7 @@ shots:
     playfield: earth_pf
     profile: off_on
     enable_events:
-      - timer_base_right_ramp_tick{device.timers.base_left_ramp.ticks==3}
+      - timer_base_right_ramp_tick{device.timers.base_right_ramp.ticks==3}
     disable_events:
       - timer_base_right_ramp_complete
     hit_events:
@@ -721,6 +721,10 @@ show_player:
     show_o_mag_enabled:
       speed: 1
       priority: 1
+#timer_base_left_ramp_tick{device.timers.base_left_ramp.ticks==6}:
+#timer_base_left_ramp_complete
+#timer_base_right_ramp_tick{device.timers.base_right_ramp.ticks==3}
+#timer_base_right_ramp_complete
 
 slide_player:
   mode_base_started:

@@ -43,16 +43,26 @@ shots:
       - multiball_olympus_ramp_ended  #add hidden hole mb when written
     switches:
       - s_left_outlane
-
-sequence_shots:
   banked_l_ballsave_double_left_ramp: #used to add time to banked ball save mode
     playfield: earth_pf
-    delay_event_list:
-      left_ramp_hit: 2s #Dont start timing the sequence until 2 sec post this event
-    event_sequence:
-      - left_ramp_hit                     #cant use same event twice
-      - s_poseidon_lock_distal_active
-    sequence_timeout: 12s
+    profile: off_on
+    enable_events:
+      - timer_base_left_ramp_tick{device.timers.base_left_ramp.ticks==6}
+    disable_events:
+      - timer_base_left_ramp_complete
+    hit_events:
+      - left_ramp_hit
+
+#sequence_shots:
+#  banked_l_ballsave_double_left_ramp: #used to add time to banked ball save mode
+#    playfield: earth_pf
+#    delay_event_list:
+#      left_ramp_hit: 2s #Dont start timing the sequence until 2 sec post this event
+#    event_sequence:
+#      - left_ramp_hit                     #cant use same event twice
+#      - s_poseidon_lock_distal_active
+#    sequence_timeout: 12s
+
 #Instead add a widget to the BB screen
 #slide_player:
 #  mode_banked_l_bs_started:
