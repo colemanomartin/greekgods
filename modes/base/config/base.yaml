@@ -724,12 +724,14 @@ show_player:
   timer_base_left_ramp_tick{device.timers.base_left_ramp.ticks==6}:
     show_invite_left_ramp_double_shot:
       speed: 8
+      priority: 10000
   timer_base_left_ramp_complete:
     show_invite_left_ramp_double_shot:
       action: stop
   timer_base_right_ramp_tick{device.timers.base_right_ramp.ticks==3}:
     show_invite_right_ramp_double_shot:
       speed: 8
+      priority: 10000
   timer_base_right_ramp_complete:
     show_invite_right_ramp_double_shot:
       action: stop

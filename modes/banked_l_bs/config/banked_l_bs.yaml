@@ -2,7 +2,7 @@
 # This mode starts on a double hit to the left ramp.  It shuts down if the ball save is used or a 1 min timer expires. It set up a shot for the left outlane that will disable during mb.
 # It uses a multiball without a shoot again to serve the ball.
 mode:
-  priority: 250 # range 100-1M
+  priority: 2500 # range 100-1M
   start_events:
     - double_left_ramp_hit
   stop_events:
@@ -20,7 +20,7 @@ multiballs:
     debug: true
 
 display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
-  mode_banked_l_bs_starting: #started.100 for higher priority?
+  mode_banked_l_bs_started: #started.100 for higher priority?
     led_matrix:
       action: play  #Default
       lights: gi, insert  #right_orbit
@@ -64,39 +64,6 @@ shots:
     hit_events:
       - left_ramp_hit
 
-#sequence_shots:
-#  banked_l_ballsave_double_left_ramp: #used to add time to banked ball save mode
-#    playfield: earth_pf
-#    delay_event_list:
-#      left_ramp_hit: 2s #Dont start timing the sequence until 2 sec post this event
-#    event_sequence:
-#      - left_ramp_hit                     #cant use same event twice
-#      - s_poseidon_lock_distal_active
-#    sequence_timeout: 12s
-
-#Instead add a widget to the BB screen
-#slide_player:
-#  mode_banked_l_bs_started:
-#    tell_player_banked_l_bs:
-#      target: playfield_lcd
-#      background_color: black
-#      widgets:
-#      - type: text
-#        text: Left Outlane
-#        color: FFFFFF
-#        y: 60%
-#        anchor_x: center
-#        anchor_y: bottom
-#        font_size: 60
-#        z: 200
-#      - type: text
-#        text: Ballsave Engaged!
-#        color: FFFFFF
-#        y: 40%
-#        anchor_x: center
-#        anchor_y: bottom
-#        font_size: 60
-#        z: 200
 
 show_player:
   timer_left_bs_expiration_tick{device.timers.left_bs_expiration.ticks>5}:
@@ -201,13 +168,13 @@ slide_player:
       widgets:
       - type: ellipse
         x: 10%
-        y: 15%
+        y: 22%
         color: red
         anchor_x: middle
         anchor_y: middle
-        width: 100%
-        height: 100%
-        expire: 0.7s
+        width: 1100
+        height: 1900
+        expire: 0.5s
         z: 1
         events_when_removed: banked_l_bs_wipe_done
         animations:
@@ -215,25 +182,26 @@ slide_player:
             - property: scale
               value: 0.1
               relative: false
-              duration: 0.7s
-              easing: out_circ #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
-      - type: ellipse
-        x: 10%
-        y: 15%
-        color: black
-        anchor_x: middle
-        anchor_y: middle
-        width: 60%
-        height: 60%
-        expire: 0.7s
-        z: 2
-        animations:
-          show_slide:
-            - property: scale
-              value: 0
-              relative: false
-              duration: 0.7s
-              easing: out_circ #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+              duration: 0.5s
+#              easing: out_circ #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+
+#      - type: ellipse
+#        x: 10%
+#        y: 22%
+#        color: black
+#        anchor_x: middle
+#        anchor_y: middle
+#        width: 800
+#        height: 1500
+#        expire: 10s
+#        z: 2
+#        animations:
+#          show_slide:
+#            - property: scale
+#              value: 0
+#              relative: false
+#              duration: 10s
+#              easing: out_circ #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
 
 sound_player:
   mode_banked_l_bs_started: comboballsavelocked

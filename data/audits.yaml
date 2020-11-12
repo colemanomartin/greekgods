@@ -4,39 +4,39 @@ shots:
   ballblock: 331
   banked_l_ballsave_double_left_ramp: 1
   banked_r_ballsave_double_right_ramp: 5
-  base_hole_distal: 95
+  base_hole_distal: 98
   base_hole_proximal: 45
-  base_hydra: 1042
-  base_left_inlane: 121
+  base_hydra: 1045
+  base_left_inlane: 124
   base_left_outlane: 47
-  base_left_side_pop: 735
-  base_left_slingshot: 485
+  base_left_side_pop: 737
+  base_left_slingshot: 487
   base_olympus_left_pop: 113
   base_olympus_lower_pop: 393
   base_olympus_right_pop: 316
   base_olympus_spinner: 4038
-  base_orbit_spinner: 1891
-  base_orbit_spinner_2: 1891
-  base_poseidon_gate: 1463
-  base_poseidon_left_slingshot: 721
-  base_poseidon_pop: 646
-  base_poseidon_right_slingshot: 632
-  base_ramp: 955
+  base_orbit_spinner: 1917
+  base_orbit_spinner_2: 1917
+  base_poseidon_gate: 1533
+  base_poseidon_left_slingshot: 737
+  base_poseidon_pop: 649
+  base_poseidon_right_slingshot: 634
+  base_ramp: 1010
   base_revealed_slingshot: 119
   base_right_inlane: 200
-  base_right_outlane: 30
-  base_right_slingshot: 630
+  base_right_outlane: 34
+  base_right_slingshot: 631
   base_scoop_from_pf: 45
-  base_sis_left_arrived: 104
+  base_sis_left_arrived: 105
   base_sis_left_vacated: 208
   base_sis_right_arrived: 199
-  base_sis_right_vacated: 398
-  double_left_ramp: 3
-  double_right_ramp: 9
+  base_sis_right_vacated: 400
+  double_left_ramp: 18
+  double_right_ramp: 10
   field_invite_hydra_at_scoop: 3
   field_invite_super_spinner_at_scoop: 14
-  field_olympus_mech: 1424
-  field_poseidon_mech: 3435
+  field_olympus_mech: 1427
+  field_poseidon_mech: 3556
   left_corner_target: 3
   left_outlane_banked_ballsave: 3
   left_sling: 7
@@ -51,7 +51,7 @@ shots:
   river_b_mini: 1
   river_c_mini: 1
   river_d_mini: 1
-  sis_left_poseidon_mech: 1983
+  sis_left_poseidon_mech: 2074
   sis_right_olympus_mech: 520
   super_spinner_bonus: 6
   super_spinner_olympus_mech: 48
@@ -61,60 +61,60 @@ switches:
   s_1_1: 0
   s_1_7: 0
   s_accessory: 238
-  s_ballblock: 503
+  s_ballblock: 506
   s_drop_target_distal: 138
   s_drop_target_middle: 147
   s_drop_target_proximal: 123
-  s_hole_distal: 95
+  s_hole_distal: 98
   s_hole_proximal: 45
-  s_hydra: 1043
-  s_launch: 160
+  s_hydra: 1046
+  s_launch: 177
   s_left_flipper: 2858
   s_left_flipper_EOS: 2479
-  s_left_inlane: 121
+  s_left_inlane: 124
   s_left_outlane: 47
-  s_left_side_pop: 735
-  s_left_slingshot: 485
+  s_left_side_pop: 737
+  s_left_slingshot: 487
   s_olympus_left_pop: 113
-  s_olympus_lock_distal: 328
-  s_olympus_lock_proximal: 345
+  s_olympus_lock_distal: 331
+  s_olympus_lock_proximal: 350
   s_olympus_lower_pop: 393
   s_olympus_right_pop: 316
-  s_olympus_rollover: 524
+  s_olympus_rollover: 533
   s_olympus_spinner: 4038
-  s_orbit_spinner: 1891
-  s_poseidon_gate: 1463
-  s_poseidon_left_slingshot: 721
-  s_poseidon_lock_distal: 437
-  s_poseidon_lock_proximal: 299
-  s_poseidon_pop: 646
-  s_poseidon_right_slingshot: 632
-  s_posideon_rollover: 411
+  s_orbit_spinner: 1917
+  s_poseidon_gate: 1533
+  s_poseidon_left_slingshot: 737
+  s_poseidon_lock_distal: 481
+  s_poseidon_lock_proximal: 339
+  s_poseidon_pop: 649
+  s_poseidon_right_slingshot: 634
+  s_posideon_rollover: 419
   s_powerball_left_distal: 0
   s_powerball_left_proximal: 0
   s_powerball_right_distal: 0
   s_powerball_right_proximal: 0
-  s_ramp_opto: 955
+  s_ramp_opto: 1010
   s_revealed_slingshot: 318
   s_right_flipper: 3744
   s_right_flipper_EOS: 3267
   s_right_inlane: 200
-  s_right_outlane: 30
-  s_right_slingshot: 630
-  s_scoop_chamber: 185
-  s_scoop_lock_0: 140
-  s_scoop_lock_1: 138
-  s_shooterlane: 650
-  s_sis_left: 180
+  s_right_outlane: 34
+  s_right_slingshot: 631
+  s_scoop_chamber: 188
+  s_scoop_lock_0: 143
+  s_scoop_lock_1: 141
+  s_shooterlane: 678
+  s_sis_left: 182
   s_sis_right: 284
   s_start: 7
-  s_trough_0: 549
-  s_trough_1: 545
-  s_trough_2: 543
-  s_trough_3: 522
-  s_trough_4: 451
-  s_trough_chamber: 545
-  s_trough_jam: 545
+  s_trough_0: 571
+  s_trough_1: 566
+  s_trough_2: 564
+  s_trough_3: 543
+  s_trough_4: 457
+  s_trough_chamber: 566
+  s_trough_jam: 566
   s_u_left_ear_0: 1
   s_u_left_ear_1: 1
   s_u_left_ear_2: 1

@@ -22,7 +22,7 @@
       color: 00FF00
       fade: 80ms
     l_ramp_left:
-      color: 00000
+      color: 000000
       fade: 80ms
     l_poseidon_lock_distal:
       color: 000000
