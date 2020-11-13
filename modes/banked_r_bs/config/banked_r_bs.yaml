@@ -2,7 +2,7 @@
 # This mode starts on a double hit to the right ramp.  It shuts down if the ball save is used or a 1 min timer expires. It set up a shot for the right outlane that will disable during mb.
 # It uses a multiball without a shoot again to serve the ball.
 mode:
-  priority: 280 # range 100-1M
+  priority: 2580 # range 100-1M
   start_events:
     - double_right_ramp_hit
   stop_events:
@@ -18,6 +18,16 @@ multiballs:
     shoot_again: 0s #ball save for MB 10 sec default
     start_events: right_outlane_banked_ballsave_hit
     debug: true
+
+display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
+  mode_banked_r_bs_started: #started.100 for higher priority?
+    led_matrix:
+      action: play  #Default
+      lights: gi, insert  #right_orbit
+  banked_r_bs_wipe_done: #Otherwise the mode hangs
+    led_matrix:
+      action: stop
+      lights: gi, insert
 
 timers:
   right_bs_expiration:
@@ -54,40 +64,6 @@ shots:
     hit_events:
       - right_ramp_hit
 
-#sequence_shots:
-#  banked_r_ballsave_double_right_ramp: #used to add time to banked ball save mode
-#    playfield: earth_pf
-#    delay_event_list:
-#      right_ramp_hit: 2s #Dont start timing the sequence until 2 sec post this event
-#    event_sequence:
-#      - right_ramp_hit                     #cant use same event twice
-#      - s_olympus_lock_distal_active
-#    sequence_timeout: 6s
-
-#Instead add a widget to the BB screen
-#slide_player:
-#  mode_banked_r_bs_started:
-#    tell_player_banked_r_bs:
-#      target: playfield_lcd
-#      background_color: black
-#      widgets:
-#      - type: text
-#        text: Right Outlane
-#        color: FFFFFF
-#        y: 60%
-#        anchor_x: center
-#        anchor_y: bottom
-#        font_size: 60
-#        z: 200
-#      - type: text
-#        text: Ballsave Engaged!
-#        color: FFFFFF
-#        y: 40%
-#        anchor_x: center
-#        anchor_y: bottom
-#        font_size: 60
-#        z: 200
-
 show_player:
   timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks>5}:
     show_right_shoulder_1: #Stop an old show if timer reset
@@ -95,7 +71,7 @@ show_player:
     show_right_shoulder_2:
       action: stop
     show_right_shoulder_3:
-      action: stop
+      action: stop_l_bs
     show_right_shoulder_4:
       action: stop
     show_right_shoulder_5:
@@ -176,6 +152,31 @@ show_player:
   timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks==0}:
     show_right_shoulder_1:
       action: stop
+
+#Playfield Display width: 508 height: 1190
+#> 1000 or 84% is BB < 980 upper apron; < 920 orbit
+
+slide_player:
+  mode_banked_r_bs_started:
+    ark_sweep_right:
+      target: led_matrix
+      background_color: 00000000 #Background with no opacity required
+      widgets:
+      - type: bezier
+#        points: 0,1060,    433,960,    508,760
+        points: 0,760,    75,960,    508,1060
+        thickness: 90
+        color: red
+        anchor_x: top
+        anchor_y: left
+        expire: 0.5s
+        events_when_removed: banked_l_bs_wipe_done
+        animations:
+          show_slide:
+            - property: points
+              value: 400,-1000,   400,-1000,   400,-1000
+              relative: true
+              duration: 0.5s
 
 sound_player:
   mode_banked_r_bs_started: comboballsavelocked

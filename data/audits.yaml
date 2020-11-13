@@ -6,39 +6,39 @@ shots:
   banked_r_ballsave_double_right_ramp: 5
   base_hole_distal: 98
   base_hole_proximal: 45
-  base_hydra: 1045
-  base_left_inlane: 124
-  base_left_outlane: 47
-  base_left_side_pop: 737
+  base_hydra: 1048
+  base_left_inlane: 125
+  base_left_outlane: 48
+  base_left_side_pop: 741
   base_left_slingshot: 487
   base_olympus_left_pop: 113
   base_olympus_lower_pop: 393
-  base_olympus_right_pop: 316
-  base_olympus_spinner: 4038
-  base_orbit_spinner: 1917
-  base_orbit_spinner_2: 1917
-  base_poseidon_gate: 1533
-  base_poseidon_left_slingshot: 737
-  base_poseidon_pop: 649
-  base_poseidon_right_slingshot: 634
-  base_ramp: 1010
+  base_olympus_right_pop: 317
+  base_olympus_spinner: 4074
+  base_orbit_spinner: 1947
+  base_orbit_spinner_2: 1947
+  base_poseidon_gate: 1558
+  base_poseidon_left_slingshot: 741
+  base_poseidon_pop: 650
+  base_poseidon_right_slingshot: 636
+  base_ramp: 1046
   base_revealed_slingshot: 119
   base_right_inlane: 200
-  base_right_outlane: 34
-  base_right_slingshot: 631
+  base_right_outlane: 35
+  base_right_slingshot: 634
   base_scoop_from_pf: 45
-  base_sis_left_arrived: 105
-  base_sis_left_vacated: 208
-  base_sis_right_arrived: 199
-  base_sis_right_vacated: 400
-  double_left_ramp: 18
-  double_right_ramp: 10
+  base_sis_left_arrived: 108
+  base_sis_left_vacated: 216
+  base_sis_right_arrived: 201
+  base_sis_right_vacated: 402
+  double_left_ramp: 23
+  double_right_ramp: 13
   field_invite_hydra_at_scoop: 3
   field_invite_super_spinner_at_scoop: 14
-  field_olympus_mech: 1427
-  field_poseidon_mech: 3556
+  field_olympus_mech: 1436
+  field_poseidon_mech: 3599
   left_corner_target: 3
-  left_outlane_banked_ballsave: 3
+  left_outlane_banked_ballsave: 4
   left_sling: 7
   middle_target: 8
   ormb_light_o_lock: 44
@@ -46,13 +46,13 @@ shots:
   prmb_light_p_lock: 106
   prmb_start_shot: 6
   right_corner_target: 1
-  right_outlane_banked_ballsave: 4
+  right_outlane_banked_ballsave: 5
   right_sling: 7
   river_b_mini: 1
   river_c_mini: 1
   river_d_mini: 1
-  sis_left_poseidon_mech: 2074
-  sis_right_olympus_mech: 520
+  sis_left_poseidon_mech: 2100
+  sis_right_olympus_mech: 521
   super_spinner_bonus: 6
   super_spinner_olympus_mech: 48
   super_spinner_poseidon_mech: 107
@@ -67,54 +67,54 @@ switches:
   s_drop_target_proximal: 123
   s_hole_distal: 98
   s_hole_proximal: 45
-  s_hydra: 1046
-  s_launch: 177
+  s_hydra: 1049
+  s_launch: 183
   s_left_flipper: 2858
   s_left_flipper_EOS: 2479
-  s_left_inlane: 124
-  s_left_outlane: 47
-  s_left_side_pop: 737
+  s_left_inlane: 125
+  s_left_outlane: 48
+  s_left_side_pop: 741
   s_left_slingshot: 487
   s_olympus_left_pop: 113
-  s_olympus_lock_distal: 331
-  s_olympus_lock_proximal: 350
+  s_olympus_lock_distal: 341
+  s_olympus_lock_proximal: 359
   s_olympus_lower_pop: 393
-  s_olympus_right_pop: 316
-  s_olympus_rollover: 533
-  s_olympus_spinner: 4038
-  s_orbit_spinner: 1917
-  s_poseidon_gate: 1533
-  s_poseidon_left_slingshot: 737
-  s_poseidon_lock_distal: 481
-  s_poseidon_lock_proximal: 339
-  s_poseidon_pop: 649
-  s_poseidon_right_slingshot: 634
-  s_posideon_rollover: 419
+  s_olympus_right_pop: 317
+  s_olympus_rollover: 539
+  s_olympus_spinner: 4074
+  s_orbit_spinner: 1947
+  s_poseidon_gate: 1558
+  s_poseidon_left_slingshot: 741
+  s_poseidon_lock_distal: 496
+  s_poseidon_lock_proximal: 354
+  s_poseidon_pop: 650
+  s_poseidon_right_slingshot: 636
+  s_posideon_rollover: 426
   s_powerball_left_distal: 0
   s_powerball_left_proximal: 0
   s_powerball_right_distal: 0
   s_powerball_right_proximal: 0
-  s_ramp_opto: 1010
+  s_ramp_opto: 1046
   s_revealed_slingshot: 318
   s_right_flipper: 3744
   s_right_flipper_EOS: 3267
   s_right_inlane: 200
-  s_right_outlane: 34
-  s_right_slingshot: 631
+  s_right_outlane: 36
+  s_right_slingshot: 634
   s_scoop_chamber: 188
   s_scoop_lock_0: 143
   s_scoop_lock_1: 141
-  s_shooterlane: 678
-  s_sis_left: 182
-  s_sis_right: 284
+  s_shooterlane: 689
+  s_sis_left: 187
+  s_sis_right: 286
   s_start: 7
-  s_trough_0: 571
-  s_trough_1: 566
-  s_trough_2: 564
-  s_trough_3: 543
-  s_trough_4: 457
-  s_trough_chamber: 566
-  s_trough_jam: 566
+  s_trough_0: 582
+  s_trough_1: 577
+  s_trough_2: 575
+  s_trough_3: 553
+  s_trough_4: 459
+  s_trough_chamber: 577
+  s_trough_jam: 577
   s_u_left_ear_0: 1
   s_u_left_ear_1: 1
   s_u_left_ear_2: 1

@@ -42,6 +42,7 @@ timers:
       - event: banked_l_ballsave_double_left_ramp_hit{device.timers.left_bs_expiration.ticks<6}
         action: add
         value: 2
+
 shots:
   left_outlane_banked_ballsave:  #. When shot is hit it triggers a 1 ball MB effectively returning ball to play
     playfield: earth_pf
@@ -154,69 +155,29 @@ show_player:
     show_left_shoulder_1:
       action: stop
 
-#    width: 508
-#    height: 1190
-#Above 1000 or 84% is BB
-#Below 980 upper apron
-#Below 920 orbit
+#Playfield Display width: 508 height: 1190
+#> 1000 or 84% is BB < 980 upper apron; < 920 orbit
 
 slide_player:
   mode_banked_l_bs_started:
-    closing_circle_left:
+    ark_sweep_left:
       target: led_matrix
       background_color: 00000000 #Background with no opacity required
       widgets:
       - type: bezier
         points: 0,1060,    433,960,    508,760
-        thickness: 75
+        thickness: 90
         color: red
         anchor_x: top
         anchor_y: left
-        expire: 10s
+        expire: 0.5s
         events_when_removed: banked_l_bs_wipe_done
         animations:
           show_slide:
             - property: points
               value: -400,-1000,   -400,-1000,   -400,-1000
               relative: true
-              duration: 10s
-#              easing: out_circ #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
-#      - type: ellipse
-#        x: 10%
-#        y: 22%
-#        color: red
-#        anchor_x: middle
-#        anchor_y: middle
-#        width: 1100
-#        height: 1900
-#        expire: 0.5s
-#        z: 1
-#        events_when_removed: banked_l_bs_wipe_done
-#        animations:
-#          show_slide:
-#            - property: scale
-#              value: 0.1
-#              relative: false
-#              duration: 0.5s
-#              easing: out_circ #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
-
-#      - type: ellipse
-#        x: 10%
-#        y: 22%
-#        color: black
-#        anchor_x: middle
-#        anchor_y: middle
-#        width: 800
-#        height: 1500
-#        expire: 10s
-#        z: 2
-#        animations:
-#          show_slide:
-#            - property: scale
-#              value: 0
-#              relative: false
-#              duration: 10s
-#              easing: out_circ #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+              duration: 0.5s
 
 sound_player:
   mode_banked_l_bs_started: comboballsavelocked
