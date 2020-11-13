@@ -166,23 +166,38 @@ slide_player:
       target: led_matrix
       background_color: 00000000 #Background with no opacity required
       widgets:
-      - type: ellipse
-        x: 10%
-        y: 22%
+      - type: bezier
+        points: 0,1060,    433,960,    508,760
+        thickness: 75
         color: red
-        anchor_x: middle
-        anchor_y: middle
-        width: 1100
-        height: 1900
-        expire: 0.5s
-        z: 1
+        anchor_x: top
+        anchor_y: left
+        expire: 10s
         events_when_removed: banked_l_bs_wipe_done
         animations:
           show_slide:
-            - property: scale
-              value: 0.1
-              relative: false
-              duration: 0.5s
+            - property: points
+              value: -400,-1000,   -400,-1000,   -400,-1000
+              relative: true
+              duration: 10s
+#              easing: out_circ #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+#      - type: ellipse
+#        x: 10%
+#        y: 22%
+#        color: red
+#        anchor_x: middle
+#        anchor_y: middle
+#        width: 1100
+#        height: 1900
+#        expire: 0.5s
+#        z: 1
+#        events_when_removed: banked_l_bs_wipe_done
+#        animations:
+#          show_slide:
+#            - property: scale
+#              value: 0.1
+#              relative: false
+#              duration: 0.5s
 #              easing: out_circ #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
 
 #      - type: ellipse
