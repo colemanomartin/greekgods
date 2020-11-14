@@ -1,0 +1,201 @@
+#config_version=5
+# This mode manages the display_light_player sweeps for all game modes
+mode:
+  priority: 3000 # runs above the mb modes
+  start_events:
+    - game_started
+  stop_events:
+    - game_ending
+  game_mode: false
+
+display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
+  mode_sweep_server_started: #mode_mystery_started:
+    led_matrix:
+      action: play  #Default
+      lights: gi, insert  #right_orbit
+  mode_sweep_server_ended: #Otherwise the mode hangs
+    led_matrix:
+      action: stop
+      lights: gi, insert
+
+widgets:
+  triangle_scoop_sweep:
+  - type: triangle
+    color: white
+    points: 254,700,    0,1290,    508,1290
+    anchor_x: center
+    anchor_y: bottom
+    rotation: 0
+    z: 1
+    expire: 0.5s
+    events_when_removed: triangle_sweep_complete
+    animations:
+      add_to_slide:
+        - property: points
+          value: 0, -1200, 0,-1290, 0,-1290
+          relative: true
+          duration: 0.5s
+          easing: linear
+        - property: opacity
+          value: 0.6
+          relative: false
+          duration: 0.5s
+          easing: linear
+          timing: with_previous
+
+widget_player:
+  ball_waiting_to_eject_from_scoop:
+    triangle_scoop_sweep:
+      target: blank_transparent
+
+
+slide_player:
+  #This slide sits atop the playfield for the duration of the game and
+  #Sweeps are widget playered on top of it
+  mode_scoop_eject_display_started:
+    blank_transparent:
+      target: led_matrix
+      background_color: 00000000 #Background with no opacity required
+#      widgets:
+#      - type: quad
+#        points: 0, 200, 0,900, 508,900,  508,0
+#        color: red
+#        opacity: 0
+#        expire: 5s
+
+  mystery_hole_received_ball_hit: #Playfield sweep used by mystery mode during menu display
+    #This is four bars stacked atop one another the under bars are larger and dimmer
+    #All display at same time and rotate synchronously. This targets directly to the
+    #LED matrix and not the slide like the other ones.
+    rotating_faded_bar:
+      target: led_matrix
+      background_color: 00000000 #Background with no opacity required
+      widgets:
+      - type: rectangle
+        x: 254
+        y: 500
+        width: 1000
+        height: 200
+        color: 08080808
+        anchor_x: center
+        anchor_y: center
+        rotation: 0
+        z: 1
+        animations:
+          show_slide:
+            - property: rotation
+              value: 90
+              relative: false
+              duration: .7s
+              easing: in_out_back #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+            - property: rotation
+              value: 180
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 270
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 360
+              relative: false
+              duration: .7s
+              easing: in_out_back
+      - type: rectangle
+        x: 254
+        y: 500
+        width: 1000
+        height: 170
+        color: 222222
+        anchor_x: center
+        anchor_y: center
+        rotation: 0
+        z: 2
+        animations:
+          show_slide:
+            - property: rotation
+              value: 90
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 180
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 270
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 360
+              relative: false
+              duration: .7s
+              easing: in_out_back
+      - type: rectangle
+        x: 254
+        y: 500
+        width: 1000
+        height: 140
+        color: 666666
+        anchor_x: center
+        anchor_y: center
+        rotation: 0
+        z: 3
+        animations:
+          show_slide:
+            - property: rotation
+              value: 90
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 180
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 270
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 360
+              relative: false
+              duration: .7s
+              easing: in_out_back
+      - type: rectangle
+        x: 254
+        y: 500
+        width: 1000
+        height: 110
+        color: FFFFFF
+        anchor_x: center
+        anchor_y: center
+        rotation: 0
+        z: 4
+        animations:
+          show_slide:
+            - property: rotation
+              value: 90
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 180
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 270
+              relative: false
+              duration: .7s
+              easing: in_out_back
+            - property: rotation
+              value: 360
+              relative: false
+              duration: .7s
+              easing: in_out_back

@@ -1,0 +1,38 @@
+#show_version=5
+- duration: 2
+  slides:
+    award100000:
+      target: playfield_lcd
+      priority: 100
+      widgets:
+      - type: text
+        text: Mystery Award
+        color: white
+        y: 80%
+        font_size: 80
+      - type: text
+        text: 100,000 points
+        color: white
+        y: 50%
+        font_size: 80
+        animations:
+          add_to_slide:
+            - property: scale
+              value: 1.15
+              relative: false
+              duration: 2s
+              easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+      - type: text
+        text: Awarded!
+        font_size: 80
+        color: white
+        y: 30%
+        animations:
+          add_to_slide:
+            - property: scale
+              value: 1.15
+              relative: false
+              duration: 2s
+              easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+- duration: 50ms
+  events: mystery_solved

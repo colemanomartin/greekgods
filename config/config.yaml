@@ -40,7 +40,7 @@ modes:
   - scoop #10000 Manager
   - bb_down #Manager
   - temple_display # 400 adds widgets to playfield display to show where ball will go in response to ramp diverter flap
-  - scoop_eject_display #2000
+#  - scoop_eject_display #2000
   - field #200
   - p_ramp_mb #1000
   - o_ramp_mb #1100
@@ -54,9 +54,9 @@ modes:
 #  - sound_loops #150
   - sound_effects # 175
   - drain_display #2000
-  - banked_l_bs #250
-  - banked_r_bs #250
-
+#  - banked_l_bs #250
+#  - banked_r_bs #250
+  - sweep_server #3000
 #  - hades_mini_game
 coil_player:
   machine_reset_phase_2: #drops block at startup in case a ball is in subway

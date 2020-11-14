@@ -134,15 +134,15 @@ random_event_player:
       award_super_spinner: 30
 
 
-display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
-  mystery_hole_received_ball_hit: #mode_mystery_started:
-    led_matrix:
-      action: play  #Default
-      lights: gi, insert  #right_orbit
-  mode_mystery_ended: #Otherwise the mode hangs
-    led_matrix:
-      action: stop
-      lights: gi, insert
+#display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
+#  mystery_hole_received_ball_hit: #mode_mystery_started:
+#    led_matrix:
+#      action: play  #Default
+#      lights: gi, insert  #right_orbit
+#  mode_mystery_ended: #Otherwise the mode hangs
+#    led_matrix:
+#      action: stop
+#      lights: gi, insert
 
 show_player:
   mode_mystery_started:
@@ -208,7 +208,7 @@ slides:
     priority: 100
     widgets:
     - type: text
-      text: Shoot Right Orbit
+      text: Shoot Orbit
       color: white
       y: 65%
       font_size: 60
@@ -276,142 +276,142 @@ slide_player:
     mystery_award_menu_header:
       target: playfield_lcd
       action: play
-    rotating_faded_bar:
-      target: led_matrix
-      background_color: 00000000 #Background with no opacity required
-      widgets:
-      - type: rectangle
-        x: 254
-        y: 500
-        width: 1000
-        height: 200
-        color: 08080808
-        anchor_x: center
-        anchor_y: center
-        rotation: 0
-        z: 1
-        animations:
-          show_slide:
-            - property: rotation
-              value: 90
-              relative: false
-              duration: .7s
-              easing: in_out_back #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
-            - property: rotation
-              value: 180
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 270
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 360
-              relative: false
-              duration: .7s
-              easing: in_out_back
-      - type: rectangle
-        x: 254
-        y: 500
-        width: 1000
-        height: 170
-        color: 222222
-        anchor_x: center
-        anchor_y: center
-        rotation: 0
-        z: 2
-        animations:
-          show_slide:
-            - property: rotation
-              value: 90
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 180
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 270
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 360
-              relative: false
-              duration: .7s
-              easing: in_out_back
-      - type: rectangle
-        x: 254
-        y: 500
-        width: 1000
-        height: 140
-        color: 666666
-        anchor_x: center
-        anchor_y: center
-        rotation: 0
-        z: 3
-        animations:
-          show_slide:
-            - property: rotation
-              value: 90
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 180
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 270
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 360
-              relative: false
-              duration: .7s
-              easing: in_out_back
-      - type: rectangle
-        x: 254
-        y: 500
-        width: 1000
-        height: 110
-        color: FFFFFF
-        anchor_x: center
-        anchor_y: center
-        rotation: 0
-        z: 4
-        animations:
-          show_slide:
-            - property: rotation
-              value: 90
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 180
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 270
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 360
-              relative: false
-              duration: .7s
-              easing: in_out_back
-  mode_mystery_ending: #timer_mystery_slide_number_complete:
-    shoot_right_orbit: #rotating_faded_bar: # shoot_right_orbit:
-      target: led_matrix
-      action: remove
+#    rotating_faded_bar:
+#      target: led_matrix
+#      background_color: 00000000 #Background with no opacity required
+#      widgets:
+#      - type: rectangle
+#        x: 254
+#        y: 500
+#        width: 1000
+#        height: 200
+#        color: 08080808
+#        anchor_x: center
+#        anchor_y: center
+#        rotation: 0
+#        z: 1
+#        animations:
+#          show_slide:
+#            - property: rotation
+#              value: 90
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+#            - property: rotation
+#              value: 180
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#            - property: rotation
+#              value: 270
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#            - property: rotation
+#              value: 360
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#      - type: rectangle
+#        x: 254
+#        y: 500
+#        width: 1000
+#        height: 170
+#        color: 222222
+#        anchor_x: center
+#        anchor_y: center
+#        rotation: 0
+#        z: 2
+#        animations:
+#          show_slide:
+#            - property: rotation
+#              value: 90
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#            - property: rotation
+#              value: 180
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#            - property: rotation
+#              value: 270
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#            - property: rotation
+#              value: 360
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#      - type: rectangle
+#        x: 254
+#        y: 500
+#        width: 1000
+#        height: 140
+#        color: 666666
+#        anchor_x: center
+#        anchor_y: center
+#        rotation: 0
+#        z: 3
+#        animations:
+#          show_slide:
+#            - property: rotation
+#              value: 90
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#            - property: rotation
+#              value: 180
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#            - property: rotation
+#              value: 270
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#            - property: rotation
+#              value: 360
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#      - type: rectangle
+#        x: 254
+#        y: 500
+#        width: 1000
+#        height: 110
+#        color: FFFFFF
+#        anchor_x: center
+#        anchor_y: center
+#        rotation: 0
+#        z: 4
+#        animations:
+#          show_slide:
+#            - property: rotation
+#              value: 90
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#            - property: rotation
+#              value: 180
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#            - property: rotation
+#              value: 270
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#            - property: rotation
+#              value: 360
+#              relative: false
+#              duration: .7s
+#              easing: in_out_back
+#  mode_mystery_ending: #timer_mystery_slide_number_complete:
+#    shoot_right_orbit: #rotating_faded_bar: # shoot_right_orbit:
+#      target: led_matrix
+#      action: remove
 
 widgets:
   10000_points:
