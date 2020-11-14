@@ -1,5 +1,7 @@
 #config_version=5
 # This mode manages the display_light_player sweeps for all game modes
+#Playfield Display width: 508 height: 1190
+#> 1000 or 84% is BB < 980 upper apron; < 920 orbit
 mode:
   priority: 3000 # runs above the mb modes
   start_events:
@@ -42,27 +44,179 @@ widgets:
           duration: 0.5s
           easing: linear
           timing: with_previous
+  ark_sweep_left:
+    - type: bezier
+      points: 0,1060,    433,960,    508,760
+      thickness: 90
+      color: red
+      anchor_x: left
+      anchor_y: top
+      expire: 0.5s
+      animations:
+        add_to_slide:
+          - property: points
+            value: -400,-1000,   -400,-1000,   -400,-1000
+            relative: true
+            duration: 0.5s
+  ark_sweep_right:
+    - type: bezier
+      points: 0,760,    75,960,    508,1060
+      thickness: 90
+      color: red
+      anchor_x: left
+      anchor_y: bottom
+      expire: 0.5s
+      animations:
+        add_to_slide:
+          - property: points
+            value: 400,-1000,   400,-1000,   400,-1000
+            relative: true
+            duration: 0.5s
+  scroll_line_up:
+    - type: rectangle
+      x: 0
+      y: 0
+      width: 508
+      height: 50
+      color: FFFFFF
+      anchor_x: left
+      anchor_y: bottom
+      expire: 0.4s
+      animations:
+        add_to_slide:
+        - property: y
+          value: 1000
+          relative: true
+          duration: 0.4s
+          easing: linear
 
 widget_player:
   ball_waiting_to_eject_from_scoop:
     triangle_scoop_sweep:
-      target: blank_transparent
-
+      slide: blank_transparent
+  mode_banked_l_bs_started:
+    ark_sweep_left:
+      slide: blank_transparent
+  mode_banked_r_bs_started:
+    ark_sweep_right:
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==1}:
+    scroll_line_up:
+      key: widget_line_1
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==2}:
+    scroll_line_up:
+      key: widget_line_2
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==3}:
+    scroll_line_up:
+      key: widget_line_3
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==4}:
+    scroll_line_up:
+      key: widget_line_4
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==5}:
+    scroll_line_up:
+      key: widget_line_5
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==6}:
+    scroll_line_up:
+      key: widget_line_6
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==7}:
+    scroll_line_up:
+      key: widget_line_7
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==8}:
+    scroll_line_up:
+      key: widget_line_8
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==9}:
+    scroll_line_up:
+      key: widget_line_9
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==10}:
+    scroll_line_up:
+      key: widget_line_10
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==11}:
+    scroll_line_up:
+      key: widget_line_11
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==12}:
+    scroll_line_up:
+      key: widget_line_12
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==13}:
+    scroll_line_up:
+      key: widget_line_13
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==14}:
+    scroll_line_up:
+      key: widget_line_14
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==15}:
+    scroll_line_up:
+      key: widget_line_15
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==16}:
+    scroll_line_up:
+      key: widget_line_16
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==17}:
+    scroll_line_up:
+      key: widget_line_17
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==18}:
+    scroll_line_up:
+      key: widget_line_18
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==19}:
+    scroll_line_up:
+      key: widget_line_19
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==20}:
+    scroll_line_up:
+      key: widget_line_20
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==21}:
+    scroll_line_up:
+      key: widget_line_21
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==22}:
+    scroll_line_up:
+      key: widget_line_22
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==23}:
+    scroll_line_up:
+      key: widget_line_23
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==24}:
+    scroll_line_up:
+      key: widget_line_24
+      slide: blank_transparent
+  logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==25}:
+    scroll_line_up:
+      key: widget_line_25
+      slide: blank_transparent
 
 slide_player:
   #This slide sits atop the playfield for the duration of the game and
   #Sweeps are widget playered on top of it
-  mode_scoop_eject_display_started:
+  mode_sweep_server_started:
     blank_transparent:
       target: led_matrix
       background_color: 00000000 #Background with no opacity required
-#      widgets:
-#      - type: quad
-#        points: 0, 200, 0,900, 508,900,  508,0
-#        color: red
-#        opacity: 0
-#        expire: 5s
-
+      widgets:
+      - type: quad
+        points: 0, 200, 0,900, 508,900,  508,0
+        color: red
+        opacity: 0
+        expire: 5s
+  mode_sweep_server_ending:
+    blank_transparent:
+      action: remove #dont know if this is needed.
   mystery_hole_received_ball_hit: #Playfield sweep used by mystery mode during menu display
     #This is four bars stacked atop one another the under bars are larger and dimmer
     #All display at same time and rotate synchronously. This targets directly to the
@@ -70,6 +224,7 @@ slide_player:
     rotating_faded_bar:
       target: led_matrix
       background_color: 00000000 #Background with no opacity required
+      expire: 2.8s #Otherwise the last rectangle position sits on the screen
       widgets:
       - type: rectangle
         x: 254

@@ -19,15 +19,15 @@ multiballs:
     start_events: right_outlane_banked_ballsave_hit
     debug: true
 
-display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
-  mode_banked_r_bs_started: #started.100 for higher priority?
-    led_matrix:
-      action: play  #Default
-      lights: gi, insert  #right_orbit
-  banked_r_bs_wipe_done: #Otherwise the mode hangs
-    led_matrix:
-      action: stop
-      lights: gi, insert
+# function moved to sweep server display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
+#  mode_banked_r_bs_started: #started.100 for higher priority?
+#    led_matrix:
+#      action: play  #Default
+#      lights: gi, insert  #right_orbit
+#  banked_r_bs_wipe_done: #Otherwise the mode hangs
+#    led_matrix:
+#      action: stop
+#      lights: gi, insert
 
 timers:
   right_bs_expiration:
@@ -71,7 +71,7 @@ show_player:
     show_right_shoulder_2:
       action: stop
     show_right_shoulder_3:
-      action: stop_l_bs
+      action: stop
     show_right_shoulder_4:
       action: stop
     show_right_shoulder_5:
@@ -155,28 +155,27 @@ show_player:
 
 #Playfield Display width: 508 height: 1190
 #> 1000 or 84% is BB < 980 upper apron; < 920 orbit
-
-slide_player:
-  mode_banked_r_bs_started:
-    ark_sweep_right:
-      target: led_matrix
-      background_color: 00000000 #Background with no opacity required
-      widgets:
-      - type: bezier
-#        points: 0,1060,    433,960,    508,760
-        points: 0,760,    75,960,    508,1060
-        thickness: 90
-        color: red
-        anchor_x: top
-        anchor_y: left
-        expire: 0.5s
-        events_when_removed: banked_l_bs_wipe_done
-        animations:
-          show_slide:
-            - property: points
-              value: 400,-1000,   400,-1000,   400,-1000
-              relative: true
-              duration: 0.5s
+#
+#slide_player:
+#  mode_banked_r_bs_started:
+#    ark_sweep_right:
+#      target: led_matrix
+#      background_color: 00000000 #Background with no opacity required
+#      widgets:
+#      - type: bezier
+#        points: 0,760,    75,960,    508,1060
+#        thickness: 90
+#        color: red
+#        anchor_x: top
+#        anchor_y: left
+#        expire: 0.5s
+#        events_when_removed: banked_l_bs_wipe_done
+#        animations:
+#          show_slide:
+#            - property: points
+#              value: 400,-1000,   400,-1000,   400,-1000
+#              relative: true
+#              duration: 0.5s
 
 sound_player:
   mode_banked_r_bs_started: comboballsavelocked
