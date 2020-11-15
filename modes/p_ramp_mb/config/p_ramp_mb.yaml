@@ -108,7 +108,7 @@ event_player:
   mode_poseidon_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls==2}: ramp_servo_divert_right #Mode starting after a drain, and lock already full. moves diverter in case other player had diverter in wrong postion. bb_down handels dropping the ball block
   multiball_poseidon_ramp_started:
     - ramp_servo_divert_left #Send to left because more fun.
-    - release_bb_override
+#    - release_bb_override #commented out 11/15/20 because when next ball starts ball block raises
 #  multiball_lock_poseidon_lock_full: keep_bb_down
 #  multiball_poseidon_ramp_started: release_bb_override
 

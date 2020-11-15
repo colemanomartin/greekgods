@@ -455,7 +455,7 @@ coils:
         number: A3-B1-4
         label:
         tags:
-        default_pulse_ms: 45
+        default_pulse_ms: 50 #prev 45
         default_hold_power: 0.5 #Has to have a hold power to be used as a diverter.
     c_poseidon_lock_ball_release: #used by the ball device and the diverter. Because of this cant use pulse power since it is incompatible with hold power
         number: A3-B1-5
@@ -799,7 +799,7 @@ ball_devices:
     ball_missing_target: earth_pf
     eject_coil: c_olympus_lock_ball_release
     ball_switches: s_olympus_lock_proximal, s_olympus_lock_distal #0 is closer to the release solinoid
-    eject_coil_enable_time: 230ms
+    eject_coil_enable_time: 260ms #230ms
     eject_coil_retry_pulse: 500ms
     eject_timeouts: 1500ms
     entrance_count_delay: 1000ms

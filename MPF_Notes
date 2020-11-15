@@ -248,21 +248,32 @@ To get to the repo from ssh have to generate a local ssh public and private key 
    To pull, click Fetch and then Pull.
 
 Things to add:
-  Orbit light show for ramp shots
+
   For hydra and scoop MB, take over diverter
   and shunt to unused ramp if ball locked. If ball locked, prevent.
   Right down the middle ball save.
   Eject time outs for ramps
   Minimum balls
-  increase eject time for right ramp
+
   block hydra from starting when ball locked
   block scoop MB from starting when ball locked.
   adjust probabilities on mystery depending on locking
-  Dont raise BB after ball starts when a ramp is qualified.
+
   Dont raise BB after starting super spinner.
   Make scoop shot a qualifying equivelent if starting super spinner of hydra.
-  Check log to see what raised BB when ball starts after BB dropped and what starts timer if hit.
-  Countdown timer on double ramp ball save 12 on right 11 on left
+
+  Changes to super spinner:
+  Collect bonus at left side pop.
+  Dont remove counts when draining ball before scoop shot hit.
+  If ball drains after scoop shot hit mode ends.
+  Have field start super spinner mode when goal reached and let mode engage functions when scoop shot is made.
+  Reset counter and remove widgets when super spinner mode ends
+  If ball drains before scoop hit, let mode restart on next ball and keep scoop down until hit unless P or O ball demand it up again
+
+  Make a new mode that operates like super spinner and counts pop shots for subway MB invited at scoop.
+
+
+
 Hardware:
   Check trough switches.
 

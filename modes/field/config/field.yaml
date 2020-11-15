@@ -58,18 +58,24 @@ event_player:
 #    - relese_bb_override #(if present)
   field_says_invite_hydra_battle_at_scoop:
     - force_bb_down
-  ball_drain{device.shots.field_invite_hydra_at_scoop.state_name=='default_one_state'}: #would be better if there were an .enabled but this works
-    - release_bb_override
-    - field_says_raise_bb
   field_invite_hydra_at_scoop_hit:
     - release_bb_override
   field_says_invite_super_spinner_at_scoop:
     - force_bb_down
-  ball_drain{device.shots.field_invite_super_spinner_at_scoop.state_name=='default_one_state'}: #would be better if there were an .enabled but this works
-    - release_bb_override
-    - field_says_raise_bb
   field_invite_super_spinner_at_scoop_hit:
     - release_bb_override
+#These next two lines were in the code but removed 11/15/2020 because they always tested true causing the BB to raise with a ball drain.
+#I dont remember why I put them in. It might have been to force a peanility when ball lost causing player to again hit hydra or spinner to requalify
+#Anyway it seems to work without these lines
+#  ball_drain{device.shots.field_invite_hydra_at_scoop.state_name=='default_one_state'}: #should probably be formatted {device.shots.field_invite_hydra_at_scoop.enabled}
+#    - release_bb_override
+#    - field_says_raise_bb
+#  ball_drain{device.shots.field_invite_super_spinner_at_scoop.state_name=='default_one_state'}: #should probably be formatted {device.shots.field_invite_super_spinner_at_scoop.enabled}
+#    - release_bb_override
+#    - field_says_raise_bb
+
+
+
 #  field_poseidon_mech_hit{device.timers.poseidon_excitement.running and device.timers.poseidon_excitement.ticks>25}: p_locking_elgible
 #    - restart_poseidon_excitement{not device.timers.poseidon_excitement.running}
 #    - increase_poseidon_excitement{device.timers.poseidon_excitement.running}

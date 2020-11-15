@@ -105,7 +105,7 @@ widgets:
         - property: y
           value: 1000
           relative: true
-          duration: 0.4s
+          duration: 0.8s
           easing: linear
   yellow_lock_up:
     - type: rectangle
@@ -122,7 +122,7 @@ widgets:
         - property: y
           value: 1000
           relative: true
-          duration: 0.4s
+          duration: 0.8s
           easing: linear
   green_lock_up: #For subway
     - type: rectangle
@@ -139,7 +139,7 @@ widgets:
         - property: y
           value: 1000
           relative: true
-          duration: 0.4s
+          duration: 0.8s
           easing: linear
   red_lock_up: #For hades ball hold
     - type: rectangle
@@ -156,66 +156,141 @@ widgets:
         - property: y
           value: 1000
           relative: true
-          duration: 0.4s
+          duration: 0.8s
           easing: linear
-  red_box_step_ccw: #rectangle does a dance 2 x around the inserts for P MB
-    - type: rectangle #Start top left
-      x: 0
+  red_box_step_ccw: #rectangle does a ccw dance 3 x around the inserts for P MB
+    - type: rectangle
+      x: 0             #Start top left
       y: 980
       width: 250
       height: 300
       color: FF0000
       anchor_x: left
       anchor_y: top
-      expire: 2.25s
+      expire: 3.75 #3.25s This should be enough but it seems the animations slow add in extra time
       animations:
         add_to_slide:
             - property: y #botton left
               value: 300
               relative: false
-              duration: .25s
-              easing: in_out_back
+              duration: 0.25s
             - property: x #bottom right
               value: 258
               relative: false
-              duration: .25s
-              easing: in_out_back
+              duration: 0.25s
             - property: y #Top right
               value: 980
               relative: false
-              duration: .25s
-              easing: in_out_back
+              duration: 0.25s
             - property: x #Top left
               value: 0
               relative: false
-              duration: .25s
-              easing: in_out_back
+              duration: 0.25s
             - property: y #bottm left
               value: 300
               relative: false
-              duration: .25s
-              easing: in_out_back
+              duration: 0.25s
             - property: x #bottom right
               value: 258
               relative: false
-              duration: .25s
-              easing: in_out_back
+              duration: 0.25s
             - property: y #top right
               value: 980
               relative: false
-              duration: .25s
-              easing: in_out_back
+              duration: 0.25s
             - property: x #top left
               value: 0
               relative: false
-              duration: .25s
-              easing: in_out_back
+              duration: 0.25s
             - property: y #bottom left
               value: 300
               relative: false
-              duration: .25s
-              easing: in_out_back
-            - property: opacity
+              duration: 0.25s
+            - property: x #bottom right
+              value: 258
+              relative: false
+              duration: 0.25s
+            - property: y #top right
+              value: 980
+              relative: false
+              duration: 0.25s
+            - property: x #top left
+              value: 0
+              relative: false
+              duration: 0.25s
+            - property: y #bottom left
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: opacity #and fade
+              value: 0.1
+              duration: 0.25s
+              timing: with_previous
+  red_box_step_cw: #rectangle does a clockwise dance 3 x around the inserts for O MB
+    - type: rectangle
+      x: 258             #Start top right
+      y: 980
+      width: 250
+      height: 300
+      color: FF0000
+      anchor_x: left
+      anchor_y: top
+      expire: 3.75s #3.25added a little
+      animations:
+        add_to_slide:
+            - property: y #botton right
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: x #bottom left
+              value: 0
+              relative: false
+              duration: 0.25s
+            - property: y #Top left
+              value: 980
+              relative: false
+              duration: 0.25s
+            - property: x #Top right
+              value: 258
+              relative: false
+              duration: 0.25s
+            - property: y #botton right
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: x #bottom left
+              value: 0
+              relative: false
+              duration: 0.25s
+            - property: y #Top left
+              value: 980
+              relative: false
+              duration: 0.25s
+            - property: x #Top right
+              value: 258
+              relative: false
+              duration: 0.25s
+            - property: y #botton right
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: x #bottom left
+              value: 0
+              relative: false
+              duration: 0.25s
+            - property: y #Top left
+              value: 980
+              relative: false
+              duration: 0.25s
+            - property: x #Top right
+              value: 258
+              relative: false
+              duration: 0.25s
+            - property: y #botton right
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: opacity #and fade
               value: 0.1
               duration: 0.25s
               timing: with_previous
@@ -242,6 +317,9 @@ widget_player:
       slide: blank_transparent
   multiball_poseidon_ramp_started:
     red_box_step_ccw:
+      slide: blank_transparent
+  multiball_olympus_ramp_started:
+    red_box_step_cw:
       slide: blank_transparent
   logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==1}:
     scroll_line_up:
