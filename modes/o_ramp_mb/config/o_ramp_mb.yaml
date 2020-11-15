@@ -478,7 +478,7 @@ slide_player:
 #    load: mode_start
 #    file: shoot_rampmb.gif
 
-#sound_player:
+#sound_player:   !!!!!!!!! Check names and change to olympus locks and logic
 #  mode_poseidon_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2}: shootramplockballs
 #  multiball_poseidon_ramp_started: multiball
 #  multiball_lock_poseidon_lock_full: shoot_ramp_mb #defigned in sounds in config

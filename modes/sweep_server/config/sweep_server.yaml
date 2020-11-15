@@ -1,5 +1,6 @@
 #config_version=5
 # This mode manages the display_light_player sweeps for all game modes
+# https://htmlcolorcodes.com/color-names/
 #Playfield Display width: 508 height: 1190
 #> 1000 or 84% is BB < 980 upper apron; < 920 orbit
 mode:
@@ -89,6 +90,135 @@ widgets:
           relative: true
           duration: 0.4s
           easing: linear
+  blue_lock_up:
+    - type: rectangle
+      x: 0
+      y: 0
+      width: 508
+      height: 100
+      color: 0000FF
+      anchor_x: left
+      anchor_y: bottom
+      expire: 0.8s
+      animations:
+        add_to_slide:
+        - property: y
+          value: 1000
+          relative: true
+          duration: 0.4s
+          easing: linear
+  yellow_lock_up:
+    - type: rectangle
+      x: 0
+      y: 0
+      width: 508
+      height: 100
+      color: FFFF00
+      anchor_x: left
+      anchor_y: bottom
+      expire: 0.8s
+      animations:
+        add_to_slide:
+        - property: y
+          value: 1000
+          relative: true
+          duration: 0.4s
+          easing: linear
+  green_lock_up: #For subway
+    - type: rectangle
+      x: 0
+      y: 0
+      width: 508
+      height: 100
+      color: 00FF00
+      anchor_x: left
+      anchor_y: bottom
+      expire: 0.8s
+      animations:
+        add_to_slide:
+        - property: y
+          value: 1000
+          relative: true
+          duration: 0.4s
+          easing: linear
+  red_lock_up: #For hades ball hold
+    - type: rectangle
+      x: 0
+      y: 0
+      width: 508
+      height: 100
+      color: FF0000
+      anchor_x: left
+      anchor_y: bottom
+      expire: 0.8s
+      animations:
+        add_to_slide:
+        - property: y
+          value: 1000
+          relative: true
+          duration: 0.4s
+          easing: linear
+  red_box_step_ccw: #rectangle does a dance 2 x around the inserts for P MB
+    - type: rectangle #Start top left
+      x: 0
+      y: 980
+      width: 250
+      height: 300
+      color: FF0000
+      anchor_x: left
+      anchor_y: top
+      expire: 2.25s
+      animations:
+        add_to_slide:
+            - property: y #botton left
+              value: 300
+              relative: false
+              duration: .25s
+              easing: in_out_back
+            - property: x #bottom right
+              value: 258
+              relative: false
+              duration: .25s
+              easing: in_out_back
+            - property: y #Top right
+              value: 980
+              relative: false
+              duration: .25s
+              easing: in_out_back
+            - property: x #Top left
+              value: 0
+              relative: false
+              duration: .25s
+              easing: in_out_back
+            - property: y #bottm left
+              value: 300
+              relative: false
+              duration: .25s
+              easing: in_out_back
+            - property: x #bottom right
+              value: 258
+              relative: false
+              duration: .25s
+              easing: in_out_back
+            - property: y #top right
+              value: 980
+              relative: false
+              duration: .25s
+              easing: in_out_back
+            - property: x #top left
+              value: 0
+              relative: false
+              duration: .25s
+              easing: in_out_back
+            - property: y #bottom left
+              value: 300
+              relative: false
+              duration: .25s
+              easing: in_out_back
+            - property: opacity
+              value: 0.1
+              duration: 0.25s
+              timing: with_previous
 
 widget_player:
   ball_waiting_to_eject_from_scoop:
@@ -100,9 +230,22 @@ widget_player:
   mode_banked_r_bs_started:
     ark_sweep_right:
       slide: blank_transparent
+  multiball_lock_poseidon_lock_locked_ball:
+    blue_lock_up:
+      slide: blank_transparent
+  multiball_lock_olympus_lock_locked_ball:
+    yellow_lock_up:
+      slide: blank_transparent
+  mode_super_spinner_started:
+    scroll_line_up:
+      key: widget_line_0 #To allow each line to instance each has a unique key
+      slide: blank_transparent
+  multiball_poseidon_ramp_started:
+    red_box_step_ccw:
+      slide: blank_transparent
   logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==1}:
     scroll_line_up:
-      key: widget_line_1
+      key: widget_line_1 #To allow each line to instance each has a unique key
       slide: blank_transparent
   logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==2}:
     scroll_line_up:
