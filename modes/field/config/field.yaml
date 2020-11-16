@@ -60,10 +60,10 @@ event_player:
     - force_bb_down
   field_invite_hydra_at_scoop_hit:
     - release_bb_override
-  field_says_invite_super_spinner_at_scoop:
-    - force_bb_down
-  field_invite_super_spinner_at_scoop_hit:
-    - release_bb_override
+#  field_says_invite_super_spinner_at_scoop: Moved to super spinner mode 11/16
+#    - force_bb_down
+#  field_invite_super_spinner_at_scoop_hit: Moved to super spinner mode 11/16
+#    - release_bb_override
 #These next two lines were in the code but removed 11/15/2020 because they always tested true causing the BB to raise with a ball drain.
 #I dont remember why I put them in. It might have been to force a peanility when ball lost causing player to again hit hydra or spinner to requalify
 #Anyway it seems to work without these lines
@@ -151,16 +151,7 @@ shots:
     disable_events:
       - mode_field_stopping
       - field_invite_hydra_at_scoop_hit
-  field_invite_super_spinner_at_scoop:
-    playfield: earth_pf
-    profile: one_state
-    hit_events:
-      - base_scoop_from_pf_hit
-    enable_events:
-      - field_says_invite_super_spinner_at_scoop
-    disable_events:
-      - mode_field_stopping
-      - field_invite_super_spinner_at_scoop_hit
+
 #Example
 #light_player:
 #  "{machine.test_machine_var == 23}":
@@ -243,26 +234,27 @@ counters:
       - event: ball_drain{device.shots.field_invite_hydra_at_scoop.enabled} # state_name=='default_one_state'}
         action: jump
         value: 28 #Dont start completely over if ball drained before scoop hit.
+
   field_spins: #Counts spin hits to qualify super spinner mode which is started by invited scoop shot
     enable_events: mode_field_started
     count_events:
       - base_olympus_spinner_hit{mode.super_spinner.active == False}
       - base_orbit_spinner_hit{mode.super_spinner.active == False}
-      - base_orbit_spinner_2_hit{mode.super_spinner.active == False}
+      - base_orbit_spinner_2_hit{mode.super_spinner.active == False} #Made 2 shots for this switch to make spinner count double for a faster game
     persist_state: True #does not reset when ball drains
     reset_events:
       - field_invite_super_spinner_at_scoop_hit # Causes mode_super_spinner to start
       - game_ending
-    events_when_complete: field_says_invite_super_spinner_at_scoop
+    events_when_complete: field_says_start_super_spinner_mode
     count_complete_value: 94
     disable_on_complete: False #Leave it working so it can subtract if field ends from ball drain
     control_events:
       - event: logicblock_field_spins_updated{current_player.player_base_spins>90 and (device.multiball_locks.poseidon_lock.locked_balls == 2 or device.multiball_locks.olympus_lock.locked_balls == 2)}
         action: jump
-        value: 88 # cap it close to goal if there is a ball locked somehwere. This prevents starting super spinner when two balls is locked.
-      - event: ball_drain{device.shots.field_invite_super_spinner_at_scoop.enabled} #state_name=='default_one_state'}
-        action: jump
-        value: 90 #Dont start completely over if ball drained before scoop hit.
+        value: 88 # cap it close to goal if there is a lock ready to be flushed
+#      - event: ball_drain{device.shots.field_invite_super_spinner_at_scoop.enabled} #state_name=='default_one_state'}
+#        action: jump
+#        value: 90 #Dont start completely over if ball drained before scoop hit.
     debug: True
   field_olympus_gate: #Lets spinner work as an olympyus mech. one hit per time throught the spinner.
     enable_events: mode_field_started

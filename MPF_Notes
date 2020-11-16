@@ -249,14 +249,19 @@ To get to the repo from ssh have to generate a local ssh public and private key 
 
 Things to add:
 
-  For hydra and scoop MB, take over diverter
+  Combo shot for double orbit with light show and point bonus.
+  Combo shot for hit BB then scoop. Ball hold and contracting circle of light.
+  4 hits to scoop like that is a trip to hades. Prevent if in subway locking.
+  Sweeps to attract
+
+  For hydra and scoop MB, take over diverter. Only allow if <= 1 ball locked one side
   and shunt to unused ramp if ball locked. If ball locked, prevent.
   Right down the middle ball save.
   Eject time outs for ramps
   Minimum balls
 
   block hydra from starting when ball locked
-  block scoop MB from starting when ball locked.
+  block scoop MB from starting when > 1 ball locked.
   adjust probabilities on mystery depending on locking
 
   Dont raise BB after starting super spinner.

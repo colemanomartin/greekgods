@@ -1,26 +1,39 @@
 #config_version=5
 # Mode activates when field_spins = 100 or mystery award show_award_super_spinner posts.
-# After every 25 hits to a spinner, shooting the ramp will collect an extra bonus.
-# If the ramp shot is hit, the mode continues, otherwise the mode ends without bonus.
+# When count from field completes, mode starts and mode pulls down scoop waiting for
+# scoop shot to activate shots, bonuses and shows
+# After every 25 hits to a spinner, shooting the left pop will collect an extra bonus.
+# If the pop shot is hit, the mode continues, otherwise the mode ends without bonus.
 # It doubles the points and lightshow on the spinners. Autofire coil knocker
 # has enables that look for this mode to start which makes the c_u_knocker
 # gently pulses with each spinner activation. Sound will also give a thump
 # lastly when super spinner is active hits to either olympus or poseidon area
 # gives extra ticks on the excitement timers on base.
 # It also doubles hits to hydra in field or in battle hydra mode
+# consider adding a .7 sec ball hold to the scoop eject 
 mode:
-  priority: 1400 # Run over base and MB modes so lights show
+  priority: 1400 # Run over base and MB modes so slides show
   start_events:
-    - mystery_super_spinner #Award from mode_mystery
-    - field_invite_super_spinner_at_scoop_hit #Threshold set in field in counters section
+    - mystery_super_spinner #Award from mode_mystery subsiquent events in script hit the shot.
+    - field_says_start_super_spinner_mode #Threshold set in field in counters section
   stop_events:
     - ball_ended
     - timer_super_spinner_countdown_complete
+  restart_on_next_ball: true
+
+
+
+#Maybe change these event names to ss_says_... and make new events in scoop mode startup section
+event_player:
+  mode_super_spinner_started:
+    - force_bb_down
+  super_spinner_kickoff_hit:
+    - release_bb_override
 
 variable_player:
-  base_orbit_spinner_hit:
+  base_orbit_spinner_hit{not device.shots.super_spinner_kickoff.enabled}: #Dont start until scoop hit
     score: 25 #give additional 25 points per spin
-  base_olympus_spinner_hit:
+  base_olympus_spinner_hit{not device.shots.super_spinner_kickoff.enabled}:
     score: 50
   super_spinner_bonus_hit:
     score: 50000
@@ -41,10 +54,21 @@ shot_profiles:
     loop: false
 
 shots:
+  super_spinner_kickoff: #This shot activates releases all the modes functions
+    playfield: earth_pf
+    profile: one_state
+    hit_events:
+      - base_scoop_from_pf_hit
+      - mystery_forcing_ss_start
+    enable_events:
+      - mode_super_spinner_started
+    disable_events:
+      - super_spinner_kickoff_hit
+
   super_spinner_bonus:
     playfield: earth_pf
     profile: flash_only
-    switch: s_ramp_opto
+    switch: s_left_side_pop
     enable_events: super_spinner_bonus_threshold
     disable_events:
       - timer_super_spinner_countdown_complete
@@ -58,7 +82,7 @@ shots:
       - base_poseidon_right_slingshot_hit
       - base_poseidon_gate_hit
     enable_events:
-      - mode_super_spinner_started
+      - super_spinner_kickoff_hit
   super_spinner_olympus_mech:
     playfield: earth_pf
     profile: one_state #defigned in base
@@ -69,7 +93,7 @@ shots:
       - base_olympus_left_pop_hit
       - base_hole_proximal_hit
     enable_events:
-      - mode_super_spinner_started
+      - super_spinner_kickoff_hit
 
 counters:
   super_spinner_count:
@@ -77,10 +101,10 @@ counters:
       - base_orbit_spinner_hit
       - base_olympus_spinner_hit
     persist_state: false #does not reset when ball drains
-    disable_events: mode_hydra_started #Turn off the bonus shots if in hydra mb
+#    disable_events: mode_hydra_started #Turn off the bonus shots if in hydra mb
     enable_events:
-      - mode_super_spinner_started
-      - mode_hydra_stopping #Turn it back on when mode hydra finished
+      - super_spinner_kickoff_hit
+#      - mode_hydra_stopping #Turn it back on when mode hydra finished
     count_complete_value: 25
     restart_events: super_spinner_bonus_hit
 #    reset_on_complete: true
@@ -99,11 +123,11 @@ timers:
       - action: stop
         event: super_spinner_bonus_hit
 show_player:
-  base_orbit_spinner_hit:
+  base_orbit_spinner_hit{not device.shots.super_spinner_kickoff.enabled}: #Dont show unless scoop shot has already been hit
     show_super_orbit_spinner:
       speed: 10
       loops: 0
-  base_olympus_spinner_hit:
+  base_olympus_spinner_hit{not device.shots.super_spinner_kickoff.enabled}:
     show_super_olympus_spinner:
       speed: 10
       loops: 0
@@ -123,13 +147,13 @@ show_player:
 #      events_when_completed: super_spinner_start_show_completed #releases ball hold in mode scoop.yaml
 
 widgets:
-  invite_super_spinner_ramp_shot:
+  invite_super_spinner_pop_shot:
     - type: image
       image: wedge_collect_ss_bonus
       scale: 0.36
-      rotation: 0
-      x: 400
-      y: 658
+      rotation: 30
+      x: 200
+      y: 200
       anchor_x: center
       anchor_y: center
       z: 4
@@ -180,7 +204,7 @@ widget_player:
     super_spinner_bonus_count:
       slide: show_progress_to_ramp_mb
   super_spinner_bonus_threshold:
-    invite_super_spinner_ramp_shot:
+    invite_super_spinner_pop_shot:
       slide: show_progress_to_ramp_mb
     super_spinner_time_remaining:
       slide: show_progress_to_ramp_mb

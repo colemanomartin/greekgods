@@ -48,7 +48,7 @@ multiballs:
     start_events:
       - prmb_start_shot_hit
       - ormb_start_shot_hit
-      - start_double_mb #Picks up a ramp opto hit ********** INSERT CODE LATER ************ might want to do away with eventually
+      - start_double_mb #Picks up a ramp opto hit broadcast by double ramp mb mode
     shoot_again: 10s #default ball save is 10 sec
     debug: true
 

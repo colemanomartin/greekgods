@@ -158,6 +158,22 @@ widgets:
           relative: true
           duration: 0.8s
           easing: linear
+  scoop_rainbow_in:
+    - type: image
+      image: wildspiral #_alpha
+      scale: 1
+  #      z: 1
+      x: 60%
+      y: 60%
+      anchor_x: middle
+      anchor_y: middle
+      animations:
+        add_to_slide:
+        - property: scale
+          value: .25
+          relative: false
+          duration: 0.6
+
   red_box_step_ccw: #rectangle does a ccw dance 3 x around the inserts for P MB
     - type: rectangle
       x: 0             #Start top left
@@ -321,6 +337,9 @@ widget_player:
   multiball_olympus_ramp_started:
     red_box_step_cw:
       slide: blank_transparent
+  super_spinner_kickoff_hit:
+    scoop_rainbow_in:
+      slide: blank_transparent
   logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==1}:
     scroll_line_up:
       key: widget_line_1 #To allow each line to instance each has a unique key
@@ -438,6 +457,35 @@ slide_player:
   mode_sweep_server_ending:
     blank_transparent:
       action: remove #dont know if this is needed.
+  mode_double_ramp_mb_started:
+    hypno_rainbow_sweep:
+      target: led_matrix
+      background_color: 00000000 #Background with no opacity required
+      expire: 2.8s #Otherwise the last rectangle position sits on the screen
+      widgets:
+      - type: image
+        image: wildspiral #_alpha
+        scale: 1
+  #      z: 1
+        x: 50%
+        y: 50%
+        anchor_x: middle
+        anchor_y: middle
+        animations:
+          add_to_slide:
+          - property: rotation
+            value: 0
+            relative: false
+            duration: 0
+          - property: rotation
+            value: 360
+            relative: false
+            duration: 4s
+            repeat: true
+  mode_double_ramp_mb_ending:
+    hypno_rainbow_sweep:
+      action: remove
+
   mystery_hole_received_ball_hit: #Playfield sweep used by mystery mode during menu display
     #This is four bars stacked atop one another the under bars are larger and dimmer
     #All display at same time and rotate synchronously. This targets directly to the

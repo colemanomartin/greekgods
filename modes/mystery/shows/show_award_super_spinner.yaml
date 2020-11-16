@@ -34,7 +34,9 @@
               relative: false
               duration: 2s
               easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
-- duration: 50ms
+- duration: 100ms
   events: mystery_super_spinner
+- duration: 100ms
+  events: mystery_forcing_ss_start
 - duration: 50ms
   events: mystery_solved

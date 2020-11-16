@@ -2,7 +2,7 @@
 # This mode starts when both ramp locks are full. It then diverts the servo to middle, and watches
 # for a ramp opto hit which then triggers both MB to activate and then diverts the servo to left ramp
 mode:
-  priority: 11000 # range 100-1M
+  priority: 1200 # rides above both other mb
   start_events:
     - multiball_lock_poseidon_lock_full{device.ball_devices.bd_olympus_ramp.balls==2}
     - multiball_lock_olympus_lock_full{device.ball_devices.bd_poseidon_ramp.balls==2}
@@ -14,3 +14,14 @@ event_player:
   s_ramp_opto_active: start_double_mb #Start the mb for a ramp hit
   mode_poseidon_ramp_mb_started: ramp_servo_divert_left #Pick up which ever one posts first.
   mode_olympus_ramp_mb_started: ramp_servo_divert_left
+
+show_player:
+  #Things to do when double multiball started
+  start_double_mb:
+    show_sparkle_gg_white:
+      speed: 40
+    show_everything_white:
+      loops: -1 #speed: 1
+    show_countdown99_white:
+      speed: 10
+      loops: 0
