@@ -312,7 +312,8 @@ keyboard:
     switch: s_u_middle_target
   y:
     switch: s_u_right_target
-
+  x:
+    event: test_ss_sweep
 
 coils:
     #PD 16 lower playfield Address = 5 Right Bank A = 0 left side/poseidon mechs
@@ -867,7 +868,7 @@ autofire_coils:
   orbit_spinner_knocker:
     coil: c_u_knocker
     switch: s_orbit_spinner
-    enable_events: mode_super_spinner_started
+    enable_events: super_spinner_kickoff_hit
     disable_events: mode_super_spinner_stopped
     playfield: earth_pf
 #    coil_overwrite:
@@ -877,7 +878,7 @@ autofire_coils:
   olympus_spinner_knocker:
     coil: c_u_knocker
     switch: s_olympus_spinner
-    enable_events: mode_super_spinner_started
+    enable_events: super_spinner_kickoff_hit
     disable_events: mode_super_spinner_stopped
     playfield: earth_pf
 #    coil_overwrite:

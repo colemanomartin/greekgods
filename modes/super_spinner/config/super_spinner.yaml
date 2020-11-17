@@ -10,14 +10,16 @@
 # lastly when super spinner is active hits to either olympus or poseidon area
 # gives extra ticks on the excitement timers on base.
 # It also doubles hits to hydra in field or in battle hydra mode
-# consider adding a .7 sec ball hold to the scoop eject 
+# consider adding a .7 sec ball hold to the scoop eject
+#Losing count with drain. Not seeing call the shot
+#Display of meander circles is in mode base.
 mode:
   priority: 1400 # Run over base and MB modes so slides show
   start_events:
     - mystery_super_spinner #Award from mode_mystery subsiquent events in script hit the shot.
     - field_says_start_super_spinner_mode #Threshold set in field in counters section
   stop_events:
-    - ball_ended
+    - ball_drain{not device.shots.super_spinner_kickoff.enabled} #OK to end mode only if scoop has been hit  This ensures restart if drain before scoop hit
     - timer_super_spinner_countdown_complete
   restart_on_next_ball: true
 
@@ -147,13 +149,22 @@ show_player:
 #      events_when_completed: super_spinner_start_show_completed #releases ball hold in mode scoop.yaml
 
 widgets:
+  invite_super_spinner:
+    - type: image
+      image: wedge_super_spinner
+      scale: 0.3
+      rotation: -25
+      x: 450
+      y: 760
+      anchor_x: center
+      anchor_y: center
   invite_super_spinner_pop_shot:
     - type: image
       image: wedge_collect_ss_bonus
-      scale: 0.36
-      rotation: 30
+      scale: 0.32
+      rotation: 45
       x: 200
-      y: 200
+      y: 300
       anchor_x: center
       anchor_y: center
       z: 4
@@ -180,8 +191,8 @@ widgets:
       color: black
       anchor_x: center
       anchor_y: center
-      y: 35%
-      x: 52%
+      y: 10%
+      x: 49%
       z: 5
   super_spinner_bonus_collected:
     - type: text
@@ -200,6 +211,17 @@ widgets:
             duration: 1s
             easing: out_bounce #in_out_elastic #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
 widget_player:
+  mode_super_spinner_started:
+    invite_super_spinner:
+      slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in temple display
+      action: add
+      widget_settings:
+        expire: 10 sec
+        z: 5
+  super_spinner_kickoff_hit:
+    invite_super_spinner:
+      slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in temple display
+      action: remove
   counter_super_spinner_count_hit:
     super_spinner_bonus_count:
       slide: show_progress_to_ramp_mb
@@ -209,11 +231,14 @@ widget_player:
     super_spinner_time_remaining:
       slide: show_progress_to_ramp_mb
   timer_super_spinner_countdown_complete:
-    invite_super_spinner_ramp_shot:
+    invite_super_spinner_pop_shot:
       slide: show_progress_to_ramp_mb
       action: remove
   super_spinner_bonus_hit:
-    invite_super_spinner_ramp_shot:
+    invite_super_spinner_pop_shot:
+      slide: show_progress_to_ramp_mb
+      action: remove
+    super_spinner_time_remaining:
       slide: show_progress_to_ramp_mb
       action: remove
     super_spinner_bonus_collected:
@@ -221,7 +246,7 @@ widget_player:
       action: add
 
 slide_player:
-  mode_super_spinner_started:
+  super_spinner_kickoff_hit:
     tada_super_spinner:
       target: playfield_lcd
       background_color: black

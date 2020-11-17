@@ -1935,7 +1935,7 @@ widget_player:
   slide_basic_score_slide_active{current_player.player_base_spins>=92}:
     sp46:
       slide: basic_score_slide
-  mode_super_spinner_stopped:
+  mode_super_spinner_will_stop{not device.shots.super_spinner_kickoff.enabled}: #only remove them after mode complete after scoop has been hit
     sp01:
       action: remove
     sp02:

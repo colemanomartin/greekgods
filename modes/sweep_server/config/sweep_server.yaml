@@ -160,19 +160,20 @@ widgets:
           easing: linear
   scoop_rainbow_in:
     - type: image
-      image: wildspiral #_alpha
+      image: wildspiral_alpha #rainbow_circle_1000sq_alpha #_alpha
       scale: 1
   #      z: 1
-      x: 60%
-      y: 60%
+      x: 53%
+      y: 50%
       anchor_x: middle
       anchor_y: middle
+      expire: .6s
       animations:
         add_to_slide:
         - property: scale
-          value: .25
+          value: .1
           relative: false
-          duration: 0.6
+          duration: .6s
 
   red_box_step_ccw: #rectangle does a ccw dance 3 x around the inserts for P MB
     - type: rectangle
@@ -340,6 +341,9 @@ widget_player:
   super_spinner_kickoff_hit:
     scoop_rainbow_in:
       slide: blank_transparent
+  test_ss_sweep:
+    scoop_rainbow_in:
+      slide: blank_transparent
   logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==1}:
     scroll_line_up:
       key: widget_line_1 #To allow each line to instance each has a unique key
@@ -461,7 +465,6 @@ slide_player:
     hypno_rainbow_sweep:
       target: led_matrix
       background_color: 00000000 #Background with no opacity required
-      expire: 2.8s #Otherwise the last rectangle position sits on the screen
       widgets:
       - type: image
         image: wildspiral #_alpha

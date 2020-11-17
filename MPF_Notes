@@ -277,6 +277,10 @@ Things to add:
 
   Make a new mode that operates like super spinner and counts pop shots for subway MB invited at scoop.
 
+Things to fix:
+
+Lose super count on screen if SS ends before scoop hit. Probably in field.
+Show with wild spiral on the double mb not working right.
 
 
 Hardware:

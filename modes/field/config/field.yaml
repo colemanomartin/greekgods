@@ -243,7 +243,7 @@ counters:
       - base_orbit_spinner_2_hit{mode.super_spinner.active == False} #Made 2 shots for this switch to make spinner count double for a faster game
     persist_state: True #does not reset when ball drains
     reset_events:
-      - field_invite_super_spinner_at_scoop_hit # Causes mode_super_spinner to start
+      - super_spinner_kickoff_hit # super spinner was started and scoop hit
       - game_ending
     events_when_complete: field_says_start_super_spinner_mode
     count_complete_value: 94
@@ -494,15 +494,6 @@ show_player:
       action: play
 
 widgets:
-  invite_super_spinner:
-    - type: image
-      image: wedge_super_spinner
-      scale: 0.3
-      rotation: -25
-      x: 450
-      y: 760
-      anchor_x: center
-      anchor_y: center
   invite_hydra:
     - type: image
       image: wedge_battle_hydra
@@ -523,16 +514,5 @@ widget_player:
         z: 5
   field_invite_hydra_at_scoop_hit:
     invite_hydra:
-      slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in temple display
-      action: remove
-  field_says_invite_super_spinner_at_scoop:
-    invite_super_spinner:
-      slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in temple display
-      action: add
-      widget_settings:
-        expire: 10 sec
-        z: 5
-  field_invite_super_spinner_at_scoop_hit:
-    invite_super_spinner:
       slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in temple display
       action: remove
