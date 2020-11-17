@@ -32,6 +32,23 @@ accruals:  # Has to live in base since field shuts down during mb
     reset_on_complete: false
     disable_on_complete: false
 
+sequences:
+  base_super_spinner_mode_engaged: #This remembers that spinner threshold has been hit and that the SS mode has been called to start.
+    #Its necessary because the mode stops with turn ends and then restarts on next ball. Having this sequence lets me keep the meander circles on the
+    #back box screen
+    enable_events:
+      - mystery_super_spinner #Award from mode_mystery subsiquent events in script hit the shot.
+      - field_says_start_super_spinner_mode #Threshold set in field in counters section
+    events: #Events on seperate lines must all be satisfied to complete sequence. 2 events on same line seperated by comma are OR for that line
+      - super_spinner_kickoff_hit
+      - ball_ending, timer_super_spinner_countdown_complete #Only counts after previous event registered. mode done when either turn ends or timer runs out
+#    restart_events:
+#      - multiball_lock_olympus_lock_locked_ball
+#      - multiball_olympus_ramp_ended
+    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: true
+
 counters:
   base_malstrom_magnet_activation:
     #Purpose, count number of fires in 2s window after magnet fires if counter detects an additional fire
@@ -1935,7 +1952,8 @@ widget_player:
   slide_basic_score_slide_active{current_player.player_base_spins>=92}:
     sp46:
       slide: basic_score_slide
-  mode_super_spinner_will_stop{not device.shots.super_spinner_kickoff.enabled}: #only remove them after mode complete after scoop has been hit
+  #mode_super_spinner_will_stop{not device.shots.super_spinner_kickoff.enabled}: #only remove them after mode complete after scoop has been hit
+  logicblock_base_super_spinner_mode_engaged_complete: #sequence completed. Scoop hit and turn ended.
     sp01:
       action: remove
     sp02:
