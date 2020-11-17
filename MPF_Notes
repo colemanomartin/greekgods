@@ -237,6 +237,8 @@ To get to the repo from ssh have to generate a local ssh public and private key 
        origin	git@github.com:colemanomartin/greekgods.git (fetch)
        origin	git@github.com:colemanomartin/greekgods.git (push)
     git pull   the next time will complane that the authenticity of the host cannot be established.  Its OK to add it permanently to the list of known hosts.
+One time it would not push because I added a directory to logs.
+
 
 6. Setting up Atom.  File-> Add project file   select the location of the local repo.
    Packages -> toggle Github tab.
@@ -267,21 +269,25 @@ Things to add:
   Dont raise BB after starting super spinner.
   Make scoop shot a qualifying equivelent if starting super spinner of hydra.
 
-  Changes to super spinner:
-  Collect bonus at left side pop.
-  Dont remove counts when draining ball before scoop shot hit.
-  If ball drains after scoop shot hit mode ends.
-  Have field start super spinner mode when goal reached and let mode engage functions when scoop shot is made.
-  Reset counter and remove widgets when super spinner mode ends
-  If ball drains before scoop hit, let mode restart on next ball and keep scoop down until hit unless P or O ball demand it up again
+Planitary mb: complete 5 pops for each planet. Collect all 7 planets invites scoop shot. Ball is kept in subway and BB is kept up.
+Lock 2 more balls in subway (3 total) then hit to BB starts MB.  Qualifying shots only count when field is operating. If too easy can have to
+requalify each ball lock with the scoop expelling a ball when the hole switch is hit.
+This mode blocks pMB OMB scoop MB from mystery. It only works if only a single ball is locked above and it takes over diverter returning it back to powerball postition.
+ 
 
-  Make a new mode that operates like super spinner and counts pop shots for subway MB invited at scoop.
+
+Jackpot for P_MB: gate
+Jackpot for O mb: pop-hole
+Jackpot for Scoop MB: scoop (Keep BB down)
+Jackpot for double MB either gate or hole
+Jackpot for planitary MB complete all 5 pops.
 
 Things to fix:
 
+Adjust spoon on pop
 One time when playing hydra lights went out on lower playfield.  No clear reason why.  Saved log in weirdlogs
+Mystery award does not reset itself until next ball. Only one ball per award.
 
-Show with wild spiral on the double mb not working right.
 
 
 Hardware:

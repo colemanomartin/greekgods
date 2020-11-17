@@ -312,6 +312,164 @@ widgets:
               duration: 0.25s
               timing: with_previous
 
+  rotating_faded_bar_1: #bottom
+    - type: rectangle
+      x: 254
+      y: 500
+      width: 1000
+      height: 200
+      color: 08080808
+      anchor_x: center
+      anchor_y: center
+      rotation: 0
+      z: 1
+      expire: 2.8s #Otherwise the last rectangle position sits on the screen
+      animations:
+        add_to_slide:
+          - property: rotation
+            value: 90
+            relative: false
+            duration: .7s
+            easing: in_out_back #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+          - property: rotation
+            value: 180
+            relative: false
+            duration: .7s
+            easing: in_out_back
+          - property: rotation
+            value: 270
+            relative: false
+            duration: .7s
+            easing: in_out_back
+          - property: rotation
+            value: 360
+            relative: false
+            duration: .7s
+            easing: in_out_back
+  rotating_faded_bar_2: #bottom
+    - type: rectangle
+      x: 254
+      y: 500
+      width: 1000
+      height: 170
+      color: 222222
+      anchor_x: center
+      anchor_y: center
+      rotation: 0
+      z: 2
+      expire: 2.8s #Otherwise the last rectangle position sits on the screen
+      animations:
+        add_to_slide:
+          - property: rotation
+            value: 90
+            relative: false
+            duration: .7s
+            easing: in_out_back
+          - property: rotation
+            value: 180
+            relative: false
+            duration: .7s
+            easing: in_out_back
+          - property: rotation
+            value: 270
+            relative: false
+            duration: .7s
+            easing: in_out_back
+          - property: rotation
+            value: 360
+            relative: false
+            duration: .7s
+            easing: in_out_back
+  rotating_faded_bar_3: #bottom
+    - type: rectangle
+      x: 254
+      y: 500
+      width: 1000
+      height: 140
+      color: 666666
+      anchor_x: center
+      anchor_y: center
+      rotation: 0
+      z: 3
+      expire: 2.8s #Otherwise the last rectangle position sits on the screen
+      animations:
+        add_to_slide:
+          - property: rotation
+            value: 90
+            relative: false
+            duration: .7s
+            easing: in_out_back
+          - property: rotation
+            value: 180
+            relative: false
+            duration: .7s
+            easing: in_out_back
+          - property: rotation
+            value: 270
+            relative: false
+            duration: .7s
+            easing: in_out_back
+          - property: rotation
+            value: 360
+            relative: false
+            duration: .7s
+            easing: in_out_back
+  rotating_faded_bar_4: #bottom
+    - type: rectangle
+      x: 254
+      y: 500
+      width: 1000
+      height: 110
+      color: FFFFFF
+      anchor_x: center
+      anchor_y: center
+      rotation: 0
+      z: 4
+      expire: 2.8s #Otherwise the last rectangle position sits on the screen
+      animations:
+        add_to_slide:
+          - property: rotation
+            value: 90
+            relative: false
+            duration: .7s
+            easing: in_out_back
+          - property: rotation
+            value: 180
+            relative: false
+            duration: .7s
+            easing: in_out_back
+          - property: rotation
+            value: 270
+            relative: false
+            duration: .7s
+            easing: in_out_back
+          - property: rotation
+            value: 360
+            relative: false
+            duration: .7s
+            easing: in_out_back
+  hypno_rainbow_sweep:
+    - type: image
+      image: wildspiral #_alpha
+      scale: 1
+      x: 50%
+      y: 50%
+      anchor_x: middle
+      anchor_y: middle
+      animations:
+        add_to_slide:
+        - property: rotation
+          value: 0
+          relative: false
+          duration: 0
+        - property: rotation
+          value: 360
+          relative: false
+          duration: 4s
+          repeat: true
+
+
+
 widget_player:
   ball_waiting_to_eject_from_scoop:
     triangle_scoop_sweep:
@@ -344,6 +502,25 @@ widget_player:
   test_ss_sweep:
     scoop_rainbow_in:
       slide: blank_transparent
+  mystery_hole_received_ball_hit: #Playfield sweep used by mystery mode during menu display
+    #This is four bars stacked atop one another the under bars are larger and dimmer
+    #All display at same time and rotate synchronously. Run as 4 widgets rather than as a
+    #slide atop the playfield or when the slide is added a second time it may black all the lights.
+    rotating_faded_bar_1:
+      slide: blank_transparent
+    rotating_faded_bar_2:
+      slide: blank_transparent
+    rotating_faded_bar_3:
+      slide: blank_transparent
+    rotating_faded_bar_4:
+      slide: blank_transparent
+  mode_double_ramp_mb_started: #Change to scoop shot hit
+    hypno_rainbow_sweep:
+      slide: blank_transparent
+  mode_double_ramp_mb_stopping:
+    hypno_rainbow_sweep:
+      action: remove
+
   logicblock_super_spinner_count_hit{device.counters.super_spinner_count.value==1}:
     scroll_line_up:
       key: widget_line_1 #To allow each line to instance each has a unique key
@@ -461,168 +638,3 @@ slide_player:
   mode_sweep_server_ending:
     blank_transparent:
       action: remove #dont know if this is needed.
-  mode_double_ramp_mb_started:
-    hypno_rainbow_sweep:
-      target: led_matrix
-      background_color: 00000000 #Background with no opacity required
-      widgets:
-      - type: image
-        image: wildspiral #_alpha
-        scale: 1
-  #      z: 1
-        x: 50%
-        y: 50%
-        anchor_x: middle
-        anchor_y: middle
-        animations:
-          add_to_slide:
-          - property: rotation
-            value: 0
-            relative: false
-            duration: 0
-          - property: rotation
-            value: 360
-            relative: false
-            duration: 4s
-            repeat: true
-  mode_double_ramp_mb_ending:
-    hypno_rainbow_sweep:
-      action: remove
-
-  mystery_hole_received_ball_hit: #Playfield sweep used by mystery mode during menu display
-    #This is four bars stacked atop one another the under bars are larger and dimmer
-    #All display at same time and rotate synchronously. This targets directly to the
-    #LED matrix and not the slide like the other ones.
-    rotating_faded_bar:
-      target: led_matrix
-      background_color: 00000000 #Background with no opacity required
-      expire: 2.8s #Otherwise the last rectangle position sits on the screen
-      widgets:
-      - type: rectangle
-        x: 254
-        y: 500
-        width: 1000
-        height: 200
-        color: 08080808
-        anchor_x: center
-        anchor_y: center
-        rotation: 0
-        z: 1
-        animations:
-          show_slide:
-            - property: rotation
-              value: 90
-              relative: false
-              duration: .7s
-              easing: in_out_back #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
-            - property: rotation
-              value: 180
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 270
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 360
-              relative: false
-              duration: .7s
-              easing: in_out_back
-      - type: rectangle
-        x: 254
-        y: 500
-        width: 1000
-        height: 170
-        color: 222222
-        anchor_x: center
-        anchor_y: center
-        rotation: 0
-        z: 2
-        animations:
-          show_slide:
-            - property: rotation
-              value: 90
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 180
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 270
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 360
-              relative: false
-              duration: .7s
-              easing: in_out_back
-      - type: rectangle
-        x: 254
-        y: 500
-        width: 1000
-        height: 140
-        color: 666666
-        anchor_x: center
-        anchor_y: center
-        rotation: 0
-        z: 3
-        animations:
-          show_slide:
-            - property: rotation
-              value: 90
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 180
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 270
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 360
-              relative: false
-              duration: .7s
-              easing: in_out_back
-      - type: rectangle
-        x: 254
-        y: 500
-        width: 1000
-        height: 110
-        color: FFFFFF
-        anchor_x: center
-        anchor_y: center
-        rotation: 0
-        z: 4
-        animations:
-          show_slide:
-            - property: rotation
-              value: 90
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 180
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 270
-              relative: false
-              duration: .7s
-              easing: in_out_back
-            - property: rotation
-              value: 360
-              relative: false
-              duration: .7s
-              easing: in_out_back

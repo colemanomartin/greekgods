@@ -1,6 +1,7 @@
 #config_version=5
 # This mode starts when both ramp locks are full. It then diverts the servo to middle, and watches
 # for a ramp opto hit which then triggers both MB to activate and then diverts the servo to left ramp
+#Would be better if the show player did not start until a mb was hit. Will have to modify sweep acordinly
 mode:
   priority: 1200 # rides above both other mb
   start_events:
@@ -10,13 +11,14 @@ mode:
     - mode_servo_starting #starts when both MB ended
 
 event_player:
-  mode_double_ramp_mb: ramp_servo_middle
+  mode_double_ramp_mb_started: ramp_servo_middle
   s_ramp_opto_active: start_double_mb #Start the mb for a ramp hit
   mode_poseidon_ramp_mb_started: ramp_servo_divert_left #Pick up which ever one posts first.
   mode_olympus_ramp_mb_started: ramp_servo_divert_left
 
 show_player:
   #Things to do when double multiball started
+#In sweep test to see if this mode is running multiball_olympus_ramp_started{}
   start_double_mb:
     show_sparkle_gg_white:
       speed: 40
