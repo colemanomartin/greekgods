@@ -52,6 +52,10 @@ sounds:
     file: shoottheblinkingtarget.ogg
     volume: 1
     track: voice
+  combo_bonus:
+    file: combobonus.ogg
+    volyme: 1
+    track: voice
   snd_bat1:
     file: bat1.ogg
   snd_bat2:

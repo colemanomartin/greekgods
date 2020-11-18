@@ -1,0 +1,96 @@
+#config_version=5
+#goddess mb mode
+#Enter mode from completion of all goddesses. This can only happen when field
+#is running. When turned on, field ends, subway lock starts locking.
+#BB is lowered. first ball is collected in scoop. BB goes up. Hid scoop target to qualify Another
+#ball. If a ball enters before qualified, the lock rejects the ball.  Holes collect balls
+#2 and 3. Finally a hit to BB releases all the balls.
+#If ball drains when locking, any locking balls are released and the player playes out a diminsihed MB
+mode:
+  priority: 1000
+  start_events:
+    - logicblock_base_aphrodite_complete # {device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0}
+    - key_c_pressed
+  stop_events:
+    - multiball_goddess_mb_ended
+
+variable_player:
+  multiball_lock_subway_lock_locked_ball:
+    score: 5000
+  logicblock_goddess_all_pops_complete:
+    score: 20000
+
+multiball_locks:
+  subway_lock:
+    source_playfield: earth_pf
+    enable_events:
+      - mode_goddess_mb_started
+      - goddess_bb_hit
+    disable_events: multiball_lock_subway_lock_locked_ball
+    balls_to_lock: 3
+    locked_ball_counting_strategy: physical_only
+    lock_devices: bd_scoop
+    balls_to_replace: 3 #2 #1=replace first ball locked from trough, use when triggering with lock full event.Default -1 = replace every ball locked with new ball
+    debug: True
+
+multiballs:
+  scoop_mb:
+    source_playfield: earth_pf
+    ball_count: 3
+    ball_count_type: add  # increase number of playfield balls by couny
+    shoot_again: 14s #ball save for MB 10 sec is default
+    start_events: mode_scoop_mb_started
+    enable_events: mode_goddess_mb_starting
+    debug: true
+
+shots:
+  goddess_bb:
+    enable_events:
+      - mode_goddess_mb_started
+      - successful_scoop_eject_or_whatever_its_called
+    disable_events:
+      - ball_waiting_to_eject_from_scoop
+    playfield: earth_pf
+    switches: s_ballblock
+
+
+accruals:
+  goddess_all_pops:
+    events:
+      - base_left_side_pop_hit
+      - base_poseidon_pop_hit
+      - base_olympus_left_pop_hit
+      - base_olympus_right_pop_hit
+      - base_olympus_lower_pop_hit
+    reset_on_complete: true
+
+
+show_player:
+  mode_mystery_stopping: #dont start the ball timer until after ball hold ends
+#    show_rainbow_all_but_bs:
+#      speed: 2
+  multiball_goddess_md_started:
+    countdown99_green:
+      speed: 10
+      loops: 0
+
+event_player:
+  mode_scoop_mb_started:
+    - force_bb_down
+  mode_scoop_mb_ending:
+    - release_bb_override
+
+slide_player:
+  logicblock_goddess_all_pops_complete:
+    pf_goddess_mb_started_slide:
+      target: playfield_lcd
+      background_color: black
+      expire: 1s
+      widgets:
+      - type: text
+        text: Pop Sequence Jackpot!
+        color: white
+        y: 50%
+        anchor_x: center
+        anchor_y: center
+        font_size: 75

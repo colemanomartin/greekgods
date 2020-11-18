@@ -82,6 +82,17 @@ event_player:
 #    - complete_poseidon_excitement
   overload_p_hit: bonus_pop #allows pops not needed to qualify mb to be counted for bonus
 
+accruals:
+  field_all_pops:
+    events:
+      - base_left_side_pop_hit
+      - base_poseidon_pop_hit
+      - base_olympus_left_pop_hit
+      - base_olympus_right_pop_hit
+      - base_olympus_lower_pop_hit
+    persist_state: true
+    reset_on_complete: true
+
 sequence_shots:
   field_sis_left_to_right:
     playfield: earth_pf

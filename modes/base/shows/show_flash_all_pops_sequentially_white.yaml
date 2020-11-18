@@ -1,0 +1,37 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_olympus_left_pop: 000000
+    l_olympus_lower_pop: 000000
+    l_olympus_right_pop: 000000
+    l_left_side_pop: 000000
+- duration: 1
+  lights:
+    l_olympus_left_pop: AAAAAA
+    l_olympus_lower_pop: 000000
+    l_olympus_right_pop: 000000
+    l_left_side_pop: 000000
+- duration: 1
+  lights:
+    l_olympus_left_pop: 000000
+    l_olympus_lower_pop: AAAAAA
+    l_olympus_right_pop: 000000
+    l_left_side_pop: 000000
+- duration: 1
+  lights:
+    l_olympus_left_pop: 000000
+    l_olympus_lower_pop: 000000
+    l_olympus_right_pop: AAAAAA
+    l_left_side_pop: 000000
+- duration: 1
+  lights:
+    l_olympus_left_pop: AAAAAA
+    l_olympus_lower_pop: 000000
+    l_olympus_right_pop: 000000
+    l_left_side_pop: 000000
+- duration: 1
+  lights:
+    l_olympus_left_pop: 000000
+    l_olympus_lower_pop: 000000
+    l_olympus_right_pop: 000000
+    l_left_side_pop: 000000

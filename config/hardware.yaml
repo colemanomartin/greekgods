@@ -314,6 +314,8 @@ keyboard:
     switch: s_u_right_target
   x:
     event: test_ss_sweep
+  c:
+    event: key_c_pressed
 
 coils:
     #PD 16 lower playfield Address = 5 Right Bank A = 0 left side/poseidon mechs

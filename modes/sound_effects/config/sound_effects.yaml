@@ -46,6 +46,13 @@ sound_player:
   ball_waiting_to_eject_from_scoop: explosionlong
   base_sis_left_arrived_hit: snd_sis #divert_left
   base_sis_right_arrived_hit: snd_sis #divert_right
+  logicblock_base_hestia_complete: combo_bonus
+  logicblock_base_demeter_complete: combo_bonus
+  logicblock_base_hera_complete: combo_bonus
+  logicblock_base_hecate_complete: combo_bonus
+  logicblock_base_artimus_complete: combo_bonus
+  logicblock_base_athena_complete: combo_bonus
+  logicblock_base_aphrodite_complete: combo_bonus
 
 
 #  river_a_hit: snd_river
@@ -72,4 +79,3 @@ sound_player:
 #  mode_hades_bonus_game_started: hadeshasyou
 #  mode_hades_mini_game_started: hadeshasyou
 #  all_bugs_smashed: youreturnfromtheunderworld
-
