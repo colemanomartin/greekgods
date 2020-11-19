@@ -8,14 +8,14 @@
 #Hits to the holes are jackpots.
 #Sequences to the pops increase the multiplier. (Light 2x 3x accordingly)
 #If ball drains when locking, next ball resumes the mission.
-#versus could have any locking balls are released and the player playes out a diminsihed MB
+#
 mode:
   priority: 800
   start_events:
     - base_aphrodite_summoned # {device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0}
     - key_c_pressed
   stop_events:
-    - multiball_goddess_mb_ended
+    - multiball_goddess_ended
   restart_on_next_ball: true #alternatively might need a start event for a ball being present in the lock
 
 variable_player:
@@ -44,7 +44,7 @@ multiball_locks:
     debug: True
 
 multiballs:
-  goddess_mb:
+  goddess:
     source_playfield: earth_pf
     ball_count: 3
     ball_locks: bd_scoop
@@ -79,7 +79,7 @@ show_player:
 #  mode_mystery_stopping: #dont start the ball timer until after ball hold ends
 #    show_rainbow_all_but_bs:
 #      speed: 2
-  multiball_goddess_mb_started:
+  multiball_goddess_started:
     show_countdown99_green:
       speed: 10
       loops: 0
@@ -98,7 +98,7 @@ show_player:
 widgets:
   goddess_mb_shoot_orbits:
   - type: text
-    text: "Loop Orbit to\nOpen Cave"
+    text: "Loop Orbit to\nOpen Underworld"
     font_size: 60
     y: 75%
     x: 50%
@@ -132,7 +132,7 @@ widgets:
     expire: 3s
   goddess_athena:
   - type: text
-    text: Put Athena in Cave
+    text: "Help Athena\nTo the Underworld"
     color: white
     y: 25%
     anchor_x: center
@@ -141,7 +141,7 @@ widgets:
     expire: 3s
   goddess_artimus:
   - type: text
-    text: Put Artimus in Cave
+    text: "Help Artimus\nTo the Underworld"
     color: white
     y: 25%
     anchor_x: center
@@ -150,7 +150,7 @@ widgets:
     expire: 3s
   goddess_aphrodite:
   - type: text
-    text: Put Aphrodite in Cave
+    text: "Help Aphrodite\nTo in Underworld"
     color: white
     y: 25%
     anchor_x: center
@@ -159,7 +159,7 @@ widgets:
     expire: 3s
   goddess_hestia:
   - type: text
-    text: Put Hestia in Cave
+    text: "Help Hestia\nTo the Underworld"
     color: white
     y: 25%
     anchor_x: center
@@ -169,7 +169,17 @@ widgets:
 
 widget_player:
   slide_pf_goddess_mb_started_slide_active:
-#    slide: pf_goddess_mb_instruction_slide
+    goddess_hestia:
+      slide: pf_goddess_mb_instruction_slide
+    goddess_mb_shoot_orbits:
+      slide: pf_goddess_mb_instruction_slide
+    base_orbit_clockwise_hit:
+      goddess_mb_shoot_orbits:
+        action: remove
+    base_orbit_counter_clockwise_hit:
+      goddess_mb_shoot_orbits:
+        action: remove
+
 #    slide: pf_goddess_mb_started_slide
 
 slide_player:
@@ -179,7 +189,7 @@ slide_player:
       background_color: 004400
       widgets:
       - type: text
-        text: Goddesses to the Cave
+        text: Gather the Goddesses
         color: white
         y: 50%
         anchor_x: center

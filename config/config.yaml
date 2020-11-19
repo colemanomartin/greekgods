@@ -172,6 +172,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - multiball_poseidon_ramp_started
           - multiball_olympus_ramp_started
           - multiball_scoop_started
+          - mode_goddess_mb_started
         events_when_transitioning:
           - state_feed_poseidon_to_all_off
           - state_says_disable_poseidon_mag
@@ -185,6 +186,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - multiball_poseidon_ramp_started
           - multiball_olympus_ramp_started
           - multiball_scoop_started
+          - mode_goddess_mb_started
         events_when_transitioning:
           - state_feed_olympus_to_all_off
           - state_says_disable_poseidon_mag
@@ -196,6 +198,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - multiball_poseidon_ramp_ended{device.switches.s_sis_left.state==1}
           - multiball_olympus_ramp_ended{device.switches.s_sis_left.state==1}
           - multiball_scoop_ended{device.switches.s_sis_left.state==1}
+          - multiball_goddess_ended{device.switches.s_sis_left.state==1}
           - mode_mystery_stopped{device.switches.s_sis_left.state==1}
           - ball_starting{device.switches.s_sis_left.state==1} #in case game ends with mags in the off state this brings it back
         events_when_transitioning:
@@ -209,6 +212,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - multiball_poseidon_ramp_ended{device.switches.s_sis_right.state==1}
           - multiball_olympus_ramp_ended{device.switches.s_sis_right.state==1}
           - multiball_scoop_ended{device.switches.s_sis_right.state==1}
+          - multiball_goddess_ended{device.switches.s_sis_right.state==1}
           - mode_mystery_stopped{device.switches.s_sis_right.state==1}
           - ball_starting{device.switches.s_sis_right.state==1} #in case game ends with mags in the off state this brings it back
         events_when_transitioning:
