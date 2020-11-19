@@ -273,7 +273,7 @@ Planitary mb: complete 5 pops for each planet. Collect all 7 planets invites sco
 Lock 2 more balls in subway (3 total) then hit to BB starts MB.  Qualifying shots only count when field is operating. If too easy can have to
 requalify each ball lock with the scoop expelling a ball when the hole switch is hit.
 This mode blocks pMB OMB scoop MB from mystery. It only works if only a single ball is locked above and it takes over diverter returning it back to powerball postition.
- 
+
 
 
 Jackpot for P_MB: gate
@@ -288,7 +288,9 @@ Adjust spoon on pop
 One time when playing hydra lights went out on lower playfield.  No clear reason why.  Saved log in weirdlogs
 Mystery award does not reset itself until next ball. Only one ball per award.
 
-
+Move drain display into sweep server.
+convert orbit sweeps to color stop so they work with MB collors
+make green mb insert palate versus green rotation for goddess BB green too.
 
 Hardware:
   Check trough switches.

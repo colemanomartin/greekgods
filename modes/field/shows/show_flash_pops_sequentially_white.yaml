@@ -1,0 +1,43 @@
+#show_version=5
+- duration: 1
+  lights:
+   l_poseidon_pop: stop
+   l_olympus_left_pop: stop
+   l_olympus_lower_pop: stop
+   l_olympus_right_pop: stop
+   l_left_side_pop: C0C0C0
+- duration: 1
+  lights:
+   l_poseidon_pop: C0C0C0
+   l_olympus_left_pop: stop
+   l_olympus_lower_pop: stop
+   l_olympus_right_pop: stop
+   l_left_side_pop: stop
+- duration: 1
+  lights:
+    l_poseidon_pop: stop
+    l_olympus_left_pop: stop
+    l_olympus_lower_pop: C0C0C0
+    l_olympus_right_pop: stop
+    l_left_side_pop: stop
+- duration: 1
+  lights:
+    l_poseidon_pop: stop
+    l_olympus_left_pop: C0C0C0
+    l_olympus_lower_pop: stop
+    l_olympus_right_pop: stop
+    l_left_side_pop: stop
+- duration: 1
+  lights:
+    l_poseidon_pop: stop
+    l_olympus_left_pop: stop
+    l_olympus_lower_pop: stop
+    l_olympus_right_pop: C0C0C0
+    l_left_side_pop: stop
+- duration: 1
+  lights:
+    l_poseidon_pop: stop
+    l_olympus_left_pop: stop
+    l_olympus_lower_pop: stop
+    l_olympus_right_pop: stop
+    l_left_side_pop: stop

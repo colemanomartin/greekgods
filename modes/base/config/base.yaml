@@ -51,81 +51,95 @@ sequences:
 
   #These goddesses accrue one at a time in sequence. With
   #each goddess a show plays and a portrait displays
-  #When all goddesses are summonded, ball locking begins
+  #When all goddesses are summoned, ball locking begins
   #Hits to the pops are only registered when field running.
   base_hestia:
     events:
       - logicblock_field_all_pops_complete
-    events_when_complete: goddess_completed #Used for bonus mode
+    events_when_complete:
+      - goddess_completed #Used for bonus mode
+      - base_hestia_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
     persist_state: true
     reset_on_complete: false
     reset_events:
       - multiball_goddess_ended
   base_demeter:
     events:
-      - logicblock_base_hestia_complete
+      - base_hestia_summoned
       - logicblock_field_all_pops_complete
-    events_when_complete: goddess_completed #Used for bonus mode
+    events_when_complete:
+      - goddess_completed #Used for bonus mode
+      - base_demeter_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
     persist_state: true
     reset_on_complete: false
     reset_events:
       - multiball_goddess_ended
   base_hera:
     events:
-      - logicblock_base_hestia_complete
-      - logicblock_base_demeter_complete
+      - base_hestia_summoned
+      - base_demeter_summoned
       - logicblock_field_all_pops_complete
-    events_when_complete: goddess_completed #Used for bonus mode
+    events_when_complete:
+      - goddess_completed #Used for bonus mode
+      - base_hera_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
     persist_state: true
     reset_on_complete: false
     reset_events:
       - multiball_goddess_ended
   base_hecate:
     events:
-      - logicblock_base_hestia_complete
-      - logicblock_base_demeter_complete
-      - logicblock_base_hera_complete
+      - base_hestia_summoned
+      - base_demeter_summoned
+      - base_hera_summoned
       - logicblock_field_all_pops_complete
-    events_when_complete: goddess_completed #Used for bonus mode
+    events_when_complete:
+      - goddess_completed #Used for bonus mode
+      - base_hecate_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
     persist_state: true
     reset_on_complete: false
     reset_events:
       - multiball_goddess_ended
   base_artimus:
     events:
-      - logicblock_base_hestia_complete
-      - logicblock_base_demeter_complete
-      - logicblock_base_hera_complete
-      - logicblock_base_hecate_complete
+      - base_hestia_summoned
+      - base_demeter_summoned
+      - base_hera_summoned
+      - base_hecate_summoned
       - logicblock_field_all_pops_complete
-    events_when_complete: goddess_completed #Used for bonus mode
+    events_when_complete:
+      - goddess_completed #Used for bonus mode
+      - base_artimus_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
     persist_state: true
     reset_on_complete: false
     reset_events:
       - multiball_goddess_ended
   base_athena:
     events:
-      - logicblock_base_hestia_complete
-      - logicblock_base_demeter_complete
-      - logicblock_base_hera_complete
-      - logicblock_base_hecate_complete
-      - logicblock_base_artimus_complete
+      - base_hestia_summoned
+      - base_demeter_summoned
+      - base_hera_summoned
+      - base_hecate_summoned
+      - base_artimus_summoned
       - logicblock_field_all_pops_complete
-    events_when_complete: goddess_completed #Used for bonus mode
+    events_when_complete:
+      - goddess_completed #Used for bonus mode
+      - base_athena_summoned
     persist_state: true
     reset_on_complete: false
     reset_events:
       - multiball_goddess_ended
   base_aphrodite:
     events:
-      - logicblock_base_hestia_complete
-      - logicblock_base_demeter_complete
-      - logicblock_base_hera_complete
-      - logicblock_base_hecate_complete
-      - logicblock_base_artimus_complete
-      - logicblock_base_athena_complete
+      - base_hestia_summoned
+      - base_demeter_summoned
+      - base_hera_summoned
+      - base_hecate_summoned
+      - base_artimus_summoned
+      - base_athena_summoned
       - logicblock_field_all_pops_complete
-    events_when_complete: goddess_completed #Used for bonus mode
+    events_when_complete:
+      - goddess_completed #Used for bonus mode
+      - base_aphrodite_summoned
     persist_state: true
     reset_on_complete: false
     reset_events:
@@ -165,7 +179,7 @@ counters:
     reset_on_complete: true
     disable_on_complete: true
     persist_state: false #resets with each new ball
-  base_goddesses_summonded:
+  base_goddesses_summoned:
     #Used by bonus mode calculatoin
     count_events:
       - goddess_completed #Any goddess
@@ -841,10 +855,6 @@ show_player:
   timer_base_right_ramp_complete:
     show_invite_right_ramp_double_shot:
       action: stop
-  goddess_completed:
-    show: flash_pops_sequentially_white
-    speed: 4
-    loops: 0
 
 slide_player:
   mode_base_started:
@@ -930,59 +940,66 @@ widgets:
   hestia:
   - type: text
     text: Hestia Summoned
-    font_size: 400
+    font_size: 260
     y: 75%
     x: 50%
+    color: green
     font_name: GreekGods2
-    expire: 3s
+    expire: 5s
   demeter:
   - type: text
     text: Demeter Summoned
-    font_size: 400
+    font_size: 260
     y: 75%
     x: 50%
+    color: green
     font_name: GreekGods2
-    expire: 3s
+    expire: 5s
   hera:
   - type: text
     text: Hera Summoned
-    font_size: 400
+    font_size: 260
     y: 75%
     x: 50%
+    color: green
     font_name: GreekGods2
-    expire: 3s
+    expire: 5s
   hecate:
   - type: text
     text: Hecate Summoned
-    font_size: 400
+    font_size: 260
     y: 75%
     x: 50%
+    color: green
     font_name: GreekGods2
-    expire: 3s
+    expire: 5s
   artimus:
   - type: text
     text: Artimus Summoned
-    font_size: 400
+    font_size: 260
     y: 75%
     x: 50%
+    color: green
     font_name: GreekGods2
-    expire: 3s
+    expire: 5s
   athena:
   - type: text
     text: Athena Summoned
-    font_size: 400
+    font_size: 260
     y: 75%
     x: 50%
+    color: green
     font_name: GreekGods2
-    expire: 3s
+    expire: 5s
   aphrodite:
   - type: text
     text: Aphrodite Summoned
-    font_size: 400
+    font_size: 260
     y: 75%
     x: 50%
+    color: green
     font_name: GreekGods2
-    expire: 3s
+    expire: 5s
 
   sp01:
   - type: image
@@ -1824,25 +1841,25 @@ widgets:
 
 
 widget_player:
-  logicblock_base_hestia_complete:
+  base_hestia_summoned:
     hestia:
       slide: basic_score_slide
-  logicblock_base_demeter_complete:
+  base_demeter_summoned:
     demeter:
       slide: basic_score_slide
-  logicblock_base_hera_complete:
+  base_hera_summoned:
     hera:
       slide: basic_score_slide
-  logicblock_base_hecate_complete:
+  base_hecate_summoned:
     hecate:
       slide: basic_score_slide
-  logicblock_base_artimus_complete:
+  base_artimus_summoned:
     artimus:
       slide: basic_score_slide
-  logicblock_base_athena_complete:
-    athenia:
+  base_athena_summoned:
+    athena:
       slide: basic_score_slide
-  logicblock_base_aphrodite_complete:
+  base_aphrodite_summoned:
     aphrodite:
       slide: basic_score_slide
   counter_field_spins_hit{current_player.player_base_spins==2}:

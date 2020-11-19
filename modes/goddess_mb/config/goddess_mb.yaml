@@ -7,9 +7,9 @@
 #2 and 3. Finally a hit to BB releases all the balls.
 #If ball drains when locking, any locking balls are released and the player playes out a diminsihed MB
 mode:
-  priority: 1000
+  priority: 800
   start_events:
-    - logicblock_base_aphrodite_complete # {device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0}
+    - base_aphrodite_summoned # {device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0}
     - key_c_pressed
   stop_events:
     - multiball_goddess_mb_ended
@@ -34,12 +34,12 @@ multiball_locks:
     debug: True
 
 multiballs:
-  scoop_mb:
+  goddess_mb:
     source_playfield: earth_pf
     ball_count: 3
     ball_count_type: add  # increase number of playfield balls by couny
     shoot_again: 14s #ball save for MB 10 sec is default
-    start_events: mode_scoop_mb_started
+    start_events: mode_goddess_mb_started
     enable_events: mode_goddess_mb_starting
     debug: true
 
@@ -66,19 +66,24 @@ accruals:
 
 
 show_player:
-  mode_mystery_stopping: #dont start the ball timer until after ball hold ends
+#  mode_mystery_stopping: #dont start the ball timer until after ball hold ends
 #    show_rainbow_all_but_bs:
 #      speed: 2
-  multiball_goddess_md_started:
-    countdown99_green:
+  multiball_goddess_mb_started:
+    show_countdown99_green:
       speed: 10
       loops: 0
-
-event_player:
-  mode_scoop_mb_started:
-    - force_bb_down
-  mode_scoop_mb_ending:
-    - release_bb_override
+    show_everything_green:
+      speed: 1
+      loops: -1
+    show_sparkle_gg_green:
+      speed: 40
+      loops: -1
+#event_player:
+#  mode_scoop_mb_started:
+#    - force_bb_down
+#  mode_scoop_mb_ending:
+#    - release_bb_override
 
 slide_player:
   logicblock_goddess_all_pops_complete:
