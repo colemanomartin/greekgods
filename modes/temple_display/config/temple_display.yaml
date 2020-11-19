@@ -5,7 +5,7 @@
 # Scoop invited shot banners are added in field and by super spionner mode.
 # Bars 0, temple 2, statue 0 mb message for ramp mb modes 1
 mode:
-  priority: 400 # places it above p and o ramp mb also has to be above field.
+  priority: 400 # places it above p and o ramp mb also has to be above field. HAs to be below scoop, goddess and hydra
   start_events:
     - ball_started
   stop_events:

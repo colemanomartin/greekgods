@@ -1,11 +1,14 @@
 #config_version=5
 #goddess mb mode
 #Enter mode from completion of all goddesses. This can only happen when field
-#is running. When turned on, field ends, subway lock starts locking.
-#BB is lowered. first ball is collected in scoop. BB goes up. Hid scoop target to qualify Another
-#ball. If a ball enters before qualified, the lock rejects the ball.  Holes collect balls
-#2 and 3. Finally a hit to BB releases all the balls.
-#If ball drains when locking, any locking balls are released and the player playes out a diminsihed MB
+#is running. When mode starts, field ends. Activate lock with an orbit shot.
+#Locking engaged enables post to send ball downstairs
+#BB is locked up. Goddesses enter via holes.
+#Final forth ball entering hole triggers the MB
+#Hits to the holes are jackpots.
+#Sequences to the pops increase the multiplier. (Light 2x 3x accordingly)
+#If ball drains when locking, next ball resumes the mission.
+#versus could have any locking balls are released and the player playes out a diminsihed MB
 mode:
   priority: 800
   start_events:
@@ -13,6 +16,7 @@ mode:
     - key_c_pressed
   stop_events:
     - multiball_goddess_mb_ended
+  restart_on_next_ball: true #alternatively might need a start event for a ball being present in the lock
 
 variable_player:
   multiball_lock_subway_lock_locked_ball:
@@ -20,12 +24,18 @@ variable_player:
   logicblock_goddess_all_pops_complete:
     score: 20000
 
+counters:
+  goddess_multiplier:
+    starting_count: 1
+    persist_state: false
+    count_events: logicblock_goddess_all_pops_complete
+
 multiball_locks:
   subway_lock:
     source_playfield: earth_pf
     enable_events:
-      - mode_goddess_mb_started
-      - goddess_bb_hit
+      - base_orbit_clockwise_hit
+      - base_orbit_counter_clockwise_hit
     disable_events: multiball_lock_subway_lock_locked_ball
     balls_to_lock: 3
     locked_ball_counting_strategy: physical_only
@@ -37,20 +47,20 @@ multiballs:
   goddess_mb:
     source_playfield: earth_pf
     ball_count: 3
+    ball_locks: bd_scoop
     ball_count_type: add  # increase number of playfield balls by couny
     shoot_again: 14s #ball save for MB 10 sec is default
-    start_events: mode_goddess_mb_started
+    start_events: goddess_trigger_mb_release_hit
     enable_events: mode_goddess_mb_starting
     debug: true
 
 shots:
-  goddess_bb:
-    enable_events:
-      - mode_goddess_mb_started
-      - successful_scoop_eject_or_whatever_its_called
-    disable_events:
-      - ball_waiting_to_eject_from_scoop
+  goddess_trigger_mb_release:
+    enable_events: multiball_lock_subway_lock_full
     playfield: earth_pf
+    hit_events:
+      - base_hole_distal_hit
+      - base_hole_proximal_hit
     switches: s_ballblock
 
 
@@ -59,7 +69,7 @@ accruals:
     events:
       - base_left_side_pop_hit
       - base_poseidon_pop_hit
-      - base_olympus_left_pop_hit
+#      - base_olympus_left_pop_hit
       - base_olympus_right_pop_hit
       - base_olympus_lower_pop_hit
     reset_on_complete: true
@@ -85,17 +95,107 @@ show_player:
 #  mode_scoop_mb_ending:
 #    - release_bb_override
 
+widgets:
+  goddess_mb_shoot_orbits:
+  - type: text
+    text: "Loop Orbit to\nOpen Cave"
+    font_size: 60
+    y: 75%
+    x: 50%
+    color: white
+    font_name: GreekGods2
+  goddess_mb_shoot_ramp:
+  - type: text
+    text: "Shoot cave for\nMultiball"
+    font_size: 60
+    y: 75%
+    x: 50%
+    color: white
+    font_name: GreekGods2
+  goddess_mb_jackpot:
+  - type: text
+    text: Pop Sequence Jackpot!
+    color: white
+    y: 25%
+    anchor_x: center
+    anchor_y: center
+    font_size: 75
+    expire: 3s
+  goddess_mb_bonus_instructions:
+  - type: text
+    text: "Hit All Pops\nFor Bonus"
+    color: white
+    y: 75%
+    anchor_x: center
+    anchor_y: center
+    font_size: 75
+    expire: 3s
+  goddess_athena:
+  - type: text
+    text: Put Athena in Cave
+    color: white
+    y: 25%
+    anchor_x: center
+    anchor_y: center
+    font_size: 75
+    expire: 3s
+  goddess_artimus:
+  - type: text
+    text: Put Artimus in Cave
+    color: white
+    y: 25%
+    anchor_x: center
+    anchor_y: center
+    font_size: 75
+    expire: 3s
+  goddess_aphrodite:
+  - type: text
+    text: Put Aphrodite in Cave
+    color: white
+    y: 25%
+    anchor_x: center
+    anchor_y: center
+    font_size: 75
+    expire: 3s
+  goddess_hestia:
+  - type: text
+    text: Put Hestia in Cave
+    color: white
+    y: 25%
+    anchor_x: center
+    anchor_y: center
+    font_size: 75
+    expire: 3s
+
+widget_player:
+  slide_pf_goddess_mb_started_slide_active:
+#    slide: pf_goddess_mb_instruction_slide
+#    slide: pf_goddess_mb_started_slide
+
 slide_player:
-  logicblock_goddess_all_pops_complete:
+  mode_goddess_mb_started:
     pf_goddess_mb_started_slide:
       target: playfield_lcd
-      background_color: black
-      expire: 1s
+      background_color: 004400
       widgets:
       - type: text
-        text: Pop Sequence Jackpot!
+        text: Goddesses to the Cave
         color: white
         y: 50%
         anchor_x: center
         anchor_y: center
-        font_size: 75
+        font_size: 45
+  multiball_goddess_mb_started:
+    pf_goddess_mb_instruction_slide:
+      action: remove
+    pf_goddess_mb_started_slide:
+      target: playfield_lcd
+      background_color: 004400
+      widgets:
+      - type: text
+        text: "Goddess Rebellion!\nHit Cave for Bonus\nHit Pop Sequence for\nBonus Multiplier"
+        color: white
+        y: 50%
+        anchor_x: center
+        anchor_y: center
+        font_size: 45

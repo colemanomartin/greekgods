@@ -63,48 +63,9 @@ sequences:
     reset_on_complete: false
     reset_events:
       - multiball_goddess_ended
-  base_demeter:
-    events:
-      - base_hestia_summoned
-      - logicblock_field_all_pops_complete
-    events_when_complete:
-      - goddess_completed #Used for bonus mode
-      - base_demeter_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
-    persist_state: true
-    reset_on_complete: false
-    reset_events:
-      - multiball_goddess_ended
-  base_hera:
-    events:
-      - base_hestia_summoned
-      - base_demeter_summoned
-      - logicblock_field_all_pops_complete
-    events_when_complete:
-      - goddess_completed #Used for bonus mode
-      - base_hera_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
-    persist_state: true
-    reset_on_complete: false
-    reset_events:
-      - multiball_goddess_ended
-  base_hecate:
-    events:
-      - base_hestia_summoned
-      - base_demeter_summoned
-      - base_hera_summoned
-      - logicblock_field_all_pops_complete
-    events_when_complete:
-      - goddess_completed #Used for bonus mode
-      - base_hecate_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
-    persist_state: true
-    reset_on_complete: false
-    reset_events:
-      - multiball_goddess_ended
   base_artimus:
     events:
       - base_hestia_summoned
-      - base_demeter_summoned
-      - base_hera_summoned
-      - base_hecate_summoned
       - logicblock_field_all_pops_complete
     events_when_complete:
       - goddess_completed #Used for bonus mode
@@ -116,9 +77,6 @@ sequences:
   base_athena:
     events:
       - base_hestia_summoned
-      - base_demeter_summoned
-      - base_hera_summoned
-      - base_hecate_summoned
       - base_artimus_summoned
       - logicblock_field_all_pops_complete
     events_when_complete:
@@ -131,9 +89,6 @@ sequences:
   base_aphrodite:
     events:
       - base_hestia_summoned
-      - base_demeter_summoned
-      - base_hera_summoned
-      - base_hecate_summoned
       - base_artimus_summoned
       - base_athena_summoned
       - logicblock_field_all_pops_complete
@@ -503,18 +458,22 @@ sequence_shots:
       - drop_target_star_middle_down
       - drop_target_star_distal_down
     sequence_timeout: 1s
-  bonus_orbit_counter_clockwise: #used in bonus counting, for other orbit purposes, see field
+  base_orbit_counter_clockwise: #used in bonus counting and goddess mb, for other orbit purposes, see field
     playfield: earth_pf
     switch_sequence:
       - s_olympus_rollover
       - s_posideon_rollover
     sequence_timeout: 3s
-  bonus_orbit_clockwise: #used in bonus counting, for other orbit purposes, see field
+    delay_event_list:
+      - balldevice_bd_plunger_ejecting_ball: 1000ms
+  base_orbit_clockwise: #used in bonus counting abd goddess mb, for other orbit purposes, see field
     playfield: earth_pf
     switch_sequence:
       - s_posideon_rollover
       - s_olympus_rollover
     sequence_timeout: 3s
+    delay_event_list:
+      - balldevice_bd_plunger_ejecting_ball: 1000ms
 
 variable_player:
   "{device.state_machines.ramp_flap.state}":
@@ -554,9 +513,9 @@ variable_player:
     player_base_hydras:
       int: device.counters.field_hydra_hits.value
       action: set
-  bonus_orbit_clockwise_hit:
+  base_orbit_clockwise_hit:
     score: 1000
-  bonus_orbit_counter_clockwise_hit:
+  base_orbit_counter_clockwise_hit:
     score: 1500
   base_right_slingshot_hit:
     score: 100 #* current_player.multiplier #page 506 dev

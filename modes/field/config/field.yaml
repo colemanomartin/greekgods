@@ -14,18 +14,20 @@
 # Another potential: orbit challenge. Repeat orbit shots results in a score prize and light show.
 mode:
   start_events:
-    - mode_base_starting # {device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0}
+    - mode_base_starting{mode.goddess_mb.active==False} # dont start if goddess mb is still trying to lock balls Alternatively could have mode stop if balls present in subway lock 
     - multiball_poseidon_ramp_ended
     - multiball_olympus_ramp_ended
 #    - mode_celestial_mb_stopped
     - mode_scoop_mb_stopped
     - mode_hydra_stopped
+    - mode_goddess_mb_stopped
 #    - mode_open_hades_door_stopped
   stop_events:
     - multiball_poseidon_ramp_started
     - multiball_olympus_ramp_started
     - mode_scoop_mb_started
     - mode_hydra_started
+    - mode_goddess_mb_started
 #    - mode_celestial_mb_starting
 #    - mode_open_hades_door_starting
   priority: 200
@@ -87,7 +89,7 @@ accruals:
     events:
       - base_left_side_pop_hit
       - base_poseidon_pop_hit
-      - base_olympus_left_pop_hit
+#      - base_olympus_left_pop_hit fix this spoon
       - base_olympus_right_pop_hit
       - base_olympus_lower_pop_hit
     persist_state: false
