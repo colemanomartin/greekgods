@@ -1,0 +1,23 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_left_orbit_lower_triangle:
+      color: FF0000
+      fade: 100ms
+    l_left_orbit_upper_triangle:
+      color: FF0000
+      fade: 50ms
+    l_right_orbit_triangle:
+      color: FF0000
+      fade: 100ms
+- duration: 1
+  lights:
+    l_left_orbit_lower_triangle:
+      color: 00FF00
+      fade: 50ms
+    l_left_orbit_upper_triangle:
+      color: 00FF00
+      fade: 100ms
+    l_right_orbit_triangle:
+      color: 00FF00
+      fade: 100ms

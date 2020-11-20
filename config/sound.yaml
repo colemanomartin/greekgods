@@ -54,27 +54,27 @@ sounds:
     track: voice
   v_combo_bonus:
     file: combobonus.ogg
-    volume: 1
+    volume: 0.8
     track: voice
   v_ball_locked:
     file: balllocked.ogg
-    volume: 1
+    volume: 0.8
     track: voice
   v_ball_1_locked:
     file: ball1locked.ogg
-    volume: 1
+    volume: 0.8
     track: voice
   v_ball_2_locked:
     file: ball2locked.ogg
-    volume: 1
+    volume: 0.8
     track: voice
   v_ball_3_locked:
     file: ball3locked.ogg
-    volume: 1
+    volume: 0.8
     track: voice
   v_ball_4_locked:
     file: ball4locked.ogg
-    volume: 1
+    volume: 0.8
     track: voice
 
   snd_bat1:

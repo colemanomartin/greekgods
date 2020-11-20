@@ -458,7 +458,7 @@ sequence_shots:
       - drop_target_star_middle_down
       - drop_target_star_distal_down
     sequence_timeout: 1s
-  base_orbit_counter_clockwise: #used in bonus counting and goddess mb, for other orbit purposes, see field
+  base_orbit_counter_clockwise: #used in bonus counting, for other orbit purposes, see field
     playfield: earth_pf
     switch_sequence:
       - s_olympus_rollover
@@ -466,7 +466,7 @@ sequence_shots:
     sequence_timeout: 3s
     delay_event_list:
       balldevice_bd_plunger_ejecting_ball: 1s
-  base_orbit_clockwise: #used in bonus counting abd goddess mb, for other orbit purposes, see field
+  base_orbit_clockwise: #used in bonus counting, for other orbit purposes, see field
     playfield: earth_pf
     switch_sequence:
       - s_posideon_rollover

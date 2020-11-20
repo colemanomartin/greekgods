@@ -50,6 +50,9 @@ timers:
       - event: jump_ballblock_timer_to_0 #used to raise imeadiately when using BB as a shot by ramp_mb modes
         action: jump
         value: 0
+      - event: goddess_need_rapid_bb_reset_hit #in goddess_mb want to keep balls out of scoop. (Uses ballblock shot from base which is deactivated for ejects.)
+        action: jump
+        value: 0
   sweep_hold:
     end_value: 1
     tick_interval: 200ms

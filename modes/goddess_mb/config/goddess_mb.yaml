@@ -7,11 +7,10 @@
 #Final forth ball entering hole triggers the MB
 #Hits to the holes are jackpots.
 #Sequences to the pops increase the multiplier. (Light 2x 3x accordingly)
-#If ball drains when locking, next ball resumes the mission.
-# Add arrows and arrow shows`
-# fix doubled up text
-#
-# figure out why ball gets stuck in scoop
+#Light pops red until hit.
+# fix whirlpool to green
+# potential bug: player could maybe  shoot a ball into the scoop while BB down after eject. event player tries to prevent this.
+
 mode:
   priority: 800
   start_events:
@@ -23,22 +22,103 @@ mode:
 
 variable_player:
   multiball_lock_subway_lock_locked_ball:
-    score: 5000
+    score: 5000 * (device.counters.goddess_multiplier.value)
   logicblock_goddess_all_pops_complete:
-    score: 20000
+    score: 20000 * (device.counters.goddess_multiplier.value)
+  base_orbit_clockwise_hit:
+    score: 1000 * (device.counters.goddess_multiplier.value)
+  base_orbit_counter_clockwise_hit:
+    score: 1500 * (device.counters.goddess_multiplier.value)
+  base_right_slingshot_hit:
+    score: 100 * (device.counters.goddess_multiplier.value)
+  base_left_slingshot_hit:
+    score: 100 * (device.counters.goddess_multiplier.value)
+  drop_target_star_proximal_down:
+    score: 150 * (device.counters.goddess_multiplier.value)
+  drop_target_star_middle_down:
+    score: 150 * (device.counters.goddess_multiplier.value)
+  drop_target_star_distal_down:
+    score: 150 * (device.counters.goddess_multiplier.value)
+  star_double_down_a:
+    score: 100 * (device.counters.goddess_multiplier.value)
+  star_double_down_b:
+    score: 100 * (device.counters.goddess_multiplier.value)
+  star_tripple_down:
+    score: 200 * (device.counters.goddess_multiplier.value)
+  drop_target_bank_cluster_down: #Completed all 3 down
+    score: 300 * (device.counters.goddess_multiplier.value)
+  base_revieled_slingshot_hit:
+    score: 1000 * (device.counters.goddess_multiplier.value)
+  base_posideon_rollover_hit:
+    score: 400 * (device.counters.goddess_multiplier.value)
+  base_olympus_rollover_hit:
+    score: 400 * (device.counters.goddess_multiplier.value)
+  base_olympus_lower_pop_hit:
+    score: 400 * (device.counters.goddess_multiplier.value)
+  base_olympus_right_pop_hit:
+    score: 400 * (device.counters.goddess_multiplier.value)
+  base_olympus_left_pop_hit:
+    score: 400 * (device.counters.goddess_multiplier.value)
+  base_hole_proximal_hit:
+    score: 400 * (device.counters.goddess_multiplier.value)
+  base_hole_distal_hit:
+    score: 1000 * (device.counters.goddess_multiplier.value)
+  ballblock_hit:
+    score: 500 * (device.counters.goddess_multiplier.value)
+  base_scoop_from_pf_hit:
+    score: 500 * (device.counters.goddess_multiplier.value)
+  base_poseidon_right_slingshot_hit:
+    score: 300 * (device.counters.goddess_multiplier.value)
+  base_poseidon_left_slingshot_hit:
+    score: 300 * (device.counters.goddess_multiplier.value)
+  base_poseidon_pop_hit:
+    score: 300 * (device.counters.goddess_multiplier.value)
+  base_left_side_pop_hit:
+    score: 200 * (device.counters.goddess_multiplier.value)
+  base_left_inlane_hit:
+    score: 100 * (device.counters.goddess_multiplier.value)
+  base_left_outlane_hit:
+    score: 200 * (device.counters.goddess_multiplier.value)
+  base_right_inlane_hit:
+    score: 100 * (device.counters.goddess_multiplier.value)
+  base_right_outlane_hit:
+    score: 200 * (device.counters.goddess_multiplier.value)
+  base_ramp_opto_hit:
+    score: 300 * (device.counters.goddess_multiplier.value)
+  base_orbit_spinner_hit:
+    score: 25 * (device.counters.goddess_multiplier.value)
+  base_olympus_spinner_hit:
+    score: 50 * (device.counters.goddess_multiplier.value)
+  base_medial_sis_hit:
+    score: 400 * (device.counters.goddess_multiplier.value)
+  base_lateral_sis_hit:
+    score: 400 * (device.counters.goddess_multiplier.value)
+  base_poseidon_gate_hit:
+    score: 250 * (device.counters.goddess_multiplier.value)
+  mouth_open_hit:
+    score: 250 * (device.counters.goddess_multiplier.value)
+  left_ramp_hit:
+    score: 600 * (device.counters.goddess_multiplier.value)
+  right_ramp_hit:
+    score: 600 * (device.counters.goddess_multiplier.value)
+  field_sis_left_to_right_hit:
+    score: 2000 * (device.counters.goddess_multiplier.value)
+  field_sis_right_to_left_hit:
+    score: 2000 * (device.counters.goddess_multiplier.value)
+  base_hydra_hit:
+    score: 100 * (device.counters.goddess_multiplier.value)
 
 counters:
   goddess_multiplier:
-    starting_count: 1
+    starting_count: 0
     persist_state: false
-    count_events: logicblock_goddess_all_pops_complete
+    count_events: logicblock_goddess_all_pops_complete #Have to use the local because field is off.
 
 multiball_locks:
   subway_lock:
     source_playfield: earth_pf
     enable_events:
-      - base_orbit_clockwise_hit
-      - base_orbit_counter_clockwise_hit
+      - goddess_made_orbit_hit
     disable_events: multiball_lock_subway_lock_locked_ball
     balls_to_lock: 3
     locked_ball_counting_strategy: physical_only
@@ -57,7 +137,64 @@ multiballs:
     enable_events: mode_goddess_mb_starting
     debug: true
 
+
+shot_profiles:
+  red_green:
+    states:
+      - name: untouched
+        show: "show_red_pulse"
+#        show_tokens:
+        loops: -1
+        speed: 2
+      - name: touched
+        show: "show_green_pulse"
+#        show_tokens:
+        loops: -1
+        speed: 1
+    loop: False
+
 shots:
+  goddess_olympus_lower_pop:
+    switch: s_olympus_lower_pop
+    show_tokens:
+      leds: l_olympus_lower_pop
+    profile: red_green
+    start_enabled: true #or enable_events: mode_goddess_mb_started
+    playfield: earth_pf
+    restart_events: logicblock_goddess_all_pops_complete
+  goddess_olympus_right_pop:
+    switch: s_olympus_right_pop
+    show_tokens:
+      leds: l_olympus_right_pop
+    profile: red_green
+    start_enabled: true #or enable_events: mode_goddess_mb_started
+    playfield: earth_pf
+    restart_events: logicblock_goddess_all_pops_complete
+  goddess_olympus_left_pop:
+    switch: s_olympus_left_pop
+    show_tokens:
+      leds: l_olympus_left_pop
+    profile: red_green
+    start_enabled: true #or enable_events: mode_goddess_mb_started
+    playfield: earth_pf
+    restart_events: logicblock_goddess_all_pops_complete
+  goddess_poseidon_pop:
+    switch: s_poseidon_pop
+    show_tokens:
+      leds: l_poseidon_pop
+    profile: red_green
+    start_enabled: true #or enable_events: mode_goddess_mb_started
+    playfield: earth_pf
+    restart_events: logicblock_goddess_all_pops_complete
+  goddess_left_side_pop:
+    switch: s_left_side_pop
+    show_tokens:
+      leds: l_left_side_pop
+    profile: red_green
+    start_enabled: true #or enable_events: mode_goddess_mb_started
+    playfield: earth_pf
+    restart_events: logicblock_goddess_all_pops_complete
+
   goddess_trigger_mb_release:
     enable_events: multiball_lock_subway_lock_full
     disable_events: multiball_goddess_started
@@ -65,8 +202,22 @@ shots:
     hit_events:
       - base_hole_distal_hit
       - base_hole_proximal_hit
-    switches: s_ballblock
-
+  goddess_made_orbit:
+    enable_events: mode_goddess_mb_started
+    disable_events: multiball_goddess_started
+    playfield: earth_pf
+    hit_events:
+      - base_orbit_counter_clockwise_hit
+      - base_orbit_clockwise_hit
+  goddess_need_rapid_bb_reset: #This shot tells the timer in scoop to jump to 0 when hit (also generated from event player)
+    enable_events: mode_goddess_mb_started
+    disable_events: multiball_goddess_started
+    playfield: earth_pf
+    hit_events:
+      - ballblock_hit
+event_player:
+  balldevice_bd_scoop_ball_eject_success:
+    - goddess_need_rapid_bb_reset_hit|20ms #Spoof of above shot build in a delay to allow timer to start so this event is picked up
 
 accruals:
   goddess_all_pops:
@@ -77,6 +228,7 @@ accruals:
       - base_olympus_right_pop_hit
       - base_olympus_lower_pop_hit
     reset_on_complete: true
+    disable_on_complete: false
 
 
 show_player:
@@ -87,17 +239,54 @@ show_player:
     show_countdown99_green:
       speed: 10
       loops: 0
+    show_sparkle_gg_green:
+      speed: 40
+      loops: -1
+  mode_goddess_mb_started:
     show_everything_green:
       speed: 1
       loops: -1
     show_sparkle_gg_green:
       speed: 40
       loops: -1
-#event_player:
-#  mode_scoop_mb_started:
-#    - force_bb_down
-#  mode_scoop_mb_ending:
-#    - release_bb_override
+    show_invite_orbit_triangles_red:
+      speed: 1
+      loops: -1
+      priority: 3
+  multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls<3}:
+    show_invite_orbit_triangles_red:
+      speed: 1
+      loops: -1
+  base_orbit_clockwise_hit:
+    show_invite_orbit_triangles_red:
+      action: stop
+  base_orbit_counter_clockwise_hit:
+    show_invite_orbit_triangles_red:
+      action: stop
+  logicblock_goddess_multiplier_hit{device.counters.goddess_multiplier.value==2}:
+    show_2x_red:
+      speed: 1
+      loops: -1
+      priority: 3
+  logicblock_goddess_multiplier_hit{device.counters.goddess_multiplier.value==3}:
+    show_2x_red:
+      action: stop
+    show_3x_red:
+      speed: 1
+      loops: -1
+      priority: 3
+  logicblock_goddess_multiplier_hit{device.counters.goddess_multiplier.value>3}:
+    show_3x_red:
+      action: stop
+  logicblock_goddess_multiplier_hit{device.counters.goddess_multiplier.value==6}:
+    show_2x_red:
+      speed: 2
+      loops: -1
+      priority: 3
+    show_3x_red:
+      speed: 2
+      loops: -1
+      priority: 3
 
 timers:
   goddesses_plotting:
@@ -110,6 +299,16 @@ timers:
         event: goddess_trigger_mb_release_hit
 
 widgets:
+  goddess_mb_orbit_arrows:
+  - type: image
+    image: 2_red_orbit_arrows
+    scale: .75
+  #      z: 1
+    x: 50%
+    y: 100%
+    anchor_x: middle
+    anchor_y: top
+
   goddess_mb_shoot_orbits:
   - type: text
     text: "Loop Orbit to\nOpen Underworld"
@@ -166,7 +365,7 @@ widgets:
     font_size: 75
   goddess_aphrodite:
   - type: text
-    text: "Help Aphrodite\nTo in Underworld"
+    text: "Help Aphrodite\nTo the Underworld"
     font_name: GreekGods2
     color: green
     y: 25%
@@ -184,18 +383,27 @@ widgets:
     font_size: 75
 #Order hestia artimus aphrodite athena
 widget_player:
+  #For some reason this always tests false  slide_pf_goddess_mb_gather_instructions_slide_active{device.ball_devices.bd_scoop.balls==0}:
   slide_pf_goddess_mb_gather_instructions_slide_active:
-    goddess_hestia:
-      slide: pf_goddess_mb_gather_instructions_slide
     goddess_mb_shoot_orbits:
       slide: pf_goddess_mb_gather_instructions_slide
+    goddess_mb_orbit_arrows: #PNG
+      slide: pf_goddess_mb_gather_instructions_slide
+    goddess_hestia:
+      slide: pf_goddess_mb_gather_instructions_slide
   base_orbit_clockwise_hit:
+    goddess_mb_orbit_arrows:
+      action: remove
     goddess_mb_shoot_orbits:
       action: remove
   base_orbit_counter_clockwise_hit:
+    goddess_mb_orbit_arrows:
+      action: remove
     goddess_mb_shoot_orbits:
       action: remove
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==1}:
+    goddess_mb_orbit_arrows: #PNG
+      slide: pf_goddess_mb_gather_instructions_slide
     goddess_mb_shoot_orbits:
       slide: pf_goddess_mb_gather_instructions_slide
     goddess_hestia:
@@ -203,14 +411,20 @@ widget_player:
     goddess_artimus:
       slide: pf_goddess_mb_gather_instructions_slide
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==2}:
+    goddess_mb_orbit_arrows: #PNG
+      slide: pf_goddess_mb_gather_instructions_slide
     goddess_mb_shoot_orbits:
       slide: pf_goddess_mb_gather_instructions_slide
+    goddess_hestia:
+      action: remove
     goddess_artimus:
       action: remove
     goddess_aphrodite:
       slide: pf_goddess_mb_gather_instructions_slide
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==3}:
-    goddess_aphridite:
+    goddess_aphrodite:
+      action: remove
+    goddess_hestia:
       action: remove
     goddess_athena:
       slide: pf_goddess_mb_gather_instructions_slide
@@ -224,13 +438,13 @@ slide_player:
       background_color: 000000
       widgets:
       - type: text
-        text: "Godesses to\nThe Underworld!"
+        text: "All Godesses to\nThe Underworld!"
         font_name: GreekGods2
         color: green
         y: 50%
         anchor_x: center
         anchor_y: center
-        font_size: 45
+        font_size: 55
   multiball_goddess_started:
     pf_goddess_mb_gather_instructions_slide:
       action: remove
@@ -239,7 +453,7 @@ slide_player:
       background_color: 000000
       widgets:
       - type: text
-        text: "Goddess Rebellion!\nHit Caves for Bonus\nHit Pop Sequence for\nBonus Multiplier"
+        text: "Goddess Rebellion!\nHit Caves for Bonus\n\nHit Pop Sequence for\nBonus Multiplier"
         font_name: GreekGods2
         color: green
         y: 50%

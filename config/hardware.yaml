@@ -820,7 +820,7 @@ ball_devices:
     ball_switches: s_scoop_chamber, s_scoop_lock_0, s_scoop_lock_1
     eject_timeouts: 500ms
     debug: yes
-    max_eject_attempts: 10
+    max_eject_attempts: 5
   bd_plunger:
     captures_from: earth_pf
     eject_targets: earth_pf
@@ -830,6 +830,7 @@ ball_devices:
     player_controlled_eject_event: s_ball_launch_active
     eject_timeouts: 1500 ms
     eject_coil: c_shooter_lane_eject
+    max_eject_attempts: 5
   bd_trough:
     tags: trough, home, drain
     captures_from: earth_pf
