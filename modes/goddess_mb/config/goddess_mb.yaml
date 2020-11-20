@@ -8,7 +8,10 @@
 #Hits to the holes are jackpots.
 #Sequences to the pops increase the multiplier. (Light 2x 3x accordingly)
 #If ball drains when locking, next ball resumes the mission.
-#
+# Add arrows and arrow shows`
+# fix doubled up text
+# consider a lime green star in sweep
+# figure out why ball gets stuck in scoop
 mode:
   priority: 800
   start_events:
@@ -57,6 +60,7 @@ multiballs:
 shots:
   goddess_trigger_mb_release:
     enable_events: multiball_lock_subway_lock_full
+    disable_events: multiball_goddess_started
     playfield: earth_pf
     hit_events:
       - base_hole_distal_hit
