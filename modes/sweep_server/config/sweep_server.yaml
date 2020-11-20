@@ -467,9 +467,9 @@ widgets:
           relative: false
           duration: 4s
           repeat: true
-  rotating_white_star: #White star with alpha background rotates 3 x in 3 seconds and expires
+  rotating_lime_star: #White star with alpha background rotates 3 x in 3 seconds and expires
     - type: image
-      image: white_star_1000Sq_alpha #_alpha
+      image: lime_star_1000Sq_alpha #_alpha
       scale: 1
       x: 50%
       y: 50%
@@ -544,7 +544,7 @@ widget_player:
 #    rotating_white_star: #3 second rotating star
 #      slide: blank_transparent
   goddess_trigger_mb_release_hit:
-    rotating_white_star: #3 second rotating star
+    rotating_lime_star: #3 second rotating star
       slide: blank_transparent
 
 ################ Superspinner sweeps ###################

@@ -10,7 +10,7 @@
 #If ball drains when locking, next ball resumes the mission.
 # Add arrows and arrow shows`
 # fix doubled up text
-# consider a lime green star in sweep
+#
 # figure out why ball gets stuck in scoop
 mode:
   priority: 800
@@ -184,11 +184,11 @@ widgets:
     font_size: 75
 #Order hestia artimus aphrodite athena
 widget_player:
-  slide_pf_goddess_mb_started_slide_active:
+  slide_pf_goddess_mb_gather_instructions_slide_active:
     goddess_hestia:
-      slide: pf_goddess_mb_started_slide
+      slide: pf_goddess_mb_gather_instructions_slide
     goddess_mb_shoot_orbits:
-      slide: pf_goddess_mb_started_slide
+      slide: pf_goddess_mb_gather_instructions_slide
   base_orbit_clockwise_hit:
     goddess_mb_shoot_orbits:
       action: remove
@@ -197,31 +197,29 @@ widget_player:
       action: remove
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==1}:
     goddess_mb_shoot_orbits:
-      slide: pf_goddess_mb_started_slide
+      slide: pf_goddess_mb_gather_instructions_slide
     goddess_hestia:
       action: remove
     goddess_artimus:
-      slide: pf_goddess_mb_started_slide
+      slide: pf_goddess_mb_gather_instructions_slide
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==2}:
     goddess_mb_shoot_orbits:
-      slide: pf_goddess_mb_started_slide
+      slide: pf_goddess_mb_gather_instructions_slide
     goddess_artimus:
       action: remove
     goddess_aphrodite:
-      slide: pf_goddess_mb_started_slide
+      slide: pf_goddess_mb_gather_instructions_slide
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==3}:
-    goddess_mb_shoot_orbits:
-      slide: pf_goddess_mb_started_slide
     goddess_aphridite:
       action: remove
     goddess_athena:
-      slide: pf_goddess_mb_started_slide
+      slide: pf_goddess_mb_gather_instructions_slide
     goddess_mb_shoot_cave:
-      slide: pf_goddess_mb_started_slide
+      slide: pf_goddess_mb_gather_instructions_slide
 
 slide_player:
   mode_goddess_mb_started:
-    pf_goddess_mb_started_slide:
+    pf_goddess_mb_gather_instructions_slide:
       target: playfield_lcd
       background_color: 000000
       widgets:
@@ -234,14 +232,14 @@ slide_player:
         anchor_y: center
         font_size: 45
   multiball_goddess_started:
-    pf_goddess_mb_instruction_slide:
+    pf_goddess_mb_gather_instructions_slide:
       action: remove
     pf_goddess_mb_started_slide:
       target: playfield_lcd
-      background_color: 004400
+      background_color: 000000
       widgets:
       - type: text
-        text: "Goddess Rebellion!\nHit Cave for Bonus\nHit Pop Sequence for\nBonus Multiplier"
+        text: "Goddess Rebellion!\nHit Caves for Bonus\nHit Pop Sequence for\nBonus Multiplier"
         font_name: GreekGods2
         color: green
         y: 50%
