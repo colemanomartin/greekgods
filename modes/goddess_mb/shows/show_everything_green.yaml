@@ -2,11 +2,11 @@
 #Everything gets full intensity yellow except serial through metal ball guides which get 003300
 - time: 0
   lights:
-      l_olympus_lower_pop: 005000
-      l_olympus_left_pop: 005000
-      l_olympus_right_pop: 005000
-      l_poseidon_pop: 005000
-      l_left_side_pop: 005000
+      l_olympus_lower_pop: 005010
+      l_olympus_left_pop: 005010
+      l_olympus_right_pop: 005010
+      l_poseidon_pop: 005010
+      l_left_side_pop: 005010
       l_hydra_2: 00FF00
       l_hydra_center: 00FF00
       l_hydra_top: 00FF00

@@ -12,7 +12,7 @@
 mode:
   priority: 800
   start_events:
-    - base_aphrodite_summoned # {device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0}
+    - base_athena_summoned # {device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0}
     - key_c_pressed
   stop_events:
     - multiball_goddess_ended
@@ -104,9 +104,9 @@ widgets:
     x: 50%
     color: white
     font_name: GreekGods2
-  goddess_mb_shoot_ramp:
+  goddess_mb_shoot_cave:
   - type: text
-    text: "Shoot cave for\nMultiball"
+    text: "Shoot cave for\nRebellion"
     font_size: 60
     y: 75%
     x: 50%
@@ -115,6 +115,7 @@ widgets:
   goddess_mb_jackpot:
   - type: text
     text: Pop Sequence Jackpot!
+    font_name: GreekGods2
     color: white
     y: 25%
     anchor_x: center
@@ -124,35 +125,9 @@ widgets:
   goddess_mb_bonus_instructions:
   - type: text
     text: "Hit All Pops\nFor Bonus"
+    font_name: GreekGods2
     color: white
     y: 75%
-    anchor_x: center
-    anchor_y: center
-    font_size: 75
-    expire: 3s
-  goddess_athena:
-  - type: text
-    text: "Help Athena\nTo the Underworld"
-    color: white
-    y: 25%
-    anchor_x: center
-    anchor_y: center
-    font_size: 75
-    expire: 3s
-  goddess_artimus:
-  - type: text
-    text: "Help Artimus\nTo the Underworld"
-    color: white
-    y: 25%
-    anchor_x: center
-    anchor_y: center
-    font_size: 75
-    expire: 3s
-  goddess_aphrodite:
-  - type: text
-    text: "Help Aphrodite\nTo in Underworld"
-    color: white
-    y: 25%
     anchor_x: center
     anchor_y: center
     font_size: 75
@@ -160,27 +135,75 @@ widgets:
   goddess_hestia:
   - type: text
     text: "Help Hestia\nTo the Underworld"
+    font_name: GreekGods2
     color: white
     y: 25%
     anchor_x: center
     anchor_y: center
     font_size: 75
-    expire: 3s
-
+  goddess_artimus:
+  - type: text
+    text: "Help Artimus\nTo the Underworld"
+    font_name: GreekGods2
+    color: white
+    y: 25%
+    anchor_x: center
+    anchor_y: center
+    font_size: 75
+  goddess_aphrodite:
+  - type: text
+    text: "Help Aphrodite\nTo in Underworld"
+    font_name: GreekGods2
+    color: white
+    y: 25%
+    anchor_x: center
+    anchor_y: center
+    font_size: 75
+  goddess_athena:
+  - type: text
+    text: "Help Athena\nTo the Underworld"
+    font_name: GreekGods2
+    color: white
+    y: 25%
+    anchor_x: center
+    anchor_y: center
+    font_size: 75
+#Order hestia artimus aphrodite athena
 widget_player:
   slide_pf_goddess_mb_started_slide_active:
     goddess_hestia:
-      slide: pf_goddess_mb_instruction_slide
+      slide: pf_goddess_mb_started_slide
     goddess_mb_shoot_orbits:
-      slide: pf_goddess_mb_instruction_slide
-    base_orbit_clockwise_hit:
-      goddess_mb_shoot_orbits:
-        action: remove
-    base_orbit_counter_clockwise_hit:
-      goddess_mb_shoot_orbits:
-        action: remove
-
-#    slide: pf_goddess_mb_started_slide
+      slide: pf_goddess_mb_started_slide
+  base_orbit_clockwise_hit:
+    goddess_mb_shoot_orbits:
+      action: remove
+  base_orbit_counter_clockwise_hit:
+    goddess_mb_shoot_orbits:
+      action: remove
+  multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==1}:
+    goddess_mb_shoot_orbits:
+      slide: pf_goddess_mb_started_slide
+    goddess_hestia:
+      action: remove
+    goddess_artimus:
+      slide: pf_goddess_mb_started_slide
+  multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==2}:
+    goddess_mb_shoot_orbits:
+      slide: pf_goddess_mb_started_slide
+    goddess_artimus:
+      action: remove
+    goddess_aphrodite:
+      slide: pf_goddess_mb_started_slide
+  multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==3}:
+    goddess_mb_shoot_orbits:
+      slide: pf_goddess_mb_started_slide
+    goddess_aphridite:
+      action: remove
+    goddess_athena:
+      slide: pf_goddess_mb_started_slide
+    goddess_mb_shoot_cave:
+      slide: pf_goddess_mb_started_slide
 
 slide_player:
   mode_goddess_mb_started:
@@ -189,13 +212,14 @@ slide_player:
       background_color: 004400
       widgets:
       - type: text
-        text: Gather the Goddesses
+        text: "Godesses to\nThe Underworld!"
+        font_name: GreekGods2
         color: white
         y: 50%
         anchor_x: center
         anchor_y: center
         font_size: 45
-  multiball_goddess_mb_started:
+  multiball_goddess_started:
     pf_goddess_mb_instruction_slide:
       action: remove
     pf_goddess_mb_started_slide:
@@ -204,6 +228,7 @@ slide_player:
       widgets:
       - type: text
         text: "Goddess Rebellion!\nHit Cave for Bonus\nHit Pop Sequence for\nBonus Multiplier"
+        font_name: GreekGods2
         color: white
         y: 50%
         anchor_x: center
