@@ -42,9 +42,6 @@ sequences:
     events: #Events on seperate lines must all be satisfied to complete sequence. 2 events on same line seperated by comma are OR for that line
       - super_spinner_kickoff_hit
       - ball_ending, timer_super_spinner_countdown_complete #Only counts after previous event registered. mode done when either turn ends or timer runs out
-#    restart_events:
-#      - multiball_lock_olympus_lock_locked_ball
-#      - multiball_olympus_ramp_ended
     persist_state: true
     reset_on_complete: true
     disable_on_complete: true
