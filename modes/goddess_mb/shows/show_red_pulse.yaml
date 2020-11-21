@@ -1,0 +1,11 @@
+#show_version=5
+- duration: 1
+  lights:
+    (leds):
+      color: 880000
+      fade: 600ms
+- duration: 2
+  lights:
+    (leds):
+      color: 005010
+      fade: 500ms

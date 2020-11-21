@@ -467,6 +467,26 @@ widgets:
           relative: false
           duration: 4s
           repeat: true
+  hypno_rainbow_sweep_1s:
+    - type: image
+      image: wildspiral #_alpha
+      scale: 1
+      x: 50%
+      y: 50%
+      anchor_x: middle
+      anchor_y: middle
+      expire: 1s
+      animations:
+        add_to_slide:
+        - property: rotation
+          value: 0
+          relative: false
+          duration: 0
+        - property: rotation
+          value: 360
+          relative: false
+          duration: 1s
+          repeat: true
   rotating_lime_star: #White star with alpha background rotates 3 x in 3 seconds and expires
     - type: image
       image: lime_star_1000Sq_alpha #_alpha
@@ -540,6 +560,10 @@ widget_player:
   multiball_lock_subway_lock_locked_ball:
     scoop_rainbow_in:
       slide: blank_transparent
+  logicblock_goddess_all_pops_complete:
+    hypno_rainbow_sweep_1s:
+      slide: blank_transparent
+
 #  test_ss_sweep:
 #    rotating_white_star: #3 second rotating star
 #      slide: blank_transparent

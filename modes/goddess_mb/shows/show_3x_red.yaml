@@ -1,0 +1,11 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_3xflasher:
+      color: FF0000
+      fade: 100ms
+- duration: 1
+  lights:
+    l_3xflasher:
+      color: 00FF00
+      fade: 50ms
