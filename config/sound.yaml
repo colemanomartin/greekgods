@@ -62,34 +62,43 @@ sounds:
     track: voice
   v_ball_1_locked:
     file: ball1locked.ogg
-    volume: 1
+    volume: 0.7
     track: voice
   v_ball_2_locked:
     file: ball2locked.ogg
-    volume: 1
+    volume: 0.7
     track: voice
   v_ball_3_locked:
     file: ball3locked.ogg
-    volume: 1
+    volume: 0.7
     track: voice
   v_ball_4_locked:
     file: ball4locked.ogg
-    volume: 1
+    volume: 0.7
     track: voice
+  snd_underworld_open:
+    file: underworldopen.ogg
+    track: sfx
 
   snd_bat1:
     file: bat1.ogg
+    track: sfx
   snd_bat2:
     file: bat2.ogg
+    track: sfx
   snd_bat3:
     file: bat3.ogg
+    track: sfx
   snd_bat4:
     file: bat4.ogg
+    track: sfx
   snd_hades_target:
     file: hades_target1.ogg
+    track: sfx
   snd_left_main_ss:
     file: little_metal_left44k.ogg
 #    volume: 1
+    track: sfx
     max_queue_time: 500ms
     track: sfx
   snd_right_main_ss:
