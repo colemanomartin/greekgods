@@ -2,7 +2,7 @@
 #scoop mb mode
 #Enter mode from mystery. post is enabled by mode. mystery is kept running until 2 balls are served then
 #mystery is stopped and ball is released serving 3 balls to player. Jackpot with every scoop shot.
-#Do give it a light show
+#Do give it a color and a light show, make it a return the soals to the underworld 
 mode:
   priority: 650
   start_events:
@@ -110,3 +110,6 @@ slide_player:
         anchor_x: center
         anchor_y: center
         font_size: 85
+
+sound_player:
+  mode_scoop_mb_started: snd_underworld_open

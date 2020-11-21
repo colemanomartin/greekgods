@@ -2,13 +2,15 @@
 #goddess mb mode
 #Enter mode from completion of all goddesses. This can only happen when field
 #is running. When mode starts, field ends. Activate lock with an orbit shot.
-#Locking engaged enables post to send ball downstairs
+#Condiser adding: Locking engaged enables post to send ball downstairs
 #BB is rapid return to  up. Goddesses enter via holes.
 #Final forth ball entering hole triggers the MB
 #Hits to the holes are jackpots.
+#Consider pulling down BB and making scoop start mode's functions like in Superspinner. 
+#Complete all pops increases score multiplier for mode
+#Condiser adding: Locking engaged enables post to send ball downstairs
 # Add jackpot and multiplier increased sound and widgets.
-# fix whirlpool to green
-# potential bug: player could maybe  shoot a ball into the scoop while BB down after eject. event player tries to prevent this.
+# potential bug: player could maybe  shoot a ball into the scoop while BB down after eject. event player tries to prevent this with rapid raise of bb.
 
 mode:
   priority: 800
@@ -158,6 +160,9 @@ show_player:
   mode_goddess_mb_started:
     show_everything_green:
       speed: 1
+      loops: -1
+    show_malstrom_spin_ccw_green:
+      speed: 8
       loops: -1
     show_sparkle_gg_green:
       speed: 40
@@ -391,6 +396,7 @@ sound_player:
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==2}: v_ball_2_locked
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==3}: v_ball_3_locked
   goddess_trigger_mb_release_hit: v_ball_4_locked
+  goddess_made_orbit_hit: snd_underworld_open
 
 variable_player:
   multiball_lock_subway_lock_locked_ball:

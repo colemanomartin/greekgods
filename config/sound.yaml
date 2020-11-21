@@ -98,7 +98,6 @@ sounds:
   snd_left_main_ss:
     file: little_metal_left44k.ogg
 #    volume: 1
-    track: sfx
     max_queue_time: 500ms
     track: sfx
   snd_right_main_ss:
