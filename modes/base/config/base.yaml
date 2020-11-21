@@ -622,6 +622,7 @@ show_player:
     show_left_side_pop:
       speed: 5
       loops: 0
+      priority: 2000
   s_right_flipper_active:
     show_right_flip:
       speed: 3

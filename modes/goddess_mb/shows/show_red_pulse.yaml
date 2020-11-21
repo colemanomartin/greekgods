@@ -3,9 +3,9 @@
   lights:
     (leds):
       color: 880000
-      fade: 400ms
+      fade: 600ms
 - duration: 2
   lights:
     (leds):
       color: 005010
-      fade: 400ms
+      fade: 500ms

@@ -294,7 +294,8 @@ convert orbit sweeps to color stop so they work with MB collors
 make green mb insert palate versus green rotation for goddess BB green too.
 I might be able to recover from a missing ball with this event triggering mb https://docs.missionpinball.org/en/latest/events/balldevice_ball_device_ball_missing.html
 could put a delay_switch on the plunger lane to kill magnet and orbit events when launching.
-figure out why left side pop does not light on goddess mode. 
+figure out why left side pop does not light on goddess mode.
+Turn scoop MB into return souls to the underworld.
 Hardware:
   Check trough switches.
 
