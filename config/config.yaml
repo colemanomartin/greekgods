@@ -112,6 +112,10 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
 # magnets deactivate with MB and with calls for a mystery mode top of the orbit shot.
 # Also in hardware.yaml the magnets respond to a show played in base to deactivate in response to
 # shooter lane fire events.  Might be better to reset start state with each ball. Will have to test.
+# Problems 1. base uses a script to send disable enable commands to magnets for launch.
+# If state changes during the script, things get desynchronized.  Better to move it into state logic.
+# Also, machine does not reset at game end.  Maybe insert event for game will start/end to bring machine
+# back to default state.
   feeder_magnets:
     states:
       start:
@@ -146,6 +150,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - mode_o_ramp_mb_stopped{device.switches.s_sis_left==1} #o ramp mb either drained or locked a ball so return to diverting to olympus 7-4-20
           - multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1 and device.switches.s_sis_right==1}
           - ball_starting{device.switches.s_sis_right.state==1 and not device.shots.ormb_light_o_lock.enabled} #If starting a new ball go back to power ball side unless that side already qualified
+          - game_starting{device.switches.s_sis_right.state==1} #Resets is starting a new game added 11/22/20
         events_when_transitioning:
           - state_poseidon_to_olympus
           - state_says_enable_olympus_mag
@@ -158,7 +163,8 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - field_sis_right_to_left_hit{not mode.p_ramp_mb.active}
           - mode_p_ramp_mb_stopped{device.switches.s_sis_right==1} #p ramp mb either drained or locked a ball so return to diverting to poseidon 7-4-20
           - multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1 and device.switches.s_sis_left==1}
-          - ball_starting{device.switches.s_sis_right.state==1 and not device.shots.prmb_light_p_lock.enabled} #If starting a new ball go back to power ball side unless that side already qualified
+          - ball_starting{device.switches.s_sis_left.state==1 and not device.shots.prmb_light_p_lock.enabled} #If starting a new ball go back to power ball side unless that side already qualified. Think I found a bug  changed to switch to left 11/22/20
+          - game_starting{device.switches.s_sis_left.state==1} #Resets is starting a new game added 11/22/20
         events_when_transitioning:
           - state_olympus_to_posidon
           - state_says_enable_poseidon_mag
@@ -200,7 +206,8 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - multiball_scoop_ended{device.switches.s_sis_left.state==1}
           - multiball_goddess_ended{device.switches.s_sis_left.state==1}
           - mode_mystery_stopped{device.switches.s_sis_left.state==1}
-          - ball_starting{device.switches.s_sis_left.state==1} #in case game ends with mags in the off state this brings it back
+#          - ball_starting{device.switches.s_sis_left.state==1} #removed 11/22/20 in case game ends with mags in the off state this brings it back
+          - game_starting{device.switches.s_sis_left.state==1} #Resets is starting a new game added 11/22/20
         events_when_transitioning:
           - state_all_off_to_feed_poseidon
           - state_says_enable_poseidon_mag
@@ -214,7 +221,8 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - multiball_scoop_ended{device.switches.s_sis_right.state==1}
           - multiball_goddess_ended{device.switches.s_sis_right.state==1}
           - mode_mystery_stopped{device.switches.s_sis_right.state==1}
-          - ball_starting{device.switches.s_sis_right.state==1} #in case game ends with mags in the off state this brings it back
+#          - ball_starting{device.switches.s_sis_right.state==1} #in case game ends with mags in the off state this brings it back
+          - game_starting{device.switches.s_sis_right.state==1} #Resets is starting a new game added 11/22/20
         events_when_transitioning:
           - state_all_off_to_feed_olympus
           - state_says_enable_olympus_mag
