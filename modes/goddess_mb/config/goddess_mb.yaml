@@ -6,12 +6,12 @@
 #BB is rapid return to  up. Goddesses enter via holes.
 #Final forth ball entering hole triggers the MB
 #Hits to the holes are jackpots.
-#Consider pulling down BB and making scoop start mode's functions like in Superspinner. 
+#Consider pulling down BB and making scoop start mode's functions like in Superspinner.
 #Complete all pops increases score multiplier for mode
 #Condiser adding: Locking engaged enables post to send ball downstairs
 # Add jackpot and multiplier increased sound and widgets.
 # potential bug: player could maybe  shoot a ball into the scoop while BB down after eject. event player tries to prevent this with rapid raise of bb.
-
+# Consider adding a red LED to the speaker to show multiplier status 
 mode:
   priority: 800
   start_events:

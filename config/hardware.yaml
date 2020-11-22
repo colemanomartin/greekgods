@@ -443,7 +443,7 @@ coils:
         label:
         tags:
         default_pulse_ms: 70
-        default_pulse_power: 0.5
+#        default_pulse_power: 0.5
     c_scoop_eject:
         number: A3-B1-2
         label:

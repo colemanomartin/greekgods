@@ -31,6 +31,17 @@ accruals:  # Has to live in base since field shuts down during mb
     persist_state: true
     reset_on_complete: false
     disable_on_complete: false
+  base_all_pops:
+    events:
+      - base_left_side_pop_hit
+      - base_poseidon_pop_hit
+#      - base_olympus_left_pop_hit fix this spoon
+      - base_olympus_right_pop_hit
+      - base_olympus_lower_pop_hit
+    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false
+
 
 sequences:
   base_super_spinner_mode_engaged: #This remembers that spinner threshold has been hit and that the SS mode has been called to start.
@@ -52,7 +63,7 @@ sequences:
   #Hits to the pops are only registered when field running.
   base_hestia:
     events:
-      - logicblock_field_all_pops_complete
+      - logicblock_base_all_pops_complete
     events_when_complete:
       - goddess_completed #Used for bonus mode
       - base_hestia_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
@@ -63,7 +74,7 @@ sequences:
   base_artimus:
     events:
       - base_hestia_summoned
-      - logicblock_field_all_pops_complete
+      - logicblock_base_all_pops_complete
     events_when_complete:
       - goddess_completed #Used for bonus mode
       - base_artimus_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
@@ -75,7 +86,7 @@ sequences:
     events:
       - base_hestia_summoned
       - base_artimus_summoned
-      - logicblock_field_all_pops_complete
+      - logicblock_base_all_pops_complete
     events_when_complete:
       - goddess_completed #Used for bonus mode
       - base_aphrodite_summoned
@@ -88,7 +99,7 @@ sequences:
       - base_hestia_summoned
       - base_artimus_summoned
       - base_aphrodite_summoned
-      - logicblock_field_all_pops_complete
+      - logicblock_base_all_pops_complete{device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active==False and mode.o_ramp_mb.active==False} # Only enter the mode if no balls are locked and bb not blinking
     events_when_complete:
       - goddess_completed #Used for bonus mode
       - base_athena_summoned
@@ -812,7 +823,11 @@ show_player:
   timer_base_right_ramp_complete:
     show_invite_right_ramp_double_shot:
       action: stop
-
+  logicblock_base_all_pops_complete:
+    show_white_all_pops_x5:
+      speed: 6
+      priority: 10000
+      loops: 0 
 slide_player:
   mode_base_started:
     basic_score_slide:

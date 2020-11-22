@@ -48,6 +48,7 @@ multiballs:
     start_events:
       - prmb_start_shot_hit
       - ormb_start_shot_hit
+      - balldevice_bd_poseidon_ramp_ball_missing #Experimental fix for a ball that slipped through the lock 11/21/20
       - start_double_mb #Picks up a ramp opto hit broadcast by double ramp mb mode
     shoot_again: 10s #default ball save is 10 sec
     debug: true

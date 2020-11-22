@@ -14,7 +14,7 @@
 # Another potential: orbit challenge. Repeat orbit shots results in a score prize and light show.
 mode:
   start_events:
-    - mode_base_starting{mode.goddess_mb.active==False} # dont start if goddess mb is still trying to lock balls Alternatively could have mode stop if balls present in subway lock 
+    - mode_base_starting{mode.goddess_mb.active==False} # dont start if goddess mb is still trying to lock balls Alternatively could have mode stop if balls present in subway lock
     - multiball_poseidon_ramp_ended
     - multiball_olympus_ramp_ended
 #    - mode_celestial_mb_stopped
@@ -84,17 +84,17 @@ event_player:
 #    - complete_poseidon_excitement
   overload_p_hit: bonus_pop #allows pops not needed to qualify mb to be counted for bonus
 
-accruals:
-  field_all_pops:
-    events:
-      - base_left_side_pop_hit
-      - base_poseidon_pop_hit
+#accruals:
+#  field_all_pops:
+#    events:
+#      - base_left_side_pop_hit
+#      - base_poseidon_pop_hit
 #      - base_olympus_left_pop_hit fix this spoon
-      - base_olympus_right_pop_hit
-      - base_olympus_lower_pop_hit
-    persist_state: false
-    reset_on_complete: true
-    disable_on_complete: false
+#      - base_olympus_right_pop_hit
+#      - base_olympus_lower_pop_hit
+#    persist_state: true
+#    reset_on_complete: true
+#    disable_on_complete: false
 
 sequence_shots:
   field_sis_left_to_right:
@@ -347,10 +347,10 @@ show_player:
     show_right_ramp_blue2blue:
       speed: 120
       loops: 0
-  goddess_completed:
-    show_flash_pops_sequentially_white:
-      speed: 1
-      loops: 0
+#  goddess_completed:
+#    show_flash_pops_sequentially_white:
+#      speed: 1
+#      loops: 0
 
   drop_target_bank_cluster_down:
     show_r_sling_pulse:

@@ -1,0 +1,172 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_olympus_right_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_olympus_left_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_poseidon_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_left_side_pop:
+      color: FFFFFF
+      fade: 80ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: 000000
+      fade: 80ms
+    l_olympus_right_pop:
+      color: 000000
+      fade: 80ms
+    l_olympus_left_pop:
+      color: 000000
+      fade: 80ms
+    l_poseidon_pop:
+      color: 000000
+      fade: 80ms
+    l_left_side_pop:
+      color: 000000
+      fade: 80ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_olympus_right_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_olympus_left_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_poseidon_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_left_side_pop:
+      color: FFFFFF
+      fade: 80ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: 000000
+      fade: 80ms
+    l_olympus_right_pop:
+      color: 000000
+      fade: 80ms
+    l_olympus_left_pop:
+      color: 000000
+      fade: 80ms
+    l_poseidon_pop:
+      color: 000000
+      fade: 80ms
+    l_left_side_pop:
+      color: 000000
+      fade: 80ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_olympus_right_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_olympus_left_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_poseidon_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_left_side_pop:
+      color: FFFFFF
+      fade: 80ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: 000000
+      fade: 80ms
+    l_olympus_right_pop:
+      color: 000000
+      fade: 80ms
+    l_olympus_left_pop:
+      color: 000000
+      fade: 80ms
+    l_poseidon_pop:
+      color: 000000
+      fade: 80ms
+    l_left_side_pop:
+      color: 000000
+      fade: 80ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_olympus_right_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_olympus_left_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_poseidon_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_left_side_pop:
+      color: FFFFFF
+      fade: 80ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: 000000
+      fade: 80ms
+    l_olympus_right_pop:
+      color: 000000
+      fade: 80ms
+    l_olympus_left_pop:
+      color: 000000
+      fade: 80ms
+    l_poseidon_pop:
+      color: 000000
+      fade: 80ms
+    l_left_side_pop:
+      color: 000000
+      fade: 80ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_olympus_right_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_olympus_left_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_poseidon_pop:
+      color: FFFFFF
+      fade: 80ms
+    l_left_side_pop:
+      color: FFFFFF
+      fade: 80ms
+- duration: 1
+  lights:
+    l_olympus_lower_pop:
+      color: 000000
+      fade: 80ms
+    l_olympus_right_pop:
+      color: 000000
+      fade: 80ms
+    l_olympus_left_pop:
+      color: 000000
+      fade: 80ms
+    l_poseidon_pop:
+      color: 000000
+      fade: 80ms
+    l_left_side_pop:
+      color: 000000
+      fade: 80ms
+
