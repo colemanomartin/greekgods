@@ -1,0 +1,159 @@
+state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines.html
+# This state machine activates the magnet on the side of the powerball to feed the mechs on that side of the upper playfield.
+# When either the poseidon area or olympus area are maxed, the magnets switch to feed the other side.
+# magnets deactivate with MB and with calls for a mystery mode top of the orbit shot.
+# Problem: machine does not reset at game end.  Maybe insert event for game will start/end to bring machine
+# back to default state.
+#State machine conditions against if p_ramp and or o_ramp modes running. These modes run when p or o
+#locking is elgible and shuts down once a ball is locked or at end of MB
+  feeder_magnets:
+    states:
+      start:
+        label: undefigned
+      feed_poseidon:
+        label: feed_p
+      feed_olympus:
+        label: feed_o
+      magnets_off:
+        label: off
+      pause_poseidon:   #for passing ball from shooter lane to PF added 11/22/20
+        label: pause_p
+      pause_olympus:    #for passing ball from shooter lane to PF
+        label: pause_o
+    transitions:
+      - source: start
+        target: feed_poseidon
+        events: ball_starting{device.switches.s_sis_left.state==1} #mode_game_started{device.switches.s_sis_left.state==1}
+        events_when_transitioning:
+          - state_start_to_feed_poseidon
+          - state_says_enable_poseidon_mag
+          - state_says_disable_olympus_mag
+      - source: start
+        target: feed_olympus
+        events: ball_starting{device.switches.s_sis_right.state==1} #mode_game_started{device.switches.s_sis_right.state==1}
+        events_when_transitioning:
+          - state_start_to_feed_olympus
+          - state_says_enable_olympus_mag
+          - state_says_disable_poseidon_mag
+
+      - source: feed_poseidon
+        target: feed_olympus
+        events:
+          - mode_p_ramp_mb_started{not mode.o_ramp_mb.active} #triggered by p_locking_elgible but not if other side also elgible/active then mags off
+          - field_sis_left_to_right_hit{not mode.o_ramp_mb.active}
+          #- mode_o_ramp_mb_stopped{device.switches.s_sis_left==1} #o ramp mb either drained or locked a ball so return to diverting to olympus 7-4-20
+          - multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1 and device.switches.s_sis_right==1}
+          - ball_starting{device.switches.s_sis_right.state==1 and not device.shots.ormb_light_o_lock.enabled} #If starting a new ball go back to power ball side unless that side already qualified
+          - game_starting{device.switches.s_sis_right.state==1} #Resets is starting a new game added 11/22/20
+        events_when_transitioning:
+          - state_poseidon_to_olympus
+          - state_says_enable_olympus_mag
+          - state_says_disable_poseidon_mag
+
+      - source: feed_olympus
+        target: feed_poseidon
+        events:
+          - mode_o_ramp_mb_started{not mode.p_ramp_mb.active} #triggered by o_locking_elgible but not if other side also eligble/active then mags off
+          - field_sis_right_to_left_hit{not mode.p_ramp_mb.active}
+          #- mode_p_ramp_mb_stopped{device.switches.s_sis_right==1} #p ramp mb either drained or locked a ball so return to diverting to poseidon 7-4-20
+          - multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1 and device.switches.s_sis_left==1}
+          - ball_starting{device.switches.s_sis_left.state==1 and not device.shots.prmb_light_p_lock.enabled} #If starting a new ball go back to power ball side unless that side already qualified. Think I found a bug  changed to switch to left 11/22/20
+          - game_starting{device.switches.s_sis_left.state==1} #Resets is starting a new game added 11/22/20
+        events_when_transitioning:
+          - state_olympus_to_posidon
+          - state_says_enable_poseidon_mag
+          - state_says_disable_olympus_mag
+      - source: feed_poseidon
+        target: magnets_off
+        events:
+          - mode_p_ramp_mb_started{mode.o_ramp_mb.active} #triggered by both sides qualified
+          - field_sis_left_to_right_hit{mode.o_ramp_mb.active} #triggered by sis hit but other side cant use balls.
+          - mode_mystery_started
+          - multiball_poseidon_ramp_started
+          - multiball_olympus_ramp_started
+          - multiball_scoop_started
+          - mode_goddess_mb_started
+#          - s_shooterlane_inactive #added 11/22/20
+        events_when_transitioning:
+          - state_feed_poseidon_to_all_off
+          - state_says_disable_poseidon_mag
+          - state_says_disable_olympus_mag
+      - source: feed_olympus
+        target: magnets_off
+        events:
+          - mode_o_ramp_mb_started{mode.p_ramp_mb.active} #triggered by both sides qualified
+          - field_sis_right_to_left_hit{mode.p_ramp_mb.active} #triggered by sis hit but other side cant use balls
+          - mode_mystery_started
+          - multiball_poseidon_ramp_started
+          - multiball_olympus_ramp_started
+          - multiball_scoop_started
+          - mode_goddess_mb_started
+#          - s_shooterlane_inactive #added 11/22/20
+        events_when_transitioning:
+          - state_feed_olympus_to_all_off
+          - state_says_disable_poseidon_mag
+          - state_says_disable_olympus_mag
+      - source: magnets_off
+        target: feed_poseidon
+        events:
+          - multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1 and device.switches.s_sis_left.state==1}
+          - multiball_poseidon_ramp_ended{device.switches.s_sis_left.state==1}
+          - multiball_olympus_ramp_ended{device.switches.s_sis_left.state==1}
+          - multiball_scoop_ended{device.switches.s_sis_left.state==1}
+          - multiball_goddess_ended{device.switches.s_sis_left.state==1}
+          - mode_mystery_stopped{device.switches.s_sis_left.state==1}
+#          - ball_starting{device.switches.s_sis_left.state==1} #removed 11/22/20 in case game ends with mags in the off state this brings it back
+          - game_starting{device.switches.s_sis_left.state==1} #Resets is starting a new game added 11/22/20
+#          - timer_base_timer_ball_launching_complete
+        events_when_transitioning:
+          - state_all_off_to_feed_poseidon
+          - state_says_enable_poseidon_mag
+          - state_says_disable_olympus_mag
+      - source: magnets_off
+        target: feed_olympus
+        events:
+          - multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1 and device.switches.s_sis_right.state==1}
+          - multiball_poseidon_ramp_ended{device.switches.s_sis_right.state==1}
+          - multiball_olympus_ramp_ended{device.switches.s_sis_right.state==1}
+          - multiball_scoop_ended{device.switches.s_sis_right.state==1}
+          - multiball_goddess_ended{device.switches.s_sis_right.state==1}
+          - mode_mystery_stopped{device.switches.s_sis_right.state==1}
+#          - ball_starting{device.switches.s_sis_right.state==1} #in case game ends with mags in the off state this brings it back
+          - game_starting{device.switches.s_sis_right.state==1} #Resets is starting a new game added 11/22/20
+        events_when_transitioning:
+          - state_all_off_to_feed_olympus
+          - state_says_enable_olympus_mag
+          - state_says_disable_poseidon_mag
+        #Next four handle condition of shooter lane ejects
+      - source: feed_poseidon
+        target: pause_poseidon
+        events: s_shooterlane_inactive
+        events_when_transitioning:
+          - state_says_pause_poseidon_mag_for_ball_injection
+          - state_says_disable_poseidon_mag
+      - source: pause_poseidon
+        target: feed_poseidon
+        events:
+          - logicblock_base_timer_ball_launching_complete
+          - s_posideon_rollover_active
+        events_when_transitioning:
+          - state_says_ok_resume_feed_poseidon_after_ball_injection
+          - state_says_enable_poseidon_mag
+      - source: feed_olympus
+        target: pause_olympus
+        events: s_shooterlane_inactive
+        events_when_transitioning:
+          - state_says_pause_olympus_mag_for_ball_injection
+          - state_says_disable_olympus_mag
+      - source: pause_olympus
+        target: feed_olympus
+        events:
+          - logicblock_base_timer_ball_launching_complete
+          - s_posideon_rollover_active
+        events_when_transitioning:
+          - state_says_ok_resume_feed_olympus_after_ball_injection
+          - state_says_enable_olympus_mag
+    debug: True
+    file_log: full #none basic full
+    console_log: full
+    persist_state: False # cant be True in config

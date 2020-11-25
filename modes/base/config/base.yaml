@@ -153,7 +153,7 @@ timers:
   base_timer_ball_launching:
     start_value: 1
     end_value: 0
-    tick_interval: 3s
+    tick_interval: 2s
     direction: down
     control_events:
       - action: restart
@@ -643,14 +643,15 @@ show_player:
     show_shooter_launch:
       speed: 10
       loops: 0
-  s_shooterlane_inactive{device.diverters.feed_olympus_mag.enabled}: #balldevice_bd_plunger_ball_eject_success: # s_launch_active:
-    show_disable_o_mag_for_launch:
-      speed: 1
-      loops: 0
-  s_shooterlane_inactive{device.diverters.feed_poseidon_mag.enabled}: #balldevice_bd_plunger_ball_eject_success: # s_launch_active:
-    show_disable_p_mag_for_launch:
-      speed: 1
-      loops: 0
+#These functions were moved over to state machine 11/22/20
+#  s_shooterlane_inactive{device.diverters.feed_olympus_mag.enabled}: #balldevice_bd_plunger_ball_eject_success: # s_launch_active:
+#    show_disable_o_mag_for_launch:
+#      speed: 1
+#      loops: 0
+#  s_shooterlane_inactive{device.diverters.feed_poseidon_mag.enabled}: #balldevice_bd_plunger_ball_eject_success: # s_launch_active:
+#    show_disable_p_mag_for_launch:
+#      speed: 1
+#      loops: 0
   base_right_slingshot_hit:
     show_right_sling:
       speed: 5
@@ -827,7 +828,7 @@ show_player:
     show_white_all_pops_x5:
       speed: 6
       priority: 10000
-      loops: 0 
+      loops: 0
 slide_player:
   mode_base_started:
     basic_score_slide:

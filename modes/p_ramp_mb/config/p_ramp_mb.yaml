@@ -3,7 +3,7 @@
 # a hit to the ball_block target. After this the player locks a ball and mode quits. Second time
 # through it locks a ball as before and then while still active calls for the MB start at the scoop.
 # If the ball drains before the ball is locked, this mode starts when field starts because
-# accrual base_o_locking_engaged.completed==True
+# accrual base_o_locking_engaged.completed==True. State machine conditions against if this mode running.
 # widget prompts to the player and light shows are handled in this mode.
 # Qualifying a ball in olympus area raises BB for a hit to light O ramp lock. (This is handled in field)
 # After the lock is full the servo mode it turned off and the flap is sent to face the O ramp until after MB is finished or until O lock is full in which case the diverter points to the middle
