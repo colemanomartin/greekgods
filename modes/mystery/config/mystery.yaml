@@ -54,84 +54,92 @@ timers:
 
 random_event_player:
   player_mystery_mystery_slide_number_tick:
-    events: #have list add up to 100
-      menu_10000_points: 8
-      menu_50000_points: 8
-      menu_100000_points: 6
+    events: #have list add up to 100 currently adds to 90
+      menu_10000_points: 7
+      menu_50000_points: 7
+      menu_100000_points: 5
       menu_lion_man: 2
-      menu_light_p_lock: 8
-      menu_light_o_lock: 8
-      menu_lock_swap: 8
-      menu_hydra_battle: 13
-      menu_extra_ball: 8
-      menu_scoop_mb: 8
-      menu_super_spinner: 13
+      menu_light_p_lock: 7
+      menu_light_o_lock: 7
+      menu_lock_swap: 7
+      menu_hydra_battle: 12
+      menu_extra_ball: 7
+      menu_scoop_mb: 7
+      menu_super_spinner: 11
+      menu_summon_goddess: 11
+## Find enteries for award_summon_goddess may have to double them up to create state with < 3 already, Increase liklihood of light plock or o lock
+#These first 2 cover no balls locked and neither lock lit
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and not(mode.o_ramp_mb.active)}: #nothing locked, sis on left, no mb modes qualified or running
     events:
-      award_10000_points: 10
-      award_50000_points: 10
-      award_100000_points: 8
-      award_extra_ball: 2
-      award_light_p_lock: 40
-      award_battle_hydra: 10
-      award_scoop_mb: 10
-      award_super_spinner: 10
+      award_10000_points: 5
+      award_light_p_lock: 60
+      award_battle_hydra: 5
+      award_scoop_mb: 15
+      award_goddess{logicblock.base_aphrodite.value==0}: 10
+      award_super_spinner: 5
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, no mb modes qualified or running
     events:
+      award_10000_points: 5
+      award_light_o_lock: 60
+      award_battle_hydra: 5
+      award_scoop_mb: 15
+      award_goddess{logicblock.base_aphrodite.value==0}: 10
+      award_super_spinner: 5
+#These next 4 cover one mb mode running ready to swap running mode if needed
+  timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on left, p_ramp_mb running & sis on correct side
+    events:
       award_10000_points: 10
       award_50000_points: 10
       award_100000_points: 8
+      award_goddess{logicblock.base_aphrodite.value==0}: 35
       award_extra_ball: 2
-      award_light_o_lock: 40
-      award_battle_hydra: 10
-      award_scoop_mb: 10
-      award_super_spinner: 10
-  timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on left, p_ramp_mb running & sis on correct side
-    events:
-      award_10000_points: 40
-      award_50000_points: 20
-      award_100000_points: 8
-      award_extra_ball: 2
-      award_super_spinner: 30
+      award_super_spinner: 35
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, p_ramp_mb running but sis on wrong side
     events:
-      award_10000_points: 20
       award_50000_points: 10
       award_100000_points: 5
+      award_goddess{logicblock.base_aphrodite.value==0}: 20
       award_swap_locks_p_to_o: 65
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and mode.o_ramp_mb.active}: #nothing locked, sis on left, o_ramp_mb running but sis on wrong side
     events:
-      award_10000_points: 20
       award_50000_points: 10
       award_100000_points: 5
+      award_goddess{logicblock.base_aphrodite.value==0}: 20
       award_swap_locks_o_to_p: 65
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and mode.o_ramp_mb.active}: #nothing locked, sis on right, o_ramp_mb running & sis on correct side
     events:
-      award_10000_points: 40
-      award_50000_points: 20
+      award_10000_points: 10
+      award_50000_points: 10
       award_100000_points: 8
+      award_goddess{logicblock.base_aphrodite.value==0}: 35
       award_extra_ball: 2
-      award_super_spinner: 30
+      award_super_spinner: 35
+#Next two are both modes are running but nothing locked.
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and mode.o_ramp_mb.active}: #nothing locked, sis on left, both modes qualified or running
     events:
-      award_10000_points: 20
-      award_50000_points: 30
-      award_100000_points: 18
-      award_extra_ball: 2
-      award_super_spinner: 30
+      award_10000_points: 10
+      award_50000_points: 10
+      award_100000_points: 5
+      award_extra_ball: 5
+      award_goddess{logicblock.base_aphrodite.value==0}: 35
+      award_super_spinner: 35
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and mode.o_ramp_mb.active}: #nothing locked, sis on right, both modes qualified or running
     events:
-      award_50000_points: 40
-      award_100000_points: 28
-      award_extra_ball: 2
-      award_super_spinner: 30
+      award_10000_points: 10
+      award_50000_points: 10
+      award_100000_points: 5
+      award_extra_ball: 5
+      award_goddess{logicblock.base_aphrodite.value==0}: 35
+      award_super_spinner: 35
+#Something is locked somewhere
   timer_mystery_slide_number_complete{device.ball_devices.bd_poseidon_ramp.balls>0 or device.ball_devices.bd_olympus_ramp.balls>0}: #something is locked somewhere
     events:
-      award_10000_points: 30
-      award_50000_points: 20
-      award_100000_points: 18
-      award_extra_ball: 2
-      award_super_spinner: 30
+      award_10000_points: 10
+      award_50000_points: 10
+      award_100000_points: 5
+      award_extra_ball: 5
+      award_goddess{logicblock.base_aphrodite.value==0}: 35
+      award_super_spinner: 35
 
 
 #display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
@@ -202,6 +210,13 @@ show_player:
     show_award_super_spinner:
       speed: 1
       loops: 0
+  award_goddess:
+    show_goddess_pops:
+      speed: 6
+      loops: 0
+    show_award_summon_goddess:
+      speed: 1
+      loops: 0
 slides:
   mystery_award_available:
     expire: 4s
@@ -270,148 +285,9 @@ slide_player:
     mystery_award_available:
       target: playfield_lcd
       action: remove
-#    shoot_right_orbit:
-#      target: led_matrix
-#      action: remove
     mystery_award_menu_header:
       target: playfield_lcd
       action: play
-#    rotating_faded_bar:
-#      target: led_matrix
-#      background_color: 00000000 #Background with no opacity required
-#      widgets:
-#      - type: rectangle
-#        x: 254
-#        y: 500
-#        width: 1000
-#        height: 200
-#        color: 08080808
-#        anchor_x: center
-#        anchor_y: center
-#        rotation: 0
-#        z: 1
-#        animations:
-#          show_slide:
-#            - property: rotation
-#              value: 90
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
-#            - property: rotation
-#              value: 180
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#            - property: rotation
-#              value: 270
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#            - property: rotation
-#              value: 360
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#      - type: rectangle
-#        x: 254
-#        y: 500
-#        width: 1000
-#        height: 170
-#        color: 222222
-#        anchor_x: center
-#        anchor_y: center
-#        rotation: 0
-#        z: 2
-#        animations:
-#          show_slide:
-#            - property: rotation
-#              value: 90
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#            - property: rotation
-#              value: 180
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#            - property: rotation
-#              value: 270
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#            - property: rotation
-#              value: 360
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#      - type: rectangle
-#        x: 254
-#        y: 500
-#        width: 1000
-#        height: 140
-#        color: 666666
-#        anchor_x: center
-#        anchor_y: center
-#        rotation: 0
-#        z: 3
-#        animations:
-#          show_slide:
-#            - property: rotation
-#              value: 90
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#            - property: rotation
-#              value: 180
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#            - property: rotation
-#              value: 270
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#            - property: rotation
-#              value: 360
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#      - type: rectangle
-#        x: 254
-#        y: 500
-#        width: 1000
-#        height: 110
-#        color: FFFFFF
-#        anchor_x: center
-#        anchor_y: center
-#        rotation: 0
-#        z: 4
-#        animations:
-#          show_slide:
-#            - property: rotation
-#              value: 90
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#            - property: rotation
-#              value: 180
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#            - property: rotation
-#              value: 270
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#            - property: rotation
-#              value: 360
-#              relative: false
-#              duration: .7s
-#              easing: in_out_back
-#  mode_mystery_ending: #timer_mystery_slide_number_complete:
-#    shoot_right_orbit: #rotating_faded_bar: # shoot_right_orbit:
-#      target: led_matrix
-#      action: remove
 
 widgets:
   10000_points:
@@ -568,6 +444,20 @@ widgets:
           relative: false
           duration: 1s
           easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+    summon_goddess:
+    type: text
+    text: Summon a Goddess
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
 
 widget_player: #To play the menu items
   menu_10000_points:
@@ -602,4 +492,7 @@ widget_player: #To play the menu items
       target: playfield_lcd
   menu_super_spinner:
     super_spinner:
+      target: playfield_lcd
+  menu_summon_goddess:
+    summon_goddess:
       target: playfield_lcd

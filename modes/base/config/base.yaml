@@ -63,7 +63,7 @@ sequences:
   #Hits to the pops are only registered when field running.
   base_hestia:
     events:
-      - logicblock_base_all_pops_complete
+      - logicblock_base_all_pops_complete, mystery_awards_goddess #Comma functions as an OR
     events_when_complete:
       - goddess_completed #Used for bonus mode
       - base_hestia_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
@@ -74,7 +74,7 @@ sequences:
   base_artimus:
     events:
       - base_hestia_summoned
-      - logicblock_base_all_pops_complete
+      - logicblock_base_all_pops_complete, mystery_awards_goddess #Comma functions as an OR
     events_when_complete:
       - goddess_completed #Used for bonus mode
       - base_artimus_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
@@ -86,7 +86,7 @@ sequences:
     events:
       - base_hestia_summoned
       - base_artimus_summoned
-      - logicblock_base_all_pops_complete
+      - logicblock_base_all_pops_complete, mystery_awards_goddess #Comma functions as an OR
     events_when_complete:
       - goddess_completed #Used for bonus mode
       - base_aphrodite_summoned
@@ -95,7 +95,7 @@ sequences:
     reset_events:
       - multiball_goddess_ended
   base_athena:
-    events:
+    events: #Mystery award goddess does not work for Athena
       - base_hestia_summoned
       - base_artimus_summoned
       - base_aphrodite_summoned

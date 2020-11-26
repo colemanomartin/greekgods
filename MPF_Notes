@@ -172,6 +172,14 @@ event_player:
     event_thats_posted_two:
       priority: 10
 
+Making a bar graph out of LEDs such as multiplier number on the speakers.
+      light_player:
+        "{machine.test_machine_var == 23}":
+          led4: red
+        "{current_player.test_player_var == 42}":
+          led5: red
+      This example is tested to be valid MPF config. However, it is not integration tested. Some parts are hidden. Click to show full config.
+      If will turn led4 to red once the machine variable test_machine_var becomes 23 and turns led4 back to off once test_machine_var becomes something else. Same for led5 and player variable test_player_var.
 
 
 

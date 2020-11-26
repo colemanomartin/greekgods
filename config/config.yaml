@@ -92,19 +92,17 @@ ball_saves:
 #    auto_launch: yes
 #    balls_to_save: 1
 #    debug: yes
-#  bs_left_side_pop:
-#    source_playfield: earth_pf
-#    active_time: 2s
-#    hurry_up_time: 0s
-#    grace_period: 0s
-#    enable_events: mode_base_started
-#    early_ball_save_events:
-#      - s_left_outlane_active
-#      - s_right_outlane_active
-#    timer_start_events: shot_left_side_pop_hit
-#    auto_launch: yes
-#    balls_to_save: 1
-#    debug: yes
+  bs_scoop_eject:
+    source_playfield: earth_pf
+    active_time: 2s
+    hurry_up_time: 0s
+    grace_period: 0s
+    enable_events: mode_field_started
+    disable_events: mode_field_stopped
+    timer_start_events: balldevice_bd_scoop_ball_eject_success
+    auto_launch: yes
+    balls_to_save: 1
+    debug: yes
 
 state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines.html
 # This state machine activates the magnet on the side of the powerball to feed the mechs on that side of the upper playfield.
