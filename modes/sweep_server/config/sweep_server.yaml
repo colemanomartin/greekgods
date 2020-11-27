@@ -52,13 +52,13 @@ widgets:
       color: red
       anchor_x: left
       anchor_y: top
-      expire: 0.5s
+      expire: 0.75s
       animations:
         add_to_slide:
           - property: points
             value: -400,-1000,   -400,-1000,   -400,-1000
             relative: true
-            duration: 0.5s
+            duration: 0.75s
   ark_sweep_right:
     - type: bezier
       points: 0,760,    75,960,    508,1060
@@ -66,13 +66,13 @@ widgets:
       color: red
       anchor_x: left
       anchor_y: bottom
-      expire: 0.5s
+      expire: 0.75s
       animations:
         add_to_slide:
           - property: points
             value: 400,-1000,   400,-1000,   400,-1000
             relative: true
-            duration: 0.5s
+            duration: 0.75s
   scroll_line_up:
     - type: rectangle
       x: 0

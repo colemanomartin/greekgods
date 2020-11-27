@@ -72,7 +72,9 @@ shots:
       - mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2} #==0} #This enables the shot when mode starts provided lock not already full.
     reset_events: multiball_lock_poseidon_lock_locked_ball
     disable_events: prmb_light_p_lock_hit
-    hit_events: ballblock_hit
+    hit_events:
+      - ballblock_hit
+      - super_spinner_kickoff_hit #Allows scoop shot to activate the lock if super spinner dropped ball block 11/27/20
     debug: true
   prmb_start_shot:
     playfield: earth_pf

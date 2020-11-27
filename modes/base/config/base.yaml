@@ -31,7 +31,7 @@ accruals:  # Has to live in base since field shuts down during mb
     persist_state: true
     reset_on_complete: false
     disable_on_complete: false
-  base_all_pops:
+  base_all_pops: #Could have used a shot group here but would have lost persist state ability
     events:
       - base_left_side_pop_hit
       - base_poseidon_pop_hit
@@ -265,10 +265,59 @@ shot_profiles:
       - name: lit  # step 2
         show: on
     loop: false
+shot_profiles:
+  base_white_green:
+    states:
+      - name: untouched
+        show: "show_pop_white_pulse"
+        loops: -1
+        speed: 2
+        priority: 3 #Without this it does not ride atop the base colors.
+      - name: touched
+        show: "show_pop_green_pulse"
+        loops: -1
+        speed: 1
+        priority: 3
+    loop: false #true #False
 
 shots:
   #for inlane and outlane see http://docs.missionpinball.org/en/latest/mechs/switches/rollover_switches.html
   # Lane change skill shot http://docs.missionpinball.org/en/latest/game_logic/skill_shot/index.html
+  base_left_side_pop:
+    playfield: earth_pf
+    profile: base_white_green
+    switch: s_left_side_pop
+    restart_events: logicblock_base_all_pops_complete|2s
+    show_tokens:
+      leds: l_left_side_pop
+  base_olympus_lower_pop:
+    playfield: earth_pf
+    profile: base_white_green
+    switch: s_olympus_lower_pop
+    restart_events: logicblock_base_all_pops_complete|2s
+    show_tokens:
+      leds: l_olympus_lower_pop
+  base_olympus_left_pop:
+    playfield: earth_pf
+    profile: base_white_green
+    switch: s_olympus_left_pop
+    restart_events: logicblock_base_all_pops_complete|2s
+    show_tokens:
+      leds: l_olympus_left_pop
+  base_olympus_right_pop:
+    playfield: earth_pf
+    profile: base_white_green
+    switch: s_olympus_right_pop
+    restart_events: logicblock_base_all_pops_complete|2s
+    show_tokens:
+      leds: l_olympus_right_pop
+  base_poseidon_pop:
+    playfield: earth_pf
+    profile: base_white_green
+    switch: s_poseidon_pop
+    restart_events: logicblock_base_all_pops_complete|2s
+    show_tokens:
+      leds: l_poseidon_pop
   ballblock: #records hit to the ball block drop target. control of the drop is via bd events in mode scoop.
     enable_events:
       - mode_base_started
@@ -313,22 +362,6 @@ shots:
     playfield: earth_pf
     profile: one_state
     switch: s_olympus_spinner
-  base_olympus_lower_pop:
-    playfield: earth_pf
-    profile: one_state
-    switch: s_olympus_lower_pop
-  base_olympus_left_pop:
-    playfield: earth_pf
-    profile: one_state
-    switch: s_olympus_left_pop
-  base_olympus_right_pop:
-    playfield: earth_pf
-    profile: one_state
-    switch: s_olympus_right_pop
-  base_poseidon_pop:
-    playfield: earth_pf
-    profile: one_state
-    switch: s_poseidon_pop
   base_sis_left_vacated:
     playfield: earth_pf
     profile: one_state
@@ -395,10 +428,6 @@ shots:
       - drop_target_bank_cluster_up
       - drop_target_bank_cluster_mixed
       - mode_celestial_mb_starting
-  base_left_side_pop:
-    playfield: earth_pf
-    profile: one_state
-    switch: s_left_side_pop
   double_left_ramp:  #used to activate banked ball save mode
     playfield: earth_pf
     profile: off_on

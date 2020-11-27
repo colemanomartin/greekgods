@@ -245,7 +245,8 @@ To get to the repo from ssh have to generate a local ssh public and private key 
        origin	git@github.com:colemanomartin/greekgods.git (fetch)
        origin	git@github.com:colemanomartin/greekgods.git (push)
     git pull   the next time will complane that the authenticity of the host cannot be established.  Its OK to add it permanently to the list of known hosts.
-One time it would not push because I added a directory to logs.
+
+Troubleshooting: One time it would not push because I added a directory to logs. Another time because I tried to include a log that was > 100mb
 
 
 6. Setting up Atom.  File-> Add project file   select the location of the local repo.
@@ -303,7 +304,7 @@ convert orbit sweeps to color stop so they work with MB collors
 make green mb insert palate versus green rotation for goddess BB green too.
 I might be able to recover from a missing ball with this event triggering mb https://docs.missionpinball.org/en/latest/events/balldevice_ball_device_ball_missing.html
 could put a delay_switch on the plunger lane to kill magnet and orbit events when launching.
-figure out why left side pop does not light on goddess mode.
+Figure out why sweep does not go when banked BS starts.
 Turn scoop MB into return souls to the underworld.
 Hardware:
   Check trough switches.

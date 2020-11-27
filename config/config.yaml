@@ -94,12 +94,12 @@ ball_saves:
 #    debug: yes
   bs_scoop_eject:
     source_playfield: earth_pf
-    active_time: 2s
+    active_time: 3s
     hurry_up_time: 0s
     grace_period: 0s
-    enable_events: mode_field_started
+    enable_events: balldevice_bd_scoop_ball_eject_success
     disable_events: mode_field_stopped
-    timer_start_events: balldevice_bd_scoop_ball_eject_success
+#    timer_start_events: #balldevice_bd_scoop_ball_eject_success
     auto_launch: yes
     balls_to_save: 1
     debug: yes

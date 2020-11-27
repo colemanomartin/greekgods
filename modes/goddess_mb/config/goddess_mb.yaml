@@ -11,7 +11,7 @@
 #Condiser adding: Locking engaged enables post to send ball downstairs
 # Add jackpot and multiplier increased sound and widgets.
 # potential bug: player could maybe  shoot a ball into the scoop while BB down after eject. event player tries to prevent this with rapid raise of bb.
-# Consider adding a red LED to the speaker to show multiplier status 
+# Consider adding a red LED to the speaker to show multiplier status
 mode:
   priority: 800
   start_events:
@@ -53,17 +53,15 @@ multiballs:
 
 
 shot_profiles:
-  red_green:
+  goddess_red_green:
     states:
       - name: untouched
-        show: "show_red_pulse"
-#        show_tokens:
+        show: "show_goddess_red_pulse"
         loops: -1
         speed: 2
         priority: 3 #Without this it does not ride atop the all green show.
       - name: touched
-        show: "show_green_pulse"
-#        show_tokens:
+        show: "show_goddess_green_pulse"
         loops: -1
         speed: 1
         priority: 3
@@ -73,15 +71,15 @@ shots:
     switch: s_olympus_lower_pop
     show_tokens:
       leds: l_olympus_lower_pop
-    profile: red_green
+    profile: goddess_red_green
     enable_events: mode_goddess_mb_started #start_enabled: true #or
     playfield: earth_pf
-    restart_events: timer_goddess_pop_reset_complete #logicblock_goddess_all_pops_complete
+    restart_events: timer_goddess_pop_reset_complete #logicblock_goddess_all_pops_complete could probably have used pipe
   goddess_olympus_right_pop:
     switch: s_olympus_right_pop
     show_tokens:
       leds: l_olympus_right_pop
-    profile: red_green
+    profile: goddess_red_green
     start_enabled: true #or enable_events: mode_goddess_mb_started
     playfield: earth_pf
     restart_events: timer_goddess_pop_reset_complete #logicblock_goddess_all_pops_complete
@@ -89,7 +87,7 @@ shots:
     switch: s_olympus_left_pop
     show_tokens:
       leds: l_olympus_left_pop
-    profile: red_green
+    profile: goddess_red_green
     start_enabled: true #or enable_events: mode_goddess_mb_started
     playfield: earth_pf
     restart_events: timer_goddess_pop_reset_complete #logicblock_goddess_all_pops_complete
@@ -97,7 +95,7 @@ shots:
     switch: s_poseidon_pop
     show_tokens:
       leds: l_poseidon_pop
-    profile: red_green
+    profile: goddess_red_green
     start_enabled: true #or enable_events: mode_goddess_mb_started
     playfield: earth_pf
     restart_events: timer_goddess_pop_reset_complete #logicblock_goddess_all_pops_complete
@@ -105,7 +103,7 @@ shots:
     switch: s_left_side_pop
     show_tokens:
       leds: l_left_side_pop
-    profile: red_green
+    profile: goddess_red_green
     start_enabled: true #or enable_events: mode_goddess_mb_started
     playfield: earth_pf
     restart_events: timer_goddess_pop_reset_complete #logicblock_goddess_all_pops_complete
@@ -220,7 +218,7 @@ timers:
     control_events:
       - action: restart
         event: goddess_trigger_mb_release_hit
-  goddess_pop_reset:
+  goddess_pop_reset: #delays resetting before lightshow can play (Could probably use pipe.)
     start_value: 1
     end_value: 0
     tick_interval: 3s
