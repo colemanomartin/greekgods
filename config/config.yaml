@@ -172,7 +172,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - mode_mystery_started
           - multiball_poseidon_ramp_started
           - multiball_olympus_ramp_started
-          - multiball_scoop_started
+          - multiball_scoop_mb_started
           - mode_goddess_mb_started
           - mode_hydra_started
         events_when_transitioning:
@@ -186,7 +186,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - mode_mystery_started
           - multiball_poseidon_ramp_started
           - multiball_olympus_ramp_started
-          - multiball_scoop_started
+          - multiball_scoop_mb_started
           - mode_goddess_mb_started
           - mode_hydra_started
         events_when_transitioning:
@@ -202,7 +202,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - mystery_hole_received_ball_hit{device.switches.s_sis_left.state==1 and not mode.p_ramp_mb.active} #OK to divert left if ball left and mode not trying to lock ball
           - multiball_poseidon_ramp_ended{device.switches.s_sis_left.state==1}
           - multiball_olympus_ramp_ended{device.switches.s_sis_left.state==1}
-          - multiball_scoop_ended{device.switches.s_sis_left.state==1}
+          - multiball_scoop_mb_ended{device.switches.s_sis_left.state==1}
           - multiball_goddess_ended{device.switches.s_sis_left.state==1}
           - multiball_hydra_ended{device.switches.s_sis_left.state==1}
         events_when_transitioning:
@@ -217,7 +217,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - mystery_hole_received_ball_hit{device.switches.s_sis_right.state==1 and not mode.o_ramp_mb.active} #OK to divert right if ball right and mode not trying to lock ball
           - multiball_poseidon_ramp_ended{device.switches.s_sis_right.state==1}
           - multiball_olympus_ramp_ended{device.switches.s_sis_right.state==1}
-          - multiball_scoop_ended{device.switches.s_sis_right.state==1}
+          - multiball_scoop_mb_ended{device.switches.s_sis_right.state==1}
           - multiball_goddess_ended{device.switches.s_sis_right.state==1}
           - multiball_hydra_ended{device.switches.s_sis_right.state==1}
         events_when_transitioning:

@@ -222,11 +222,11 @@ counters:
     count_events: base_revealed_slingshot_hit
     reset_on_complete: False
     persist_state: False
-    reset_events:
+    restart_events: #restart is reset to 0 and enable was previously reset_events: but this did not allow it to run more than once per ball 
       - mode_field_started
       - mystery_solved #this is usually what resets it with mystery awards
       - mystery_says_reset_field_revealed_sling_hits #This is used to reset when hydra and scoop mb start.
-    events_when_complete: mystery_time #activate mystery shot
+    events_when_complete: field_says_mystery_time #activate mystery shot
     count_complete_value: 1
 
   field_hydra_hits: #count hydra hits to qualify hydra battle which is started by invited scoop shot

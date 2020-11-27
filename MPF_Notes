@@ -264,22 +264,22 @@ Things to add:
   4 hits to scoop like that is a trip to hades. Prevent if in subway locking.
   Sweeps to attract
 
-  For hydra and scoop MB, take over diverter. Only allow if <= 1 ball locked one side
-  and shunt to unused ramp if ball locked. If ball locked, prevent.
+  Consider scoop and hydra activating when one ball locked and p ramp and o ramp not qualidied, would have to take over diverter.
+  Scoop needs dressing up with a light theme and a playfield slide.
   Right down the middle ball save.
   Eject time outs for ramps
   Minimum balls
 
-  block hydra from starting when ball locked
-  block scoop MB from starting when > 1 ball locked.
+May be able to combine diverters for mystery and scoop using mystery's hole hit to deactivate.
+
+  Scoop's release on BB does not cause BB to raise right away, seems to need a hit to the scoop to trigger timer.
+
   adjust probabilities on mystery depending on locking
 
   Dont raise BB after starting super spinner.
   Make scoop shot a qualifying equivelent if starting super spinner of hydra.
 
-Planitary mb: complete 5 pops for each planet. Collect all 7 planets invites scoop shot. Ball is kept in subway and BB is kept up.
-Lock 2 more balls in subway (3 total) then hit to BB starts MB.  Qualifying shots only count when field is operating. If too easy can have to
-requalify each ball lock with the scoop expelling a ball when the hole switch is hit.
+
 This mode blocks pMB OMB scoop MB from mystery. It only works if only a single ball is locked above and it takes over diverter returning it back to powerball postition.
 
 
@@ -293,6 +293,7 @@ Jackpot for planitary MB complete all 5 pops.
 Things to fix:
 
 Adjust spoon on pop
+
 One time when playing hydra lights went out on lower playfield.  No clear reason why.  Saved log in weirdlogs
 Mystery award does not reset itself until next ball. Only one ball per award.
 

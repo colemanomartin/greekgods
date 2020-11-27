@@ -1,8 +1,8 @@
 #config_version=5
 #scoop mb mode
-#Enter mode from mystery. post is enabled by mode. mystery is kept running until 2 balls are served then
-#mystery is stopped and ball is released serving 3 balls to player. Jackpot with every scoop shot.
-#Do give it a color and a light show, make it a return the soals to the underworld
+#Enter mode from mystery only when nothing locked and neither pramp or oramp MB running. post is enabled by mode. mystery is kept running until 2 balls are served then
+#mystery is stopped and ball is released serving 3 balls to player. Jackpot with every scoop eject.
+#Do give it a color and a light show, make it a return the souls to the underworld Needs a slide to ride atop temple.
 #Mighe have to prevent scoop mb from starting if there is a blinking BB (either p or o ramp mb running. See athena sequence in base )
 mode:
   priority: 650
@@ -68,7 +68,7 @@ show_player:
 event_player:
   mode_scoop_mb_started:
     - force_bb_down
-  mode_scoop_mb_ending:
+  mode_scoop_mb_will_stop:
     - release_bb_override
 
 slide_player:

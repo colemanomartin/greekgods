@@ -624,7 +624,7 @@ diverters:
     type: hold
     activation_time: 2000 ms
     activation_switches: s_olympus_rollover
-    enable_events: mystery_time
+    enable_events: field_says_mystery_time
     disable_events:
       - mode_mystery_stopped
       - ball_ended
@@ -638,10 +638,36 @@ diverters:
     type: hold
     activation_time: 2000 ms
     activation_switches: s_posideon_rollover
-    enable_events: mystery_time
+    enable_events: field_says_mystery_time
     disable_events:
       - mode_mystery_stopped
       - ball_ended
+    debug: true
+  scoop_mb_special_purpose_apearing_post_left:
+    playfield: earth_pf
+    feeder_devices: earth_pf
+    targets_when_active: earth_pf
+    targets_when_inactive: earth_pf
+    activation_coil: c_orbit_post_left
+    type: hold
+    activation_time: 2000 ms
+    activation_switches: s_olympus_rollover
+    enable_events: mode_scoop_mb_started
+    disable_events:
+      - mode_scoop_mb_stopped
+    debug: true
+  scoop_mb_special_purpose_apearing_post_right:
+    playfield: earth_pf
+    feeder_devices: earth_pf
+    targets_when_active: earth_pf
+    targets_when_inactive: earth_pf
+    activation_coil: c_orbit_post_right
+    type: hold
+    activation_time: 2000 ms
+    activation_switches: s_posideon_rollover
+    enable_events: mode_scoop_mb_started
+    disable_events:
+      - mode_scoop_mb_stopped
     debug: true
   pass_poseidon_lock:
     playfield: earth_pf
@@ -947,13 +973,15 @@ autofire_coils:
       - multiball_olympus_ramp_started
       - multiball_poseidon_ramp_started
       - multiball_hydra_started
-      - multiball_scoop_started
+      - multiball_scoop_mb_started
+      - multiball_goddess_started
       - timer_base_left_poseidon_sling_cooldown_complete{device.multiballs.poseidon_ramp.balls_live_target>1 or device.multiballs.olympus_ramp.balls_live_target>1 or device.multiballs.hydra_mb.balls_live_target>1 or device.multiballs.scoop_mb.balls_live_target>1}
     disable_events:
       - multiball_olympus_ramp_ended
       - multiball_poseidon_ramp_ended
       - multiball_hydra_ended
-      - multiball_scoop_ended
+      - multiball_goddess_ended
+      - multiball_scoop_mb_ended
 #      - game_will_end
       - logicblock_base_left_poseidon_sling_fire_complete #{device.switches.s_accessory.state==0} #Disables is too many hits in a row but dont disable if knee switch pressed
   poseidon_right_slingshot_auto:
@@ -965,15 +993,15 @@ autofire_coils:
     enable_events:
       - multiball_olympus_ramp_started
       - multiball_poseidon_ramp_started
-      - multiball_celestial_started
+      - multiball_goddess_started
       - multiball_hydra_started
-      - multiball_scoop_started
+      - multiball_scoop_mb_started
     disable_events:
       - multiball_olympus_ramp_ended
       - multiball_poseidon_ramp_ended
-      - multiball_celestial_ended
       - multiball_hydra_ended
-      - multiball_scoop_ended
+      - multiball_goddess_ended
+      - multiball_scoop_mb_ended
 #      - game_will_end
   left_side_pop:
     coil: c_left_side_pop

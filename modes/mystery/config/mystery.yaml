@@ -20,20 +20,26 @@
 mode:
   priority: 2000 # runs above the mb modes
   start_events:
-    - mystery_time
+    - field_says_mystery_time
     #- mode_field_started{device.counters.drop_hits.completed} #Field is where the counter lives
   stop_events:
     - mystery_solved
     - mode_field_ending
     - ball_drain
 
-sequence_shots:
-  mystery_hole_received_ball:  #used for lock flash show and banked ball save
+#sequence_shots:
+#  mystery_hole_received_ball:  #used for lock flash show and banked ball save
+#    playfield: earth_pf
+#    switch_sequence:
+#      - s_hole_distal
+#      - s_scoop_lock_0
+#    sequence_timeout: 2s
+shots:
+  mystery_hole_received_ball:
     playfield: earth_pf
-    switch_sequence:
-      - s_hole_distal
-      - s_scoop_lock_0
-    sequence_timeout: 2s
+    switch: s_hole_distal
+    enable_events: mode_mystery_started
+    disable_events: mystery_hole_received_ball_hit #Needed because receiving a ball to this hole is used by state machine and too many balls come to it when scoop_mb is loading up scooop at start of its mode.
 
 variable_player:
   award_10000_points:
@@ -75,7 +81,7 @@ random_event_player:
       award_light_p_lock: 60
       award_battle_hydra: 5
       award_scoop_mb: 15
-      award_goddess{logicblock.base_aphrodite.value==0}: 10
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 10
       award_super_spinner: 5
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, no mb modes qualified or running
     events:
@@ -83,7 +89,7 @@ random_event_player:
       award_light_o_lock: 60
       award_battle_hydra: 5
       award_scoop_mb: 15
-      award_goddess{logicblock.base_aphrodite.value==0}: 10
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 10
       award_super_spinner: 5
 #These next 4 cover one mb mode running ready to swap running mode if needed
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on left, p_ramp_mb running & sis on correct side
@@ -91,27 +97,27 @@ random_event_player:
       award_10000_points: 10
       award_50000_points: 10
       award_100000_points: 8
-      award_goddess{logicblock.base_aphrodite.value==0}: 35
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 35
       award_extra_ball: 2
       award_super_spinner: 35
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, p_ramp_mb running but sis on wrong side
     events:
       award_50000_points: 10
       award_100000_points: 5
-      award_goddess{logicblock.base_aphrodite.value==0}: 20
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 20
       award_swap_locks_p_to_o: 65
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and mode.o_ramp_mb.active}: #nothing locked, sis on left, o_ramp_mb running but sis on wrong side
     events:
       award_50000_points: 10
       award_100000_points: 5
-      award_goddess{logicblock.base_aphrodite.value==0}: 20
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 20
       award_swap_locks_o_to_p: 65
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and mode.o_ramp_mb.active}: #nothing locked, sis on right, o_ramp_mb running & sis on correct side
     events:
       award_10000_points: 10
       award_50000_points: 10
       award_100000_points: 8
-      award_goddess{logicblock.base_aphrodite.value==0}: 35
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 35
       award_extra_ball: 2
       award_super_spinner: 35
 #Next two are both modes are running but nothing locked.
@@ -121,7 +127,7 @@ random_event_player:
       award_50000_points: 10
       award_100000_points: 5
       award_extra_ball: 5
-      award_goddess{logicblock.base_aphrodite.value==0}: 35
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 35
       award_super_spinner: 35
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and mode.o_ramp_mb.active}: #nothing locked, sis on right, both modes qualified or running
     events:
@@ -129,7 +135,7 @@ random_event_player:
       award_50000_points: 10
       award_100000_points: 5
       award_extra_ball: 5
-      award_goddess{logicblock.base_aphrodite.value==0}: 35
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 35
       award_super_spinner: 35
 #Something is locked somewhere
   timer_mystery_slide_number_complete{device.ball_devices.bd_poseidon_ramp.balls>0 or device.ball_devices.bd_olympus_ramp.balls>0}: #something is locked somewhere
@@ -138,7 +144,7 @@ random_event_player:
       award_50000_points: 10
       award_100000_points: 5
       award_extra_ball: 5
-      award_goddess{logicblock.base_aphrodite.value==0}: 35
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 35
       award_super_spinner: 35
 
 
@@ -444,7 +450,7 @@ widgets:
           relative: false
           duration: 1s
           easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
-    summon_goddess:
+  summon_goddess:
     type: text
     text: Summon a Goddess
     color: white
