@@ -74,7 +74,7 @@ shots:
     profile: goddess_red_green
     enable_events: mode_goddess_mb_started #start_enabled: true #or
     playfield: earth_pf
-    restart_events: timer_goddess_pop_reset_complete #logicblock_goddess_all_pops_complete could probably have used pipe
+    restart_events: show_white_all_pops_x3_finished_playing #using an event from show player to avoid using timer.
   goddess_olympus_right_pop:
     switch: s_olympus_right_pop
     show_tokens:
@@ -82,7 +82,7 @@ shots:
     profile: goddess_red_green
     start_enabled: true #or enable_events: mode_goddess_mb_started
     playfield: earth_pf
-    restart_events: timer_goddess_pop_reset_complete #logicblock_goddess_all_pops_complete
+    restart_events: show_white_all_pops_x3_finished_playing #
   goddess_olympus_left_pop:
     switch: s_olympus_left_pop
     show_tokens:
@@ -90,7 +90,7 @@ shots:
     profile: goddess_red_green
     start_enabled: true #or enable_events: mode_goddess_mb_started
     playfield: earth_pf
-    restart_events: timer_goddess_pop_reset_complete #logicblock_goddess_all_pops_complete
+    restart_events: show_white_all_pops_x3_finished_playing #
   goddess_poseidon_pop:
     switch: s_poseidon_pop
     show_tokens:
@@ -98,7 +98,7 @@ shots:
     profile: goddess_red_green
     start_enabled: true #or enable_events: mode_goddess_mb_started
     playfield: earth_pf
-    restart_events: timer_goddess_pop_reset_complete #logicblock_goddess_all_pops_complete
+    restart_events: show_white_all_pops_x3_finished_playing #
   goddess_left_side_pop:
     switch: s_left_side_pop
     show_tokens:
@@ -106,7 +106,7 @@ shots:
     profile: goddess_red_green
     start_enabled: true #or enable_events: mode_goddess_mb_started
     playfield: earth_pf
-    restart_events: timer_goddess_pop_reset_complete #logicblock_goddess_all_pops_complete
+    restart_events: show_white_all_pops_x3_finished_playing #
 
   goddess_trigger_mb_release:
     enable_events: multiball_lock_subway_lock_full
@@ -208,6 +208,7 @@ show_player:
       speed: 18
       loops: 0
       priority: 5
+      events_when_completed: show_white_all_pops_x3_finished_playing
 
 timers:
   goddesses_plotting:
@@ -218,14 +219,14 @@ timers:
     control_events:
       - action: restart
         event: goddess_trigger_mb_release_hit
-  goddess_pop_reset: #delays resetting before lightshow can play (Could probably use pipe.)
-    start_value: 1
-    end_value: 0
-    tick_interval: 3s
-    direction: down
-    control_events:
-      - action: restart
-        event: logicblock_goddess_multiplier_hit
+#  goddess_pop_reset: #delays resetting before lightshow can play (Could probably use pipe.)
+#    start_value: 1
+#    end_value: 0
+#    tick_interval: 3s
+#    direction: down
+#    control_events:
+#      - action: restart
+#        event: logicblock_goddess_multiplier_hit
 
 widgets:
   goddess_mb_orbit_arrows:

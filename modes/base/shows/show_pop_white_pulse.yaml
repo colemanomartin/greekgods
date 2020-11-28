@@ -3,9 +3,9 @@
   lights:
     (leds):
       color: 888888
-      fade: 600ms
-- duration: 2
+      fade: 60ms
+- duration: 90
   lights:
     (leds):
       color: stop
-      fade: 500ms
+      fade: 50ms

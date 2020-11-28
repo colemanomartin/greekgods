@@ -1,131 +1,131 @@
 events: {}
 player: {}
 shots:
-  ballblock: 777
-  banked_l_ballsave_double_left_ramp: 34
+  ballblock: 815
+  banked_l_ballsave_double_left_ramp: 39
   banked_r_ballsave_double_right_ramp: 14
-  base_hole_distal: 350
-  base_hole_proximal: 225
-  base_hydra: 2510
-  base_left_inlane: 253
-  base_left_outlane: 82
-  base_left_side_pop: 1716
-  base_left_slingshot: 1043
-  base_olympus_left_pop: 277
-  base_olympus_lower_pop: 1169
-  base_olympus_right_pop: 706
-  base_olympus_spinner: 7981
-  base_orbit_spinner: 6962
-  base_orbit_spinner_2: 6962
-  base_poseidon_gate: 3045
-  base_poseidon_left_slingshot: 1685
-  base_poseidon_pop: 1806
-  base_poseidon_right_slingshot: 1938
-  base_ramp: 1828
-  base_revealed_slingshot: 369
-  base_right_inlane: 481
-  base_right_outlane: 73
-  base_right_slingshot: 1533
-  base_scoop_from_pf: 223
-  base_sis_left_arrived: 203
-  base_sis_left_vacated: 404
-  base_sis_right_arrived: 411
-  base_sis_right_vacated: 824
-  double_left_ramp: 121
-  double_right_ramp: 57
+  base_hole_distal: 363
+  base_hole_proximal: 232
+  base_hydra: 2675
+  base_left_inlane: 262
+  base_left_outlane: 86
+  base_left_side_pop: 1812
+  base_left_slingshot: 1099
+  base_olympus_left_pop: 288
+  base_olympus_lower_pop: 1209
+  base_olympus_right_pop: 752
+  base_olympus_spinner: 8535
+  base_orbit_spinner: 7383
+  base_orbit_spinner_2: 7383
+  base_poseidon_gate: 3236
+  base_poseidon_left_slingshot: 1779
+  base_poseidon_pop: 1904
+  base_poseidon_right_slingshot: 2076
+  base_ramp: 1925
+  base_revealed_slingshot: 380
+  base_right_inlane: 505
+  base_right_outlane: 78
+  base_right_slingshot: 1626
+  base_scoop_from_pf: 235
+  base_sis_left_arrived: 220
+  base_sis_left_vacated: 440
+  base_sis_right_arrived: 423
+  base_sis_right_vacated: 846
+  double_left_ramp: 134
+  double_right_ramp: 60
   field_invite_hydra_at_scoop: 8
   field_invite_super_spinner_at_scoop: 24
-  field_olympus_mech: 3067
-  field_poseidon_mech: 7527
+  field_olympus_mech: 3212
+  field_poseidon_mech: 8048
   goddess_bb: 1
-  goddess_left_side_pop: 62
-  goddess_made_orbit: 32
+  goddess_left_side_pop: 66
+  goddess_made_orbit: 38
   goddess_need_rapid_bb_reset: 6
-  goddess_olympus_left_pop: 28
-  goddess_olympus_lower_pop: 37
-  goddess_olympus_right_pop: 23
-  goddess_poseidon_pop: 54
+  goddess_olympus_left_pop: 30
+  goddess_olympus_lower_pop: 43
+  goddess_olympus_right_pop: 29
+  goddess_poseidon_pop: 59
   goddess_trigger_mb_release: 59
   left_corner_target: 3
-  left_outlane_banked_ballsave: 10
+  left_outlane_banked_ballsave: 11
   left_sling: 7
   middle_target: 8
-  mystery_hole_received_ball: 12
-  ormb_light_o_lock: 86
+  mystery_hole_received_ball: 14
+  ormb_light_o_lock: 87
   ormb_start_shot: 13
-  prmb_light_p_lock: 245
-  prmb_start_shot: 31
+  prmb_light_p_lock: 259
+  prmb_start_shot: 32
   right_corner_target: 1
   right_outlane_banked_ballsave: 6
   right_sling: 7
   river_b_mini: 1
   river_c_mini: 1
   river_d_mini: 1
-  sis_left_poseidon_mech: 4546
-  sis_right_olympus_mech: 1126
-  super_spinner_bonus: 21
-  super_spinner_kickoff: 43
-  super_spinner_olympus_mech: 83
-  super_spinner_poseidon_mech: 290
+  sis_left_poseidon_mech: 4971
+  sis_right_olympus_mech: 1154
+  super_spinner_bonus: 23
+  super_spinner_kickoff: 47
+  super_spinner_olympus_mech: 102
+  super_spinner_poseidon_mech: 314
 switches:
   s_1_0: 0
   s_1_1: 0
   s_1_7: 0
-  s_accessory: 511
-  s_ballblock: 1369
-  s_drop_target_distal: 354
-  s_drop_target_middle: 437
-  s_drop_target_proximal: 339
-  s_hole_distal: 350
-  s_hole_proximal: 225
-  s_hydra: 2511
-  s_launch: 364
-  s_left_flipper: 6364
-  s_left_flipper_EOS: 5478
-  s_left_inlane: 253
-  s_left_outlane: 82
-  s_left_side_pop: 1716
-  s_left_slingshot: 1043
-  s_olympus_left_pop: 277
-  s_olympus_lock_distal: 646
-  s_olympus_lock_proximal: 663
-  s_olympus_lower_pop: 1169
-  s_olympus_right_pop: 706
-  s_olympus_rollover: 1348
-  s_olympus_spinner: 7981
-  s_orbit_spinner: 6962
-  s_poseidon_gate: 3045
-  s_poseidon_left_slingshot: 1685
-  s_poseidon_lock_distal: 852
-  s_poseidon_lock_proximal: 599
-  s_poseidon_pop: 1806
-  s_poseidon_right_slingshot: 1938
-  s_posideon_rollover: 1070
+  s_accessory: 542
+  s_ballblock: 1432
+  s_drop_target_distal: 371
+  s_drop_target_middle: 451
+  s_drop_target_proximal: 349
+  s_hole_distal: 363
+  s_hole_proximal: 232
+  s_hydra: 2676
+  s_launch: 374
+  s_left_flipper: 6833
+  s_left_flipper_EOS: 5891
+  s_left_inlane: 262
+  s_left_outlane: 86
+  s_left_side_pop: 1812
+  s_left_slingshot: 1099
+  s_olympus_left_pop: 288
+  s_olympus_lock_distal: 665
+  s_olympus_lock_proximal: 681
+  s_olympus_lower_pop: 1209
+  s_olympus_right_pop: 752
+  s_olympus_rollover: 1423
+  s_olympus_spinner: 8535
+  s_orbit_spinner: 7383
+  s_poseidon_gate: 3236
+  s_poseidon_left_slingshot: 1779
+  s_poseidon_lock_distal: 899
+  s_poseidon_lock_proximal: 632
+  s_poseidon_pop: 1904
+  s_poseidon_right_slingshot: 2076
+  s_posideon_rollover: 1143
   s_powerball_left_distal: 0
   s_powerball_left_proximal: 0
   s_powerball_right_distal: 0
   s_powerball_right_proximal: 0
-  s_ramp_opto: 1828
-  s_revealed_slingshot: 829
-  s_right_flipper: 8334
-  s_right_flipper_EOS: 7233
-  s_right_inlane: 482
-  s_right_outlane: 74
-  s_right_slingshot: 1533
-  s_scoop_chamber: 726
-  s_scoop_lock_0: 595
-  s_scoop_lock_1: 552
-  s_shooterlane: 1549
-  s_sis_left: 345
-  s_sis_right: 581
+  s_ramp_opto: 1925
+  s_revealed_slingshot: 858
+  s_right_flipper: 8862
+  s_right_flipper_EOS: 7698
+  s_right_inlane: 506
+  s_right_outlane: 79
+  s_right_slingshot: 1626
+  s_scoop_chamber: 757
+  s_scoop_lock_0: 616
+  s_scoop_lock_1: 572
+  s_shooterlane: 1636
+  s_sis_left: 373
+  s_sis_right: 598
   s_start: 10
-  s_trough_0: 1396
-  s_trough_1: 1374
-  s_trough_2: 1342
-  s_trough_3: 1276
-  s_trough_4: 1025
-  s_trough_chamber: 1394
-  s_trough_jam: 1401
+  s_trough_0: 1480
+  s_trough_1: 1458
+  s_trough_2: 1425
+  s_trough_3: 1358
+  s_trough_4: 1089
+  s_trough_chamber: 1478
+  s_trough_jam: 1485
   s_u_left_ear_0: 1
   s_u_left_ear_1: 1
   s_u_left_ear_2: 1

@@ -289,14 +289,17 @@ Jackpot for P_MB: gate
 Jackpot for O mb: pop-hole
 Jackpot for Scoop MB: scoop (Keep BB down)
 Jackpot for double MB either gate or hole
-Jackpot for planitary MB complete all 5 pops.
 
 Things to fix:
-
-Adjust spoon on pop
+diverter not popping up on godess lock after underworl opened. Also open ogg plays with each roll of the orbit.
 
 One time when playing hydra lights went out on lower playfield.  No clear reason why.  Saved log in weirdlogs
-Mystery award does not reset itself until next ball. Only one ball per award.
+Rarely displaylight player will cover all the lights at game start.
+
+Put blinking poseidon shield on P-pop, upper arrow on left side pop and center olympus LED on 3 pops, increase red, blue and up blue on light blue.
+Look at left ball save sweep, not showing.
+Add sweep for time added.
+OK to raise BB for single mode qualigication when SS pending but have to drop it again or maybe increase timer on BB.
 
 Move drain display into sweep server.
 move scoop display into sweep server
@@ -308,7 +311,8 @@ Figure out why sweep does not go when banked BS starts.
 Turn scoop MB into return souls to the underworld.
 Hardware:
   Check trough switches.
-
+  adjust spoon olympus pop
+  adjust stitch under left powerball.
 
 
 

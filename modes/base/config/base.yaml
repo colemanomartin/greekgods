@@ -200,21 +200,6 @@ timers:
       - event: right_ramp_hit
         action: restart
 
-# Removed in v2003
-#  base_bank_reset: #This timer resets the drop target bank (named cluster) 5 seconds after the bank is down which activates the revealed slingshot shot Timer is suspended during celest mb and maybe should be for all mb
-#    start_value: 5
-#    end_value: 0
-#    tick_interval: 1s
-#    direction: down
-#    control_events:
-#      - event: base_revealed_slingshot_hit
-#        action: restart
-#      - event: mode_celestial_mb_starting
-#        action: pause
-#      - event: mode_celestial_mb_stopped
-#        action: restart
-#The following two timers work like counters that automatically decrement as the game progresses.
-#If the player can make enough hits before the timer decaus to get to 25 it qualifies the locks on the ramps.
 
 extra_balls:
   mystery_pathway:
@@ -265,18 +250,17 @@ shot_profiles:
       - name: lit  # step 2
         show: on
     loop: false
-shot_profiles:
   base_white_green:
     states:
       - name: untouched
         show: "show_pop_white_pulse"
         loops: -1
-        speed: 2
+        speed: 20
         priority: 3 #Without this it does not ride atop the base colors.
       - name: touched
         show: "show_pop_green_pulse"
         loops: -1
-        speed: 1
+        speed: 10
         priority: 3
     loop: false #true #False
 
@@ -287,35 +271,35 @@ shots:
     playfield: earth_pf
     profile: base_white_green
     switch: s_left_side_pop
-    restart_events: logicblock_base_all_pops_complete|2s
+    restart_events:  show_white_all_pops_x5_finished_playing #Resetting with show player event so as not to need a timer.
     show_tokens:
       leds: l_left_side_pop
   base_olympus_lower_pop:
     playfield: earth_pf
     profile: base_white_green
     switch: s_olympus_lower_pop
-    restart_events: logicblock_base_all_pops_complete|2s
+    restart_events:  show_white_all_pops_x5_finished_playing
     show_tokens:
       leds: l_olympus_lower_pop
   base_olympus_left_pop:
     playfield: earth_pf
     profile: base_white_green
     switch: s_olympus_left_pop
-    restart_events: logicblock_base_all_pops_complete|2s
+    restart_events:  show_white_all_pops_x5_finished_playing
     show_tokens:
       leds: l_olympus_left_pop
   base_olympus_right_pop:
     playfield: earth_pf
     profile: base_white_green
     switch: s_olympus_right_pop
-    restart_events: logicblock_base_all_pops_complete|2s
+    restart_events:  show_white_all_pops_x5_finished_playing
     show_tokens:
       leds: l_olympus_right_pop
   base_poseidon_pop:
     playfield: earth_pf
     profile: base_white_green
     switch: s_poseidon_pop
-    restart_events: logicblock_base_all_pops_complete|2s
+    restart_events:  show_white_all_pops_x5_finished_playing
     show_tokens:
       leds: l_poseidon_pop
   ballblock: #records hit to the ball block drop target. control of the drop is via bd events in mode scoop.
@@ -639,8 +623,8 @@ show_player:
   mode_base_started:
     show_malstrom_spin_ccw_blue:
       speed: 8
-    show_poppers2:
-      speed: 2
+#    show_poppers2:
+#      speed: 2
     show_base_lights:
       speed: 1
     show_sp_green_GG_white:
@@ -858,6 +842,7 @@ show_player:
       speed: 6
       priority: 10000
       loops: 0
+      events_when_completed: show_white_all_pops_x5_finished_playing
 slide_player:
   mode_base_started:
     basic_score_slide:
