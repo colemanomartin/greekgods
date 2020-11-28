@@ -2,11 +2,11 @@
 # https://htmlcolorcodes.com/color-names/
 - duration: 1
   lights:
-      l_poseidon_pop: 000044
-      l_left_side_pop: 440000
-      l_olympus_lower_pop: 442222
-      l_olympus_right_pop: 442222
-      l_olympus_left_pop: 442222
+      l_poseidon_pop: 000060
+      l_left_side_pop: 600000
+      l_olympus_lower_pop: 602222
+      l_olympus_right_pop: 602222
+      l_olympus_left_pop: 602222
       l_hydra_2: green
       l_hydra_center: green
       l_hydra_top: green

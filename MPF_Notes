@@ -296,11 +296,13 @@ diverter not popping up on godess lock after underworl opened. Also open ogg pla
 One time when playing hydra lights went out on lower playfield.  No clear reason why.  Saved log in weirdlogs
 Rarely displaylight player will cover all the lights at game start.
 
-Put blinking poseidon shield on P-pop, upper arrow on left side pop and center olympus LED on 3 pops, increase red, blue and up blue on light blue.
-Look at left ball save sweep, not showing.
+Put blinking poseidon shield on P-pop, upper arrow on left side pop and center olympus LED on 3 pops (accrual for these 3 speed tied to tic?), increase red, blue and up blue on light blue.
 Add sweep for time added.
 OK to raise BB for single mode qualigication when SS pending but have to drop it again or maybe increase timer on BB.
+BB raises after O ramp mb starts but not p ramp mb
 
+
+Add skill shot to upper 3 lanes and shot rotation.  Create a shot group for the 3 tied to events in the P and O area.
 Move drain display into sweep server.
 move scoop display into sweep server
 convert orbit sweeps to color stop so they work with MB collors
