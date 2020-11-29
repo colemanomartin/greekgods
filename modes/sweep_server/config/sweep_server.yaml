@@ -519,6 +519,12 @@ widget_player:
   mode_banked_r_bs_started:
     ark_sweep_right:
       slide: blank_transparent
+  banked_l_ballsave_double_left_ramp_hit{device.timers.left_bs_expiration.ticks<6}:
+    ark_sweep_left:
+      slide: blank_transparent
+  banked_r_ballsave_double_right_ramp_hit{device.timers.right_bs_expiration.ticks<6}:
+    ark_sweep_right:
+      slide: blank_transparent
   multiball_lock_poseidon_lock_locked_ball:
     blue_lock_up:
       slide: blank_transparent

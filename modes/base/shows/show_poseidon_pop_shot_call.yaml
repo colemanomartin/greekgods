@@ -1,0 +1,11 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_poseidon_fish_middle:
+      color: ffffff
+      fade: 500 ms
+- duration: 1
+  lights:
+    l_poseidon_fish_middle:
+      color: stop
+      fade: 500 ms

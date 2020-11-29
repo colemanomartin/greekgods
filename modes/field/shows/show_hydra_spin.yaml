@@ -1,0 +1,123 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+
+- duration: 1
+  lights:
+    l_hydra_top:
+      color: FF0000
+      fade: 100ms
+    l_hydra_2:
+      color: 000000
+      fade: 100ms
+    l_hydra_4:
+      color: 500000
+      fade: 100ms
+    l_hydra_bottom:
+      color: 800000
+      fade: 100ms
+    l_hydra_7:
+      color: B00000
+      fade: 100ms
+    l_hydra_10:
+      color: E00000
+      fade: 100ms
+- duration: 1
+  lights:
+    l_hydra_top:
+      color: E00000
+      fade: 100ms
+    l_hydra_2:
+      color: FF0000
+      fade: 100ms
+    l_hydra_4:
+      color: 000000
+      fade: 100ms
+    l_hydra_bottom:
+      color: 500000
+      fade: 100ms
+    l_hydra_7:
+      color: 800000
+      fade: 100ms
+    l_hydra_10:
+      color: B00000
+      fade: 100ms
+- duration: 1
+  lights:
+    l_hydra_top:
+      color: B00000
+      fade: 100ms
+    l_hydra_2:
+      color: E00000
+      fade: 100ms
+    l_hydra_4:
+      color: FF0000
+      fade: 100ms
+    l_hydra_bottom:
+      color: 000000
+      fade: 100ms
+    l_hydra_7:
+      color: 500000
+      fade: 100ms
+    l_hydra_10:
+      color: 800000
+      fade: 100ms
+- duration: 1
+  lights:
+    l_hydra_top:
+      color: 800000
+      fade: 100ms
+    l_hydra_2:
+      color: B00000
+      fade: 100ms
+    l_hydra_4:
+      color:  E00000
+      fade: 100ms
+    l_hydra_bottom:
+      color: FF0000
+      fade: 100ms
+    l_hydra_7:
+      color: 000000
+      fade: 100ms
+    l_hydra_10:
+      color: 500000
+      fade: 100ms
+- duration: 1
+  lights:
+    l_hydra_top:
+      color: 500000
+      fade: 100ms
+    l_hydra_2:
+      color: 800000
+      fade: 100ms
+    l_hydra_4:
+      color: B00000
+      fade: 100ms
+    l_hydra_bottom:
+      color: E00000
+      fade: 100ms
+    l_hydra_7:
+      color: FF0000
+      fade: 100ms
+    l_hydra_10:
+      color: 000000
+      fade: 100ms
+- duration: 1
+  lights:
+    l_hydra_top:
+      color: 000000
+      fade: 100ms
+    l_hydra_2:
+      color: 500000
+      fade: 100ms
+    l_hydra_4:
+      color: 800000
+      fade: 100ms
+    l_hydra_bottom:
+      color: B00000
+      fade: 100ms
+    l_hydra_7:
+      color: E00000
+      fade: 100ms
+    l_hydra_10:
+      color: FF0000
+      fade: 100ms

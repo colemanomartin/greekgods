@@ -41,7 +41,14 @@ accruals:  # Has to live in base since field shuts down during mb
     persist_state: true
     reset_on_complete: true
     disable_on_complete: false
-
+  base_olympus_pops: # keeps track of just these pops to run the middle (cloud) insert show
+    events:
+#      - base_olympus_left_pop_hit fix this spoon
+      - base_olympus_right_pop_hit
+      - base_olympus_lower_pop_hit
+    persist_state: true
+    restart_events: show_white_all_pops_x5_finished_playing
+    disable_on_complete: false
 
 sequences:
   base_super_spinner_mode_engaged: #This remembers that spinner threshold has been hit and that the SS mode has been called to start.
@@ -623,8 +630,8 @@ show_player:
   mode_base_started:
     show_malstrom_spin_ccw_blue:
       speed: 8
-#    show_poppers2:
-#      speed: 2
+    show_poppers2:
+      speed: 2
     show_base_lights:
       speed: 1
     show_sp_green_GG_white:
@@ -633,7 +640,44 @@ show_player:
       show_tokens:
         color: green
       speed: 1
-      loops: 6
+      loops: 6 #Dont know why I chose six blinks
+#  mode_base_started: # player_shot_base_left_side_pop_enabled:
+    #Start the light shows calling attention to each of the pop bumpers
+    show_left_side_pop_shot_call:
+      speed: 1
+      loops: -1
+      priority: 1
+    show_poseidon_pop_shot_call:
+      speed: 1
+      loops: -1
+      priority: 1
+    show_olympus_collective_shot_call:
+      speed: 1
+      loops: -1
+      priority: 1
+  #Turn off the pop's shows when they are hit.
+  base_left_side_pop_untouched_hit:
+    show_left_side_pop_shot_call:
+      action: stop
+  base_poseidon_pop_untouched_hit:
+    show_poseidon_pop_shot_call:
+      action: stop
+  logicblock_base_olympus_pops_complete: # setting speed by logicblock_base_olympus_pops_hit{device.accruals.base_olympus_pops.value==1} does not work because value is a 'list' of the states and nut an iteger.
+    show_olympus_collective_shot_call:
+      action: stop
+  show_white_all_pops_x5_finished_playing: #The group of 5 pops have reset themselves
+    show_left_side_pop_shot_call:
+      speed: 1
+      loops: -1
+      priority: 1
+    show_poseidon_pop_shot_call:
+      speed: 1
+      loops: -1
+      priority: 1
+    show_olympus_collective_shot_call:
+      speed: 1
+      loops: -1
+      priority: 1
   ball_save_bs_default_timer_start:  #  balldevice_bd_plunger_ball_eject_success:
     countdown99:
       speed: 10
@@ -823,14 +867,14 @@ show_player:
     show_o_mag_enabled:
       speed: 1
       priority: 1
-  timer_base_left_ramp_tick{device.timers.base_left_ramp.ticks==6}:
+  timer_base_left_ramp_tick{device.timers.base_left_ramp.ticks==6 and not mode.banked_l_bs.active}: #Call the shot when timer is 6 unless the banked bs mode is already running
     show_invite_left_ramp_double_shot:
       speed: 8
       priority: 10000
   timer_base_left_ramp_complete:
     show_invite_left_ramp_double_shot:
       action: stop
-  timer_base_right_ramp_tick{device.timers.base_right_ramp.ticks==3}:
+  timer_base_right_ramp_tick{device.timers.base_right_ramp.ticks==3 and not mode.banked_r_bs.active}:
     show_invite_right_ramp_double_shot:
       speed: 8
       priority: 10000

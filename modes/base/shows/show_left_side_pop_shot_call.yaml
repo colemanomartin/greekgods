@@ -1,0 +1,17 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_left_pop_lower_arrow:
+      color: ffffff
+      fade: 500 ms
+    l_left_pop_upper_arrow:
+      color: 000000 #stop
+      fade: 500 ms
+- duration: 1
+  lights:
+    l_left_pop_lower_arrow:
+      color: 000000 #stop
+      fade: 500 ms
+    l_left_pop_upper_arrow:
+      color: ffffff
+      fade: 500 ms

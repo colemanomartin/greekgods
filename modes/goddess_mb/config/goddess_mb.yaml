@@ -115,9 +115,14 @@ shots:
     hit_events:
       - base_hole_distal_hit
       - base_hole_proximal_hit
+
   goddess_made_orbit:
-    enable_events: mode_goddess_mb_started
-    disable_events: multiball_goddess_started
+    enable_events:
+      - mode_goddess_mb_started
+      - multiball_lock_subway_lock_locked_ball
+    disable_events:
+      - multiball_goddess_started
+      - goddess_made_orbit_hit
     playfield: earth_pf
     hit_events:
       - base_orbit_counter_clockwise_hit

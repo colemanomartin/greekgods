@@ -30,7 +30,7 @@ timers:
         action: pause
       - event: mode_scoop_mb_started #Hold open for jackpot shots
         action: pause
-      - event: mode_scoop_mb_ending
+      - event: mode_bb_down_stopped #Added 11/28/20
         action: restart
       - event: o_locking_elgible #Reset and start timer (if not already running) to raise ball block in case other lock qualifies
         action: restart

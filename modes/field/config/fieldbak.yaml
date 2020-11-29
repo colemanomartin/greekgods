@@ -435,12 +435,14 @@ show_player:
   logicblock_field_hydra_hits_updated{current_player.player_base_hydras==26}:
     show_hydra_12:
       action: stop
+    show_hydra_13:
+      speed: 3
+      action: play
+  logicblock_field_hydra_hits_updated{current_player.player_base_hydras==28}:
+    show_hydra_13:
+      action: stop
     show_hydra_spin:
       speed: 10
-      loops: -1
-  logicblock_field_hydra_hits_updated{current_player.player_base_hydras==28}:
-    show_hydra_spin:
-      speed: 16
       loops: -1
 #    show_hydra_14:
 #      speed: 3
@@ -501,12 +503,12 @@ show_player:
       speed: 2
       action: play
   mode_field_started{current_player.player_base_hydras==26 or current_player.player_base_hydras==27}:
-    show_hydra_spin:
-      speed: 10
-      loops: -1
+    show_hydra_13:
+      speed: 3
+      action: play
   mode_field_started{current_player.player_base_hydras==28}:
     show_hydra_spin:
-      speed: 16
+      speed: 10
       loops: -1
 #    show_hydra_14:
 #      speed: 3
