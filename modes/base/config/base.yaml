@@ -68,6 +68,7 @@ sequences:
   #each goddess a show plays and a portrait displays
   #When all goddesses are summoned, ball locking begins
   #Hits to the pops are only registered when field running.
+  #Hestia, artimus, aphrodite, athena
   base_hestia:
     events:
       - logicblock_base_all_pops_complete, mystery_awards_goddess #Comma functions as an OR
@@ -967,6 +968,7 @@ slide_player:
         font_size: 130
         font_name: GreekGods2
 
+#Hestia, artimus, aphrodite, athena
 widgets:
   hestia:
   - type: text
@@ -977,33 +979,14 @@ widgets:
     color: green
     font_name: GreekGods2
     expire: 5s
-  demeter:
-  - type: text
-    text: Demeter Summoned
-    font_size: 260
-    y: 75%
-    x: 50%
-    color: green
-    font_name: GreekGods2
-    expire: 5s
-  hera:
-  - type: text
-    text: Hera Summoned
-    font_size: 260
-    y: 75%
-    x: 50%
-    color: green
-    font_name: GreekGods2
-    expire: 5s
-  hecate:
-  - type: text
-    text: Hecate Summoned
-    font_size: 260
-    y: 75%
-    x: 50%
-    color: green
-    font_name: GreekGods2
-    expire: 5s
+  hestia_coin:
+  - type: image
+    image: goddess_hestia
+#    scale: .75
+#    x: 50%
+#    y: 100%
+    anchor_x: middle
+    anchor_y: top
   artimus:
   - type: text
     text: Artimus Summoned
@@ -1013,15 +996,14 @@ widgets:
     color: green
     font_name: GreekGods2
     expire: 5s
-  athena:
-  - type: text
-    text: Athena Summoned
-    font_size: 260
-    y: 75%
-    x: 50%
-    color: green
-    font_name: GreekGods2
-    expire: 5s
+  artimus_coin:
+  - type: image
+    image: goddess_artimus
+#    scale: .75
+#    x: 50%
+#    y: 100%
+    anchor_x: middle
+    anchor_y: top
   aphrodite:
   - type: text
     text: Aphrodite Summoned
@@ -1031,6 +1013,31 @@ widgets:
     color: green
     font_name: GreekGods2
     expire: 5s
+  aphrodite_coin:
+  - type: image
+    image: goddess_aphrodite
+#    scale: .75
+#    x: 50%
+#    y: 100%
+    anchor_x: middle
+    anchor_y: top
+  athena:
+  - type: text
+    text: Athena Summoned
+    font_size: 260
+    y: 75%
+    x: 50%
+    color: green
+    font_name: GreekGods2
+    expire: 5s
+  athena_coin:
+  - type: image
+    image: goddess_athena
+#    scale: .75
+#    x: 50%
+#    y: 100%
+    anchor_x: middle
+    anchor_y: top
 
   sp01:
   - type: image
@@ -1870,29 +1877,37 @@ widgets:
         repeat: true
 
 
-
+#Goddess: Hestia, artimus, aphrodite, athena
 widget_player:
   base_hestia_summoned:
     hestia:
       slide: basic_score_slide
-  base_demeter_summoned:
-    demeter:
+    hestia_coin:
       slide: basic_score_slide
-  base_hera_summoned:
-    hera:
-      slide: basic_score_slide
-  base_hecate_summoned:
-    hecate:
-      slide: basic_score_slide
+      x: 20%
+      y: 20%
   base_artimus_summoned:
     artimus:
       slide: basic_score_slide
-  base_athena_summoned:
-    athena:
-      slide: basic_score_slide
+    artimus_coin:
+      slide: slide_basic_score
+      x: 40%
+      y: 20%
   base_aphrodite_summoned:
     aphrodite:
       slide: basic_score_slide
+    aphrodite_coin:
+      slide: slide_basic_score
+      x: 60%
+      y: 20%
+  base_athena_summoned:
+    athena:
+      slide: basic_score_slide
+    aphrodite_coin:
+      slide: slide_basic_score
+      x: 80%
+      y: 20%
+
   counter_field_spins_hit{current_player.player_base_spins==2}:
     sp01:
       slide: basic_score_slide
