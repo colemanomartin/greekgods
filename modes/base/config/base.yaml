@@ -945,7 +945,7 @@ slide_player:
         number_grouping: true
         min_digits: 2
         font_size: 500
-        y: 55%
+        y: 60%
         x: 50%
         font_name: GreekGods2
       - type: text
@@ -974,68 +974,60 @@ widgets:
   - type: text
     text: Hestia Summoned
     font_size: 260
-    y: 75%
+    y: 80%
     x: 50%
     color: green
     font_name: GreekGods2
     expire: 5s
   hestia_coin:
   - type: image
-    image: goddess_hestia
-#    scale: .75
-#    x: 50%
-#    y: 100%
+    image: goddess_hestia2
+    scale: 0.5
     anchor_x: middle
     anchor_y: top
   artimus:
   - type: text
     text: Artimus Summoned
     font_size: 260
-    y: 75%
+    y: 80%
     x: 50%
     color: green
     font_name: GreekGods2
     expire: 5s
   artimus_coin:
   - type: image
-    image: goddess_artimus
-#    scale: .75
-#    x: 50%
-#    y: 100%
+    image: goddess_artimus1
+    scale: 0.5
     anchor_x: middle
     anchor_y: top
   aphrodite:
   - type: text
     text: Aphrodite Summoned
     font_size: 260
-    y: 75%
+    y: 80%
     x: 50%
     color: green
     font_name: GreekGods2
     expire: 5s
   aphrodite_coin:
   - type: image
-    image: goddess_aphrodite
-#    scale: .75
-#    x: 50%
-#    y: 100%
+    image: goddess_aphrodites1
+    scale: 0.5
     anchor_x: middle
     anchor_y: top
   athena:
   - type: text
     text: Athena Summoned
     font_size: 260
-    y: 75%
+    y: 80%
     x: 50%
     color: green
     font_name: GreekGods2
     expire: 5s
   athena_coin:
   - type: image
-    image: goddess_athena
-#    scale: .75
-#    x: 50%
-#    y: 100%
+    image: goddess_athena1
+    scale: 0.5
     anchor_x: middle
     anchor_y: top
 
@@ -1884,30 +1876,43 @@ widget_player:
       slide: basic_score_slide
     hestia_coin:
       slide: basic_score_slide
-      x: 20%
-      y: 20%
+      widget_settings:
+        x: 20%
+        y: 50%
   base_artimus_summoned:
     artimus:
       slide: basic_score_slide
     artimus_coin:
-      slide: slide_basic_score
-      x: 40%
-      y: 20%
+      slide: basic_score_slide
+      widget_settings:
+        x: 40%
+        y: 50%
   base_aphrodite_summoned:
     aphrodite:
       slide: basic_score_slide
     aphrodite_coin:
-      slide: slide_basic_score
-      x: 60%
-      y: 20%
+      slide: basic_score_slide
+      widget_settings:
+        x: 60%
+        y: 50%
   base_athena_summoned:
     athena:
       slide: basic_score_slide
+    athena_coin:
+      slide: basic_score_slide
+      widget_settings:
+        x: 80%
+        y: 50%
+  multiball_goddess_ended:
+    athena_coin:
+      action: remove
     aphrodite_coin:
-      slide: slide_basic_score
-      x: 80%
-      y: 20%
-
+      action: remove
+    artimus_coin:
+      action: remove
+    hestia_coin:
+      action: remove
+    
   counter_field_spins_hit{current_player.player_base_spins==2}:
     sp01:
       slide: basic_score_slide

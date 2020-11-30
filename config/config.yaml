@@ -40,7 +40,6 @@ modes:
   - scoop #10000 Manager
   - bb_down #Manager
   - temple_display # 400 adds widgets to playfield display to show where ball will go in response to ramp diverter flap
-#  - scoop_eject_display #2000
   - field #200
   - p_ramp_mb #1000
   - o_ramp_mb #1100
@@ -55,7 +54,7 @@ modes:
   - super_spinner #1400
 #  - sound_loops #150
   - sound_effects # 175
-  - drain_display #2000
+#  - drain_display #2000
   - banked_l_bs #250000
   - banked_r_bs #2500
   - sweep_server #3000

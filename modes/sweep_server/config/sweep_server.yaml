@@ -22,6 +22,39 @@ display_light_player: #http://docs.missionpinball.org/en/latest/config/display_l
       lights: gi, insert
 
 widgets:
+  left_drain:
+  - type: rectangle
+    x: 0
+    y: 290
+    width: 180
+    height: 200
+    anchor_x: left
+    anchor_y: bottom
+    color: FF0000
+    animations:
+      add_to_slide:
+        - property: y
+          value: -400
+          relative: true
+          duration: 0.5s
+          easing: linear
+  right_drain:
+  - type: rectangle
+    x: 288
+    y: 290
+    width: 200
+    height: 200
+    color: FF0000
+    anchor_x: left
+    anchor_y: bottom
+    animations:
+      add_to_slide:
+        - property: y
+          value: -400
+          relative: true
+          duration: 0.5s
+          easing: linear
+
   triangle_scoop_sweep:
   - type: triangle
     color: white
@@ -31,7 +64,7 @@ widgets:
     rotation: 0
     z: 1
     expire: 0.5s
-    events_when_removed: triangle_sweep_complete
+    events_when_removed: triangle_sweep_complete #This is what causes scoop to eject
     animations:
       add_to_slide:
         - property: points
@@ -510,6 +543,12 @@ widgets:
 
 
 widget_player:
+  balldevice_bd_trough_ball_enter:
+#  key_v_pressed:
+    left_drain:
+      slide: blank_transparent
+    right_drain:
+      slide: blank_transparent
   ball_waiting_to_eject_from_scoop:
     triangle_scoop_sweep:
       slide: blank_transparent

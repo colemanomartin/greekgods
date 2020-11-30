@@ -283,11 +283,11 @@ bonus mode with exit.
 When extra ball is awarded, put EB on screen so player understands why ball number did not change at next ball. Remove EB on next ball unless there are more than one.
 
 Add skill shot to upper 3 lanes and shot rotation.  Create a shot group for the 3 tied to events in the P and O area.
-Move drain display into sweep server.
-move scoop display into sweep server
 convert orbit sweeps to color stop so they work with MB collors
 make green mb insert palate versus green rotation for goddess BB green too.
 I might be able to recover from a missing ball with this event triggering mb https://docs.missionpinball.org/en/latest/events/balldevice_ball_device_ball_missing.html
+
+consider moving sweep_server to non-game mode that runs when attract runs
 
 Turn scoop MB into return souls to the underworld.
 
@@ -299,13 +299,14 @@ Jackpot for double MB either gate or hole
 
 Things to fix:
 
-
+sometimes on multiple games light show at left drops does not reset with game start.
+Sometimes call the shot show does not reset after goddess summoned.
 
 One time when playing hydra lights went out on lower playfield.  No clear reason why.  Saved log in weirdlogs
 Rarely display_light_player will cover all the lights at game start.
 
 
-OK to raise BB for single mode qualigication when SS pending but have to drop it again or maybe increase timer on BB.
+OK to raise BB for single mode qualification when SS pending but have to drop it again or maybe increase timer on BB.
 
 
 
@@ -314,7 +315,8 @@ Hardware:
   adjust spoon olympus pop
   adjust stitch under left powerball.
   fix sling behind drops
-
+  bigger rubber on post by pop.
+  post at lower left apron.
 
 Wish list:
   multiple_hits_window in shots
