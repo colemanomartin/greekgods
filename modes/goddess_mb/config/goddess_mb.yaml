@@ -288,9 +288,9 @@ widgets:
     anchor_x: center
     anchor_y: center
     font_size: 75
-  goddess_artimus:
+  goddess_artemus:
   - type: text
-    text: "Help Artimus\nTo the Underworld"
+    text: "Help artemus\nTo the Underworld"
     font_name: GreekGods2
     color: green
     y: 25%
@@ -315,7 +315,7 @@ widgets:
     anchor_x: center
     anchor_y: center
     font_size: 75
-#Order hestia artimus aphrodite athena
+#Order hestia artemus aphrodite athena
 widget_player:
   #For some reason this always tests false  slide_pf_goddess_mb_gather_instructions_slide_active{device.ball_devices.bd_scoop.balls==0}:
   slide_pf_goddess_mb_gather_instructions_slide_active:
@@ -342,7 +342,7 @@ widget_player:
       slide: pf_goddess_mb_gather_instructions_slide
     goddess_hestia:
       action: remove
-    goddess_artimus:
+    goddess_artemus:
       slide: pf_goddess_mb_gather_instructions_slide
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==2}:
     goddess_mb_orbit_arrows: #PNG
@@ -351,7 +351,7 @@ widget_player:
       slide: pf_goddess_mb_gather_instructions_slide
     goddess_hestia:
       action: remove
-    goddess_artimus:
+    goddess_artemus:
       action: remove
     goddess_aphrodite:
       slide: pf_goddess_mb_gather_instructions_slide

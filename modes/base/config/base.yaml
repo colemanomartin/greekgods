@@ -68,7 +68,7 @@ sequences:
   #each goddess a show plays and a portrait displays
   #When all goddesses are summoned, ball locking begins
   #Hits to the pops are only registered when field running.
-  #Hestia, artimus, aphrodite, athena
+  #Hestia, artemus, aphrodite, athena
   base_hestia:
     events:
       - logicblock_base_all_pops_complete, mystery_awards_goddess #Comma functions as an OR
@@ -79,13 +79,13 @@ sequences:
     reset_on_complete: false
     reset_events:
       - multiball_goddess_ended
-  base_artimus:
+  base_artemus:
     events:
       - base_hestia_summoned
       - logicblock_base_all_pops_complete, mystery_awards_goddess #Comma functions as an OR
     events_when_complete:
       - goddess_completed #Used for bonus mode
-      - base_artimus_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
+      - base_artemus_summoned #Note: logicblock_name_complete does not fire if there is an entry here.
     persist_state: true
     reset_on_complete: false
     reset_events:
@@ -93,7 +93,7 @@ sequences:
   base_aphrodite:
     events:
       - base_hestia_summoned
-      - base_artimus_summoned
+      - base_artemus_summoned
       - logicblock_base_all_pops_complete, mystery_awards_goddess #Comma functions as an OR
     events_when_complete:
       - goddess_completed #Used for bonus mode
@@ -105,7 +105,7 @@ sequences:
   base_athena:
     events: #Mystery award goddess does not work for Athena
       - base_hestia_summoned
-      - base_artimus_summoned
+      - base_artemus_summoned
       - base_aphrodite_summoned
       - logicblock_base_all_pops_complete{device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active==False and mode.o_ramp_mb.active==False} # Only enter the mode if no balls are locked and bb not blinking
     events_when_complete:
@@ -968,7 +968,7 @@ slide_player:
         font_size: 130
         font_name: GreekGods2
 
-#Hestia, artimus, aphrodite, athena
+#Hestia, artemus, aphrodite, athena
 widgets:
   hestia:
   - type: text
@@ -985,18 +985,18 @@ widgets:
     scale: 0.5
     anchor_x: middle
     anchor_y: top
-  artimus:
+  artemus:
   - type: text
-    text: Artimus Summoned
+    text: artemus Summoned
     font_size: 260
     y: 80%
     x: 50%
     color: green
     font_name: GreekGods2
     expire: 5s
-  artimus_coin:
+  artemus_coin:
   - type: image
-    image: goddess_artimus1
+    image: goddess_artemus1
     scale: 0.5
     anchor_x: middle
     anchor_y: top
@@ -1869,8 +1869,42 @@ widgets:
         repeat: true
 
 
-#Goddess: Hestia, artimus, aphrodite, athena
+#Goddess: Hestia, artemus, aphrodite, athena
 widget_player:
+  #First 3 place goddess icons on screen on balls 2+ if a goddess has already been awarded.
+  slide_basic_score_slide_active{device.sequences.base_hestia.completed and not device.sequences.base_artemus.completed and not device.sequences.base_aphrodite.completed}:
+    hestia_coin:
+      slide: basic_score_slide
+      widget_settings:
+        x: 20%
+        y: 50%
+  slide_basic_score_slide_active{device.sequences.base_hestia.completed and device.sequences.base_artemus.completed and not device.sequences.base_aphrodite.completed}:
+    hestia_coin:
+      slide: basic_score_slide
+      widget_settings:
+        x: 20%
+        y: 50%
+    artemus_coin:
+      slide: basic_score_slide
+      widget_settings:
+        x: 40%
+        y: 50%
+  slide_basic_score_slide_active{device.sequences.base_hestia.completed and device.sequences.base_artemus.completed and device.sequences.base_aphrodite.completed}:
+    hestia_coin:
+      slide: basic_score_slide
+      widget_settings:
+        x: 20%
+        y: 50%
+    artemus_coin:
+      slide: basic_score_slide
+      widget_settings:
+        x: 40%
+        y: 50%
+    aphrodite_coin:
+      slide: basic_score_slide
+      widget_settings:
+        x: 60%
+        y: 50%
   base_hestia_summoned:
     hestia:
       slide: basic_score_slide
@@ -1879,10 +1913,10 @@ widget_player:
       widget_settings:
         x: 20%
         y: 50%
-  base_artimus_summoned:
-    artimus:
+  base_artemus_summoned:
+    artemus:
       slide: basic_score_slide
-    artimus_coin:
+    artemus_coin:
       slide: basic_score_slide
       widget_settings:
         x: 40%
@@ -1908,11 +1942,11 @@ widget_player:
       action: remove
     aphrodite_coin:
       action: remove
-    artimus_coin:
+    artemus_coin:
       action: remove
     hestia_coin:
       action: remove
-    
+
   counter_field_spins_hit{current_player.player_base_spins==2}:
     sp01:
       slide: basic_score_slide
