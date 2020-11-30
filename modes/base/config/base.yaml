@@ -689,14 +689,21 @@ show_player:
       speed: 5
       loops: 0
       priority: 2000
-  s_right_flipper_active:
+  s_right_flipper_EOS_active:
     show_right_flip:
       speed: 3
       loops: 0
-  s_left_flipper_active:
+  s_left_flipper_EOS_active:
     show_left_flip:
       speed: 3
       loops: 0
+  s_accessory_active:
+    show_poseidion_flips_enabled:
+      speed: 10
+      loops: -1
+  s_accessory_inactive:
+    show_poseidion_flips_enabled:
+      action: remove
   s_shooterlane_inactive: #balldevice_bd_plunger_ball_eject_success: # s_launch_active:
     show_shooter_launch:
       speed: 10

@@ -591,14 +591,11 @@ drop_target_banks:
   cluster:
     drop_targets: star_distal, star_middle, star_proximal
     reset_coils: c_right_bank_reset
-#    reset_coil_max_wait_ms: 1500
     reset_events:
       - machine_reset_phase_3
       - mode_game_started #- mode_field_started #previously mode_game_started
-#      - multiball_celestial_mb_ended
-#      - timer_base_bank_reset_complete # base_revealed_slingshot_hit #: 1s #in field
-#    reset_on_complete: 10s #If no other event triggers reset it will reset after this many seconds when bank down
       - mystery_solved #Might want to change it to a list of each award, and end of hydra and scoop mb if more fun to have active.
+      - game_will_end
 diverters:
   malstrom_mag:
     playfield: earth_pf

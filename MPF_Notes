@@ -288,12 +288,9 @@ make green mb insert palate versus green rotation for goddess BB green too.
 I might be able to recover from a missing ball with this event triggering mb https://docs.missionpinball.org/en/latest/events/balldevice_ball_device_ball_missing.html
 
 consider moving sweep_server to non-game mode that runs when attract runs
-change colors of top right pops to yellow.
 Add ballsave text widgets to playfield screen so player knows when its a scoop or MB BS
 Turn scoop MB into return souls to the underworld.
-
-Move flipper light show to EOS switches
-Make auxillary button press turn poseidon inserts green to show player function of knee switch.
+Consider raising left post with left orbit hit when feeding olympus
 
 Jackpot for P_MB: gate
 Jackpot for O mb: pop-hole
@@ -304,7 +301,8 @@ Things to fix:
 
 sometimes on multiple games light show at left drops does not reset with game start. Might be because field is
 starting before drop target resets causing the show to start based on the conditional logic. Maybe look at Order
-of field starting versus drop target state. Might be able to use better logic based on tracking of drops.
+of field starting versus drop target state. Might be able to use better logic based on tracking of drops,
+or reset drops at end of game
 Sometimes call the shot show does not reset after goddess summoned.
 
 One time when playing hydra lights went out on lower playfield.  No clear reason why.  Saved log in weirdlogs
