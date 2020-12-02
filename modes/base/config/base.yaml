@@ -703,7 +703,7 @@ show_player:
       loops: -1
   s_accessory_inactive:
     show_poseidion_flips_enabled:
-      action: remove
+      action: stop
   s_shooterlane_inactive: #balldevice_bd_plunger_ball_eject_success: # s_launch_active:
     show_shooter_launch:
       speed: 10

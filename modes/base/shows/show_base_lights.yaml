@@ -4,9 +4,9 @@
   lights:
       l_poseidon_pop: 000060
       l_left_side_pop: 600000
-      l_olympus_lower_pop: 705000 #Yellow is FFFF00 gold FFD700
-      l_olympus_right_pop: 705000
-      l_olympus_left_pop: 705000
+      l_olympus_lower_pop: D04000 #Yellow is FFFF00 gold FFD700
+      l_olympus_right_pop: D04000
+      l_olympus_left_pop: D04000
       l_hydra_2: green
       l_hydra_center: green
       l_hydra_top: green
