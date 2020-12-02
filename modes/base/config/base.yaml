@@ -270,7 +270,7 @@ shot_profiles:
         loops: -1
         speed: 10
         priority: 3
-    loop: false 
+    loop: false
 
 shots:
   #for inlane and outlane see http://docs.missionpinball.org/en/latest/mechs/switches/rollover_switches.html
@@ -682,6 +682,11 @@ show_player:
       priority: 2
   ball_save_bs_default_timer_start:  #  balldevice_bd_plunger_ball_eject_success:
     countdown99:
+      speed: 10
+      loops: 0
+      priority: 50
+  ball_save_bs_scoop_eject_timer_start:
+    countdown30:
       speed: 10
       loops: 0
       priority: 50
@@ -1881,7 +1886,7 @@ widgets:
 #Goddess: Hestia, artemus, aphrodite, athena
 widget_player:
   #First 3 place goddess icons on screen on balls 2+ if a goddess has already been awarded.
-  slide_basic_score_slide_active{device.sequences.base_hestia.completed and not device.sequences.base_artemus.completed and not device.sequences.base_aphrodite.completed}:
+  slide_basic_score_slide_active{device.sequences.base_hestia.completed}: # and not device.sequences.base_artemus.completed and not device.sequences.base_aphrodite.completed}:
     hestia_coin:
       slide: basic_score_slide
       widget_settings:
