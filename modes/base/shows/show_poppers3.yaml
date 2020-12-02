@@ -1,0 +1,75 @@
+#show_version=5
+# https://htmlcolorcodes.com/color-names/
+
+- duration: 1
+  lights:
+    l_olympus_left_pop:
+      color: D04000
+      brightness: 100%
+      fade: 400 ms
+    l_olympus_right_pop:
+      color: D04000
+      brightness: 80%
+      fade: 400 ms
+    l_olympus_lower_pop:
+      color: D04000
+      brightness: 60%
+      fade: 400 ms
+    l_poseidon_pop:
+      color: 000070
+      brightness: 40%
+      fade: 400 ms
+- duration: 1
+  lights:
+    l_olympus_left_pop:
+      color: D04000
+      brightness: 40%
+      fade: 400 ms
+    l_olympus_right_pop:
+      color: D04000
+      brightness: 100%
+      fade: 400 ms
+    l_olympus_lower_pop:
+      color: D04000
+      brightness: 80%
+      fade: 400 ms
+    l_poseidon_pop:
+      color: 000070
+      brightness: 60%
+      fade: 400 ms
+- duration: 1
+  lights:
+    l_olympus_left_pop:
+      color: D04000
+      brightness: 60%
+      fade: 400 ms
+    l_olympus_right_pop:
+      color: D04000
+      brightness: 40%
+      fade: 400 ms
+    l_olympus_lower_pop:
+      color: D04000
+      brightness: 100%
+      fade: 400 ms
+    l_poseidon_pop:
+      color: 000070
+      brightness: 80%
+      fade: 400 ms
+- duration: 1
+  lights:
+    l_olympus_left_pop:
+      color: D04000
+      brightness: 80%
+      fade: 400 ms
+    l_olympus_right_pop:
+      color: D04000
+      brightness: 60%
+      fade: 400 ms
+    l_olympus_lower_pop:
+      color: D04000
+      brightness: 40%
+      fade: 400 ms
+    l_poseidon_pop:
+      color: 000070
+      brightness: 100%
+      fade: 400 ms

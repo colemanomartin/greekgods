@@ -1,9 +1,9 @@
 #show_version=5
 - duration: 1
   lights:
-    l_poseidon_fish_right: green
-    l_poseidon_right_sling: green
+    l_poseidon_fish_right: red
+    l_poseidon_fish_left: red
 - duration: 1
   lights:
     l_poseidon_fish_right: stop
-    l_poseidon_right_sling: stop
+    l_poseidon_fish_left: stop

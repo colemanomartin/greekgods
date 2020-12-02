@@ -263,14 +263,14 @@ shot_profiles:
       - name: untouched
         show: "show_pop_white_pulse"
         loops: -1
-        speed: 20
+        speed: 10
         priority: 3 #Without this it does not ride atop the base colors.
       - name: touched
         show: "show_pop_green_pulse"
         loops: -1
         speed: 10
         priority: 3
-    loop: false #true #False
+    loop: false 
 
 shots:
   #for inlane and outlane see http://docs.missionpinball.org/en/latest/mechs/switches/rollover_switches.html
@@ -279,35 +279,35 @@ shots:
     playfield: earth_pf
     profile: base_white_green
     switch: s_left_side_pop
-    restart_events:  show_white_all_pops_x5_finished_playing #Resetting with show player event so as not to need a timer.
+    restart_events: show_white_all_pops_x5_finished_playing #Resetting with show player event so as not to need a timer.
     show_tokens:
       leds: l_left_side_pop
   base_olympus_lower_pop:
     playfield: earth_pf
     profile: base_white_green
     switch: s_olympus_lower_pop
-    restart_events:  show_white_all_pops_x5_finished_playing
+    restart_events: show_white_all_pops_x5_finished_playing
     show_tokens:
       leds: l_olympus_lower_pop
   base_olympus_left_pop:
     playfield: earth_pf
     profile: base_white_green
     switch: s_olympus_left_pop
-    restart_events:  show_white_all_pops_x5_finished_playing
+    restart_events: show_white_all_pops_x5_finished_playing
     show_tokens:
       leds: l_olympus_left_pop
   base_olympus_right_pop:
     playfield: earth_pf
     profile: base_white_green
     switch: s_olympus_right_pop
-    restart_events:  show_white_all_pops_x5_finished_playing
+    restart_events: show_white_all_pops_x5_finished_playing
     show_tokens:
       leds: l_olympus_right_pop
   base_poseidon_pop:
     playfield: earth_pf
     profile: base_white_green
     switch: s_poseidon_pop
-    restart_events:  show_white_all_pops_x5_finished_playing
+    restart_events: show_white_all_pops_x5_finished_playing
     show_tokens:
       leds: l_poseidon_pop
   ballblock: #records hit to the ball block drop target. control of the drop is via bd events in mode scoop.
@@ -631,8 +631,9 @@ show_player:
   mode_base_started:
     show_malstrom_spin_ccw_blue:
       speed: 8
-    show_poppers2:
+    show_poppers3:
       speed: 2
+      priority: 1
     show_base_lights:
       speed: 1
     show_sp_green_GG_white:
@@ -647,15 +648,15 @@ show_player:
     show_left_side_pop_shot_call:
       speed: 1
       loops: -1
-      priority: 1
+      priority: 2
     show_poseidon_pop_shot_call:
       speed: 1
       loops: -1
-      priority: 1
+      priority: 2
     show_olympus_collective_shot_call:
       speed: 1
       loops: -1
-      priority: 1
+      priority: 2
   #Turn off the pop's shows when they are hit.
   base_left_side_pop_untouched_hit:
     show_left_side_pop_shot_call:
@@ -670,15 +671,15 @@ show_player:
     show_left_side_pop_shot_call:
       speed: 1
       loops: -1
-      priority: 1
+      priority: 2
     show_poseidon_pop_shot_call:
       speed: 1
       loops: -1
-      priority: 1
+      priority: 2
     show_olympus_collective_shot_call:
       speed: 1
       loops: -1
-      priority: 1
+      priority: 2
   ball_save_bs_default_timer_start:  #  balldevice_bd_plunger_ball_eject_success:
     countdown99:
       speed: 10
@@ -699,7 +700,7 @@ show_player:
       loops: 0
   s_accessory_active:
     show_poseidion_flips_enabled:
-      speed: 10
+      speed: 5
       loops: -1
   s_accessory_inactive:
     show_poseidion_flips_enabled:
@@ -895,6 +896,7 @@ show_player:
       priority: 10000
       loops: 0
       events_when_completed: show_white_all_pops_x5_finished_playing
+
 slide_player:
   mode_base_started:
     basic_score_slide:
