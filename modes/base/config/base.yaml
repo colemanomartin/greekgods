@@ -707,6 +707,7 @@ show_player:
     show_poseidion_flips_enabled:
       speed: 5
       loops: -1
+# s_left_flipper_active{device.switch.s_accessory.state==1}
   s_accessory_inactive:
     show_poseidion_flips_enabled:
       action: stop
