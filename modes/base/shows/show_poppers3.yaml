@@ -1,75 +1,59 @@
 #show_version=5
 # https://htmlcolorcodes.com/color-names/
-
+#A rotating pattern of yellows on the olympus and blue on the poseidon
 - duration: 1
   lights:
     l_olympus_left_pop:
       color: D04000
-      brightness: 100%
       fade: 400 ms
     l_olympus_right_pop:
-      color: D04000
-      brightness: 80%
+      color: A33300
       fade: 400 ms
     l_olympus_lower_pop:
-      color: D04000
-      brightness: 60%
+      color: 7C2600
       fade: 400 ms
     l_poseidon_pop:
-      color: 000070
-      brightness: 40%
+      color: 00002D
       fade: 400 ms
 - duration: 1
   lights:
     l_olympus_left_pop:
-      color: D04000
-      brightness: 40%
+      color: 531A00
       fade: 400 ms
     l_olympus_right_pop:
       color: D04000
-      brightness: 100%
       fade: 400 ms
     l_olympus_lower_pop:
-      color: D04000
-      brightness: 80%
+      color: A33300
       fade: 400 ms
     l_poseidon_pop:
-      color: 000070
-      brightness: 60%
+      color: 000043
       fade: 400 ms
 - duration: 1
   lights:
     l_olympus_left_pop:
-      color: D04000
-      brightness: 60%
+      color: 7C2600
       fade: 400 ms
     l_olympus_right_pop:
-      color: D04000
-      brightness: 40%
+      color: 531A00
       fade: 400 ms
     l_olympus_lower_pop:
       color: D04000
-      brightness: 100%
       fade: 400 ms
     l_poseidon_pop:
-      color: 000070
-      brightness: 80%
+      color: 00005A
       fade: 400 ms
 - duration: 1
   lights:
     l_olympus_left_pop:
-      color: D04000
-      brightness: 80%
+      color: A33300
       fade: 400 ms
     l_olympus_right_pop:
-      color: D04000
-      brightness: 60%
+      color: 7C2600
       fade: 400 ms
     l_olympus_lower_pop:
-      color: D04000
-      brightness: 40%
+      color: 531A00
       fade: 400 ms
     l_poseidon_pop:
       color: 000070
-      brightness: 100%
       fade: 400 ms
