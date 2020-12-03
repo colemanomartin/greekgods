@@ -150,12 +150,21 @@ counters:
     reset_on_complete: true
     disable_on_complete: true
     persist_state: false #resets with each new ball
-  base_goddesses_summoned:
-    #Used by bonus mode calculatoin
+  base_goddesses_summoned_this_ball:
+    #Used by bonus mode calculatoin and to show the number of
     count_events:
       - goddess_completed #Any goddess
     restart_events:
       - ball_started
+  base_goddesses_progressed:
+    #Used by screen to show proper number of goddesses at ball start
+    count_events:
+      - goddess_completed #Any goddess
+    restart_events:
+      - ball_started
+    reset_events:
+      - multiball_goddess_ended
+
 
 timers:
   base_timer_ball_launching:
@@ -534,13 +543,17 @@ variable_player:
     p_excitement: # For animated bar graph of p area points
       int: device.counters.field_poseidon_excitement.value * 21 # 55 - 300
       action: set
-  logicblock_field_spins_updated:
+  logicblock_field_spins_updated: #Used to put wheels on BB display because device conditional logic is not available to MC
     player_base_spins:
       int: device.counters.field_spins.value
       action: set
   logicblock_field_hydra_hits_updated:
     player_base_hydras:
       int: device.counters.field_hydra_hits.value
+      action: set
+  logicblock_base_goddesses_progressed_updated:
+    player_base_goddesses_earned:
+      int: device.counters.base_goddesses_progressed.value
       action: set
   base_orbit_clockwise_hit:
     score: 1000
@@ -1887,7 +1900,7 @@ widgets:
 #Goddess: Hestia, artemus, aphrodite, athena
 widget_player:
   #First 3 place goddess icons on screen on balls 2+ if a goddess has already been awarded.
-  slide_basic_score_slide_active{device.sequences.base_hestia.completed}: # and not device.sequences.base_artemus.completed and not device.sequences.base_aphrodite.completed}:
+  slide_basic_score_slide_active{current_player.player_base_goddesses_earned == 1}: #completed}: # and not device.sequences.base_artemus.completed and not device.sequences.base_aphrodite.completed}:
     hestia_coin:
       slide: basic_score_slide
       widget_settings:

@@ -5,55 +5,55 @@
   lights:
     l_olympus_left_pop:
       color: D04000
-      fade: 400 ms
+      fade: 500 ms
     l_olympus_right_pop:
-      color: A33300
-      fade: 400 ms
+      color: 803300 #A33300
+      fade: 500 ms
     l_olympus_lower_pop:
-      color: 7C2600
-      fade: 400 ms
+      color: 502600 # 7C2600
+      fade: 500 ms
     l_poseidon_pop:
       color: 00002D
-      fade: 400 ms
+      fade: 500 ms
 - duration: 1
   lights:
     l_olympus_left_pop:
       color: 531A00
-      fade: 400 ms
+      fade: 500 ms
     l_olympus_right_pop:
       color: D04000
-      fade: 400 ms
+      fade: 500 ms
     l_olympus_lower_pop:
-      color: A33300
-      fade: 400 ms
+      color: 803300 #A33300
+      fade: 500 ms
     l_poseidon_pop:
       color: 000043
-      fade: 400 ms
+      fade: 500 ms
 - duration: 1
   lights:
     l_olympus_left_pop:
-      color: 7C2600
-      fade: 400 ms
+      color: 502600 # 7C2600
+      fade: 500 ms
     l_olympus_right_pop:
       color: 531A00
-      fade: 400 ms
+      fade: 500 ms
     l_olympus_lower_pop:
       color: D04000
-      fade: 400 ms
+      fade: 500 ms
     l_poseidon_pop:
       color: 00005A
-      fade: 400 ms
+      fade: 500 ms
 - duration: 1
   lights:
     l_olympus_left_pop:
-      color: A33300
-      fade: 400 ms
+      color: 803300 #A33300
+      fade: 500 ms
     l_olympus_right_pop:
-      color: 7C2600
-      fade: 400 ms
+      color: 502600 # 7C2600
+      fade: 500 ms
     l_olympus_lower_pop:
       color: 531A00
-      fade: 400 ms
+      fade: 500 ms
     l_poseidon_pop:
       color: 000070
-      fade: 400 ms
+      fade: 500 ms
