@@ -107,7 +107,7 @@ sequences:
       - base_hestia_summoned
       - base_artemus_summoned
       - base_aphrodite_summoned
-      - logicblock_base_all_pops_complete{device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active==False and mode.o_ramp_mb.active==False} # Only enter the mode if no balls are locked and bb not blinking
+      - logicblock_base_all_pops_complete {mode.p_ramp_mb.active==False and mode.o_ramp_mb.active==False} # {device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and    Only enter the mode if no balls are locked and bb not blinking
     events_when_complete:
       - goddess_completed #Used for bonus mode
       - base_athena_summoned

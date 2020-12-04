@@ -50,11 +50,11 @@ sound_player:
   base_demeter_summoned: v_combo_bonus
   base_hera_summoned: v_combo_bonus
   base_hecate_summoned: v_combo_bonus
-  base_artimus_summoned: v_combo_bonus
+  base_artemus_summoned: v_combo_bonus
   base_athena_summoned: v_combo_bonus
   base_aphrodite_summoned: v_combo_bonus
-
-
+  ball_save_bs_default_saving_ball: v_ball_save
+  ball_save_bs_scoop_eject_saving_ball: v_ball_save
 #  river_a_hit: snd_river
 #  river_b_hit: snd_river
 #  river_c_hit: snd_river

@@ -481,12 +481,12 @@ slide_player:
 #    load: mode_start
 #    file: shoot_rampmb.gif
 
-#sound_player:   !!!!!!!!! Check names and change to olympus locks and logic
+sound_player:   # change to olympus locks and logic
 #  mode_poseidon_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2}: shootramplockballs
-#  multiball_poseidon_ramp_started: multiball
+  multiball_olympus_ramp_started: multiball
 #  multiball_lock_poseidon_lock_full: shoot_ramp_mb #defigned in sounds in config
-#  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1}: ball1locked
-#  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 2}: ball2locked
+  multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1}: ball1locked
+  multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 2}: ball2locked
 #  multiball_lock_poseidon_lock_locked_ball{device.ball_locks.bd_poseidon_ramp.total_balls_locked == 2}: ball2locked
 #multiball_lock_poseidon_lock_locked_ball'====== Args={'total_balls_locked': 1}
 #multiball_lock_poseidon_lock_locked_ball

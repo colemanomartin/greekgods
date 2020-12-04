@@ -400,6 +400,7 @@ sound_player:
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==2}: v_ball_2_locked
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==3}: v_ball_3_locked
   goddess_trigger_mb_release_hit: v_ball_4_locked
+  multiball_goddess_started: multiball
   goddess_made_orbit_hit: snd_underworld_open
 
 variable_player:
