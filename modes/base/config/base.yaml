@@ -719,11 +719,11 @@ show_player:
     show_poseidion_flips_enabled:
       speed: 4
       loops: -1
-  s_left_flipper_active{device.switch.s_accessory.state==1}: #flash poseidon sling with every flipper button pressed when knee switch active
+  s_left_flipper_active{device.switches.s_accessory.state==1}: #flash poseidon sling with every flipper button pressed when knee switch active
     show_poseidon_left_sling_manual_control:
       speed: 5
       loops: 0
-  s_right_flipper_active{device.switch.s_accessory.state==1}:
+  s_right_flipper_active{device.switches.s_accessory.state==1}:
     show_poseidon_right_sling_manual_control:
       speed: 5
       loops: 0
