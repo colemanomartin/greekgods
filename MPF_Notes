@@ -259,7 +259,8 @@ Troubleshooting: One time it would not push because I added a directory to logs.
    To pull, click Fetch and then Pull.
 
 Things to add:
-
+  Light show for slings.
+  "Ball locked" and "ball saved." 
   Combo shot for double orbit with light show and point bonus.
   Combo shot for hit BB then scoop. Ball hold and contracting circle of light.
   4 hits to scoop triggers scoop mb. Prevent if in subway locking.
@@ -298,7 +299,7 @@ Jackpot for Scoop MB: scoop (Keep BB down)
 Jackpot for double MB either gate or hole
 
 Things to fix:
-
+Coins don't show on new ball.
 sometimes on multiple games light show at left drops does not reset with game start. Might be because field is
 starting before drop target resets causing the show to start based on the conditional logic. Maybe look at Order
 of field starting versus drop target state. Might be able to use better logic based on tracking of drops,
@@ -314,13 +315,14 @@ OK to raise BB for single mode qualification when SS pending but have to drop it
 
 
 Hardware:
-  Check trough switches.
-  adjust spoon olympus pop
+
+
   adjust stitch under left powerball.
   fix sling behind drops
-  bigger rubber on post by pop.
+
   try a bigger rubber on the right orbit rail to delfect show balls to the left flipper.
-  post at lower left apron.
+
+  Ball trapping next to ring on left Sis, maybe weld a deflector.
   Rail on left poseidon pop plastic to prevent ball trapping
 
 Wish list:

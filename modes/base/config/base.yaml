@@ -154,16 +154,15 @@ counters:
     #Used by bonus mode calculatoin and to show the number of
     count_events:
       - goddess_completed #Any goddess
-    restart_events:
+    restart_events: #A restart is a reset, then an enable, combined into a single action.
       - ball_started
   base_goddesses_progressed:
     #Used by screen to show proper number of goddesses at ball start
     count_events:
       - goddess_completed #Any goddess
-    restart_events:
-      - ball_started
-    reset_events:
+    restart_events: #A restart is a reset, then an enable, combined into a single action.
       - multiball_goddess_ended
+    persist_state: true
 
 
 timers:
@@ -638,7 +637,7 @@ variable_player:
   base_hydra_hit:
     score: 100
   goddess_completed:
-    score: 5000
+    score: 8000
 
 show_player:
   mode_base_started:
@@ -718,9 +717,16 @@ show_player:
       loops: 0
   s_accessory_active:
     show_poseidion_flips_enabled:
-      speed: 5
+      speed: 4
       loops: -1
-# s_left_flipper_active{device.switch.s_accessory.state==1}
+  s_left_flipper_active{device.switch.s_accessory.state==1}: #flash poseidon sling with every flipper button pressed when knee switch active
+    show_poseidon_left_sling_manual_control:
+      speed: 5
+      loops: 0
+  s_right_flipper_active{device.switch.s_accessory.state==1}:
+    show_poseidon_right_sling_manual_control:
+      speed: 5
+      loops: 0
   s_accessory_inactive:
     show_poseidion_flips_enabled:
       action: stop
@@ -943,6 +949,13 @@ slide_player:
       - type: text
         text: (feeders_player_variable) #(player|ramp_flap_player_variable)
         y: 76%
+        x: 82%
+        font_size: 50
+        anchor_x: left #anchor relates to the text not the screen x,y origin
+        anchor_y: top
+      - type: text
+        text: Goddesses Earned (player_base_goddesses_earned) #(player|ramp_flap_player_variable)
+        y: 72%
         x: 82%
         font_size: 50
         anchor_x: left #anchor relates to the text not the screen x,y origin
@@ -1900,13 +1913,13 @@ widgets:
 #Goddess: Hestia, artemus, aphrodite, athena
 widget_player:
   #First 3 place goddess icons on screen on balls 2+ if a goddess has already been awarded.
-  slide_basic_score_slide_active{current_player.player_base_goddesses_earned == 1}: #completed}: # and not device.sequences.base_artemus.completed and not device.sequences.base_aphrodite.completed}:
+  slide_basic_score_slide_active{current_player.player_base_goddesses_earned == 1}:
     hestia_coin:
       slide: basic_score_slide
       widget_settings:
         x: 20%
         y: 50%
-  slide_basic_score_slide_active{device.sequences.base_hestia.completed and device.sequences.base_artemus.completed and not device.sequences.base_aphrodite.completed}:
+  slide_basic_score_slide_active{current_player.player_base_goddesses_earned == 2}:
     hestia_coin:
       slide: basic_score_slide
       widget_settings:
@@ -1917,7 +1930,7 @@ widget_player:
       widget_settings:
         x: 40%
         y: 50%
-  slide_basic_score_slide_active{device.sequences.base_hestia.completed and device.sequences.base_artemus.completed and device.sequences.base_aphrodite.completed}:
+  slide_basic_score_slide_active{current_player.player_base_goddesses_earned == 3}:
     hestia_coin:
       slide: basic_score_slide
       widget_settings:
@@ -1932,6 +1945,27 @@ widget_player:
       slide: basic_score_slide
       widget_settings:
         x: 60%
+        y: 50%
+  slide_basic_score_slide_active{current_player.player_base_goddesses_earned == 4}:
+    hestia_coin:
+      slide: basic_score_slide
+      widget_settings:
+        x: 20%
+        y: 50%
+    artemus_coin:
+      slide: basic_score_slide
+      widget_settings:
+        x: 40%
+        y: 50%
+    aphrodite_coin:
+      slide: basic_score_slide
+      widget_settings:
+        x: 60%
+        y: 50%
+    athena_coin:
+      slide: basic_score_slide
+      widget_settings:
+        x: 80%
         y: 50%
   base_hestia_summoned:
     hestia:

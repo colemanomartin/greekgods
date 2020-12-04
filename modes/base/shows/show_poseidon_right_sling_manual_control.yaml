@@ -1,0 +1,6 @@
+#show_version=5
+# https://htmlcolorcodes.com/color-names/
+- duration: 1
+  lights:
+    l_poseidon_right_sling: red #home made flasher
+    # There is no middle on the right    l_poseidon_right_sling_middle: white

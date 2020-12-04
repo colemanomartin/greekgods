@@ -1,0 +1,6 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_poseidon_left_sling_distal: red
+    l_poseidon_left_sling_middle: red
+    l_poseidon_left_sling_prox: red
