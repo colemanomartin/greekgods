@@ -651,9 +651,14 @@ diverters:
     type: hold
     activation_time: 2000 ms
     activation_switches: s_olympus_rollover
-    enable_events: mode_scoop_mb_started
+    enable_events:
+      - mode_scoop_mb_started
+      - goddess_made_orbit_hit
     disable_events:
       - mode_scoop_mb_stopped
+      - multiball_lock_subway_lock_locked_ball
+      - multiball_goddess_started
+      - mode_goddess_mb_stopped
     debug: true
   scoop_mb_special_purpose_apearing_post_right:
     playfield: earth_pf
@@ -664,9 +669,14 @@ diverters:
     type: hold
     activation_time: 2000 ms
     activation_switches: s_posideon_rollover
-    enable_events: mode_scoop_mb_started
+    enable_events:
+      - mode_scoop_mb_started
+      - goddess_made_orbit_hit
     disable_events:
       - mode_scoop_mb_stopped
+      - multiball_lock_subway_lock_locked_ball
+      - multiball_goddess_started
+      - mode_goddess_mb_stopped
     debug: true
   pass_poseidon_lock:
     playfield: earth_pf

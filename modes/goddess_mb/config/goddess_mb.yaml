@@ -119,7 +119,7 @@ shots:
   goddess_made_orbit:
     enable_events:
       - mode_goddess_mb_started
-      - multiball_lock_subway_lock_locked_ball
+      - multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls<3} #Don't rumble when athena joining
     disable_events:
       - multiball_goddess_started
       - goddess_made_orbit_hit
@@ -135,7 +135,11 @@ shots:
       - ballblock_hit
 event_player:
   balldevice_bd_scoop_ball_eject_success:
-    - goddess_need_rapid_bb_reset_hit|20ms #Spoof of above shot build in a delay to allow timer to start so this event is picked up
+    - goddess_need_rapid_bb_reset_hit|20ms #Spoof of above shot build in a delay to allow timer to start so this event is picked up  #Order hestia artemus aphrodite athena
+  multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==1}: goddess_mb_says_move_on_down_hestia #Needed because widget player does not support conditional logic
+  multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==2}: goddess_mb_says_move_on_down_artemus #Needed because widget player does not support conditional logic
+  multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==3}: goddess_mb_says_move_on_down_aphrodite #Needed because widget player does not support conditional logic
+  goddess_trigger_mb_release_hit: goddess_mb_says_move_on_down_athena #Needed because code reads better
 
 accruals:
   goddess_all_pops:
@@ -234,6 +238,67 @@ timers:
 #        event: logicblock_goddess_multiplier_hit
 
 widgets:
+  gmb_hestia_coin:
+  - type: image
+    image: goddess_hestia2
+    scale: 0.25
+    anchor_x: middle
+    anchor_y: top
+    x: 20%
+    y: 70%
+    z: 5
+    animations:
+      goddess_mb_says_move_on_down_hestia:
+      - property: y
+        value: 40%
+        relative: false
+        duration: 2
+  gmb_artemus_coin:
+  - type: image
+    image: goddess_artemus1
+    scale: 0.25
+    anchor_x: middle
+    anchor_y: top
+    x: 40%
+    y: 70%
+    z: 4
+    animations:
+      goddess_mb_says_move_on_down_artemus:
+      - property: y
+        value: 40%
+        relative: false
+        duration: 2
+  gmb_aphrodite_coin:
+  - type: image
+    image: goddess_aphrodites1
+    scale: 0.25
+    anchor_x: middle
+    anchor_y: top
+    x: 60%
+    y: 70%
+    z: 3
+    animations:
+      goddess_mb_says_move_on_down_aphrodite:
+      - property: y
+        value: 40%
+        relative: false
+        duration: 2
+  gmb_athena_coin:
+  - type: image
+    image: goddess_athena1
+    scale: 0.25
+    anchor_x: middle
+    anchor_y: top
+    x: 80%
+    y: 70%
+    z: 2
+    animations:
+      goddess_mb_says_move_on_down_athena:
+      - property: y
+        value: 40%
+        relative: false
+        duration: 2
+
   goddess_mb_orbit_arrows:
   - type: image
     image: 2_red_orbit_arrows
@@ -253,7 +318,15 @@ widgets:
     font_name: GreekGods2
   goddess_mb_shoot_cave:
   - type: text
-    text: "Shoot cave for\nRebellion"
+    text: "Enter A Cave"
+    font_size: 60
+    y: 80%
+    x: 50%
+    color: green
+    font_name: GreekGods2
+  goddess_mb_shoot_cave_athena:
+  - type: text
+    text: "Shoot Cave For\nRebellion"
     font_size: 60
     y: 75%
     x: 50%
@@ -274,95 +347,160 @@ widgets:
     text: "Hit All Pops\nFor Bonus"
     font_name: GreekGods2
     color: green
-    y: 75%
+    y: 10%
     anchor_x: center
     anchor_y: center
     font_size: 75
     expire: 3s
-  goddess_hestia:
+  gmb_goddess_hestia_txt:
   - type: text
     text: "Help Hestia\nTo the Underworld"
     font_name: GreekGods2
     color: green
-    y: 25%
+    y: 10%
     anchor_x: center
     anchor_y: center
     font_size: 75
-  goddess_artemus:
+  gmb_goddess_artemus_txt:
   - type: text
     text: "Help artemus\nTo the Underworld"
     font_name: GreekGods2
     color: green
-    y: 25%
+    y: 10%
     anchor_x: center
     anchor_y: center
     font_size: 75
-  goddess_aphrodite:
+  gmb_goddess_aphrodite_txt:
   - type: text
     text: "Help Aphrodite\nTo the Underworld"
     font_name: GreekGods2
     color: green
-    y: 25%
+    y: 10%
     anchor_x: center
     anchor_y: center
     font_size: 75
-  goddess_athena:
+  gmb_goddess_athena_txt:
   - type: text
     text: "Help Athena\nTo the Underworld"
     font_name: GreekGods2
     color: green
-    y: 25%
+    y: 10%
     anchor_x: center
     anchor_y: center
     font_size: 75
 #Order hestia artemus aphrodite athena
 widget_player:
-  #For some reason this always tests false  slide_pf_goddess_mb_gather_instructions_slide_active{device.ball_devices.bd_scoop.balls==0}:
-  slide_pf_goddess_mb_gather_instructions_slide_active:
+  #For some reason this always tests false  slide_pf_goddess_mb_gather_instructions_slide_active{device.ball_devices.bd_scoop.balls==0}: turns out conditional logic does not work on widget player mpf mc wall thing
+  slide_pf_goddess_mb_gather_instructions_slide_active{current_player.player_goddesses_in_subway==0}:
     goddess_mb_shoot_orbits:
       slide: pf_goddess_mb_gather_instructions_slide
     goddess_mb_orbit_arrows: #PNG
       slide: pf_goddess_mb_gather_instructions_slide
-    goddess_hestia:
+    gmb_goddess_hestia_txt:
       slide: pf_goddess_mb_gather_instructions_slide
+    gmb_hestia_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+  slide_pf_goddess_mb_gather_instructions_slide_active{current_player.player_goddesses_in_subway==1}:
+    goddess_mb_shoot_orbits:
+      slide: pf_goddess_mb_gather_instructions_slide
+    goddess_mb_orbit_arrows: #PNG
+      slide: pf_goddess_mb_gather_instructions_slide
+    gmb_goddess_artemus_txt:
+      slide: pf_goddess_mb_gather_instructions_slide
+    gmb_artemus_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+    gmb_hestia_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+      widget_settings:
+        y: 40%
+  slide_pf_goddess_mb_gather_instructions_slide_active{current_player.player_goddesses_in_subway==2}:
+    goddess_mb_shoot_orbits:
+      slide: pf_goddess_mb_gather_instructions_slide
+    goddess_mb_orbit_arrows: #PNG
+      slide: pf_goddess_mb_gather_instructions_slide
+    gmb_goddess_aphrodite_txt:
+      slide: pf_goddess_mb_gather_instructions_slide
+    gmb_aphrodite_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+    gmb_hestia_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+      widget_settings:
+        y: 40%
+    gmb_artemus_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+      widget_settings:
+        y: 40%
+  slide_pf_goddess_mb_gather_instructions_slide_active{current_player.player_goddesses_in_subway==3}:
+    gmb_goddess_athena_txt:
+      slide: pf_goddess_mb_gather_instructions_slide
+    gmb_athena_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+    gmb_hestia_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+      widget_settings:
+        y: 40%
+    gmb_artemus_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+      widget_settings:
+        y: 40%
+    gmb_aphrodite_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+      widget_settings:
+        y: 40%
   base_orbit_clockwise_hit:
+    goddess_mb_shoot_cave:
+      slide: pf_goddess_mb_gather_instructions_slide
     goddess_mb_orbit_arrows:
       action: remove
     goddess_mb_shoot_orbits:
       action: remove
   base_orbit_counter_clockwise_hit:
+    goddess_mb_shoot_cave:
+      slide: pf_goddess_mb_gather_instructions_slide
     goddess_mb_orbit_arrows:
       action: remove
     goddess_mb_shoot_orbits:
       action: remove
-  multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==1}:
+  multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==1}: # Weirdly the conditional logic works here, maybe because the event is coming from MPF and id factoring correctly to MC
+    goddess_mb_shoot_cave:
+      action: remove
     goddess_mb_orbit_arrows: #PNG
       slide: pf_goddess_mb_gather_instructions_slide
     goddess_mb_shoot_orbits:
       slide: pf_goddess_mb_gather_instructions_slide
-    goddess_hestia:
+    gmb_goddess_hestia_txt:
       action: remove
-    goddess_artemus:
+    gmb_artemus_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+    gmb_goddess_artemus_txt:
       slide: pf_goddess_mb_gather_instructions_slide
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==2}:
+    goddess_mb_shoot_cave:
+      action: remove
     goddess_mb_orbit_arrows: #PNG
       slide: pf_goddess_mb_gather_instructions_slide
     goddess_mb_shoot_orbits:
       slide: pf_goddess_mb_gather_instructions_slide
-    goddess_hestia:
+    gmb_goddess_hestia_txt:
       action: remove
-    goddess_artemus:
+    gmb_goddess_artemus_txt:
       action: remove
-    goddess_aphrodite:
+    gmb_aphrodite_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+    gmb_goddess_aphrodite_txt:
       slide: pf_goddess_mb_gather_instructions_slide
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==3}:
-    goddess_aphrodite:
-      action: remove
-    goddess_hestia:
-      action: remove
-    goddess_athena:
-      slide: pf_goddess_mb_gather_instructions_slide
     goddess_mb_shoot_cave:
+      action: remove
+    gmb_goddess_aphrodite_txt:
+      action: remove
+    gmb_goddess_hestia_txt:
+      action: remove
+    gmb_athena_coin:
+      slide: pf_goddess_mb_gather_instructions_slide
+    gmb_goddess_athena_txt:
+      slide: pf_goddess_mb_gather_instructions_slide
+    goddess_mb_shoot_cave_athena:
       slide: pf_goddess_mb_gather_instructions_slide
 
 slide_player:
@@ -371,14 +509,35 @@ slide_player:
       target: playfield_lcd
       background_color: 000000
       widgets:
-      - type: text
-        text: "All Godesses to\nThe Underworld!"
-        font_name: GreekGods2
+      - type: line
+        points: 50,400,  150,420,  250,500,  300,500, 350,450, 400,380,  450,380,  500,450,  600,520,   650,450,  700,400,  730,400
+        thickness: 4
         color: green
-        y: 50%
-        anchor_x: center
-        anchor_y: center
-        font_size: 55
+        opacity: 1
+        animations:
+          base_orbit_clockwise_hit:
+          - property: opacity
+            value: 0.25
+            duration: 1
+          base_orbit_counter_clockwise_hit:
+          - property: opacity
+            value: 0.25
+            duration: 1
+          goddess_mb_says_move_on_down_hestia: #not using multiball_lock_subway_lock_locked_ball{current_player.player_goddesses_in_subway<3} b/c race condition between this and base variable_player
+          - property: opacity
+            value: 1
+            duration: 2
+            easing: in_quint
+          goddess_mb_says_move_on_down_artemus:
+          - property: opacity
+            value: 1
+            duration: 2
+            easing: in_quint
+#          goddess_mb_says_move_on_down_aphrodite:
+#          - property: opacity
+#            value: 1
+#            duration: 2
+#            easing: in_quint
   multiball_goddess_started:
     pf_goddess_mb_gather_instructions_slide:
       action: remove
