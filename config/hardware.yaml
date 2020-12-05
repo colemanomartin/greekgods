@@ -614,7 +614,7 @@ diverters:
       - ball_ended
       - logicblock_base_malstrom_magnet_activation_complete #counter in base hit it limit. enter cooldown period
     debug: true
-  apearing_post_left:
+  mystery_post_left: #apearing_post_left:
     playfield: earth_pf
     feeder_devices: earth_pf
     targets_when_active: earth_pf
@@ -628,7 +628,7 @@ diverters:
       - mode_mystery_stopped
       - ball_ended
     debug: true
-  apearing_post_right:
+  mystery_post_right: #apearing_post_right:
     playfield: earth_pf
     feeder_devices: earth_pf
     targets_when_active: earth_pf
@@ -642,7 +642,7 @@ diverters:
       - mode_mystery_stopped
       - ball_ended
     debug: true
-  scoop_mb_special_purpose_apearing_post_left:
+  mission_post_left: #scoop_mb_special_purpose_apearing_post_left:
     playfield: earth_pf
     feeder_devices: earth_pf
     targets_when_active: earth_pf
@@ -660,7 +660,7 @@ diverters:
       - multiball_goddess_started
       - mode_goddess_mb_stopped
     debug: true
-  scoop_mb_special_purpose_apearing_post_right:
+  mission_post_right: #scoop_mb_special_purpose_apearing_post_right:
     playfield: earth_pf
     feeder_devices: earth_pf
     targets_when_active: earth_pf

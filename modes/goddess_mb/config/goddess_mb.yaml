@@ -324,14 +324,14 @@ widgets:
     x: 50%
     color: green
     font_name: GreekGods2
-  goddess_mb_shoot_cave_athena:
-  - type: text
-    text: "Shoot Cave For\nRebellion"
-    font_size: 60
-    y: 75%
-    x: 50%
-    color: green
-    font_name: GreekGods2
+#  goddess_mb_shoot_cave_athena:
+#  - type: text
+#    text: "Shoot Cave For\nRebellion"
+#    font_size: 60
+#    y: 75%
+#    x: 50%
+#    color: green
+#    font_name: GreekGods2
   goddess_mb_jackpot:
   - type: text
     text: Pop Sequence Jackpot!
@@ -381,7 +381,7 @@ widgets:
     font_size: 75
   gmb_goddess_athena_txt:
   - type: text
-    text: "Help Athena\nTo the Underworld"
+    text: "Athena!\n Join Goddesses for a Rebellion"
     font_name: GreekGods2
     color: green
     y: 10%
@@ -500,8 +500,8 @@ widget_player:
       slide: pf_goddess_mb_gather_instructions_slide
     gmb_goddess_athena_txt:
       slide: pf_goddess_mb_gather_instructions_slide
-    goddess_mb_shoot_cave_athena:
-      slide: pf_goddess_mb_gather_instructions_slide
+#    goddess_mb_shoot_cave_athena:
+#      slide: pf_goddess_mb_gather_instructions_slide
 
 slide_player:
   mode_goddess_mb_started:
