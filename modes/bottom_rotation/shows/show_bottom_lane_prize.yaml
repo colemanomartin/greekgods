@@ -1,0 +1,211 @@
+#show_version=5
+- duration: 100 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: off
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: red
+      fade: 100ms
+    l_left_inlane:
+      color: off
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: red
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: off
+      fade: 100ms
+    l_right_inlane:
+      color: red
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: off
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: red
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: off
+      fade: 100ms
+    l_right_inlane:
+      color: red
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: red
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: red
+      fade: 100ms
+    l_left_inlane:
+      color: off
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: red
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: off
+      fade: 100ms
+    l_right_inlane:
+      color: red
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: off
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: red
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: off
+      fade: 100ms
+    l_right_inlane:
+      color: red
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: red
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: red
+      fade: 100ms
+    l_left_inlane:
+      color: off
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 100 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
+      color: off
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms

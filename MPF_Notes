@@ -259,12 +259,12 @@ Troubleshooting: One time it would not push because I added a directory to logs.
    To pull, click Fetch and then Pull.
 
 Things to add:
-  Add coins to goddess mb screen
+  rank modes by priority in config.
   Combo shot for double orbit with light show and point bonus.
   Combo shot for hit BB then scoop. Ball hold and contracting circle of light.
   4 hits to scoop triggers scoop mb. Prevent if in subway locking.
   Sweeps to attract
-consider: make diverter pop up on godess lock after underworld opened, similar to scoop. Could make it alternate or random calling shot with arrows.
+consider:
   Consider scoop and hydra activating when one ball locked and p ramp and o ramp not qualidied, would have to take over diverter.
   Scoop needs dressing up with a light theme and a playfield slide.
   Right down the middle ball save.
@@ -299,7 +299,7 @@ Jackpot for double MB either gate or hole
 
 Things to fix:
 Not hitting scoop mb from mystery
-
+double ramp ball save hitting when it should not on ball restart.
 Sometimes call the shot show does not reset after goddess summoned.
 
 One time when playing hydra lights went out on lower playfield.  No clear reason why.  Saved log in weirdlogs

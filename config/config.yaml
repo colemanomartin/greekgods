@@ -55,6 +55,7 @@ modes:
 #  - sound_loops #150
   - sound_effects # 175
 #  - drain_display #2000
+  - bottom_rotation # 1500
   - banked_l_bs #250000
   - banked_r_bs #2500
   - sweep_server #3000

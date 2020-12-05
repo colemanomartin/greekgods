@@ -944,7 +944,7 @@ lights:
     number: 4-42-43-44
     type: rgb
     subtype: led
-    default_on_color: blue
+    default_on_color: white
     platform_settings:
       polarity: true
     tags: insert

@@ -5,6 +5,7 @@ mode:
   priority: 2580 # range 100-1M
   start_events:
     - double_right_ramp_hit
+    - bottom_lane_group_hit_complete #completed all 4 bottom lanes.
   stop_events:
     - ball_ended
     - multiball_right_outlane_started
@@ -39,6 +40,9 @@ timers:
       - event: mode_banked_r_bs_started
         action: restart #reset to starting value and start
       - event: banked_r_ballsave_double_right_ramp_hit{device.timers.right_bs_expiration.ticks<6}
+        action: add
+        value: 2
+      - event: bottom_lane_group_hit_complete #Give a time bonus if already running
         action: add
         value: 2
 

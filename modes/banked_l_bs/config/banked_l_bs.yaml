@@ -5,6 +5,7 @@ mode:
   priority: 2500 # range 100-1M
   start_events:
     - double_left_ramp_hit
+    - bottom_lane_group_hit_complete    #Completed all lanes award both ball saves
   stop_events:
     - ball_ended
     - multiball_left_outlane_started
@@ -40,6 +41,9 @@ timers:
       - event: mode_banked_l_bs_started #ball_waiting_to_eject_from_scoop_done
         action: restart #reset to starting value and start
       - event: banked_l_ballsave_double_left_ramp_hit{device.timers.left_bs_expiration.ticks<6}
+        action: add
+        value: 2
+      - event: bottom_lane_group_hit_complete #Give a time bonus if the mode is already running.
         action: add
         value: 2
 

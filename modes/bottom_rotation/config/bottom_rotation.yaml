@@ -1,0 +1,51 @@
+#config_version=5
+#mode bottom_rotation Lower roll over lane rotation. When completed gives both outlane award and max time.
+mode:
+  start_events: ball_started
+  stop_events: ball_will_end
+  priority: 1500 #rides above MB modes so lights show
+
+shot_profiles:
+  bottom_lane_profile:
+    states:
+      - name:
+        show: stop
+      - name: hit
+        show: on
+
+shots:
+  bottom_rotation_left_out:
+    switch: s_left_outlane
+    profile: bottom_lane_profile
+    show_tokens:
+      led: l_left_outlane
+  bottom_rotation_left_in:
+    switch: s_left_inlane
+    profile: bottom_lane_profile
+    show_tokens:
+      led: l_left_inlane
+  bottom_rotation_right_in:
+    switch: s_right_inlane
+    profile: bottom_lane_profile
+    show_tokens:
+      led: l_right_inlane
+  bottom_rotation_right_out:
+    switch: s_right_outlane
+    profile: bottom_lane_profile
+    show_tokens:
+      led: l_right_outlane
+
+shot_groups:
+  bottom_lane_group:
+    shots: bottom_rotation_left_out, bottom_rotation_left_in, bottom_rotation_right_in, bottom_rotation_right_out
+    reset_events: bottom_lane_group_hit_complete
+    rotate_left_events: s_flipper_left_active
+    rotate_right_events: s_flipper_right_active
+
+
+variable_player:
+  bottom_lane_group_hit_complete:
+    score: 10000
+
+show_player:
+  bottom_lane_group_hit_complete: show_bottom_lane_prize
