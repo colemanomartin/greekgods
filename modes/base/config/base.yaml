@@ -710,6 +710,11 @@ show_player:
       speed: 10
       loops: 0
       priority: 50
+  bottom_lane_group_hit_complete:
+    countdown50:
+      speed: 10
+      loops: 0
+      priority: 50
   base_left_side_pop_hit:
     show_left_side_pop:
       speed: 5

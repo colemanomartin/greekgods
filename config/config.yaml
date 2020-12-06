@@ -104,6 +104,16 @@ ball_saves:
     balls_to_save: 1
     debug: yes
 
+  bs_bottom_lanes:
+    source_playfield: earth_pf
+    active_time: 5s
+    hurry_up_time: 0s
+    grace_period: 0s
+    enable_events: bottom_lane_group_hit_complete
+    auto_launch: yes
+    balls_to_save: 1
+    debug: yes
+
 state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines.html
 # This state machine activates the magnet on the side of the powerball to feed the mechs on that side of the upper playfield.
 # When either the poseidon area or olympus area are maxed, the magnets switch to feed the other side.

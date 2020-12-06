@@ -16,7 +16,7 @@
 - duration: 200 ms
   lights:
     l_left_outlane:
-      color: red
+      color: white
       fade: 100ms
     l_left_inlane:
       color: off
@@ -33,7 +33,7 @@
       color: off
       fade: 100ms
     l_left_inlane:
-      color: red
+      color: white
       fade: 100ms
     l_right_inlane:
       color: off
@@ -50,7 +50,7 @@
       color: off
       fade: 100ms
     l_right_inlane:
-      color: red
+      color: white
       fade: 100ms
     l_right_outlane:
       color: off
@@ -67,7 +67,7 @@
       color: off
       fade: 100ms
     l_right_outlane:
-      color: red
+      color: white
       fade: 100ms
 - duration: 200 ms
   lights:
@@ -78,7 +78,7 @@
       color: off
       fade: 100ms
     l_right_inlane:
-      color: red
+      color: white
       fade: 100ms
     l_right_outlane:
       color: off
@@ -89,7 +89,7 @@
       color: off
       fade: 100ms
     l_left_inlane:
-      color: red
+      color: white
       fade: 100ms
     l_right_inlane:
       color: off
@@ -100,24 +100,10 @@
 - duration: 200 ms
   lights:
     l_left_outlane:
-      color: red
+      color: white
       fade: 100ms
     l_left_inlane:
       color: off
-      fade: 100ms
-    l_right_inlane:
-      color: off
-      fade: 100ms
-    l_right_outlane:
-      color: off
-      fade: 100ms
-- duration: 200 ms
-  lights:
-    l_left_outlane:
-      color: off
-      fade: 100ms
-    l_left_inlane:
-      color: red
       fade: 100ms
     l_right_inlane:
       color: off
@@ -131,10 +117,24 @@
       color: off
       fade: 100ms
     l_left_inlane:
+      color: white
+      fade: 100ms
+    l_right_inlane:
+      color: off
+      fade: 100ms
+    l_right_outlane:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_left_outlane:
+      color: off
+      fade: 100ms
+    l_left_inlane:
       color: off
       fade: 100ms
     l_right_inlane:
-      color: red
+      color: white
       fade: 100ms
     l_right_outlane:
       color: off
@@ -151,7 +151,7 @@
       color: off
       fade: 100ms
     l_right_outlane:
-      color: red
+      color: white
       fade: 100ms
 - duration: 200 ms
   lights:
@@ -162,7 +162,7 @@
       color: off
       fade: 100ms
     l_right_inlane:
-      color: red
+      color: white
       fade: 100ms
     l_right_outlane:
       color: off
@@ -173,7 +173,7 @@
       color: off
       fade: 100ms
     l_left_inlane:
-      color: red
+      color: white
       fade: 100ms
     l_right_inlane:
       color: off
@@ -184,7 +184,7 @@
 - duration: 200 ms
   lights:
     l_left_outlane:
-      color: red
+      color: white
       fade: 100ms
     l_left_inlane:
       color: off

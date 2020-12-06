@@ -9,7 +9,7 @@ shot_profiles:
   bottom_lane_profile:
     states:
       - name:
-        show: stop
+        show: off #"show_stop is my own show which lets base color bleed through the off.
       - name: hit
         show: on
 
@@ -17,21 +17,25 @@ shots:
   bottom_rotation_left_out:
     switch: s_left_outlane
     profile: bottom_lane_profile
+    playfield: earth_pf
     show_tokens:
       led: l_left_outlane
   bottom_rotation_left_in:
     switch: s_left_inlane
     profile: bottom_lane_profile
+    playfield: earth_pf
     show_tokens:
       led: l_left_inlane
   bottom_rotation_right_in:
     switch: s_right_inlane
     profile: bottom_lane_profile
+    playfield: earth_pf
     show_tokens:
       led: l_right_inlane
   bottom_rotation_right_out:
     switch: s_right_outlane
     profile: bottom_lane_profile
+    playfield: earth_pf
     show_tokens:
       led: l_right_outlane
 
@@ -39,8 +43,8 @@ shot_groups:
   bottom_lane_group:
     shots: bottom_rotation_left_out, bottom_rotation_left_in, bottom_rotation_right_in, bottom_rotation_right_out
     reset_events: bottom_lane_group_hit_complete
-    rotate_left_events: s_flipper_left_active
-    rotate_right_events: s_flipper_right_active
+    rotate_left_events: s_left_flipper_active
+    rotate_right_events: s_right_flipper_active
 
 
 variable_player:
@@ -48,4 +52,6 @@ variable_player:
     score: 10000
 
 show_player:
-  bottom_lane_group_hit_complete: show_bottom_lane_prize
+  bottom_lane_group_hit_complete:
+    show_bottom_lane_prize:
+      loops: 0
