@@ -5,9 +5,9 @@
 mode:
   start_events: ball_started
   stop_events:
-    - skill_shot_light_show_completed
-    - skill_state_lane_changed_to_missed
-    - skill_state_launched_to_missed
+    - skill_shot_light_show_completed #issued from showplayer this mode to allow show to play before shutdown mode
+    - skill_state_machine_lane_changed_to_missed
+    - skill_state_machine_launched_to_missed
   priority: 900 #needs to ride above goddess mb
 
 shot_profiles:
@@ -25,9 +25,9 @@ shots:
       - s_poseidon_left_slingshot_active
       - s_poseidon_right_slingshot_active
       - s_poseidon_gate_active
-    enable_events: timer_base_timer_ball_launching_started
+    enable_events: timer_skill_timer_ball_launching_started
     disable_events:
-      - timer_base_timer_ball_launching_complete
+      - timer_skill_timer_ball_launching_complete
       - s_launch_active
     profile: top_lane_profile
     playfield: earth_pf
@@ -36,9 +36,9 @@ shots:
   hidden_hole_lane:
     hit_events:
       - s_hole_distal_active
-    enable_events: timer_base_timer_ball_launching_started
+    enable_events: timer_skill_timer_ball_launching_started
     disable_events:
-      - timer_base_timer_ball_launching_complete
+      - timer_skill_timer_ball_launching_complete
       - s_launch_active
     profile: top_lane_profile
     playfield: earth_pf
@@ -51,9 +51,9 @@ shots:
       - s_olympus_right_pop_active
       - s_olympus_left_pop_active
       - s_hole_proximal_active
-    enable_events: timer_base_timer_ball_launching_started
+    enable_events: timer_skill_timer_ball_launching_started
     disable_events:
-      - timer_base_timer_ball_launching_complete
+      - timer_skill_timer_ball_launching_complete
       - s_launch_active
     profile: top_lane_profile
     playfield: earth_pf
@@ -65,6 +65,16 @@ shot_groups:
     shots: top_p_lane, hidden_hole_lane, top_o_lane
     rotate_left_events: s_flipper_left_active
     rotate_right_events: s_flipper_right_active
+
+timers:
+  skill_timer_ball_launching:
+    start_value: 30
+    end_value: 0
+    tick_interval: 1s
+    direction: down
+    control_events:
+      - action: restart
+        event: s_shooterlane_inactive
 
 state_machines:
   skill_shot:
@@ -88,54 +98,54 @@ state_machines:
       - source: start
         target: ready_to_launch
         events: mode_skill_shot_started
-        events_when_transitioning: skill_state_start_to_ready
+        events_when_transitioning: skill_state_machine_start_to_ready
       - source: ready_to_launch
         target: ball_launched
         events: balldevice_bd_plunger_ball_eject_success
-        events_when_transitioning: skill_state_ready_to_launched
+        events_when_transitioning: skill_state_machine_ready_to_launched
       - source: ball_launched
         target: lane_changed_after_launch
         events:
           - s_flipper_left_active
           - s_flipper_right_active
-        events_when_transitioning: skill_state_launched_to_changed
+        events_when_transitioning: skill_state_machine_launched_to_changed
       - source: ball_launched
         target: clean_success
         events: skill_shot_lit_hit
-        events_when_transitioning: skill_state_launched_to_clean
+        events_when_transitioning: skill_state_machine_launched_to_clean
       - source: ball_launched
         target: missed_shot
         events:
           - skill_shot_unlit_hit
-          - timer_base_timer_ball_launching_complete
-        events_when_transitioning: skill_state_launched_to_missed
+          - timer_skill_timer_ball_launching_complete
+        events_when_transitioning: skill_state_machine_launched_to_missed
       - source: lane_changed_after_launch
         target: dirty_success
         events: skill_shot_lit_hit
-        events_when_transitioning: skill_state_lane_changed_to_dirty
+        events_when_transitioning: skill_state_machine_lane_changed_to_dirty
       - source: lane_changed_after_launch
         target: missed_shot
         events:
           - skill_shot_unlit_hit
-          - timer_base_timer_ball_launching_complete
-        events_when_transitioning: skill_state_lane_changed_to_missed
+          - timer_skill_timer_ball_launching_complete
+        events_when_transitioning: skill_state_machine_lane_changed_to_missed
 
 variable_player:
-  skill_state_lane_changed_to_dirty:
+  skill_state_machine_lane_changed_to_dirty:
     score: 5000
-  skill_state_launched_to_clean:
+  skill_state_machine_launched_to_clean:
     score: 20000
 
 #sound_player:
-#  skill_state_lane_changed_to_dirty: v_nice
-#  skill_state_launched_to_clean: v_nice
+#  skill_state_machine_lane_changed_to_dirty: v_nice
+#  skill_state_machine_launched_to_clean: v_nice
 
 show_player:
-  skill_state_lane_changed_to_dirty:
+  skill_state_machine_lane_changed_to_dirty:
     show_top_lane_prize:
       loops: 0
       events_when_completed: skill_shot_light_show_completed
-  skill_state_launched_to_clean:
+  skill_state_machine_launched_to_clean:
     show_top_lane_prize:
       loops: 1
       events_when_completed: skill_shot_light_show_completed
