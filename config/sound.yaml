@@ -80,10 +80,10 @@ sounds:
     file: ballsave.ogg
     volume: 0.7
     track: voice
-  v_nice:
-    file: nice.ogg
-    volume: 0.7
-    track: voice
+#  v_nice:
+#    file: nice.ogg
+#    volume: 0.7
+#    track: voice
   snd_underworld_open:
     file: underworldopen.ogg
     track: sfx
