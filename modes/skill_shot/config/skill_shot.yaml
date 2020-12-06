@@ -1,0 +1,137 @@
+#config_version=5
+#Skill shot when launched player can pick the bonus lane and earn 5000 points
+#for hitting the right lane or if lane is selected before launch and ball lands
+#in the lane bonus is 20000. If balls comes down either orbit, no bonus.
+mode:
+  start_events: ball_started
+  stop_events:
+    - skill_shot_light_show_completed
+    - skill_state_lane_changed_to_missed
+    - skill_state_launched_to_missed
+  priority: 900 #needs to ride above goddess mb
+
+shot_profiles:
+  top_lane_profile:
+    states:
+      - name: unlit
+        show: off #"show_stop" is my own show which lets base color bleed through the off.
+      - name: lit
+        show: on
+
+shots:
+  top_p_lane:
+    hit_events:
+      - s_poseidon_pop_active
+      - s_poseidon_left_slingshot_active
+      - s_poseidon_right_slingshot_active
+      - s_poseidon_gate_active
+    enable_events: timer_base_timer_ball_launching_started
+    disable_events:
+      - timer_base_timer_ball_launching_complete
+      - s_launch_active
+    profile: top_lane_profile
+    playfield: earth_pf
+    show_tokens:
+      led: l_poseidon_magnet
+  hidden_hole_lane:
+    events:
+      - s_hole_distal_active
+    enable_events: timer_base_timer_ball_launching_started
+    disable_events:
+      - timer_base_timer_ball_launching_complete
+      - s_launch_active
+    profile: top_lane_profile
+    playfield: earth_pf
+    show_tokens:
+      led: l_olympus_magnet
+  top_o_lane:
+    events:
+      - s_olympus_spinner_active
+      - s_olympus_lower_pop_active
+      - s_olympus_right_pop_active
+      - s_olympus_left_pop_active
+      - s_hole_proximal_active
+    enable_events: timer_base_timer_ball_launching_started
+    disable_events:
+      - timer_base_timer_ball_launching_complete
+      - s_launch_active
+    profile: top_lane_profile
+    playfield: earth_pf
+    show_tokens:
+      led: l_hideyhole
+
+shot_groups:
+  skill_shot:
+    shots: top_p_lane, hidden_hole_lane, top_o_lane
+    rotate_left_events: s_flipper_left_active
+    rotate_right_events: s_flipper_right_active
+
+state_machines:
+  skill_shot:
+    debug: true
+    states:
+      start:
+        label: undefined
+      ready_to_launch:
+        label: skill_ready
+      ball_launched:
+        label: skill_launched
+      lane_changed_after_launch:
+        label: making_changes
+      clean_success:
+        label: skill_clean
+      dirty_success:
+        label: skill_dirty
+      missed_shot:
+        label: failed
+    transitions:
+      - source: start
+        target: ready_to_launch
+        events: mode_skill_shot_started
+        events_when_transitioning: skill_state_start_to_ready
+      - source: ready_to_launch
+        target: ball_launched
+        events: balldevice_bd_plunger_ball_eject_success
+        events_when_transitioning: skill_state_ready_to_launched
+      - source: ball_launched
+        target: lane_changed_after_launch
+        events:
+          - s_flipper_left_active
+          - s_flipper_right_active
+        events_when_transitioning: skill_state_launched_to_changed
+      - source: ball_launched
+        target: clean_success
+        events: skill_shot_lit_hit
+        events_when_transitioning: skill_state_launched_to_clean
+      - source: ball_launched
+        target: missed_shot
+        events:
+          - skill_shot_unlit_hit
+          - timer_base_timer_ball_launching_complete
+        events_when_transitioning: skill_state_launched_to_missed
+      - source: lane_changed_after_launch
+        target: dirty_success
+        events: skill_shot_lit_hit
+        events_when_transitioning: skill_state_lane_changed_to_dirty
+      - source: lane_changed_after_launch
+        target: missed_shot
+        events:
+          - skill_shot_unlit_hit
+          - timer_base_timer_ball_launching_complete
+        events_when_transitioning: skill_state_lane_changed_to_missed
+
+variable_player:
+  skill_state_lane_changed_to_dirty:
+    score: 5000
+  skill_state_launched_to_clean:
+    score: 20000
+
+show_player:
+  skill_state_lane_changed_to_dirty:
+    show_top_lane_prize:
+      loops: 0
+      events_when_completed: skill_shot_light_show_completed
+  skill_state_launched_to_clean:
+    show_top_lane_prize:
+      loops: 1
+      events_when_completed: skill_shot_light_show_completed

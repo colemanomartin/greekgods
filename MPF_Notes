@@ -209,7 +209,7 @@ sudo ./pinprocfw p3_roc_v2r14.p-roc
 Ignore verification failed error.
 Power off and set dips back to off
 
-
+Shows the number of lines of code grep --regexp="$" --count * -r -h |awk '{total += $1}END{print total}'
 
 GitHub notes:
 1. create repo on github. Its tied to junkmail address. GH username is colemanomartin password G with numbers x2
@@ -298,6 +298,7 @@ Jackpot for Scoop MB: scoop (Keep BB down)
 Jackpot for double MB either gate or hole
 
 Things to fix:
+check state machine and make sure it turns off magnet pause after timer_base_timer_ball_launching_complete
 Not hitting scoop mb from mystery
 double ramp ball save hitting when it should not on ball restart.
 Sometimes call the shot show does not reset after goddess summoned.

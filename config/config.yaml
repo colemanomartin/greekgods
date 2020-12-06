@@ -39,18 +39,19 @@ modes:
   - servo #10000 Manager
   - scoop #10000 Manager
   - bb_down #Manager
-  - temple_display # 400 adds widgets to playfield display to show where ball will go in response to ramp diverter flap
   - field #200
+  - temple_display # 400 adds widgets to playfield display to show where ball will go in response to ramp diverter flap
+  - scoop_mb #650
+  - hydra #700
+  - goddess_mb #800
+  - skill_shot #900 needs to be above goddess_mb
   - p_ramp_mb #1000
   - o_ramp_mb #1100
   - double_ramp_mb #1200
-  - celestial_mb
+#  - celestial_mb
   - sis_left #J 300 ust for showing slides associated with getting points in P area and enabling loop counts to feed mag diverter
   - sis_right #350 Just for showing slides associated with getting points in O area and enabling loop counts to feed mag diverter
   - mystery #2000
-  - hydra #700
-  - goddess_mb #800
-  - scoop_mb #650
   - super_spinner #1400
 #  - sound_loops #150
   - sound_effects # 175
@@ -77,7 +78,7 @@ ball_saves:
     enable_events: mode_base_started
     timer_start_events: balldevice_bd_plunger_ball_eject_success
     auto_launch: yes
-    balls_to_save: 1
+    balls_to_save: 2
     debug: no
 #  bs_malstrom:
 #    source_playfield: earth_pf
@@ -92,7 +93,7 @@ ball_saves:
 #    auto_launch: yes
 #    balls_to_save: 1
 #    debug: yes
-  bs_scoop_eject:
+  bs_scoop_eject: #showplayer in base
     source_playfield: earth_pf
     active_time: 3s
     hurry_up_time: 0s
@@ -104,11 +105,11 @@ ball_saves:
     balls_to_save: 1
     debug: yes
 
-  bs_bottom_lanes:
+  bs_bottom_lanes: #show player in base
     source_playfield: earth_pf
     active_time: 5s
     hurry_up_time: 0s
-    grace_period: 0s
+    grace_period: 1s
     enable_events: bottom_lane_group_hit_complete
     auto_launch: yes
     balls_to_save: 1
@@ -125,7 +126,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
   feeder_magnets:
     states:
       start:
-        label: undefigned
+        label: undefined
       feed_poseidon:
         label: feed_p
       feed_olympus:
@@ -158,7 +159,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
         events:
           - field_sis_left_to_right_hit{not mode.o_ramp_mb.active}
           - mode_p_ramp_mb_started{not mode.o_ramp_mb.active} #triggered by p_locking_elgible but not if other side also elgible/active then mags off
-          - mode_o_ramp_mb_stopped{device.switches.s_sis_right==1} #o ramp mb either drained or locked a ball so return to diverting to olympus if sw on olympus side
+          - mode_o_ramp_mb_stopped{device.switches.s_sis_right.state==1} #o ramp mb either drained or locked a ball so return to diverting to olympus if sw on olympus side
         events_when_transitioning:
           - state_poseidon_to_olympus
           - state_says_enable_olympus_mag
@@ -169,7 +170,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
         events:
           - field_sis_right_to_left_hit{not mode.p_ramp_mb.active}
           - mode_o_ramp_mb_started{not mode.p_ramp_mb.active} #triggered by o_locking_elgible but not if other side also eligble/active then mags off
-          - mode_p_ramp_mb_stopped{device.switches.s_sis_left==1} #p ramp mb either drained or locked a ball so return to diverting to poseidon 7-4-20
+          - mode_p_ramp_mb_stopped{device.switches.s_sis_left.state==1} #p ramp mb either drained or locked a ball so return to diverting to poseidon 7-4-20
         events_when_transitioning:
           - state_olympus_to_posidon
           - state_says_enable_poseidon_mag
@@ -295,7 +296,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
   ramp_flap: #http://docs.missionpinball.org/en/latest/config/state_machine_states.html
     states:
       start: #required as a starting state for all state machines
-        label: undefigned
+        label: undefined
       divert_left:
         label: left
       divert_right:

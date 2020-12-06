@@ -1,0 +1,122 @@
+#show_version=5
+- duration: 100 ms
+  lights:
+    l_poseidon_magnet:
+      color: off
+      fade: 100ms
+    l_hideyhole:
+      color: off
+      fade: 100ms
+    l_olympus_magnete:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_poseidon_magnet:
+      color: white
+      fade: 100ms
+    l_hideyhole:
+      color: off
+      fade: 100ms
+    l_olympus_magnete:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_poseidon_magnet:
+      color: off
+      fade: 100ms
+    l_hideyhole:
+      color: white
+      fade: 100ms
+    l_olympus_magnete:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_poseidon_magnet:
+      color: off
+      fade: 100ms
+    l_hideyhole:
+      color: off
+      fade: 100ms
+    l_olympus_magnete:
+      color: white
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_poseidon_magnet:
+      color: off
+      fade: 100ms
+    l_hideyhole:
+      color: white
+      fade: 100ms
+    l_olympus_magnete:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_poseidon_magnet:
+      color: white
+      fade: 100ms
+    l_hideyhole:
+      color: off
+      fade: 100ms
+    l_olympus_magnete:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_poseidon_magnet:
+      color: off
+      fade: 100ms
+    l_hideyhole:
+      color: white
+      fade: 100ms
+    l_olympus_magnete:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_poseidon_magnet:
+      color: off
+      fade: 100ms
+    l_hideyhole:
+      color: off
+      fade: 100ms
+    l_olympus_magnete:
+      color: white
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_poseidon_magnet:
+      color: off
+      fade: 100ms
+    l_hideyhole:
+      color: white
+      fade: 100ms
+    l_olympus_magnete:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_poseidon_magnet:
+      color: white
+      fade: 100ms
+    l_hideyhole:
+      color: off
+      fade: 100ms
+    l_olympus_magnete:
+      color: off
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_poseidon_magnet:
+      color: off
+      fade: 100ms
+    l_hideyhole:
+      color: off
+      fade: 100ms
+    l_olympus_magnete:
+      color: off
+      fade: 100ms

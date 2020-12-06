@@ -164,12 +164,11 @@ counters:
       - multiball_goddess_ended
     persist_state: true
 
-
 timers:
   base_timer_ball_launching:
     start_value: 1
     end_value: 0
-    tick_interval: 2s
+    tick_interval: 2500ms
     direction: down
     control_events:
       - action: restart
