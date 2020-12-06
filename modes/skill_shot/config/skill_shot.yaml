@@ -2,6 +2,9 @@
 #Skill shot when launched player can pick the bonus lane and earn 5000 points
 #for hitting the right lane or if lane is selected before launch and ball lands
 #in the lane bonus is 20000. If balls comes down either orbit, no bonus.
+
+#Make sure ball launch switch deactivates state.
+
 mode:
   start_events: ball_started
   stop_events:
@@ -18,6 +21,7 @@ shot_profiles:
       - name: lit
         show: on
 
+
 shots:
   top_p_lane:
     hit_events:
@@ -25,10 +29,10 @@ shots:
       - s_poseidon_left_slingshot_active
       - s_poseidon_right_slingshot_active
       - s_poseidon_gate_active
-    enable_events: timer_skill_timer_ball_launching_started
     disable_events:
       - timer_skill_timer_ball_launching_complete
       - s_launch_active
+    advance_events: mode_skill_shot_started
     profile: top_lane_profile
     playfield: earth_pf
     show_tokens:
@@ -36,22 +40,6 @@ shots:
   hidden_hole_lane:
     hit_events:
       - s_hole_distal_active
-    enable_events: timer_skill_timer_ball_launching_started
-    disable_events:
-      - timer_skill_timer_ball_launching_complete
-      - s_launch_active
-    profile: top_lane_profile
-    playfield: earth_pf
-    show_tokens:
-      led: l_olympus_magnet
-  top_o_lane:
-    hit_events:
-      - s_olympus_spinner_active
-      - s_olympus_lower_pop_active
-      - s_olympus_right_pop_active
-      - s_olympus_left_pop_active
-      - s_hole_proximal_active
-    enable_events: timer_skill_timer_ball_launching_started
     disable_events:
       - timer_skill_timer_ball_launching_complete
       - s_launch_active
@@ -59,16 +47,30 @@ shots:
     playfield: earth_pf
     show_tokens:
       led: l_hideyhole
+  top_o_lane:
+    hit_events:
+      - s_olympus_spinner_active
+      - s_olympus_lower_pop_active
+      - s_olympus_right_pop_active
+      - s_olympus_left_pop_active
+      - s_hole_proximal_active
+    disable_events:
+      - timer_skill_timer_ball_launching_complete
+      - s_launch_active
+    profile: top_lane_profile
+    playfield: earth_pf
+    show_tokens:
+      led: l_olympus_magnet
 
 shot_groups:
   skill_shot:
     shots: top_p_lane, hidden_hole_lane, top_o_lane
-    rotate_left_events: s_flipper_left_active
-    rotate_right_events: s_flipper_right_active
+    rotate_left_events: s_left_flipper_active
+    rotate_right_events: s_right_flipper_active
 
 timers:
   skill_timer_ball_launching:
-    start_value: 30
+    start_value: 3
     end_value: 0
     tick_interval: 1s
     direction: down
@@ -106,8 +108,8 @@ state_machines:
       - source: ball_launched
         target: lane_changed_after_launch
         events:
-          - s_flipper_left_active
-          - s_flipper_right_active
+          - s_left_flipper_active
+          - s_right_flipper_active
         events_when_transitioning: skill_state_machine_launched_to_changed
       - source: ball_launched
         target: clean_success

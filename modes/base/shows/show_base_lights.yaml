@@ -57,7 +57,7 @@
       l_poseidon_band_left_prox: blue
       l_ramp_left: black
       l_ramp_right: black
-      l_olympus_magnet: white
+      l_olympus_magnet: 2222ff
       l_olympus_band_upper_left: 888888
       l_roof_left_2: 888888
       l_roof_left_3: 888888
@@ -68,7 +68,7 @@
       l_roof_left_5: 888888
       l_roof_left_4: 888888
       l_roof_center: 888888
-      l_hideyhole: white
+      l_hideyhole: 2222ff
       l_roof_left_1: 888888
       l_poseidion_band_right_distal: blue
       l_roof_right_2: 888888

@@ -13,7 +13,7 @@
 - duration: 200 ms
   lights:
     l_poseidon_magnet:
-      color: white
+      color: red
       fade: 100ms
     l_hideyhole:
       color: off
@@ -27,7 +27,7 @@
       color: off
       fade: 100ms
     l_hideyhole:
-      color: white
+      color: red
       fade: 100ms
     l_olympus_magnet:
       color: off
@@ -41,7 +41,7 @@
       color: off
       fade: 100ms
     l_olympus_magnet:
-      color: white
+      color: red
       fade: 100ms
 - duration: 200 ms
   lights:
@@ -49,7 +49,7 @@
       color: off
       fade: 100ms
     l_hideyhole:
-      color: white
+      color: red
       fade: 100ms
     l_olympus_magnet:
       color: off
@@ -57,21 +57,10 @@
 - duration: 200 ms
   lights:
     l_poseidon_magnet:
-      color: white
+      color: red
       fade: 100ms
     l_hideyhole:
       color: off
-      fade: 100ms
-    l_olympus_magnet:
-      color: off
-      fade: 100ms
-- duration: 200 ms
-  lights:
-    l_poseidon_magnet:
-      color: off
-      fade: 100ms
-    l_hideyhole:
-      color: white
       fade: 100ms
     l_olympus_magnet:
       color: off
@@ -82,10 +71,10 @@
       color: off
       fade: 100ms
     l_hideyhole:
-      color: off
+      color: red
       fade: 100ms
     l_olympus_magnet:
-      color: white
+      color: off
       fade: 100ms
 - duration: 200 ms
   lights:
@@ -93,7 +82,18 @@
       color: off
       fade: 100ms
     l_hideyhole:
-      color: white
+      color: off
+      fade: 100ms
+    l_olympus_magnet:
+      color: red
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_poseidon_magnet:
+      color: off
+      fade: 100ms
+    l_hideyhole:
+      color: red
       fade: 100ms
     l_olympus_magnet:
       color: off
@@ -101,7 +101,7 @@
 - duration: 200 ms
   lights:
     l_poseidon_magnet:
-      color: white
+      color: red
       fade: 100ms
     l_hideyhole:
       color: off

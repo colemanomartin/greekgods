@@ -365,7 +365,7 @@ coils:
     #PD 16 lower playfield Address = 5 Left  Bank B = 1 bottom mechs
     c_shooter_lane_eject:
         number: A5-B1-0
-        default_pulse_ms: 30 #Pulse power works with autofire rule but not pulse issued by eject.
+        default_pulse_ms: 25 #30 #Pulse power works with autofire rule but not pulse issued by eject.
     c_trough_eject:
         number: A5-B1-1
         default_pulse_ms: 30

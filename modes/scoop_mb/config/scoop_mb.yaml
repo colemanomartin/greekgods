@@ -38,7 +38,7 @@ multiballs:
     source_playfield: earth_pf
     ball_count: 2
     ball_count_type: add  # increase number of playfield balls by couny
-    shoot_again: 14s #ball save for MB 10 sec is default
+    shoot_again: 14s #Give extra time for balls to serve
     start_events: mode_scoop_mb_started
     enable_events: mode_scoop_mb_starting
     debug: true
@@ -60,11 +60,11 @@ sequence_shots:
 
 show_player:
   mode_mystery_stopping: #dont start the ball timer until after ball hold ends
-#    show_rainbow_all_but_bs:
-#      speed: 2
-    countdown99_white:
+    show_countdown99_white:
       speed: 10
       loops: 0
+    show_everything_orange:
+      speed: 1
 
 event_player:
   mode_scoop_mb_started:
@@ -112,6 +112,8 @@ slide_player:
         anchor_x: center
         anchor_y: center
         font_size: 85
+
+
 
 sound_player:
   mode_scoop_mb_started: snd_underworld_open
