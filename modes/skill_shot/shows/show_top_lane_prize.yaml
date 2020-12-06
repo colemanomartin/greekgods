@@ -7,7 +7,7 @@
     l_hideyhole:
       color: off
       fade: 100ms
-    l_olympus_magnete:
+    l_olympus_magnet:
       color: off
       fade: 100ms
 - duration: 200 ms
@@ -18,7 +18,7 @@
     l_hideyhole:
       color: off
       fade: 100ms
-    l_olympus_magnete:
+    l_olympus_magnet:
       color: off
       fade: 100ms
 - duration: 200 ms
@@ -29,7 +29,7 @@
     l_hideyhole:
       color: white
       fade: 100ms
-    l_olympus_magnete:
+    l_olympus_magnet:
       color: off
       fade: 100ms
 - duration: 200 ms
@@ -40,7 +40,7 @@
     l_hideyhole:
       color: off
       fade: 100ms
-    l_olympus_magnete:
+    l_olympus_magnet:
       color: white
       fade: 100ms
 - duration: 200 ms
@@ -51,7 +51,7 @@
     l_hideyhole:
       color: white
       fade: 100ms
-    l_olympus_magnete:
+    l_olympus_magnet:
       color: off
       fade: 100ms
 - duration: 200 ms
@@ -62,7 +62,7 @@
     l_hideyhole:
       color: off
       fade: 100ms
-    l_olympus_magnete:
+    l_olympus_magnet:
       color: off
       fade: 100ms
 - duration: 200 ms
@@ -73,7 +73,7 @@
     l_hideyhole:
       color: white
       fade: 100ms
-    l_olympus_magnete:
+    l_olympus_magnet:
       color: off
       fade: 100ms
 - duration: 200 ms
@@ -84,7 +84,7 @@
     l_hideyhole:
       color: off
       fade: 100ms
-    l_olympus_magnete:
+    l_olympus_magnet:
       color: white
       fade: 100ms
 - duration: 200 ms
@@ -95,7 +95,7 @@
     l_hideyhole:
       color: white
       fade: 100ms
-    l_olympus_magnete:
+    l_olympus_magnet:
       color: off
       fade: 100ms
 - duration: 200 ms
@@ -106,7 +106,7 @@
     l_hideyhole:
       color: off
       fade: 100ms
-    l_olympus_magnete:
+    l_olympus_magnet:
       color: off
       fade: 100ms
 - duration: 200 ms
@@ -117,6 +117,6 @@
     l_hideyhole:
       color: off
       fade: 100ms
-    l_olympus_magnete:
+    l_olympus_magnet:
       color: off
       fade: 100ms

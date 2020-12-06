@@ -34,7 +34,7 @@ shots:
     show_tokens:
       led: l_poseidon_magnet
   hidden_hole_lane:
-    events:
+    hit_events:
       - s_hole_distal_active
     enable_events: timer_base_timer_ball_launching_started
     disable_events:
@@ -45,7 +45,7 @@ shots:
     show_tokens:
       led: l_olympus_magnet
   top_o_lane:
-    events:
+    hit_events:
       - s_olympus_spinner_active
       - s_olympus_lower_pop_active
       - s_olympus_right_pop_active
