@@ -567,7 +567,7 @@ lights:
     number: 2-6-7-8
     type: rgb
     subtype: led
-    default_on_color: blue
+    default_on_color: white
     platform_settings:
       polarity: true
     tags: insert
@@ -627,7 +627,7 @@ lights:
     number: 2-24-25-26
     type: rgb
     subtype: led
-    default_on_color: red
+    default_on_color: white
     platform_settings:
       polarity: true
     tags: insert
@@ -714,7 +714,7 @@ lights:
     number: 2-51-52-53
     type: rgb
     subtype: led
-    default_on_color: green
+    default_on_color: white
     platform_settings:
       polarity: true
     tags: insert

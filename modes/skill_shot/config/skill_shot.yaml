@@ -126,6 +126,10 @@ variable_player:
   skill_state_launched_to_clean:
     score: 20000
 
+sound_player:
+  skill_state_lane_changed_to_dirty: v_nice
+  skill_state_launched_to_clean: v_nice
+
 show_player:
   skill_state_lane_changed_to_dirty:
     show_top_lane_prize:
