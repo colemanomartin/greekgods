@@ -33,6 +33,7 @@ shots:
       - timer_skill_timer_ball_launching_complete
       - s_launch_active
     advance_events: mode_skill_shot_started
+    start_enabled: true
     profile: top_lane_profile
     playfield: earth_pf
     show_tokens:
@@ -43,6 +44,7 @@ shots:
     disable_events:
       - timer_skill_timer_ball_launching_complete
       - s_launch_active
+    start_enabled: true
     profile: top_lane_profile
     playfield: earth_pf
     show_tokens:
@@ -57,6 +59,7 @@ shots:
     disable_events:
       - timer_skill_timer_ball_launching_complete
       - s_launch_active
+    start_enabled: true
     profile: top_lane_profile
     playfield: earth_pf
     show_tokens:
