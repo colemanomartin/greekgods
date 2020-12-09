@@ -270,6 +270,7 @@ consider:
   Right down the middle ball save.
   Eject time outs for ramps
   Minimum balls
+  sequential long opening for both ramp locks at each game end if balls in trough less than max
 
 May be able to combine diverters for mystery and scoop using mystery's hole hit to deactivate.
 
@@ -302,10 +303,11 @@ check state machine and make sure it turns off magnet pause after timer_base_tim
 Not hitting scoop mb from mystery
 double ramp ball save hitting when it should not on ball restart.
 Sometimes call the shot show does not reset after goddess summoned.
-
+check serial of the ball counter PD-LED
 One time when playing hydra lights went out on lower playfield.  No clear reason why.  Saved log in weirdlogs
 Rarely display_light_player will cover all the lights at game start.
-
+Increase settle time on ramp ball locks.
+Dont de-activate pass through on ramp locks until the ramp is lit.
 
 
 Hardware:

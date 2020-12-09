@@ -16,7 +16,7 @@ mode:
   priority: 800
   start_events:
     - base_athena_summoned # {device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0}
-    - key_c_pressed
+#    - key_c_pressed
   stop_events:
     - multiball_goddess_ended
   restart_on_next_ball: true #alternatively might need a start event for a ball being present in the lock

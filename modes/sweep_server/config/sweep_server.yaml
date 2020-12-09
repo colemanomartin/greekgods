@@ -207,6 +207,22 @@ widgets:
           value: .1
           relative: false
           duration: .6s
+  scoop_bw_spiral_in:
+    - type: image
+      image: scoop_spiral_stretched_alpha3 #rainbow_circle_1000sq_alpha #_alpha
+      scale: 1
+  #      z: 1
+      x: 253
+      y: 980
+      anchor_x: middle
+      anchor_y: top
+      expire: 20s
+#      animations:
+#        add_to_slide:
+#        - property: scale
+#          value: .1
+#          relative: false
+#          duration: .6s
 
   red_box_step_ccw: #rectangle does a ccw dance 3 x around the inserts for P MB
     - type: rectangle
@@ -548,6 +564,9 @@ widget_player:
     left_drain:
       slide: blank_transparent
     right_drain:
+      slide: blank_transparent
+  key_c_pressed:
+    scoop_bw_spiral_in:
       slide: blank_transparent
   ball_waiting_to_eject_from_scoop:
     triangle_scoop_sweep:

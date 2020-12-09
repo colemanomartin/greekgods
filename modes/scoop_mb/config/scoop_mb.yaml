@@ -8,7 +8,7 @@ mode:
   priority: 650
   start_events:
     - mystery_says_scoop_mb # {device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0}
-#    - key_v_pressed
+    - key_v_pressed
   stop_events:
 #    - timer_scoop_mb_placeholder_completed
     - multiball_scoop_mb_ended
@@ -65,6 +65,12 @@ show_player:
       loops: 0
     show_everything_orange:
       speed: 1
+  key_c_pressed:
+    show_everything_orange:
+      speed: 1
+    show_malstrom_spin_ccw_orange:
+      speed: 8
+      loops: -1
 
 event_player:
   mode_scoop_mb_started:
