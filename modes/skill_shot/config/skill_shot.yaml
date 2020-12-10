@@ -20,6 +20,12 @@ shot_profiles:
         show: off #"show_stop" is my own show which lets base color bleed through the off.
       - name: lit
         show: on
+  top_lane_profile_default_lane:
+    states:
+      - name: lit
+        show: on
+      - name: unlit
+        show: off #"show_stop" is my own show which lets base color bleed through the off.
 
 
 shots:
@@ -34,7 +40,8 @@ shots:
       - s_launch_active
     advance_events: mode_skill_shot_started
     start_enabled: true
-    profile: top_lane_profile
+    restart_events: mode_skill_shot_started
+    profile: top_lane_profile #_default_lane
     playfield: earth_pf
     show_tokens:
       led: l_poseidon_magnet
@@ -45,7 +52,7 @@ shots:
       - timer_skill_timer_ball_launching_complete
       - s_launch_active
     start_enabled: true
-    profile: top_lane_profile
+    restart_events: mode_skill_shot_started
     playfield: earth_pf
     show_tokens:
       led: l_hideyhole
@@ -60,6 +67,7 @@ shots:
       - timer_skill_timer_ball_launching_complete
       - s_launch_active
     start_enabled: true
+    restart_events: mode_skill_shot_started
     profile: top_lane_profile
     playfield: earth_pf
     show_tokens:
@@ -73,7 +81,7 @@ shot_groups:
 
 timers:
   skill_timer_ball_launching:
-    start_value: 3
+    start_value: 6
     end_value: 0
     tick_interval: 1s
     direction: down
@@ -134,6 +142,18 @@ state_machines:
           - skill_shot_unlit_hit
           - timer_skill_timer_ball_launching_complete
         events_when_transitioning: skill_state_machine_lane_changed_to_missed
+      - source: clean_success
+        target: ready_to_launch
+        events: mode_skill_shot_started
+        events_when_transitioning: skill_state_machine_resetting
+      - source: dirty_success
+        target: ready_to_launch
+        events: mode_skill_shot_started
+        events_when_transitioning: skill_state_machine_resetting
+      - source: missed_shot
+        target: ready_to_launch
+        events: mode_skill_shot_started
+        events_when_transitioning: skill_state_machine_resetting
 
 variable_player:
   skill_state_machine_lane_changed_to_dirty:

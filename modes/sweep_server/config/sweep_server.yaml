@@ -207,9 +207,10 @@ widgets:
           value: .1
           relative: false
           duration: .6s
-  scoop_bw_spiral_in:
+  scoop_bw_rings_in:
     - type: image
-      image: scoop_spiral_stretched_alpha3 #rainbow_circle_1000sq_alpha #_alpha
+      image: ringsveryskinny508x980
+      fps: 15
       scale: 1
   #      z: 1
       x: 253
@@ -566,7 +567,7 @@ widget_player:
     right_drain:
       slide: blank_transparent
   key_c_pressed:
-    scoop_bw_spiral_in:
+    scoop_bw_rings_in:
       slide: blank_transparent
   ball_waiting_to_eject_from_scoop:
     triangle_scoop_sweep:
