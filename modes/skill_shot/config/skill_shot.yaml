@@ -40,7 +40,8 @@ shots:
       - s_launch_active
     advance_events: mode_skill_shot_started
     start_enabled: true
-    restart_events: mode_skill_shot_started
+#    restart_events: mode_skill_shot_started
+    enable_events: mode_skill_shot_started
     profile: top_lane_profile #_default_lane
     playfield: earth_pf
     show_tokens:
@@ -81,7 +82,7 @@ shot_groups:
 
 timers:
   skill_timer_ball_launching:
-    start_value: 6
+    start_value: 3
     end_value: 0
     tick_interval: 1s
     direction: down
@@ -114,7 +115,7 @@ state_machines:
         events_when_transitioning: skill_state_machine_start_to_ready
       - source: ready_to_launch
         target: ball_launched
-        events: balldevice_bd_plunger_ball_eject_success
+        events: s_shooterlane_inactive #balldevice_bd_plunger_ball_eject_success
         events_when_transitioning: skill_state_machine_ready_to_launched
       - source: ball_launched
         target: lane_changed_after_launch
