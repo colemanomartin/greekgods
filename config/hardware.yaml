@@ -826,8 +826,8 @@ ball_devices:
 #    eject_times: 100ms, 60ms #180,155
     eject_coil_retry_pulse: 300ms
     eject_timeouts: 1500ms
-    entrance_count_delay: 1000ms
-    entrance_event_timeout: 1200ms
+    entrance_count_delay: 1500ms  #Increased 12/10 from 1000ms
+    #entrance_event_timeout: 1200ms this would only seem to apply if there is an enterence event also listed removed 12/10
     eject_all_events: mode_poseidion_ramp_mb_ending #Removing does not fix failure of lock to reactivate for second round of locking 5-1
     debug: yes
     max_eject_attempts: 10
@@ -841,8 +841,8 @@ ball_devices:
     eject_coil_enable_time: 260ms #230ms
     eject_coil_retry_pulse: 500ms
     eject_timeouts: 1500ms
-    entrance_count_delay: 1000ms
-    entrance_event_timeout: 1200ms
+    entrance_count_delay: 1500ms #Increased 12/10 from 1000ms
+    #entrance_event_timeout: 1200ms this would only seem to apply if there is an enterence event also listed removed 12/10
     eject_all_events: mode_olympus_ramp_mb_ending
     debug: yes
     max_eject_attempts: 10

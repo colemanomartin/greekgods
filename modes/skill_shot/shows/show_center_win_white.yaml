@@ -1,0 +1,117 @@
+#show_version=5
+- duration: 200 ms
+  lights:
+    l_orbit_33:
+      color: FFFFFF
+      fade: 50ms
+    l_orbit_34:
+      color: FFFFFF
+      fade: 50ms
+    l_orbit_35:
+      color: stop
+      fade: 50ms
+    l_orbit_36:
+      color: stop
+      fade: 50ms
+    l_orbit_37: #serial chain LED 53 at hidey hole
+      color: stop
+      fade: 50ms
+    l_orbit_38:
+      color: stop
+      fade: 50ms
+    l_orbit_39:
+      color: stop
+      fade: 50ms
+    l_orbit_40:
+      color: FFFFFF
+      fade: 50ms
+    l_orbit_41:
+      color: FFFFFF
+      fade: 50ms
+- duration: 200 ms
+  lights:
+    l_orbit_33:
+      color: stop
+      fade: 100ms
+    l_orbit_34:
+      color: FFFFFF
+      fade: 100ms
+    l_orbit_35:
+      color: FFFFFF
+      fade: 100ms
+    l_orbit_36:
+      color: stop
+      fade: 100ms
+    l_orbit_37: #serial chain LED 53 at hidey hole
+      color: stop
+      fade: 100ms
+    l_orbit_38:
+      color: stop
+      fade: 100ms
+    l_orbit_39:
+      color: FFFFFF
+      fade: 100ms
+    l_orbit_40:
+      color: FFFFFF
+      fade: 100ms
+    l_orbit_41:
+      color: stop
+      fade: 100ms
+- duration: 200 ms
+  lights:
+    l_orbit_33:
+      color: stop
+      fade: 100ms
+    l_orbit_34:
+      color: stop
+      fade: 100ms
+    l_orbit_35:
+      color: FFFFFF
+      fade: 100ms
+    l_orbit_36:
+      color: FFFFFF
+      fade: 100ms
+    l_orbit_37: #serial chain LED 53 at hidey hole
+      color: stop
+      fade: 100ms
+    l_orbit_38:
+      color: FFFFFF
+      fade: 100ms
+    l_orbit_39:
+      color: FFFFFF
+      fade: 100ms
+    l_orbit_40:
+      color: stop
+      fade: 100ms
+    l_orbit_41:
+      color: stop
+      fade: 100ms
+- duration: 400 ms
+  lights:
+    l_orbit_33:
+      color: stop
+      fade: 100ms
+    l_orbit_34:
+      color: stop
+      fade: 100ms
+    l_orbit_35:
+      color: stop
+      fade: 100ms
+    l_orbit_36:
+      color: FFFFFF
+      fade: 100ms
+    l_orbit_37: #serial chain LED 53 at hidey hole
+      color: FFFFFF
+      fade: 100ms
+    l_orbit_38:
+      color: FFFFFF
+      fade: 100ms
+    l_orbit_39:
+      color: stop
+      fade: 100ms
+    l_orbit_40:
+      color: stop
+      fade: 100ms
+    l_orbit_41:
+      color: stop
+      fade: 100ms
