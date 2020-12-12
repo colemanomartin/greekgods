@@ -2,10 +2,10 @@
 - duration: 200 ms
   lights:
     l_orbit_40:
-      color: 505050
+      color: 303030
       fade: 50ms
     l_orbit_41:
-      color: 505050
+      color: 303030
       fade: 50ms
     l_orbit_42:
       color: stop
@@ -20,10 +20,10 @@
       color: stop
       fade: 50ms
     l_orbit_46:
-      color: 505050
+      color: 303030
       fade: 50ms
     l_orbit_47:
-      color: 505050
+      color: 303030
       fade: 50ms
 - duration: 200 ms
   lights:
@@ -31,10 +31,10 @@
       color: stop
       fade: 100ms
     l_orbit_41:
-      color: 505050
+      color: 303030
       fade: 100ms
     l_orbit_42:
-      color: 505050
+      color: 303030
       fade: 100ms
     l_orbit_43: #serial chain LED 60 at right edge of poseidon magnet
       color: stop
@@ -43,10 +43,10 @@
       color: stop
       fade: 100ms
     l_orbit_45:
-      color: 505050
+      color: 303030
       fade: 100ms
     l_orbit_46:
-      color: 505050
+      color: 303030
       fade: 100ms
     l_orbit_47:
       color: stop
@@ -60,16 +60,16 @@
       color: stop
       fade: 100ms
     l_orbit_42:
-      color: 505050
+      color: 303030
       fade: 100ms
     l_orbit_43: #serial chain LED 60 at right edge of poseidon magnet
-      color: 505050
+      color: 303030
       fade: 100ms
     l_orbit_44: #serial chain LED 61 at left edge of poseidon magnet
-      color: 505050
+      color: 303030
       fade: 100ms
     l_orbit_45:
-      color: 505050
+      color: 303030
       fade: 100ms
     l_orbit_46:
       color: stop
@@ -89,10 +89,10 @@
       color: stop
       fade: 100ms
     l_orbit_43: #serial chain LED 60 at right edge of poseidon magnet
-      color: 505050
+      color: 303030
       fade: 100ms
     l_orbit_44: #serial chain LED 61 at left edge of poseidon magnet
-      color: 505050
+      color: 303030
       fade: 100ms
     l_orbit_45:
       color: stop

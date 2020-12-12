@@ -2,25 +2,25 @@
 - duration: 400 ms
   lights:
     l_orbit_27:
-      color: 505050
+      color: 303030
       fade: 50ms
     l_orbit_28:
-      color: 505050
+      color: 303030
       fade: 50ms
     l_orbit_29:
-      color: 505050
+      color: 303030
       fade: 50ms
     l_orbit_30: #serial chain led 46 at right edge of olympus magnet
-      color: 505050
+      color: 303030
       fade: 50ms
     l_orbit_31: #serial chain led 47 at left edge of olympus magnet
-      color: 505050
+      color: 303030
       fade: 50ms
     l_orbit_32:
-      color: 505050
+      color: 303030
       fade: 50ms
     l_orbit_33:
-      color: 505050
+      color: 303030
       fade: 50ms
 - duration: 400 ms
   lights:
@@ -28,19 +28,19 @@
       color: stop
       fade: 350ms
     l_orbit_28:
-      color: 505050
+      color: 303030
       fade: 350ms
     l_orbit_29:
-      color: 505050
+      color: 303030
       fade: 350ms
     l_orbit_30: #serial chain LED 53 at hidey hole
-      color: 505050
+      color: 303030
       fade: 350ms
     l_orbit_31:
-      color: 505050
+      color: 303030
       fade: 350ms
     l_orbit_32:
-      color: 505050
+      color: 303030
       fade: 350ms
     l_orbit_33:
       color: stop
@@ -54,13 +54,13 @@
       color: stop
       fade: 350ms
     l_orbit_29:
-      color: 505050
+      color: 303030
       fade: 350ms
     l_orbit_30: #serial chain LED 53 at hidey hole
-      color: 505050
+      color: 303030
       fade: 350ms
     l_orbit_31:
-      color: 505050
+      color: 303030
       fade: 350ms
     l_orbit_32:
       color: stop
@@ -80,7 +80,7 @@
       color: stop
       fade: 350ms
     l_orbit_30: #serial chain LED 53 at hidey hole
-      color: 505050
+      color: 303030
       fade: 350ms
     l_orbit_31:
       color: stop

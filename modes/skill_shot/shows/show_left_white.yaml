@@ -2,25 +2,25 @@
 - duration: 200 ms
   lights:
     l_orbit_41:
-      color: FFFFFF
+      color: 888888
       fade: 50ms
     l_orbit_42:
-      color: FFFFFF
+      color: 888888
       fade: 50ms
     l_orbit_43: #serial chain LED 60 at right edge of poseidon magnet
-      color: FFFFFF
+      color: 888888
       fade: 50ms
     l_orbit_44: #serial chain LED 61 at left edge of poseidon magnet
-      color: FFFFFF
+      color: 888888
       fade: 50ms
     l_orbit_45:
-      color: FFFFFF
+      color: 888888
       fade: 50ms
     l_orbit_46:
-      color: FFFFFF
+      color: 888888
       fade: 50ms
     l_orbit_47:
-      color: FFFFFF
+      color: 888888
       fade: 50ms
 - duration: 400 ms
   lights:
@@ -28,42 +28,19 @@
       color: stop
       fade: 350ms
     l_orbit_42:
-      color: FFFFFF
+      color: 888888
       fade: 350ms
     l_orbit_43:
-      color: FFFFFF
+      color: 888888
       fade: 350ms
     l_orbit_44: #serial chain LED 53 at hidey hole
-      color: FFFFFF
+      color: 888888
       fade: 350ms
     l_orbit_45:
-      color: FFFFFF
+      color: 888888
       fade: 350ms
     l_orbit_46:
-      color: FFFFFF
-      fade: 350ms
-    l_orbit_47:
-      color: stop
-      fade: 350ms
-- duration: 400 ms
-  lights:
-    l_orbit_41:
-      color: stop
-      fade: 350ms
-    l_orbit_42:
-      color: stop
-      fade: 350ms
-    l_orbit_43:
-      color: FFFFFF
-      fade: 350ms
-    l_orbit_44: #serial chain LED 53 at hidey hole
-      color: FFFFFF
-      fade: 350ms
-    l_orbit_45:
-      color: FFFFFF
-      fade: 350ms
-    l_orbit_46:
-      color: stop
+      color: 888888
       fade: 350ms
     l_orbit_47:
       color: stop
@@ -77,10 +54,33 @@
       color: stop
       fade: 350ms
     l_orbit_43:
+      color: 888888
+      fade: 350ms
+    l_orbit_44: #serial chain LED 53 at hidey hole
+      color: 888888
+      fade: 350ms
+    l_orbit_45:
+      color: 888888
+      fade: 350ms
+    l_orbit_46:
+      color: stop
+      fade: 350ms
+    l_orbit_47:
+      color: stop
+      fade: 350ms
+- duration: 400 ms
+  lights:
+    l_orbit_41:
+      color: stop
+      fade: 350ms
+    l_orbit_42:
+      color: stop
+      fade: 350ms
+    l_orbit_43:
       color: stop
       fade: 350ms
     l_orbit_44: #serial chain LED 53 at hidey hole
-      color: FFFFFF
+      color: 888888
       fade: 350ms
     l_orbit_45:
       color: stop

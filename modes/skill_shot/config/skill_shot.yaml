@@ -35,33 +35,50 @@ shot_profiles:
 
 shots:
   top_p_lane:
+    enable_events: mode_skill_shot_started
     hit_events:
       - s_poseidon_pop_active
       - s_poseidon_left_slingshot_active
       - s_poseidon_right_slingshot_active
       - s_poseidon_gate_active
     disable_events:
-      - timer_skill_timer_ball_launching_complete
+      - skill_state_machine_launched_to_clean
+      - skill_state_machine_lane_changed_to_dirty
+      - skill_state_machine_launched_to_missed
+      - skill_state_machine_lane_changed_to_missed
       - s_launch_active
+    reset_events:
+      - skill_state_machine_launched_to_clean
+      - skill_state_machine_lane_changed_to_dirty
+      - skill_state_machine_launched_to_missed
+      - skill_state_machine_lane_changed_to_missed
     advance_events: mode_skill_shot_started #without one lit, rotation does not work
-    start_enabled: true
-    restart_events: mode_skill_shot_started
     profile: top_lane_profile
     playfield: earth_pf
     show_tokens:
       led: l_poseidon_magnet
+
   hidden_hole_lane:
+    enable_events: mode_skill_shot_started
     hit_events:
       - s_hole_distal_active
     disable_events:
-      - timer_skill_timer_ball_launching_complete
+      - skill_state_machine_launched_to_clean
+      - skill_state_machine_lane_changed_to_dirty
+      - skill_state_machine_launched_to_missed
+      - skill_state_machine_lane_changed_to_missed
       - s_launch_active
-    start_enabled: true
-    restart_events: mode_skill_shot_started
+    reset_events:
+      - skill_state_machine_launched_to_clean
+      - skill_state_machine_lane_changed_to_dirty
+      - skill_state_machine_launched_to_missed
+      - skill_state_machine_lane_changed_to_missed
     playfield: earth_pf
     show_tokens:
       led: l_hideyhole
+
   top_o_lane:
+    enable_events: mode_skill_shot_started
     hit_events:
       - s_olympus_spinner_active
       - s_olympus_lower_pop_active
@@ -69,14 +86,21 @@ shots:
       - s_olympus_left_pop_active
       - s_hole_proximal_active
     disable_events:
-      - timer_skill_timer_ball_launching_complete
+      - skill_state_machine_launched_to_clean
+      - skill_state_machine_lane_changed_to_dirty
+      - skill_state_machine_launched_to_missed
+      - skill_state_machine_lane_changed_to_missed
       - s_launch_active
-    start_enabled: true
-    restart_events: mode_skill_shot_started
+    reset_events:
+      - skill_state_machine_launched_to_clean
+      - skill_state_machine_lane_changed_to_dirty
+      - skill_state_machine_launched_to_missed
+      - skill_state_machine_lane_changed_to_missed
     profile: top_lane_profile
     playfield: earth_pf
     show_tokens:
       led: l_olympus_magnet
+
   skill_shot_rotation: #triggers an event whenever the flippers activated used to trigger show changes
     switches:
       - s_left_flipper
@@ -92,7 +116,7 @@ shot_groups:
 
 timers:
   skill_timer_ball_launching:
-    start_value: 20
+    start_value: 3
     end_value: 0
     tick_interval: 1s
     direction: down
@@ -190,47 +214,65 @@ show_player:
     show_left_white:
       loops: -1
   #indicate the lane selected for the shot in the correctly hued show
-  skill_shot_rotation{device.shots.top_p_lane.state==1 and not device.accruals.skill_shot_changed_after_launch.completed}: # or state_name=='lit' for second state
+  skill_shot_rotation_hit{device.shots.top_p_lane.state==1 and not device.accruals.skill_shot_changed_after_launch.completed}: # or state_name=='lit' for second state
     show_left_white:
       loops: -1
     show_center_white:
       action: stop
     show_right_white:
       action: stop
-  skill_shot_rotation{device.shots.hidden_hole_lane.state==1 and not device.accruals.skill_shot_changed_after_launch.completed}:
+  skill_shot_rotation_hit{device.shots.hidden_hole_lane.state==1 and not device.accruals.skill_shot_changed_after_launch.completed}:
     show_left_white:
       action: stop
     show_center_white:
       loops: -1
     show_right_white:
       action: stop
-  skill_shot_rotation{device.shots.top_o_lane.state==1 and not device.accruals.skill_shot_changed_after_launch.completed}:
+  skill_shot_rotation_hit{device.shots.top_o_lane.state==1 and not device.accruals.skill_shot_changed_after_launch.completed}:
     show_left_white:
       action: stop
     show_center_white:
       action: stop
     show_right_white:
       loops: -1
-  skill_shot_rotation{device.shots.top_p_lane.state==1 and device.accruals.skill_shot_changed_after_launch}: # or state_name=='lit' for second state
+  skill_shot_rotation_hit{device.shots.top_p_lane.state==1 and device.accruals.skill_shot_changed_after_launch.completed}: # or state_name=='lit' for second state
     show_left_white:
+      action: stop
+    show_center_white:
+      action: stop
+    show_right_white:
+      action: stop
+    show_center_grey:
+      action: stop
+    show_right_grey:
+      action: stop
+    show_left_grey:
       loops: -1
+  skill_shot_rotation_hit{device.shots.hidden_hole_lane.state==1 and device.accruals.skill_shot_changed_after_launch.completed}:
+    show_left_white:
+      action: stop
     show_center_white:
       action: stop
     show_right_white:
       action: stop
-  skill_shot_rotation{device.shots.hidden_hole_lane.state==1 and device.accruals.skill_shot_changed_after_launch}:
-    show_left_white:
+    show_left_grey:
       action: stop
-    show_center_white:
+    show_right_grey:
+      action: stop
+    show_center_grey:
       loops: -1
-    show_right_white:
-      action: stop
-  skill_shot_rotation{device.shots.top_o_lane.state==1 and device.accruals.skill_shot_changed_after_launch}:
+  skill_shot_rotation_hit{device.shots.top_o_lane.state==1 and device.accruals.skill_shot_changed_after_launch.completed}:
     show_left_white:
       action: stop
     show_center_white:
       action: stop
     show_right_white:
+      action: stop
+    show_left_grey:
+      action: stop
+    show_center_grey:
+      action: stop
+    show_right_grey:
       loops: -1
   #Remove shows because something hit
   skill_shot_lit_hit:
@@ -240,6 +282,12 @@ show_player:
       action: stop
     show_right_white:
       action: stop
+    show_left_grey:
+      action: stop
+    show_center_grey:
+      action: stop
+    show_right_grey:
+      action: stop
   skill_shot_unlit_hit:
     show_left_white:
       action: stop
@@ -247,24 +295,30 @@ show_player:
       action: stop
     show_right_white:
       action: stop
+    show_left_grey:
+      action: stop
+    show_center_grey:
+      action: stop
+    show_right_grey:
+      action: stop
   #play lane specific prize show for a clean shot
-  top_p_lane_lit_hit{not device.accruals.skill_shot_changed_after_launch}: #clean shot
+  top_p_lane_lit_hit{not device.accruals.skill_shot_changed_after_launch.completed}: #clean shot
     show_left_win_white:
       loops: 0
-  hidden_hole_lane_lit_hit{not device.accruals.skill_shot_changed_after_launch}: #clean shot
+  hidden_hole_lane_lit_hit{not device.accruals.skill_shot_changed_after_launch.completed}: #clean shot
     show_center_win_white:
       loops: 0
-  top_p_lane_lit_hit{not device.accruals.skill_shot_changed_after_launch}: #clean shot
+  top_o_lane_lit_hit{not device.accruals.skill_shot_changed_after_launch.completed}: #clean shot
     show_right_win_white:
       loops: 0
   #play lane specific prize show for a dirty shot
-  top_p_lane_lit_hit{device.accruals.skill_shot_changed_after_launch}: #dirty shot
+  top_p_lane_lit_hit{device.accruals.skill_shot_changed_after_launch.completed}: #dirty shot
     show_left_win_grey:
       loops: 0
-  hidden_hole_lane_lit_hit{device.accruals.skill_shot_changed_after_launch}: #dirty shot
+  hidden_hole_lane_lit_hit{device.accruals.skill_shot_changed_after_launch.completed}: #dirty shot
     show_center_win_grey:
       loops: 0
-  top_p_lane_lit_hit{device.accruals.skill_shot_changed_after_launch}: #dirty shot
+  top_o_lane_lit_hit{device.accruals.skill_shot_changed_after_launch.completed}: #dirty shot
     show_right_win_grey:
       loops: 0
   #play a prize show on the inserts. When this show finishes tell mode to end.
