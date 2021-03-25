@@ -1030,7 +1030,7 @@ lights:
     default_on_color: green
     platform_settings:
       polarity: true
-    tags: gi, , right_sling
+    tags: gi, right_sling
     x: 0.6571130105610963
     y: 0.8159795474491914
   l_right_sling_distal:
