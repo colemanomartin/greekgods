@@ -10,7 +10,9 @@ MachineGG2011 Reduced hydra threshold. upper magnet diverters control by state m
 MachineGG2012 Cleaning up logic of widgets and shows in p_ramp_mb and o_ramp_mb
 MachineGG2012 More cleaning up logic of widgets and shows in p_ramp_mb and o_ramp_mb
 MachineGG2013 last local copy before moving to Github
-Oct23: installed orbit_post_left, renamed original to orbit_post_right
+Oct23 2020: installed orbit_post_left, renamed original to orbit_post_right
+April 27 2021: default text terminal screen not working. Some pieces of MPF had been removed for RPi.  fixed it withrunning sudo pip3 install mpf[all]
+April 27 2021: Added s_diverter_midpoint to the top of the ramp to detect a ball pinched by the flap.
 MPF Notes
 mpf -x runs without attempting to connect to the P-ROC hardware
 mpf -X use smart virtual hardware'

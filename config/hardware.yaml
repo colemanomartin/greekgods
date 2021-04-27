@@ -121,23 +121,16 @@ switches:
         number: 0/1/7
         tags:
         type: NC
-    # SW16 Board Address 1 located above poseidon magnet Bank 0 = A Used for powerball optos
-    s_powerball_left_proximal:
-        number: 1/0/1
-        type: NO # Reflective Opto switches  become closed when receiving IR
-    s_powerball_left_distal:
+
+    # SW16 Board Address 1 located above poseidon magnet Bank 0 = A Used for ramp jam detect many extra here.
+    s_diverter_midpoint:
         number: 1/0/0
-        type: NO # Reflective Opto switches become closed when receiving IR
-    s_powerball_right_proximal:
-        number: 1/0/2
-        type: NO # Reflective Opto switches become closed when receiving IR
-    s_powerball_right_distal:
-        number: 1/0/3
-        type: NO # Reflective Opto switches become closed when receiving IR
-    s_1_0:
-        number: 1/1/0 #Bank 0 control box
-    s_1_1:
-        number: 1/1/1
+        type: NC # Reflective Opto switches  become closed when receiving IR
+    # SW16 Board Address 1 located above poseidon magnent Bank 1 = B used for cabinet. 0,1,7 for service menu not installed
+    #    s_1_0:
+    #        number: 1/1/0 #Bank 0 control box
+    #    s_1_1:
+    #        number: 1/1/1
     s_right_flipper:
         number: 1/1/2
     s_left_flipper:
@@ -150,8 +143,8 @@ switches:
     s_accessory: #knee sw
         number: 1/1/6
         events_when_deactivated: s_accessory_inactive
-    s_1_7:
-        number: 1/1/7
+    #    s_1_7:
+    #        number: 1/1/7
     # SW16 Board Address 1 located above poseidon magnet Bank 1 = B Currently unused Can use for homing switches
     # or more power ball optos
     #
