@@ -542,10 +542,10 @@ servos: #http://docs.missionpinball.org/en/dev/mechs/diverters/servo_as_diverter
   ramp_servo:
     number: 2-6
     positions:
-      0.51: ramp_servo_divert_left #55
-      0.10: ramp_servo_divert_right #14
-      0.28: ramp_servo_middle #32
-    reset_position:  0.10
+      0.16: ramp_servo_divert_left #55
+      0.55: ramp_servo_divert_right #14
+      0.20: ramp_servo_middle #32
+    reset_position:  0.04
     reset_events: machine_reset_phase_3 #, ball_starting, ball_will_end
 
 # http://www.meanwellusa.com/productPdf.aspx?i=475#1 Relay would send 5V to plug to enable
