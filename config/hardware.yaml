@@ -126,6 +126,7 @@ switches:
     s_diverter_midpoint:
         number: 1/0/0
         type: NC # Reflective Opto switches  become closed when receiving IR
+        #events_when_deactivated: s_diverter_midpoint_inactive
     # SW16 Board Address 1 located above poseidon magnent Bank 1 = B used for cabinet. 0,1,7 for service menu not installed
     #    s_1_0:
     #        number: 1/1/0 #Bank 0 control box

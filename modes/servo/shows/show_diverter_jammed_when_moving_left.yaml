@@ -1,0 +1,28 @@
+#show_version=5
+- duration: 10ms
+  events: E_N_T_E_R_E_D___D_I_R_V_E_R_T_E_R____J_A_M___S_T_A_T_E
+- duration: 10ms
+  events: ramp_servo_divert_right #Abort sweep
+- duration: 2
+  slides:
+    display_error_jam_moving_left:
+      target: playfield_lcd
+      priority: 10000
+      widgets:
+      - type: text
+        text: RAMP DIVERTER JAMMED
+        color: white
+        y: 80%
+        font_size: 60
+      - type: text
+        text: When moving
+        color: white
+        y: 50%
+        font_size: 60
+      - type: text
+        text: LEFT
+        color: green
+        y: 30%
+        font_size: 100
+- duration: 10ms
+  events: ramp_servo_divert_left #Try to go back to correct position
