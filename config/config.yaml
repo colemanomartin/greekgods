@@ -309,15 +309,15 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
         events: ramp_servo_divert_left
         events_when_transitioning:
           - ramp_flap_changing_state
-          - ramp_flap_tracking_started
-          - ramp_flap_tracking_diverting_left
+          - ramp_flap_tracking_started_diverting_left
+          #- ramp_flap_tracking_diverting_left removed to prevent confusing jam mitigation at game start
       - source: start
         target: divert_right
         events: ramp_servo_divert_right
         events_when_transitioning:
           - ramp_flap_changing_state
-          - ramp_flap_tracking_started
-          - ramp_flap_tracking_diverting_right
+          - ramp_flap_tracking_started_diverting_right
+          #- ramp_flap_tracking_diverting_right removed to prevent confusing jam mitigation at game start
       - source: divert_left
         target: divert_right
         events: ramp_servo_divert_right

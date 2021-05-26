@@ -2,12 +2,18 @@
 # This mode runs the servo when the one ball game is running. I spun this into its own mode I can stop the servo from running
 # during MB so a sis hit does not pinch a ball on the ramp or trap the ball on a bounce off the post. Servo control is also
 # run by the modes p_ramb_mb and o_ramp_mb.
-# 5/24/21 added switch s_diverter_midpoint. Switch activates as arc starts and inactivates near arc completion. If switch does
-# not inactivate it probably means a ball got pinched. Every time a divert is commanded a timer is started. The timer stops when
-# the switch becomes inactive. If the timer makes it down to 0 show player starts a show which reverses the arc, displays an error
-# message and attempts to bring the arc back to the target position.
+# diverter is defined in hardware with control events ramp_servo_divert_left (or right). Events are called whenever mode base
+# sends events base_sis_L/R_arrived_hit in response to activation of sis switches.  A ball moving the power ball less than
+# half way around the horseshoe causes the same side stitch to reactivate and the servo is retriggered for the same side.
+# 5/24/21 added switch s_diverter_midpoint. Switch activates as diverter arc starts and inactivates near arc completion. If switch does
+# not inactivate it probably means a ball got pinched. A timer is activated every time the diverter is commanded to change side.
+# The changing of sides is tracked by the main config's state machine ramp_flap_tracking. When the state machine picks up that a
+# side change is commanded the appropriate count down timer is started. The timer is aborted when the mid point switch inactivates. 
+# If the timer makes it down to 0 show player starts a show which reverses the arc, displays an error message and then commands
+# the diverter to reverse directions and then bring it back to the target position. This is a one time correction. If it fails -> smoke.
 # Do: Make a counter that counts the retries and crashes the game if > 2 retries.
-# Do: Move servo control out of p_ramp_mb and o_ramp_mb and back in here so ball jamming gets detected. (Better check to be sure no servo control in state machines first)
+# Do: Consider either moving mitigation to its own mode, duplicate it in MB modes inc multibal_poseidon_ramp and multiball_olympus_ramp or
+# make this mode smart enough to respond to state of all multiball modes to move accordingly. Diverter should not run in a MB state, too dangerous.
 mode:
   priority: 10000 # range 100-1M
   start_events:
@@ -28,22 +34,22 @@ event_player:
 
 timers:
   moving_left:
-    start_value: 6
+    start_value: 2
     end_value: 0
     tick_interval: 250 ms
     direction: down
     control_events:
-      - event: ramp_servo_divert_left
+      - event: ramp_flap_tracking_diverting_left
         action: restart
       - event: s_diverter_midpoint_inactive
         action: stop
   moving_right:
-    start_value: 6
+    start_value: 2
     end_value: 0
     tick_interval: 250 ms
     direction: down
     control_events:
-      - event: ramp_servo_divert_right
+      - event: ramp_flap_tracking_diverting_right
         action: restart
       - event: s_diverter_midpoint_inactive
         action: stop
