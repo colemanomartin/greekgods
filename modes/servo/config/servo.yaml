@@ -8,7 +8,7 @@
 # 5/24/21 added switch s_diverter_midpoint. Switch activates as diverter arc starts and inactivates near arc completion. If switch does
 # not inactivate it probably means a ball got pinched. A timer is activated every time the diverter is commanded to change side.
 # The changing of sides is tracked by the main config's state machine ramp_flap_tracking. When the state machine picks up that a
-# side change is commanded the appropriate count down timer is started. The timer is aborted when the mid point switch inactivates. 
+# side change is commanded the appropriate count down timer is started. The timer is aborted when the mid point switch inactivates.
 # If the timer makes it down to 0 show player starts a show which reverses the arc, displays an error message and then commands
 # the diverter to reverse directions and then bring it back to the target position. This is a one time correction. If it fails -> smoke.
 # Do: Make a counter that counts the retries and crashes the game if > 2 retries.
@@ -18,8 +18,8 @@ mode:
   priority: 10000 # range 100-1M
   start_events:
     - mode_base_started{device.ball_devices.bd_poseidon_ramp.balls<2 and device.ball_devices.bd_olympus_ramp.balls<2}
-    - multiball_poseidon_ramp_ended
-    - multiball_olympus_ramp_ended
+    - multiball_poseidon_ramp_ended{device.multiballs.olympus_ramp.enabled == FALSE} # {mode.mystery.active == False} #Not other mode running?
+    - multiball_olympus_ramp_ended{device.multiballs.poseidon_ramp.enabled == FALSE}
   stop_events:
     - multiball_lock_poseidon_lock_full #Allow p_ramp_mb mode to controll servo until MB done
     - multiball_lock_olympus_lock_full #Allow p_ramp_mb mode to controll servo until MB done

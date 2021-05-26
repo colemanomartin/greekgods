@@ -314,8 +314,11 @@ Sometimes call the shot show does not reset after goddess summoned.
 check serial of the ball counter PD-LED
 One time when playing hydra lights went out on lower playfield.  No clear reason why.  Saved log in weirdlogs
 Increase settle time on ramp ball locks.
-Dont de-activate pass through on ramp locks until the ramp is lit.
-
+Don't de-activate pass through on ramp locks until the ramp is lit.
+When new ball starts and ball locked dont activate pass through diverter.
+Deactivate ramp flap for all MB states. might have to have a stack counter of number of MB active and when down to
+0 reactivate servo could put in its own mode. Could also be used to make sure goddess, scoop and hydra dont run concurrently.
+ 
 
 Hardware:
 
