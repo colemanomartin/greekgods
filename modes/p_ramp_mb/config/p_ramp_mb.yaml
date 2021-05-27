@@ -6,8 +6,9 @@
 # accrual base_o_locking_engaged.completed==True. State machine conditions against if this mode running.
 # widget prompts to the player and light shows are handled in this mode.
 # Qualifying a ball in olympus area raises BB for a hit to light O ramp lock. (This is handled in field)
-# After the lock is full the servo mode it turned off and the flap is sent to face the O ramp until after MB is finished or until O lock is full in which case the diverter points to the middle
-# and then a shot to the BB or ramp starts double MB. When double MB started the diverter wags to divert to the left because that is more fun. (No wagging diverter during any MB)
+# After the lock is full the state machine sends flap to face the O ramp until after MB is finished or
+# until O lock is full in which case the diverter points to the middle
+# and then a shot to the BB or ramp starts double MB.
 # Do: Monitor lock light behavior when ball present after drain when next ball starts, might need conditional logic on mode start to show correct show.
 mode:
   priority: 1000 # range 100-1M
@@ -100,20 +101,9 @@ timers:
 event_player:
   timer_prmb_allow_ballblock_to_settle_complete: pause_ballblock_timer #invite scoop shot
   prmb_light_p_lock_hit: jump_ballblock_timer_to_1 #Raise the BB fast by jumping timer to 1
-# multiball_poseidon_ramp_started: resume_ballblock_timer
   poseidon_mech_hit: bonus_pop #used by counter in base for bonus calculation
-  multiball_lock_poseidon_lock_full{device.ball_devices.bd_olympus_ramp.balls<2}:
-    - ramp_servo_divert_right #Olympus can accept balls
-    - force_bb_down
-  multiball_lock_poseidon_lock_full{device.ball_devices.bd_olympus_ramp.balls==2}:
-    - ramp_servo_divert_middle #When both locks full
-    - force_bb_down
-  mode_poseidon_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls==2}: ramp_servo_divert_right #Mode starting after a drain, and lock already full. moves diverter in case other player had diverter in wrong postion. bb_down handels dropping the ball block
-  multiball_poseidon_ramp_started:
-    - ramp_servo_divert_left #Send to left because more fun.
-    - release_bb_override #commented out 11/15/20 because when next ball starts ball block raises #Reinstated 11/27 because it does not raise until scoop hit at next ball (keeping down for super spinner presumably)
-#  multiball_lock_poseidon_lock_full: keep_bb_down
-#  multiball_poseidon_ramp_started: release_bb_override
+  multiball_lock_poseidon_lock_full: force_bb_down
+  multiball_poseidon_ramp_started: release_bb_override #commented out 11/15/20 because when next ball starts ball block raises #Reinstated 11/27 because it does not raise until scoop hit at next ball (keeping down for super spinner presumably)
 
 show_player:
   #Things to do when starting

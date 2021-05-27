@@ -1,38 +1,24 @@
 #config_version=5
-# This mode runs the servo when the one ball game is running. I spun this into its own mode I can stop the servo from running
-# during MB so a sis hit does not pinch a ball on the ramp or trap the ball on a bounce off the post. Servo control is also
-# run by the modes p_ramb_mb and o_ramp_mb.
-# diverter is defined in hardware with control events ramp_servo_divert_left (or right). Events are called whenever mode base
-# sends events base_sis_L/R_arrived_hit in response to activation of sis switches.  A ball moving the power ball less than
-# half way around the horseshoe causes the same side stitch to reactivate and the servo is retriggered for the same side.
+# This mode runs the servo in response to config's state machine
+# diverter is defined in hardware with control events ramp_servo_divert_left (or right).
 # 5/24/21 added switch s_diverter_midpoint. Switch activates as diverter arc starts and inactivates near arc completion. If switch does
-# not inactivate it probably means a ball got pinched. A timer is activated every time the diverter is commanded to change side.
-# The changing of sides is tracked by the main config's state machine ramp_flap_tracking. When the state machine picks up that a
-# side change is commanded the appropriate count down timer is started. The timer is aborted when the mid point switch inactivates.
-# If the timer makes it down to 0 show player starts a show which reverses the arc, displays an error message and then commands
-# the diverter to reverse directions and then bring it back to the target position. This is a one time correction. If it fails -> smoke.
-# Do: have pramp and oramp mb issue command to this mode instead of moving servo itself.
-# Do: Make this so it runs always, will have to account to locks full. 
-# Do: Make a counter that counts the retries and crashes the game if > 2 retries.
-# Do: Consider either mitigation to its own mode, duplicate it in MB modes inc multibal_poseidon_ramp and multiball_olympus_ramp or
-# make this mode smart enough to respond to state of all multiball modes to move accordingly. Diverter should not run in a MB state, too dangerous.
+# not inactivate it probably means a ball got pinched. A timer is started every time state machine commands the diverter to move to one side
+# The timer is aborted when the mid point switch inactivates.  If the timer makes it down to 0 show player starts a show which reverses
+# the arc, displays an error message and then commands the diverter to reverse directions and then bring it back to the target position.
+# This is a one time correction. If it fails -> smoke.
+# 5/27/21: Ripped out old ramp_flap_tracking state machine and made servo control dictated by state machine.
+# Servo could be controlled diectly via state machine but I chose to relay it here for readability with mitigation steps. 
+# Do: create some kind of counter that detects if a second jam occurs and shuts down game.
 mode:
   priority: 10000 # range 100-1M
   start_events:
-    - mode_base_started{device.ball_devices.bd_poseidon_ramp.balls<2 and device.ball_devices.bd_olympus_ramp.balls<2}
-    - multiball_poseidon_ramp_ended{device.multiballs.olympus_ramp.enabled == FALSE} # {mode.mystery.active == False} #Not other mode running?
-    - multiball_olympus_ramp_ended{device.multiballs.poseidon_ramp.enabled == FALSE}
-  stop_events:
-    - multiball_lock_poseidon_lock_full #Allow p_ramp_mb mode to controll servo until MB done
-    - multiball_lock_olympus_lock_full #Allow p_ramp_mb mode to controll servo until MB done
+    - mode_base_started
 
 event_player:
-  #These should be handled in the sis lat and medial modes or possibly field
-  mode_servo_started{device.switches.s_sis_left.state==1}: ramp_servo_divert_left #divert_left
-  mode_servo_started{device.switches.s_sis_right.state==1}: ramp_servo_divert_right #divert_right
   #This might be better dealt with using a diverter construct http://docs.missionpinball.org/en/dev/mechs/diverters/servo_as_diverter.html
-  base_sis_left_arrived_hit{device.counters.base_multiballs_active.value == 0}: ramp_servo_divert_left #divert_left
-  base_sis_right_arrived_hit{device.counters.base_multiballs_active.value == 0}: ramp_servo_divert_right #divert_right
+  ramp_flap_control_move_divert_left: ramp_servo_divert_left
+  ramp_flap_control_move_divert_right: ramp_servo_divert_right
+  ramp_flap_control_move_middle: noted_by_mode_servo_but_processed_in_hardware
 
 timers:
   moving_left:
@@ -41,7 +27,7 @@ timers:
     tick_interval: 250 ms
     direction: down
     control_events:
-      - event: ramp_flap_tracking_diverting_left
+      - event: ramp_flap_control_move_divert_left
         action: restart
       - event: s_diverter_midpoint_inactive
         action: stop
@@ -51,7 +37,7 @@ timers:
     tick_interval: 250 ms
     direction: down
     control_events:
-      - event: ramp_flap_tracking_diverting_right
+      - event: ramp_flap_control_move_divert_right
         action: restart
       - event: s_diverter_midpoint_inactive
         action: stop

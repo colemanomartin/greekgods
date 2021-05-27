@@ -5,8 +5,9 @@
 # If the ball drains before the ball is locked, this mode starts when field starts because
 # accrual base_o_locking_engaged.completed==True
 # widget prompts to the player and light shows are handled in this mode.
-# After the lock is full the servo mode it turned off and the flap is sent to face the P ramp until after MB is finished or until P lock is full in which case the diverter points to the middle
-# and then a shot to the BB or ramp starts double MB. When double MB started the diverter wags to divert to the left because that is more fun. (No wagging diverter during any MB)
+# After the lock is full the state machine sends the ramp servo to the other lock until after MB is
+# finished or until P lock is full in which case the diverter points to the middle
+# and then a shot to the BB or ramp starts double MB.
 mode:
   priority: 1200 # range 100-1M
   start_events:
@@ -98,21 +99,9 @@ timers:
 event_player:
   timer_ormb_allow_ballblock_to_settle_complete: pause_ballblock_timer # invite scoop shot
   ormb_light_o_lock_hit: jump_ballblock_timer_to_1 #Raise the BB fast by jumping timer to 1
-#    multiball_olympus_ramp_started: resume_ballblock_timer
   olympus_mech_hit: bonus_pop #used by counter in base for bonus calculation
-  multiball_lock_olympus_lock_full{device.ball_devices.bd_poseidon_ramp.balls<2}:
-    - ramp_servo_divert_left #poseidon can accept balls
-    - force_bb_down
-  multiball_lock_olympus_lock_full{device.ball_devices.bd_poseidon_ramp.balls==2}:
-    - ramp_servo_divert_middle #When both locks full
-    - force_bb_down
-  mode_olympus_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls==2}: ramp_servo_divert_left #MMode starting after a drain, and lock already full. moves diverter in case other player had diverter in wrong postion. bb_down handels dropping the ball block
-  multiball_olympus_ramp_started:
-    - ramp_servo_divert_left #Send to left because more fun.
-    - release_bb_override
-#  multiball_lock_olympus_lock_full: force_bb_down
-#  multiball_olympus_ramp_started: release_bb_override
-
+  multiball_lock_olympus_lock_full: force_bb_down
+  multiball_olympus_ramp_started: release_bb_override
 
 show_player:
   #Things to do when starting

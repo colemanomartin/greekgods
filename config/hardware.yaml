@@ -543,13 +543,13 @@ servos: #http://docs.missionpinball.org/en/dev/mechs/diverters/servo_as_diverter
   ramp_servo:
     number: 2-6
     positions:
-      0.16: ramp_servo_divert_left
-      0.06: ramp_servo_divert_left_extreme # for unjamming
-      0.55: ramp_servo_divert_right
-      0.65: ramp_servo_divert_right_extreme # for unjamming
-      0.20: ramp_servo_middle #32
-    reset_position:  0.04
-    reset_events: machine_reset_phase_3 #, ball_starting, ball_will_end
+      0.16: ramp_servo_divert_left          # sent by event player in mode servo
+      0.06: ramp_servo_divert_left_extreme  # sent by servo showplayer for unjamming
+      0.55: ramp_servo_divert_right         # sent by event player in mode servo
+      0.65: ramp_servo_divert_right_extreme # sent by servo showplayer for unjamming
+      0.20: ramp_flap_control_move_middle   # sent by state machine directly
+    reset_position:  0.2
+    reset_events: machine_reset_phase_3 
 
 # http://www.meanwellusa.com/productPdf.aspx?i=475#1 Relay would send 5V to plug to enable
 drop_targets:
