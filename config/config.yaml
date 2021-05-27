@@ -293,7 +293,8 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
     persist_state: False # cant be True in config
 
 
-  ramp_flap: #http://docs.missionpinball.org/en/latest/config/state_machine_states.html
+  ramp_flap_control: #http://docs.missionpinball.org/en/latest/config/state_machine_states.html
+    #This state machine controls the position of the ramp flap. Valid states Divert left, right, middle and hold position.
     states:
       start: #required as a starting state for all state machines
         label: undefined
@@ -303,27 +304,100 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
         label: right
       divert_middle:
         label: middle
+      divert_hold_position:
+        label: time_out
     transitions:
+
       - source: start
+        target: divert_middle
+        events: machine_reset_phase_3
+        events_when_transitioning:
+          - ramp_flap_changing_state_from_start_to_middle
+          - ramp_flap_control_move_middle
+
+      - source: divert_middle
         target: divert_left
-        events: ramp_servo_divert_left
+        events:
+          - game_started{device.switches.s_sis_left.state==1}
+          - game_started{device.switches.s_sis_right.state==0} #Sometimes left switch is tricky so this is a failsafe
+          - base_sis_left_arrived_hit{device.counters.base_multiballs_active.value == 0}
         events_when_transitioning:
-          - ramp_flap_changing_state
-          - ramp_flap_tracking_started_diverting_left
-          #- ramp_flap_tracking_diverting_left removed to prevent confusing jam mitigation at game start
-      - source: start
+          - ramp_flap_changing_state_from_middle_to_divert_left
+          - ramp_flap_control_move_divert_left
+
+      - source: divert_middle
         target: divert_right
-        events: ramp_servo_divert_right
+        events:
+          - game_started{device.switches.s_sis_right.state==1} #Sometimes left switch is tricky so this is a failsafe
+          - base_sis_right_arrived_hit{device.counters.base_multiballs_active.value == 0}
         events_when_transitioning:
-          - ramp_flap_changing_state
-          - ramp_flap_tracking_started_diverting_right
-          #- ramp_flap_tracking_diverting_right removed to prevent confusing jam mitigation at game start
+          - ramp_flap_changing_state_from_middle_to_divert_right
+          - ramp_flap_control_move_divert_right
+
       - source: divert_left
         target: divert_right
-        events: ramp_servo_divert_right
+        events:
+          - multiball_lock_poseidon_lock_full{device.ball_devices.bd_olympus_ramp.balls<2}
+          - base_sis_left_arrived_hit{device.ball_devices.bd_olympus_ramp.balls<2}
+        events_when_transitioning:
+          - ramp_flap_changing_state_from_divert_left_to_divert_right
+          - ramp_flap_control_move_divert_right
+
+      - source: divert_left
+        target: divert_hold_position
+        events:
+          - logicblock_base_multiballs_active_updated{device.counters.base_multiballs_active.value>0}
+        events_when_transitioning:
+          - ramp_flap_changing_state_from_divert_left_to_hold_current_position
+          - ramp_flap_control_stay_in_current_position
+
+      - source: divert_hold_position
+        target: divert_left
+        events:
+          - logicblock_base_multiballs_active_updated{device.counters.base_multiballs_active.value==0 and device.switches.s_sis_left.state==1}
+          - logicblock_base_multiballs_active_updated{device.counters.base_multiballs_active.value==0 and device.switches.s_sis_right.state==0} #If powerball is in motion its possible it could end up on wrong side but should eventually correct with next event in list.
+          - base_sis_left_arrived_hit{device.counters.base_multiballs_active.value == 0}
+
+
+
+
+
+
+
+
+
+
+
+
+        events_when_transitioning:
+          - ramp_flap_changing_state_from_divert_hold_to_divert_left
+          - ramp_flap_control_move_divert_left
+
+      - source: divert_right
+        target: divert_hold_position
+        events:
+          - logicblock_base_multiballs_active_updated{device.counters.base_multiballs_active.value>0}
+        events_when_transitioning:
+          - ramp_flap_changing_state_from_divert_right_to_hold_current_position
+          - ramp_flap_control_stay_in_current_position
+
+      - source: divert_hold_position #This may not be needed but putting it in if there is an edge case where game ends with divert at middle.
+        target: divert_middle
+        events: game_ending
+        events_when_transitioning:
+          - ramp_flap_changing_state_from_hold_to_middle
+          - ramp_flap_control_move_middle
+
+      - source: divert_right
+        target: divert_left
+        events:
+          - multiball_lock_olympus_lock_full{device.ball_devices.bd_poseidon_ramp.balls<2}
+          - base_sis_left_arrived_hit{device.ball_devices.bd_olympus_ramp.balls<2}
         events_when_transitioning:
           - ramp_flap_changing_state
-          - ramp_flap_tracking_diverting_right
+          - ramp_flap_control_move_divert_left
+
+Hold to middle at game will end.
       - source: divert_middle
         target: divert_right
         events: ramp_servo_divert_right
@@ -342,12 +416,6 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
         events_when_transitioning:
           - ramp_flap_changing_state
           - ramp_flap_tracking_diverting_middle
-      - source: divert_right
-        target: divert_left
-        events: ramp_servo_divert_left
-        events_when_transitioning:
-          - ramp_flap_changing_state
-          - ramp_flap_tracking_diverting_left
       - source: divert_middle
         target: divert_left
         events: ramp_servo_divert_left

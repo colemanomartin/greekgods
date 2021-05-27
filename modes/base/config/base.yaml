@@ -163,6 +163,26 @@ counters:
     restart_events: #A restart is a reset, then an enable, combined into a single action.
       - multiball_goddess_ended
     persist_state: true
+  base_multiballs_active:
+    #Used as a conditional by servo mode to turn off servo when MB happening
+    count_events: #One event for each MB
+      - multiball_poseidon_ramp_started
+      - multiball_olympus_ramp_started
+      - multiball_goddess_started
+      - multiball_hydra_mb_started
+    control_events:
+      - event: multiball_poseidon_ramp_ended
+        action: subtract
+        value: 1
+      - event: multiball_olympus_ramp_ended
+        action: subtract
+        value: 1
+      - event: multiball_goddess_ended
+        action: subtract
+        value: 1
+      - event: multiball_hydra_mb_ended
+        action: subtract
+        value: 1
 
 timers:
   base_timer_ball_launching:

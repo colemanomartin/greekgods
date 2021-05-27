@@ -11,8 +11,10 @@
 # side change is commanded the appropriate count down timer is started. The timer is aborted when the mid point switch inactivates.
 # If the timer makes it down to 0 show player starts a show which reverses the arc, displays an error message and then commands
 # the diverter to reverse directions and then bring it back to the target position. This is a one time correction. If it fails -> smoke.
+# Do: have pramp and oramp mb issue command to this mode instead of moving servo itself.
+# Do: Make this so it runs always, will have to account to locks full. 
 # Do: Make a counter that counts the retries and crashes the game if > 2 retries.
-# Do: Consider either moving mitigation to its own mode, duplicate it in MB modes inc multibal_poseidon_ramp and multiball_olympus_ramp or
+# Do: Consider either mitigation to its own mode, duplicate it in MB modes inc multibal_poseidon_ramp and multiball_olympus_ramp or
 # make this mode smart enough to respond to state of all multiball modes to move accordingly. Diverter should not run in a MB state, too dangerous.
 mode:
   priority: 10000 # range 100-1M
@@ -29,8 +31,8 @@ event_player:
   mode_servo_started{device.switches.s_sis_left.state==1}: ramp_servo_divert_left #divert_left
   mode_servo_started{device.switches.s_sis_right.state==1}: ramp_servo_divert_right #divert_right
   #This might be better dealt with using a diverter construct http://docs.missionpinball.org/en/dev/mechs/diverters/servo_as_diverter.html
-  base_sis_left_arrived_hit: ramp_servo_divert_left #divert_left
-  base_sis_right_arrived_hit: ramp_servo_divert_right #divert_right
+  base_sis_left_arrived_hit{device.counters.base_multiballs_active.value == 0}: ramp_servo_divert_left #divert_left
+  base_sis_right_arrived_hit{device.counters.base_multiballs_active.value == 0}: ramp_servo_divert_right #divert_right
 
 timers:
   moving_left:
