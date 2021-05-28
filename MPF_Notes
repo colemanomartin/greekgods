@@ -13,6 +13,7 @@ MachineGG2013 last local copy before moving to Github
 Oct23 2020: installed orbit_post_left, renamed original to orbit_post_right
 April 27 2021: default text terminal screen not working. Some pieces of MPF had been removed for RPi.  fixed it withrunning sudo pip3 install mpf[all]
 April 27 2021: Added s_diverter_midpoint to the top of the ramp to detect a ball pinched by the flap.
+May 27 2021: Ripped out ramp_flap_tracking in favor of a state machine ramp_flap_control that orders the flap through servo. Servo now mitigates a pinched ball.
 MPF Notes
 mpf -x runs without attempting to connect to the P-ROC hardware
 mpf -X use smart virtual hardware'
@@ -316,9 +317,11 @@ One time when playing hydra lights went out on lower playfield.  No clear reason
 Increase settle time on ramp ball locks.
 Don't de-activate pass through on ramp locks until the ramp is lit.
 When new ball starts and ball locked dont activate pass through diverter.
+Double ramp mb show does not deactivate when down to one ball.
+
 Deactivate ramp flap for all MB states. might have to have a stack counter of number of MB active and when down to
 0 reactivate servo could put in its own mode. Could also be used to make sure goddess, scoop and hydra dont run concurrently.
- 
+
 
 Hardware:
 

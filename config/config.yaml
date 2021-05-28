@@ -361,8 +361,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - logicblock_base_multiballs_active_updated{device.counters.base_multiballs_active.value>0}
         events_when_transitioning:
           - ramp_flap_changing_state_from_divert_left_to_hold_current_position
-          - ramp_flap_control_stay_in_current_position #This event is unregisterd by the modes, just serves as a post to the log
-
+          - ramp_flap_control_stay_in_current_position #This event is unregisterd by the servo, might be useful for show_players
 
       - source: divert_hold_position
         target: divert_left #coming out of MB

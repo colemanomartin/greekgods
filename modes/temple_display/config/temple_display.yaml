@@ -54,10 +54,10 @@ widgets: #http://docs.missionpinball.org/en/dev/displays/widgets/common_settings
     z: 0
 
 widget_player:
-  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "start"}:
+  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap_control.state == "start"}:
     middle:
       slide: show_progress_to_ramp_mb
-  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "divert_middle"}:
+  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap_control.state == "divert_middle"}:
     middle:
       slide: show_progress_to_ramp_mb
 #  mode_temple_display_started{device.state_machines.ramp_flap.state == "divert_left"}:
@@ -81,13 +81,13 @@ widget_player:
   woot_right:
     right_pointing_statue:
       slide: show_progress_to_ramp_mb
-  ramp_flap_tracking_diverting_left:
+  ramp_flap_control_move_divert_left:
     left_pointing_statue:
       slide: show_progress_to_ramp_mb
     right_pointing_statue:
       slide: show_progress_to_ramp_mb
       action: remove
-  ramp_flap_tracking_diverting_right:
+  ramp_flap_control_move_divert_right:
     right_pointing_statue:
       slide: show_progress_to_ramp_mb
     left_pointing_statue:
@@ -186,10 +186,10 @@ slide_player:
       target: playfield_lcd
       action: remove
 event_player:
-  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "divert_left"}: woot_left
-  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "divert_right"}: woot_right
-  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap.state == "start"}: woot_start
-  mode_diverter_arrow_started{device.state_machines.ramp_flap.state == "divert_left"}: woot_mode_start_left
-  mode_diverter_arrow_started{device.state_machines.ramp_flap.state == "divert_right"}: woot_mode_start_right
-  mode_diverter_arrow_started{device.state_machines.ramp_flap.state == "start"}: woot_mode_start_start
+  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap_control.state == "divert_left"}: woot_left
+  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap_control.state == "divert_right"}: woot_right
+  slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap_control.state == "start"}: woot_start
+  mode_diverter_arrow_started{device.state_machines.ramp_flap_control.state == "divert_left"}: woot_mode_start_left
+  mode_diverter_arrow_started{device.state_machines.ramp_flap_control.state == "divert_right"}: woot_mode_start_right
+  mode_diverter_arrow_started{device.state_machines.ramp_flap_control.state == "start"}: woot_mode_start_start
   mode_diverter_arrow_started: woot_mode_is_started

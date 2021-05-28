@@ -543,13 +543,13 @@ servos: #http://docs.missionpinball.org/en/dev/mechs/diverters/servo_as_diverter
   ramp_servo:
     number: 2-6
     positions:
-      0.16: ramp_servo_divert_left          # sent by event player in mode servo
+      0.11: ramp_servo_divert_left          # sent by event player in mode servo
       0.06: ramp_servo_divert_left_extreme  # sent by servo showplayer for unjamming
-      0.55: ramp_servo_divert_right         # sent by event player in mode servo
-      0.65: ramp_servo_divert_right_extreme # sent by servo showplayer for unjamming
-      0.20: ramp_flap_control_move_middle   # sent by state machine directly
+      0.51: ramp_servo_divert_right         # sent by event player in mode servo
+      0.57: ramp_servo_divert_right_extreme # sent by servo showplayer for unjamming
+      0.34: ramp_flap_control_move_middle   # sent by state machine directly
     reset_position:  0.2
-    reset_events: machine_reset_phase_3 
+    reset_events: machine_reset_phase_3
 
 # http://www.meanwellusa.com/productPdf.aspx?i=475#1 Relay would send 5V to plug to enable
 drop_targets:
@@ -686,7 +686,7 @@ diverters:
       - s_poseidon_lock_proximal #0 is upper 1 is lower opto
       - s_poseidon_lock_distal # putting both on in case ball somehow gets past 1st
     enable_events:
-      - ball_started
+      - ball_started{device.ball_devices.bd_poseidon_ramp.balls==0}
     disable_events: mode_p_ramp_mb_starting #turns off when locking mode starts
     debug: true
   pass_olympus_lock:
@@ -701,7 +701,7 @@ diverters:
       - s_olympus_lock_proximal
       - s_olympus_lock_distal # putting both on in case ball somehow gets past 1st
     enable_events:
-      - ball_started
+      - ball_started{device.ball_devices.bd_olympus_ramp.balls==0}
 
 #      ball_started{device.ball_devices.bd_olympus_lock.balls==0}: 0.1s  #This only startes the diverter when its empty
 #      - multiball_olympus_ramp_started: 3s

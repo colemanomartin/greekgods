@@ -1,5 +1,5 @@
 #config_version=5
-# This mode runs the servo in response to config's state machine
+# This mode runs the servo in response to config's state machine's posted events. This mode runs all the time.
 # diverter is defined in hardware with control events ramp_servo_divert_left (or right).
 # 5/24/21 added switch s_diverter_midpoint. Switch activates as diverter arc starts and inactivates near arc completion. If switch does
 # not inactivate it probably means a ball got pinched. A timer is started every time state machine commands the diverter to move to one side
@@ -7,7 +7,7 @@
 # the arc, displays an error message and then commands the diverter to reverse directions and then bring it back to the target position.
 # This is a one time correction. If it fails -> smoke.
 # 5/27/21: Ripped out old ramp_flap_tracking state machine and made servo control dictated by state machine.
-# Servo could be controlled diectly via state machine but I chose to relay it here for readability with mitigation steps. 
+# Servo could be controlled diectly via state machine but I chose to relay it here for readability with mitigation steps.
 # Do: create some kind of counter that detects if a second jam occurs and shuts down game.
 mode:
   priority: 10000 # range 100-1M

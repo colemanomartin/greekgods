@@ -532,7 +532,7 @@ sequence_shots:
       balldevice_bd_plunger_ejecting_ball: 1s
 
 variable_player:
-  "{device.state_machines.ramp_flap.state}":
+  "{device.state_machines.ramp_flap_control.state}":
     ramp_flap_player_variable:
       action: set
       string: "{value}"

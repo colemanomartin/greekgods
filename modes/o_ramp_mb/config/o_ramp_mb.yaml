@@ -126,16 +126,16 @@ show_player:
       speed: 10
     show_o_ramp_mb_0_balls:
       speed: 20
-  ormb_light_o_lock_hit{device.state_machines.ramp_flap.state=="divert_right"}: #diverter is on correct side to lock ball
+  ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_right"}: #diverter is on correct side to lock ball
     show_flash_ramp_arrow:
       speed: 4
       show_tokens:
         color: yellow
   #Things to do when diverter moves
-  ramp_flap_tracking_diverting_left{device.multiball_locks.olympus_lock.enabled}: #Diverter moved to other side
+  ramp_flap_control_move_divert_left{device.multiball_locks.olympus_lock.enabled}: #Diverter moved to other side
     show_flash_ramp_arrow:
       action: stop
-  ramp_flap_tracking_diverting_right{device.multiball_locks.olympus_lock.enabled}: #Diverter moded back to correct side for locking ball
+  ramp_flap_control_move_divert_right{device.multiball_locks.olympus_lock.enabled}: #Diverter moded back to correct side for locking ball
     show_flash_ramp_arrow:
       speed: 4
       show_tokens:
@@ -298,14 +298,14 @@ widget_player:
     shoot_scoop_target_yellow:
       slide: show_progress_to_ramp_mb
       action: remove
-  ormb_light_o_lock_hit{device.state_machines.ramp_flap.state=="divert_right"}: #diverter is on correct side to lock ball
+  ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_right"}: #diverter is on correct side to lock ball
     shoot_ramp_yellow:
       slide: show_progress_to_ramp_mb
       action: add
       widget_settings:
         z: 5
   #Things to do when diverter moves
-  ramp_flap_tracking_diverting_left{device.multiball_locks.olympus_lock.enabled}: #Diverter moved to other side
+  ramp_flap_control_move_divert_left{device.multiball_locks.olympus_lock.enabled}: #Diverter moved to other side
     shoot_ramp_yellow:
       slide: show_progress_to_ramp_mb
       action: remove
@@ -315,7 +315,7 @@ widget_player:
       widget_settings:
         expire: 8 sec
         z: 5
-  ramp_flap_tracking_diverting_right{device.multiball_locks.olympus_lock.enabled}: #Diverter moded back to correct side for locking ball
+  ramp_flap_control_move_divert_right{device.multiball_locks.olympus_lock.enabled}: #Diverter moded back to correct side for locking ball
     shoot_ramp_yellow:
       slide: show_progress_to_ramp_mb
       action: add
