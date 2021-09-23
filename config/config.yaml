@@ -93,6 +93,8 @@ ball_saves:
 #    auto_launch: yes
 #    balls_to_save: 1
 #    debug: yes
+
+#Seems like this one should not work since it enables but does not have a start event
   bs_scoop_eject: #showplayer in base
     source_playfield: earth_pf
     active_time: 3s
@@ -105,6 +107,8 @@ ball_saves:
     balls_to_save: 1
     debug: yes
 
+#Dont know why this is present.  Shouldnt this just be for outlanes? Also missing start event
+#Alternatively make it work as in TNA?
   bs_bottom_lanes: #show player in base
     source_playfield: earth_pf
     active_time: 5s

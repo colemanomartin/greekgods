@@ -451,7 +451,7 @@ shots:
     playfield: earth_pf
     profile: off_on
     enable_events:
-      - timer_base_left_ramp_tick{device.timers.base_left_ramp.ticks==6}
+      - timer_base_left_ramp_tick{device.timers.base_left_ramp.ticks==6} #timer_base_left_ramp_tick_started better?
     disable_events:
       - timer_base_left_ramp_complete
     hit_events:
