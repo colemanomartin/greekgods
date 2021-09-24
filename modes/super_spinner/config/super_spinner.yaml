@@ -1,7 +1,7 @@
 #config_version=5
 # Mode activates when field_spins = 100 or mystery award show_award_super_spinner posts.
-# When count from field completes, mode starts and mode pulls down scoop waiting for
-# scoop shot to activate shots, bonuses and shows
+# When count from field completes, mode starts and mode lights arrows to designate left pop
+# to activate super spinner.
 # After every 25 hits to a spinner, shooting the left pop will collect an extra bonus.
 # If the pop shot is hit, the mode continues, otherwise the mode ends without bonus.
 # SS doubles the points and lightshow on the spinners. Autofire coil knocker
@@ -10,8 +10,6 @@
 # lastly when super spinner is active hits to either olympus or poseidon area
 # gives extra ticks on the excitement timers on base.
 # It also doubles hits to hydra in field or in battle hydra mode
-# consider adding a .7 sec ball hold to the scoop eject
-# Losing count with drain. Not seeing call the shot
 #Display of meander circles is in mode base.
 mode:
   priority: 1400 # Run over base and MB modes so slides show
@@ -27,11 +25,11 @@ mode:
 
 
 #Maybe change these event names to ss_says_... and make new events in scoop mode startup section
-event_player:
-  mode_super_spinner_started:
-    - force_bb_down
-  super_spinner_kickoff_hit:
-    - release_bb_override
+#event_player:
+#  mode_super_spinner_started:
+#    - force_bb_down
+#  super_spinner_kickoff_hit:
+#    - release_bb_override
 
 variable_player:
   base_orbit_spinner_hit{not device.shots.super_spinner_kickoff.enabled}: #Dont start until scoop hit
@@ -60,8 +58,9 @@ shots:
   super_spinner_kickoff: #This shot activates releases all the modes functions
     playfield: earth_pf
     profile: one_state
+    switch: s_left_side_pop
     hit_events:
-      - base_scoop_from_pf_hit
+#      - base_scoop_from_pf_hit
       - mystery_forcing_ss_start
     enable_events:
       - mode_super_spinner_started
@@ -126,7 +125,13 @@ timers:
       - action: stop
         event: super_spinner_bonus_hit
 show_player:
-  base_orbit_spinner_hit{not device.shots.super_spinner_kickoff.enabled}: #Dont show unless scoop shot has already been hit
+  mode_super_spinner_started:
+    show_invite_pop_shot:
+      speed: 2
+  super_spinner_kickoff_hit:
+    show_invite_pop_shot:
+      action: stop
+  base_orbit_spinner_hit{not device.shots.super_spinner_kickoff.enabled}: #Dont show unless pop shot has already been hit
     show_super_orbit_spinner:
       speed: 10
       loops: 0
@@ -135,13 +140,13 @@ show_player:
       speed: 10
       loops: 0
   super_spinner_bonus_threshold:
-    show_invite_ramp_shot:
+    show_invite_pop_shot:
       speed: 2
   timer_super_spinner_countdown_complete:
-    show_invite_ramp_shot:
+    show_invite_pop_shot:
       action: stop
   super_spinner_bonus_hit:
-    show_invite_ramp_shot:
+    show_invite_pop_shot:
       action: stop
 #  mode_super_spinner_started:
 #    show_super_spinner_start:
@@ -153,8 +158,8 @@ widgets:
   invite_super_spinner:
     - type: image
       image: wedge_super_spinner
-      scale: 0.3
-      rotation: -25
+      scale: 0.30
+      rotation: 80
       x: 450
       y: 760
       anchor_x: center

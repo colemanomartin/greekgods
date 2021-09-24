@@ -10,6 +10,7 @@ mode:
   start_events: ball_starting
   priority: 100 # range 100-1M
 
+
 accruals:  # Has to live in base since field shuts down during mb
   base_p_locking_engaged: #This remembers that p_locking_elgible has fired so that if ball is lost p_ramp_mb can start with next ball.
     events: p_locking_elgible
@@ -262,6 +263,7 @@ coil_player:
     c_u_knocker:
       action: pulse
       pulse_ms: 30
+  s_accessory_active: c_u_knocker
 
 shot_profiles:
   off_on_flash:
@@ -447,7 +449,7 @@ shots:
       - drop_target_bank_cluster_up
       - drop_target_bank_cluster_mixed
       - mode_celestial_mb_starting
-  double_left_ramp:  #used to activate banked ball save mode
+  base_double_left_ramp:  #used to activate banked ball save mode
     playfield: earth_pf
     profile: off_on
     enable_events:
@@ -456,7 +458,7 @@ shots:
       - timer_base_left_ramp_complete
     hit_events:
       - left_ramp_hit
-  double_right_ramp: #used to activate banked ball save mode
+  base_double_right_ramp: #used to activate banked ball save mode
     playfield: earth_pf
     profile: off_on
     enable_events:
@@ -472,13 +474,13 @@ sequence_shots:
     switch_sequence:
       - s_ramp_opto
       - s_poseidon_lock_distal #uphill
-    sequence_timeout: 1s
+    sequence_timeout: 2s
   right_ramp: #used for lock flash show, olympus_mech and banked ball save
     playfield: earth_pf
     switch_sequence:
       - s_ramp_opto
       - s_olympus_lock_distal
-    sequence_timeout: 1s
+    sequence_timeout: 2s
 #  double_left_ramp:  #used to activate banked ball save mode
 #    playfield: earth_pf
 #    delay_event_list:

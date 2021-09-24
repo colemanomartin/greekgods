@@ -1,23 +1,23 @@
 #show_version=5
 - duration: 1
   lights:
-    l_ramp_arrow:
+    l_left_pop_upper_arrow:
       color: white
       fade: 100ms
-    l_ramp_left:
+    l_left_pop_lower_arrow:
       color: white
       fade: 100ms
-    l_ramp_right:
+    l_left_side_pop:
       color: white
       fade: 100ms
 - duration: 1
   lights:
-    l_ramp_arrow:
+    l_left_pop_upper_arrow:
       color: black
       fade: 100ms
-    l_ramp_left:
+    l_left_pop_lower_arrow:
       color: black
       fade: 100ms
-    l_ramp_right:
+    l_left_side_pop:
       color: black
       fade: 100ms

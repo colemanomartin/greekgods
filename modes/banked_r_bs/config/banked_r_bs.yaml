@@ -1,36 +1,51 @@
 #config_version=5
-# This mode starts on a double hit to the right ramp.  It shuts down if the ball save is used or a 1 min timer expires. It set up a shot for the right outlane that will disable during mb.
-# It uses a multiball without a shoot again to serve the ball.
+# This mode starts on a double hit to the right ramp.  It shuts down if the ball save
+# is used, the ball ends or the mode timer expires. Time can be added to the mode timer
+# with additional shots to the ramp. The mode works by setting up an outlane shot that
+# when hit starts the ball save/timer. When activated the bs posts ball_save_(name)_timer_start
+# that I coopt as the ball save's early ball save event.
+# Also this mode runs the show that indictes the ball save is available.
+# When a mb is running the timer that ends this mode pauses for the duration of the mb
+# shoot again. Also the shot that activates the ball save is taken off line for the
+# shoot again period so as not to be used up when there is already a mechanism for
+# returning the ball to play.
+# This mode requires the events from base:
+#     base_double_right_ramp_hit (double rampt shot to activate)
+#     right_ramp_hit (sequence shot that add more time to mode if time M 1.5 min)
 mode:
   priority: 2580 # range 100-1M
   start_events:
-    - double_right_ramp_hit
+    - base_double_right_ramp_hit
     - bottom_lane_group_hit_complete #completed all 4 bottom lanes.
   stop_events:
     - ball_ended
-    - multiball_right_outlane_started
+    - ball_save_banked_right_saving_ball
     - timer_right_bs_expiration_complete
 
-multiballs:
-  right_outlane:
+ball_saves:
+  banked_right:
+    enable_events: right_outlane_banked_ballsave_hit
+#    timer_start_events: right_outlane_banked_ballsave_hit
+    early_ball_save_events:
+       - ball_save_banked_right_timer_start #This is automatically issued from the ball save routines
+#      - timer_right_bs_lane_triggered_complete
+    auto_launch: yes
+    active_time: 1s
+    hurry_up_time: 0s
+    grace_period: 0s
+    balls_to_save: 1
     source_playfield: earth_pf
-    ball_count: 1
-    ball_count_type: add #total # increase number of playfield balls to count
-    shoot_again: 0s #ball save for MB 10 sec default
-    start_events: right_outlane_banked_ballsave_hit
-    debug: true
-
-# function moved to sweep server display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
-#  mode_banked_r_bs_started: #started.100 for higher priority?
-#    led_matrix:
-#      action: play  #Default
-#      lights: gi, insert  #right_orbit
-#  banked_r_bs_wipe_done: #Otherwise the mode hangs
-#    led_matrix:
-#      action: stop
-#      lights: gi, insert
+    debug: no
 
 timers:
+#  right_bs_lane_triggered:
+#    start_value: 1
+#    end_value: 0
+#    direction: down
+#    tick_interval: 100ms
+#    control_events:
+#      - event: right_outlane_banked_ballsave_hit
+#        action: restart
   right_bs_expiration:
     start_value: 4
     end_value: 0
@@ -39,12 +54,18 @@ timers:
     control_events:
       - event: mode_banked_r_bs_started
         action: restart #reset to starting value and start
-      - event: banked_r_ballsave_double_right_ramp_hit{device.timers.right_bs_expiration.ticks<6}
+      - event: right_ramp_hit{device.timers.right_bs_expiration.ticks<=6}
         action: add
         value: 2
       - event: bottom_lane_group_hit_complete #Give a time bonus if already running
         action: add
         value: 2
+      - event: multiball_poseidon_ramp_started
+        action: pause
+        value: 10 #Not ticks, but seconds, in this case the duration of the shoot again  This might be a problem if both mb act at same time, get double pause or potential for race condition depending on back end code.
+      - event: multiball_olympus_ramp_started
+        action: pause
+        value: 10 #Not ticks, but seconds, in this case the duration of the shoot again  This might be a problem if both mb act at same time, get double pause or potential for race condition depending on back end code.
 
 shots:
   right_outlane_banked_ballsave:  # When shot is hit it triggers a 1 ball MB effectively returning ball to play
@@ -54,19 +75,10 @@ shots:
       - multiball_olympus_ramp_started  #add hidden hole mb when written
     enable_events:
       - mode_banked_r_bs_started
-      - multiball_poseidon_ramp_ended #re-enable when a mb ends.  This should not start the mode if not already running.
-      - multiball_olympus_ramp_ended  #add hidden hole mb when written
+      - multiball_poseidon_ramp_shoot_again_ended #re-enable when a mb ball save ends.
+      - multiball_olympus_ramp_shoot_again_ended  #add for goddess mb
     switches:
       - s_right_outlane
-  banked_r_ballsave_double_right_ramp: #used to add time to banked ball save mode
-    playfield: earth_pf
-    profile: off_on
-    enable_events:
-      - timer_base_right_ramp_tick{device.timers.base_right_ramp.ticks==3}
-    disable_events:
-      - timer_base_right_ramp_complete
-    hit_events:
-      - right_ramp_hit
 
 show_player:
   timer_right_bs_expiration_tick{device.timers.right_bs_expiration.ticks>5}:
@@ -157,30 +169,8 @@ show_player:
     show_right_shoulder_1:
       action: stop
 
-#Playfield Display width: 508 height: 1190
-#> 1000 or 84% is BB < 980 upper apron; < 920 orbit
-#
-#slide_player:
-#  mode_banked_r_bs_started:
-#    ark_sweep_right:
-#      target: led_matrix
-#      background_color: 00000000 #Background with no opacity required
-#      widgets:
-#      - type: bezier
-#        points: 0,760,    75,960,    508,1060
-#        thickness: 90
-#        color: red
-#        anchor_x: top
-#        anchor_y: left
-#        expire: 0.5s
-#        events_when_removed: banked_l_bs_wipe_done
-#        animations:
-#          show_slide:
-#            - property: points
-#              value: 400,-1000,   400,-1000,   400,-1000
-#              relative: true
-#              duration: 0.5s
 
 sound_player:
   mode_banked_r_bs_started: comboballsavelocked
-  banked_r_ballsave_double_right_ramp_hit{device.timers.right_bs_expiration.ticks<6}: timeadded
+  ball_save_banked_right_saving_ball: v_ball_save
+  right_ramp_hit{device.timers.right_bs_expiration.ticks<=6}: timeadded

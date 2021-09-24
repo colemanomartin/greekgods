@@ -906,6 +906,7 @@ autofire_coils:
     enable_events: super_spinner_kickoff_hit
     disable_events: mode_super_spinner_stopped
     playfield: earth_pf
+    debug: true
 #    coil_overwrite:
 #      recycle: False
 #    switch_overwrite:
@@ -916,6 +917,7 @@ autofire_coils:
     enable_events: super_spinner_kickoff_hit
     disable_events: mode_super_spinner_stopped
     playfield: earth_pf
+    debug: true
 #    coil_overwrite:
 #      recycle: False
 #    switch_overwrite:

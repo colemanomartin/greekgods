@@ -1,19 +1,22 @@
 #config_version=5
 # This mode starts on a double hit to the left ramp.  It shuts down if the ball save
-# is used or a 1 min mode timer expires. A repeat hit to the ramp will add time to the
-# mode. The mode sets up an outlane shot that in turn starts the timer of the ball save.
-# Another timer in this mode then chain-activates the timer. This may be possible to skip
-# the timer by instead having the ball save save the ball by monitoring for the event
-# ball_save_(name)_timer_start
+# is used, the ball ends or the mode timer expires. Time can be added to the mode timer
+# with additional shots to the ramp. The mode works by setting up an outlane shot that
+# when hit starts both the ball save/timer. When activated the bs posts ball_save_(name)_timer_start
+# that I coopt as the ball save's early ball save event.
 # Also this mode runs the show that indictes the ball save is available.
-# Things to do: 1. figure out why double hits to ramp dont
-# always add more time to the outlane timer. 2. suspend mode while a MB ball save timer
-# is running and then resume when the MB timer expires. Remove redundancy of code between
-# This mode and base with regard to shots, timers.
+# When a mb is running the timer that ends this mode pauses for the duration of the mb
+# shoot again. Also the shot that activates the ball save is taken off line for the
+# shoot again period so as not to be used up when there is already a mechanism for
+# returning the ball to play.
+# Things to do: pause for goddess mb shoot again timer test for double mb race condition
+# This mode requires the events from base:
+#     base_double_left_ramp_hit (double rampt shot to activate)
+#     left_ramp_hit (sequence shot that add more time to mode if time M 1.5 min)
 mode:
   priority: 2500 # range 100-1M
   start_events:
-    - double_left_ramp_hit
+    - base_double_left_ramp_hit
     - bottom_lane_group_hit_complete    #Completed all lanes award both ball saves
   stop_events:
     - ball_ended
@@ -21,15 +24,13 @@ mode:
     - timer_left_bs_expiration_complete
 
 ball_saves:
-  #The ball save is enabled by mode starting. The timer starts
-  #When the outlane roll over shot is hit. 100ms later
-  #this mode's timer left_bs_lane_triggered completes and triggers
-  #the ball save before the trough receives the ball.
   banked_left:
-    enable_events: mode_banked_l_bs_started
-    timer_start_events: left_outlane_banked_ballsave_hit
+#    enable_events: mode_banked_l_bs_started
+#    timer_start_events: left_outlane_banked_ballsave_hit
+    enable_events: left_outlane_banked_ballsave_hit
     early_ball_save_events:
-      - timer_left_bs_lane_triggered_complete
+       - ball_save_banked_left_timer_start #This is automatically issued from the ball save routines
+#      - timer_left_bs_lane_triggered_complete
     auto_launch: yes
     active_time: 1s
     hurry_up_time: 0s
@@ -38,9 +39,15 @@ ball_saves:
     source_playfield: earth_pf
     debug: no
 
-
-
 timers:
+#  left_bs_lane_triggered:
+#    start_value: 1
+#    end_value: 0
+#    direction: down
+#    tick_interval: 100ms
+#    control_events:
+#      - event: left_outlane_banked_ballsave_hit
+#        action: restart
   left_bs_expiration:
     start_value: 4
     end_value: 0
@@ -49,43 +56,31 @@ timers:
     control_events:
       - event: mode_banked_l_bs_started #ball_waiting_to_eject_from_scoop_done
         action: restart #reset to starting value and start
-      - event: banked_l_ballsave_double_left_ramp_hit{device.timers.left_bs_expiration.ticks<6}
+      - event: left_ramp_hit{device.timers.left_bs_expiration.ticks<=6} #banked_l_ballsave_double_left_ramp_hit{device.timers.left_bs_expiration.ticks<6}
         action: add
         value: 2
       - event: bottom_lane_group_hit_complete #Give a time bonus if the mode is already running.
         action: add
         value: 2
-  left_bs_lane_triggered:
-    start_value: 1
-    end_value: 0
-    direction: down
-    tick_interval: 100ms
-    control_events:
-      - event: left_outlane_banked_ballsave_hit
-        action: restart
+      - event: multiball_poseidon_ramp_started
+        action: pause
+        value: 10 #Not ticks, but seconds, in this case the duration of the shoot again  This might be a problem if both mb act at same time, get double pause or potential for race condition depending on back end code.
+      - event: multiball_olympus_ramp_started
+        action: pause
+        value: 10 #Not ticks, but seconds, in this case the duration of the shoot again  This might be a problem if both mb act at same time, get double pause or potential for race condition depending on back end code.
 
 shots:
   left_outlane_banked_ballsave:  # Shot is used to enable bs rather than switch so bs can be deactivated during mb
     playfield: earth_pf
     disable_events:
       - multiball_poseidon_ramp_started
-      - multiball_olympus_ramp_started  #add hidden hole mb when written
+      - multiball_olympus_ramp_started
     enable_events: #Maybe enable when the mb ball saves are ended instead so the outlane bs can keep it going?
       - mode_banked_l_bs_started
-      - multiball_poseidon_ramp_ended #re-enable when a mb ends.  This should not start the mode if not already running.
-      - multiball_olympus_ramp_ended  #add hidden hole mb when written
+      - multiball_poseidon_ramp_shoot_again_ended #re-enable when a mb ball save ends.
+      - multiball_olympus_ramp_shoot_again_ended  #add for goddess mb
     switches:
       - s_left_outlane
-  banked_l_ballsave_double_left_ramp: #used to add time to banked ball save mode
-    playfield: earth_pf
-    profile: off_on
-    enable_events:
-      - left_ramp_hit #timer_base_left_ramp_tick{device.timers.base_left_ramp.ticks==6}
-    disable_events:
-      - timer_base_left_ramp_complete
-    hit_events:
-      - left_ramp_hit
-
 
 show_player:
   timer_left_bs_expiration_tick{device.timers.left_bs_expiration.ticks>5}:
@@ -178,4 +173,5 @@ show_player:
 
 sound_player:
   mode_banked_l_bs_started: comboballsavelocked
-  banked_l_ballsave_double_left_ramp_hit{device.timers.left_bs_expiration.ticks<6}: timeadded
+  ball_save_banked_left_saving_ball: v_ball_save
+  left_ramp_hit{device.timers.left_bs_expiration.ticks<=6}: timeadded
