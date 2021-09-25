@@ -1,7 +1,7 @@
 #config_version=5
 #
 # http://docs.missionpinball.org/en/latest/config/mode.html?highlight=pause%20mode use wait queue
-#
+# Look to oldmachine 1 May19 for working hades game.
 #
 #
 #
@@ -25,7 +25,7 @@ mode:
 #     - mode_bonus_starting # enter_hades_from_bonus_mode
      - enter_hades_from_relay_player #posted from base
 #    - mode_base_started
-#     - s_centuar_skilltarget_active     #Remove when testing done
+     - s_accessory_active     #Remove when testing done
   stop_events: extra_ball_earned, extra_ball_not_earned
 #  use_wait_queue: true
 
@@ -390,7 +390,7 @@ slide_player:
 show_player:
   mode_hades_bonus_game_started:
     show_all_pf_bb_leds_red:
-      speed: 1
+      loops: -1 #speed: 1
     show_four_flashes_mini_pf:
       speed: 14
       loops: 0
@@ -411,18 +411,18 @@ show_player:
     show_hades_right_ss:
       speed: 20
       loops: 0
-  s_u_left_target_active:
-    show_hades_left_target:
-      speed: 20
-      loops: 0
-  s_u_right_target_active:
-    show_hades_right_target:
-      speed: 20
-      loops: 0
-  s_u_middle_target_active:
-    show_hades_middle_target:
-      speed: 20
-      loops: 0
+#  s_u_left_target_active:
+#    show_hades_left_target:
+#      speed: 20
+#      loops: 0
+#  s_u_right_target_active:
+#    show_hades_right_target:
+#      speed: 20
+#      loops: 0
+#  s_u_middle_target_active:
+#    show_hades_middle_target:
+#      speed: 20
+#      loops: 0
   #Next 4 shows give a 1 sec flash when a grab event happens
   diverter_grab_a_activating:
     show_hades_left_ss_red:
@@ -499,9 +499,9 @@ light_player:
     l_mouth_d:
       color: black
   extra_ball_earned:
-    u_left_ss_red:
+    l_u_left_ss_red:
       color: white
       fade: 0 ms
-    u_right_ss_red:
+    l_u_right_ss_red:
       color: white
       fade: 0 ms

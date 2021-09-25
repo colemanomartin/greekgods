@@ -97,7 +97,7 @@ switches:
   s_1_0: 0
   s_1_1: 0
   s_1_7: 0
-  s_accessory: 1994
+  s_accessory: 1997
   s_ballblock: 3961
   s_diverter_midpoint: 276
   s_drop_target_distal: 1051
@@ -142,17 +142,17 @@ switches:
   s_scoop_chamber: 1820
   s_scoop_lock_0: 1452
   s_scoop_lock_1: 1379
-  s_shooterlane: 4187
+  s_shooterlane: 4189
   s_sis_left: 1192
   s_sis_right: 2120
   s_start: 15
-  s_trough_0: 3993
-  s_trough_1: 3953
-  s_trough_2: 3896
-  s_trough_3: 3749
+  s_trough_0: 3996
+  s_trough_1: 3956
+  s_trough_2: 3899
+  s_trough_3: 3752
   s_trough_4: 3249
-  s_trough_chamber: 3998
-  s_trough_jam: 3977
+  s_trough_chamber: 4001
+  s_trough_jam: 3980
   s_u_left_ear_0: 1
   s_u_left_ear_1: 1
   s_u_left_ear_2: 1

@@ -60,7 +60,7 @@ modes:
   - banked_l_bs #250000
   - banked_r_bs #2500
   - sweep_server #3000
-#  - hades_mini_game
+  - hades_bonus_game
 coil_player:
   machine_reset_phase_2: #drops block at startup in case a ball is in subway
     c_ballblock_fall:

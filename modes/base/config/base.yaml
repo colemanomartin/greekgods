@@ -263,7 +263,12 @@ coil_player:
     c_u_knocker:
       action: pulse
       pulse_ms: 30
-  s_accessory_active: c_u_knocker
+
+queue_relay_player:
+  ball_ending{current_player.ball==3 and current_player.score >= 10000}:
+    post: enter_hades_from_relay_player
+    wait_for: mode_hades_bonus_game_stopping
+
 
 shot_profiles:
   off_on_flash:

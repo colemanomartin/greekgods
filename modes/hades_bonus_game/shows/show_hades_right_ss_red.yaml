@@ -3,9 +3,9 @@
 
 - duration: 1
   lights:
-    u_right_ss_red:
+    l_u_right_ss_red:
       color: white
 - duration: 1
   lights:
-    u_right_ss_red:
+    l_u_right_ss_red:
       color: white

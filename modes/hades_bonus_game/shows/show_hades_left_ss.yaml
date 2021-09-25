@@ -3,13 +3,13 @@
 
 - duration: 1
   lights:
-    l_u_left_ss_rgb:
+    l_u_left_ss_red:
       color: white
-    u_left_ss_white:
-      color: white
+    l_u_left_ss_white:
+      color: black
 - duration: 1
   lights:
-    l_u_left_ss_rgb:
+    l_u_left_ss_red:
       color: black
-    u_left_ss_white:
+    l_u_left_ss_white:
       color: white
