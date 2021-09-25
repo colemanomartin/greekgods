@@ -6,10 +6,4 @@
     l_u_right_ss_red:
       color: white
     l_u_right_ss_white:
-      color: black
-- duration: 1
-  lights:
-    l_u_right_ss_red:
-      color: black
-    l_u_right_ss_white:
       color: white

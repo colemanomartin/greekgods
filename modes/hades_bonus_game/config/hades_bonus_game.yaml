@@ -2,6 +2,7 @@
 #
 # http://docs.missionpinball.org/en/latest/config/mode.html?highlight=pause%20mode use wait queue
 # Look to oldmachine 1 May19 for working hades game.
+# Currently ball is brought into play using a multiball on the hades pf.
 #
 #
 #
@@ -12,9 +13,10 @@
 #
 #
 #
-#
-#
-#
+#do: add scoring to targets and arrows to rivers Animate arrows
+# Add a show for extra ball. 
+# ways to improve: allow ball to play out after extra ball earned. May be best not to deal with this as an
+# multiball but rather a request ball to pf and enable a ball save
 #
 mode:
   priority: 1500 # range 100-1M
@@ -25,7 +27,7 @@ mode:
 #     - mode_bonus_starting # enter_hades_from_bonus_mode
      - enter_hades_from_relay_player #posted from base
 #    - mode_base_started
-     - s_accessory_active     #Remove when testing done
+     - s_ramp_opto_active     #Remove when testing done
   stop_events: extra_ball_earned, extra_ball_not_earned
 #  use_wait_queue: true
 
@@ -33,9 +35,10 @@ multiballs:
   hades_play:
     source_playfield: hades_pf
     ball_count: 1
-    ball_count_type: add  # increase number of playfield balls by couny
+    ball_count_type: add  # increase number of playfield balls by count
     shoot_again: 24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
     start_events: hades_bonus_intro_show_done
+    stop_events: extra_ball_earned #Kills the shoot again if ball earned while still in play
     debug: true
 #
 #coil_player:
@@ -179,7 +182,7 @@ timers:
   river_a: #activates on sequence shot not shot
     debug: true
 #    restart_on_complete: yes
-    start_value: 20
+    start_value: 130 #20
     end_value: 0
     direction: down
     tick_interval: 1s
@@ -187,8 +190,8 @@ timers:
       - action: start
         event: left_river_top_to_bottom_hit
       - action: restart
-        event: left_river_top_to_bottom_hit
-      - action: reset
+#        event: left_river_top_to_bottom_hit
+#      - action: reset
         event: timer_river_a_complete
       - action: stop
         event: mode_hades_bonus_game_stopping
@@ -200,7 +203,7 @@ timers:
 #        event: diverter_left_grab_A_deactivating
   river_b:
     debug: true
-    start_value: 30
+    start_value: 130 #30
     end_value: 0
     direction: down
     tick_interval: 1s
@@ -208,8 +211,8 @@ timers:
       - action: start
         event: left_river_bottom_to_top_hit
       - action: restart
-        event: left_river_bottom_to_top_hit
-      - action: reset
+#        event: left_river_bottom_to_top_hit
+#      - action: reset
         event: timer_river_b_complete
       - action: stop
         event: mode_hades_bonus_game_stopping
@@ -218,7 +221,7 @@ timers:
 #        event: diverter_left_grab_B_deactivating
   river_c:
     debug: true
-    start_value: 20
+    start_value: 130 #20
     end_value: 0
     direction: down
     tick_interval: 1s
@@ -226,8 +229,8 @@ timers:
       - action: start
         event: right_river_top_to_bottom_hit
       - action: restart
-        event: right_river_top_to_bottom_hit
-      - action: reset
+#        event: right_river_top_to_bottom_hit
+#      - action: reset
         event: timer_river_c_complete
       - action: stop
         event: mode_hades_bonus_game_stopping
@@ -236,7 +239,7 @@ timers:
 #        event: diverter_left_grab_C_deactivating
   river_d:
     debug: true
-    start_value: 30
+    start_value: 130 #30
     end_value: 0
     direction: down
     tick_interval: 1s
@@ -244,8 +247,8 @@ timers:
       - action: start
         event: right_river_bottom_to_top_hit
       - action: restart
-        event: right_river_bottom_to_top_hit
-      - action: reset
+#        event: right_river_bottom_to_top_hit
+#      - action: reset
         event: timer_river_d_complete
       - action: stop
         event: mode_hades_bonus_game_stopping
@@ -285,9 +288,10 @@ slide_player:
       background_color: white
       widgets:
       - type: text
-        text: Get All 4 Bats Flying
+        text: Scare All Bats From Tunnels
+        font_name: GreekGods2
         color: black
-        y: 2%
+        y: 6%
         anchor_x: center
         anchor_y: bottom
         font_size: 50
@@ -295,7 +299,7 @@ slide_player:
         image: bat
         scale: 0.3
         y: 88%
-        x: 65%
+        x: 70%
         anchor_x: center
         anchor_y: center
         opacity: 0
@@ -307,7 +311,7 @@ slide_player:
               easing: linear
             - property: opacity
               value: 1
-              duration:  14s
+              duration:  130s #14s
               easing: out_back
             - property: opacity
               value: 0
@@ -328,7 +332,7 @@ slide_player:
               easing: linear
             - property: opacity
               value: 1
-              duration:  14s
+              duration:  130s #14s
               easing: out_back
             - property: opacity
               value: 0
@@ -349,7 +353,7 @@ slide_player:
               easing: linear
             - property: opacity
               value: 1
-              duration:  14s
+              duration:  130s #14s
               easing: out_back
             - property: opacity
               value: 0
@@ -358,7 +362,7 @@ slide_player:
         image: bat
         scale: 0.3
         y: 88%
-        x: 35%
+        x: 25%
         anchor_x: center
         anchor_y: center
         opacity: 0
@@ -370,7 +374,7 @@ slide_player:
               easing: linear
             - property: opacity
               value: 1
-              duration:  14s
+              duration:  130s #14s
               easing: out_back
             - property: opacity
               value: 0
@@ -402,7 +406,7 @@ show_player:
       loops: 0
   accelerate_rivers:
     show_pulse_leds_red:
-      speed: 10 #Default loops=-1 meaning until the calling mode ends
+      speed: 8 #Default loops=-1 meaning until the calling mode ends
   s_u_left_slingshot_active:
     show_hades_left_ss:
       speed: 20

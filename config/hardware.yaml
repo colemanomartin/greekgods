@@ -510,14 +510,14 @@ coils:
         number: A6-B1-6
         label:
         tags:
-        #default_pulse_power: 0.6 # was 1
-        default_pulse_ms: 5
+        default_pulse_power: 0.6 # was 1
+        default_pulse_ms: 7
     c_u_right_slingshot:
         number: A6-B1-0
         label:
         tags:
-        #default_pulse_power: 0.6 # was 1
-        default_pulse_ms: 5
+        default_pulse_power: 0.6 # was 1
+        default_pulse_ms: 7
     c_u_right_magnet:
         number: A6-B1-2
         label:
@@ -886,8 +886,9 @@ ball_devices:
     entrance_event_timeout: 1s
     target_on_unexpected_ball: hades_pf
     auto_fire_on_unexpected_ball: false
+    eject_events: hades_bonus_intro_show_done
     debug: true
-    tags: home, trough #, drain
+    tags: home, trough #, drain must have trough tag or it keeps re-ejecting and wont drain 
 
 
 playfields:
@@ -897,7 +898,6 @@ playfields:
   hades_pf:
     tags: mini
     default_source_device: bd_u_trough  # use None in steps before 8
-
 
 autofire_coils:
   orbit_spinner_knocker:
@@ -1098,7 +1098,7 @@ flippers:
     main_coil: c_u_flipper_left
     activation_switch: s_left_flipper
     enable_events: mode_hades_bonus_game_started, mode_hades_mini_game_started
-    disable_events: mode_hades_bonus_game_stopped, service_mode_entered, mode_hades_mini_game_stopped
+    disable_events: mode_hades_bonus_game_stopped, mode_hades_mini_game_stopped
 
   u_right_flipper:
     debug: true
@@ -1106,4 +1106,4 @@ flippers:
     main_coil: c_u_flipper_right
     activation_switch: s_right_flipper
     enable_events: mode_hades_bonus_game_started, mode_hades_mini_game_started
-    disable_events: mode_hades_bonus_game_stopped, service_mode_entered, mode_hades_mini_game_stopped
+    disable_events: mode_hades_bonus_game_stopped, mode_hades_mini_game_stopped
