@@ -510,14 +510,14 @@ coils:
         number: A6-B1-6
         label:
         tags:
-        default_pulse_power: 0.6 # was 1
-        default_pulse_ms: 7
+#        default_pulse_power: 0.6 # was 1
+        default_pulse_ms: 6
     c_u_right_slingshot:
         number: A6-B1-0
         label:
         tags:
-        default_pulse_power: 0.6 # was 1
-        default_pulse_ms: 7
+#        default_pulse_power: 0.6 # was 1
+        default_pulse_ms: 6
     c_u_right_magnet:
         number: A6-B1-2
         label:
@@ -888,7 +888,7 @@ ball_devices:
     auto_fire_on_unexpected_ball: false
     eject_events: hades_bonus_intro_show_done
     debug: true
-    tags: home, trough #, drain must have trough tag or it keeps re-ejecting and wont drain 
+    tags: home, trough #, drain must have trough tag or it keeps re-ejecting and wont drain
 
 
 playfields:

@@ -13,13 +13,10 @@
 #
 #
 #
-#do:  Add a show for extra ball. Consider adding bats as widgets. Have bats fly across screen.
-# Consider controling mode with state machine to allow mode to continue after ball earned.
-# Check slings and accelerators. Look at accelerator rules. See if it terminates as it should
+#do: add scoring to targets and arrows to rivers Animate arrows
+# Add a show for extra ball. 
 # ways to improve: allow ball to play out after extra ball earned. May be best not to deal with this as an
-# multiball but rather a request ball to pf and enable a ball save. Consider switching lower trough
-# to an untagged ball device and control ball entry to underworld via its eject events and instead of
-# ball save simply have it re-eject if within the window
+# multiball but rather a request ball to pf and enable a ball save
 #
 mode:
   priority: 1500 # range 100-1M
@@ -61,17 +58,17 @@ variable_player:
   s_u_left_target_active:
     score: 1000
   s_u_middle_target_active:
-    score: 1500
+    score: 1000
   s_u_right_target_active:
     score: 1000
   left_river_top_to_bottom_hit: #River A
-    score: 1750
+    score: 750
   left_river_bottom_to_top_hit: # River B
-    score: 2500
+    score: 750
   right_river_top_to_bottom_hit: #River C
-    score: 1750
+    score: 750
   right_river_bottom_to_top_hit: #River D
-    score: 2500
+    score: 750
   ball_started:                  # reset rivers to 0 with ball start
     rivers_lit:
       int: 0
@@ -269,6 +266,9 @@ sequences:
          - balldevice_bd_u_trough_ball_enter
        events_when_complete: extra_ball_not_earned
 
+
+
+
 slide_player:
   start_countdown_movie:
     hades_playfield_slide:
@@ -288,7 +288,7 @@ slide_player:
       background_color: white
       widgets:
       - type: text
-        text: Wake All Bats From Tunnels
+        text: Scare All Bats From Tunnels
         font_name: GreekGods2
         color: black
         y: 6%
@@ -461,74 +461,6 @@ show_player:
 #    show_hades_right_ss_red:
 #      speed: 10
 #      loops: 0
-
-widgets:
-  scored_1000_left:
-      type: text
-      text: 1000
-      font_name: GreekGods2
-      color: black
-      opacity: 1
-      y: 90%
-      x: 10%
-      anchor_x: center
-      anchor_y: bottom
-      font_size: 40
-      expire: 1500ms
-      animations:
-        add_to_slide:
-          - property: x,y,opacity
-            value: -2%, 5%, -1
-            relative: true
-            duration:  1500ms
-  scored_1000_right:
-      type: text
-      text: 1000
-      font_name: GreekGods2
-      color: black
-      opacity: 1
-      y: 90%
-      x: 90%
-      anchor_x: center
-      anchor_y: bottom
-      font_size: 40
-      expire: 1500ms
-      animations:
-        add_to_slide:
-          - property: x,y,opacity
-            value: 2%, 5%, -1
-            relative: true
-            duration:  1500ms
-  scored_1500_center:
-      type: text
-      text: 1500
-      font_name: GreekGods2
-      color: black
-      opacity: 1
-      y: 90%
-      x: 50%
-      anchor_x: center
-      anchor_y: bottom
-      font_size: 40
-      expire: 1500ms
-      animations:
-        add_to_slide:
-          - property: y, opacity
-            value: 5%, -1
-            relative: true
-            duration:  1500ms
-
-wigit_player:
-  s_u_left_target_active:
-    scored_1000_left:
-      target: playfield_lcd
-  s_u_middle_target_active:
-    scored_1500_center:
-      target: playfield_lcd
-  s_u_right_target_active:
-    scored_1000_right:
-      target: playfield_lcd
-
 sound_player:
   timer_river_a_started: snd_bat1
   timer_river_b_started: snd_bat2
@@ -537,6 +469,8 @@ sound_player:
   s_u_left_target_active: snd_hades_target
   s_u_middle_target_active: snd_hades_target
   s_u_right_target_active: snd_hades_target
+
+
 
 light_player:
   mode_hades_bonus_game_started:
