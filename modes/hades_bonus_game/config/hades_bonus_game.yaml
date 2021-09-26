@@ -488,7 +488,7 @@ widgets:
       color: black
       opacity: 1
       y: 90%
-      x: 90%
+      x: 81%
       anchor_x: center
       anchor_y: bottom
       font_size: 40
@@ -518,7 +518,7 @@ widgets:
             relative: true
             duration:  1500ms
 
-wigit_player:
+widget_player:
   s_u_left_target_active:
     scored_1000_left:
       target: playfield_lcd
