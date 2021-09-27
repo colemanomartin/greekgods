@@ -10,6 +10,8 @@ mode:
   start_events: ball_starting
   priority: 100 # range 100-1M
 
+sound_player:
+  s_accessory_active: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
 
 accruals:  # Has to live in base since field shuts down during mb
   base_p_locking_engaged: #This remembers that p_locking_elgible has fired so that if ball is lost p_ramp_mb can start with next ball.

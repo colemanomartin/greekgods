@@ -36,9 +36,9 @@ shots:
   base_orbit_spinner: 16329
   base_orbit_spinner_2: 16329
   base_poseidon_gate: 9924
-  base_poseidon_left_slingshot: 5376
-  base_poseidon_pop: 6217
-  base_poseidon_right_slingshot: 5360
+  base_poseidon_left_slingshot: 5378
+  base_poseidon_pop: 6219
+  base_poseidon_right_slingshot: 5361
   base_ramp: 5093
   base_revealed_slingshot: 1005
   base_right_inlane: 1715
@@ -58,7 +58,7 @@ shots:
   field_invite_hydra_at_scoop: 15
   field_invite_super_spinner_at_scoop: 24
   field_olympus_mech: 9577
-  field_poseidon_mech: 22795
+  field_poseidon_mech: 22800
   goddess_bb: 1
   goddess_left_side_pop: 189
   goddess_made_orbit: 112
@@ -88,7 +88,7 @@ shots:
   river_c_mini: 1
   river_d: 11
   river_d_mini: 1
-  sis_left_poseidon_mech: 12956
+  sis_left_poseidon_mech: 12961
   sis_right_olympus_mech: 3564
   skill_shot_rotation: 1526
   super_spinner_bonus: 41
@@ -96,12 +96,12 @@ shots:
   super_spinner_olympus_mech: 370
   super_spinner_poseidon_mech: 1835
   top_o_lane: 192
-  top_p_lane: 163
+  top_p_lane: 164
 switches:
   s_1_0: 0
   s_1_1: 0
   s_1_7: 0
-  s_accessory: 2000
+  s_accessory: 2004
   s_ballblock: 3979
   s_diverter_midpoint: 277
   s_drop_target_distal: 1055
@@ -122,15 +122,15 @@ switches:
   s_olympus_lock_proximal: 2307
   s_olympus_lower_pop: 2969
   s_olympus_right_pop: 2426
-  s_olympus_rollover: 3986
+  s_olympus_rollover: 3990
   s_olympus_spinner: 27155
   s_orbit_spinner: 16329
   s_poseidon_gate: 9924
-  s_poseidon_left_slingshot: 5376
+  s_poseidon_left_slingshot: 5378
   s_poseidon_lock_distal: 2075
   s_poseidon_lock_proximal: 1616
-  s_poseidon_pop: 6217
-  s_poseidon_right_slingshot: 5360
+  s_poseidon_pop: 6219
+  s_poseidon_right_slingshot: 5361
   s_posideon_rollover: 3160
   s_powerball_left_distal: 0
   s_powerball_left_proximal: 0
@@ -146,17 +146,17 @@ switches:
   s_scoop_chamber: 1835
   s_scoop_lock_0: 1463
   s_scoop_lock_1: 1390
-  s_shooterlane: 4275
+  s_shooterlane: 4281
   s_sis_left: 1199
   s_sis_right: 2120
   s_start: 15
-  s_trough_0: 4075
-  s_trough_1: 4035
-  s_trough_2: 3978
-  s_trough_3: 3828
+  s_trough_0: 4081
+  s_trough_1: 4041
+  s_trough_2: 3984
+  s_trough_3: 3834
   s_trough_4: 3307
-  s_trough_chamber: 4080
-  s_trough_jam: 4059
+  s_trough_chamber: 4086
+  s_trough_jam: 4065
   s_u_left_ear_0: 116
   s_u_left_ear_1: 241
   s_u_left_ear_2: 174

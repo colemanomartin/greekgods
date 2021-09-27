@@ -12,7 +12,7 @@ mode:
 
 
 sound_player:
-  mode_sound_controller_started{player==1 and ball==1}: welcomeback # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
+  mode_sound_controller_started{player==1 and ball==1}: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
 
 #  mode_av_server_2k_started: snd_startbutton
   player_added: snd_startbutton

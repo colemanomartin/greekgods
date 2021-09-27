@@ -44,3 +44,5 @@ show_player:
 #    left_ballguide: 002400
 #    spinner_strip: orangered
 #    pop_strip: yellow
+sound_player:
+  game_start: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
