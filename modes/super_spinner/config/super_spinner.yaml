@@ -282,3 +282,7 @@ slide_player:
         anchor_x: center
         anchor_y: center
         font_size: 60
+
+sound_player:
+  super_spinner_kickoff: v_super_spinner_engaged
+  super_spinner_bonus_threshold: v_hit_the_lower_pop_for_bonus

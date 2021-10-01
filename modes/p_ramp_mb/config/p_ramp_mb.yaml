@@ -86,6 +86,16 @@ shots:
     disable_events: prmb_start_shot_hit
     hit_events: base_scoop_from_pf_hit
     debug: true
+  prmb_jackpot:
+    playfield: earth_pf
+    profile: flashing_off_o
+    enable_events: multiball_poseidon_ramp_started
+    hit_events: left_ramp_hit
+    debug: true
+
+variable_player:
+  prmb_jackpot_hit:
+    score: 5000
 
 timers:
   prmb_allow_ballblock_to_settle: # used to allow ball block to register hit and activate timer in mode_scoop so timer can be paused. Replace this timer with show when appropriate
@@ -447,11 +457,18 @@ slide_player:
 #    file: shoot_rampmb.gif
 
 sound_player:
-#  mode_poseidon_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2}: shootramplockballs
-  multiball_poseidon_ramp_started: multiball
-#  multiball_lock_poseidon_lock_full: shoot_ramp_mb #defigned in sounds in config
-  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1}: v_ball_1_locked
-  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 2}: v_ball_2_locked
+  multiball_poseidon_ramp_started: v_multiball
+  multiball_lock_poseidon_lock_full: v_shoot_scoop_mb #defigned in sounds in config
+  prmb_jackpot_hit: v_jackpot
+  mode_poseidon_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and device.servos.ramp_servo.position==0.11}: v_shoot_ramp_to_lock_ball #0.11=divert L 0.51=divert R
+  right_ramp_hit{device.multiball_locks.poseidon_lock.enabled}: v_move_powerball_to_other_side_to_lock_ball
+  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1 and device.multiball_locks.olympus_lock.locked_balls == 0}: v_ball_1_locked
+  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 2 and device.multiball_locks.olympus_lock.locked_balls == 0}: v_ball_2_locked
+  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1 and device.multiball_locks.olympus_lock.locked_balls == 1}: v_ball_2_locked
+  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 2 and device.multiball_locks.olympus_lock.locked_balls == 1}: v_ball_3_locked
+  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1 and device.multiball_locks.olympus_lock.locked_balls == 2}: v_ball_3_locked
+  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 2 and device.multiball_locks.olympus_lock.locked_balls == 2}: v_ball_4_locked
+
 #  multiball_lock_poseidon_lock_locked_ball{device.ball_locks.bd_poseidon_ramp.total_balls_locked == 2}: ball2locked
 #multiball_lock_poseidon_lock_locked_ball'====== Args={'total_balls_locked': 1}
 #multiball_lock_poseidon_lock_locked_ball

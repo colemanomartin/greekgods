@@ -13,7 +13,7 @@ sound_system:  #http://docs.missionpinball.org/en/latest/sound/basic_setup.html?
        voice:
           type: standard
           simultaneous_sounds: 1
-          volume: 0.7
+          volume: 1
        sfx:
           type: standard
           simultaneous_sounds: 4
@@ -38,60 +38,9 @@ sounds:
     volume: 1
     max_queue_time: 0
     track: sfx
-  shoot_ramp_mb:
-    file: shootrampmultiball.ogg
-    volume: 1
-    max_queue_time: 2s
-    track: voice
-  hitagain:
-    file: hititagain.ogg
-    volume: 1
-    max_queue_time: 100ms
-    track: voice
-  shootblinkingtarget:
-    file: shoottheblinkingtarget.ogg
-    volume: 1
-    track: voice
-  v_combo_bonus:
-    file: combobonus.ogg
-    volume: 0.8
-    track: voice
-  v_ball_locked:
-    file: balllocked.ogg
-    volume: 0.8
-    track: voice
-  v_ball_1_locked:
-    file: ball1locked.ogg
-    volume: 0.7
-    track: voice
-  v_ball_2_locked:
-    file: ball2locked.ogg
-    volume: 0.7
-    track: voice
-  v_ball_3_locked:
-    file: ball3locked.ogg
-    volume: 0.7
-    track: voice
-  v_ball_4_locked:
-    file: ball4locked.ogg
-    volume: 0.7
-    track: voice
-  v_ball_save:
-    file: ballsave.ogg
-    volume: 0.7
-    track: voice
-  v_welcome:
-    file: cmgg2_welcome.ogg
-    volume: 1
-    track: voice
-#  v_nice:
-#    file: nice.ogg
-#    volume: 0.7
-#    track: voice
   snd_underworld_open:
     file: underworldopen.ogg
     track: sfx
-
   snd_bat1:
     file: bat1.ogg
     track: sfx
@@ -165,6 +114,175 @@ sounds:
   snd_shield:
     file: shield.ogg
     track: sfx
+
+  v_shoot_scoop_mb:
+    file: cmgg2_shoot_scoop_for_mb.ogg
+    volume: 1
+    max_queue_time: 2s
+    track: voice
+  v_multiball:
+    file: cmgg2_multiball.ogg
+    volume: 1
+    max_queue_time: 100ms
+    track: voice
+  #shootblinkingtarget:
+  #  file: shoottheblinkingtarget.ogg
+  #  volume: 1
+  #  track: voice
+  v_goddess_awarded:
+    file: cmgg2_goddess_awarded.ogg
+    volume: 1
+    max_queue_time: 2s
+    track: voice
+  #v_ball_locked:
+  #  file: balllocked.ogg
+  #  volume: 0.8
+  #  track: voice
+  v_ball_1_locked:
+    file: cmgg2_ball_1_locked.ogg
+    volume: 1
+    track: voice
+  v_ball_2_locked:
+    file: cmgg2_ball_2_locked.ogg
+    volume: 1
+    track: voice
+  v_ball_3_locked:
+    file: cmgg2_ball 3_locked.ogg
+    volume: 1
+    track: voice
+  v_ball_4_locked:
+    file: cmgg2_ball_4_locked.ogg
+    volume: 1
+    track: voice
+  v_ball_saved:
+    file: cmgg2_ballsaved.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_welcome:
+    file: cmgg2_welcome.ogg
+    volume: 1
+    track: voice
+  v_double_outlane_bs_awarded:
+    file: cmgg2_double_outlane_bs_awarded.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_right_outlane_bs_awarded:
+    file: cmgg2_right_outlane_bs_awarded.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_left_outlane_bs_awarded:
+    file: cmgg2_left_outlane_bs_awarded.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_move_powerball_to_other_side_to_lock_ball:
+    file: cmgg2_move_powerball_to_other_side_to_lock_ball.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_shoot_ramp_to_lock_ball:
+    file: cmgg2_shoot_ramp_to_lock_ball.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_complete_drop_targets_to_qualify_mystery_mode:
+    file: cmgg2_complete_drop_targets_to_qualify_mystery_mode.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_hit_blinking_band_enable_mystery_award:
+    file: cmgg2_hit_blinking_band_enable_mystery_award.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_shoot_orbit_hole_for_mystery_award:
+    file: cmgg2_shoot_orbit_hole_for_mystery_award.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_double_outlane_bs_awarded:
+    file: cmgg2_double_outlane_bs_awarded.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_completed_lane_lights_award_bs:
+    file: cmgg2_completed_lane_lights_award_bs.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_extra_ball_awarded:
+    file: cmgg2_extra_ball_awarded
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_hades_has_you:
+    file: cmgg2_hades_has_you.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_you_returned_underworld:
+    file: cmgg2_you_returned_underworld.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_your_soul_stays:
+    file: cmgg2_your_soul_stays.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_you_returned_underworld:
+    file: cmgg2_you_returned_underworld.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_shoot_tunnels_bats:
+    file: cmgg2_shoot_tunnels_bats.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_super_spinner_engaged:
+    file: cmgg2_super_spinner_engaged.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_hit_the_lower_pop_for_bonus:
+    file: cmgg2_hit_the_lower_pop_for_bonus.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_mystery_award:
+    file: cmgg2_mystery_award.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+#  v_hit_all_pops_to_summon_goddess:
+#    file: cmgg2_hit_all_pops_to_summon_goddess.ogg
+#    volume: 1
+#    track: voice
+  v_ready_locks_by_scoring:
+    file: cmgg2_ready_locks_by_scoring.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_shoot_ramp_twice_outlane_bs:
+    file: cmgg2_shoot_ramp_twice_outlane_bs.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_skill_shot_awarded:
+    file: cmgg2_skill_shot_awarded.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_super_skill_shot_awarded:
+    file: cmgg2_super_skill_shot_awarded.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+
   snd_sledge_riff_pre_0:
     file: sledge_riff_pre_0.ogg
 #    volume: 1

@@ -204,9 +204,9 @@ variable_player:
   skill_state_machine_launched_to_clean:
     score: 20000
 
-#sound_player:
-#  skill_state_machine_lane_changed_to_dirty: v_nice
-#  skill_state_machine_launched_to_clean: v_nice
+sound_player:
+  skill_state_machine_lane_changed_to_dirty: v_skill_shot_awarded
+  skill_state_machine_launched_to_clean: v_super_skill_shot_awarded
 
 show_player:
   #indicate the default lane on the orbit, has to match advance_events: mode_skill_shot_started in shots

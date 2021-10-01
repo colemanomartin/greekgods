@@ -133,6 +133,18 @@ shots:
     playfield: earth_pf
     hit_events:
       - ballblock_hit
+  goddess_jackpot:
+    playfield: earth_pf
+    profile: flashing_off_o
+    enable_events: multiball_goddess_started
+    hit_events: base_hole_distal_hit
+    debug: true
+
+variable_player:
+  goddess_jackpot_hit:
+    score: 20000
+
+
 event_player:
   balldevice_bd_scoop_ball_eject_success:
     - goddess_need_rapid_bb_reset_hit|20ms #Spoof of above shot build in a delay to allow timer to start so this event is picked up  #Order hestia artemus aphrodite athena
@@ -555,11 +567,12 @@ slide_player:
         font_size: 45
 
 sound_player:
+  goddess_jackpot_hit: v_jackpot
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==1}: v_ball_1_locked
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==2}: v_ball_2_locked
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==3}: v_ball_3_locked
   goddess_trigger_mb_release_hit: v_ball_4_locked
-  multiball_goddess_started: multiball
+  multiball_goddess_started: v_multiball
   goddess_made_orbit_hit: snd_underworld_open
 
 variable_player:

@@ -171,6 +171,6 @@ show_player:
 
 
 sound_player:
-  mode_banked_r_bs_started: comboballsavelocked
-  ball_save_banked_right_saving_ball: v_ball_save
-  right_ramp_hit{device.timers.right_bs_expiration.ticks<=6}: timeadded
+  mode_banked_r_bs_started: v_right_outlane_bs_awarded
+  ball_save_banked_right_saving_ball: v_ball_saved
+#  right_ramp_hit{device.timers.right_bs_expiration.ticks<=6}: timeadded

@@ -543,7 +543,7 @@ servos: #http://docs.missionpinball.org/en/dev/mechs/diverters/servo_as_diverter
   ramp_servo:
     number: 2-6
     positions:
-      0.11: ramp_servo_divert_left          # sent by event player in mode servo
+      0.11: ramp_servo_divert_left          # sent by event player in mode servo also used by p_ramp_mb snd_player to check servo position
       0.06: ramp_servo_divert_left_extreme  # sent by servo showplayer for unjamming
       0.51: ramp_servo_divert_right         # sent by event player in mode servo
       0.57: ramp_servo_divert_right_extreme # sent by servo showplayer for unjamming

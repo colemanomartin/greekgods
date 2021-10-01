@@ -502,3 +502,6 @@ widget_player: #To play the menu items
   menu_summon_goddess:
     summon_goddess:
       target: playfield_lcd
+
+sound_player:
+  mystery_hole_received_ball_hit: v_mystery_award

@@ -10,11 +10,65 @@ mode:
   start_events: ball_started #maybe game started, non-game mode?
   priority: 175 # range 100-1M
 
+accruals:  # These are designed to fire once to give instructions a single time during the game
+  sound_drop_target_instructions:
+    events: drop_target_bank_cluster_mixed
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  sound_revealed_band_instructions:
+    events: base_revealed_slingshot_hit
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  sound_ready_for_mystery_instructions:
+    events: field_says_mystery_time
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  sound_lane_light_instructions:
+    events:
+      - base_right_inlane
+      - base_left_inlane
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  sound_goddess_award_instructions:
+    events: #Play instructions once after first 3 pops hit
+      - logicblock_base_goddesses_progressed_updated{device.counters.base_goddesses_progressed.value==1}
+      - logicblock_base_goddesses_progressed_updated{device.counters.base_goddesses_progressed.value==2}
+      - logicblock_base_goddesses_progressed_updated{device.counters.base_goddesses_progressed.value==3}
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  sound_ready_locks_by_scoring_instructions:
+    events: #when either status bar gets half full, announce instructions
+      - logicblock_field_olympus_excitement_updated{device.counters.field_olympus_excitement.value==12},  logicblock_field_poseidon_excitement_updated{device.counters.field_poseidon_excitement.value==12}
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  sound_outlane_ballsave_instructions:
+    events: left_ramp_hit, right_ramp_hit #hit either ramp
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+
+
 
 sound_player:
+  #these instructions each play once early in game 
+  logicblock_sound_drop_target_instructions_complete: v_complete_drop_targets_to_qualify_mystery_mode
+  logicblock_sound_revealed_band_instructions_complete: v_hit_blinking_band_enable_mystery_award
+  logicblock_sound_ready_for_mystery_instructions_complete: v_shoot_orbit_hole_for_mystery_award
+  logicblock_sound_lane_light_instructions_complete: v_completed_lane_lights_award_bs
+# logicblock_sound_goddess_award_instructions_complete: v_hit_all_pops_to_summon_goddess
+  logicblock_sound_ready_locks_by_scoring_instruction_complete: v_ready_locks_by_scoring
+  logicblock_sound_outlane_ballsave_instructions_complete: v_shoot_ramp_twice_outlane_bs
+
   mode_sound_controller_started{player==1 and ball==1}: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
 
 #  mode_av_server_2k_started: snd_startbutton
+  extra_ball_awarded: v_extra_ball_awarded
   player_added: snd_startbutton
   base_right_slingshot_hit: snd_right_main_ss
   base_left_slingshot_hit: snd_left_main_ss
@@ -46,15 +100,14 @@ sound_player:
   ball_waiting_to_eject_from_scoop: explosionlong
   base_sis_left_arrived_hit: snd_sis #divert_left
   base_sis_right_arrived_hit: snd_sis #divert_right
-  base_hestia_summoned: v_combo_bonus
-  base_demeter_summoned: v_combo_bonus
-  base_hera_summoned: v_combo_bonus
-  base_hecate_summoned: v_combo_bonus
-  base_artemus_summoned: v_combo_bonus
-  base_athena_summoned: v_combo_bonus
-  base_aphrodite_summoned: v_combo_bonus
-  ball_save_bs_default_saving_ball: v_ball_save
-  ball_save_bs_scoop_eject_saving_ball: v_ball_save
+
+  base_hestia_summoned: v_goddess_awarded
+  base_artemus_summoned: v_goddess_awarded
+  base_athena_summoned: v_goddess_awarded
+  base_aphrodite_summoned: v_goddess_awarded
+  ball_save_bs_default_saving_ball: v_ball_saved
+  ball_save_bs_scoop_eject_saving_ball: v_ball_saved
+
 #  river_a_hit: snd_river
 #  river_b_hit: snd_river
 #  river_c_hit: snd_river

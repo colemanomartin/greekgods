@@ -537,7 +537,10 @@ sound_player:
   s_u_left_target_active: snd_hades_target
   s_u_middle_target_active: snd_hades_target
   s_u_right_target_active: snd_hades_target
-
+  mode_hades_bonus_game_started: v_hades_has_you
+  extra_ball_not_earned: v_your_soul_stays
+  extra_ball_earned: v_you_returned_underworld
+  hades_bonus_intro_show_done: v_shoot_tunnels_bats
 light_player:
   mode_hades_bonus_game_started:
     l_backlight_rgb:
