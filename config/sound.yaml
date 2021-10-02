@@ -147,7 +147,7 @@ sounds:
     volume: 1
     track: voice
   v_ball_3_locked:
-    file: cmgg2_ball 3_locked.ogg
+    file: cmgg2_ball_3_locked.ogg
     volume: 1
     track: voice
   v_ball_4_locked:
@@ -155,7 +155,7 @@ sounds:
     volume: 1
     track: voice
   v_ball_saved:
-    file: cmgg2_ballsaved.ogg
+    file: cmgg2_ball_saved.ogg
     volume: 1
     track: voice
     max_queue_time: 2s
@@ -163,11 +163,6 @@ sounds:
     file: cmgg2_welcome.ogg
     volume: 1
     track: voice
-  v_double_outlane_bs_awarded:
-    file: cmgg2_double_outlane_bs_awarded.ogg
-    volume: 1
-    track: voice
-    max_queue_time: 2s
   v_right_outlane_bs_awarded:
     file: cmgg2_right_outlane_bs_awarded.ogg
     volume: 1
@@ -214,17 +209,12 @@ sounds:
     track: voice
     max_queue_time: 2s
   v_extra_ball_awarded:
-    file: cmgg2_extra_ball_awarded
+    file: cmgg2_extra_ball_awarded.ogg
     volume: 1
     track: voice
     max_queue_time: 2s
   v_hades_has_you:
     file: cmgg2_hades_has_you.ogg
-    volume: 1
-    track: voice
-    max_queue_time: 2s
-  v_you_returned_underworld:
-    file: cmgg2_you_returned_underworld.ogg
     volume: 1
     track: voice
     max_queue_time: 2s

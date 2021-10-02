@@ -140,11 +140,6 @@ shots:
     hit_events: base_hole_distal_hit
     debug: true
 
-variable_player:
-  goddess_jackpot_hit:
-    score: 20000
-
-
 event_player:
   balldevice_bd_scoop_ball_eject_success:
     - goddess_need_rapid_bb_reset_hit|20ms #Spoof of above shot build in a delay to allow timer to start so this event is picked up  #Order hestia artemus aphrodite athena
@@ -576,6 +571,8 @@ sound_player:
   goddess_made_orbit_hit: snd_underworld_open
 
 variable_player:
+  goddess_jackpot_hit:
+    score: 20000
   multiball_lock_subway_lock_locked_ball:
     score: 5000 * (device.counters.goddess_multiplier.value)
   logicblock_goddess_all_pops_complete:
