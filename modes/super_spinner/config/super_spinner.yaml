@@ -157,7 +157,7 @@ show_player:
 widgets:
   invite_super_spinner:
     - type: image
-      image: wedge_super_spinner
+      image: wedge_super_spinner_inv
       scale: 0.30
       rotation: 80
       x: 450
@@ -166,7 +166,7 @@ widgets:
       anchor_y: center
   invite_super_spinner_pop_shot:
     - type: image
-      image: wedge_collect_ss_bonus
+      image: wedge_collect_ss_bonus_inv
       scale: 0.32
       rotation: 45
       x: 200
