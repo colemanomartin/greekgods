@@ -281,7 +281,7 @@ widgets:
   announce_blue_jackpot:
     - type: image
       image: jackpot_blue
-      scale: 1
+      scale: 1.2
       anchor_x: center
       anchor_y: center
       x: 384
