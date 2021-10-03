@@ -35,7 +35,7 @@ accruals:  # Has to live in base since field shuts down during mb
     events:
       - base_left_side_pop_hit
       - base_poseidon_pop_hit
-#      - base_olympus_left_pop_hit fix this spoon
+      - base_olympus_left_pop_hit #marginal spoon
       - base_olympus_right_pop_hit
       - base_olympus_lower_pop_hit
     persist_state: true

@@ -161,7 +161,7 @@ sounds:
     max_queue_time: 2s
   v_welcome:
     file: cmgg2_welcome.ogg
-    volume: 1
+    volume: 1.5
     track: voice
   v_right_outlane_bs_awarded:
     file: cmgg2_right_outlane_bs_awarded.ogg
@@ -269,6 +269,16 @@ sounds:
     max_queue_time: 2s
   v_super_skill_shot_awarded:
     file: cmgg2_super_skill_shot_awarded.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_jackpot:
+    file: cmgg2_jackpot.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_shoot_scoop_target_to_enable_lock:
+    file: cmgg2_shoot_scoop_target_to_enable_lock.ogg
     volume: 1
     track: voice
     max_queue_time: 2s

@@ -460,7 +460,8 @@ sound_player:
   multiball_poseidon_ramp_started: v_multiball
   multiball_lock_poseidon_lock_full: v_shoot_scoop_mb #defigned in sounds in config
   prmb_jackpot_hit: v_jackpot
-  mode_poseidon_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and device.servos.ramp_servo.position==0.11}: v_shoot_ramp_to_lock_ball #0.11=divert L 0.51=divert R
+  mode_p_ramp_mb_started: v_shoot_scoop_target_to_enable_lock
+  prmb_light_p_lock_hit:{device.ball_devices.bd_poseidon_ramp.balls<2 and device.servos.ramp_servo.position==0.11}: v_shoot_ramp_to_lock_ball #0.11=divert L 0.51=divert R
   right_ramp_hit{device.multiball_locks.poseidon_lock.enabled}: v_move_powerball_to_other_side_to_lock_ball
   multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1 and device.multiball_locks.olympus_lock.locked_balls == 0}: v_ball_1_locked
   multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 2 and device.multiball_locks.olympus_lock.locked_balls == 0}: v_ball_2_locked

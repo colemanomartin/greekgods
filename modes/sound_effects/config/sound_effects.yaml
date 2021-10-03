@@ -17,27 +17,21 @@ accruals:  # These are designed to fire once to give instructions a single time 
     reset_on_complete: false
     disable_on_complete: true
   sound_revealed_band_instructions:
-    events: base_revealed_slingshot_hit
+    events:
+      - base_revealed_slingshot_hit
     persist_state: true
     reset_on_complete: false
     disable_on_complete: true
   sound_ready_for_mystery_instructions:
-    events: field_says_mystery_time
+    events:
+      - field_says_mystery_time
     persist_state: true
     reset_on_complete: false
     disable_on_complete: true
   sound_lane_light_instructions:
     events:
-      - base_right_inlane
-      - base_left_inlane
-    persist_state: true
-    reset_on_complete: false
-    disable_on_complete: true
-  sound_goddess_award_instructions:
-    events: #Play instructions once after first 3 pops hit
-      - logicblock_base_goddesses_progressed_updated{device.counters.base_goddesses_progressed.value==1}
-      - logicblock_base_goddesses_progressed_updated{device.counters.base_goddesses_progressed.value==2}
-      - logicblock_base_goddesses_progressed_updated{device.counters.base_goddesses_progressed.value==3}
+      - base_right_inlane_hit
+      - base_left_inlane_hit
     persist_state: true
     reset_on_complete: false
     disable_on_complete: true
@@ -48,21 +42,34 @@ accruals:  # These are designed to fire once to give instructions a single time 
     reset_on_complete: false
     disable_on_complete: true
   sound_outlane_ballsave_instructions:
-    events: left_ramp_hit, right_ramp_hit #hit either ramp
+    events:
+      - left_ramp_hit, right_ramp_hit #hit either ramp
     persist_state: true
     reset_on_complete: false
     disable_on_complete: true
+    disable_events: # Otherwise voice cues are too many
+      - ormb_light_o_lock_hit
+      - prmb_light_p_lock_hit
 
-
+counters: #This counter sends voice instruction to complete the pops for goddess It completes after 3 different pop hits
+  sound_tracking_base_pops:
+    enable_events: mode_sound_effects_started
+    count_events:
+      - logicblock_base_all_pops_hit
+    persist_state: True
+    reset_events:
+      - game_ending
+    count_complete_value: 3
+    disable_on_complete: True #Leave it working so it can subtract if field ends
 
 sound_player:
-  #these instructions each play once early in game 
+  #these instructions each play once early in game
   logicblock_sound_drop_target_instructions_complete: v_complete_drop_targets_to_qualify_mystery_mode
   logicblock_sound_revealed_band_instructions_complete: v_hit_blinking_band_enable_mystery_award
   logicblock_sound_ready_for_mystery_instructions_complete: v_shoot_orbit_hole_for_mystery_award
   logicblock_sound_lane_light_instructions_complete: v_completed_lane_lights_award_bs
-# logicblock_sound_goddess_award_instructions_complete: v_hit_all_pops_to_summon_goddess
-  logicblock_sound_ready_locks_by_scoring_instruction_complete: v_ready_locks_by_scoring
+# logicblock_sound_tracking_base_pops_complete: v_hit_all_pops_to_summon_goddess
+  logicblock_sound_ready_locks_by_scoring_instructions_complete: v_ready_locks_by_scoring
   logicblock_sound_outlane_ballsave_instructions_complete: v_shoot_ramp_twice_outlane_bs
 
   mode_sound_controller_started{player==1 and ball==1}: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,

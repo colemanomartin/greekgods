@@ -45,4 +45,5 @@ show_player:
 #    spinner_strip: orangered
 #    pop_strip: yellow
 sound_player:
-  game_start: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
+  mode_attract_will_stop: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
+  player_added: snd_startbutton
