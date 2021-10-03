@@ -90,12 +90,12 @@ shots:
     playfield: earth_pf
     profile: flashing_off_o
     enable_events: multiball_poseidon_ramp_started
-    hit_events: left_ramp_hit
+    hit_events: base_poseidon_pop_hit
     debug: true
 
 variable_player:
   prmb_jackpot_hit:
-    score: 5000
+    score: 2000
 
 timers:
   prmb_allow_ballblock_to_settle: # used to allow ball block to register hit and activate timer in mode_scoop so timer can be paused. Replace this timer with show when appropriate
@@ -278,6 +278,15 @@ widgets:
       x: 394
       y: 155
       z: 1
+  announce_blue_jackpot:
+    - type: image
+      image: jackpot_blue
+      scale: 1
+      anchor_x: center
+      anchor_y: center
+      x: 384
+      y: 455
+      z: 3
 
 widget_player:
   #Things to do when starting
@@ -385,6 +394,15 @@ widget_player:
     shoot_ramp_blue:
       slide: show_progress_to_ramp_mb
       action: remove
+  prmb_jackpot_hit:
+    announce_blue_jackpot:
+      target: playfield_lcd
+      action: add
+      widget_settings:
+        expire: 1.4 sec
+
+
+
 
 #  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1}:
 #    shoot_ramp_blue:
@@ -439,7 +457,7 @@ slide_player:
         y: 65%
         z: 5000
       - type: text
-        text: ROLL  BOULDER  TO  OTHER  SIDE
+        text: ROLL POWERBALL  TO  OTHER  SIDE
         font_name: GreekGods2
         font_size: 36
         x: 384

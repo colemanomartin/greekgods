@@ -160,8 +160,8 @@ widgets:
       image: wedge_super_spinner_inv
       scale: 0.30
       rotation: 80
-      x: 450
-      y: 760
+      x: 410
+      y: 660
       anchor_x: center
       anchor_y: center
   invite_super_spinner_pop_shot:

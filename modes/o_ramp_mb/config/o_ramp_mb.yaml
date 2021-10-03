@@ -279,6 +279,15 @@ widgets:
       x: 394
       y: 155
       z: 1
+  announce_yellow_jackpot:
+    - type: image
+      image: jackpot_yellow
+      scale: 1.2
+      anchor_x: center
+      anchor_y: center
+      x: 384
+      y: 455
+      z: 3
 
 widget_player:
   #Things to do when starting
@@ -386,6 +395,12 @@ widget_player:
     shoot_ramp_yellow:
       slide: show_progress_to_ramp_mb
       action: remove
+  ormb_jackpot_hit:
+    announce_yellow_jackpot:
+      target: playfield_lcd
+      action: add
+      widget_settings:
+        expire: 1.4 sec
 
 #  multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1}:
 #    shoot_ramp_yellow:
@@ -431,7 +446,7 @@ slide_player:
         y: 65%
         z: 5000
       - type: text
-        text: ROLL  BOULDER  TO  OTHER  SIDE
+        text: ROLL  POWERBALL  TO  OTHER  SIDE
         font_name: GreekGods2
         font_size: 36
         x: 384
