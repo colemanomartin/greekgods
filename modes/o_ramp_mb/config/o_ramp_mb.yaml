@@ -479,14 +479,23 @@ slide_player:
 #  shoot_ramp4mb_gif:
 #    load: mode_start
 #    file: shoot_rampmb.gif
+accruals:  # These is designed to fire once to give instructions a single time during the game
+  move_powerball_instructions_o:
+    events:
+      - left_ramp_hit{device.multiball_locks.olympus_lock.enabled}
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+
 
 sound_player:
   multiball_olympus_ramp_started: v_multiball
   multiball_lock_olympus_lock_full: v_shoot_scoop_mb #defigned in sounds in config
   ormb_jackpot_hit: v_jackpot
   mode_o_ramp_mb_started: v_shoot_scoop_target_to_enable_lock
-  ormb_light_o_lock_hit:{device.ball_devices.bd_olympus_ramp.balls<2 and device.servos.ramp_servo.position==0.51}: v_shoot_ramp_to_lock_ball #0.11=divert L 0.51=divert R
-  left_ramp_hit{device.multiball_locks.olympus_lock.enabled}: v_move_powerball_to_other_side_to_lock_ball
+  ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_right"}:  v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball
+  ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_left"}: v_move_powerball_to_other_side_to_lock_ball
+  logicblock_move_powerball_instructions_o_complete: v_move_powerball_to_other_side_to_lock_ball #Announces once if ramp hit with flap in wrong spot
   multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1 and device.multiball_locks.poseidon_lock.locked_balls == 0}: v_ball_1_locked
   multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 2 and device.multiball_locks.poseidon_lock.locked_balls == 0}: v_ball_2_locked
   multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1 and device.multiball_locks.poseidon_lock.locked_balls == 1}: v_ball_2_locked
