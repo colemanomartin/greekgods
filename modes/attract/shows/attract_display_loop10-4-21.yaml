@@ -241,7 +241,7 @@
         anchor_x: center
         anchor_y: bottom
       - type: text
-        text: "Gerry Stellenburg\n\nScott Danesi\n\nJan Kantert\n\nTJ Weaver\n\nMatt Bonnema\n\nMichael Rumore\n\nNick Baldridge\n\nAnthony van Winkle\n\nBorgDog\n\nEli Curtz\n\nJohn Marsh"
+        text: "Gerry Stellenburg\n\nScott Danesi\n\nJan Kantert\n\nTJ Weaver\n\nMatt Bonnema\n\nMichael Rumore\n\nNick Baldridge\n\nAnthony van Winkle\n\nBorgDog\n\n"
         font_name: GreekGods2
         font_size: 200
         color: yellow

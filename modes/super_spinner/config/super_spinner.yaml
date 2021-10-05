@@ -275,7 +275,7 @@ slide_player:
             easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
             repeat: true
       - type: text
-        text: "SUPER\nSPINNER\nACTIVE"
+        text: "SUPER\nSPINNER\nENGAGED"
         font_name: GreekGods2
         color: white
         y: 50%
