@@ -183,6 +183,22 @@ counters:
       - event: multiball_hydra_mb_ended
         action: subtract
         value: 1
+    debug: true
+#  base_count_test:
+#    count_events: this_is_a_dummy_event
+#      - s_left_slingshot_active
+#      - s_right_slingshot_active
+#    control_events:
+#      - event: s_left_slingshot_active
+#        action: add
+#        value: 1
+#      - event: s_poseidon_left_slingshot_active
+#        action: subtract
+#        value: 1
+#      - event: s_poseidon_right_slingshot_active
+#        action: subtract
+#        value: 1
+#    debug: true
 
 timers:
   base_timer_ball_launching:
