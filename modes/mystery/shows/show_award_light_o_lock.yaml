@@ -9,11 +9,13 @@
         text: Mystery Award
         color: white
         y: 80%
+        font_name: greekgods3
         font_size: 80
       - type: text
         text: Olympus Lock
         color: white
         y: 50%
+        font_name: greekgods3
         font_size: 80
         animations:
           add_to_slide:
@@ -24,6 +26,7 @@
               easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
       - type: text
         text: Activating!
+        font_name: greekgods3
         font_size: 80
         color: white
         y: 30%

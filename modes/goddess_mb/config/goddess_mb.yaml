@@ -322,7 +322,7 @@ widgets:
     y: 75%
     x: 50%
     color: green
-    font_name: GreekGods2
+    font_name: greekgods3
   goddess_mb_shoot_cave:
   - type: text
     text: "Enter A Cave"
@@ -330,7 +330,7 @@ widgets:
     y: 80%
     x: 50%
     color: green
-    font_name: GreekGods2
+    font_name: greekgods3
 #  goddess_mb_shoot_cave_athena:
 #  - type: text
 #    text: "Shoot Cave For\nRebellion"
@@ -338,11 +338,11 @@ widgets:
 #    y: 75%
 #    x: 50%
 #    color: green
-#    font_name: GreekGods2
+#    font_name: greekgods3
   goddess_mb_jackpot:
   - type: text
     text: Pop Sequence Jackpot!
-    font_name: GreekGods2
+    font_name: greekgods3
     color: green
     y: 25%
     anchor_x: center
@@ -352,7 +352,7 @@ widgets:
   goddess_mb_bonus_instructions:
   - type: text
     text: "Hit All Pops\nFor Bonus"
-    font_name: GreekGods2
+    font_name: greekgods3
     color: green
     y: 10%
     anchor_x: center
@@ -362,7 +362,7 @@ widgets:
   gmb_goddess_hestia_txt:
   - type: text
     text: "Help Hestia\nTo the Underworld"
-    font_name: GreekGods2
+    font_name: greekgods3
     color: green
     y: 10%
     anchor_x: center
@@ -371,7 +371,7 @@ widgets:
   gmb_goddess_artemus_txt:
   - type: text
     text: "Help artemus\nTo the Underworld"
-    font_name: GreekGods2
+    font_name: greekgods3
     color: green
     y: 10%
     anchor_x: center
@@ -380,7 +380,7 @@ widgets:
   gmb_goddess_aphrodite_txt:
   - type: text
     text: "Help Aphrodite\nTo the Underworld"
-    font_name: GreekGods2
+    font_name: greekgods3
     color: green
     y: 10%
     anchor_x: center
@@ -389,7 +389,7 @@ widgets:
   gmb_goddess_athena_txt:
   - type: text
     text: "Athena!\n Join Goddesses for a Rebellion"
-    font_name: GreekGods2
+    font_name: greekgods3
     color: green
     y: 10%
     anchor_x: center
@@ -554,7 +554,7 @@ slide_player:
       widgets:
       - type: text
         text: "Goddess Rebellion!\nHit Caves for Bonus\n\nHit Pop Sequence for\nBonus Multiplier"
-        font_name: GreekGods2
+        font_name: greekgods3
         color: green
         y: 50%
         anchor_x: center

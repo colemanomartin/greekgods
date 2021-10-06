@@ -233,14 +233,14 @@ slides:
       color: white
       y: 65%
       font_size: 60
-      font_name: GreekGods2
+      font_name: greekgods3
       expire: 3s
     - type: text
       text: for Mystery Award
       color: white
       y: 35%
       font_size: 60
-      font_name: GreekGods2
+      font_name: greekgods3
       expire: 3s
   mystery_award_menu_header:
     priority: 100
@@ -250,7 +250,7 @@ slides:
       color: white
       y: 80%
       font_size: 80
-      font_name: GreekGods2
+      font_name: greekgods3
 
 slide_player:
   mode_mystery_started:

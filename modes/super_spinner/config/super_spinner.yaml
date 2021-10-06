@@ -180,7 +180,7 @@ widgets:
       y: 88%
       font_size: 90
       color: red
-      font_name: GreekGods2
+      font_name: greekgods3
       expire: 2s
       z: 3 #Temple layer is 2
       animations:
@@ -206,7 +206,7 @@ widgets:
       y: 77%
       font_size: 80
       color: green
-      font_name: GreekGods2
+      font_name: greekgods3
       expire: 2s
       z: 4 #Temple layer is 2
       animations:
@@ -276,7 +276,7 @@ slide_player:
             repeat: true
       - type: text
         text: "SUPER\nSPINNER\nENGAGED"
-        font_name: GreekGods2
+        font_name: greekgods3
         color: white
         y: 50%
         anchor_x: center

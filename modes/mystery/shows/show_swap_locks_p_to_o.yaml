@@ -15,7 +15,7 @@
         color: white
         y: 50%
         font_size: 80
-        font_name: GreekGods2
+        font_name: greekgods3
         animations:
           add_to_slide:
             - property: scale
@@ -26,7 +26,7 @@
       - type: text
         text: Olympus Lock!
         font_size: 80
-        font_name: GreekGods2
+        font_name: greekgods3
         color: white
         y: 30%
         animations:

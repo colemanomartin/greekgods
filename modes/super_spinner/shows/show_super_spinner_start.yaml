@@ -7,7 +7,7 @@
       widgets:
       - type: text
         text: Super Spinner Started
-        font_name: GreekGods2
+        font_name: greekgods3
         font_size: 65
         y: 60%
         color: green
@@ -22,7 +22,7 @@
       widgets:
       - type: text
         text: Super Spinner Started
-        font_name: GreekGods2
+        font_name: greekgods3
         font_size: 65
         y: 60%
         color: green

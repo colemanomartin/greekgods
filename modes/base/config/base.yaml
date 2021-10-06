@@ -1042,26 +1042,26 @@ slide_player:
         font_size: 500
         y: 60%
         x: 50%
-        font_name: GreekGods2
+        font_name: greekgods3
       - type: text
         text: PLAYER  (number)
         y: 19%
         x: 20%
         font_size: 150
-        font_name: GreekGods2
+        font_name: greekgods3
       - type: text
         text: BALL  (ball)
         y: 19%
         x: 80%
         font_size: 150
-        font_name: GreekGods2
+        font_name: greekgods3
     basic_playfield_slide:
       target: playfield_lcd
       widgets:
       - type: text
         text: Greek Gods
         font_size: 130
-        font_name: GreekGods2
+        font_name: greekgods3
 
 #Hestia, artemus, aphrodite, athena
 widgets:
@@ -1072,7 +1072,7 @@ widgets:
     y: 80%
     x: 50%
     color: green
-    font_name: GreekGods2
+    font_name: greekgods3
     expire: 5s
   hestia_coin:
   - type: image
@@ -1087,7 +1087,7 @@ widgets:
     y: 80%
     x: 50%
     color: green
-    font_name: GreekGods2
+    font_name: greekgods3
     expire: 5s
   artemus_coin:
   - type: image
@@ -1102,7 +1102,7 @@ widgets:
     y: 80%
     x: 50%
     color: green
-    font_name: GreekGods2
+    font_name: greekgods3
     expire: 5s
   aphrodite_coin:
   - type: image
@@ -1117,7 +1117,7 @@ widgets:
     y: 80%
     x: 50%
     color: green
-    font_name: GreekGods2
+    font_name: greekgods3
     expire: 5s
   athena_coin:
   - type: image

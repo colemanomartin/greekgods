@@ -193,7 +193,7 @@ widgets:
   shoot_scoop_target_blue:
     - type: text
       text: SHOOT  SCOOP  TARGET
-      font_name: GreekGods2
+      font_name: greekgods3
       font_size: 50
       x: 384
       y: 760
@@ -204,7 +204,7 @@ widgets:
   shoot_scoop_blue:
     - type: text
       text: SHOOT  THE  SCOOP
-      font_name: GreekGods2
+      font_name: greekgods3
       font_size: 50
       x: 384
       y: 760
@@ -215,7 +215,7 @@ widgets:
   qualified_blue:
     - type: text
       text: "Q\nU\nA\nL\nI\nF\nI\nE\nD"
-      font_name: GreekGods2
+      font_name: greekgods3
       color: green
       font_size: 58
       x: 144
@@ -226,7 +226,7 @@ widgets:
   shoot_ramp_blue:
     - type: text
       text: SHOOT  THE  RAMP
-      font_name: GreekGods2
+      font_name: greekgods3
       font_size: 50
       x: 384
       y: 760
@@ -237,7 +237,7 @@ widgets:
   move_sis_blue:
     - type: text
       text: ROLL  BOULDER  TO  OTHER  SIDE
-      font_name: GreekGods2
+      font_name: greekgods3
       font_size: 36
       x: 384
       y: 53
@@ -458,7 +458,7 @@ slide_player:
         z: 5000
       - type: text
         text: ROLL POWERBALL  TO  OTHER  SIDE
-        font_name: GreekGods2
+        font_name: greekgods3
         font_size: 36
         x: 384
         y: 53

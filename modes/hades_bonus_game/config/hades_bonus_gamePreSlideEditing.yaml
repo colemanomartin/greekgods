@@ -14,7 +14,7 @@
 #
 #
 #do: add scoring to targets and arrows to rivers Animate arrows
-# Add a show for extra ball. 
+# Add a show for extra ball.
 # ways to improve: allow ball to play out after extra ball earned. May be best not to deal with this as an
 # multiball but rather a request ball to pf and enable a ball save
 #
@@ -289,7 +289,7 @@ slide_player:
       widgets:
       - type: text
         text: Scare All Bats From Tunnels
-        font_name: GreekGods2
+        font_name: greekgods3
         color: black
         y: 6%
         anchor_x: center
