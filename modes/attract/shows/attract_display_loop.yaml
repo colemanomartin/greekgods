@@ -28,7 +28,7 @@
 
 #        direction: left
 
-- duration: 10
+- duration: 8
   slides:
     special_thanks_slide:
       target: score_lcd
@@ -53,7 +53,7 @@
         anchor_x: left
         anchor_y: top
       - type: text
-        text: "Gerry Stellenburg\n\nScott Danesi\n\nJan Kantert\n\nTJ Weaver\n\nMatt Bonnema\n\nMichael Rumore\n\nNick Baldridge\n\nAnthony van Winkle\n\nBorgDog\n\nEli Curtz\n\nJohn Marsh"
+        text: "Gerry Stellenburg\n\nScott Danesi\n\nJan Kantert\n\nTJ Weaver\n\nMatt Bonnema\n\nMichael Rumore\n\nNick Baldridge\n\nAnthony van Winkle\n\nBorgDog\n\nEli Curtz\n\nBob Nies\n\nJohn Marsh"
         font_name: greekgods3
         font_size: 130
         color: yellow
@@ -67,11 +67,114 @@
           - property: y
             value: 50%
             relative: true
-            duration: 10
+            duration: 8
 #      transition:
 #        type: move_in
 #        duration: 1s
 #        direction: bottom
+
+- duration: 6
+  slides:
+    credit_slide:
+      target: score_lcd
+      widgets:
+      - type: text
+        text: "Awards:"
+        font_name: greekgods3
+        font_size: 250
+        color: blue
+        y: 84%
+        x: 20%
+        anchor_y: bottom
+        anchor_x: left
+        z: 3
+      - type: text
+        text: ">50,000      Chance to Redeem Your Soul"
+        font_name: greekgods3
+        font_size: 130
+        color: blue
+        y: 72%
+        x: 20%
+        anchor_y: top
+        anchor_x: left
+        z: 1
+      - type: text
+        text: "150,000      Extra Ball"
+        font_name: greekgods3
+        font_size: 130
+        color: blue
+        y: 60%
+        x: 20%
+        anchor_y: top
+        anchor_x: left
+        z: 1
+      - type: text
+        text: "300,000      Extra Ball"
+        font_name: greekgods3
+        font_size: 130
+        color: blue
+        y: 48%
+        x: 20%
+        anchor_y: top
+        anchor_x: left
+        z: 1
+      - type: text
+        text: "600,000      Extra Ball"
+        font_name: greekgods3
+        font_size: 130
+        color: blue
+        y: 36%
+        x: 20%
+        anchor_y: top
+        anchor_x: left
+        z: 1
+      - type: text
+        text: "1,000,000      Extra Ball"
+        font_name: greekgods3
+        font_size: 130
+        color: blue
+        y: 24%
+        x: 20%
+        anchor_y: top
+        anchor_x: left
+        z: 1
+      transition:
+        type: move_in
+        duration: 1s
+        direction: right
+
+
+- duration: 2
+  slides:
+    credit_slide:
+      target: score_lcd
+      widgets:
+      - type: text
+        text: "Objective: Impress the Gods, Earn More Balls"
+        font_name: greekgods3
+        font_size: 250
+        color: green
+        y: 84%
+        x: 50%
+        anchor_y: bottom
+        anchor_x: center
+        z: 3
+
+- duration: 2
+  slides:
+    credit_slide:
+      target: score_lcd
+      widgets:
+      - type: text
+        text: "Hit Knee Switch For Game Instructions"
+        font_name: greekgods3
+        font_size: 250
+        color: green
+        y: 84%
+        x: 50%
+        anchor_y: bottom
+        anchor_x: center
+        z: 3
 
 
 - duration: 7

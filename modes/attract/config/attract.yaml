@@ -1,23 +1,29 @@
 #config_version=5
 #https://htmlcolorcodes.com/color-names/
-#show_player:
-#  mode_attract_started:
-#    show_poppers:
-#      speed: 1
+#When mode starts attract display loop is started by showplayer. If the knee switch is hit
+#Attract mode behavior changes. The timer starts. This stops display loop and initiates
+#the counter at 0.  Each logic block update of the counter displays a slide with a index equal
+#to the value of the counter.  The counter increments with ticks or with right flipper if the
+#value of the counter is < total number of slides. The counter decrements with left flipper
+#if the value of the counter is > 0. When the counter is complete its event restarts the
+#attract display loop.
 coil_player:
   mode_attract_started: #drop when starting attract so if ball in sub, it can escape
     c_ballblock_fall:
       action: pulse
 
 show_player:
+  timer_instructions_clock_started:
+    attract_display_loop:
+      action: stop
+  logicblock_instruction_slide_controller_complete:
+    attract_display_loop:
+      speed: 1
   mode_attract_started:
     attract_display_loop:
       speed: 1
     show_rand_paralell:
       speed: 1
-#    show_olympus_spinner:
-#      speed: 2
-#      priority: 200
     show_poppers:
       speed: 1
       priority: 100
@@ -31,19 +37,123 @@ show_player:
       speed: 50
     show_hades_lights:
       speed: 1
-#light_player:
-#  mode_attract_started:
-#    gi: on
-#    ramp: on
-#    lanes: 002400
-#    ball_save_display: 008800
-#    insert: on
-#    orbit: 000022
-#    shooter: 990000
-#    right_ballguide: 002400
-#    left_ballguide: 002400
-#    spinner_strip: orangered
-#    pop_strip: yellow
+
+timers:
+  instructions_clock:
+    start_value: 0
+    end_value: 5 ##########################Set to number of slides
+    tick_interval: 5s #Display duration each slide
+    direction: up
+    control_events:
+      - event: s_accessory_active{device.timers.instructions_clock.running==False} #Only reset if not already running
+        action: restart
+#      - event: mode_attract_will_stop
+#        action: stop
+
+counters:
+  instruction_slide_controller:
+    restart_events: #enables the counter and resets it to count 0
+      - timer_instructions_clock_started
+    count_events:
+      - s_right_flipper_active{device.counters.instruction_slide_controller.value<5} ####Update with number slides (0 is a slide)
+      - instructions_clock_tick
+    control_events:
+      - event: s_left_flipper_active{device.counters.instruction_slide_controller.value>0}
+        action: subtract
+        value: 1
+    count_complete_value: 5 ###########################Set to 1+ number slides
+    disable_on_complete: true
+    persist_state: false #resets with each new ball
+
+
+slides:
+  instruction_slide_0:
+    target: score_lcd
+    widgets:
+    - type: text
+      text: "Objective: Impress the Gods, Earn More Balls 0"
+      font_name: greekgods3
+      font_size: 250
+      color: green
+      y: 84%
+      x: 50%
+      anchor_y: bottom
+      anchor_x: center
+      z: 3
+  instruction_slide_1:
+    target: score_lcd
+    widgets:
+    - type: text
+      text: "Objective: Impress the Gods, Earn More Balls 1"
+      font_name: greekgods3
+      font_size: 250
+      color: green
+      y: 84%
+      x: 50%
+      anchor_y: bottom
+      anchor_x: center
+      z: 3
+  instruction_slide_2:
+    target: score_lcd
+    widgets:
+    - type: text
+      text: "Objective: Impress the Gods, Earn More Balls 2"
+      font_name: greekgods3
+      font_size: 250
+      color: green
+      y: 84%
+      x: 50%
+      anchor_y: bottom
+      anchor_x: center
+      z: 3
+  instruction_slide_3:
+    target: score_lcd
+    widgets:
+    - type: text
+      text: "Objective: Impress the Gods, Earn More Balls 3"
+      font_name: greekgods3
+      font_size: 250
+      color: green
+      y: 84%
+      x: 50%
+      anchor_y: bottom
+      anchor_x: center
+      z: 3
+  instruction_slide_4:
+    target: score_lcd
+    widgets:
+    - type: text
+      text: "Objective: Impress the Gods, Earn More Balls 4"
+      font_name: greekgods3
+      font_size: 250
+      color: green
+      y: 84%
+      x: 50%
+      anchor_y: bottom
+      anchor_x: center
+      z: 3
+  instruction_slide_5:
+    target: score_lcd
+    widgets:
+    - type: text
+      text: "Objective: Impress the Gods, Earn More Balls 5"
+      font_name: greekgods3
+      font_size: 250
+      color: green
+      y: 84%
+      x: 50%
+      anchor_y: bottom
+      anchor_x: center
+      z: 3
+
+slide_player:
+  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==0}: instruction_slide_0
+  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==1}: instruction_slide_1
+  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==2}: instruction_slide_2
+  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==3}: instruction_slide_3
+  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==4}: instruction_slide_4
+  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==5}: instruction_slide_5
+
 sound_player:
   mode_attract_will_stop: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
   player_added: snd_startbutton

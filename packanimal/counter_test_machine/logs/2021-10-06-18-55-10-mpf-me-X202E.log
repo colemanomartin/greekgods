@@ -1,0 +1,72 @@
+2021-10-06 18:55:10,307 : INFO : Machine : Mission Pinball Framework Core Engine v0.54.0-dev.2
+2021-10-06 18:55:10,309 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': True, 'configfile': ['config.yaml'], 'mpfconfigfile': '/usr/local/lib/python3.6/dist-packages/mpf/mpfconfig.yaml', 'force_assets_load': False, 'jsonlogging': False, 'logfile': 'logs/2021-10-06-18-55-10-mpf-me-X202E.log', 'pause': False, 'production': False, 'text_ui': True, 'loglevel': 15, 'consoleloglevel': 20, 'force_platform': None, 'syslog_address': None, 'mc_file_name': None, 'no_sound': False}
+2021-10-06 18:55:10,309 : INFO : Machine : MPF path: /usr/local/lib/python3.6/dist-packages/mpf
+2021-10-06 18:55:10,309 : INFO : Machine : Machine path: /home/me/minimalmachine
+2021-10-06 18:55:10,309 : INFO : Machine : Platform: linux
+2021-10-06 18:55:10,309 : INFO : Machine : Python executable location: /usr/bin/python3
+2021-10-06 18:55:10,309 : INFO : Machine : Python version: 3.6.9 (64-bit)
+2021-10-06 18:55:10,310 : INFO : Machine : Machine config file #1: config.yaml
+2021-10-06 18:55:10,311 : INFO : ConfigProcessor : Loading config from cache: /tmp/9528058e6441e8a9b420546b6e14d6be.mpf_cache
+2021-10-06 18:55:10,314 : INFO : Machine : Initialise MPF.
+2021-10-06 18:55:10,558 : INFO : EventManager : Event: ======'machine_var_credits_string'====== Args={'value': 'FREE PLAY', 'prev_value': None, 'change': True}
+2021-10-06 18:55:10,620 : INFO : EventManager : Event: ======'machine_var_mpf_version'====== Args={'value': 'MPF v0.54.0-dev.2', 'prev_value': None, 'change': True}
+2021-10-06 18:55:10,620 : INFO : EventManager : Event: ======'machine_var_mpf_extended_version'====== Args={'value': 'MPF v0.54.0-dev.2, Config version:5, Show version: 5, BCP version:1.1', 'prev_value': None, 'change': True}
+2021-10-06 18:55:10,621 : INFO : EventManager : Event: ======'machine_var_python_version'====== Args={'value': '3.6.9', 'prev_value': None, 'change': True}
+2021-10-06 18:55:10,623 : INFO : EventManager : Event: ======'machine_var_platform'====== Args={'value': 'Linux-4.15.0-159-generic-x86_64-with-Ubuntu-18.04-bionic', 'prev_value': None, 'change': True}
+2021-10-06 18:55:10,623 : INFO : EventManager : Event: ======'machine_var_platform_system'====== Args={'value': 'Linux', 'prev_value': None, 'change': True}
+2021-10-06 18:55:10,623 : INFO : EventManager : Event: ======'machine_var_platform_release'====== Args={'value': '4.15.0-159-generic', 'prev_value': None, 'change': True}
+2021-10-06 18:55:10,623 : INFO : EventManager : Event: ======'machine_var_platform_version'====== Args={'value': '#167-Ubuntu SMP Tue Sep 21 08:55:05 UTC 2021', 'prev_value': None, 'change': True}
+2021-10-06 18:55:10,623 : INFO : EventManager : Event: ======'machine_var_platform_machine'====== Args={'value': 'x86_64', 'prev_value': None, 'change': True}
+2021-10-06 18:55:10,624 : INFO : EventManager : Event: ======'init_phase_1'====== Args={}
+2021-10-06 18:55:10,670 : INFO : ConfigProcessor : Loading config from cache: /tmp/a05f69a658844bc68ae908d9c07ff454.mpf_cache
+2021-10-06 18:55:10,677 : INFO : ConfigProcessor : Loading config from cache: /tmp/322f648e6e79f866241ec4c07c67c18b.mpf_cache
+2021-10-06 18:55:10,692 : INFO : EventManager : Event: ======'logicblock_count_test_updated'====== Args={'value': 0, 'enabled': False}
+2021-10-06 18:55:10,693 : INFO : EventManager : Event: ======'init_phase_2'====== Args={}
+2021-10-06 18:55:10,696 : INFO : EventManager : Event: ======'bcp_connection_attempt'====== Args={'name': 'local_display', 'host': 'localhost', 'port': 5050}
+2021-10-06 18:55:10,699 : INFO : BCPClientSocket : Connecting BCP to 'local_display' at localhost:5050...
+2021-10-06 18:55:11,825 : INFO : BCPClientSocket : Connected BCP to 'local_display' localhost:5050
+2021-10-06 18:55:11,826 : INFO : EventManager : Event: ======'bcp_clients_connected'====== Args={}
+2021-10-06 18:55:11,829 : INFO : EventManager : Event: ======'init_phase_3'====== Args={}
+2021-10-06 18:55:11,833 : INFO : EventManager : Event: ======'init_phase_4'====== Args={}
+2021-10-06 18:55:11,834 : INFO : EventManager : Event: ======'machine_var_audits_player_score'====== Args={'value': {'top': [], 'average': 0, 'total': 0}, 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,837 : INFO : EventManager : Event: ======'init_phase_5'====== Args={}
+2021-10-06 18:55:11,852 : INFO : EventManager : Event: ======'init_done'====== Args={}
+2021-10-06 18:55:11,853 : INFO : EventManager : Event: ======'machine_var_mc_version'====== Args={'value': 'MPF-MC v0.54.0-dev.0', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,853 : INFO : EventManager : Event: ======'machine_var_mc_extended_version'====== Args={'value': 'MPF-MC v0.54.0-dev.0 (config_version=5, BCP v1.1, Requires MPF v0.54.0-dev.0)', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,857 : INFO : EventManager : Event: ======'machine_var_master_volume'====== Args={'value': 0.5, 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,859 : INFO : EventManager : Event: ======'machine_reset_phase_1'====== Args={}
+2021-10-06 18:55:11,876 : INFO : EventManager : Event: ======'machine_reset_phase_2'====== Args={}
+2021-10-06 18:55:11,876 : INFO : EventManager : Event: ======'machine_reset_phase_3'====== Args={}
+2021-10-06 18:55:11,876 : INFO : EventManager : Event: ======'logicblock_count_test_updated'====== Args={'value': 0, 'enabled': True}
+2021-10-06 18:55:11,876 : INFO : EventManager : Event: ======'reset_complete'====== Args={}
+2021-10-06 18:55:11,876 : INFO : EventManager : Event: ======'mode_attract_will_start'====== Args={}
+2021-10-06 18:55:11,877 : INFO : EventManager : Event: ======'mode_attract_starting'====== Args={}
+2021-10-06 18:55:11,878 : INFO : Mode.attract : Started. Priority: 10
+2021-10-06 18:55:11,878 : INFO : EventManager : Event: ======'mode_attract_started'====== Args={}
+2021-10-06 18:55:11,879 : INFO : EventManager : Event: ======'collecting_balls_complete'====== Args={}
+2021-10-06 18:55:11,879 : INFO : Machine : Starting the main run loop.
+2021-10-06 18:55:17,261 : INFO : EventManager : Event: ======'add_event'====== Args={'_from_bcp': True}
+2021-10-06 18:55:17,262 : INFO : EventManager : Event: ======'logicblock_count_test_updated'====== Args={'value': 1, 'enabled': True}
+2021-10-06 18:55:17,262 : INFO : EventManager : Event: ======'counter_count_test_hit'====== Args={'count': 1}
+2021-10-06 18:55:17,262 : INFO : EventManager : Event: ======'logicblock_count_test_hit'====== Args={'count': 1}
+2021-10-06 18:55:17,739 : INFO : EventManager : Event: ======'another_add_event'====== Args={'_from_bcp': True}
+2021-10-06 18:55:17,740 : INFO : EventManager : Event: ======'logicblock_count_test_updated'====== Args={'value': 2, 'enabled': True}
+2021-10-06 18:55:17,740 : INFO : EventManager : Event: ======'counter_count_test_hit'====== Args={'count': 2}
+2021-10-06 18:55:17,741 : INFO : EventManager : Event: ======'logicblock_count_test_hit'====== Args={'count': 2}
+2021-10-06 18:55:18,407 : INFO : EventManager : Event: ======'add_event'====== Args={'_from_bcp': True}
+2021-10-06 18:55:18,408 : INFO : EventManager : Event: ======'logicblock_count_test_updated'====== Args={'value': 3, 'enabled': True}
+2021-10-06 18:55:18,408 : INFO : EventManager : Event: ======'counter_count_test_hit'====== Args={'count': 3}
+2021-10-06 18:55:18,408 : INFO : EventManager : Event: ======'logicblock_count_test_hit'====== Args={'count': 3}
+2021-10-06 18:55:18,884 : INFO : EventManager : Event: ======'another_add_event'====== Args={'_from_bcp': True}
+2021-10-06 18:55:18,885 : INFO : EventManager : Event: ======'logicblock_count_test_updated'====== Args={'value': 4, 'enabled': True}
+2021-10-06 18:55:18,885 : INFO : EventManager : Event: ======'counter_count_test_hit'====== Args={'count': 4}
+2021-10-06 18:55:18,885 : INFO : EventManager : Event: ======'logicblock_count_test_hit'====== Args={'count': 4}
+2021-10-06 18:55:20,820 : INFO : EventManager : Event: ======'subtract_event'====== Args={'_from_bcp': True}
+2021-10-06 18:55:21,267 : INFO : EventManager : Event: ======'another_subtract_event'====== Args={'_from_bcp': True}
+2021-10-06 18:55:21,581 : INFO : EventManager : Event: ======'subtract_event'====== Args={'_from_bcp': True}
+2021-10-06 18:55:21,895 : INFO : EventManager : Event: ======'another_subtract_event'====== Args={'_from_bcp': True}
+2021-10-06 18:55:22,184 : INFO : EventManager : Event: ======'subtract_event'====== Args={'_from_bcp': True}
+2021-10-06 18:55:22,470 : INFO : EventManager : Event: ======'another_subtract_event'====== Args={'_from_bcp': True}
+2021-10-06 18:55:26,431 : INFO : Machine : Shutting down...
+2021-10-06 18:55:26,431 : INFO : EventManager : Event: ======'shutdown'====== Args={}
+2021-10-06 18:55:26,436 : INFO : root : MPF run loop ended.

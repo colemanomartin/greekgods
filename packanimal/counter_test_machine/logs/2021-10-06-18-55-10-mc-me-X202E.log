@@ -1,0 +1,97 @@
+2021-10-06 18:55:10,812 : kivy : Factory: 184 symbols loaded
+2021-10-06 18:55:11,015 : kivy : ImageLoaderFFPy: Using ffpyplayer 4.2.0
+2021-10-06 18:55:11,017 : kivy : Image: Providers: img_tex, img_dds, img_sdl2, img_pil, img_ffpyplayer, img_gif 
+2021-10-06 18:55:11,076 : kivy : VideoFFPy: Using ffpyplayer 4.2.0
+2021-10-06 18:55:11,077 : kivy : Video: Provider: ffpyplayer(['video_ffmpeg'] ignored)
+2021-10-06 18:55:11,146 : kivy : Loading MPF-MC controller
+2021-10-06 18:55:11,146 : mpfmc : Mission Pinball Framework Media Controller v0.54.0-dev.0
+2021-10-06 18:55:11,147 : mpfmc : Mission Pinball Framework Game Engine v0.54.0-dev.2
+2021-10-06 18:55:11,147 : mpfmc : Machine path: /home/me/minimalmachine
+2021-10-06 18:55:11,148 : ConfigProcessor : Config file in cache changed: /home/me/minimalmachine/config/config
+2021-10-06 18:55:11,148 : ConfigProcessor : Loading config from file /usr/local/lib/python3.6/dist-packages/mpfmc/mcconfig.yaml.
+2021-10-06 18:55:11,233 : ConfigProcessor : Loading config: /usr/local/lib/python3.6/dist-packages/mpfmc/mcconfig.yaml
+2021-10-06 18:55:11,268 : ConfigProcessor : Loading config from file /home/me/minimalmachine/config/config.
+2021-10-06 18:55:11,277 : ConfigProcessor : Loading config: /home/me/minimalmachine/config/config
+2021-10-06 18:55:11,279 : ConfigProcessor : Config file cache created: /tmp/556b2a4d19ad180fa9dbc14cc222d532.mpf_cache
+2021-10-06 18:55:11,279 : mpfmc : Starting clock at 60.0Hz
+2021-10-06 18:55:11,289 : kivy : Text: Provider: sdl2
+2021-10-06 18:55:11,321 : kivy : Window: Provider: sdl2(['window_egl_rpi'] ignored)
+2021-10-06 18:55:11,493 : kivy : GL: Using the "OpenGL" graphics system
+2021-10-06 18:55:11,494 : kivy : GL: Backend used <sdl2>
+2021-10-06 18:55:11,494 : kivy : GL: OpenGL version <b'3.0 Mesa 20.0.8'>
+2021-10-06 18:55:11,494 : kivy : GL: OpenGL vendor <b'Intel Open Source Technology Center'>
+2021-10-06 18:55:11,495 : kivy : GL: OpenGL renderer <b'Mesa DRI Intel(R) HD Graphics 4000 (IVB GT2)'>
+2021-10-06 18:55:11,495 : kivy : GL: OpenGL parsed version: 3, 0
+2021-10-06 18:55:11,495 : kivy : GL: Shading version <b'1.30'>
+2021-10-06 18:55:11,495 : kivy : GL: Texture max size <16384>
+2021-10-06 18:55:11,495 : kivy : GL: Texture max units <16>
+2021-10-06 18:55:11,542 : kivy : Window: auto add sdl2 input provider
+2021-10-06 18:55:11,542 : kivy : Window: virtual keyboard not allowed, single mode, not docked
+2021-10-06 18:55:11,551 : SoundSystem : SoundSystem: Using default 'sound_system' settings
+2021-10-06 18:55:11,585 : AudioInterface : Initialized
+2021-10-06 18:55:11,585 : SoundSystem : No audio tracks are specified in your machine config file. a track named 'default' has been created.
+2021-10-06 18:55:11,753 : kivy : ProbeSysfs: device match: /dev/input/event5
+2021-10-06 18:55:11,754 : kivy : MTD: Read event from </dev/input/event5>
+2021-10-06 18:55:11,754 : kivy : ProbeSysfs: device match: /dev/input/event4
+2021-10-06 18:55:11,754 : kivy : MTD: Read event from </dev/input/event4>
+2021-10-06 18:55:11,754 : kivy : Base: Start application main loop
+2021-10-06 18:55:11,755 : kivy : MTD: Unable to open device "/dev/input/event5". Please ensure you have the appropriate permissions.
+2021-10-06 18:55:11,756 : EventManager : Event: ======'display_default_initialized'====== Args={}
+2021-10-06 18:55:11,757 : kivy : MTD: Unable to open device "/dev/input/event4". Please ensure you have the appropriate permissions.
+2021-10-06 18:55:11,773 : mpfmc : Display: Setting 'default' as default display
+2021-10-06 18:55:11,789 : EventManager : Event: ======'displays_initialized'====== Args={}
+2021-10-06 18:55:11,792 : EventManager : Event: ======'slide_default_blank_created'====== Args={}
+2021-10-06 18:55:11,792 : EventManager : Event: ======'display_default_ready'====== Args={}
+2021-10-06 18:55:11,802 : EventManager : Event: ======'init_phase_1'====== Args={}
+2021-10-06 18:55:11,807 : EventManager : Event: ======'mc_ready'====== Args={}
+2021-10-06 18:55:11,807 : EventManager : Event: ======'init_phase_2'====== Args={}
+2021-10-06 18:55:11,809 : ConfigProcessor : Loading config from cache: /tmp/322f648e6e79f866241ec4c07c67c18b.mpf_cache
+2021-10-06 18:55:11,810 : ConfigProcessor : Loading config from cache: /tmp/a05f69a658844bc68ae908d9c07ff454.mpf_cache
+2021-10-06 18:55:11,811 : EventManager : Event: ======'init_phase_3'====== Args={}
+2021-10-06 18:55:11,811 : EventManager : Event: ======'init_phase_4'====== Args={}
+2021-10-06 18:55:11,811 : EventManager : Event: ======'init_phase_5'====== Args={}
+2021-10-06 18:55:11,812 : EventManager : Event: ======'init_done'====== Args={}
+2021-10-06 18:55:11,812 : MPF-MC BCP Server : Starting up on localhost port 5050
+2021-10-06 18:55:11,813 : MPF-MC BCP Server : Waiting for a connection...
+2021-10-06 18:55:11,824 : EventManager : Event: ======'client_disconnected'====== Args={'host': '127.0.0.1', 'port': 5050}
+2021-10-06 18:55:11,825 : MPF-MC BCP Server : Received connection from: 127.0.0.1:44248
+2021-10-06 18:55:11,836 : EventManager : Event: ======'client_connected'====== Args={'host': '127.0.0.1', 'port': 44248}
+2021-10-06 18:55:11,861 : EventManager : Event: ======'machine_var_credits_string'====== Args={'value': 'FREE PLAY', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,861 : EventManager : Event: ======'machine_var_mpf_version'====== Args={'value': 'MPF v0.54.0-dev.2', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,861 : EventManager : Event: ======'machine_var_mpf_extended_version'====== Args={'value': 'MPF v0.54.0-dev.2, Config version:5, Show version: 5, BCP version:1.1', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,861 : EventManager : Event: ======'machine_var_python_version'====== Args={'value': '3.6.9', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,861 : EventManager : Event: ======'machine_var_platform'====== Args={'value': 'Linux-4.15.0-159-generic-x86_64-with-Ubuntu-18.04-bionic', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,862 : EventManager : Event: ======'machine_var_platform_system'====== Args={'value': 'Linux', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,862 : EventManager : Event: ======'machine_var_platform_release'====== Args={'value': '4.15.0-159-generic', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,862 : EventManager : Event: ======'machine_var_platform_version'====== Args={'value': '#167-Ubuntu SMP Tue Sep 21 08:55:05 UTC 2021', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,862 : EventManager : Event: ======'machine_var_platform_machine'====== Args={'value': 'x86_64', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,862 : EventManager : Event: ======'machine_var_audits_player_score'====== Args={'value': {'top': [], 'average': 0, 'total': 0}, 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,862 : EventManager : Event: ======'machine_var_mc_version'====== Args={'value': 'MPF-MC v0.54.0-dev.0', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,862 : EventManager : Event: ======'machine_var_mc_extended_version'====== Args={'value': 'MPF-MC v0.54.0-dev.0 (config_version=5, BCP v1.1, Requires MPF v0.54.0-dev.0)', 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,862 : EventManager : Event: ======'machine_var_master_volume'====== Args={'value': 0.5, 'prev_value': None, 'change': True}
+2021-10-06 18:55:11,863 : EventManager : Event: ======'mc_reset_phase_1'====== Args={}
+2021-10-06 18:55:11,863 : EventManager : Event: ======'mc_reset_phase_2'====== Args={}
+2021-10-06 18:55:11,863 : EventManager : Event: ======'mc_reset_phase_3'====== Args={}
+2021-10-06 18:55:11,863 : EventManager : Event: ======'mc_reset_complete'====== Args={}
+2021-10-06 18:55:17,260 : EventManager : Event: ======'add_event'====== Args={}
+2021-10-06 18:55:17,738 : EventManager : Event: ======'another_add_event'====== Args={}
+2021-10-06 18:55:18,406 : EventManager : Event: ======'add_event'====== Args={}
+2021-10-06 18:55:18,883 : EventManager : Event: ======'another_add_event'====== Args={}
+2021-10-06 18:55:20,818 : EventManager : Event: ======'subtract_event'====== Args={}
+2021-10-06 18:55:21,265 : EventManager : Event: ======'another_subtract_event'====== Args={}
+2021-10-06 18:55:21,580 : EventManager : Event: ======'subtract_event'====== Args={}
+2021-10-06 18:55:21,894 : EventManager : Event: ======'another_subtract_event'====== Args={}
+2021-10-06 18:55:22,183 : EventManager : Event: ======'subtract_event'====== Args={}
+2021-10-06 18:55:22,469 : EventManager : Event: ======'another_subtract_event'====== Args={}
+2021-10-06 18:55:26,026 : kivy : Base: Leaving application in progress...
+2021-10-06 18:55:26,068 : kivy : WindowSDL: exiting mainloop and closing.
+2021-10-06 18:55:26,091 : mpfmc : Stopping...
+2021-10-06 18:55:26,091 : EventManager : Event: ======'shutdown'====== Args={}
+2021-10-06 18:55:26,178 : mpfmc : Loop rate 77.74 Hz
+2021-10-06 18:55:26,178 : kivy : MC run loop ended.
+2021-10-06 18:55:26,178 : kivy : Stopping child threads... (3 remaining)
+2021-10-06 18:55:26,430 : mpfmc : Stopping...
+2021-10-06 18:55:26,431 : EventManager : Event: ======'shutdown'====== Args={}
+2021-10-06 18:55:26,431 : mpfmc : Loop rate 76.41 Hz
+2021-10-06 18:55:26,446 : MPF-MC BCP Server : Stopping BCP sending thread
+2021-10-06 18:55:26,682 : kivy : All child threads stopped.

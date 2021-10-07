@@ -1,0 +1,29 @@
+ #config_version=5 
+
+
+keyboard:
+  a:
+    event: add_event
+  b:
+    event: another_add_event
+  s:
+    event: subtract_event
+  t:
+    event: another_subtract_event
+
+counters: 
+  count_test:
+    enable_events: machine_reset_phase_3
+    count_events:
+      - add_event
+      - another_add_event
+    control_events:
+      - event: subtract_event
+        action: subtract
+        value: 1
+      - event: another_subtract_event
+        action: subtract
+        value: 1
+    debug: true
+
+

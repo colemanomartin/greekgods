@@ -259,13 +259,13 @@ extra_balls:
     enabled: True
   score_one:
     enabled: true
-    award_events: player_score{value>=250000}
+    award_events: player_score{value>=150000}
   score_two:
     enabled: true
-    award_events: player_score{value>=500000}
+    award_events: player_score{value>=300000}
   score_three:
     enabled: true
-    award_events: player_score{value>=750000}
+    award_events: player_score{value>=600000}
   score_four:
     enabled: true
     award_events: player_score{value>=1000000}
@@ -280,7 +280,7 @@ coil_player:
       pulse_ms: 30
 
 queue_relay_player:
-  ball_ending{current_player.ball==3 and current_player.score >= 100000}:
+  ball_ending{current_player.ball==3 and current_player.score >= 50000}:
     post: enter_hades_from_relay_player
     wait_for: mode_hades_bonus_game_stopping
 
@@ -747,7 +747,7 @@ show_player:
       loops: 0
       priority: 50
   ball_save_bs_scoop_eject_timer_start:
-    countdown30:
+    countdown20:
       speed: 10
       loops: 0
       priority: 50
