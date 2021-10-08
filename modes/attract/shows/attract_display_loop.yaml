@@ -129,7 +129,7 @@
         anchor_x: left
         z: 1
       - type: text
-        text: "1,000,000      Extra Ball"
+        text: "1,000,000     Extra Ball"
         font_name: greekgods3
         font_size: 130
         color: blue
@@ -152,7 +152,7 @@
       - type: text
         text: "Objective: Impress the Gods, Earn More Balls"
         font_name: greekgods3
-        font_size: 250
+        font_size: 150
         color: green
         y: 84%
         x: 50%
@@ -168,7 +168,7 @@
       - type: text
         text: "Hit Knee Switch For Game Instructions"
         font_name: greekgods3
-        font_size: 250
+        font_size: 150
         color: green
         y: 84%
         x: 50%

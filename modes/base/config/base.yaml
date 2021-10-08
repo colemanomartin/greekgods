@@ -982,38 +982,39 @@ slide_player:
       target: score_lcd
       widgets:
 #      Add back for debugging ramp mb qualification
-      - type: text
-        text: Poseidon (p_excitement)  # (base_poseidon_excitement_tick)
-        number_grouping: true
-        min_digits: 2
-        y: 84%
-        x: 82%
-        font_size: 50
-        anchor_x: left #anchor relates to the text not the screen x,y origin
-        anchor_y: top
-      - type: text
-        text: Olympus (o_excitement)
-        number_grouping: true
-        min_digits: 2
-        y: 80%
-        x: 82%
-        font_size: 50
-        anchor_x: left #anchor relates to the text not the screen x,y origin
-        anchor_y: top
-      - type: text
-        text: (feeders_player_variable) #(player|ramp_flap_player_variable)
-        y: 76%
-        x: 82%
-        font_size: 50
-        anchor_x: left #anchor relates to the text not the screen x,y origin
-        anchor_y: top
-      - type: text
-        text: Goddesses Earned (player_base_goddesses_earned) #(player|ramp_flap_player_variable)
-        y: 72%
-        x: 82%
-        font_size: 50
-        anchor_x: left #anchor relates to the text not the screen x,y origin
-        anchor_y: top
+#      - type: text
+#        text: Poseidon (p_excitement)  # (base_poseidon_excitement_tick)
+#        number_grouping: true
+#        min_digits: 2
+#        y: 84%
+#        x: 82%
+#        font_size: 50
+#        anchor_x: left #anchor relates to the text not the screen x,y origin
+#        anchor_y: top
+#      - type: text
+#        text: Olympus (o_excitement)
+#        number_grouping: true
+#        min_digits: 2
+#        y: 80%
+#        x: 82%
+#        font_size: 50
+#        anchor_x: left #anchor relates to the text not the screen x,y origin
+#        anchor_y: top
+#      - type: text
+#        text: (feeders_player_variable) #(player|ramp_flap_player_variable)
+#        y: 76%
+#        x: 82%
+#        font_size: 50
+#        anchor_x: left #anchor relates to the text not the screen x,y origin
+#        anchor_y: top
+#      - type: text
+#        text: Goddesses Earned (player_base_goddesses_earned) #(player|ramp_flap_player_variable)
+#        y: 72%
+#        x: 82%
+#        font_size: 50
+#        anchor_x: left #anchor relates to the text not the screen x,y origin
+#        anchor_y: top
+
 #      - type: text
 #        text: (ramp_flap_player_variable) #(player|ramp_flap_player_variable)
 #        y: 76%

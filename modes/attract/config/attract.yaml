@@ -73,7 +73,7 @@ slides:
     - type: text
       text: "Objective: Impress the Gods, Earn More Balls 0"
       font_name: greekgods3
-      font_size: 250
+      font_size: 100
       color: green
       y: 84%
       x: 50%
@@ -86,7 +86,7 @@ slides:
     - type: text
       text: "Objective: Impress the Gods, Earn More Balls 1"
       font_name: greekgods3
-      font_size: 250
+      font_size: 100
       color: green
       y: 84%
       x: 50%
@@ -99,7 +99,7 @@ slides:
     - type: text
       text: "Objective: Impress the Gods, Earn More Balls 2"
       font_name: greekgods3
-      font_size: 250
+      font_size: 100
       color: green
       y: 84%
       x: 50%
@@ -112,7 +112,7 @@ slides:
     - type: text
       text: "Objective: Impress the Gods, Earn More Balls 3"
       font_name: greekgods3
-      font_size: 250
+      font_size: 100
       color: green
       y: 84%
       x: 50%
@@ -125,7 +125,7 @@ slides:
     - type: text
       text: "Objective: Impress the Gods, Earn More Balls 4"
       font_name: greekgods3
-      font_size: 250
+      font_size: 100
       color: green
       y: 84%
       x: 50%
@@ -138,7 +138,7 @@ slides:
     - type: text
       text: "Objective: Impress the Gods, Earn More Balls 5"
       font_name: greekgods3
-      font_size: 250
+      font_size: 100
       color: green
       y: 84%
       x: 50%
@@ -147,7 +147,7 @@ slides:
       z: 3
 
 slide_player:
-  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==0}: instruction_slide_0
+#  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==0}: instruction_slide_0
   logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==1}: instruction_slide_1
   logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==2}: instruction_slide_2
   logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==3}: instruction_slide_3
