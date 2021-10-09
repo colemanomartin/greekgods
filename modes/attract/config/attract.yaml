@@ -41,14 +41,16 @@ show_player:
 timers:
   instructions_clock:
     start_value: 0
-    end_value: 5 ##########################Set to number of slides
-    tick_interval: 5s #Display duration each slide
+    end_value: 10 ##########################Set to number of slides
+    tick_interval: 10s #Display duration each slide
     direction: up
     control_events:
       - event: s_accessory_active{device.timers.instructions_clock.running==False} #Only reset if not already running
         action: restart
-#      - event: mode_attract_will_stop
-#        action: stop
+      - event: s_left_flipper_active  #User moved to new slide so dont force slide change until has time to read
+        action: restart
+      - event: s_right_flipper_active
+        action: restart
 
 counters:
   instruction_slide_controller:
@@ -58,7 +60,7 @@ counters:
       - timer_instructions_clock_started
     count_events:
       - s_right_flipper_active #{device.counters.instruction_slide_controller.value<=5} ####Update with number slides (0 is a slide)
-      - instructions_clock_tick
+      - timer_instructions_clock_tick{device.timers.instructions_clock.ticks>0} #conditional to keep first tick when timer starts from skipping first slide
     control_events:
       - event: s_left_flipper_active{device.counters.instruction_slide_controller.value>0}
         action: subtract
@@ -77,6 +79,14 @@ slide_player:
   logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==5}: instruction_slide_5
   logicblock_instruction_slide_controller_complete:
     instruction_slide_5:
+      action: remove
+    instruction_slide_4:
+      action: remove
+    instruction_slide_3:
+      action: remove
+    instruction_slide_2:
+      action: remove
+    instruction_slide_1:
       action: remove
 
 sound_player:

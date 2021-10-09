@@ -28,7 +28,7 @@
 
 #        direction: left
 
-- duration: 8
+- duration: 10
   slides:
     special_thanks_slide:
       target: score_lcd
@@ -57,7 +57,7 @@
         font_name: greekgods3
         font_size: 130
         color: yellow
-        y: 80%
+        y: 70%
         x: 50%
         anchor_y: top
         anchor_x: center
@@ -65,9 +65,9 @@
         animations:
           add_to_slide:
           - property: y
-            value: 50%
+            value: 75%
             relative: true
-            duration: 8
+            duration: 10
 #      transition:
 #        type: move_in
 #        duration: 1s
