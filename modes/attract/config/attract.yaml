@@ -57,7 +57,7 @@ counters:
     restart_events: #enables the counter and resets it to count 0
       - timer_instructions_clock_started
     count_events:
-      - s_right_flipper_active{device.counters.instruction_slide_controller.value<5} ####Update with number slides (0 is a slide)
+      - s_right_flipper_active #{device.counters.instruction_slide_controller.value<=5} ####Update with number slides (0 is a slide)
       - instructions_clock_tick
     control_events:
       - event: s_left_flipper_active{device.counters.instruction_slide_controller.value>0}
@@ -88,8 +88,8 @@ slides:
     target: score_lcd
     widgets:
     - type: image
-      image: instructions_1
-      scale: 0.5
+      image: instructions_intro
+      scale: 1
       y: 66.5%
       anchor_y: center
       anchor_x: center
@@ -109,7 +109,7 @@ slides:
     widgets:
     - type: image
       image: instructions_prmb
-      scale: 0.5
+      scale: 1
       y: 66.5%
       anchor_y: center
       anchor_x: center
@@ -127,34 +127,48 @@ slides:
   instruction_slide_3:
     target: score_lcd
     widgets:
-    - type: text
-      text: "Objective: Impress the Gods, Earn More Balls 3"
-      font_name: greekgods3
-      font_size: 100
-      color: green
-      y: 84%
-      x: 50%
-      anchor_y: bottom
+    - type: image
+      image: instructions_knee_switch
+      scale: 1
+      y: 66.5%
+      anchor_y: center
       anchor_x: center
-      z: 3
+      z: 1
+    - type: text
+      text: "Slide 3/10"
+      font_name: greekgods3
+      font_size: 72
+      color: white
+      x: 88%
+      y: 34%
+      anchor_y: bottom
+      anchor_x: left
+      z: 2
   instruction_slide_4:
     target: score_lcd
     widgets:
-    - type: text
-      text: "Objective: Impress the Gods, Earn More Balls 4"
-      font_name: greekgods3
-      font_size: 100
-      color: green
-      y: 84%
-      x: 50%
-      anchor_y: bottom
+    - type: image
+      image: instructions_ormb
+      scale: 1
+      y: 66.5%
+      anchor_y: center
       anchor_x: center
-      z: 3
+      z: 1
+    - type: text
+      text: "Slide 4/10"
+      font_name: greekgods3
+      font_size: 72
+      color: white
+      x: 88%
+      y: 34%
+      anchor_y: bottom
+      anchor_x: left
+      z: 2
   instruction_slide_5:
     target: score_lcd
     widgets:
     - type: text
-      text: "Objective: Impress the Gods, Earn More Balls 5"
+      text: "Powerball 5"
       font_name: greekgods3
       font_size: 100
       color: green
