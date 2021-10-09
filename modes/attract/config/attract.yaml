@@ -52,7 +52,8 @@ timers:
 
 counters:
   instruction_slide_controller:
-    start_value: 1
+    starting_count: 1
+    enable_events: timer_instructions_clock_started
     restart_events: #enables the counter and resets it to count 0
       - timer_instructions_clock_started
     count_events:
@@ -62,10 +63,25 @@ counters:
       - event: s_left_flipper_active{device.counters.instruction_slide_controller.value>0}
         action: subtract
         value: 1
-    count_complete_value: 5 ###########################
+    count_complete_value: 6 ###########################
     disable_on_complete: true
     persist_state: false #resets with each new ball
 
+
+slide_player:
+#  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==0}: instruction_slide_0
+  timer_instructions_clock_started{device.counters.instruction_slide_controller.value==1}: instruction_slide_1
+  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==2}: instruction_slide_2
+  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==3}: instruction_slide_3
+  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==4}: instruction_slide_4
+  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==5}: instruction_slide_5
+  logicblock_instruction_slide_controller_complete:
+    instruction_slide_5:
+      action: remove
+
+sound_player:
+  mode_attract_will_stop: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
+  player_added: snd_startbutton
 
 slides:
   instruction_slide_1:
@@ -73,15 +89,18 @@ slides:
     widgets:
     - type: image
       image: instructions_1
-      scale: 1
+      scale: 0.5
+      y: 66.5%
+      anchor_y: center
+      anchor_x: center
       z: 1
     - type: text
       text: "Slide 1/10"
       font_name: greekgods3
-      font_size: 36
-      color: green
-      x: 85%
-      y: 10%
+      font_size: 72
+      color: white
+      x: 88%
+      y: 34%
       anchor_y: bottom
       anchor_x: left
       z: 2
@@ -90,15 +109,18 @@ slides:
     widgets:
     - type: image
       image: instructions_prmb
-      scale: 1
+      scale: 0.5
+      y: 66.5%
+      anchor_y: center
+      anchor_x: center
       z: 1
     - type: text
       text: "Slide 2/10"
       font_name: greekgods3
-      font_size: 36
-      color: green
-      x: 85%
-      y: 10%
+      font_size: 72
+      color: white
+      x: 88%
+      y: 34%
       anchor_y: bottom
       anchor_x: left
       z: 2
@@ -141,15 +163,3 @@ slides:
       anchor_y: bottom
       anchor_x: center
       z: 3
-
-slide_player:
-#  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==0}: instruction_slide_0
-  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==1}: instruction_slide_1
-  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==2}: instruction_slide_2
-  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==3}: instruction_slide_3
-  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==4}: instruction_slide_4
-  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==5}: instruction_slide_5
-
-sound_player:
-  mode_attract_will_stop: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
-  player_added: snd_startbutton

@@ -957,7 +957,7 @@ autofire_coils:
       debounce: normal
     playfield: earth_pf
     enable_events:
-      - s_accessory_active
+      - s_accessory_active{mode.game.active} #so attract mode can use switch
     disable_events:
       - s_accessory_inactive
   poseidon_right_slingshot:
@@ -967,7 +967,7 @@ autofire_coils:
       debounce: normal
     playfield: earth_pf
     enable_events:
-      - s_accessory_active
+      - s_accessory_active{mode.game.active} #so attract mode can use switch
     disable_events:
       - s_accessory_inactive
   poseidon_left_slingshot_auto:
@@ -1067,7 +1067,7 @@ flippers:
     enable_events:
       - ball_started
       - mode_hades_mini_game_stopped # mode_hades_bonus_game_stopped,
-      - s_accessory_inactive
+      - s_accessory_inactive{mode.game.active} #so attract mode can use switch
     disable_events:
       - ball_will_end
       - service_mode_entered
@@ -1084,7 +1084,7 @@ flippers:
     enable_events:
       - ball_started
       - mode_hades_mini_game_stopped # mode_hades_bonus_game_stopped,
-      - s_accessory_inactive
+      - s_accessory_inactive{mode.game.active} #so attract mode can use switch
     disable_events:
       - ball_will_end
       - service_mode_entered
