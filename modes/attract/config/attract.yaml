@@ -52,6 +52,7 @@ timers:
 
 counters:
   instruction_slide_controller:
+    start_value: 1
     restart_events: #enables the counter and resets it to count 0
       - timer_instructions_clock_started
     count_events:
@@ -61,51 +62,46 @@ counters:
       - event: s_left_flipper_active{device.counters.instruction_slide_controller.value>0}
         action: subtract
         value: 1
-    count_complete_value: 5 ###########################Set to 1+ number slides
+    count_complete_value: 5 ###########################
     disable_on_complete: true
     persist_state: false #resets with each new ball
 
 
 slides:
-  instruction_slide_0:
-    target: score_lcd
-    widgets:
-    - type: text
-      text: "Objective: Impress the Gods, Earn More Balls 0"
-      font_name: greekgods3
-      font_size: 100
-      color: green
-      y: 84%
-      x: 50%
-      anchor_y: bottom
-      anchor_x: center
-      z: 3
   instruction_slide_1:
     target: score_lcd
     widgets:
+    - type: image
+      image: instructions_1
+      scale: 1
+      z: 1
     - type: text
-      text: "Objective: Impress the Gods, Earn More Balls 1"
+      text: "Slide 1/10"
       font_name: greekgods3
-      font_size: 100
+      font_size: 36
       color: green
-      y: 84%
-      x: 50%
+      x: 85%
+      y: 10%
       anchor_y: bottom
-      anchor_x: center
-      z: 3
+      anchor_x: left
+      z: 2
   instruction_slide_2:
     target: score_lcd
     widgets:
+    - type: image
+      image: instructions_prmb
+      scale: 1
+      z: 1
     - type: text
-      text: "Objective: Impress the Gods, Earn More Balls 2"
+      text: "Slide 2/10"
       font_name: greekgods3
-      font_size: 100
+      font_size: 36
       color: green
-      y: 84%
-      x: 50%
+      x: 85%
+      y: 10%
       anchor_y: bottom
-      anchor_x: center
-      z: 3
+      anchor_x: left
+      z: 2
   instruction_slide_3:
     target: score_lcd
     widgets:
