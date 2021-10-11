@@ -1,0 +1,28 @@
+score:
+- !!python/tuple
+  - BCH
+  - 109750
+- !!python/tuple
+  - MPF
+  - 100000
+- !!python/tuple
+  - BRI
+  - 90000
+- !!python/tuple
+  - JAN
+  - 80000
+- !!python/tuple
+  - QUI
+  - 70000
+- !!python/tuple
+  - MAR
+  - 60000
+- !!python/tuple
+  - JOH
+  - 50000
+- !!python/tuple
+  - ELI
+  - 40000
+- !!python/tuple
+  - MIK
+  - 30000

@@ -28,6 +28,77 @@
 
 #        direction: left
 
+
+- duration: 2
+  slides:
+    show_high_scores:
+      widgets:
+      - type: Text
+        text: HIGH SCORES
+        font_size: 60
+        bold: true
+        anchor_x: center
+        anchor_y: center
+        x: center
+        y: top-100
+      - type: Text
+        text: (machine|score1_label)
+        style: attract_mode_high_score_display_label
+        y: top-200
+      - type: Text
+        text: (machine|score1_name)
+        style: attract_mode_high_score_display_name
+        y: top-200
+      - type: Text
+        text: (machine|score1_value)
+        style: attract_mode_high_score_display_score
+        y: top-200
+      - type: Text
+        text: (machine|score2_label)
+        style: attract_mode_high_score_display_label
+        y: top-340
+      - type: Text
+        text: (machine|score2_name)
+        style: attract_mode_high_score_display_name
+        y: top-340
+      - type: Text
+        text: (machine|score2_value)
+        style: attract_mode_high_score_display_score
+        y: top-340
+      - type: Text
+        text: (machine|score3_label)
+        style: attract_mode_high_score_display_label
+        y: top-480
+      - type: Text
+        text: (machine|score3_name)
+        style: attract_mode_high_score_display_name
+        y: top-480
+      - type: Text
+        text: (machine|score3_value)
+        style: attract_mode_high_score_display_score
+        y: top-480
+#      - type: Text
+#        text: LOOP CHAMPION
+#        font_size: 60
+#        bold: true
+#        anchor_x: center
+#        anchor_y: center
+#        x: center
+#        y: top-500
+#      - type: Text
+#        text: (machine|loops1_label)
+#        style: attract_mode_high_score_display_label
+#        y: top-600
+#      - type: Text
+#        text: (machine|loops1_name)
+#        style: attract_mode_high_score_display_name
+#        y: top-600
+#      - type: Text
+#        text: (machine|loops1_value)
+#        style: attract_mode_high_score_display_score
+#        y: top-600
+
+
 - duration: 10
   slides:
     special_thanks_slide:
@@ -142,75 +213,6 @@
         type: move_in
         duration: 1s
         direction: right
-
-- duration: 20s
-  slides:
-    show_high_scores:
-      widgets:
-      - type: Text
-        text: HIGH SCORES
-        font_size: 60
-        bold: true
-        anchor_x: center
-        anchor_y: center
-        x: center
-        y: top-100
-      - type: Text
-        text: (machine|score1_label)
-        style: attract_mode_high_score_display_label
-        y: top-200
-      - type: Text
-        text: (machine|score1_name)
-        style: attract_mode_high_score_display_name
-        y: top-200
-      - type: Text
-        text: (machine|score1_value)
-        style: attract_mode_high_score_display_score
-        y: top-200
-      - type: Text
-        text: (machine|score2_label)
-        style: attract_mode_high_score_display_label
-        y: top-240
-      - type: Text
-        text: (machine|score2_name)
-        style: attract_mode_high_score_display_name
-        y: top-240
-      - type: Text
-        text: (machine|score2_value)
-        style: attract_mode_high_score_display_score
-        y: top-240
-      - type: Text
-        text: (machine|score3_label)
-        style: attract_mode_high_score_display_label
-        y: top-280
-      - type: Text
-        text: (machine|score3_name)
-        style: attract_mode_high_score_display_name
-        y: top-280
-      - type: Text
-        text: (machine|score3_value)
-        style: attract_mode_high_score_display_score
-        y: top-280
-      - type: Text
-        text: LOOP CHAMPION
-        font_size: 60
-        bold: true
-        anchor_x: center
-        anchor_y: center
-        x: center
-        y: top-500
-      - type: Text
-        text: (machine|loops1_label)
-        style: attract_mode_high_score_display_label
-        y: top-600
-      - type: Text
-        text: (machine|loops1_name)
-        style: attract_mode_high_score_display_name
-        y: top-600
-      - type: Text
-        text: (machine|loops1_value)
-        style: attract_mode_high_score_display_score
-        y: top-600
 
 - duration: 2
   slides:

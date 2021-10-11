@@ -48,9 +48,11 @@ timers:
       - event: s_accessory_active{device.timers.instructions_clock.running==False} #Only reset if not already running
         action: restart
       - event: s_left_flipper_active  #User moved to new slide so dont force slide change until has time to read
-        action: restart
+        action: jump #Using jump instead of restart so that timer stays dead unless already engaged by knee
+        value: 0
       - event: s_right_flipper_active
-        action: restart
+        action: jump
+        value: 0
       - event: logicblock_instruction_slide_controller_complete
         action: stop
   #This timer posts a complete event every time a slide is to be advanced or decremented
@@ -66,16 +68,16 @@ timers:
     tick_interval: 100ms
     direction: up
     control_events:
-      - event: s_left_flipper_active  #User moved to new slide so dont force slide change until has time to read
+      - event: s_left_flipper_active{device.timers.instructions_clock.running}  #User moved to new slide so dont force slide change until has time to read
         action: restart
-      - event: s_right_flipper_active
+      - event: s_right_flipper_active{device.timers.instructions_clock.running}
         action: restart
       - event: timer_instructions_clock_tick
         action: restart
       - event: timer_instructions_clock_started
         action: restart
-      - event: logicblock_instruction_slide_controller_complete
-        action: stop
+#      - event: logicblock_instruction_slide_controller_complete
+#        action: restart
 
 counters:
   instruction_slide_controller:
@@ -85,15 +87,15 @@ counters:
     restart_events: #enables the counter and resets it to count 0
       - timer_instructions_clock_started
     count_events:
-      - s_right_flipper_active # {device.counters.instruction_slide_controller.value<11} ####Update with number slides (0 is a slide)
+      - s_right_flipper_active{device.timers.instructions_clock.running} # {device.counters.instruction_slide_controller.value<11} ####Update with number slides (0 is a slide)
       - timer_instructions_clock_tick{device.timers.instructions_clock.ticks>0} #conditional to keep first tick when timer starts from skipping first slide
     control_events:
-      - event: s_left_flipper_active{device.counters.instruction_slide_controller.value>1}
+      - event: s_left_flipper_active{device.timers.instructions_clock.running and device.counters.instruction_slide_controller.value>1}
         action: subtract
         value: 1
-      - event: flipper_cancel
-        action: jump
-        value: 11
+#      - event: flipper_cancel
+#        action: jump
+#        value: 11
     disable_on_complete: true
     reset_on_complete: true
     persist_state: false #resets with each new ball
@@ -101,7 +103,7 @@ counters:
 
 slide_player:
 #  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==0}: instruction_slide_0
-  timer_slide_advance_pause_complete{device.counters.instruction_slide_controller.value==1}:
+  timer_slide_advance_pause_complete{device.counters.instruction_slide_controller.value==1 and device.counters.instruction_slide_controller.enabled}:
     instruction_slide_2:
       action: remove
     instruction_slide_1:
@@ -123,36 +125,72 @@ slide_player:
   timer_slide_advance_pause_complete{device.counters.instruction_slide_controller.value==4}:
     instruction_slide_3:
       action: remove
-    instruction_slide_4:
+    instruction_slide_5:
       action: remove
     instruction_slide_4:
       action: play
-
-  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==5}: instruction_slide_5
-  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==6}: instruction_slide_6
-  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==7}: instruction_slide_7
-  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==8}: instruction_slide_8
-  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==9}: instruction_slide_9
-  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==10}: instruction_slide_10
-  logicblock_instruction_slide_controller_complete:
-    instruction_slide_10:
-      action: remove
-    instruction_slide_9:
-      action: remove
-    instruction_slide_8:
-      action: remove
-    instruction_slide_7:
+  timer_slide_advance_pause_complete{device.counters.instruction_slide_controller.value==5}:
+    instruction_slide_4:
       action: remove
     instruction_slide_6:
       action: remove
     instruction_slide_5:
+      action: play
+  timer_slide_advance_pause_complete{device.counters.instruction_slide_controller.value==6}:
+    instruction_slide_5:
       action: remove
-    instruction_slide_4:
+    instruction_slide_7:
       action: remove
-    instruction_slide_3:
+    instruction_slide_6:
+      action: play
+  timer_slide_advance_pause_complete{device.counters.instruction_slide_controller.value==7}:
+    instruction_slide_6:
       action: remove
-    instruction_slide_2:
+    instruction_slide_8:
       action: remove
+    instruction_slide_7:
+      action: play
+  timer_slide_advance_pause_complete{device.counters.instruction_slide_controller.value==8}:
+    instruction_slide_7:
+      action: remove
+    instruction_slide_9:
+      action: remove
+    instruction_slide_8:
+      action: play
+  timer_slide_advance_pause_complete{device.counters.instruction_slide_controller.value==9}:
+    instruction_slide_8:
+      action: remove
+    instruction_slide_10:
+      action: remove
+    instruction_slide_9:
+      action: play
+  timer_slide_advance_pause_complete{device.counters.instruction_slide_controller.value==10}:
+    instruction_slide_9:
+      action: remove
+    instruction_slide_10:
+      action: play
+#  timer_slide_advance_pause_complete{device.counters.instruction_slide_controller.value==11}:
+  logicblock_instruction_slide_controller_complete:
+    instruction_slide_10:
+      action: remove
+#    instruction_slide_1:
+#      action: remove
+#    instruction_slide_9:
+#      action: remove
+#    instruction_slide_8:
+#      action: remove
+#    instruction_slide_7:
+#      action: remove
+#    instruction_slide_6:
+#      action: remove
+#    instruction_slide_5:
+#      action: remove
+#    instruction_slide_4:
+#      action: remove
+#    instruction_slide_3:
+#      action: remove
+#    instruction_slide_2:
+#      action: remove
     instruction_slide_1:
       action: remove
 
@@ -343,9 +381,9 @@ slides:
       z: 2
     - type: image
       image: meander_circle1invert
-      scale: 1
-      x: 12%
-      y: 36%
+      scale: 0.75
+      x: 16%
+      y: 46%
       z: 3
       animations:
         add_to_slide:

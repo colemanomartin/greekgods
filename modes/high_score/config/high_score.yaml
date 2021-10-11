@@ -1,3 +1,4 @@
+#config_version=5
 ##! mode: my_mode
 ##! mode: high_score
 # modes/high_score/config/high_score.yaml
@@ -51,7 +52,7 @@ slides:
 #      font_name: greekgods3
       text: PLAYER (player_num)
       color: ffff00
-      x 50%
+      x: 50%
       y: 80%
     - type: text
       style: big
@@ -59,7 +60,7 @@ slides:
 #      font_name: greekgods3
       text: (award)
       color: f0f0f0
-      x 50%
+      x: 50%
       y: 60%
     - type: text_input
       initial_char: A
@@ -69,18 +70,18 @@ slides:
       font_size: 100
 #      font_name: greekgods3
       max_chars: 3
-      x 50%
+      x: 50%
       y: 30%
-      shift_left_event: sw_left_flipper
-      shift_right_event: s_right_flipper
-      select_event: s_accessory
+      shift_left_event: s_left_flipper_active
+      shift_right_event: s_right_flipper_active ##############Update docs with _active
+      select_event: s_accessory_active  ####Update here too
       color: ff0000
     - type: text
       style: big
       text: '<       >'
       font_size: 100
 #      font_name: greekgods3
-      x 50%
+      x: 50%
       y: 30%
       color: ff0000
     - type: text
@@ -89,7 +90,7 @@ slides:
       font_size: 100
 #      font_name: greekgods3
       style: big
-      x 50%
+      x: 50%
       y: 40%
       color: ff00ff
       animations:
@@ -128,13 +129,13 @@ slides:
       font_size: 100
 #      font_name: greekgods3
       style: big
-      x 50%
+      x: 50%
       y: 90%
       color: 0000ff
     - type: text
       text: (value)
       style: big
-      x 50%
+      x: 50%
       y: 30%
       color: 4040FF
       font_size: 100
