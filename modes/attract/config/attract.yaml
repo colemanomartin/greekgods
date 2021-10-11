@@ -64,7 +64,7 @@ counters:
       - s_right_flipper_active #{device.counters.instruction_slide_controller.value<11} ####Update with number slides (0 is a slide)
       - timer_instructions_clock_tick{device.timers.instructions_clock.ticks>0} #conditional to keep first tick when timer starts from skipping first slide
     control_events:
-      - event: s_left_flipper_active{device.counters.instruction_slide_controller.value>0}
+      - event: s_left_flipper_active{device.counters.instruction_slide_controller.value>1}
         action: subtract
         value: 1
     count_complete_value: 11 ###########################
