@@ -74,9 +74,25 @@ counters:
 
 slide_player:
 #  logicblock_instruction_slide_controller_updated{device.counters.instruction_slide_controller.value==0}: instruction_slide_0
-  timer_instructions_clock_started{device.counters.instruction_slide_controller.value==1}: instruction_slide_1
-  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==2}: instruction_slide_2
-  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==3}: instruction_slide_3
+  timer_instructions_clock_started{device.counters.instruction_slide_controller.value==1}:
+    instruction_slide_2:
+      action: remove
+    instruction_slide_1:
+      action: play
+  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==2}:
+    instruction_slide_1:
+      action: remove
+    instruction_slide_3:
+      action: remove
+    instruction_slide_2:
+      action: play
+  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==3}:
+    instruction_slide_2:
+      action: remove
+    instruction_slide_4:
+      action: remove
+    instruction_slide_3:
+      action: play
   logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==4}: instruction_slide_4
   logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==5}: instruction_slide_5
   logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==6}: instruction_slide_6
@@ -195,7 +211,7 @@ slides:
     target: score_lcd
     widgets:
     - type: image
-      image: instructions_power_ball
+      image: instructions_powerball
       scale: 1
       y: 66.5%
       anchor_y: center
@@ -275,7 +291,7 @@ slides:
     target: score_lcd
     widgets:
     - type: image
-      image: instructions_spinner
+      image: instructions_super_spinner
       scale: 1
       y: 66.5%
       anchor_y: center
@@ -294,8 +310,8 @@ slides:
     - type: image
       image: meander_circle1invert
       scale: 1
-      x: 20%
-      y: 30%
+      x: 12%
+      y: 36%
       z: 3
       animations:
         add_to_slide:
