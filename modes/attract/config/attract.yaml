@@ -51,6 +51,8 @@ timers:
         action: restart
       - event: s_right_flipper_active
         action: restart
+      - event: logicblock_instruction_slide_controller_complete
+        action: stop
 
 counters:
   instruction_slide_controller:
@@ -59,13 +61,13 @@ counters:
     restart_events: #enables the counter and resets it to count 0
       - timer_instructions_clock_started
     count_events:
-      - s_right_flipper_active #{device.counters.instruction_slide_controller.value<=5} ####Update with number slides (0 is a slide)
+      - s_right_flipper_active #{device.counters.instruction_slide_controller.value<11} ####Update with number slides (0 is a slide)
       - timer_instructions_clock_tick{device.timers.instructions_clock.ticks>0} #conditional to keep first tick when timer starts from skipping first slide
     control_events:
       - event: s_left_flipper_active{device.counters.instruction_slide_controller.value>0}
         action: subtract
         value: 1
-    count_complete_value: 6 ###########################
+    count_complete_value: 11 ###########################
     disable_on_complete: true
     persist_state: false #resets with each new ball
 
@@ -77,7 +79,22 @@ slide_player:
   logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==3}: instruction_slide_3
   logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==4}: instruction_slide_4
   logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==5}: instruction_slide_5
+  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==6}: instruction_slide_6
+  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==7}: instruction_slide_7
+  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==8}: instruction_slide_8
+  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==9}: instruction_slide_9
+  logicblock_instruction_slide_controller_hit{device.counters.instruction_slide_controller.value==10}: instruction_slide_10
   logicblock_instruction_slide_controller_complete:
+    instruction_slide_10:
+      action: remove
+    instruction_slide_9:
+      action: remove
+    instruction_slide_8:
+      action: remove
+    instruction_slide_7:
+      action: remove
+    instruction_slide_6:
+      action: remove
     instruction_slide_5:
       action: remove
     instruction_slide_4:
@@ -177,158 +194,13 @@ slides:
   instruction_slide_5:
     target: score_lcd
     widgets:
-    - type: image
-      image: instructions_powerball
-      scale: 1
-      y: 66.5%
-      anchor_y: center
-      anchor_x: center
-      z: 1
     - type: text
-      text: "Slide 5/10"
+      text: "Powerball 5"
       font_name: greekgods3
-      font_size: 72
-      color: white
-      x: 88%
-      y: 34%
+      font_size: 100
+      color: green
+      y: 84%
+      x: 50%
       anchor_y: bottom
-      anchor_x: left
-      z: 2
-  instruction_slide_6:
-    target: score_lcd
-    widgets:
-    - type: image
-      image: instructions_mystery
-      scale: 1
-      y: 66.5%
-      anchor_y: center
       anchor_x: center
-      z: 1
-    - type: text
-      text: "Slide 6/10"
-      font_name: greekgods3
-      font_size: 72
-      color: white
-      x: 88%
-      y: 34%
-      anchor_y: bottom
-      anchor_x: left
-      z: 2
-  instruction_slide_7:
-    target: score_lcd
-    widgets:
-    - type: image
-      image: instructions_outlanes
-      scale: 1
-      y: 66.5%
-      anchor_y: center
-      anchor_x: center
-      z: 1
-    - type: text
-      text: "Slide 7/10"
-      font_name: greekgods3
-      font_size: 72
-      color: white
-      x: 88%
-      y: 34%
-      anchor_y: bottom
-      anchor_x: left
-      z: 2
-  instruction_slide_8:
-    target: score_lcd
-    widgets:
-    - type: image
-      image: instructions_goddess
-      scale: 1
-      y: 66.5%
-      anchor_y: center
-      anchor_x: center
-      z: 1
-    - type: text
-      text: "Slide 8/10"
-      font_name: greekgods3
-      font_size: 72
-      color: white
-      x: 88%
-      y: 34%
-      anchor_y: bottom
-      anchor_x: left
-      z: 2
-  instruction_slide_9:
-    target: score_lcd
-    widgets:
-    - type: image
-      image: instructions_super_spinner
-      scale: 1
-      y: 66.5%
-      anchor_y: center
-      anchor_x: center
-      z: 1
-    - type: text
-      text: "Slide 9/10"
-      font_name: greekgods3
-      font_size: 72
-      color: white
-      x: 88%
-      y: 34%
-      anchor_y: bottom
-      anchor_x: left
-      z: 2
-    - type: image
-      image: meander_circle1invert
-      scale: 1
-      x: 20%
-      y: 20%
-      z: 1
-      animations:
-        add_to_slide:
-        - property: rotation
-          value: 0
-          relative: false
-          duration: 0
-        - property: rotation
-          value: 360
-          relative: false
-          duration: 4s
-          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
-          repeat: true
-  instruction_slide_510:
-    target: score_lcd
-    widgets:
-    - type: image
-      image: instructions_hydra
-      scale: 1
-      y: 66.5%
-      anchor_y: center
-      anchor_x: center
-      z: 1
-    - type: text
-      text: "Slide 10/10"
-      font_name: greekgods3
-      font_size: 72
-      color: white
-      x: 88%
-      y: 34%
-      anchor_y: bottom
-      anchor_x: left
-      z: 2
-#  instruction_slide_11:
-#    target: score_lcd
-#    widgets:
-#    - type: image
-#      image: instructions_
-#      scale: 1
-#      y: 66.5%
-#      anchor_y: center
-#      anchor_x: center
-#      z: 1
-#    - type: text
-#      text: "Slide 11/11"
-#      font_name: greekgods3
-#      font_size: 72
-#      color: white
-#      x: 88%
-#      y: 34%
-#      anchor_y: bottom
-#      anchor_x: left
-#      z: 2
+      z: 3
