@@ -134,8 +134,10 @@ switches:
     #        number: 1/1/1
     s_right_flipper:
         number: 1/1/2
+        tags: right_flipper # for MPF to automatically issue a flipper_cancel event 
     s_left_flipper:
         number: 1/1/3
+        tags: left_flipper # https://docs.missionpinball.org/en/latest/game_logic/combo_switches/index.html
     s_start:
         number: 1/1/4
         tags: start
