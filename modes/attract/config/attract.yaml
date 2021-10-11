@@ -177,13 +177,158 @@ slides:
   instruction_slide_5:
     target: score_lcd
     widgets:
-    - type: text
-      text: "Powerball 5"
-      font_name: greekgods3
-      font_size: 100
-      color: green
-      y: 84%
-      x: 50%
-      anchor_y: bottom
+    - type: image
+      image: instructions_powerball
+      scale: 1
+      y: 66.5%
+      anchor_y: center
       anchor_x: center
-      z: 3
+      z: 1
+    - type: text
+      text: "Slide 5/10"
+      font_name: greekgods3
+      font_size: 72
+      color: white
+      x: 88%
+      y: 34%
+      anchor_y: bottom
+      anchor_x: left
+      z: 2
+  instruction_slide_6:
+    target: score_lcd
+    widgets:
+    - type: image
+      image: instructions_mystery
+      scale: 1
+      y: 66.5%
+      anchor_y: center
+      anchor_x: center
+      z: 1
+    - type: text
+      text: "Slide 6/10"
+      font_name: greekgods3
+      font_size: 72
+      color: white
+      x: 88%
+      y: 34%
+      anchor_y: bottom
+      anchor_x: left
+      z: 2
+  instruction_slide_7:
+    target: score_lcd
+    widgets:
+    - type: image
+      image: instructions_outlanes
+      scale: 1
+      y: 66.5%
+      anchor_y: center
+      anchor_x: center
+      z: 1
+    - type: text
+      text: "Slide 7/10"
+      font_name: greekgods3
+      font_size: 72
+      color: white
+      x: 88%
+      y: 34%
+      anchor_y: bottom
+      anchor_x: left
+      z: 2
+  instruction_slide_8:
+    target: score_lcd
+    widgets:
+    - type: image
+      image: instructions_goddess
+      scale: 1
+      y: 66.5%
+      anchor_y: center
+      anchor_x: center
+      z: 1
+    - type: text
+      text: "Slide 8/10"
+      font_name: greekgods3
+      font_size: 72
+      color: white
+      x: 88%
+      y: 34%
+      anchor_y: bottom
+      anchor_x: left
+      z: 2
+  instruction_slide_9:
+    target: score_lcd
+    widgets:
+    - type: image
+      image: instructions_super_spinner
+      scale: 1
+      y: 66.5%
+      anchor_y: center
+      anchor_x: center
+      z: 1
+    - type: text
+      text: "Slide 9/10"
+      font_name: greekgods3
+      font_size: 72
+      color: white
+      x: 88%
+      y: 34%
+      anchor_y: bottom
+      anchor_x: left
+      z: 2
+    - type: image
+      image: meander_circle1invert
+      scale: 1
+      x: 20%
+      y: 20%
+      z: 1
+      animations:
+        add_to_slide:
+        - property: rotation
+          value: 0
+          relative: false
+          duration: 0
+        - property: rotation
+          value: 360
+          relative: false
+          duration: 4s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+          repeat: true
+  instruction_slide_510:
+    target: score_lcd
+    widgets:
+    - type: image
+      image: instructions_hydra
+      scale: 1
+      y: 66.5%
+      anchor_y: center
+      anchor_x: center
+      z: 1
+    - type: text
+      text: "Slide 10/10"
+      font_name: greekgods3
+      font_size: 72
+      color: white
+      x: 88%
+      y: 34%
+      anchor_y: bottom
+      anchor_x: left
+      z: 2
+#  instruction_slide_11:
+#    target: score_lcd
+#    widgets:
+#    - type: image
+#      image: instructions_
+#      scale: 1
+#      y: 66.5%
+#      anchor_y: center
+#      anchor_x: center
+#      z: 1
+#    - type: text
+#      text: "Slide 11/11"
+#      font_name: greekgods3
+#      font_size: 72
+#      color: white
+#      x: 88%
+#      y: 34%
+#      anchor_y: bottom
+#      anchor_x: left
+#      z: 2

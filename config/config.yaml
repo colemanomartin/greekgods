@@ -97,7 +97,7 @@ ball_saves:
 #Seems like this one should not work since it enables but does not have a start event
   bs_scoop_eject: #showplayer in base
     source_playfield: earth_pf
-    active_time: 3s
+    active_time: 2.5s
     hurry_up_time: 0s
     grace_period: 0s
     enable_events: balldevice_bd_scoop_ball_eject_success
@@ -118,6 +118,26 @@ ball_saves:
     auto_launch: yes
     balls_to_save: 1
     debug: yes
+# These from the docs for the attract mode high score display
+widget_styles:
+  attract_mode_high_score_display_label:
+    font_size: 100
+    anchor_x: right
+    anchor_y: top
+    x: center-100
+    bold: true
+  attract_mode_high_score_display_name:
+    font_size: 100
+    anchor_x: right
+    anchor_y: top
+    x: center+700
+  attract_mode_high_score_display_score:
+    font_size: 100
+    anchor_x: left
+    anchor_y: top
+    x: center+900
+    number_grouping: true
+    min_digits: 1
 
 state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines.html
 # This state machine activates the magnet on the side of the powerball to feed the mechs on that side of the upper playfield.

@@ -28,7 +28,7 @@ mode:
 #    - ball_ending
 #    - ball_hold_hades_door_held_ball
 #     - mode_bonus_starting # enter_hades_from_bonus_mode
-     - enter_hades_from_relay_player #posted from base
+     - enter_hades_from_relay_player #posted by base
 #    - mode_base_started
 #     - s_ramp_opto_active     #Remove when testing done
   stop_events: extra_ball_earned, extra_ball_not_earned
