@@ -187,12 +187,12 @@ sounds:
     file: cmgg2_complete_drop_targets_to_qualify_mystery_mode.ogg
     volume: 1
     track: voice
-    max_queue_time: 2s
+    max_queue_time: 5s
   v_hit_blinking_band_enable_mystery_award:
     file: cmgg2_hit_blinking_band_enable_mystery_award.ogg
     volume: 1
     track: voice
-    max_queue_time: 2s
+    max_queue_time: 4s
   v_shoot_orbit_hole_for_mystery_award:
     file: cmgg2_shoot_orbit_hole_for_mystery_award.ogg
     volume: 1
@@ -207,7 +207,7 @@ sounds:
     file: cmgg2_completed_lane_lights_award_bs.ogg
     volume: 1
     track: voice
-    max_queue_time: 2s
+    max_queue_time: 5s
   v_extra_ball_awarded:
     file: cmgg2_extra_ball_awarded.ogg
     volume: 1
@@ -256,12 +256,12 @@ sounds:
     file: cmgg2_ready_locks_by_scoring.ogg
     volume: 1
     track: voice
-    max_queue_time: 2s
+    max_queue_time: 5s
   v_shoot_ramp_twice_outlane_bs:
     file: cmgg2_shoot_ramp_twice_outlane_bs.ogg
     volume: 1
     track: voice
-    max_queue_time: 2s
+    max_queue_time: 5s
   v_skill_shot_awarded:
     file: cmgg2_skill_shot_awarded.ogg
     volume: 1
