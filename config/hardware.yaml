@@ -134,7 +134,7 @@ switches:
     #        number: 1/1/1
     s_right_flipper:
         number: 1/1/2
-        tags: right_flipper # for MPF to automatically issue a flipper_cancel event 
+        tags: right_flipper # for MPF to automatically issue a flipper_cancel event
     s_left_flipper:
         number: 1/1/3
         tags: left_flipper # https://docs.missionpinball.org/en/latest/game_logic/combo_switches/index.html
@@ -1069,7 +1069,7 @@ flippers:
     enable_events:
       - ball_started
       - mode_hades_mini_game_stopped # mode_hades_bonus_game_stopped,
-      - s_accessory_inactive{mode.game.active} #so attract mode can use switch
+      - s_accessory_inactive{mode.game.active and not mode.high_score_active} #so attract and high score modes mode can use switch
     disable_events:
       - ball_will_end
       - service_mode_entered
@@ -1086,7 +1086,7 @@ flippers:
     enable_events:
       - ball_started
       - mode_hades_mini_game_stopped # mode_hades_bonus_game_stopped,
-      - s_accessory_inactive{mode.game.active} #so attract mode can use switch
+      - s_accessory_inactive{mode.game.active and not mode.high_score_active} #so attract and high score modes can use switch
     disable_events:
       - ball_will_end
       - service_mode_entered

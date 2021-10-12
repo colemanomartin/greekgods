@@ -22,6 +22,8 @@ high_score:
         - HIGH SCORE 6
         - HIGH SCORE 7
         - HIGH SCORE 8
+        - HIGH SCORE 9
+        - HIGH SCORE 10
 #    - Sisyphus Completed:
 #        - SISYPHUS BALL CHAMP
   # set the defaults
@@ -36,6 +38,8 @@ high_score:
       - ELI: 40000
       - MIK: 30000
       - ANT: 20000
+      - KJA: 15000
+      - CAM: 10000
 #    sisyphus_completions:
 #      - COM: 10
 # optional: change the slides (you can omit all the following)
@@ -49,49 +53,49 @@ slides:
     - type: text
       style: big
       font_size: 100
-#      font_name: greekgods3
+      font_name: greekgods3
       text: PLAYER (player_num)
       color: ffff00
       x: 50%
-      y: 80%
+      y: 90%
     - type: text
       style: big
       font_size: 100
-#      font_name: greekgods3
+      font_name: greekgods3
       text: (award)
       color: f0f0f0
       x: 50%
-      y: 60%
+      y: 70%
     - type: text_input
       initial_char: A
       dynamic_x: false
       key: high_score
       style: big
       font_size: 100
-#      font_name: greekgods3
+      font_name: greekgods3
       max_chars: 3
       x: 50%
-      y: 30%
+      y: 40%
       shift_left_event: s_left_flipper_active
       shift_right_event: s_right_flipper_active ##############Update docs with _active
-      select_event: s_accessory_active  ####Update here too
+      select_event: s_start_active  ####Update here too
       color: ff0000
     - type: text
       style: big
       text: '<       >'
       font_size: 100
-#      font_name: greekgods3
+      font_name: greekgods3
       x: 50%
-      y: 30%
+      y: 40%
       color: ff0000
     - type: text
       text: ''
       key: high_score
       font_size: 100
-#      font_name: greekgods3
+      font_name: greekgods3
       style: big
       x: 50%
-      y: 40%
+      y: 45%   
       color: ff00ff
       animations:
         show_slide:
@@ -108,7 +112,7 @@ slides:
     - type: text
       text: (player_name)
       font_size: 100
-#      font_name: greekgods3
+      font_name: greekgods3
       style: big
       anchor_y: middle
       anchor_x: middle
@@ -127,18 +131,18 @@ slides:
     - type: text
       text: (award)
       font_size: 100
-#      font_name: greekgods3
+      font_name: greekgods3
       style: big
       x: 50%
-      y: 90%
+      y: 95%
       color: 0000ff
     - type: text
       text: (value)
       style: big
-      x: 50%
-      y: 30%
+      x: 60%
+      y: 50%
       color: 4040FF
       font_size: 100
-#      font_name: greekgods3
+      font_name: greekgods3
       number_grouping: true
       min_digits: 2

@@ -1,7 +1,10 @@
 score:
 - !!python/tuple
-  - BCH
-  - 109750
+  - COM
+  - 226575
+- !!python/tuple
+  - CCF
+  - 108525
 - !!python/tuple
   - MPF
   - 100000
@@ -21,8 +24,11 @@ score:
   - JOH
   - 50000
 - !!python/tuple
+  - COM
+  - 41975
+- !!python/tuple
+  - COM
+  - 41300
+- !!python/tuple
   - ELI
   - 40000
-- !!python/tuple
-  - MIK
-  - 30000

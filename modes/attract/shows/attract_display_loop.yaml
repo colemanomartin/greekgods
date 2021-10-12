@@ -29,54 +29,154 @@
 #        direction: left
 
 
-- duration: 2
+- duration: 20
   slides:
     show_high_scores:
+      target: score_lcd
       widgets:
       - type: Text
         text: HIGH SCORES
-        font_size: 60
+        font_size: 128
         bold: true
+        font_name: greekgods3
         anchor_x: center
         anchor_y: center
         x: center
         y: top-100
+      # For the rest of these the font details are in the machine config under widget styles
       - type: Text
         text: (machine|score1_label)
         style: attract_mode_high_score_display_label
-        y: top-200
+        y: top-300
       - type: Text
         text: (machine|score1_name)
         style: attract_mode_high_score_display_name
-        y: top-200
+        y: top-300
       - type: Text
         text: (machine|score1_value)
         style: attract_mode_high_score_display_score
-        y: top-200
+        y: top-300
       - type: Text
         text: (machine|score2_label)
         style: attract_mode_high_score_display_label
-        y: top-340
+        y: top-450
       - type: Text
         text: (machine|score2_name)
         style: attract_mode_high_score_display_name
-        y: top-340
+        y: top-450
       - type: Text
         text: (machine|score2_value)
         style: attract_mode_high_score_display_score
-        y: top-340
+        y: top-450
       - type: Text
         text: (machine|score3_label)
         style: attract_mode_high_score_display_label
-        y: top-480
+        y: top-600
       - type: Text
         text: (machine|score3_name)
         style: attract_mode_high_score_display_name
-        y: top-480
+        y: top-600
       - type: Text
         text: (machine|score3_value)
         style: attract_mode_high_score_display_score
-        y: top-480
+        y: top-600
+      - type: Text
+        text: (machine|score4_label)
+        style: attract_mode_high_score_display_label
+        y: top-750
+      - type: Text
+        text: (machine|score4_name)
+        style: attract_mode_high_score_display_name
+        y: top-750
+      - type: Text
+        text: (machine|score4_value)
+        style: attract_mode_high_score_display_score
+        y: top-750
+      - type: Text
+        text: (machine|score5_label)
+        style: attract_mode_high_score_display_label
+        y: top-900
+      - type: Text
+        text: (machine|score5_name)
+        style: attract_mode_high_score_display_name
+        y: top-900
+      - type: Text
+        text: (machine|score5_value)
+        style: attract_mode_high_score_display_score
+        y: top-900
+      - type: Text
+        text: (machine|score6_label)
+        style: attract_mode_high_score_display_label
+        y: top-1050
+      - type: Text
+        text: (machine|score6_name)
+        style: attract_mode_high_score_display_name
+        y: top-1050
+      - type: Text
+        text: (machine|score6_value)
+        style: attract_mode_high_score_display_score
+        y: top-1050
+      - type: Text
+        text: (machine|score7_label)
+        style: attract_mode_high_score_display_label
+        y: top-1200
+      - type: Text
+        text: (machine|score7_name)
+        style: attract_mode_high_score_display_name
+        y: top-1200
+      - type: Text
+        text: (machine|score7_value)
+        style: attract_mode_high_score_display_score
+        y: top-1200
+      - type: Text
+        text: (machine|score8_label)
+        style: attract_mode_high_score_display_label
+        y: top-1350
+      - type: Text
+        text: (machine|score8_name)
+        style: attract_mode_high_score_display_name
+        y: top-1350
+      - type: Text
+        text: (machine|score8_value)
+        style: attract_mode_high_score_display_score
+        y: top-1350
+      - type: Text
+        text: (machine|score9_label)
+        style: attract_mode_high_score_display_label
+        y: top-1500
+      - type: Text
+        text: (machine|score9_name)
+        style: attract_mode_high_score_display_name
+        y: top-1500
+      - type: Text
+        text: (machine|score9_value)
+        style: attract_mode_high_score_display_score
+        y: top-1500
+      - type: Text
+        text: (machine|score10_label)
+        style: attract_mode_high_score_display_label
+        y: top-1650
+      - type: Text
+        text: (machine|score10_name)
+        style: attract_mode_high_score_display_name
+        y: top-1650
+      - type: Text
+        text: (machine|score10_value)
+        style: attract_mode_high_score_display_score
+        y: top-1650
+
+      - type: Text
+        text: (machine|score11_label)
+        style: attract_mode_high_score_display_label
+        y: top-1800
+      - type: Text
+        text: (machine|score11_name)
+        style: attract_mode_high_score_display_name
+        y: top-1800
+      - type: Text
+        text: (machine|score11_value)
+        style: attract_mode_high_score_display_score
+        y: top-1800
 #      - type: Text
 #        text: LOOP CHAMPION
 #        font_size: 60

@@ -105,7 +105,8 @@ event_player:
   timer_river_b_started{device.timers.river_a.running and device.timers.river_c.running and device.timers.river_d.running}: extra_ball_earned
   timer_river_c_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_d.running}: extra_ball_earned
   timer_river_d_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_c.running}: extra_ball_earned
-
+  extra_ball_awarded: extra_ball_earned #Got it by boosting score above a threshold.
+  
 sequence_shots: #using to activate timers
   left_river_top_to_bottom: #River A
     playfield: hades_pf
