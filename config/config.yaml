@@ -61,6 +61,7 @@ modes:
   - banked_r_bs #2500
   - sweep_server #3000
   - hades_bonus_game
+  - bonus 
   - high_score
 coil_player:
   machine_reset_phase_2: #drops block at startup in case a ball is in subway
@@ -68,7 +69,8 @@ coil_player:
       action: pulse
 
 ball_saves:
-  bs_default:
+  #Banked ball saves are spun off into their own modes.
+  bs_default: #This could probably be moved to base.
     source_playfield: earth_pf
     active_time: 10s
     hurry_up_time: 1s #does not add to BS, just posts for light

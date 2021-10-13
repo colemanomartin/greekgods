@@ -184,22 +184,17 @@ counters:
         action: subtract
         value: 1
     debug: true
-#  base_count_test:
-#    count_events: this_is_a_dummy_event
-#      - s_left_slingshot_active
-#      - s_right_slingshot_active
-#    control_events:
-#      - event: s_left_slingshot_active
-#        action: add
-#        value: 1
-#      - event: s_poseidon_left_slingshot_active
-#        action: subtract
-#        value: 1
-#      - event: s_poseidon_right_slingshot_active
-#        action: subtract
-#        value: 1
-#    debug: true
-  base_poseidion_overdrive:
+  base_count_test:
+    count_events:
+      - s_poseidon_left_slingshot_active
+    control_events:
+      - event: s_poseidon_right_slingshot_active
+        action: subtract
+        value: 1
+    debug: true
+
+  # Next four counters are used by bonus calculation
+  base_poseidon_overdrive:
     enable_events: p_locking_elgible
     disable_events: multiball_poseidon_ramp_started
     count_events:
@@ -215,8 +210,17 @@ counters:
       - super_spinner_olympus_mech_hit
   base_sis_completion:
     count_events:
-      - field_sis_left_to_right_hit #Consider moving or duplicating this to base so MB sis hits can be counted.
-      - field_sis_right_to_left_hit
+      - base_sis_left_to_right_hit #Consider moving or duplicating this to base so MB sis hits can be counted.
+      - base_sis_right_to_left_hit
+  base_unused_ballsaves:
+    count_events:
+      - timer_left_bs_expiration_complete
+      - timer_right_bs_expiration_complete
+      - ball_will_end{mode.banked_l_bs.active}
+      - ball_will_end{mode.banked_r_bs.active}
+
+event_player:
+  "{device.counters.base_count_test.value": subscribe_posted #this will probably fail but if it works might allow querry of counter state 
 
 timers:
   base_timer_ball_launching:
@@ -570,6 +574,20 @@ sequence_shots:
     sequence_timeout: 3s
     delay_event_list:
       balldevice_bd_plunger_ejecting_ball: 1s
+  base_sis_left_to_right:  #This is duplicated in field but is here for bonus mode counting, might be able to just have here alone
+    playfield: earth_pf
+    event_sequence:
+      - base_sis_left_vacated_hit
+      - base_sis_right_arrived_hit
+    sequence_timeout: 3s
+  base_sis_right_to_left:  #This one might be better just here.
+    playfield: earth_pf
+    event_sequence:
+      - base_sis_right_vacated_hit
+      - base_sis_left_arrived_hit
+    sequence_timeout: 3s
+
+
 
 variable_player:
   "{device.state_machines.ramp_flap_control.state}":

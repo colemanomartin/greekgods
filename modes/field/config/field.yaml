@@ -97,7 +97,7 @@ event_player:
 #    disable_on_complete: false
 
 sequence_shots:
-  field_sis_left_to_right:  #This one might be better in base
+  field_sis_left_to_right:  #This is duplicated in base for bonus mode counting, might be able to just have one place since state machine controlls flap 
     playfield: earth_pf
     event_sequence:
       - base_sis_left_vacated_hit
