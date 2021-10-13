@@ -91,11 +91,11 @@ slides:
     - type: text
       text: ''
       key: high_score
-      font_size: 100
+      font_size: 200
       font_name: greekgods3
       style: big
       x: 50%
-      y: 45%   
+      y: 45%
       color: ff00ff
       animations:
         show_slide:

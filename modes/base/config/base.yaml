@@ -199,6 +199,24 @@ counters:
 #        action: subtract
 #        value: 1
 #    debug: true
+  base_poseidion_overdrive:
+    enable_events: p_locking_elgible
+    disable_events: multiball_poseidon_ramp_started
+    count_events:
+      - sis_left_poseidon_mech_hit
+      - field_poseidon_mech_hit
+      - super_spinner_poseidon_mech_hit
+  base_olympus_overdrive:
+    enable_events: o_locking_elgible
+    disable_events: multiball_olympus_ramp_started
+    count_events:
+      - sis_right_olympus_mech_hit
+      - field_olympus_mech_hit
+      - super_spinner_olympus_mech_hit
+  base_sis_completion:
+    count_events:
+      - field_sis_left_to_right_hit #Consider moving or duplicating this to base so MB sis hits can be counted.
+      - field_sis_right_to_left_hit
 
 timers:
   base_timer_ball_launching:

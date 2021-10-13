@@ -1,0 +1,120 @@
+#config_version=5
+
+mode_settings:
+  display_delay_ms: 1500ms
+  hurry_up_delay_ms: 0
+  hurry_up_event: None #default flipper_cancel
+  bonus_entries:
+    - event: bonus_pops
+      score: device.counters.pops.value * 50
+    - event: bonus_ramps
+      score: device.counters.ramps.value * 100
+    - event: bonus_sis
+      score: device.counters.sisses.value * 150
+    - event: bonus_orbits
+      score: device.counters.orbits.value * 200
+#    - event: bonus_math
+#      score: 1200 * (current_player.some_variable + 2)
+#  end_bonus_event: extra_ball_earned, extra_ball_not_earned
+
+#event_player:
+#  mode_bonus_starting: enter_hades_from_bonus_mode  -better to just pick up the mode_bonus_starting even in hades
+
+slide_player:
+#   mode_bonus_started: bonus_start_slide
+   bonus_pops: bonus_pop_slide
+   bonus_ramps: bonus_ramp_slide
+   bonus_sis: bonus_sis_slide
+   bonus_orbits: bonus_orbits_slide
+   bonus_total: bonus_total_slide
+
+slides:
+  bonus_start_slide:
+    widgets:
+    - type: text
+      text: Bonus
+      y: 98%
+      x: 50%
+      font_size: 250
+      anchor_x: center
+      anchor_y: top
+  bonus_pop_slide:
+    widgets:
+    - type: text
+      text: "Pop Bumpers "
+      y: 80%
+      x: 40%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+    - type: text
+      text: (score)
+      y: 80%
+      x: 80%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+  bonus_ramp_slide:
+    widgets:
+    - type: text
+      text: "Ramps "
+      y: 70%
+      x: 40%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+    - type: text
+      text: (score)
+      y: 70%
+      x: 80%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+  bonus_sis_slide:
+    - type: text
+      text: "Sisiphus "
+      y: 60%
+      x: 40%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+    - type: text
+      text: (score)
+      y: 60%
+      x: 80%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+  bonus_orbits_slide:
+    - type: text
+      text: "Orbits Shots "
+      y: 50%
+      x: 40%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+    - type: text
+      text: (score)
+      y: 50%
+      x: 80%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+  bonus_total_slide:
+    - type: text
+      text: "Total Bonus"
+      y: 40%
+      x: 40%
+      font_size: 160
+      anchor_x: left
+      anchor_y: center
+    - type: text
+      text: (score)
+      y: 40%
+      x: 80%
+      font_size: 160
+      anchor_x: left
+      anchor_y: center
+
+sound_player:
+  mode_bonus_started: snd_bonus_riff3

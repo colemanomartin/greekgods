@@ -82,7 +82,7 @@ event_player:
 #    - restart_poseidon_excitement{not device.timers.poseidon_excitement.running}
 #    - increase_poseidon_excitement{device.timers.poseidon_excitement.running}
 #    - complete_poseidon_excitement
-  overload_p_hit: bonus_pop #allows pops not needed to qualify mb to be counted for bonus
+#  overload_p_hit: bonus_pop #allows pops not needed to qualify mb to be counted for bonus
 
 #accruals:
 #  field_all_pops:
@@ -97,13 +97,13 @@ event_player:
 #    disable_on_complete: false
 
 sequence_shots:
-  field_sis_left_to_right:
+  field_sis_left_to_right:  #This one might be better in base
     playfield: earth_pf
     event_sequence:
       - base_sis_left_vacated_hit
       - base_sis_right_arrived_hit
     sequence_timeout: 3s
-  field_sis_right_to_left:
+  field_sis_right_to_left:  #This one might be better in base
     playfield: earth_pf
     event_sequence:
       - base_sis_right_vacated_hit

@@ -1,0 +1,117 @@
+#config_version=5
+# From 19 May 2019 machine
+mode_settings:
+  display_delay_ms: 1400ms
+  hurry_up_delay_ms: 0
+  hurry_up_event: flipper_cancel
+  bonus_entries:
+    - event: bonus_poseidon
+      score: device.counters.base_poseidion_overdrive.value * 200
+      skip_if_zero: false
+    - event: bonus_olympus
+      score: device.counters.base_olympus_overdrive.value * 200
+      skip_if_zero: false
+    - event: bonus_sis
+      score: device.counters.base_sis_completion.value * 750
+      skip_if_zero: false
+#    - event: bonus_math
+#      score: 1200 * (current_player.some_variable + 2)
+#  end_bonus_event: extra_ball_earned, extra_ball_not_earned
+
+#event_player:
+#  mode_bonus_starting: enter_hades_from_bonus_mode  -better to just pick up the mode_bonus_starting even in hades
+
+slide_player:
+   mode_bonus_started: bonus_start_slide
+#   bonus_pops: bonus_pop_slide
+
+widget_player:
+   bonus_pops: bonus_poseidon
+   bonus_sis: bonus_olympus
+   bonus_orbits: bonus_sis
+   bonus_total: bonus_total_widget
+
+widgets:
+  bonus_pop_widget:
+    - type: text
+      text: (score)
+      y: 85%
+      x: 80%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+  bonus_sis_widget:
+    - type: text
+      text: (score)
+      y: 70%
+      x: 80%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+  bonus_orbits_widget:
+    - type: text
+      text: (score)
+      y: 55%
+      x: 80%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+  bonus_total_widget:
+    - type: text
+      text: (score)
+      y: 40%
+      x: 80%
+      font_size: 160
+      anchor_x: left
+      anchor_y: center
+
+slides:
+  bonus_start_slide:
+    target: score_lcd  ##### might have to remove this if widget player does not place them on correct screen
+    widgets:
+    - type: text
+      text: Bonus
+      y: 98%
+      x: 50%
+      font_size: 250
+      anchor_x: center
+      anchor_y: top
+    - type: text
+      text: "Pop Bumper Overload "
+      y: 85%
+      x: 40%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+#    - type: text
+#      text: "Ramps "
+#      y: 70%
+#      x: 40%
+#      font_size: 120
+#      anchor_x: left
+#      anchor_y: center
+    - type: text
+      text: "Sisiphus Boulder Rolls"
+      y: 70%
+      x: 40%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+    - type: text
+      text: "Orbit Shots "
+      y: 55%
+      x: 40%
+      font_size: 120
+      anchor_x: left
+      anchor_y: center
+    - type: text
+      text: "Total Bonus"
+      y: 40%
+      x: 40%
+      font_size: 160
+      anchor_x: left
+      anchor_y: center
+
+
+sound_player:
+  mode_bonus_started: snd_bonus_riff3
