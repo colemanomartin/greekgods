@@ -14,6 +14,40 @@
         direction: left
       target: playfield_lcd
 
+- duration: 3s
+  slides:
+    game_title_slide:
+      widgets:
+      - type: text
+        text: Greek Gods
+        font_size: 500
+        font_name: greekgods3
+        color: Green
+#        effects:
+#          type: color_dmd
+#        pixel_size: .5
+#
+      transition:
+        type: push
+        duration: 1s
+        direction: left
+      target: score_lcd
+
+- duration: 50ms
+  slides:
+    face:
+      widgets:
+      - type: image
+        image: hadesface2
+        scale: 2
+        y: 60%
+      transition:
+        type: move_in
+        duration: 1s
+        direction: bottom
+      target: playfield_lcd
+
+
 
 #    playfield_second_slide:
 #      widgets:
@@ -29,7 +63,7 @@
 #        direction: left
 
 
-- duration: 20
+- duration: 10
   slides:
     show_high_scores:
       target: score_lcd
@@ -199,51 +233,6 @@
 #        y: top-600
 
 
-- duration: 10
-  slides:
-    special_thanks_slide:
-      target: score_lcd
-      widgets:
-      - type: text
-        text: "Special Thanks To:"
-        font_name: greekgods3
-        font_size: 200
-        color: yellow
-        y: 95%
-        x: 50%
-        anchor_y: top
-        anchor_x: center
-        z: 3
-      - type: rectangle
-        y: 100%
-        x: 0%
-        width: 3840 #3840x2160
-        height: 400
-        color: black
-        z: 2 #200
-        anchor_x: left
-        anchor_y: top
-      - type: text
-        text: "Gerry Stellenburg\n\nScott Danesi\n\nJan Kantert\n\nTJ Weaver\n\nMatt Bonnema\n\nMichael Rumore\n\nNick Baldridge\n\nAnthony van Winkle\n\nBorgDog\n\nEli Curtz\n\nBob Nies\n\nJohn Marsh"
-        font_name: greekgods3
-        font_size: 130
-        color: yellow
-        y: 70%
-        x: 50%
-        anchor_y: top
-        anchor_x: center
-        z: 1
-        animations:
-          add_to_slide:
-          - property: y
-            value: 75%
-            relative: true
-            duration: 10
-#      transition:
-#        type: move_in
-#        duration: 1s
-#        direction: bottom
-
 - duration: 6
   slides:
     credit_slide:
@@ -314,37 +303,100 @@
         duration: 1s
         direction: right
 
-- duration: 2
+- duration: 10
   slides:
-    credit_slide:
+    special_thanks_slide:
       target: score_lcd
       widgets:
       - type: text
-        text: "Objective: Impress the Gods, Earn More Balls"
+        text: "Special Thanks To:"
         font_name: greekgods3
-        font_size: 150
-        color: green
-        y: 84%
+        font_size: 200
+        color: yellow
+        y: 95%
         x: 50%
-        anchor_y: bottom
+        anchor_y: top
         anchor_x: center
         z: 3
+      - type: rectangle
+        y: 100%
+        x: 0%
+        width: 3840 #3840x2160
+        height: 400
+        color: black
+        z: 2 #200
+        anchor_x: left
+        anchor_y: top
+      - type: text
+        text: "Gerry Stellenburg\n\nScott Danesi\n\nJan Kantert\n\nTJ Weaver\n\nMatt Bonnema\n\nMichael Rumore\n\nNick Baldridge\n\nAnthony van Winkle\n\nBorgDog\n\nEli Curtz\n\nBob Nies\n\nJohn Marsh"
+        font_name: greekgods3
+        font_size: 130
+        color: yellow
+        y: 70%
+        x: 50%
+        anchor_y: top
+        anchor_x: center
+        z: 1
+        animations:
+          add_to_slide:
+          - property: y
+            value: 75%
+            relative: true
+            duration: 10
+#      transition:
+#        type: move_in
+#        duration: 1s
+#        direction: bottom
 
 - duration: 2
   slides:
+    p3roc_logo_slide:
+      target: score_lcd
+      widgets:
+      - type: image
+        image: p3roc
+        scale: 2
+        z: 2
+      transition:
+        type: swap
+        duration: 1s
+
+- duration: 12
+  slides:
+    insides_slide:
+      target: score_lcd
+      widgets:
+      - type: image
+        image: attract_insides
+        scale: 1
+        y: 66.5%
+        anchor_y: center
+        anchor_x: center
+        z: 1
+
+- duration: 4
+  slides:
     credit_slide:
       target: score_lcd
       widgets:
       - type: text
-        text: "Hit Knee Switch For Game Instructions"
+        text: "Hit Knee Switch /n/nFor Game Instructions"
         font_name: greekgods3
         font_size: 150
-        color: green
+        color: blue
         y: 84%
         x: 50%
         anchor_y: bottom
         anchor_x: center
         z: 3
+      - type: image
+        image: knee_switch
+        scale: 0.5
+        y: 50%
+        x: 70%
+        anchor_y: center
+        anchor_x: center
+        z: 1
 
 
 - duration: 7
@@ -385,39 +437,6 @@
         duration: 1s
         direction: left
 
-
-- duration: 3s
-  slides:
-    game_title_slide:
-      widgets:
-      - type: text
-        text: Greek Gods
-        font_size: 500
-        font_name: greekgods3
-        color: Green
-#        effects:
-#          type: color_dmd
-#        pixel_size: .5
-#
-      transition:
-        type: push
-        duration: 1s
-        direction: left
-      target: score_lcd
-- duration: 50ms
-  slides:
-    face:
-      widgets:
-      - type: image
-        image: hadesface2
-        scale: 2
-        y: 60%
-      transition:
-        type: move_in
-        duration: 1s
-        direction: bottom
-      target: playfield_lcd
-
 - duration: 2
   slides:
     mission_pinball_log_slide:
@@ -438,19 +457,6 @@
         type: move_in
         duration: 1s
         direction: top
-
-- duration: 2
-  slides:
-    p3roc_logo_slide:
-      target: score_lcd
-      widgets:
-      - type: image
-        image: p3roc
-        scale: 2
-        z: 2
-      transition:
-        type: swap
-        duration: 1s
 
 - duration: 2s
   slides:
