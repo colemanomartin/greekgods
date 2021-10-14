@@ -6,7 +6,7 @@ mode_settings:
   hurry_up_event: flipper_cancel
   bonus_entries:
     - event: bonus_overdrive
-      score: (device.counters.base_poseidion_overdrive.value + device.counters.base_olympus_overdrive.value) * 200
+      score: (device.counters.base_poseidon_overdrive.value + device.counters.base_olympus_overdrive.value) * 200
       skip_if_zero: false
     - event: bonus_sis
       score: device.counters.base_sis_completion.value * 750
@@ -15,7 +15,7 @@ mode_settings:
       score: device.counters.base_unused_ballsaves.value * 1000
       skip_if_zero: false
 #    - event: bonus_math
-#      score: 1200 * (current_player.some_variable + 2)
+#      score: 1000 * (current_player.some_variable + 2)
 #  end_bonus_event: extra_ball_earned, extra_ball_not_earned
 
 #event_player:
@@ -26,9 +26,9 @@ slide_player:
 #   bonus_pops: bonus_pop_slide
 
 widget_player:
-   bonus_overdrive: bonus_poseidon
-   bonus_sis: bonus_olympus
-   bonus_ballsaves: bonus_sis
+   bonus_overdrive: bonus_overdrive_widget
+   bonus_sis: bonus_sis_widget
+   bonus_ballsaves: bonus_ballsaves_widget
    bonus_total: bonus_total_widget
 
 widgets:
@@ -37,7 +37,7 @@ widgets:
       text: (score)
       y: 85%
       x: 80%
-      font_size: 120
+      font_size: 100
       anchor_x: left
       anchor_y: center
   bonus_sis_widget:
@@ -45,7 +45,7 @@ widgets:
       text: (score)
       y: 70%
       x: 80%
-      font_size: 120
+      font_size: 100
       anchor_x: left
       anchor_y: center
   bonus_ballsaves_widget:
@@ -53,7 +53,7 @@ widgets:
       text: (score)
       y: 55%
       x: 80%
-      font_size: 120
+      font_size: 100
       anchor_x: left
       anchor_y: center
   bonus_total_widget:
@@ -79,35 +79,35 @@ slides:
     - type: text
       text: "Super Qualifying Pop Hits x 200"
       y: 85%
-      x: 40%
-      font_size: 120
+      x: 10%
+      font_size: 100
       anchor_x: left
       anchor_y: center
 #    - type: text
 #      text: "Ramps "
 #      y: 70%
 #      x: 40%
-#      font_size: 120
+#      font_size: 100
 #      anchor_x: left
 #      anchor_y: center
     - type: text
-      text: "Sisiphus Boulder Rolls x 750"
+      text: "Sisiphus Powerball Arcs x 750"
       y: 70%
-      x: 40%
-      font_size: 120
+      x: 10%
+      font_size: 100
       anchor_x: left
       anchor_y: center
     - type: text
       text: "Unused Outlane Ball Protection x 1000"
       y: 55%
-      x: 40%
-      font_size: 120
+      x: 10%
+      font_size: 100
       anchor_x: left
       anchor_y: center
     - type: text
       text: "Total Bonus"
       y: 40%
-      x: 40%
+      x: 10%
       font_size: 160
       anchor_x: left
       anchor_y: center

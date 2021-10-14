@@ -184,25 +184,29 @@ counters:
         action: subtract
         value: 1
     debug: true
-  base_count_test:
-    count_events:
-      - s_poseidon_left_slingshot_active
-    control_events:
-      - event: s_poseidon_right_slingshot_active
-        action: subtract
-        value: 1
-    debug: true
+#  base_count_test:   for some reason if game is not yet running the control event causes mpf to crash when subtracting. can occur if ball from trough lands on right sling during attract mode.
+#    count_events:
+#      - s_poseidon_left_slingshot_active
+#    control_events:
+#      - event: s_poseidon_right_slingshot_active
+#        action: subtract
+#        value: 1
+#    debug: true
 
   # Next four counters are used by bonus calculation
   base_poseidon_overdrive:
-    enable_events: p_locking_elgible
+    enable_events:
+      - p_locking_elgible
+      - mode_field_started{device.accruals.base_p_locking_engaged.completed}
     disable_events: multiball_poseidon_ramp_started
     count_events:
       - sis_left_poseidon_mech_hit
       - field_poseidon_mech_hit
       - super_spinner_poseidon_mech_hit
   base_olympus_overdrive:
-    enable_events: o_locking_elgible
+    enable_events:
+      - o_locking_elgible
+      - mode_field_started{device.accruals.base_o_locking_engaged.completed}
     disable_events: multiball_olympus_ramp_started
     count_events:
       - sis_right_olympus_mech_hit
@@ -219,8 +223,8 @@ counters:
       - ball_will_end{mode.banked_l_bs.active}
       - ball_will_end{mode.banked_r_bs.active}
 
-event_player:
-  "{device.counters.base_count_test.value": subscribe_posted #this will probably fail but if it works might allow querry of counter state 
+#event_player:
+#  "{device.counters.base_count_test.value}": subscribe_posted #this will probably fail but if it works might allow querry of counter state
 
 timers:
   base_timer_ball_launching:

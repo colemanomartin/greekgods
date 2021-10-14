@@ -9,6 +9,12 @@ score:
   - MPF
   - 100000
 - !!python/tuple
+  - CM
+  - 97150
+- !!python/tuple
+  - COM
+  - 91825
+- !!python/tuple
   - BRI
   - 90000
 - !!python/tuple
@@ -26,9 +32,3 @@ score:
 - !!python/tuple
   - COM
   - 41975
-- !!python/tuple
-  - COM
-  - 41300
-- !!python/tuple
-  - ELI
-  - 40000
