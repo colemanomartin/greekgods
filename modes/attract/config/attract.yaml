@@ -20,7 +20,9 @@ show_player:
     attract_display_loop:
       speed: 1
   mode_attract_started:
-    attract_display_loop:
+    attract_backbox_display_loop:
+      speed: 1
+    attract_playfield_display_loop:
       speed: 1
     show_rand_paralell:
       speed: 1

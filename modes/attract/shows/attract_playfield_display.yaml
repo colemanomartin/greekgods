@@ -1,0 +1,97 @@
+#show_version=5
+# see section on shows beginning on pg 554
+- duration: 3s
+  slides:
+    playfield_first_slide:
+      widgets:
+      - type: text
+        text: Greek Gods
+        font_size: 130
+        font_name: greekgods3
+      transition:
+        type: push
+        duration: 1s
+        direction: left
+      target: playfield_lcd
+
+- duration: 5s
+  slides:
+    hades_face:
+      widgets:
+      - type: image
+        image: hadesface2
+        scale: 2
+        y: 60%
+      transition:
+        type: move_in
+        duration: 1s
+        direction: bottom
+      target: playfield_lcd
+
+- duration: 2
+  slides:
+    lower_p3roc_logo_slide:
+      target: playfield_lcd
+      widgets:
+      - type: image
+        image: p3roc
+        scale: 1
+        z: 2
+      transition:
+        type: swap
+        duration: 1s
+
+- duration: 6
+  slides:
+    credit_slide:
+      target: score_lcd
+      widgets:
+      - type: text
+        text: "Learn How to Play"
+        font_name: greekgods3
+        font_size: 60
+        color: blue
+        y: 990
+        x: 380
+        anchor_y: center
+        anchor_x: center
+        z: 3
+      - type: text
+        text: "Hit Knee Switch For Game Rules"
+        font_name: greekgods3
+        font_size: 50
+        color: blue
+        y: 890
+        x: 380
+        anchor_y: center
+        anchor_x: center
+        z: 3
+      - type: image
+        image: lower_screen_knee_switch
+        scale: 1
+        y: 400
+        x: 380
+        anchor_y: center
+        anchor_x: right
+        z: 1
+
+
+- duration: 3
+  slides:
+    company_logo:
+      widgets:
+      - type: image
+        image: narwhal2
+        scale: 0.2
+        y: 400
+      - type: text
+        text: NARWHAL PINBALL
+        font_name: greekgods3
+        color: blue
+        font_size: 100
+        y: 1000
+      transition:
+        type: move_in
+        duration: 1s
+        direction: bottom
+      target: playfield_lcd

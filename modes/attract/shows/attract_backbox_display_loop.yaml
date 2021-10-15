@@ -374,28 +374,38 @@
         anchor_x: center
         z: 1
 
-- duration: 4
+- duration: 6
   slides:
     credit_slide:
       target: score_lcd
       widgets:
       - type: text
-        text: "Hit Knee Switch /n/nFor Game Instructions"
+        text: "Learn How to Play"
         font_name: greekgods3
-        font_size: 150
+        font_size: 100
         color: blue
-        y: 84%
-        x: 50%
-        anchor_y: bottom
+        y: 93%
+        x: 25%
+        anchor_y: center
         anchor_x: center
+        z: 3
+      - type: text
+        text: "Hit Knee Switch /n/nFor Game Rules"
+        font_name: greekgods3
+        font_size: 100
+        color: blue
+        y: 70%
+        x: 20%
+        anchor_y: bottom
+        anchor_x: left
         z: 3
       - type: image
         image: knee_switch
         scale: 0.5
         y: 50%
-        x: 70%
+        x: 80%
         anchor_y: center
-        anchor_x: center
+        anchor_x: right
         z: 1
 
 
