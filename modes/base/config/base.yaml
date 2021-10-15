@@ -343,7 +343,7 @@ shot_profiles:
       - name: touched
         show: "show_pop_green_pulse"
         loops: -1
-        speed: 10
+        speed: 5
         priority: 3
     loop: false
 
@@ -356,10 +356,7 @@ shots:
     switch: s_left_side_pop
     restart_events: show_white_all_pops_x5_finished_playing #Resetting with show player event so as not to need a timer.
     show_tokens:
-      leds:
-        - l_left_side_pop
-        - l_left_pop_upper_arrow
-        - l_left_pop_lower_arrow
+      leds: l_left_side_pop
   base_olympus_lower_pop:
     playfield: earth_pf
     profile: base_white_green

@@ -1,18 +1,5 @@
 #show_version=5
 # see section on shows beginning on pg 554
-- duration: 50ms
-  slides:
-    playfield_first_slide:
-      widgets:
-      - type: text
-        text: Greek Gods
-        font_size: 130
-        font_name: greekgods3
-      transition:
-        type: push
-        duration: 1s
-        direction: left
-      target: playfield_lcd
 
 - duration: 3s
   slides:
@@ -23,47 +10,47 @@
         font_size: 500
         font_name: greekgods3
         color: Green
-#        effects:
-#          type: color_dmd
-#        pixel_size: .5
-#
       transition:
         type: push
         duration: 1s
         direction: left
       target: score_lcd
 
-- duration: 50ms
+- duration: 3s
   slides:
-    face:
+    press_start:
       widgets:
-      - type: image
-        image: hadesface2
-        scale: 2
+      - type: text
+        text: PRESS START
+        font_name: greekgods3
+        font_size: 300
+        color: white
         y: 60%
+        animations:
+          pre_show_slide:
+            - property: opacity
+              value: 0
+              duration: .5s
+            - property: opacity
+              value: 1
+              duration: .5s
+#              repeat: -1
+      - type: text
+        text: FREE PLAY
+        font_name: greekgods3
+        font_size: 300
+        color: Green
+        y: 30%
+        anchor_y: bottom
       transition:
         type: move_in
         duration: 1s
-        direction: bottom
-      target: playfield_lcd
+        direction: right
+      target: score_lcd
 
 
 
-#    playfield_second_slide:
-#      widgets:
-#      - type: text
-#        text: Poseidon vs Zeus
-#        font_size: 50
-#      transition:
-#        type: push
-#        duration: 1s
-#        direction: up
-#      target: playfield_lcd
-
-#        direction: left
-
-
-- duration: 10
+- duration: 6
   slides:
     show_high_scores:
       target: score_lcd
@@ -198,7 +185,6 @@
         text: (machine|score10_value)
         style: attract_mode_high_score_display_score
         y: top-1650
-
       - type: Text
         text: (machine|score11_label)
         style: attract_mode_high_score_display_label
@@ -211,6 +197,10 @@
         text: (machine|score11_value)
         style: attract_mode_high_score_display_score
         y: top-1800
+      transition:
+        type: move_in
+        duration: 1s
+        direction: bottom
 #      - type: Text
 #        text: LOOP CHAMPION
 #        font_size: 60
@@ -348,7 +338,7 @@
 #        duration: 1s
 #        direction: bottom
 
-- duration: 2
+- duration: 3
   slides:
     p3roc_logo_slide:
       target: score_lcd
@@ -358,96 +348,11 @@
         scale: 2
         z: 2
       transition:
-        type: swap
-        duration: 1s
-
-- duration: 12
-  slides:
-    insides_slide:
-      target: score_lcd
-      widgets:
-      - type: image
-        image: attract_insides
-        scale: 1
-        y: 66.5%
-        anchor_y: center
-        anchor_x: center
-        z: 1
-
-- duration: 6
-  slides:
-    credit_slide:
-      target: score_lcd
-      widgets:
-      - type: text
-        text: "Learn How to Play"
-        font_name: greekgods3
-        font_size: 100
-        color: blue
-        y: 93%
-        x: 25%
-        anchor_y: center
-        anchor_x: center
-        z: 3
-      - type: text
-        text: "Hit Knee Switch /n/nFor Game Rules"
-        font_name: greekgods3
-        font_size: 100
-        color: blue
-        y: 70%
-        x: 20%
-        anchor_y: bottom
-        anchor_x: left
-        z: 3
-      - type: image
-        image: knee_switch
-        scale: 0.5
-        y: 50%
-        x: 80%
-        anchor_y: center
-        anchor_x: right
-        z: 1
-
-
-- duration: 7
-  slides:
-    credit_slide:
-      target: score_lcd
-      widgets:
-      - type: text
-        text: "Credits:"
-        font_name: greekgods3
-        font_size: 200
-        color: yellow
-        y: 85%
-        x: 10%
-        anchor_y: bottom
-        anchor_x: left
-        z: 3
-      - type: rectangle
-        y: 88%
-        width: 3840
-        height: 200
-        color: black
-        z: 2 #200
-        anchor_x: center
-        anchor_y: bottom
-      - type: text
-        text: "Art:        Claire Martin\n\nCallouts:   Claire Martin\n\nLogistics:   Kelli Andresen\n\nDesign:     Coleman Martin"
-        font_name: greekgods3
-        font_size: 130
-        color: yellow
-        y: 70%
-        x: 10%
-        anchor_y: top
-        anchor_x: left
-        z: 1
-      transition:
         type: move_in
         duration: 1s
-        direction: left
+        direction: right
 
-- duration: 2
+- duration: 3
   slides:
     mission_pinball_log_slide:
       target: score_lcd
@@ -464,11 +369,86 @@
         anchor_x: center
         anchor_y: center
       transition:
+        type: swap
+        duration: 1s
+
+- duration: 12
+  slides:
+    insides_slide:
+      target: score_lcd
+      widgets:
+      - type: image
+        image: attract_insides
+        scale: 1
+        y: 50%
+        anchor_y: center
+        anchor_x: center
+        z: 1
+      transition:
         type: move_in
         duration: 1s
-        direction: top
+        direction: left
 
-- duration: 2s
+- duration: 3
+  slides:
+    company_logo:
+      widgets:
+      - type: image
+        image: narwhal2
+        scale: 0.4
+        y: 60%
+      - type: text
+        text: NARWHAL PINBALL
+        font_name: greekgods3
+        color: blue
+        font_size: 250
+        y: 10%
+      transition:
+        type: move_in
+        duration: 1s
+        direction: bottom
+      target: score_lcd
+
+- duration: 6
+  slides:
+    credit_slide:
+      target: score_lcd
+      widgets:
+      - type: text
+        text: "Learn How to Play"
+        font_name: greekgods3
+        font_size: 150
+        color: blue
+        y: 98%
+        x: 50%
+        anchor_y: top
+        anchor_x: center
+        z: 3
+      - type: text
+        text: "Hit Knee Switch \n\nFor Game Rules"
+        font_name: greekgods3
+        font_size: 120
+        color: blue
+        y: 50%
+        x: 20%
+        anchor_y: center
+        anchor_x: left
+        z: 3
+      - type: image
+        image: knee_switch
+        scale: 1.5
+        y: 50%
+        x: 80%
+        anchor_y: center
+        anchor_x: right
+        z: 1
+      transition:
+        type: move_in
+        duration: 1s
+        direction: right
+
+
+- duration: 3s
   slides:
     last_game_score_slide:
       target: score_lcd
@@ -486,38 +466,54 @@
         font_size: 260
         y: 40%
         font_name: greekgods3
-
-
-- duration: 3s
-  slides:
-    press_start:
-      widgets:
-      - type: text
-        text: PRESS START
-        font_name: greekgods3
-        font_size: 300
-        color: white
-        animations:
-          pre_show_slide:
-            - property: opacity
-              value: 0
-              duration: .5s
-            - property: opacity
-              value: 1
-              duration: .5s
-#              repeat: -1
-      - type: text
-        text: FREE PLAY
-        font_name: greekgods3
-        font_size: 300
-        color: Green
-        y: 15
-        anchor_y: bottom
       transition:
         type: move_in
         duration: 1s
-        direction: right
+        direction: up
+
+
+
+- duration: 7
+  slides:
+    credit_slide:
       target: score_lcd
+      widgets:
+      - type: text
+        text: "Credits:"
+        font_name: greekgods3
+        font_size: 200
+        color: yellow
+        y: 85%
+        x: 10%
+        anchor_y: bottom
+        anchor_x: left
+        z: 3
+        #was one line text: "Art:        Claire Martin\n\nCallouts:   Claire Martin\n\nLogistics:   Kelli Andresen\n\nDesign:     Coleman Martin"
+      - type: text
+        text: "Art:\n\nCallouts:\n\nLogistics:\n\nDesign:"
+        font_name: greekgods3
+        font_size: 130
+        color: yellow
+        y: 70%
+        x: 10%
+        anchor_y: top
+        anchor_x: left
+        z: 1
+      - type: text
+        text: "Claire Martin\n\nClaire Martin\n\nKelli Andresen\n\nColeman Martin"
+        font_name: greekgods3
+        font_size: 130
+        color: yellow
+        y: 70%
+        x: 60%
+        anchor_y: top
+        anchor_x: left
+        z: 1
+      transition:
+        type: move_in
+        duration: 1s
+        direction: left
+
 # - duration: 5s
 #   slides:
 #     screen_capture:
@@ -549,23 +545,3 @@
 #         cap: square
 #         z: 260
 #
-
-- duration: 3
-  slides:
-    company_logo:
-      widgets:
-      - type: image
-        image: narwhal2
-        scale: 0.4
-        y: 60%
-      - type: text
-        text: NARWHAL PINBALL
-        font_name: greekgods3
-        color: blue
-        font_size: 250
-        y: 10%
-      transition:
-        type: move_in
-        duration: 1s
-        direction: bottom
-      target: score_lcd
