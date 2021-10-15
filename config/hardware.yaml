@@ -1069,7 +1069,7 @@ flippers:
     enable_events:
       - ball_started
       - mode_hades_mini_game_stopped # mode_hades_bonus_game_stopped,
-      - s_accessory_inactive{mode.game.active and not mode.high_score_active} #so attract and high score modes mode can use switch
+      - s_accessory_inactive{mode.base.active} # {mode.game.active and not mode.high_score_active} #so attract and high score modes mode can use switch
     disable_events:
       - ball_will_end
       - service_mode_entered
@@ -1086,7 +1086,7 @@ flippers:
     enable_events:
       - ball_started
       - mode_hades_mini_game_stopped # mode_hades_bonus_game_stopped,
-      - s_accessory_inactive{mode.game.active and not mode.high_score_active} #so attract and high score modes can use switch
+      - s_accessory_inactive{mode.base.active} #game.active and not mode.high_score_active} #so attract and high score modes can use switch
     disable_events:
       - ball_will_end
       - service_mode_entered

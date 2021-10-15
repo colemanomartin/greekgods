@@ -2,9 +2,9 @@
 - duration: 1
   lights:
     (leds):
-      color: 888888
+      color: AAAAAA # Was 888888
       fade: 60ms
-- duration: 90
+- duration: 40 #Was 90
   lights:
     (leds):
       color: stop

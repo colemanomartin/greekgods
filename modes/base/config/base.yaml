@@ -356,7 +356,10 @@ shots:
     switch: s_left_side_pop
     restart_events: show_white_all_pops_x5_finished_playing #Resetting with show player event so as not to need a timer.
     show_tokens:
-      leds: l_left_side_pop
+      leds:
+        - l_left_side_pop
+        - l_left_pop_upper_arrow
+        - l_left_pop_lower_arrow
   base_olympus_lower_pop:
     playfield: earth_pf
     profile: base_white_green
@@ -746,7 +749,7 @@ show_player:
       loops: 6 #Dont know why I chose six blinks
 #  mode_base_started: # player_shot_base_left_side_pop_enabled:
     #Start the light shows calling attention to each of the pop bumpers
-    show_left_side_pop_shot_call:
+    show_left_side_pop_shot_call: #Just blinks arrows back and forth
       speed: 1
       loops: -1
       priority: 2

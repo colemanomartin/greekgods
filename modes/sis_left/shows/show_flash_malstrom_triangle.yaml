@@ -3,9 +3,15 @@
   lights:
     l_malstrom_triangle:
       color: 0000FF
-      fade: 500
+      fade: 100
+    l_poseidon_fish_middle:
+      color: 0000FF
+      fade: 100
 - duration: 1
   lights:
     l_malstrom_triangle:
       color: 000000
-      fade: 500
+      fade: 100
+    l_poseidon_fish_middle:
+      color: 000000
+      fade: 100

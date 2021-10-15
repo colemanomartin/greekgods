@@ -167,12 +167,14 @@ sounds:
     file: cmgg2_right_outlane_bs_awarded.ogg
     volume: 1
     track: voice
-    max_queue_time: 2s
+    priority: 1
+    max_queue_time: 5s
   v_left_outlane_bs_awarded:
     file: cmgg2_left_outlane_bs_awarded.ogg
     volume: 1
     track: voice
-    max_queue_time: 2s
+    priority: 0
+    max_queue_time: 5s
   v_move_powerball_to_other_side_to_lock_ball:
     file: cmgg2_move_powerball_to_other_side_to_lock_ball.ogg
     volume: 1
@@ -202,6 +204,7 @@ sounds:
     file: cmgg2_double_outlane_bs_awarded.ogg
     volume: 1
     track: voice
+    priority: 2
     max_queue_time: 2s
   v_completed_lane_lights_award_bs:
     file: cmgg2_completed_lane_lights_award_bs.ogg

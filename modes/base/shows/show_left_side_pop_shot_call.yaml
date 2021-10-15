@@ -1,4 +1,5 @@
 #show_version=5
+#Loops calling shot until pop hit as part of goddess progression
 - duration: 1
   lights:
     l_left_pop_lower_arrow:
