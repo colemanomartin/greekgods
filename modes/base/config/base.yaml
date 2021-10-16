@@ -342,8 +342,8 @@ shot_profiles:
         priority: 3 #Without this it does not ride atop the base colors.
       - name: touched
         show: "show_pop_green_pulse"
-        loops: -1
-        speed: 5
+        loops: 0
+        speed: 3
         priority: 3
     loop: false
 

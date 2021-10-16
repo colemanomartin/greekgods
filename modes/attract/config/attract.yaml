@@ -14,10 +14,10 @@ coil_player:
 
 show_player:
   timer_instructions_clock_started:
-    attract_display_loop:
+    attract_backbox_display_loop:
       action: stop
   logicblock_instruction_slide_controller_complete:
-    attract_display_loop:
+    attract_backbox_display_loop:
       speed: 1
   mode_attract_started:
     attract_backbox_display_loop:
@@ -44,7 +44,7 @@ timers:
   instructions_clock:
     start_value: 0
     end_value: 10 ##########################Set to number of slides
-    tick_interval: 10s #Display duration each slide
+    tick_interval: 30s #Display duration each slide
     direction: up
     control_events:
       - event: s_accessory_active{device.timers.instructions_clock.running==False} #Only reset if not already running

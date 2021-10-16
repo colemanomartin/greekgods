@@ -1,6 +1,6 @@
 #show_version=5
 - duration: 1
   lights:
-    l_2xflasher:
+    l_3xflasher:
       color: (color)
       fade: 50

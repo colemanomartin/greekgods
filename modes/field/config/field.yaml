@@ -102,13 +102,13 @@ sequence_shots:
     switch_sequence:
       - s_olympus_rollover
       - s_posideon_rollover
-    sequence_timeout: 1.5s
+    sequence_timeout: 1.1s
   field_orbit_clockwise: #used for light show
     playfield: earth_pf
     switch_sequence:
       - s_posideon_rollover
       - s_olympus_rollover
-    sequence_timeout: 1.5s
+    sequence_timeout: 1.1s
 
 shots:
   field_poseidon_mech: #Hits recorded in base overdrive and in field p-excitement counter
@@ -266,22 +266,7 @@ counters:
       base_olympus_spinner_hit
     count_complete_value: 1000000
     disable_on_complete: False
-  field_orbit_combo_clockwise: #counts orbit sequence shots for combo callout and bones
-    enable_events: mode_field_started
-    count_events: field_orbit_counter_clockwise_hit
-    logic_block_timer: 3s
-    count_complete_value: 2
-    disable_on_complete: false
-  field_orbit_combo_counter_clockwise:
-    enable_events: mode_field_started
-    count_events: field_orbit_counter_counter_clockwise_hit
-    logic_block_timer: 3s
-    count_complete_value: 2
-    disable_on_complete: false
 
-#    enable_events:
-#      - mode_field_started
-#      - mode_hydra_ending
   #The following counters are used for the end of ball bonus
   field_pops: #Counts number of pops after qualifying for locking
     reset_events: ball_started
@@ -313,6 +298,20 @@ counters:
 #    events_when_complete: drop_target_threshold_for_celestial_mb_met
     multiple_hit_window: 100ms # not clear if this is for each event or done one at a time
     count_complete_value: 6
+  field_orbit_combo_clockwise: #counts orbit sequence shots for combo callout and bones
+    enable_events: mode_field_started
+    count_events: field_orbit_clockwise_hit
+    reset_events: timer_field_orbit_combo_clockwise_complete
+#    logic_block_timer: 3000ms
+    count_complete_value: 2
+    disable_on_complete: false
+  field_orbit_combo_counter_clockwise:
+    enable_events: mode_field_started
+    count_events: field_orbit_counter_clockwise_hit
+    reset_events: timer_field_orbit_combo_counter_clockwise_complete
+#    logic_block_timer: 3
+    count_complete_value: 2
+    disable_on_complete: false
 
 #  field_drop_bank_complete_hits:
 #    count_events: drop_target_bank_cluster_down
@@ -320,6 +319,25 @@ counters:
 #    persist_state: True
 #    reset_events: drop_target_bank_cluster_up
 #    count_complete_value: 2
+
+timers:
+#These are used to time out the combo orbit shot. When logic_block_timer works in MPF this should be unnecessary
+  field_orbit_combo_counter_clockwise:
+    start_value: 1
+    end_value: 0
+    tick_interval: 3000ms
+    direction: down
+    control_events:
+      - action: restart
+        event: logicblock_field_orbit_combo_counter_clockwise_hit
+  field_orbit_combo_clockwise:
+    start_value: 1
+    end_value: 0
+    tick_interval: 3000ms
+    direction: down
+    control_events:
+      - action: restart
+        event: logicblock_field_orbit_combo_clockwise_hit
 
 
 show_player:

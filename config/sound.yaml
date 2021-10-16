@@ -132,7 +132,7 @@ sounds:
   v_goddess_awarded:
     file: cmgg2_goddess_awarded.ogg
     volume: 1
-    max_queue_time: 2s
+    max_queue_time: 4s
     track: voice
   #v_ball_locked:
   #  file: balllocked.ogg
@@ -165,7 +165,7 @@ sounds:
     track: voice
   v_combo:
     file: cmgg2_combo.ogg
-    volume: 1
+    volume: 1.75
     track: voice
     max_queue_time: 2s
   v_right_outlane_bs_awarded:
@@ -213,7 +213,7 @@ sounds:
     max_queue_time: 2s
   v_time_added:
     file: cmgg2_time_added.ogg
-    volume: 1.25
+    volume: 2
     track: voice
     priority: 3
     max_queue_time: 2s

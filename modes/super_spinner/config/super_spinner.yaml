@@ -22,6 +22,10 @@ mode:
 #    - timer_super_spinner_countdown_complete #Moved to base accrual logic
   restart_on_next_ball: false #restarting when qualified but scoop not yet hit is handled by conditional logic against the sequence in base
 
+accruals:  # this is a way for modes to see if super spinner is indeed running and not just waiting for the start shot
+  super_spinner_started:
+    events: super_spinner_kickoff_hit
+    reset_on_complete: False
 
 
 #Maybe change these event names to ss_says_... and make new events in scoop mode startup section

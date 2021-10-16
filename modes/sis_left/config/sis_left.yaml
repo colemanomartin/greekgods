@@ -28,6 +28,7 @@ sequence_shots:
       - s_posideon_rollover
     sequence_timeout: 2s
 shots:
+  #These are just used in the light shows of this mode
   sis_left_poseidon_mech:
     playfield: earth_pf
     profile: one_state #defigned in base
@@ -36,6 +37,17 @@ shots:
       - base_poseidon_left_slingshot_hit
       - base_poseidon_right_slingshot_hit
       - base_poseidon_gate_hit
+    enable_events:
+      - mode_sis_left_started
+  sis_left_olympus_mech:
+    playfield: earth_pf
+    profile: one_state #defigned in base
+    hit_events:
+      #- base_olympus_spinner_hit
+      - base_olympus_right_pop_hit
+      - base_olympus_lower_pop_hit
+      - base_olympus_left_pop_hit
+      - base_hole_proximal_hit
     enable_events:
       - mode_sis_left_started
 
@@ -65,11 +77,24 @@ show_player:
       speed: 2
     show_left_ramp_green:
       speed: 1
-  sis_left_poseidon_mech_hit:
+  sis_left_poseidon_mech_hit{not device.accruals.super_spinner_started.completed}:
     show_flash_2x:
       show_tokens:
-        color: blue
-      speed: 2
+        color: red
+      speed: 4
+      loops: 0
+  sis_left_poseidon_mech_hit{device.accruals.super_spinner_started.completed}:
+    show_flash_3x:
+      show_tokens:
+        color: red
+      speed: 4
+      loops: 0
+  #This next one shows that when SS active its double points on the non sis side
+  sis_left_olympus_mech_hit{device.accruals.super_spinner_started.completed}:
+    show_flash_2x:
+      show_tokens:
+        color: red
+      speed: 4
       loops: 0
   field_olympus_mech_hit:
     show_left_sis_arrow_flash:

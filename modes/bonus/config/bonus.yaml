@@ -22,25 +22,35 @@ mode_settings:
 #  mode_bonus_starting: enter_hades_from_bonus_mode  -better to just pick up the mode_bonus_starting even in hades
 
 slide_player:
-   mode_bonus_started: bonus_start_slide
+   mode_bonus_started:
+     bonus_start_slide:
+       action: play
+       target: score_lcd
+     hades_face:
+       action: play
+       target: playfield_lcd
 #   bonus_pops: bonus_pop_slide
 
 widget_player:
-   bonus_overdrive: bonus_overdrive_widget
-   bonus_sis: bonus_sis_widget
-   bonus_ballsaves: bonus_ballsaves_widget
-   bonus_total: bonus_total_widget
+   bonus_overdrive:
+     bonus_overdrive_widget:
+       action: add
+       target: score_lcd
+   bonus_sis:
+     bonus_sis_widget:
+       action: add
+       target: score_lcd
+   bonus_ballsaves:
+     bonus_ballsaves_widget:
+       action: add
+       target: score_lcd
+   bonus_total:
+     bonus_total_widget:
+       action: add
+       target: score_lcd
 
 widgets:
   bonus_overdrive_widget:
-    - type: text
-      text: (score)
-      y: 85%
-      x: 80%
-      font_size: 100
-      anchor_x: left
-      anchor_y: center
-  bonus_sis_widget:
     - type: text
       text: (score)
       y: 70%
@@ -48,10 +58,18 @@ widgets:
       font_size: 100
       anchor_x: left
       anchor_y: center
+  bonus_sis_widget:
+    - type: text
+      text: (score)
+      y: 50%
+      x: 80%
+      font_size: 100
+      anchor_x: left
+      anchor_y: center
   bonus_ballsaves_widget:
     - type: text
       text: (score)
-      y: 55%
+      y: 30%
       x: 80%
       font_size: 100
       anchor_x: left
@@ -59,26 +77,37 @@ widgets:
   bonus_total_widget:
     - type: text
       text: (score)
-      y: 40%
+      y: 10%
       x: 80%
       font_size: 160
       anchor_x: left
       anchor_y: center
 
 slides:
+  hades_face:
+    target: playfield_lcd
+    widgets:
+    - type: image
+      image: hadesface2
+      scale: 2
+      y: 60%
+    transition:
+      type: fade
+      duration: 1s
+
   bonus_start_slide:
     target: score_lcd  ##### might have to remove this if widget player does not place them on correct screen
     widgets:
     - type: text
       text: Bonus
-      y: 98%
+      y: 95%
       x: 50%
       font_size: 250
       anchor_x: center
       anchor_y: top
     - type: text
       text: "Super Qualifying Pop Hits x 200"
-      y: 85%
+      y: 70%
       x: 10%
       font_size: 100
       anchor_x: left
@@ -92,21 +121,21 @@ slides:
 #      anchor_y: center
     - type: text
       text: "Sisiphus Powerball Arcs x 750"
-      y: 70%
+      y: 50%
       x: 10%
       font_size: 100
       anchor_x: left
       anchor_y: center
     - type: text
       text: "Unused Outlane Ball Protection x 1000"
-      y: 55%
+      y: 30%
       x: 10%
       font_size: 100
       anchor_x: left
       anchor_y: center
     - type: text
       text: "Total Bonus"
-      y: 40%
+      y: 10%
       x: 10%
       font_size: 160
       anchor_x: left

@@ -32,6 +32,7 @@ sequence_shots:
       - s_posideon_rollover
     sequence_timeout: 2s
 shots:
+  #These are just used for the light shows in this mode
   sis_right_olympus_mech:
     playfield: earth_pf
     profile: one_state #defigned in base
@@ -41,6 +42,16 @@ shots:
       - base_olympus_lower_pop_hit
       - base_olympus_left_pop_hit
       - base_hole_proximal_hit
+    enable_events:
+      - mode_sis_right_started
+  sis_right_poseidon_mech:
+    playfield: earth_pf
+    profile: one_state #defigned in base
+    hit_events:
+      - base_poseidon_pop_hit
+      - base_poseidon_left_slingshot_hit
+      - base_poseidon_right_slingshot_hit
+      - base_poseidon_gate_hit
     enable_events:
       - mode_sis_right_started
 
@@ -72,11 +83,24 @@ show_player:
       speed: 2
     show_right_ramp_green:
       speed: 1
-  sis_right_olympus_mech_hit:
+  sis_right_olympus_mech_hit{not device.accruals.super_spinner_started.completed}:
     show_flash_2x:
       show_tokens:
-        color: white
-      speed: 2
+        color: red
+      speed: 4
+      loops: 0
+  sis_right_olympus_mech_hit{device.accruals.super_spinner_started.completed}:
+    show_flash_3x:
+      show_tokens:
+        color: red
+      speed: 4
+      loops: 0
+  #This next one shows double value when SS running for the non sis side
+  sis_right_poseidon_mech_hit{device.accruals.super_spinner_started.completed}:
+    show_flash_2x:
+      show_tokens:
+        color: red
+      speed: 4
       loops: 0
   field_poseidon_mech_hit: #hitting wrong side
     show_right_sis_arrow_flash:
