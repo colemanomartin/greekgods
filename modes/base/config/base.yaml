@@ -333,7 +333,7 @@ shot_profiles:
       - name: lit  # step 2
         show: on
     loop: false
-  base_white_green:
+  base_white_green: #This show flashes unhit pops white and hit ones green
     states:
       - name: untouched
         show: "show_pop_white_pulse"

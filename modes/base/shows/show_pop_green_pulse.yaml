@@ -4,7 +4,7 @@
     (leds):
       color: 005010
       fade: 90ms
-- duration: 9
+- duration: 5
   lights:
     (leds):
       color: stop

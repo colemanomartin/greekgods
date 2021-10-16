@@ -174,4 +174,4 @@ show_player:
 sound_player:
   mode_banked_l_bs_started: v_left_outlane_bs_awarded
   ball_save_banked_left_saving_ball: v_ball_saved
-#  left_ramp_hit{device.timers.left_bs_expiration.ticks<=6}: timeadded
+  left_ramp_hit{device.timers.left_bs_expiration.ticks<=6}: v_time_added

@@ -84,20 +84,8 @@ event_player:
 #    - complete_poseidon_excitement
 #  overload_p_hit: bonus_pop #allows pops not needed to qualify mb to be counted for bonus
 
-#accruals:
-#  field_all_pops:
-#    events:
-#      - base_left_side_pop_hit
-#      - base_poseidon_pop_hit
-#      - base_olympus_left_pop_hit fix this spoon
-#      - base_olympus_right_pop_hit
-#      - base_olympus_lower_pop_hit
-#    persist_state: true
-#    reset_on_complete: true
-#    disable_on_complete: false
-
 sequence_shots:
-  field_sis_left_to_right:  #This is duplicated in base for bonus mode counting, might be able to just have one place since state machine controlls flap 
+  field_sis_left_to_right:  #This is duplicated in base for bonus mode counting, might be able to just have one place since state machine controlls flap
     playfield: earth_pf
     event_sequence:
       - base_sis_left_vacated_hit
@@ -123,7 +111,7 @@ sequence_shots:
     sequence_timeout: 1.5s
 
 shots:
-  field_poseidon_mech: #Hits recorded in base timer section
+  field_poseidon_mech: #Hits recorded in base overdrive and in field p-excitement counter
     playfield: earth_pf
     profile: one_state #defigned in base
     hit_events:
@@ -278,7 +266,18 @@ counters:
       base_olympus_spinner_hit
     count_complete_value: 1000000
     disable_on_complete: False
-
+  field_orbit_combo_clockwise: #counts orbit sequence shots for combo callout and bones
+    enable_events: mode_field_started
+    count_events: field_orbit_counter_clockwise_hit
+    logic_block_timer: 3s
+    count_complete_value: 2
+    disable_on_complete: false
+  field_orbit_combo_counter_clockwise:
+    enable_events: mode_field_started
+    count_events: field_orbit_counter_counter_clockwise_hit
+    logic_block_timer: 3s
+    count_complete_value: 2
+    disable_on_complete: false
 
 #    enable_events:
 #      - mode_field_started
@@ -324,6 +323,14 @@ counters:
 
 
 show_player:
+  logicblock_field_poseidon_excitement_hit:
+    show_lower_pf_left_side_flashers:
+      speed: 5
+      loops: 0
+  logicblock_field_olympus_excitement_hit:
+    show_lower_pf_right_side_flashers:
+      speed: 5
+      loops: 0
   field_orbit_counter_clockwise_hit:
     show_orbit_counter_clockwise_blue2blue:
       speed: 120
@@ -340,6 +347,16 @@ show_player:
     show_orbit_counter_clockwise_white2blue:
       speed: 90
       loops: 0
+  logicblock_field_orbit_combo_counter_clockwise_complete:
+    show_orbit_counter_clockwise_red2blue:
+      speed: 120
+      loops: 0
+      priority: 10
+  logicblock_field_orbit_combo_clockwise_complete:
+    show_orbit_clockwise_red2blue:
+      speed: 120
+      loops: 0
+      priority: 10
   left_ramp_hit: #Sequence shot from base
     show_left_ramp_blue2blue:
       speed: 120
@@ -542,3 +559,13 @@ widget_player:
     invite_hydra:
       slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in temple display
       action: remove
+
+#The whole combo might be better in base
+variable_player:
+  logicblock_field_orbit_combo_counter_clockwise_complete:
+    score: 5000
+  logicblock_field_orbit_combo_clockwise_complete:
+    score: 5000
+sound_player:
+  logicblock_field_orbit_combo_counter_clockwise_complete: v_combo
+  logicblock_field_orbit_combo_clockwise_complete: v_combo
