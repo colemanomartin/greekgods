@@ -52,7 +52,52 @@ widgets: #http://docs.missionpinball.org/en/dev/displays/widgets/common_settings
     anchor_x: center
     anchor_y: bottom
     z: 0
-
+  poseidon_star:
+    type: image
+    image: star_8_blue
+    z: 1
+    expire: 1s
+    scale: 0.5
+    z: 2
+    x: 133
+    animations:
+      player_p_excitement:
+      - property: y
+        value: (value)
+        duration:  0 # .1s
+      - property: scale
+        value: 1
+        relative: false
+        duration: 0.5
+#        easing: in_out_cubic
+      - property: scale
+        value: 0.1
+        relative: false
+        duration: 0.5
+#        easing: in_out_cubic
+  olympus_star:
+    type: image
+    image: star_8_yellow
+    z: 1
+    expire: 1s
+    scale: 0.5
+    z: 2
+    x: 632
+    animations:
+      player_o_excitement:
+      - property: y
+        value: (value)
+        duration:  0 # .1s
+      - property: scale
+        value: 1
+        relative: false
+        duration: 0.5
+#        easing: in_out_cubic
+      - property: scale
+        value: 0.1
+        relative: false
+        duration: 0.5
+#        easing: in_out_cubic
 widget_player:
   slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap_control.state == "start"}:
     middle:
@@ -60,6 +105,14 @@ widget_player:
   slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap_control.state == "divert_middle"}:
     middle:
       slide: show_progress_to_ramp_mb
+  logicblock_field_poseidon_excitement_updated:
+    poseidon_star:
+      slide: show_progress_to_ramp_mb
+      action: add
+  logicblock_field_olympus_excitement_updated:
+    olympus_star:
+      slide: show_progress_to_ramp_mb
+      action: add
 #  mode_temple_display_started{device.state_machines.ramp_flap.state == "divert_left"}:
 #    left_arrow_head:
 #      target: playfield_lcd
@@ -174,7 +227,6 @@ slides: #Eventually move these widgets over to widgets and call individually
 #        - property: y
 #          value: (value)
 #          duration:  .3s
-
 
 slide_player:
 #  mode_field_started:
