@@ -212,7 +212,7 @@ widgets:
       color: green
       font_name: greekgods3
       expire: 2s
-      z: 4 #Temple layer is 2
+      z: 7 #Temple layer is 2
       animations:
         add_to_slide:
           - property: rotation
@@ -220,6 +220,18 @@ widgets:
             relative: false
             duration: 1s
             easing: out_bounce #in_out_elastic #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  super_spinner_bonus_collected_mask:
+    - type: rectangle
+      color: white
+      anchor_x: left
+      anchor_y: bottom
+      expire: 2s
+      z: 6 #Temple layer is 2 text on temple 5
+      x: 55
+      y: 738
+      width: 658
+      height: 90
+
 widget_player:
   mode_super_spinner_started:
     invite_super_spinner:
@@ -251,6 +263,9 @@ widget_player:
     super_spinner_time_remaining:
       slide: show_progress_to_ramp_mb
       action: remove
+    super_spinner_bonus_collected_mask:
+      slide: show_progress_to_ramp_mb #Adds white mask atop any text on the temple while the bonus message is spinning in
+      action: add
     super_spinner_bonus_collected:
       slide: show_progress_to_ramp_mb
       action: add

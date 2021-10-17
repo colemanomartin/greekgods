@@ -52,52 +52,7 @@ widgets: #http://docs.missionpinball.org/en/dev/displays/widgets/common_settings
     anchor_x: center
     anchor_y: bottom
     z: 0
-  poseidon_star:
-    type: image
-    image: star_8_blue
-    expire: 0.5s
-    scale: 1
-    z: 2
-    x: 133
-    anchor_y: bottom
-    animations:
-      player_p_excitement: #_star:
-      - property: y
-        value: (value)
-        duration:  0 # .1s
-      - property: scale
-        value: 2
-        relative: false
-        duration: 0.25
-#        easing: in_out_cubic
-      - property: scale
-        value: 0.1
-        relative: false
-        duration: 0.25
-#        easing: in_out_cubic
-  olympus_star:
-    type: image
-    image: star_8_yellow
-    expire: 0.5s
-    scale: 1
-    z: 2
-    x: 632
-    anchor_y: bottom
-    animations:
-      player_o_excitement: #_star:
-      - property: y
-        value: (value)
-        duration:  0 # .1s
-      - property: scale
-        value: 2
-        relative: false
-        duration: 0.25
-#        easing: in_out_cubic
-      - property: scale
-        value: 0.1
-        relative: false
-        duration: 0.25
-#        easing: in_out_cubic
+
 widget_player:
   slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap_control.state == "start"}:
     middle:
@@ -105,14 +60,8 @@ widget_player:
   slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap_control.state == "divert_middle"}:
     middle:
       slide: show_progress_to_ramp_mb
-  logicblock_field_poseidon_excitement_updated:
-    poseidon_star:
-      slide: show_progress_to_ramp_mb
-      action: add
-  logicblock_field_olympus_excitement_updated:
-    olympus_star:
-      slide: show_progress_to_ramp_mb
-      action: add
+
+
 #  mode_temple_display_started{device.state_machines.ramp_flap.state == "divert_left"}:
 #    left_arrow_head:
 #      target: playfield_lcd
@@ -173,7 +122,7 @@ slides: #Eventually move these widgets over to widgets and call individually
       anchor_x: left
       anchor_y: bottom
       animations:
-        player_p_excitement:
+        player_p_excitement: # this event is posted every time player_p_excitment is updated in base cauing the bar height animation to change
         - property: height
           value: (value)
           duration:  .3s
@@ -187,46 +136,52 @@ slides: #Eventually move these widgets over to widgets and call individually
       anchor_x: left
       anchor_y: bottom
       animations:
-        player_o_excitement:
+        player_o_excitement: # this event is posted every time player_o_excitment is updated in base cauing the bar height animation to change
         - property: height
           value: (value)
           duration:  .3s
-#    - type: rectangle
-#      x: 400
-#      y: 300
-#      width: 400
-#      height: 200
-#      corner_radius: 50
-#      corner_segments: 3
-#      color: yellow
-#    - type: image
-#      image: mask_left
-#      scale: 1.02
-#      y: -300
-#      x: -1
-#      anchor_x: left
-#      anchor_y: bottom
-#      rotation: 0
-#      z: 2 #200
-#      animations:
-#        player_p_excitement:
-#        - property: y
-#          value: (value)
-#          duration:  .3s
-#    - type: image
-#      image: mask_right
-#      scale: 1.02
-#      y: -300
-#      x: 768
-#      anchor_x: right
-#      anchor_y: bottom
-#      rotation: 0
-#      z: 3 #201
-#      animations:
-#        player_o_excitement:
-#        - property: y
-#          value: (value)
-#          duration:  .3s
+    - type: image
+      image: star_8_yellow
+      scale: 1
+      z: 4
+      y: -0
+      x: 632
+      animations:
+        player_o_excitement_star: # this event is posted every time player_o_excitment_star is updated in base cauing the animations to fire
+        - property: y
+          value: (value)
+          duration:  0 #50 ms # 0 # .1s
+        - property: scale
+          value: 3
+          relative: false
+          duration: 0.12
+          easing: in_out_cubic
+        - property: scale
+          value: 0
+          relative: false
+          duration: 0.12
+          easing: in_out_cubic
+    - type: image
+      image: star_8_blue
+      scale: 1
+      z: 4
+      y: 0
+      x: 133
+      animations:
+        player_p_excitement_star: # this event is posted every time player_o_excitment_star is updated in base cauing the animations to fire
+        - property: y
+          value: (value)
+          duration:  0 #50 ms # 0 # .1s
+        - property: scale
+          value: 3
+          relative: false
+          duration: 0.12
+          easing: in_out_cubic
+        - property: scale
+          value: 0
+          relative: false
+          duration: 0.12
+          easing: in_out_cubic
 
 slide_player:
 #  mode_field_started:

@@ -35,7 +35,7 @@
       widgets:
       - type: image
         image: p3roc
-        scale: 1
+        scale: 0.75
         z: 2
       transition:
         type: swap

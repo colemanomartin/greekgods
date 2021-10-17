@@ -73,7 +73,6 @@ shots:
     disable_events: ormb_light_o_lock_hit
     hit_events:
       - ballblock_hit
-      - super_spinner_kickoff_hit #Allows scoop shot to activate the lock if super spinner dropped ball block 11/27/20
     debug: true
   ormb_start_shot:
     playfield: earth_pf

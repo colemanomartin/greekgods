@@ -6,6 +6,9 @@ score:
   - CCF
   - 108525
 - !!python/tuple
+  - COM
+  - 100275
+- !!python/tuple
   - MPF
   - 100000
 - !!python/tuple
@@ -29,6 +32,3 @@ score:
 - !!python/tuple
   - JOH
   - 50000
-- !!python/tuple
-  - COM
-  - 41975
