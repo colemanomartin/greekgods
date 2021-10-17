@@ -43,7 +43,7 @@ show_player:
 timers:
   instructions_clock:
     start_value: 0
-    end_value: 10 ##########################Set to number of slides
+    end_value: 11 ##########################Set to number of slides
     tick_interval: 30s #Display duration each slide
     direction: up
     control_events:
