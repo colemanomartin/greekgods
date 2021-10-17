@@ -23,7 +23,7 @@ shots:
   base_double_left_ramp: 62
   base_double_right_ramp: 46
   base_hole_distal: 3164
-  base_hole_proximal: 677
+  base_hole_proximal: 733
   base_hydra: 9420
   base_left_inlane: 923
   base_left_outlane: 303
@@ -38,7 +38,7 @@ shots:
   base_poseidon_gate: 10654
   base_poseidon_left_slingshot: 5756
   base_poseidon_pop: 6693
-  base_poseidon_right_slingshot: 6457
+  base_poseidon_right_slingshot: 6516
   base_ramp: 5572
   base_revealed_slingshot: 1054
   base_right_inlane: 1837
@@ -57,8 +57,8 @@ shots:
   double_right_ramp: 286
   field_invite_hydra_at_scoop: 16
   field_invite_super_spinner_at_scoop: 24
-  field_olympus_mech: 10725
-  field_poseidon_mech: 25224
+  field_olympus_mech: 10781
+  field_poseidon_mech: 25283
   goddess_bb: 1
   goddess_left_side_pop: 195
   goddess_made_orbit: 115
@@ -90,8 +90,8 @@ shots:
   river_c_mini: 1
   river_d: 12
   river_d_mini: 1
-  sis_left_olympus_mech: 7
-  sis_left_poseidon_mech: 14335
+  sis_left_olympus_mech: 63
+  sis_left_poseidon_mech: 14394
   sis_right_olympus_mech: 4202
   sis_right_poseidon_mech: 3
   skill_shot_rotation: 1680
@@ -99,8 +99,8 @@ shots:
   super_spinner_kickoff: 177
   super_spinner_olympus_mech: 414
   super_spinner_poseidon_mech: 1887
-  top_o_lane: 528
-  top_p_lane: 374
+  top_o_lane: 584
+  top_p_lane: 433
 switches:
   s_1_0: 0
   s_1_1: 0
@@ -112,7 +112,7 @@ switches:
   s_drop_target_middle: 1137
   s_drop_target_proximal: 966
   s_hole_distal: 3164
-  s_hole_proximal: 677
+  s_hole_proximal: 733
   s_hydra: 9422
   s_launch: 516
   s_left_flipper: 26770
@@ -134,7 +134,7 @@ switches:
   s_poseidon_lock_distal: 2198
   s_poseidon_lock_proximal: 1707
   s_poseidon_pop: 6693
-  s_poseidon_right_slingshot: 6457
+  s_poseidon_right_slingshot: 6516
   s_posideon_rollover: 3381
   s_powerball_left_distal: 0
   s_powerball_left_proximal: 0
@@ -150,17 +150,17 @@ switches:
   s_scoop_chamber: 1983
   s_scoop_lock_0: 1586
   s_scoop_lock_1: 1508
-  s_shooterlane: 4672
+  s_shooterlane: 4677
   s_sis_left: 1323
   s_sis_right: 2331
   s_start: 33
-  s_trough_0: 4454
-  s_trough_1: 4414
-  s_trough_2: 4347
-  s_trough_3: 4184
+  s_trough_0: 4459
+  s_trough_1: 4419
+  s_trough_2: 4352
+  s_trough_3: 4189
   s_trough_4: 3563
-  s_trough_chamber: 4459
-  s_trough_jam: 4439
+  s_trough_chamber: 4464
+  s_trough_jam: 4444
   s_u_left_ear_0: 168
   s_u_left_ear_1: 338
   s_u_left_ear_2: 250

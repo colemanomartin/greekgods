@@ -55,48 +55,48 @@ widgets: #http://docs.missionpinball.org/en/dev/displays/widgets/common_settings
   poseidon_star:
     type: image
     image: star_8_blue
-    z: 1
-    expire: 1s
-    scale: 0.5
+    expire: 0.5s
+    scale: 1
     z: 2
     x: 133
+    anchor_y: bottom
     animations:
-      player_p_excitement:
+      player_p_excitement: #_star:
       - property: y
         value: (value)
         duration:  0 # .1s
       - property: scale
-        value: 1
+        value: 2
         relative: false
-        duration: 0.5
+        duration: 0.25
 #        easing: in_out_cubic
       - property: scale
         value: 0.1
         relative: false
-        duration: 0.5
+        duration: 0.25
 #        easing: in_out_cubic
   olympus_star:
     type: image
     image: star_8_yellow
-    z: 1
-    expire: 1s
-    scale: 0.5
+    expire: 0.5s
+    scale: 1
     z: 2
     x: 632
+    anchor_y: bottom
     animations:
-      player_o_excitement:
+      player_o_excitement: #_star:
       - property: y
         value: (value)
         duration:  0 # .1s
       - property: scale
-        value: 1
+        value: 2
         relative: false
-        duration: 0.5
+        duration: 0.25
 #        easing: in_out_cubic
       - property: scale
         value: 0.1
         relative: false
-        duration: 0.5
+        duration: 0.25
 #        easing: in_out_cubic
 widget_player:
   slide_show_progress_to_ramp_mb_active{device.state_machines.ramp_flap_control.state == "start"}:

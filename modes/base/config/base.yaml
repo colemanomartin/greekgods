@@ -619,9 +619,15 @@ variable_player:
     o_excitement: # For animated bar graph of o area points
       int: device.counters.field_olympus_excitement.value * 21 # 55 - 300
       action: set
+    o_excitement_star: # For animated bar graph of o area points flashing star
+      int: device.counters.field_olympus_excitement.value * 21 + 55 # 55 - 300
+      action: set
   logicblock_field_poseidon_excitement_updated:
     p_excitement: # For animated bar graph of p area points
       int: device.counters.field_poseidon_excitement.value * 21 # 55 - 300
+      action: set
+    p_excitement_star: # For animated bar graph of p area points flashing star
+      int: device.counters.field_poseidon_excitement.value * 21 + 55 # 55 - 300
       action: set
   logicblock_field_spins_updated: #Used to put wheels on BB display because device conditional logic is not available to MC
     player_base_spins:
