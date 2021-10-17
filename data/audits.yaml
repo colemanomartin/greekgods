@@ -1,9 +1,9 @@
 events:
-  game_ended: 1
+  game_ended: 0
   game_started: 1
 player:
   score:
-    average: 70256.38686131383
+    average: 68382.7464788732
     top:
     - 387175
     - 322675
@@ -15,50 +15,50 @@ player:
     - 186375
     - 183275
     - 177300
-    total: 137
+    total: 142
 shots:
-  ballblock: 2549
+  ballblock: 2592
   banked_l_ballsave_double_left_ramp: 133
   banked_r_ballsave_double_right_ramp: 94
   base_double_left_ramp: 62
-  base_double_right_ramp: 47
-  base_hole_distal: 3168
-  base_hole_proximal: 893
-  base_hydra: 9435
+  base_double_right_ramp: 48
+  base_hole_distal: 3169
+  base_hole_proximal: 1150
+  base_hydra: 9438
   base_left_inlane: 924
   base_left_outlane: 303
-  base_left_side_pop: 5965
-  base_left_slingshot: 4009
-  base_olympus_left_pop: 902
-  base_olympus_lower_pop: 3483
+  base_left_side_pop: 5966
+  base_left_slingshot: 4010
+  base_olympus_left_pop: 903
+  base_olympus_lower_pop: 3485
   base_olympus_right_pop: 2579
-  base_olympus_spinner: 28474
-  base_orbit_spinner: 17987
-  base_orbit_spinner_2: 17987
-  base_poseidon_gate: 10679
-  base_poseidon_left_slingshot: 5773
-  base_poseidon_pop: 6717
-  base_poseidon_right_slingshot: 6594
-  base_ramp: 5582
+  base_olympus_spinner: 28475
+  base_orbit_spinner: 17998
+  base_orbit_spinner_2: 17998
+  base_poseidon_gate: 10699
+  base_poseidon_left_slingshot: 5808
+  base_poseidon_pop: 6767
+  base_poseidon_right_slingshot: 6817
+  base_ramp: 5659
   base_revealed_slingshot: 1055
-  base_right_inlane: 1839
-  base_right_outlane: 259
-  base_right_slingshot: 5516
-  base_scoop_from_pf: 564
-  base_sis_left_arrived: 796
-  base_sis_left_vacated: 1582
-  base_sis_right_arrived: 1643
-  base_sis_right_vacated: 3300
+  base_right_inlane: 1844
+  base_right_outlane: 262
+  base_right_slingshot: 5517
+  base_scoop_from_pf: 572
+  base_sis_left_arrived: 804
+  base_sis_left_vacated: 1600
+  base_sis_right_arrived: 1651
+  base_sis_right_vacated: 3316
   bottom_rotation_left_in: 575
   bottom_rotation_left_out: 185
-  bottom_rotation_right_in: 1128
-  bottom_rotation_right_out: 153
+  bottom_rotation_right_in: 1133
+  bottom_rotation_right_out: 156
   double_left_ramp: 354
   double_right_ramp: 286
   field_invite_hydra_at_scoop: 16
   field_invite_super_spinner_at_scoop: 24
-  field_olympus_mech: 10947
-  field_poseidon_mech: 25431
+  field_olympus_mech: 11226
+  field_poseidon_mech: 25675
   goddess_bb: 1
   goddess_left_side_pop: 195
   goddess_made_orbit: 115
@@ -74,12 +74,12 @@ shots:
   left_sling: 7
   middle_target: 8
   mystery_hole_received_ball: 155
-  ormb_jackpot: 19
-  ormb_light_o_lock: 328
-  ormb_start_shot: 33
-  prmb_jackpot: 78
-  prmb_light_p_lock: 812
-  prmb_start_shot: 96
+  ormb_jackpot: 29
+  ormb_light_o_lock: 346
+  ormb_start_shot: 38
+  prmb_jackpot: 124
+  prmb_light_p_lock: 827
+  prmb_start_shot: 100
   right_corner_target: 1
   right_outlane_banked_ballsave: 35
   right_sling: 7
@@ -90,77 +90,77 @@ shots:
   river_c_mini: 1
   river_d: 12
   river_d_mini: 1
-  sis_left_olympus_mech: 225
-  sis_left_poseidon_mech: 14538
-  sis_right_olympus_mech: 4202
-  sis_right_poseidon_mech: 3
+  sis_left_olympus_mech: 251
+  sis_left_poseidon_mech: 14695
+  sis_right_olympus_mech: 4426
+  sis_right_poseidon_mech: 75
   skill_shot_rotation: 1682
   super_spinner_bonus: 46
   super_spinner_kickoff: 180
   super_spinner_olympus_mech: 418
   super_spinner_poseidon_mech: 1889
-  top_o_lane: 726
-  top_p_lane: 497
+  top_o_lane: 785
+  top_p_lane: 503
 switches:
   s_1_0: 0
   s_1_1: 0
   s_1_7: 0
   s_accessory: 2144
-  s_ballblock: 4363
-  s_diverter_midpoint: 376
+  s_ballblock: 4418
+  s_diverter_midpoint: 397
   s_drop_target_distal: 1099
   s_drop_target_middle: 1138
   s_drop_target_proximal: 968
-  s_hole_distal: 3168
-  s_hole_proximal: 893
-  s_hydra: 9437
+  s_hole_distal: 3169
+  s_hole_proximal: 1150
+  s_hydra: 9440
   s_launch: 516
   s_left_flipper: 26811
   s_left_flipper_EOS: 21741
   s_left_inlane: 924
   s_left_outlane: 303
-  s_left_side_pop: 5965
-  s_left_slingshot: 4009
-  s_olympus_left_pop: 902
-  s_olympus_lock_distal: 2347
-  s_olympus_lock_proximal: 2510
-  s_olympus_lower_pop: 3483
+  s_left_side_pop: 5966
+  s_left_slingshot: 4010
+  s_olympus_left_pop: 903
+  s_olympus_lock_distal: 2393
+  s_olympus_lock_proximal: 2565
+  s_olympus_lower_pop: 3485
   s_olympus_right_pop: 2579
-  s_olympus_rollover: 4288
-  s_olympus_spinner: 28474
-  s_orbit_spinner: 17987
-  s_poseidon_gate: 10679
-  s_poseidon_left_slingshot: 5773
-  s_poseidon_lock_distal: 2202
-  s_poseidon_lock_proximal: 1709
-  s_poseidon_pop: 6717
-  s_poseidon_right_slingshot: 6594
-  s_posideon_rollover: 3389
+  s_olympus_rollover: 4292
+  s_olympus_spinner: 28475
+  s_orbit_spinner: 17998
+  s_poseidon_gate: 10699
+  s_poseidon_left_slingshot: 5808
+  s_poseidon_lock_distal: 2226
+  s_poseidon_lock_proximal: 1729
+  s_poseidon_pop: 6767
+  s_poseidon_right_slingshot: 6817
+  s_posideon_rollover: 3394
   s_powerball_left_distal: 0
   s_powerball_left_proximal: 0
   s_powerball_right_distal: 0
   s_powerball_right_proximal: 0
-  s_ramp_opto: 5582
+  s_ramp_opto: 5659
   s_revealed_slingshot: 2424
   s_right_flipper: 35161
   s_right_flipper_EOS: 29160
-  s_right_inlane: 1843
-  s_right_outlane: 260
-  s_right_slingshot: 5516
-  s_scoop_chamber: 1987
-  s_scoop_lock_0: 1590
-  s_scoop_lock_1: 1512
-  s_shooterlane: 4702
-  s_sis_left: 1323
-  s_sis_right: 2331
+  s_right_inlane: 1848
+  s_right_outlane: 263
+  s_right_slingshot: 5517
+  s_scoop_chamber: 1998
+  s_scoop_lock_0: 1593
+  s_scoop_lock_1: 1515
+  s_shooterlane: 4768
+  s_sis_left: 1338
+  s_sis_right: 2347
   s_start: 37
-  s_trough_0: 4484
-  s_trough_1: 4444
-  s_trough_2: 4377
-  s_trough_3: 4213
-  s_trough_4: 3566
-  s_trough_chamber: 4489
-  s_trough_jam: 4469
+  s_trough_0: 4548
+  s_trough_1: 4506
+  s_trough_2: 4435
+  s_trough_3: 4263
+  s_trough_4: 3601
+  s_trough_chamber: 4555
+  s_trough_jam: 4535
   s_u_left_ear_0: 170
   s_u_left_ear_1: 349
   s_u_left_ear_2: 257

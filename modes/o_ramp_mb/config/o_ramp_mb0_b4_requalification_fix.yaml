@@ -8,7 +8,6 @@
 # After the lock is full the state machine sends the ramp servo to the other lock until after MB is
 # finished or until P lock is full in which case the diverter points to the middle
 # and then a shot to the BB or ramp starts double MB.
-#10-17-21 added accrual to track if light lock shot already hit so mode wont require this on restart if ball drains before ball locked
 mode:
   priority: 1200 # range 100-1M
   start_events:
@@ -25,7 +24,6 @@ multiball_locks:
     source_playfield: earth_pf
     enable_events:
       - ormb_light_o_lock_hit
-      - mode_o_ramp_mb_started{device.accruals.ormb_light_o_lock_already_hit.completed}
     disable_events:
       - multiball_olympus_ramp_started
       - multiball_lock_olympus_lock_locked_ball
@@ -70,12 +68,13 @@ shots:
     playfield: earth_pf
     profile: flashing_off_o
     enable_events:
-      - mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2} # and not logicblock_ormb_light_o_lock_already_hit.completed} #This enables the shot when mode starts provide lock is not already full.
+      - mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2} #This enables the shot when mode starts provide lock is not already full.
     reset_events: multiball_lock_olympus_lock_locked_ball
     disable_events: ormb_light_o_lock_hit
     hit_events:
       - ballblock_hit
     debug: true
+    persist_state: True
   ormb_start_shot:
     playfield: earth_pf
     profile: flashing_off_o
@@ -116,7 +115,7 @@ event_player:
 
 show_player:
   #Things to do when starting
-  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2 and not device.accruals.ormb_light_o_lock_already_hit.completed}: #  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls==0}:
+  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2}: #  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls==0}:
     show_attention_ballblock:
       speed: 4
       sync_ms: 250
@@ -202,7 +201,6 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       color: ff8c00
-      z: 5
       events_when_added: yellow_message_added_to_slide_show_progress_to_ramp_mb
   shoot_scoop_yellow:
     - type: text
@@ -214,7 +212,6 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       color: ff8c00
-      z: 5
       events_when_added: yellow_message_added_to_slide_show_progress_to_ramp_mb
   qualified_yellow:
     - type: text
@@ -227,7 +224,6 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       rotation: 0
-      z: 5
   shoot_ramp_yellow:
     - type: text
       text: SHOOT  THE  RAMP
@@ -238,7 +234,6 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       color: ff8c00
-      z: 5
       events_when_added: yellow_message_added_to_slide_show_progress_to_ramp_mb
   move_sis_yellow:
     - type: text
@@ -250,7 +245,10 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       color: ff8c00
-      z: 5
+  announce_mb_bb:
+    - type: image
+      image: watercolormbsmall
+      scale: 1.25
   announce_mb_pf:
     - type: image
       image: mb_3balls
@@ -284,57 +282,33 @@ widgets:
   announce_yellow_jackpot:
     - type: image
       image: jackpot_yellow
-      scale: 0.2
+      scale: 1.2
       anchor_x: center
       anchor_y: center
       x: 384
       y: 455
       z: 3
-      animations:
-        add_to_slide:
-        - property: scale
-          value: 1.2
-          relative: false
-          duration: 0.25
-          easing: in_out_cubic
-        - property: scale
-          value: 0
-          relative: false
-          duration: 0.25
-          easing: in_out_cubic
 
 widget_player:
   #Things to do when starting
-  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2 and not device.accruals.ormb_light_o_lock_already_hit.completed}: #Mode started hasnt lit
+  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2}:
     qualified_yellow:
       slide: show_progress_to_ramp_mb #Adds widget on top pillar of this slide which was posted in field
       action: add
+      widget_settings:
+#        expire: 10 sec
+        z: 5
     shoot_scoop_target_yellow:
       slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in field
       action: add
-    #Remove anything that may be in the way
-    shoot_scoop_target_blue:
-      action: remove
-    shoot_ramp_blue:
-      action: remove
-  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2 and device.accruals.ormb_light_o_lock_already_hit.completed}: #Mode started has lit and lock not full
-    shoot_ramp_yellow:
-      slide: show_progress_to_ramp_mb
-      action: add
-    #Remove anything that may be in the way
-    shoot_scoop_target_blue:
-      action: remove
-    shoot_ramp_blue:
-      action: remove
-  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls==2}: #Mode started and lock full
+      widget_settings:
+        z: 5
+  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls==2}:
     shoot_scoop_yellow:
       slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in field
       action: add
-    #Remove anything that may be in the way
-    shoot_scoop_target_blue:
-      action: remove
-    shoot_ramp_blue:
-      action: remove
+      widget_settings:
+        z: 5
   #Things to do when enable the lock shot hit
   ormb_light_o_lock_hit: #clean up
     qualified_yellow:
@@ -343,15 +317,12 @@ widget_player:
     shoot_scoop_target_yellow:
       slide: show_progress_to_ramp_mb
       action: remove
-    #Remove anything else that may be in the way
-    shoot_scoop_target_blue:
-      action: remove
-    shoot_ramp_blue:
-      action: remove
   ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_right"}: #diverter is on correct side to lock ball
     shoot_ramp_yellow:
       slide: show_progress_to_ramp_mb
       action: add
+      widget_settings:
+        z: 5
   #Things to do when diverter moves
   ramp_flap_control_move_divert_left{device.multiball_locks.olympus_lock.enabled}: #Diverter moved to other side
     shoot_ramp_yellow:
@@ -362,17 +333,15 @@ widget_player:
       action: add
       widget_settings:
         expire: 8 sec
+        z: 5
   ramp_flap_control_move_divert_right{device.multiball_locks.olympus_lock.enabled}: #Diverter moded back to correct side for locking ball
     shoot_ramp_yellow:
       slide: show_progress_to_ramp_mb
       action: add
+      widget_settings:
+        z: 5
     move_sis_yellow:
       slide: show_progress_to_ramp_mb
-      action: remove
-    #Remove anything else that may be in the way
-    shoot_scoop_target_blue:
-      action: remove
-    shoot_ramp_blue:
       action: remove
   #Things to do when lock is full
   multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 2}:
@@ -382,16 +351,18 @@ widget_player:
     shoot_scoop_yellow:
       slide: show_progress_to_ramp_mb
       action: add
-    #Remove anything else that may be in the way
-    shoot_scoop_target_blue:
-      action: remove
-    shoot_ramp_blue:
-      action: remove
+      widget_settings:
+        z: 5
   #Things to do when multiball started
   multiball_olympus_ramp_started:
     shoot_scoop_yellow:
       slide: show_progress_to_ramp_mb
       action: remove
+    announce_mb_bb:
+      target: score_lcd
+      action: add
+      widget_settings:
+        expire: 8 sec
     announce_mb_pf:
       slide: show_progress_to_ramp_mb
       action: add
@@ -405,6 +376,8 @@ widget_player:
     shoot_scoop_target_yellow:
       action: remove
     shoot_ramp_yellow:
+      action: remove
+    announce_mb_bb:
       action: remove
     announce_mb_pf:
       action: remove
@@ -427,7 +400,38 @@ widget_player:
       target: playfield_lcd
       action: add
       widget_settings:
-        expire: 0.5 sec
+        expire: 1.4 sec
+
+#  multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1}:
+#    shoot_ramp_yellow:
+#      slide: show_progress_to_ramp_mb
+#      action: remove
+#  o_locking_elgible_again: #second time through the locking loop
+#    qualified_yellow:
+#      slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in field
+#      action: add
+#      widget_settings:
+#        expire: 10 sec
+#        z: 5
+#    shoot_scoop_target_yellow:
+#      slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in field
+#      action: add
+#      widget_settings:
+#        z: 5
+#  mode_sis_left_starting:
+#    move_sis_yellow:
+#      slide: show_progress_to_ramp_mb
+#      action: add
+#      widget_settings:
+#        expire: 8 sec
+#        z: 5
+#  mode_p_ramp_mb_started{device.switches.s_sis_left.state==1}:
+#    move_sis_yellow:
+#      slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in field
+#      action: add
+#      widget_settings:
+#        expire: 8 sec
+#        z: 5
 
 slide_player:
   left_ramp_hit{device.multiball_locks.olympus_lock.enabled}:
@@ -451,30 +455,59 @@ slide_player:
         anchor_y: bottom
         color: yellow
 
-accruals:
-  #This is designed to fire once to give instructions a single time during the game
+#slide_player:
+#  mode_o_ramp_mb_started:
+#    hit_light_lock_target:
+#      target: playfield_lcd
+#      background_color: black
+#      expire: 5s
+#      widgets:
+#      - type: text
+#        text: Shoot Scoop Target
+#        color: FFFF00
+#        y: 50%
+#        anchor_x: center
+#        anchor_y: bottom
+#        font_size: 60
+#        z: 200
+
+#  o_locking_elgible_placeholder:
+#    hit_light_lock_target:
+#      target: playfield_lcd
+#      background_color: black
+#      expire: 5s
+#      widgets:
+#      - type: text
+#        text: Shoot Scoop Target
+#        color: FFFF00
+#        y: 50%
+#        anchor_x: center
+#        anchor_y: bottom
+#        font_size: 30
+#        z: 200
+
+
+#images:
+#  lockballsleft_gif:
+#    load: mode_start
+#    file: lockballsleft_gif
+#  shoot_ramp4mb_gif:
+#    load: mode_start
+#    file: shoot_rampmb.gif
+accruals:  # These is designed to fire once to give instructions a single time during the game
   move_powerball_instructions_o:
     events:
       - left_ramp_hit{device.multiball_locks.olympus_lock.enabled}
     persist_state: true
     reset_on_complete: false
     disable_on_complete: true
-  #This one lets mode start with lock already lit
-  ormb_light_o_lock_already_hit:
-    events:
-      - ormb_light_o_lock_hit
-    restart_events:
-      - multiball_lock_olympus_lock_locked_ball
-    persist_state: true
-    reset_on_complete: false
-    disable_on_complete: true
+
 
 sound_player:
   multiball_olympus_ramp_started: v_multiball
   multiball_lock_olympus_lock_full: v_shoot_scoop_mb #defigned in sounds in config
   ormb_jackpot_hit: v_jackpot
-  mode_o_ramp_mb_started{not device.accruals.ormb_light_o_lock_already_hit.completed}: v_shoot_scoop_target_to_enable_lock
-  mode_o_ramp_mb_started{device.state_machines.ramp_flap_control.state=="divert_right" and device.accruals.ormb_light_o_lock_already_hit.completed}:  v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball when mode starts and lock already lit
+  mode_o_ramp_mb_started: v_shoot_scoop_target_to_enable_lock
   ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_right"}:  v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball
   ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_left"}: v_move_powerball_to_other_side_to_lock_ball
   logicblock_move_powerball_instructions_o_complete: v_move_powerball_to_other_side_to_lock_ball #Announces once if ramp hit with flap in wrong spot

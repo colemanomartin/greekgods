@@ -213,7 +213,7 @@ sounds:
     max_queue_time: 2s
   v_time_added:
     file: cmgg2_time_added.ogg
-    volume: 2
+    volume: 2.5
     track: voice
     priority: 3
     max_queue_time: 2s
@@ -290,7 +290,7 @@ sounds:
     file: cmgg2_jackpot.ogg
     volume: 1
     track: voice
-    max_queue_time: 2s
+    max_queue_time: 500 ms
   v_shoot_scoop_target_to_enable_lock:
     file: cmgg2_shoot_scoop_target_to_enable_lock.ogg
     volume: 1

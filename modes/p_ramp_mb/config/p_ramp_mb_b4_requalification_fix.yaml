@@ -9,8 +9,7 @@
 # After the lock is full the state machine sends flap to face the O ramp until after MB is finished or
 # until O lock is full in which case the diverter points to the middle
 # and then a shot to the BB or ramp starts double MB.
-#
-#10-17-21 added accrual to track if light lock shot already hit so mode wont require this on restart if ball drains before ball locked
+# Do: Monitor lock light behavior when ball present after drain when next ball starts, might need conditional logic on mode start to show correct show.
 mode:
   priority: 1000 # range 100-1M
   start_events:
@@ -27,7 +26,6 @@ multiball_locks:
     source_playfield: earth_pf
     enable_events:
       - prmb_light_p_lock_hit
-      - mode_p_ramp_mb_started{device.accruals.prmb_light_p_lock_already_hit.completed}
     disable_events:
       - multiball_poseidon_ramp_started
       - multiball_lock_poseidon_lock_locked_ball
@@ -118,7 +116,7 @@ event_player:
 
 show_player:
   #Things to do when starting
-  mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and not device.accruals.prmb_light_p_lock_already_hit.completed}: #mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls==0}:
+  mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2}: #mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls==0}:
     show_attention_ballblock:
       speed: 4
       sync_ms: 0
@@ -201,7 +199,6 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       color: blue
-      z: 5
       events_when_added: blue_message_added_to_slide_show_progress_to_ramp_mb
   shoot_scoop_blue:
     - type: text
@@ -213,7 +210,6 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       color: blue
-      z: 5
       events_when_added: blue_message_added_to_slide_show_progress_to_ramp_mb
   qualified_blue:
     - type: text
@@ -225,7 +221,6 @@ widgets:
       y: 160
       anchor_x: center
       anchor_y: bottom
-      z: 5
       rotation: 0
   shoot_ramp_blue:
     - type: text
@@ -237,7 +232,6 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       color: blue
-      z: 5
       events_when_added: blue_message_added_to_slide_show_progress_to_ramp_mb
   move_sis_blue:
     - type: text
@@ -249,7 +243,10 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       color: blue
-      z: 5
+  announce_mb_bb:
+    - type: image
+      image: watercolormbsmall
+      scale: 1.25
   announce_mb_pf:
     - type: image
       image: mb_3balls
@@ -283,55 +280,33 @@ widgets:
   announce_blue_jackpot:
     - type: image
       image: jackpot_blue
-      scale: 0.2
+      scale: 1.2
       anchor_x: center
       anchor_y: center
       x: 384
       y: 455
       z: 3
-      animations:
-        add_to_slide:
-        - property: scale
-          value: 1.2
-          relative: false
-          duration: 0.25
-          easing: in_out_cubic
-        - property: scale
-          value: 0
-          relative: false
-          duration: 0.25
-          easing: in_out_cubic
 
 widget_player:
   #Things to do when starting
-  mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and not device.accruals.prmb_light_p_lock_already_hit.completed}: #Mode started hasnt lit
+  mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2}:
     qualified_blue:
       slide: show_progress_to_ramp_mb #Adds widget on top of pillar of this slide which was posted in field
       action: add
+      widget_settings:
+#        expire: 10 sec
+        z: 5
     shoot_scoop_target_blue:
       slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in field
       action: add
-    #Remove anything that may be in the way
-    shoot_scoop_target_yellow:
-      action: remove
-    shoot_ramp_yellow:
-      action: remove
-  mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and device.accruals.prmb_light_p_lock_already_hit.completed}: #Mode started has lit and lock not full
-    shoot_ramp_blue:
-      slide: show_progress_to_ramp_mb
-      action: add
-    #Remove anything that may be in the way
-    shoot_scoop_target_yellow:
-      action: remove
+      widget_settings:
+        z: 5
   mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls==2}:
     shoot_scoop_blue:
       slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in field
       action: add
-    #Remove anything that may be in the way
-    shoot_scoop_target_yellow:
-      action: remove
-    shoot_ramp_yellow:
-      action: remove
+      widget_settings:
+        z: 5
   #Things to do when enable the lock shot hit
   prmb_light_p_lock_hit:
     qualified_blue:
@@ -340,15 +315,12 @@ widget_player:
     shoot_scoop_target_blue:
       slide: show_progress_to_ramp_mb
       action: remove #clean up
-    #Remove anything else that may be in the way
-    shoot_scoop_target_yellow:
-      action: remove
-    shoot_ramp_yellow:
-      action: remove
   prmb_light_p_lock_hit{device.state_machines.ramp_flap_control.state=="divert_left"}: #diverter is on correct side to lock ball
     shoot_ramp_blue:
       slide: show_progress_to_ramp_mb
       action: add
+      widget_settings:
+        z: 5
   #Things to do when diverter moves
   ramp_flap_control_move_divert_right{device.multiball_locks.poseidon_lock.enabled}: #Diverter moved to other side
     shoot_ramp_blue:
@@ -359,17 +331,15 @@ widget_player:
       action: add
       widget_settings:
         expire: 8 sec
+        z: 5
   ramp_flap_control_move_divert_left{device.multiball_locks.poseidon_lock.enabled}: #Diverter moded back to correct side for locking ball
     shoot_ramp_blue:
       slide: show_progress_to_ramp_mb
       action: add
+      widget_settings:
+        z: 5
     move_sis_blue:
       slide: show_progress_to_ramp_mb
-      action: remove
-    #Remove anything else that may be in the way
-    shoot_scoop_target_yellow:
-      action: remove
-    shoot_ramp_yellow:
       action: remove
   #Things to do when lock is full
   multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 2}:
@@ -379,16 +349,18 @@ widget_player:
     shoot_scoop_blue:
       slide: show_progress_to_ramp_mb
       action: add
-    #Remove anything else that may be in the way
-    shoot_scoop_target_yellow:
-      action: remove
-    shoot_ramp_yellow:
-      action: remove
+      widget_settings:
+        z: 5
   #Things to do when multiball started
   multiball_poseidon_ramp_started:
     shoot_scoop_blue:
       slide: show_progress_to_ramp_mb #clean up message when no longer needed
       action: remove
+    announce_mb_bb:
+      target: score_lcd
+      action: add
+      widget_settings:
+        expire: 8 sec
     announce_mb_pf:
       slide: show_progress_to_ramp_mb
       action: add
@@ -402,6 +374,8 @@ widget_player:
     shoot_scoop_target_blue:
       action: remove
     shoot_ramp_blue:
+      action: remove
+    announce_mb_bb:
       action: remove
     announce_mb_pf:
       action: remove
@@ -424,9 +398,50 @@ widget_player:
       target: playfield_lcd
       action: add
       widget_settings:
-        expire: 0.5 sec
+        expire: 1.4 sec
 
 
+
+
+#  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1}:
+#    shoot_ramp_blue:
+#      slide: show_progress_to_ramp_mb
+#      action: remove
+#  p_locking_elgible_again: #second time through the locking loop
+#    qualified_blue:
+#      slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in field
+#      action: add
+#      widget_settings:
+#        expire: 10 sec
+#        z: 5
+#    shoot_scoop_target_blue:
+#      slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in field
+#      action: add
+#      widget_settings:
+#        z: 5
+#  multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 2}:
+#    shoot_ramp_blue:
+#      slide: show_progress_to_ramp_mb
+#      action: remove
+#    shoot_scoop_blue:
+#      slide: show_progress_to_ramp_mb
+#      action: add
+#      widget_settings:
+#        z: 5
+#  mode_sis_right_starting:
+#    move_sis_blue:
+#      slide: show_progress_to_ramp_mb
+#      action: add
+#      widget_settings:
+#        expire: 8 sec
+#        z: 5
+#  mode_o_ramp_mb_started{device.switches.s_sis_right.state==1}:
+#    move_sis_blue:
+#      slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in field
+#      action: add
+#      widget_settings:
+#        expire: 8 sec
+#        z: 5
 
 slide_player:
   right_ramp_hit{device.multiball_locks.poseidon_lock.enabled}:
@@ -450,20 +465,17 @@ slide_player:
         anchor_y: bottom
         color: blue
 
-accruals:
-  # This designed to fire once to give instructions a single time during the game
+#images:
+#  lockballsleft_gif:
+#    load: mode_start
+#    file: lockballsleft_gif
+#  shoot_ramp4mb_gif:
+#    load: mode_start
+#    file: shoot_rampmb.gif
+accruals:  # These is designed to fire once to give instructions a single time during the game
   move_powerball_instructions_p:
     events:
       - right_ramp_hit{device.multiball_locks.poseidon_lock.enabled}
-    persist_state: true
-    reset_on_complete: false
-    disable_on_complete: true
-  #This one lets mode start with lock already lit
-  prmb_light_p_lock_already_hit:
-    events:
-      - prmb_light_p_lock_hit
-    restart_events:
-      - multiball_lock_poseidon_lock_locked_ball
     persist_state: true
     reset_on_complete: false
     disable_on_complete: true
@@ -472,10 +484,9 @@ sound_player:
   multiball_poseidon_ramp_started: v_multiball
   multiball_lock_poseidon_lock_full: v_shoot_scoop_mb #defigned in sounds in config
   prmb_jackpot_hit: v_jackpot
-  mode_p_ramp_mb_started{not device.accruals.prmb_light_p_lock_already_hit.completed}: v_shoot_scoop_target_to_enable_lock
+  mode_p_ramp_mb_started: v_shoot_scoop_target_to_enable_lock
   prmb_light_p_lock_hit{device.state_machines.ramp_flap_control.state=="divert_right"}: v_move_powerball_to_other_side_to_lock_ball
   prmb_light_p_lock_hit{device.state_machines.ramp_flap_control.state=="divert_left"}: v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball
-  mode_p_ramp_mb_started{device.state_machines.ramp_flap_control.state=="divert_left" and device.accruals.prmb_light_p_lock_already_hit.completed}: v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball when mode started and lock lit
   logicblock_move_powerball_instructions_p_complete: v_move_powerball_to_other_side_to_lock_ball #Announces once if ramp hit with flap in wrong spot
   multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1 and device.multiball_locks.olympus_lock.locked_balls == 0}: v_ball_1_locked
   multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 2 and device.multiball_locks.olympus_lock.locked_balls == 0}: v_ball_2_locked
