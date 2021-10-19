@@ -10,7 +10,7 @@
 # and then a shot to the BB or ramp starts double MB.
 #10-17-21 added accrual to track if light lock shot already hit so mode wont require this on restart if ball drains before ball locked
 mode:
-  priority: 1200 # range 100-1M
+  priority: 1500 # range 100-1M
   start_events:
     - o_locking_elgible
     - mode_field_started{device.ball_devices.bd_olympus_ramp.balls==2} #Lock is full, calling for scoop shot

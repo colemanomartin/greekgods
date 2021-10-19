@@ -49,6 +49,9 @@ accruals:  # Has to live in base since field shuts down during mb
     persist_state: true
     restart_events: show_white_all_pops_x5_finished_playing
     disable_on_complete: false
+  base_visited_underworld:
+    events: enter_hades_from_relay_player
+    persist_state: true
 
 sequences:
   base_super_spinner_mode_engaged: #This remembers that spinner threshold has been hit and that the SS mode has been called to start.
@@ -223,9 +226,6 @@ counters:
       - ball_will_end{mode.banked_l_bs.active}
       - ball_will_end{mode.banked_r_bs.active}
 
-#event_player:
-#  "{device.counters.base_count_test.value}": subscribe_posted #this will probably fail but if it works might allow querry of counter state
-
 timers:
   base_timer_ball_launching:
     start_value: 1
@@ -306,7 +306,7 @@ coil_player:
       pulse_ms: 30
 
 queue_relay_player:
-  ball_ending{current_player.ball==3 and current_player.score >= 50000}:
+  ball_ending{current_player.ball==3 and current_player.score >= 75000 and not device.accruals.base_already_visited_underworld.completed}:
     post: enter_hades_from_relay_player
     wait_for: mode_hades_bonus_game_stopping
 
@@ -1082,6 +1082,9 @@ slide_player:
 #        font_size: 50
 #        anchor_x: left #anchor relates to the text not the screen x,y origin
 #        anchor_y: top
+      - type: image
+        image: score_screen_background
+        z: 0
       - type: text
         text: (score)
         number_grouping: true
@@ -1090,18 +1093,56 @@ slide_player:
         y: 60%
         x: 50%
         font_name: greekgods3
+        color: white
+        opacity: 0.5
+        z: 2
+      - type: text
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        font_size: 500
+        y: 59%
+        x: 51%
+        font_name: greekgods3
+        color: black
+        opacity: 0.5
+        z: 1
       - type: text
         text: PLAYER  (number)
         y: 19%
         x: 20%
         font_size: 150
         font_name: greekgods3
+        color: white
+        opacity: 1
+        z: 2
+      - type: text
+        text: PLAYER  (number)
+        y: 18%
+        x: 21%
+        font_size: 150
+        font_name: greekgods3
+        color: black
+        opacity: 0.5
+        z: 1
       - type: text
         text: BALL  (ball)
         y: 19%
         x: 80%
         font_size: 150
         font_name: greekgods3
+        opacity: 1
+        color: white
+        z: 2
+      - type: text
+        text: BALL  (ball)
+        y: 18%
+        x: 81%
+        font_size: 150
+        font_name: greekgods3
+        color: black
+        opacity: 0.5
+        z: 1
     basic_playfield_slide:
       target: playfield_lcd
       widgets:
@@ -1177,7 +1218,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 46.875%
     y: 5.56%
     animations:
@@ -1195,7 +1236,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 53.125%
     y: 5.56%
     animations:
@@ -1213,7 +1254,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 40.625%
     y: 5.56%
     animations:
@@ -1231,7 +1272,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 59.375%
     y: 5.56%
     animations:
@@ -1249,7 +1290,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 34.375%
     y: 5.56%
     animations:
@@ -1267,7 +1308,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 65.625%
     y: 5.56%
     animations:
@@ -1285,7 +1326,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 28.125%
     y: 5.56%
     animations:
@@ -1303,7 +1344,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 71.875%
     y: 5.56%
     animations:
@@ -1321,7 +1362,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 21.875%
     y: 5.56%
     animations:
@@ -1339,7 +1380,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 78.125%
     y: 5.56%
     animations:
@@ -1357,7 +1398,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 15.625%
     y: 5.56%
     animations:
@@ -1375,7 +1416,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 84.375%
     y: 5.56%
     animations:
@@ -1393,7 +1434,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 9.375%
     y: 5.56%
     animations:
@@ -1411,7 +1452,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 90.625%
     y: 5.56%
     animations:
@@ -1429,7 +1470,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 3.125%
     y: 5.56%
     animations:
@@ -1447,7 +1488,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 96.875%
     y: 5.56%
     animations:
@@ -1466,7 +1507,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 3.125%
     y: 16.66%
     animations:
@@ -1484,7 +1525,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 96.875%
     y: 16.66%
     animations:
@@ -1503,7 +1544,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 3.125%
     y: 27.76%
     animations:
@@ -1521,7 +1562,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 96.875%
     y: 27.76%
     animations:
@@ -1540,7 +1581,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 3.125%
     y: 38.86%
     animations:
@@ -1558,7 +1599,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 96.875%
     y: 38.86%
     animations:
@@ -1577,7 +1618,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 3.125%
     y: 49.96%
     animations:
@@ -1595,7 +1636,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 96.875%
     y: 49.96%
     animations:
@@ -1614,7 +1655,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 3.125%
     y: 61.06%
     animations:
@@ -1632,7 +1673,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 96.875%
     y: 61.06%
     animations:
@@ -1651,7 +1692,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 3.125%
     y: 72.16%
     animations:
@@ -1669,7 +1710,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 96.875%
     y: 72.16%
     animations:
@@ -1688,7 +1729,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 3.125%
     y: 83.26%
     animations:
@@ -1706,7 +1747,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 96.875%
     y: 83.26%
     animations:
@@ -1725,7 +1766,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 3.125%
     y: 94.36%
     animations:
@@ -1743,7 +1784,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 96.875%
     y: 94.36%
     animations:
@@ -1761,7 +1802,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 9.375%
     y: 94.36%
     animations:
@@ -1779,7 +1820,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 90.625%
     y: 94.36%
     animations:
@@ -1797,7 +1838,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 15.625%
     y: 94.36%
     animations:
@@ -1815,7 +1856,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 84.375%
     y: 94.36%
     animations:
@@ -1833,7 +1874,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 21.875%
     y: 94.36%
     animations:
@@ -1851,7 +1892,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 78.125%
     y: 94.36%
     animations:
@@ -1869,7 +1910,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 28.125%
     y: 94.36%
     animations:
@@ -1887,7 +1928,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 71.875%
     y: 94.36%
     animations:
@@ -1905,7 +1946,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 34.375%
     y: 94.36%
     animations:
@@ -1923,7 +1964,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 65.625%
     y: 94.36%
     animations:
@@ -1941,7 +1982,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 40.625%
     y: 94.36%
     animations:
@@ -1959,7 +2000,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 59.375%
     y: 94.36%
     animations:
@@ -1977,7 +2018,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 46.875%
     y: 94.36%
     animations:
@@ -1995,7 +2036,7 @@ widgets:
   - type: image
     image: meander_circle1invert
     scale: 0.15
-    z: 1
+    z: 2
     x: 53.125%
     y: 94.36%
     animations:

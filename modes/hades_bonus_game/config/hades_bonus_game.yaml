@@ -31,7 +31,8 @@ mode:
      - enter_hades_from_relay_player #posted by base
 #    - mode_base_started
 #     - s_ramp_opto_active     #Remove when testing done
-  stop_events: extra_ball_earned, extra_ball_not_earned
+  stop_events:
+    - hades_final_show_finished
 #  use_wait_queue: true
 
 multiballs:
@@ -106,7 +107,7 @@ event_player:
   timer_river_c_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_d.running}: extra_ball_earned
   timer_river_d_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_c.running}: extra_ball_earned
   extra_ball_awarded: extra_ball_earned #Got it by boosting score above a threshold.
-  
+
 sequence_shots: #using to activate timers
   left_river_top_to_bottom: #River A
     playfield: hades_pf
@@ -401,6 +402,15 @@ show_player:
       loops: 0
       events_when_played: start_countdown_movie
       events_when_completed: hades_bonus_intro_show_done
+  extra_ball_earned:
+    show_leds_red_to_white:
+      speed: 4
+      loops: 0
+      events_when_completed: hades_final_show_finished
+  extra_ball_not_earned:
+      speed: 4
+      loops: 0
+      events_when_completed: hades_final_show_finished
   multiball_hades_play_started:
     countdown20_red:
       speed: 1

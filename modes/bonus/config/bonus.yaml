@@ -53,7 +53,7 @@ widgets:
   bonus_overdrive_widget:
     - type: text
       text: (score)
-      y: 70%
+      y: 65%
       x: 80%
       font_size: 100
       anchor_x: left
@@ -69,7 +69,7 @@ widgets:
   bonus_ballsaves_widget:
     - type: text
       text: (score)
-      y: 30%
+      y: 35%
       x: 80%
       font_size: 100
       anchor_x: left
@@ -77,7 +77,7 @@ widgets:
   bonus_total_widget:
     - type: text
       text: (score)
-      y: 10%
+      y: 15%
       x: 80%
       font_size: 160
       anchor_x: left
@@ -98,16 +98,19 @@ slides:
   bonus_start_slide:
     target: score_lcd  ##### might have to remove this if widget player does not place them on correct screen
     widgets:
+    - type: image
+      image: bonus_background
+      z: -1
     - type: text
       text: Bonus
-      y: 95%
+      y: 90%
       x: 50%
       font_size: 250
       anchor_x: center
-      anchor_y: top
+      anchor_y: center
     - type: text
       text: "Super Qualifying Pop Hits x 200"
-      y: 70%
+      y: 65%
       x: 10%
       font_size: 100
       anchor_x: left
@@ -128,14 +131,14 @@ slides:
       anchor_y: center
     - type: text
       text: "Unused Outlane Ball Protection x 1000"
-      y: 30%
+      y: 35%
       x: 10%
       font_size: 100
       anchor_x: left
       anchor_y: center
     - type: text
       text: "Total Bonus"
-      y: 10%
+      y: 20%
       x: 10%
       font_size: 160
       anchor_x: left

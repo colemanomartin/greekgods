@@ -3,7 +3,7 @@
 mode:
   start_events: ball_started
   stop_events: ball_will_end
-  priority: 1500 #rides above MB modes so lights show
+  priority: 1950 #rides above MB modes so lights show
 
 shot_profiles:
   bottom_lane_profile:

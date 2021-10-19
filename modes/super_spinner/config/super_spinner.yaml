@@ -12,7 +12,7 @@
 # It also doubles hits to hydra in field or in battle hydra mode
 #Display of meander circles is in mode base.
 mode:
-  priority: 1400 # Run over base and MB modes so slides show
+  priority: 2500 # Run over base and MB modes so slides show
   start_events:
     - mystery_super_spinner #Award from mode_mystery subsiquent events in script hit the shot.
     - field_says_start_super_spinner_mode #Threshold set in field in counters section
