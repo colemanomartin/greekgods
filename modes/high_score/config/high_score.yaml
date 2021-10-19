@@ -64,7 +64,7 @@ slides:
   high_score_enter_initials:
     - type: image
       image: high_score_background
-      z: -1
+      z: 0
     - type: text
       style: big
       font_size: 100
@@ -73,6 +73,7 @@ slides:
       color: ffff00
       x: 50%
       y: 90%
+      z: 1
     - type: text
       style: big
       font_size: 100
@@ -81,6 +82,7 @@ slides:
       color: f0f0f0
       x: 50%
       y: 70%
+      z: 1
     - type: text_input
       initial_char: A
       dynamic_x: false
@@ -95,6 +97,7 @@ slides:
       shift_right_event: s_right_flipper_active ##############Update docs with _active
       select_event: s_start_active  ####Update here too
       color: ff0000
+      z: 1
     - type: text
       style: big
       text: '<       >'
@@ -103,6 +106,7 @@ slides:
       x: 50%
       y: 40%
       color: ff0000
+      z: 1
     - type: text
       text: ''
       key: high_score
@@ -112,6 +116,7 @@ slides:
       x: 50%
       y: 45%
       color: ff00ff
+      z: 1
       animations:
         show_slide:
           - property: opacity
@@ -126,7 +131,7 @@ slides:
   high_score_award_display:
     - type: image
       image: high_score_background
-      z: -1
+      z: 0
     - type: text
       text: (player_name)
       font_size: 100
@@ -137,6 +142,7 @@ slides:
       x: middle
       y: middle
       color: 00ff00
+      z: 1
       animations:
         show_slide:
           - property: opacity
@@ -154,6 +160,7 @@ slides:
       x: 50%
       y: 95%
       color: 0000ff
+      z: 1
     - type: text
       text: (value)
       style: big
@@ -164,3 +171,4 @@ slides:
       font_name: greekgods3
       number_grouping: true
       min_digits: 2
+      z: 1

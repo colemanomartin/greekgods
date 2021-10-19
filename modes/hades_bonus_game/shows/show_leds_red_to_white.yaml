@@ -6,15 +6,15 @@
   slides:
     hades_face:
       target: playfield_lcd
-      z: 1
+      priority: 100
       widgets:
       - type: image
         image: hadesface2
         scale: 2
         y: 60%
       - type: text
-        text: Your Soul Redeemed 
-        font: greekgods3
+        text: Your Soul Redeemed
+        font_name: greekgods3
         color: red
         y: 20%
 

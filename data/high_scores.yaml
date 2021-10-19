@@ -1,7 +1,13 @@
 score:
 - !!python/tuple
   - COM
+  - 243050
+- !!python/tuple
+  - COM
   - 226575
+- !!python/tuple
+  - COM
+  - 125275
 - !!python/tuple
   - CCF
   - 108525
@@ -11,6 +17,9 @@ score:
 - !!python/tuple
   - MPF
   - 100000
+- !!python/tuple
+  - COM
+  - 99125
 - !!python/tuple
   - CM
   - 97150
@@ -23,12 +32,3 @@ score:
 - !!python/tuple
   - JAN
   - 80000
-- !!python/tuple
-  - QUI
-  - 70000
-- !!python/tuple
-  - MAR
-  - 60000
-- !!python/tuple
-  - JOH
-  - 50000

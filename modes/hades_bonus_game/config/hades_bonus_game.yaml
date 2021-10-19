@@ -408,6 +408,7 @@ show_player:
       loops: 0
       events_when_completed: hades_final_show_finished
   extra_ball_not_earned:
+    show_wind_down_red:
       speed: 4
       loops: 0
       events_when_completed: hades_final_show_finished

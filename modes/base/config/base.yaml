@@ -1089,27 +1089,27 @@ slide_player:
         text: (score)
         number_grouping: true
         min_digits: 2
-        font_size: 500
+        font_size: 600
         y: 60%
         x: 50%
         font_name: greekgods3
         color: white
-        opacity: 0.5
+        opacity: 1
         z: 2
       - type: text
         text: (score)
         number_grouping: true
         min_digits: 2
-        font_size: 500
-        y: 59%
-        x: 51%
+        font_size: 600
+        y: 59.6%
+        x: 50.4%
         font_name: greekgods3
         color: black
         opacity: 0.5
         z: 1
       - type: text
         text: PLAYER  (number)
-        y: 19%
+        y: 13%
         x: 20%
         font_size: 150
         font_name: greekgods3
@@ -1118,8 +1118,8 @@ slide_player:
         z: 2
       - type: text
         text: PLAYER  (number)
-        y: 18%
-        x: 21%
+        y: 12.6%
+        x: 20.4%
         font_size: 150
         font_name: greekgods3
         color: black
@@ -1127,7 +1127,7 @@ slide_player:
         z: 1
       - type: text
         text: BALL  (ball)
-        y: 19%
+        y: 13%
         x: 80%
         font_size: 150
         font_name: greekgods3
@@ -1136,8 +1136,8 @@ slide_player:
         z: 2
       - type: text
         text: BALL  (ball)
-        y: 18%
-        x: 81%
+        y: 12.6%
+        x: 80.4%
         font_size: 150
         font_name: greekgods3
         color: black

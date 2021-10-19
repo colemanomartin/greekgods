@@ -213,7 +213,7 @@ sounds:
     max_queue_time: 2s
   v_time_added:
     file: cmgg2_time_added.ogg
-    volume: 2.5
+    volume: 2
     track: voice
     priority: 3
     max_queue_time: 2s
