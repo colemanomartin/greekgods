@@ -9,7 +9,14 @@
         text: Greek Gods
         font_size: 500
         font_name: greekgods3
-        color: Green
+        color: green
+        y: 65%
+      - type: text
+        text: Free Play
+        font_size: 200
+        font_name: greekgods3
+        color: white
+        y: 30%
       transition:
         type: push
         duration: 1s

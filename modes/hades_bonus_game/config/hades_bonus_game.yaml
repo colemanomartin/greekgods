@@ -106,7 +106,7 @@ event_player:
   timer_river_b_started{device.timers.river_a.running and device.timers.river_c.running and device.timers.river_d.running}: hades_ball_awarded
   timer_river_c_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_d.running}: hades_ball_awarded
   timer_river_d_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_c.running}: hades_ball_awarded
-  extra_ball_awarded: hades_ball_awarded #Got it by boosting score above a threshold.
+  s_accessory_active: hades_ball_awarded #Got it by boosting score above a threshold.
 
 sequence_shots: #using to activate timers
   left_river_top_to_bottom: #River A
@@ -285,8 +285,8 @@ slide_player:
         text: (score)
         number_grouping: true
         min_digits: 2
-        font_size: 600
-        y: 60%
+        font_size: 500
+        y: 70%
         x: 65%
         font_name: greekgods3
         color: black
@@ -296,17 +296,17 @@ slide_player:
         text: (score)
         number_grouping: true
         min_digits: 2
-        font_size: 600
-        y: 59.7%
+        font_size: 500
+        y: 69.7%
         x: 65.3%
         font_name: greekgods3
-        color: black
-        opacity: 0.5
+        color: red
+        opacity: 0.7
         z: 1
       - type: text
         text: PLAYER (number)
         y: 15%
-        x: 40%
+        x: 50%
         font_size: 100
         font_name: greekgods3
         color: black
@@ -315,7 +315,7 @@ slide_player:
       - type: text
         text: PLAYER (number)
         y: 14.7%
-        x: 40.3%
+        x: 50.3%
         font_size: 100
         font_name: greekgods3
         color: black
@@ -324,7 +324,7 @@ slide_player:
       - type: text
         text: "BALL  In Underworld"
         y: 15%
-        x: 60%
+        x: 80%
         font_size: 100
         font_name: greekgods3
         opacity: 1
@@ -333,7 +333,7 @@ slide_player:
       - type: text
         text: "BALL  In Underworld"
         y: 14.7%
-        x: 60.3%
+        x: 80.3%
         font_size: 100
         font_name: greekgods3
         color: black

@@ -81,7 +81,7 @@ slides:
       text: (award)
       color: f0f0f0
       x: 50%
-      y: 70%
+      y: 85%
       z: 1
     - type: text_input
       initial_char: A
