@@ -1101,8 +1101,8 @@ slide_player:
         number_grouping: true
         min_digits: 2
         font_size: 600
-        y: 59.6%
-        x: 50.4%
+        y: 59.7%
+        x: 50.3%
         font_name: greekgods3
         color: black
         opacity: 0.5
@@ -1118,8 +1118,8 @@ slide_player:
         z: 2
       - type: text
         text: PLAYER  (number)
-        y: 12.6%
-        x: 20.4%
+        y: 12.7%
+        x: 20.3%
         font_size: 150
         font_name: greekgods3
         color: black
@@ -1136,14 +1136,14 @@ slide_player:
         z: 2
       - type: text
         text: BALL  (ball)
-        y: 12.6%
-        x: 80.4%
+        y: 12.7%
+        x: 80.3%
         font_size: 150
         font_name: greekgods3
         color: black
         opacity: 0.5
         z: 1
-    basic_playfield_slide:
+    basic_playfield_slide: #base slide in case all other pf slides fall away. 
       target: playfield_lcd
       widgets:
       - type: text

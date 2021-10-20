@@ -16,37 +16,36 @@
         direction: left
       target: score_lcd
 
-- duration: 3s
-  slides:
-    press_start:
-      widgets:
-      - type: text
-        text: PRESS START
-        font_name: greekgods3
-        font_size: 300
-        color: white
-        y: 60%
-        animations:
-          pre_show_slide:
-            - property: opacity
-              value: 0
-              duration: .5s
-            - property: opacity
-              value: 1
-              duration: .5s
-#              repeat: -1
-      - type: text
-        text: FREE PLAY
-        font_name: greekgods3
-        font_size: 300
-        color: Green
-        y: 30%
-        anchor_y: bottom
-      transition:
-        type: move_in
-        duration: 1s
-        direction: right
-      target: score_lcd
+#- duration: 3s
+#  slides:
+#    press_start:
+#      widgets:
+#      - type: text
+#        text: PRESS START
+#        font_name: greekgods3
+#        font_size: 300
+#        color: white
+#        y: 65%
+#        animations:
+#          pre_show_slide:
+#            - property: opacity
+#              value: 0
+#              duration: .5s
+#            - property: opacity
+#              value: 1
+#              duration: .5s
+#      - type: text
+#        text: FREE PLAY
+#        font_name: greekgods3
+#        font_size: 200
+#        color: Green
+#        y: 20%
+#        anchor_y: bottom
+#      transition:
+#        type: move_in
+#        duration: 1s
+#        direction: right
+#      target: score_lcd
 
 
 
@@ -318,7 +317,7 @@
         anchor_x: left
         anchor_y: top
       - type: text
-        text: "Gerry Stellenburg\n\nScott Danesi\n\nJan Kantert\n\nTJ Weaver\n\nMatt Bonnema\n\nMichael Rumore\n\nNick Baldridge\n\nAnthony van Winkle\n\nBorgDog\n\nEli Curtz\n\nBob Nies\n\nJohn Marsh"
+        text: "Gerry Stellenburg\n\nScott Danesi\n\nJan Kantert\n\nTJ Weaver\n\nMatt Bonnema\n\nMichael Rumore\n\nNick Baldridge\n\nAnthony van Winkle\n\nBorgDog\n\nEli Curtz\n\nBob Nies\n\nEd Owens\n\nJohn Marsh"
         font_name: greekgods3
         font_size: 130
         color: yellow
@@ -330,7 +329,7 @@
         animations:
           add_to_slide:
           - property: y
-            value: 75%
+            value: 80%
             relative: true
             duration: 10
 #      transition:

@@ -36,16 +36,28 @@ widget_player:
      bonus_overdrive_widget:
        action: add
        target: score_lcd
+     bonus_overdrive_widget_shadow:
+       action: add
+       target: score_lcd
    bonus_sis:
      bonus_sis_widget:
+       action: add
+       target: score_lcd
+     bonus_sis_widget_shadow:
        action: add
        target: score_lcd
    bonus_ballsaves:
      bonus_ballsaves_widget:
        action: add
        target: score_lcd
+     bonus_ballsaves_widget_shadow:
+       action: add
+       target: score_lcd
    bonus_total:
      bonus_total_widget:
+       action: add
+       target: score_lcd
+     bonus_total_widget_shadow:
        action: add
        target: score_lcd
 
@@ -58,6 +70,17 @@ widgets:
       font_size: 100
       anchor_x: left
       anchor_y: center
+      opacity: 1
+      z: 2
+  bonus_overdrive_widget_shadow:
+    - type: text
+      text: (score)
+      y: 64.7%
+      x: 80.3%
+      font_size: 100
+      anchor_x: left
+      anchor_y: center
+      opacity: 0.5
       z: 1
   bonus_sis_widget:
     - type: text
@@ -67,6 +90,17 @@ widgets:
       font_size: 100
       anchor_x: left
       anchor_y: center
+      opacity: 1
+      z: 2
+  bonus_sis_widget_shadow:
+    - type: text
+      text: (score)
+      y: 54.7%
+      x: 80.3%
+      font_size: 100
+      anchor_x: left
+      anchor_y: center
+      opacity: 0.5
       z: 1
   bonus_ballsaves_widget:
     - type: text
@@ -76,6 +110,17 @@ widgets:
       font_size: 100
       anchor_x: left
       anchor_y: center
+      opacity: 1
+      z: 2
+  bonus_ballsaves_widget_shadow:
+    - type: text
+      text: (score)
+      y: 34.7%
+      x: 80.3%
+      font_size: 100
+      anchor_x: left
+      anchor_y: center
+      opacity: 0.5
       z: 1
   bonus_total_widget:
     - type: text
@@ -85,6 +130,17 @@ widgets:
       font_size: 160
       anchor_x: left
       anchor_y: center
+      opacity: 1
+      z: 2
+  bonus_total_widget_shadow:
+    - type: text
+      text: (score)
+      y: 14.7%
+      x: 80.3%
+      font_size: 160
+      anchor_x: left
+      anchor_y: center
+      opacity: 0.5
       z: 1
 
 slides:
@@ -97,15 +153,16 @@ slides:
       y: 60%
     transition:
       type: fade
-      duration: 1s
+      duration: 0.5
 
   bonus_start_slide:
     target: score_lcd  ##### might have to remove this if widget player does not place them on correct screen
     widgets:
+      background_color: 000080
     - type: image
       image: bonus_background
       z: 0
-      opacity: 0.76
+      opacity: 0.9
     - type: text
       text: Bonus
       y: 90%
@@ -113,6 +170,16 @@ slides:
       font_size: 250
       anchor_x: center
       anchor_y: center
+      opacity: 1
+      z: 2
+    - type: text
+      text: Bonus
+      y: 89.7%
+      x: 50.3%
+      font_size: 250
+      anchor_x: center
+      anchor_y: center
+      opacity: 0.5
       z: 1
     - type: text
       text: "Super Qualifying Pop Hits x 200"
@@ -121,14 +188,17 @@ slides:
       font_size: 100
       anchor_x: left
       anchor_y: center
+      opacity: 1
+      z: 2
+    - type: text
+      text: "Super Qualifying Pop Hits x 200"
+      y: 64.7%
+      x: 10.3%
+      font_size: 100
+      anchor_x: left
+      anchor_y: center
+      opacity: 0.5
       z: 1
-#    - type: text
-#      text: "Ramps "
-#      y: 70%
-#      x: 40%
-#      font_size: 100
-#      anchor_x: left
-#      anchor_y: center
     - type: text
       text: "Sisiphus Powerball Arcs x 750"
       y: 50%
@@ -136,14 +206,34 @@ slides:
       font_size: 100
       anchor_x: left
       anchor_y: center
+      opacity: 1
+      z: 2
+    - type: text
+      text: "Sisiphus Powerball Arcs x 750"
+      y: 49.7%
+      x: 10.3%
+      font_size: 100
+      anchor_x: left
+      anchor_y: center
+      opacity: 0.5
       z: 1
     - type: text
-      text: "Unused Outlane Ball Protection x 1000"
+      text: "Unused Outlane Protection x 1000"
       y: 35%
       x: 10%
       font_size: 100
       anchor_x: left
       anchor_y: center
+      opacity: 1
+      z: 2
+    - type: text
+      text: "Unused Outlane Protection x 1000"
+      y: 34.7%
+      x: 10.3%
+      font_size: 100
+      anchor_x: left
+      anchor_y: center
+      opacity: 0.5
       z: 1
     - type: text
       text: "Total Bonus"
@@ -152,6 +242,16 @@ slides:
       font_size: 160
       anchor_x: left
       anchor_y: center
+      opacity: 1
+      z: 2
+    - type: text
+      text: "Total Bonus"
+      y: 19.7%
+      x: 10.3%
+      font_size: 160
+      anchor_x: left
+      anchor_y: center
+      opacity: 0.5
       z: 1
 
 

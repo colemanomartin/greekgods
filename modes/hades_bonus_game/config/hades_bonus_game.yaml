@@ -529,6 +529,50 @@ widgets:
             value: 5%, -1
             relative: true
             duration:  1500ms
+    extra_ball_1:
+      type: text
+      text: Score > 150000!
+      font_name: greekgods3
+      color: red
+      font_size: 100
+      y: 90%
+      expire: 1500ms
+      anchor_x: center
+      anchor_y: bottom
+      z: 110
+    extra_ball_2:
+      type: text
+      text: Score > 300000!
+      font_name: greekgods3
+      color: red
+      font_size: 100
+      y: 90%
+      expire: 1500ms
+      anchor_x: center
+      anchor_y: bottom
+      z: 110
+    extra_ball_3:
+      type: text
+      text: Score > 600000!
+      font_name: greekgods3
+      color: red
+      font_size: 100
+      y: 90%
+      expire: 1500ms
+      anchor_x: center
+      anchor_y: bottom
+      z: 110
+    extra_ball_4:
+      type: text
+      text: Score > 1000000!
+      font_name: greekgods3
+      color: red
+      font_size: 100
+      y: 90%
+      expire: 1500ms
+      anchor_x: center
+      anchor_y: bottom
+      z: 110
 
 widget_player:
   s_u_left_target_active:
@@ -539,6 +583,19 @@ widget_player:
       target: playfield_lcd
   s_u_right_target_active:
     scored_1000_right:
+      target: playfield_lcd
+  #Tell player why he/she returns from the underworld
+  extra_ball_score_one_awarded:
+    extra_ball_1:
+      target: playfield_lcd
+  extra_ball_score_two_awarded:
+    extra_ball_2:
+      target: playfield_lcd
+  extra_ball_score_three_awarded:
+    extra_ball_3:
+      target: playfield_lcd
+  extra_ball_score_four_awarded:
+    extra_ball_4:
       target: playfield_lcd
 
 sound_player:
