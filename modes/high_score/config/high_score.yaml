@@ -1,7 +1,5 @@
 #config_version=5
-##! mode: my_mode
-##! mode: high_score
-# modes/high_score/config/high_score.yaml
+#There is a bug in this relating to slide positioning.  This needs to be targetes to score_lcd but doiing so does not parse properly.  work around is to not use PF lcd and adjust y position
 mode:
   priority: 500
   start_events: game_ending, start_high_score
@@ -65,6 +63,8 @@ slides:
     - type: image
       image: high_score_background
       z: 0
+      anchor_y: top
+      y: 100%
     - type: text
       style: big
       font_size: 100
@@ -132,6 +132,8 @@ slides:
     - type: image
       image: high_score_background
       z: 0
+      anchor_y: top
+      y: 100%
     - type: text
       text: (player_name)
       font_size: 100

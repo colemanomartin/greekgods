@@ -67,7 +67,7 @@ widgets:
       text: (score)
       y: 65%
       x: 80%
-      font_size: 100
+      font_size: 150
       anchor_x: left
       anchor_y: center
       opacity: 1
@@ -75,19 +75,20 @@ widgets:
   bonus_overdrive_widget_shadow:
     - type: text
       text: (score)
-      y: 64.7%
-      x: 80.3%
-      font_size: 100
+      y: 64.8%
+      x: 80.2%
+      font_size: 150
       anchor_x: left
       anchor_y: center
-      opacity: 0.5
+      opacity: 0.66
+      color: black
       z: 1
   bonus_sis_widget:
     - type: text
       text: (score)
       y: 50%
       x: 80%
-      font_size: 100
+      font_size: 150
       anchor_x: left
       anchor_y: center
       opacity: 1
@@ -95,19 +96,20 @@ widgets:
   bonus_sis_widget_shadow:
     - type: text
       text: (score)
-      y: 54.7%
-      x: 80.3%
-      font_size: 100
+      y: 49.8%
+      x: 80.2%
+      font_size: 150
       anchor_x: left
       anchor_y: center
-      opacity: 0.5
+      opacity: 0.66
+      color: black
       z: 1
   bonus_ballsaves_widget:
     - type: text
       text: (score)
       y: 35%
       x: 80%
-      font_size: 100
+      font_size: 150
       anchor_x: left
       anchor_y: center
       opacity: 1
@@ -115,19 +117,20 @@ widgets:
   bonus_ballsaves_widget_shadow:
     - type: text
       text: (score)
-      y: 34.7%
-      x: 80.3%
-      font_size: 100
+      y: 34.8%
+      x: 80.2%
+      font_size: 150
       anchor_x: left
       anchor_y: center
-      opacity: 0.5
+      opacity: 0.66
+      color: black
       z: 1
   bonus_total_widget:
     - type: text
       text: (score)
       y: 15%
       x: 80%
-      font_size: 160
+      font_size: 180
       anchor_x: left
       anchor_y: center
       opacity: 1
@@ -135,12 +138,13 @@ widgets:
   bonus_total_widget_shadow:
     - type: text
       text: (score)
-      y: 14.7%
-      x: 80.3%
-      font_size: 160
+      y: 14.8%
+      x: 80.2%
+      font_size: 180
       anchor_x: left
       anchor_y: center
-      opacity: 0.5
+      opacity: 0.66
+      color: black
       z: 1
 
 slides:
@@ -156,13 +160,13 @@ slides:
       duration: 0.5
 
   bonus_start_slide:
-    target: score_lcd  ##### might have to remove this if widget player does not place them on correct screen
+    target: score_lcd
+    background_color: 000080
     widgets:
-      background_color: 000080
     - type: image
       image: bonus_background
       z: 0
-      opacity: 0.9
+      opacity: 0.70
     - type: text
       text: Bonus
       y: 90%
@@ -174,84 +178,89 @@ slides:
       z: 2
     - type: text
       text: Bonus
-      y: 89.7%
-      x: 50.3%
+      y: 89.8%
+      x: 50.2%
       font_size: 250
       anchor_x: center
       anchor_y: center
-      opacity: 0.5
+      opacity: 0.66
+      color: black
       z: 1
     - type: text
       text: "Super Qualifying Pop Hits x 200"
       y: 65%
       x: 10%
-      font_size: 100
+      font_size: 150
       anchor_x: left
       anchor_y: center
       opacity: 1
       z: 2
     - type: text
       text: "Super Qualifying Pop Hits x 200"
-      y: 64.7%
-      x: 10.3%
-      font_size: 100
+      y: 64.8%
+      x: 10.2%
+      font_size: 150
       anchor_x: left
       anchor_y: center
-      opacity: 0.5
+      opacity: 0.66
+      color: black
       z: 1
     - type: text
       text: "Sisiphus Powerball Arcs x 750"
       y: 50%
       x: 10%
-      font_size: 100
+      font_size: 150
       anchor_x: left
       anchor_y: center
       opacity: 1
       z: 2
     - type: text
       text: "Sisiphus Powerball Arcs x 750"
-      y: 49.7%
-      x: 10.3%
-      font_size: 100
+      y: 49.8%
+      x: 10.2%
+      font_size: 150
       anchor_x: left
       anchor_y: center
-      opacity: 0.5
+      opacity: 0.66
+      color: black
       z: 1
     - type: text
       text: "Unused Outlane Protection x 1000"
       y: 35%
       x: 10%
-      font_size: 100
+      font_size: 150
       anchor_x: left
       anchor_y: center
       opacity: 1
       z: 2
     - type: text
       text: "Unused Outlane Protection x 1000"
-      y: 34.7%
-      x: 10.3%
-      font_size: 100
+      y: 34.8%
+      x: 10.2%
+      font_size: 150
       anchor_x: left
       anchor_y: center
-      opacity: 0.5
+      opacity: 0.66
+      color: black
       z: 1
     - type: text
       text: "Total Bonus"
       y: 20%
       x: 10%
-      font_size: 160
+      font_size: 180
       anchor_x: left
       anchor_y: center
       opacity: 1
       z: 2
     - type: text
       text: "Total Bonus"
-      y: 19.7%
-      x: 10.3%
-      font_size: 160
+      y: 19.8%
+      x: 10.2%
+      font_size: 180
       anchor_x: left
       anchor_y: center
-      opacity: 0.5
+      opacity: 0.66
+      color: black
       z: 1
 
 

@@ -42,7 +42,7 @@ multiballs:
     ball_count_type: add  # increase number of playfield balls by count
     shoot_again: 24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
     start_events: hades_bonus_intro_show_done
-    stop_events: extra_ball_earned #Kills the shoot again if ball earned while still in play
+    stop_events: hades_ball_awarded #Kills the shoot again if ball earned while still in play
     debug: true
 #
 #coil_player:
@@ -102,11 +102,11 @@ accruals:
     events_when_complete: accelerate_rivers #All river fast modes activate when this is posted rules are cleared when this mode ends
 
 event_player:
-  timer_river_a_started{device.timers.river_b.running and device.timers.river_c.running and device.timers.river_d.running}: extra_ball_earned
-  timer_river_b_started{device.timers.river_a.running and device.timers.river_c.running and device.timers.river_d.running}: extra_ball_earned
-  timer_river_c_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_d.running}: extra_ball_earned
-  timer_river_d_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_c.running}: extra_ball_earned
-  extra_ball_awarded: extra_ball_earned #Got it by boosting score above a threshold.
+  timer_river_a_started{device.timers.river_b.running and device.timers.river_c.running and device.timers.river_d.running}: hades_ball_awarded
+  timer_river_b_started{device.timers.river_a.running and device.timers.river_c.running and device.timers.river_d.running}: hades_ball_awarded
+  timer_river_c_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_d.running}: hades_ball_awarded
+  timer_river_d_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_c.running}: hades_ball_awarded
+  extra_ball_awarded: hades_ball_awarded #Got it by boosting score above a threshold.
 
 sequence_shots: #using to activate timers
   left_river_top_to_bottom: #River A
@@ -263,7 +263,7 @@ timers:
 
 extra_balls:
     my_mode_eb:
-      award_events: extra_ball_earned
+      award_events: hades_ball_awarded
 sequences:
     failing_path:
        events:
@@ -402,7 +402,7 @@ show_player:
       loops: 0
       events_when_played: start_countdown_movie
       events_when_completed: hades_bonus_intro_show_done
-  extra_ball_earned:
+  hades_ball_awarded:
     show_leds_red_to_white:
       speed: 4
       loops: 0
@@ -529,7 +529,7 @@ widgets:
             value: 5%, -1
             relative: true
             duration:  1500ms
-    extra_ball_1:
+  extra_ball_1:
       type: text
       text: Score > 150000!
       font_name: greekgods3
@@ -540,7 +540,7 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       z: 110
-    extra_ball_2:
+  extra_ball_2:
       type: text
       text: Score > 300000!
       font_name: greekgods3
@@ -551,7 +551,7 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       z: 110
-    extra_ball_3:
+  extra_ball_3:
       type: text
       text: Score > 600000!
       font_name: greekgods3
@@ -562,7 +562,7 @@ widgets:
       anchor_x: center
       anchor_y: bottom
       z: 110
-    extra_ball_4:
+  extra_ball_4:
       type: text
       text: Score > 1000000!
       font_name: greekgods3
@@ -608,7 +608,7 @@ sound_player:
   s_u_right_target_active: snd_hades_target
   mode_hades_bonus_game_started: v_hades_has_you
   extra_ball_not_earned: v_your_soul_stays
-  extra_ball_earned: v_you_returned_underworld
+  hades_ball_awarded: v_you_returned_underworld
   hades_bonus_intro_show_done: v_shoot_tunnels_bats
 light_player:
   mode_hades_bonus_game_started:
@@ -640,7 +640,7 @@ light_player:
   timer_river_d_complete:
     l_mouth_d:
       color: black
-  extra_ball_earned:
+  hades_ball_awarded:
     l_u_left_ss_red:
       color: white
       fade: 0 ms

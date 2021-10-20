@@ -1,0 +1,26 @@
+#config_version=5
+#I cant figure out how to disable extra balls so I put it in a mode that stops when hades bonus running
+mode:
+  priority: 150 # range 100-1M
+  start_events:
+    - mode_base_started
+  stop_events:
+    - mode_hades_bonus_game_started
+
+extra_balls:
+  mystery_pathway:
+    award_events: mystery_gives_eb
+    max_per_game: 3
+    enabled: True
+  score_one:
+    enabled: true
+    award_events: player_score{value>=150000}
+  score_two:
+    enabled: true
+    award_events: player_score{value>=300000}
+  score_three:
+    enabled: true
+    award_events: player_score{value>=600000}
+  score_four:
+    enabled: true
+    award_events: player_score{value>=1000000}

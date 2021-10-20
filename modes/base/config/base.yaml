@@ -51,6 +51,7 @@ accruals:  # Has to live in base since field shuts down during mb
     disable_on_complete: false
   base_visited_underworld:
     events: enter_hades_from_relay_player
+    reset_on_complete: false
     persist_state: true
 
 sequences:
@@ -277,27 +278,9 @@ timers:
       - event: right_ramp_hit
         action: restart
 
-
-extra_balls:
-  mystery_pathway:
-    award_events: mystery_gives_eb
-    max_per_game: 3
-    enabled: True
-  score_one:
-    enabled: true
-    award_events: player_score{value>=150000}
-  score_two:
-    enabled: true
-    award_events: player_score{value>=300000}
-  score_three:
-    enabled: true
-    award_events: player_score{value>=600000}
-  score_four:
-    enabled: true
-    award_events: player_score{value>=1000000}
-  hades_bonus_game_pathway: #add in
-    award_events: extra_ball_earned
-    enabled: True
+#  hades_bonus_game_pathway: #add in
+#    award_events: extra_ball_earned
+#    enabled: True
 
 coil_player:
   extra_ball_awarded:
@@ -306,7 +289,7 @@ coil_player:
       pulse_ms: 30
 
 queue_relay_player:
-  ball_ending{current_player.ball==3 and current_player.score >= 75000 and not device.accruals.base_already_visited_underworld.completed}:
+  ball_ending{current_player.ball==3 and current_player.score >= 75000 and not device.accruals.base_visited_underworld.completed}:
     post: enter_hades_from_relay_player
     wait_for: mode_hades_bonus_game_stopping
 
@@ -1143,7 +1126,7 @@ slide_player:
         color: black
         opacity: 0.5
         z: 1
-    basic_playfield_slide: #base slide in case all other pf slides fall away. 
+    basic_playfield_slide: #base slide in case all other pf slides fall away.
       target: playfield_lcd
       widgets:
       - type: text

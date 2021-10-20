@@ -36,6 +36,7 @@ config:
 
 modes:
   - base #100
+  - extra_balls #150 hades extra ball is triggered in hades. 
   - servo #10000 Manager
   - scoop #10000 Manager
   - bb_down #Manager
@@ -61,7 +62,7 @@ modes:
   - banked_r_bs #2500
   - sweep_server #3000
   - hades_bonus_game
-  - bonus 
+  - bonus
   - high_score
 coil_player:
   machine_reset_phase_2: #drops block at startup in case a ball is in subway

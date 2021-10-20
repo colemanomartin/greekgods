@@ -6,8 +6,17 @@ score:
   - COM
   - 226575
 - !!python/tuple
+  - ''
+  - 156350
+- !!python/tuple
   - COM
   - 125275
+- !!python/tuple
+  - COM
+  - 123750
+- !!python/tuple
+  - COM
+  - 117800
 - !!python/tuple
   - CCF
   - 108525
@@ -23,12 +32,3 @@ score:
 - !!python/tuple
   - CM
   - 97150
-- !!python/tuple
-  - COM
-  - 91825
-- !!python/tuple
-  - BRI
-  - 90000
-- !!python/tuple
-  - JAN
-  - 80000
