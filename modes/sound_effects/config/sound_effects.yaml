@@ -115,6 +115,10 @@ sound_player:
   ball_save_bs_default_saving_ball: v_ball_saved
   ball_save_bs_scoop_eject_saving_ball: v_ball_saved
 
+  base_double_left_ramp_hit{not mode.banked_l_bs.active}: v_left_outlane_bs_awarded
+  base_double_right_ramp_hit{not mode.banked_r_bs.active}: v_right_outlane_bs_awarded
+  bottom_lane_group_hit_complete: v_double_outlane_bs_awarded
+
 #  river_a_hit: snd_river
 #  river_b_hit: snd_river
 #  river_c_hit: snd_river

@@ -55,6 +55,3 @@ show_player:
   bottom_lane_group_hit_complete:
     show_bottom_lane_prize:
       loops: 0
-
-sound_player:
-  bottom_lane_group_hit_complete: v_double_outlane_bs_awarded

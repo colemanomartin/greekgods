@@ -172,6 +172,6 @@ show_player:
       action: stop
 
 sound_player:
-  mode_banked_l_bs_started: v_left_outlane_bs_awarded
+#  mode_banked_l_bs_started: v_left_outlane_bs_awarded moved to sound effects
   ball_save_banked_left_saving_ball: v_ball_saved
   left_ramp_hit{device.timers.left_bs_expiration.ticks<=6}: v_time_added
