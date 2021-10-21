@@ -888,9 +888,9 @@ ball_devices:
     entrance_event_timeout: 1s
 #    target_on_unexpected_ball: hades_pf
     auto_fire_on_unexpected_ball: false
-    eject_events:
-      - hades_bonus_intro_show_done
-      - s_u_trough_1_active{device.timers.hades_immunity.running}
+#    eject_events:
+#      - hades_bonus_intro_show_done
+#      - s_u_trough_1_active{device.timers.hades_immunity.running}
     debug: true
     tags: home #, trough #, drain must have trough tag or it keeps re-ejecting and wont drain
 #  bd_u_trough:

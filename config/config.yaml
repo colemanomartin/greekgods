@@ -123,6 +123,20 @@ ball_saves:
     auto_launch: yes
     balls_to_save: 1
     debug: yes
+
+ball_holds:
+  quiet_underworld: #keeps underworld from ejecting ball when not in play
+    balls_to_hold: 1
+    hold_devices: bd_u_trough
+    source_playfield: hades_pf
+    enable_events:
+      - game_started
+      - timer_hades_immunity_complete
+    disable_events:
+      - hades_bonus_intro_show_done
+    release_all_events:
+      - hades_bonus_intro_show_done
+    debug: true
 # These from the docs for the attract mode high score display
 widget_styles:
   attract_mode_high_score_display_label:
