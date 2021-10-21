@@ -46,6 +46,14 @@ mode:
 #    debug: true
 
 
+
+
+coil_player:
+  hades_bonus_intro_show_done: c_u_trough_eject
+  s_u_trough_1_active{device.timers.hades_immunity.running}: c_u_trough_eject
+
+
+
 variable_player:
   s_u_left_slingshot_active:
     score: 500
@@ -184,6 +192,9 @@ timers:
     control_events:
       - action: start
         event: hades_bonus_intro_show_done
+#      - action: stop
+#        events:
+#          -
   river_a: #activates on sequence shot not shot
     debug: true
 #    restart_on_complete: yes
@@ -262,7 +273,7 @@ timers:
 #        event: diverter_left_grab_D_deactivating
 
 extra_balls:
-    hades_bonus_mode_eb:
+    my_mode_eb:
       award_events: hades_ball_awarded
 
 sequences:
@@ -385,7 +396,7 @@ slide_player:
         x: 70%
         anchor_x: center
         anchor_y: center
-        z: 0
+        z: 2
         opacity: 0
         animations:
           timer_river_c_started:
@@ -407,7 +418,7 @@ slide_player:
         x: 80%
         anchor_x: center
         anchor_y: center
-        z: 0
+        z: 2
         opacity: 0
         animations:
           timer_river_d_started:
@@ -429,7 +440,7 @@ slide_player:
         x: 20%
         anchor_x: center
         anchor_y: center
-        z: 0
+        z: 2
         opacity: 0
         animations:
           timer_river_b_started:
@@ -451,7 +462,7 @@ slide_player:
         x: 25%
         anchor_x: center
         anchor_y: center
-        z: 0
+        z: 2
         opacity: 0
         animations:
           timer_river_a_started:

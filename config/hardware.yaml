@@ -886,13 +886,13 @@ ball_devices:
     eject_timeouts: 500ms
     entrance_count_delay: 100ms
     entrance_event_timeout: 1s
-#    target_on_unexpected_ball: hades_pf
-    auto_fire_on_unexpected_ball: false
-#    eject_events:
+    auto_fire_on_unexpected_ball: False
+    target_on_unexpected_ball: hades_pf
+#    eject_events: This sould work but does not for some reason. moved it over to hades coil player
 #      - hades_bonus_intro_show_done
 #      - s_u_trough_1_active{device.timers.hades_immunity.running}
-    debug: true
-    tags: home #, trough #, drain must have trough tag or it keeps re-ejecting and wont drain
+    debug: True
+    tags: home, trough #, drain must have trough tag or it keeps re-ejecting and wont drain
 #  bd_u_trough:
 #    captures_from: hades_pf
 #    eject_targets: hades_pf

@@ -150,6 +150,13 @@ sudo pip3 install mpf-mc==0.52.1 --user
 
 sudo pip3 install mpf-mc==0.52.1 --user
 
+*********EXPO *************
+10/21/21 currently on MPF v0.55.0-dev.50  mpf-mc 0.55.0.dev8
+upgraded to latest dev 
+mpf-0.56.0.dev17 mpf-mc-0.56.0.dev1
+
+
+
 Setting delays:
 In event_player, Specify a delay by using a pipe. For example:
 event_player:
