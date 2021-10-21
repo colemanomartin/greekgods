@@ -886,7 +886,7 @@ ball_devices:
     eject_timeouts: 500ms
     entrance_count_delay: 100ms
     entrance_event_timeout: 1s
-    target_on_unexpected_ball: hades_pf
+#    target_on_unexpected_ball: hades_pf
     auto_fire_on_unexpected_ball: false
     eject_events:
       - hades_bonus_intro_show_done

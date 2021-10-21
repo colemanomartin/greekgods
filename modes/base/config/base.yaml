@@ -675,7 +675,7 @@ variable_player:
   base_scoop_from_pf_hit:
     score: 500
   base_poseidon_right_slingshot_hit:
-    score: 300
+    score: 75000
   base_poseidon_left_slingshot_hit:
     score: 300
   base_poseidon_pop_hit:

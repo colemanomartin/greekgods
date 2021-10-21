@@ -180,7 +180,7 @@ timers:
     start_value: 4
     end_value: 0
     direction: down
-    tick_interval: 5.1s
+    tick_interval: 5s
     control_events:
       - action: start
         event: hades_bonus_intro_show_done
@@ -268,7 +268,7 @@ extra_balls:
 sequences:
     failing_path:
        events:
-         - timer_hades_immunity.complete
+         - timer_hades_immunity_complete
          - balldevice_bd_u_trough_ball_enter
        events_when_complete: extra_ball_not_earned
 
