@@ -174,7 +174,7 @@ slides:
     - type: image
       image: bonus_background
       z: 0
-      opacity: 0.70
+      opacity: 0.50
     - type: text
       text: Bonus
       y: 90%
