@@ -35,15 +35,23 @@ mode:
     - hades_final_show_finished
 #  use_wait_queue: true
 
-#multiballs:
-#  hades_play:
-#    source_playfield: hades_pf
-#    ball_count: 1
-#    ball_count_type: add  # increase number of playfield balls by count
-#    shoot_again: 24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
-#    start_events: hades_bonus_intro_show_done
-#    stop_events: hades_ball_awarded #Kills the shoot again if ball earned while still in play
-#    debug: true
+multiballs:
+  hades_play:
+    source_playfield: hades_pf
+    ball_count: 1
+    ball_count_type: add  # increase number of playfield balls by count
+    shoot_again: 24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
+    start_events: hades_bonus_intro_show_done
+    stop_events: hades_ball_awarded #Kills the shoot again if ball earned while still in play
+    debug: true
+#
+#coil_player:
+#  mode_hades_bonus_game_started:
+#
+#  s_u_trough_1_
+#  machine_reset_phase_1: #drop when starting so if ball in sub, it can escape
+#    c_ballblock_fall:
+#      action: pulse
 
 
 variable_player:
@@ -176,14 +184,6 @@ shots: #writing to control diverter activity in hardeare
      reset_events: mode_hades_bonus_game_started
 
 timers:
-  hades_immunity: #Ball save timer for underworld 20 sec total Used as conditional against u trough eject event in hardware
-    start_value: 4
-    end_value: 0
-    direction: down
-    tick_interval: 5.1s
-    control_events:
-      - action: start
-        event: hades_bonus_intro_show_done
   river_a: #activates on sequence shot not shot
     debug: true
 #    restart_on_complete: yes
@@ -264,11 +264,10 @@ timers:
 extra_balls:
     my_mode_eb:
       award_events: hades_ball_awarded
-
 sequences:
     failing_path:
        events:
-         - timer_hades_immunity.complete
+         - multiball_hades_play_shoot_again_ended
          - balldevice_bd_u_trough_ball_enter
        events_when_complete: extra_ball_not_earned
 
@@ -366,18 +365,11 @@ slide_player:
       - type: text
         text: Wake All Bats From Tunnels
         font_name: greekgods3
-        color: white
+        color: black
         y: 6%
         anchor_x: center
         anchor_y: bottom
         font_size: 50
-        z: 2
-      - type: image
-        image: hades_mask
-        anchor_y: top
-        y: 100%
-        opacity: 1
-        z: 1
       - type: image
         image: bat
         scale: 0.3
@@ -385,7 +377,6 @@ slide_player:
         x: 70%
         anchor_x: center
         anchor_y: center
-        z: 2
         opacity: 0
         animations:
           timer_river_c_started:
@@ -407,7 +398,6 @@ slide_player:
         x: 80%
         anchor_x: center
         anchor_y: center
-        z: 2
         opacity: 0
         animations:
           timer_river_d_started:
@@ -429,7 +419,6 @@ slide_player:
         x: 20%
         anchor_x: center
         anchor_y: center
-        z: 2
         opacity: 0
         animations:
           timer_river_b_started:
@@ -451,7 +440,6 @@ slide_player:
         x: 25%
         anchor_x: center
         anchor_y: center
-        z: 2
         opacity: 0
         animations:
           timer_river_a_started:
@@ -470,11 +458,11 @@ slide_player:
     bb_accelerate_slide:
       target: score_lcd
       expire: 3s
-      background_color: red
+      background_color: black
       widgets:
       - type: text
         text: Acceleration Mode!
-        color: black
+        color: red
         font_size: 300
 
 
@@ -497,7 +485,7 @@ show_player:
       speed: 4
       loops: 0
       events_when_completed: hades_final_show_finished
-  hades_bonus_intro_show_done:
+  multiball_hades_play_started:
     countdown20_red:
       speed: 1
       loops: 0
@@ -566,12 +554,11 @@ widgets:
       font_name: greekgods3
       color: black
       opacity: 1
-      z: 2
       y: 90%
       x: 10%
       anchor_x: center
       anchor_y: bottom
-      font_size: 50
+      font_size: 40
       expire: 1500ms
       animations:
         add_to_slide:
@@ -585,12 +572,11 @@ widgets:
       font_name: greekgods3
       color: black
       opacity: 1
-      z: 2
       y: 90%
       x: 81%
       anchor_x: center
       anchor_y: bottom
-      font_size: 50
+      font_size: 40
       expire: 1500ms
       animations:
         add_to_slide:
@@ -604,12 +590,11 @@ widgets:
       font_name: greekgods3
       color: black
       opacity: 1
-      z: 2
       y: 90%
       x: 50%
       anchor_x: center
       anchor_y: bottom
-      font_size: 50
+      font_size: 40
       expire: 1500ms
       animations:
         add_to_slide:

@@ -36,7 +36,7 @@ config:
 
 modes:
   - base #100
-  - extra_balls #150 hades extra ball is triggered in hades. 
+  - extra_balls #150 hades extra ball is triggered in hades.
   - servo #10000 Manager
   - scoop #10000 Manager
   - bb_down #Manager
@@ -113,6 +113,7 @@ ball_saves:
 
 #Dont know why this is present.  Shouldnt this just be for outlanes? Also missing start event
 #Alternatively make it work as in TNA?
+
   bs_bottom_lanes: #show player in base
     source_playfield: earth_pf
     active_time: 5s
