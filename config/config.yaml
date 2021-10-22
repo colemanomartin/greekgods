@@ -3,6 +3,9 @@ hardware:
   platform: p3_roc
   driverboards: pdb
 
+#mpf:
+#  report_crashes: "never"
+
 p_roc:
 #  driverboards: pdb
   pd_led_boards:
@@ -61,9 +64,13 @@ modes:
   - banked_l_bs #250000
   - banked_r_bs #2500
   - sweep_server #3000
-  - hades_bonus_game
+  - hades_bonus_game #1500
   - bonus
   - high_score
+  - river_a_fast #6100
+  - river_b_fast #6200
+  - river_c_fast #6300
+  - river_d_fast #6400
 coil_player:
   machine_reset_phase_2: #drops block at startup in case a ball is in subway
     c_ballblock_fall:

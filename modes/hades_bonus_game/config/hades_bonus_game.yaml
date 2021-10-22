@@ -48,9 +48,9 @@ mode:
 
 
 #This starts the ball in play.  Immunity ball save is handled thoough showplayer and a timer.
-coil_player:
-  hades_bonus_intro_show_done: c_u_trough_eject
-  s_u_trough_1_active{device.timers.hades_immunity.running}: c_u_trough_eject
+#coil_player:
+#  hades_bonus_intro_show_done: c_u_trough_eject
+#  s_u_trough_1_active{device.timers.hades_immunity.running}: c_u_trough_eject
 
 
 
@@ -194,7 +194,19 @@ timers:
         event: hades_bonus_intro_show_done
 #      - action: stop
 #        events:
-#          -
+  ball_eject_refractory: #To keep eject coil from retriggering from plunger bouncing.
+    start_value: 1
+    end_value: 0
+    tick_interval: 500ms
+    direction: down
+    control_events:
+      - action: start
+        event: hades_bonus_intro_show_done
+      - action: start
+        event: s_u_trough_1_active
+#      - action: start
+#        event:
+#          - s_u_trough_1_active
   river_a: #activates on sequence shot not shot
     debug: true
 #    restart_on_complete: yes
@@ -491,10 +503,10 @@ slide_player:
 
 show_player:
   #Here is the hades ballsave. using a show to allow ball to settle before kicking it out.
-  s_u_trough_1_active{device.timers.hades_immunity.running}:
+  timer_ball_eject_refractory_complete: #s_u_trough_1_active{device.timers.hades_immunity.running}:
     show_hades_ballsave: #c_u_trough_eject
-    speed: 2
-    loops: 0
+      speed: 2
+      loops: 0
   mode_hades_bonus_game_started:
     show_all_pf_bb_leds_red:
       loops: -1 #speed: 1

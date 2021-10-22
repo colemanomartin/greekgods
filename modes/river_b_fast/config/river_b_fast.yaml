@@ -1,0 +1,49 @@
+#config_version=5
+# accelerate river b (Left river, bottom to top
+# When ending timer handler_x starts an keeps the mode alive for two seconds so
+# the mode code has time to shut down the accelerate rules. When the magnets
+# should be triggering the river mouths flash. After each should be
+# trigger, the accelerate rule is turned off for 2 seconds. This prevents
+# the ball from getting trapped trying to exit upslope. It also prevents
+# overheating.
+# Consider having show player just blink the mouth at ball exit not the whole river.
+mode:
+  start_events:
+    - accelerate_rivers
+    - mode_hades_mini_game_starting
+  stop_events: timer_handler_b_complete
+  code: river_b_fast.river_b_fast
+  priority: 6200 #Must be above hades' show player
+
+event_player:
+  mode_river_b_fast_started: accelerate_b|1s
+  left_river_bottom_to_top_hit: normalize_b
+  timer_cooldown_b_complete: accelerate_b
+  mode_hades_bonus_game_stopped: normalize_b
+  mode_hades_mini_game_stopped: normalize_b
+
+timers:
+  handler_b:
+    start_value: 1
+    end_value: 0
+    direction: down
+    tick_interval: 2s
+    control_events:
+      - action: restart
+        event: mode_hades_bonus_game_stopped
+      - action: restart
+        event: mode_hades_mini_game_stopped
+  cooldown_b:
+    start_value: 2
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: restart
+        event: left_river_bottom_to_top_hit
+
+#show_player:
+#  left_river_bottom_to_top_hit:
+#    show_hades_left_mouths_red:
+#      speed: 5
+#      loops: 0

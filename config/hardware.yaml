@@ -1046,10 +1046,18 @@ autofire_coils:
     playfield: earth_pf
 
   u_left_slingshot:
+    enable_events:
+      - mode_hades_bonus_game_started
+    disable_events:
+      - mode_hades_bonus_game_stopped
     coil: c_u_left_slingshot
     switch: s_u_left_slingshot
     playfield: hades_pf
   u_right_slingshot:
+    enable_events:
+      - mode_hades_bonus_game_started
+    disable_events:
+      - mode_hades_bonus_game_stopped
     coil: c_u_right_slingshot
     switch: s_u_right_slingshot
     playfield: hades_pf
