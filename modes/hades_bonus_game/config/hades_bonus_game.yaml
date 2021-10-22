@@ -374,21 +374,21 @@ slide_player:
       target: playfield_lcd
       background_color: white
       widgets:
-      - type: text
-        text: Wake All Bats From Tunnels
-        font_name: greekgods3
-        color: white
-        y: 6%
-        anchor_x: center
-        anchor_y: bottom
-        font_size: 50
-        z: 2
+#      - type: text
+#        text: Wake All Bats From Tunnels
+#        font_name: greekgods3
+#        color: white
+#        y: 6%
+#        anchor_x: center
+#        anchor_y: bottom
+#        font_size: 50
+#        z: 2
       - type: image
         image: hades_mask
         anchor_y: top
         y: 100%
         opacity: 1
-        z: 1
+        z: 2
       - type: image
         image: bat
         scale: 0.3
@@ -396,7 +396,7 @@ slide_player:
         x: 70%
         anchor_x: center
         anchor_y: center
-        z: 2
+        z: 1
         opacity: 0
         animations:
           timer_river_c_started:
@@ -418,7 +418,7 @@ slide_player:
         x: 80%
         anchor_x: center
         anchor_y: center
-        z: 2
+        z: 1
         opacity: 0
         animations:
           timer_river_d_started:
@@ -440,7 +440,7 @@ slide_player:
         x: 20%
         anchor_x: center
         anchor_y: center
-        z: 2
+        z: 1
         opacity: 0
         animations:
           timer_river_b_started:
@@ -462,7 +462,7 @@ slide_player:
         x: 25%
         anchor_x: center
         anchor_y: center
-        z: 2
+        z: 1
         opacity: 0
         animations:
           timer_river_a_started:

@@ -10,6 +10,9 @@ score:
   - 156350
 - !!python/tuple
   - AAA
+  - 129750
+- !!python/tuple
+  - AAA
   - 128000
 - !!python/tuple
   - AAA
@@ -29,6 +32,3 @@ score:
 - !!python/tuple
   - CCF
   - 108525
-- !!python/tuple
-  - COM
-  - 100275
