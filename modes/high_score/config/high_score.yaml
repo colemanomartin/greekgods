@@ -64,7 +64,7 @@ slides:
       image: high_score_background
       z: 0
       anchor_y: top
-      y: 100%
+      y: 102%
     - type: text
       style: big
       font_size: 100
@@ -133,16 +133,16 @@ slides:
       image: high_score_background
       z: 0
       anchor_y: top
-      y: 100%
+      y: 102%
     - type: text
       text: (player_name)
-      font_size: 100
+      font_size: 160
       font_name: greekgods3
       style: big
       anchor_y: middle
       anchor_x: middle
       x: middle
-      y: middle
+      y: 70%
       color: 00ff00
       z: 1
       animations:
@@ -156,7 +156,7 @@ slides:
             repeat: true
     - type: text
       text: (award)
-      font_size: 100
+      font_size: 200
       font_name: greekgods3
       style: big
       x: 50%
@@ -167,9 +167,9 @@ slides:
       text: (value)
       style: big
       x: 60%
-      y: 50%
+      y: 70%
       color: 4040FF
-      font_size: 100
+      font_size: 160
       font_name: greekgods3
       number_grouping: true
       min_digits: 2

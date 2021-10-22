@@ -1069,7 +1069,7 @@ slide_player:
         image: score_screen_background
         z: 0
         anchor_y: top
-        y: 101.5%
+        y: 102%
       - type: text
         text: (score)
         number_grouping: true

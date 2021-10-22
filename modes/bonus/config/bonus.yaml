@@ -2,7 +2,7 @@
 # From 19 May 2019 machine
 mode_settings:
   display_delay_ms: 1000ms
-  hurry_up_delay_ms: 500ms
+  hurry_up_delay_ms: 1000ms
   hurry_up_event: flipper_cancel
   bonus_entries:
     - event: bonus_overdrive
@@ -66,22 +66,22 @@ widgets:
     - type: text
       text: (score)
       y: 65%
-      x: 80%
-      font_size: 130
+      x: 84%
+      font_size: 180
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 1
       z: 2
   bonus_overdrive_widget_shadow:
     - type: text
       text: (score)
       y: 64.8%
-      x: 80.2%
-      font_size: 130
+      x: 84.2%
+      font_size: 180
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 0.66
       color: black
       z: 1
@@ -89,22 +89,22 @@ widgets:
     - type: text
       text: (score)
       y: 50%
-      x: 80%
-      font_size: 130
+      x: 84%
+      font_size: 180
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 1
       z: 2
   bonus_sis_widget_shadow:
     - type: text
       text: (score)
       y: 49.8%
-      x: 80.2%
-      font_size: 130
+      x: 84.2%
+      font_size: 180
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 0.66
       color: black
       z: 1
@@ -112,22 +112,22 @@ widgets:
     - type: text
       text: (score)
       y: 35%
-      x: 80%
-      font_size: 130
+      x: 84%
+      font_size: 180
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 1
       z: 2
   bonus_ballsaves_widget_shadow:
     - type: text
       text: (score)
       y: 34.8%
-      x: 80.2%
-      font_size: 130
+      x: 84.2%
+      font_size: 180
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 0.66
       color: black
       z: 1
@@ -135,22 +135,22 @@ widgets:
     - type: text
       text: (score)
       y: 15%
-      x: 80%
-      font_size: 180
+      x: 84%
+      font_size: 220
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 1
       z: 2
   bonus_total_widget_shadow:
     - type: text
       text: (score)
       y: 14.8%
-      x: 80.2%
-      font_size: 180
+      x: 84.2%
+      font_size: 220
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 0.66
       color: black
       z: 1
@@ -173,6 +173,8 @@ slides:
     widgets:
     - type: image
       image: bonus_background
+      anchor_y: top
+      y: 102%
       z: 0
       opacity: 0.50
     - type: text
@@ -203,7 +205,7 @@ slides:
       font_size: 130
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 1
       z: 2
     - type: text
@@ -213,7 +215,7 @@ slides:
       font_size: 130
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 0.66
       color: black
       z: 1
@@ -224,7 +226,7 @@ slides:
       font_size: 130
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 1
       z: 2
     - type: text
@@ -234,7 +236,7 @@ slides:
       font_size: 130
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 0.66
       color: black
       z: 1
@@ -245,7 +247,7 @@ slides:
       font_size: 130
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 1
       z: 2
     - type: text
@@ -255,7 +257,7 @@ slides:
       font_size: 130
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 0.66
       color: black
       z: 1
@@ -266,7 +268,7 @@ slides:
       font_size: 180
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 1
       z: 2
     - type: text
@@ -276,7 +278,7 @@ slides:
       font_size: 180
       font_name: greekgods3
       anchor_x: left
-      anchor_y: center
+      anchor_y: bottom
       opacity: 0.66
       color: black
       z: 1

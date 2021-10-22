@@ -1,0 +1,12 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+
+- time: 0
+  lights:
+    l_u_right_ss_red:
+      color: white
+    l_u_left_ss_white:
+      color: white
+- time: +1
+  coils:
+    c_u_trough_eject: pulse
