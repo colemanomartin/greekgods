@@ -1,5 +1,5 @@
 events:
-  game_ended: 1
+  game_ended: 0
   game_started: 1
 player:
   score:
@@ -27,18 +27,18 @@ shots:
   base_hydra: 9621
   base_left_inlane: 956
   base_left_outlane: 309
-  base_left_side_pop: 6095
+  base_left_side_pop: 6100
   base_left_slingshot: 4087
-  base_olympus_left_pop: 929
-  base_olympus_lower_pop: 3508
-  base_olympus_right_pop: 2620
+  base_olympus_left_pop: 939
+  base_olympus_lower_pop: 3535
+  base_olympus_right_pop: 2662
   base_olympus_spinner: 28756
   base_orbit_spinner: 18335
   base_orbit_spinner_2: 18335
   base_poseidon_gate: 10956
-  base_poseidon_left_slingshot: 5930
-  base_poseidon_pop: 6931
-  base_poseidon_right_slingshot: 7010
+  base_poseidon_left_slingshot: 5931
+  base_poseidon_pop: 6938
+  base_poseidon_right_slingshot: 7011
   base_ramp: 5746
   base_revealed_slingshot: 1075
   base_right_inlane: 1892
@@ -57,8 +57,8 @@ shots:
   double_right_ramp: 286
   field_invite_hydra_at_scoop: 16
   field_invite_super_spinner_at_scoop: 24
-  field_olympus_mech: 11738
-  field_poseidon_mech: 26351
+  field_olympus_mech: 11817
+  field_poseidon_mech: 26360
   goddess_bb: 1
   goddess_left_side_pop: 195
   goddess_made_orbit: 115
@@ -92,15 +92,15 @@ shots:
   river_d_mini: 1
   sis_left_olympus_mech: 293
   sis_left_poseidon_mech: 14958
-  sis_right_olympus_mech: 4813
-  sis_right_poseidon_mech: 461
+  sis_right_olympus_mech: 4892
+  sis_right_poseidon_mech: 470
   skill_shot_rotation: 1746
   super_spinner_bonus: 46
   super_spinner_kickoff: 181
   super_spinner_olympus_mech: 418
   super_spinner_poseidon_mech: 1891
-  top_o_lane: 806
-  top_p_lane: 580
+  top_o_lane: 885
+  top_p_lane: 589
 switches:
   s_1_0: 0
   s_1_1: 0
@@ -119,22 +119,22 @@ switches:
   s_left_flipper_EOS: 22240
   s_left_inlane: 956
   s_left_outlane: 309
-  s_left_side_pop: 6095
+  s_left_side_pop: 6100
   s_left_slingshot: 4087
-  s_olympus_left_pop: 929
+  s_olympus_left_pop: 939
   s_olympus_lock_distal: 2449
   s_olympus_lock_proximal: 2613
-  s_olympus_lower_pop: 3508
-  s_olympus_right_pop: 2620
+  s_olympus_lower_pop: 3535
+  s_olympus_right_pop: 2662
   s_olympus_rollover: 4398
   s_olympus_spinner: 28756
   s_orbit_spinner: 18335
   s_poseidon_gate: 10956
-  s_poseidon_left_slingshot: 5930
+  s_poseidon_left_slingshot: 5931
   s_poseidon_lock_distal: 2246
   s_poseidon_lock_proximal: 1741
-  s_poseidon_pop: 6931
-  s_poseidon_right_slingshot: 7010
+  s_poseidon_pop: 6938
+  s_poseidon_right_slingshot: 7011
   s_posideon_rollover: 3475
   s_powerball_left_distal: 0
   s_powerball_left_proximal: 0
@@ -150,7 +150,7 @@ switches:
   s_scoop_chamber: 2027
   s_scoop_lock_0: 1614
   s_scoop_lock_1: 1536
-  s_shooterlane: 4961
+  s_shooterlane: 4962
   s_sis_left: 1362
   s_sis_right: 2391
   s_start: 82
@@ -160,7 +160,7 @@ switches:
   s_trough_3: 4457
   s_trough_4: 3773
   s_trough_chamber: 4749
-  s_trough_jam: 4730
+  s_trough_jam: 4731
   s_u_left_ear_0: 227
   s_u_left_ear_1: 474
   s_u_left_ear_2: 346
