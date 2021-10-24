@@ -158,11 +158,13 @@ widgets:
 slides:
   hades_face:
     target: playfield_lcd
+    background_color: black
     widgets:
     - type: image
       image: hadesface2
       scale: 2
       y: 60%
+      z: 2
     transition:
       type: fade
       duration: 0.5
@@ -174,7 +176,7 @@ slides:
     - type: image
       image: bonus_background
       anchor_y: top
-      y: 102%
+      y: 102% #Was 102
       z: 0
       opacity: 0.50
     - type: text

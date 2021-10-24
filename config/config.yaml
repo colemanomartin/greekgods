@@ -28,7 +28,7 @@ p_roc:
 
 machine:
   balls_installed: 7 #Including hades
-  min_balls: 1
+  min_balls: 1 #Will start with just the ball in hades
 
 config:
 - hardware
