@@ -18,6 +18,7 @@ mode:
   start_events:
     - mystery_says_battle_hydra
     - field_invite_hydra_at_scoop_hit #This is the entry point from field.
+    - key_v_pressed
 #    - s_accessory_active # for testing
   stop_events:
     - multiball_hydra_mb_ended
@@ -196,36 +197,46 @@ slide_player:
         text: BATTLE HYDRA
         font_name: greekgods3
         color: red
-        y: 90%
+        y: 94%
+        x: 70%
         anchor_x: center
         anchor_y: center
-        font_size: 80
+        font_size: 40
       - type: text
         text: UNTIL BALL LOST
         font_name: greekgods3
         color: red
-        y: 65%
+        y: 86%
+        x: 70%
         anchor_x: center
         anchor_y: center
-        font_size: 70
-      - type: text
-        text: MONSTER HEALTH
-        font_name: greekgods3
-        color: red
-        y: 40%
+        font_size: 30
+      - type: image
+        image: heartbeat2
+        y: 75%
+        x: 20%
         anchor_x: center
         anchor_y: center
-        font_size: 70
+        z: 9
       - type: text
         text: (hydra_hp) #(device.counters.hydra_health.value)
         number_grouping: true
         min_digits: 2
         color: red
-        y: 25%
+        y: 75%
+        x: 20%
         anchor_x: center
         anchor_y: center
-        font_size: 200
+        font_size: 40
         font_name: greekgods3
+        z: 10
+      - type: image
+        image: hydra1and2
+        y: 42%
+        x: 50%
+        anchor_x: center
+        anchor_y: center
+        z: 4
   ball_drain{not device.counters.hydra_health.completed}:
     hydra_health_slide:
       action: remove

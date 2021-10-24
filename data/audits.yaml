@@ -24,7 +24,7 @@ shots:
   base_double_right_ramp: 55
   base_hole_distal: 3193
   base_hole_proximal: 1498
-  base_hydra: 9680
+  base_hydra: 9681
   base_left_inlane: 962
   base_left_outlane: 312
   base_left_side_pop: 6121
@@ -113,7 +113,7 @@ switches:
   s_drop_target_proximal: 1000
   s_hole_distal: 3193
   s_hole_proximal: 1498
-  s_hydra: 9682
+  s_hydra: 9683
   s_launch: 517
   s_left_flipper: 28078
   s_left_flipper_EOS: 22360
@@ -150,17 +150,17 @@ switches:
   s_scoop_chamber: 2049
   s_scoop_lock_0: 1631
   s_scoop_lock_1: 1553
-  s_shooterlane: 4998
+  s_shooterlane: 5000
   s_sis_left: 1374
   s_sis_right: 2432
   s_start: 82
-  s_trough_0: 4777
-  s_trough_1: 4731
-  s_trough_2: 4660
-  s_trough_3: 4489
-  s_trough_4: 3799
-  s_trough_chamber: 4781
-  s_trough_jam: 4763
+  s_trough_0: 4779
+  s_trough_1: 4733
+  s_trough_2: 4662
+  s_trough_3: 4490
+  s_trough_4: 3800
+  s_trough_chamber: 4783
+  s_trough_jam: 4765
   s_u_left_ear_0: 227
   s_u_left_ear_1: 474
   s_u_left_ear_2: 346
