@@ -18,7 +18,7 @@ accruals:  # These are designed to fire once to give instructions a single time 
     disable_on_complete: true
   sound_revealed_band_instructions:
     events:
-      - base_revealed_slingshot_hit
+      - drop_target_bank_cluster_down
     persist_state: true
     reset_on_complete: false
     disable_on_complete: true

@@ -83,7 +83,7 @@ ball_holds:
     hold_devices: bd_scoop
     balls_to_hold: 1
     enable_events: mystery_hole_received_ball_hit
-    release_all_events: mode_mystery_stopping
+    release_all_events: mode_mystery_stopping # mystery_solved stops mystery mode and triggers this 
     disable_events: mode_mystery_stopping
 #  super_spinner_hold:  THIS WORKS BUT INTERFERS WITH MYSTERY SHOW WHEN ENTERING FROM MYSTERY
 #    source_playfield: earth_pf

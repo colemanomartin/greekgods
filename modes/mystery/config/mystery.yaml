@@ -25,7 +25,7 @@ mode:
   stop_events:
     - mystery_solved
     - mode_field_ending
-    - ball_drain
+#    - ball_drain removed 10/24 becaue ball drain in underworld from bug game ejected ball from mystery
 
 #sequence_shots:
 #  mystery_hole_received_ball:  #used for lock flash show and banked ball save
@@ -58,6 +58,9 @@ timers:
       - action: restart
         event: mystery_hole_received_ball_hit
 
+event_player:
+  mode_hades_bug_game_stopped: mystery_solved #This tells mystery its ok to relese the ball when the hades mini game is finished.
+
 random_event_player:
   player_mystery_mystery_slide_number_tick:
     events: #have list add up to 100 currently adds to 90
@@ -68,6 +71,7 @@ random_event_player:
       menu_light_p_lock: 7
       menu_light_o_lock: 7
       menu_lock_swap: 7
+      menu_clean_underworld: 10
       menu_hydra_battle: 12
       menu_extra_ball: 7
       menu_scoop_mb: 7
@@ -83,6 +87,7 @@ random_event_player:
       award_scoop_mb: 15
       award_goddess{device.sequences.base_aphrodite.completed==False}: 10
       award_super_spinner: 5
+      award_bug_game: 2
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, no mb modes qualified or running
     events:
       award_10000_points: 5
@@ -91,6 +96,7 @@ random_event_player:
       award_scoop_mb: 15
       award_goddess{device.sequences.base_aphrodite.completed==False}: 10
       award_super_spinner: 5
+      award_bug_game: 2
 #These next 4 cover one mb mode running ready to swap running mode if needed
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on left, p_ramp_mb running & sis on correct side
     events:
@@ -99,19 +105,22 @@ random_event_player:
       award_100000_points: 8
       award_goddess{device.sequences.base_aphrodite.completed==False}: 35
       award_extra_ball: 2
-      award_super_spinner: 35
+      award_super_spinner: 25
+      award_bug_game: 10
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, p_ramp_mb running but sis on wrong side
     events:
       award_50000_points: 10
       award_100000_points: 5
-      award_goddess{device.sequences.base_aphrodite.completed==False}: 20
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 15
       award_swap_locks_p_to_o: 65
+      award_bug_game: 5
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and mode.o_ramp_mb.active}: #nothing locked, sis on left, o_ramp_mb running but sis on wrong side
     events:
       award_50000_points: 10
       award_100000_points: 5
-      award_goddess{device.sequences.base_aphrodite.completed==False}: 20
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 15
       award_swap_locks_o_to_p: 65
+      award_bug_game: 5
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and mode.o_ramp_mb.active}: #nothing locked, sis on right, o_ramp_mb running & sis on correct side
     events:
       award_10000_points: 10
@@ -119,7 +128,8 @@ random_event_player:
       award_100000_points: 8
       award_goddess{device.sequences.base_aphrodite.completed==False}: 35
       award_extra_ball: 2
-      award_super_spinner: 35
+      award_super_spinner: 25
+      award_bug_game: 10
 #Next two are both modes are running but nothing locked.
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and mode.o_ramp_mb.active}: #nothing locked, sis on left, both modes qualified or running
     events:
@@ -127,16 +137,18 @@ random_event_player:
       award_50000_points: 10
       award_100000_points: 5
       award_extra_ball: 5
-      award_goddess{device.sequences.base_aphrodite.completed==False}: 35
-      award_super_spinner: 35
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 30
+      award_super_spinner: 30
+      award_bug_game: 10
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and mode.o_ramp_mb.active}: #nothing locked, sis on right, both modes qualified or running
     events:
       award_10000_points: 10
       award_50000_points: 10
       award_100000_points: 5
       award_extra_ball: 5
-      award_goddess{device.sequences.base_aphrodite.completed==False}: 35
-      award_super_spinner: 35
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 30
+      award_super_spinner: 30
+      award_bug_game: 10
 #Something is locked somewhere
   timer_mystery_slide_number_complete{device.ball_devices.bd_poseidon_ramp.balls>0 or device.ball_devices.bd_olympus_ramp.balls>0}: #something is locked somewhere
     events:
@@ -144,9 +156,9 @@ random_event_player:
       award_50000_points: 10
       award_100000_points: 5
       award_extra_ball: 5
-      award_goddess{device.sequences.base_aphrodite.completed==False}: 35
-      award_super_spinner: 35
-
+      award_goddess{device.sequences.base_aphrodite.completed==False}: 30
+      award_super_spinner: 30
+      award_bug_game: 10
 
 #display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
 #  mystery_hole_received_ball_hit: #mode_mystery_started:
@@ -221,6 +233,10 @@ show_player:
       speed: 6
       loops: 0
     show_award_summon_goddess:
+      speed: 1
+      loops: 0
+  award_bug_game:
+    show_award_bug_game:
       speed: 1
       loops: 0
 slides:
@@ -408,6 +424,20 @@ widgets:
           relative: false
           duration: 1s
           easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+  clean_underworld:
+    type: text
+    text: Clean Up Underworld
+    color: white
+    y: 50%
+    font_size: 60
+    expire: 1s
+    animations:
+      add_to_slide:
+        - property: scale, opacity
+          value: 0.7, 0.1
+          relative: false
+          duration: 1s
+          easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
   extra_ball:
     type: text
     text: Extra Ball
@@ -474,6 +504,9 @@ widget_player: #To play the menu items
       target: playfield_lcd
   menu_100000_points:
     100000_points:
+      target: playfield_lcd
+  menu_clean_underworld:
+    clean_underworld:
       target: playfield_lcd
   menu_lion_man:
     lion_man:

@@ -7,7 +7,7 @@
 # Do: set target switches as shots
 #     Set sling lights as autofire
 mode:
-  priority: 600 # range 100-1M
+  priority: 2200 # For slides to work this mode has to run above mystery which starts it and runs in background until bug game done
   start_events:
     - mystery_says_bug_game
     - key_b_pressed
@@ -19,13 +19,21 @@ mode:
 multiballs:
 #  hades_bug_play:
 #  mode_hades_bug_game_started:
-  hades_backlight_show_done:
+  bug_game:
     source_playfield: hades_pf
     ball_count: 1
     ball_count_type: add  # increase number of playfield balls by couny
     shoot_again: 21s #24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
     start_events: hades_backlight_show_done #mode_hades_bug_game_started
     debug: true
+
+
+coil_player:
+  all_bugs_smashed:
+    c_u_knocker:
+      action: pulse
+      pulse_ms: 30
+
 
 variable_player:
   s_u_left_slingshot_active:
@@ -172,7 +180,7 @@ shots:
 sequences:
     bug_game_exit:
        events:
-         - multiball_hades_bug_play_shoot_again_ended
+         - multiball_bug_game_shoot_again_ended
          - balldevice_bd_u_trough_ball_enter
        events_when_complete: lost_the_ball
 
@@ -218,7 +226,7 @@ show_player:
       loops: 0
       events_when_played: start_bug_march
       events_when_completed: hades_backlight_show_done
-  multiball_hades_bug_play_started:
+  multiball_bug_game_started:
     countdown20_red:
       speed: 1
       loops: 0

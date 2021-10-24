@@ -1,0 +1,46 @@
+#show_version=5
+- duration: 3
+  slides:
+    award_bug_game:
+      target: playfield_lcd
+      priority: 100
+      expire: 3s
+      widgets:
+      - type: text
+        text: Mystery Award
+        color: white
+        y: 80%
+        font_name: greekgods3
+        font_size: 60
+      - type: text
+        text: Clean Up Underworld
+        color: white
+        y: 50%
+        font_name: greekgods3
+        font_size: 50
+        animations:
+          add_to_slide:
+            - property: scale
+              value: 1.15
+              relative: false
+              duration: 2s
+              easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+      - type: text
+        text: Begin!
+        font_name: greekgods3
+        font_size: 60
+        color: white
+        y: 30%
+        animations:
+          add_to_slide:
+            - property: scale
+              value: 1.15
+              relative: false
+              duration: 1s
+              easing: linear #http://docs.missionpinball.org/en/latest/displays/widgets/easing.html
+- duration: 100 ms
+  events: mystery_says_reset_field_revealed_sling_hits #Have to reset counter before scoop_mb shuts down field.
+- duration: 4 #Held a long time to allow balls to serve amd hopefully go to scoop
+  events: mystery_says_bug_game
+#- duration: 100ms #Give time for balls to eject
+#  events: mystery_solved
