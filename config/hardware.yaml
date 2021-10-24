@@ -314,7 +314,8 @@ keyboard:
     event: key_c_pressed
   v:
     event: key_v_pressed
-
+  b:
+    event: key_b_pressed
 coils:
     #PD 16 lower playfield Address = 5 Right Bank A = 0 left side/poseidon mechs
     c_left_side_pop:
@@ -365,7 +366,7 @@ coils:
     #PD 16 lower playfield Address = 5 Left  Bank B = 1 bottom mechs
     c_shooter_lane_eject:
         number: A5-B1-0
-        default_pulse_ms: 27 #30 #Pulse power works with autofire rule but not pulse issued by eject.
+        default_pulse_ms: 25 #30 #Pulse power works with autofire rule but not pulse issued by eject.
     c_trough_eject:
         number: A5-B1-1
         default_pulse_ms: 25
@@ -522,14 +523,14 @@ coils:
         label:
         tags:
 #        default_pulse_power: 0.6 # was 1
-        default_pulse_ms: 6
+        default_pulse_ms: 5
         default_recycle: true
     c_u_right_slingshot:
         number: A6-B1-0
         label:
         tags:
 #        default_pulse_power: 0.6 # was 1
-        default_pulse_ms: 6
+        default_pulse_ms: 5
         default_recycle: true
     c_u_right_magnet:
         number: A6-B1-2
@@ -1059,16 +1060,20 @@ autofire_coils:
   u_left_slingshot:
     enable_events:
       - mode_hades_bonus_game_started
+      - mode_hades_bug_game_started
     disable_events:
       - mode_hades_bonus_game_stopped
+      - mode_hades_bug_game_stopped
     coil: c_u_left_slingshot
     switch: s_u_left_slingshot
     playfield: hades_pf
   u_right_slingshot:
     enable_events:
       - mode_hades_bonus_game_started
+      - mode_hades_bug_game_started
     disable_events:
       - mode_hades_bonus_game_stopped
+      - mode_hades_bug_game_stopped
     coil: c_u_right_slingshot
     switch: s_u_right_slingshot
     playfield: hades_pf
@@ -1103,13 +1108,13 @@ flippers:
     activation_switch: s_left_flipper
     enable_events:
       - ball_started
-      - mode_hades_mini_game_stopped # mode_hades_bonus_game_stopped,
+      - mode_hades_bug_game_stopped # mode_hades_bonus_game_stopped,
       - s_accessory_inactive{mode.base.active} # {mode.game.active and not mode.high_score_active} #so attract and high score modes mode can use switch
     disable_events:
       - ball_will_end
       - service_mode_entered
       - mode_hades_bonus_game_started
-      - mode_hades_mini_game_started
+      - mode_hades_bug_game_started
       - s_accessory_active
 
   right_flipper:
@@ -1120,13 +1125,13 @@ flippers:
     activation_switch: s_right_flipper
     enable_events:
       - ball_started
-      - mode_hades_mini_game_stopped # mode_hades_bonus_game_stopped,
+      - mode_hades_bug_game_stopped # mode_hades_bonus_game_stopped,
       - s_accessory_inactive{mode.base.active} #game.active and not mode.high_score_active} #so attract and high score modes can use switch
     disable_events:
       - ball_will_end
       - service_mode_entered
       - mode_hades_bonus_game_started
-      - mode_hades_mini_game_started
+      - mode_hades_bug_game_started
       - s_accessory_active
 
   u_left_flipper:
@@ -1134,13 +1139,13 @@ flippers:
     playfield: hades_pf
     main_coil: c_u_flipper_left
     activation_switch: s_left_flipper
-    enable_events: mode_hades_bonus_game_started, mode_hades_mini_game_started
-    disable_events: mode_hades_bonus_game_stopped, mode_hades_mini_game_stopped
+    enable_events: mode_hades_bonus_game_started, mode_hades_bug_game_started
+    disable_events: mode_hades_bonus_game_stopped, mode_hades_bug_game_stopped
 
   u_right_flipper:
     debug: true
     playfield: hades_pf
     main_coil: c_u_flipper_right
     activation_switch: s_right_flipper
-    enable_events: mode_hades_bonus_game_started, mode_hades_mini_game_started
-    disable_events: mode_hades_bonus_game_stopped, mode_hades_mini_game_stopped
+    enable_events: mode_hades_bonus_game_started, mode_hades_bug_game_started
+    disable_events: mode_hades_bonus_game_stopped, mode_hades_bug_game_stopped

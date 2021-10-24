@@ -7,24 +7,24 @@
 # Do: set target switches as shots
 #     Set sling lights as autofire
 mode:
-  priority: 1500 # range 100-1M
+  priority: 600 # range 100-1M
   start_events:
-    - s_accessory_active
-    - ball_hold_hades_door_held_ball
+    - mystery_says_bug_game
+    - key_b_pressed
 #    - mode_base_starting
 #    - s_centuar_skilltarget_active     #Remove when testing done
 
   stop_events: all_bugs_smashed, lost_the_ball
 
 multiballs:
-#  hades_mini_play:
-#  mode_hades_mini_game_started:
+#  hades_bug_play:
+#  mode_hades_bug_game_started:
   hades_backlight_show_done:
     source_playfield: hades_pf
     ball_count: 1
     ball_count_type: add  # increase number of playfield balls by couny
     shoot_again: 21s #24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
-    start_events: hades_backlight_show_done #mode_hades_mini_game_started
+    start_events: hades_backlight_show_done #mode_hades_bug_game_started
     debug: true
 
 variable_player:
@@ -48,25 +48,25 @@ variable_player:
     score: 750
 
 sequence_shots: #using to activate timers
-  left_river_top_to_bottom_mini: #River A
+  left_river_top_to_bottom_bug: #River A
     playfield: hades_pf
     switch_sequence:
       - s_u_left_ear_3
       - s_u_left_ear_0
     sequence_timeout: 1s
-  left_river_bottom_to_top_mini: # River B
+  left_river_bottom_to_top_bug: # River B
     playfield: hades_pf
     switch_sequence:
       - s_u_left_ear_0
       - s_u_left_ear_3
     sequence_timeout: 1s
-  right_river_top_to_bottom_mini: #River C
+  right_river_top_to_bottom_bug: #River C
     playfield: hades_pf
     switch_sequence:
       - s_u_right_ear_3
       - s_u_right_ear_0
     sequence_timeout: 1s
-  right_river_bottom_to_top_mini: #River D
+  right_river_bottom_to_top_bug: #River D
     playfield: hades_pf
     switch_sequence:
       - s_u_right_ear_0
@@ -87,92 +87,92 @@ shot_profiles:
     loop: no
 
 shots:
-  river_a_mini: #top left to bottom left
+  river_a_bug: #top left to bottom left
      playfield: hades_pf
-     enable_events: mode_hades_mini_game_started
-     hit_events: left_river_top_to_bottom_mini_hit
+     enable_events: mode_hades_bug_game_started
+     hit_events: left_river_top_to_bottom_bug_hit
 #     show_tokens:
 #       lights: l_mouth_a
      profile: bugs_x_3
-     restart_events: mode_hades_mini_game_started  #Restart=reset and enable
-     disable_events: river_a_mini_additional_hit
-  river_b_mini: #bottom left to top left
+     restart_events: mode_hades_bug_game_started  #Restart=reset and enable
+     disable_events: river_a_bug_additional_hit
+  river_b_bug: #bottom left to top left
      playfield: hades_pf
-     enable_events: mode_hades_mini_game_started
-     hit_events: left_river_bottom_to_top_mini_hit
+     enable_events: mode_hades_bug_game_started
+     hit_events: left_river_bottom_to_top_bug_hit
 #     show_tokens:
 #       lights: l_mouth_b
      profile: bugs_x_3
-     restart_events: mode_hades_mini_game_started
-     disable_events: river_b_mini_additional_hit
-  river_c_mini: #top right to bottom right
+     restart_events: mode_hades_bug_game_started
+     disable_events: river_b_bug_additional_hit
+  river_c_bug: #top right to bottom right
      playfield: hades_pf
-     enable_events: mode_hades_mini_game_started
-     hit_events: right_river_top_to_bottom_mini_hit
+     enable_events: mode_hades_bug_game_started
+     hit_events: right_river_top_to_bottom_bug_hit
 #     show_tokens:
 #       lights: l_mouth_c
      profile: bugs_x_3
-     restart_events: mode_hades_mini_game_started
-     disable_events: river_c_mini_additional_hit
-  river_d_mini: #bottom right to top right
+     restart_events: mode_hades_bug_game_started
+     disable_events: river_c_bug_additional_hit
+  river_d_bug: #bottom right to top right
      playfield: hades_pf
-     enable_events: mode_hades_mini_game_started
-     hit_events: right_river_bottom_to_top_mini_hit
+     enable_events: mode_hades_bug_game_started
+     hit_events: right_river_bottom_to_top_bug_hit
 #     show_tokens:
 #       lights: l_mouth_d
      profile: bugs_x_3
-     restart_events: mode_hades_mini_game_started
-     disable_events: river_d_mini_additional_hit
+     restart_events: mode_hades_bug_game_started
+     disable_events: river_d_bug_additional_hit
   left_corner_target:
      playfield: hades_pf
-     enable_events: mode_hades_mini_game_started
+     enable_events: mode_hades_bug_game_started
      hit_events: s_u_left_target_active
      profile: bugs_x_3
-     restart_events: mode_hades_mini_game_started
+     restart_events: mode_hades_bug_game_started
      disable_events: keft_corner_target_additional_hit
 #     show_tokens:
 #       lights: l_u_left_corner_rgb
   right_corner_target:
      playfield: hades_pf
-     enable_events: mode_hades_mini_game_started
+     enable_events: mode_hades_bug_game_started
      hit_events: s_u_right_target_active
      profile: bugs_x_3
-     restart_events: mode_hades_mini_game_started
+     restart_events: mode_hades_bug_game_started
      disable_events: right_corner_target_additional_hit
 #     show_tokens:
 #       lights: l_u_right_corner_rgb
   middle_target:
      playfield: hades_pf
-     enable_events: mode_hades_mini_game_started
+     enable_events: mode_hades_bug_game_started
      hit_events: s_u_middle_target_active
      profile: bugs_x_3
-     restart_events: mode_hades_mini_game_started
+     restart_events: mode_hades_bug_game_started
      disable_events: middle_target_additional_hit
 #     show_tokens:  #No flasher for this one add hardware?
 #       lights:
   left_sling:
      playfield: hades_pf
-     enable_events: mode_hades_mini_game_started
+     enable_events: mode_hades_bug_game_started
      hit_events: s_u_left_slingshot_active
      profile: bugs_x_3
-     restart_events: mode_hades_mini_game_started
+     restart_events: mode_hades_bug_game_started
      disable_events: left_sling_additional_hit
 #     show_tokens:
 #       lights:   l_u_left_ss_rgb
   right_sling:
      playfield: hades_pf
-     enable_events: mode_hades_mini_game_started
+     enable_events: mode_hades_bug_game_started
      hit_events: s_u_right_slingshot_active
      profile: bugs_x_3
-     restart_events: mode_hades_mini_game_started
+     restart_events: mode_hades_bug_game_started
      disable_events: right_sling_additional_hit
 #     show_tokens:
 #       lights:   l_u_right_ss_rgb
 
 sequences:
-    mini_game_exit:
+    bug_game_exit:
        events:
-         - multiball_hades_mini_play_shoot_again_ended
+         - multiball_hades_bug_play_shoot_again_ended
          - balldevice_bd_u_trough_ball_enter
        events_when_complete: lost_the_ball
 
@@ -182,20 +182,20 @@ accruals:
       - left_corner_target_third_hit
       - middle_target_third_hit
       - right_corner_target_third_hit
-      - river_a_mini_second_hit
-      - river_b_mini_second_hit
-      - river_c_mini_second_hit
-      - river_d_mini_second_hit
+      - river_a_bug_second_hit
+      - river_b_bug_second_hit
+      - river_c_bug_second_hit
+      - river_d_bug_second_hit
     events_when_complete: all_bugs_smashed #All river fast modes activate when this is posted rules are cleared when this mode ends
   monitor_rivers: #When any of the rivers hit get a one time event to change music.
     events:
-      - river_a_mini_hit, river_b_mini_hit, river_c_mini_hit, river_d_mini_hit
+      - river_a_bug_hit, river_b_bug_hit, river_c_bug_hit, river_d_bug_hit
     events_when_complete: we_have_a_river
     reset_on_complete: false
 
 
 slide_player:
-  mode_hades_mini_game_started:
+  mode_hades_bug_game_started:
     hades_playfield_slide:
       target: playfield_lcd
       background_color: white
@@ -210,15 +210,15 @@ slide_player:
         font_size: 50
 
 show_player:
-  mode_hades_mini_game_started:
+  mode_hades_bug_game_started:
     show_all_pf_bb_leds_red:
       speed: 1
-    show_pulse_mini_pf:
+    show_pulse_bug_pf:
       speed: 10
       loops: 0
       events_when_played: start_bug_march
       events_when_completed: hades_backlight_show_done
-  multiball_hades_mini_play_started:
+  multiball_hades_bug_play_started:
     countdown20_red:
       speed: 1
       loops: 0
@@ -233,16 +233,16 @@ show_player:
 
 
 #light_player:
-#  mode_hades_mini_game_started:
+#  mode_hades_bug_game_started:
 #    l_backlight_rgb:
 #      color: 0000ff #000000
 #    l_backlight_w:
 #      color: A0
 #sound_player:
-#  river_a_mini_hit: splat-and-crunch
-#  river_b_mini_hit: splat-and-crunch
-#  river_c_mini_hit: splat-and-crunch
-#  river_d_mini_hit: splat-and-crunch
+#  river_a_bug_hit: splat-and-crunch
+#  river_b_bug_hit: splat-and-crunch
+#  river_c_bug_hit: splat-and-crunch
+#  river_d_bug_hit: splat-and-crunch
 #  left_corner_target_hit: splat-and-crunch
 #  right_corner_target_hit: splat-and-crunch
 #  middle_target_hit: splat-and-crunch
@@ -322,52 +322,52 @@ widget_player: #http://docs.missionpinball.org/en/latest/config/widget_player.ht
     splat_right_target:
       target: playfield_lcd
 
-  river_a_mini_first_hit:
+  river_a_bug_first_hit:
     bug_river_a:
       target: playfield_lcd #hades_playfield_slide # playfield_lcd
       action: update
     splat_river_a:
       target: playfield_lcd
-  river_a_mini_second_hit:
+  river_a_bug_second_hit:
     bug_river_a:
       target: playfield_lcd #hades_playfield_slide # playfield_lcd
       action: remove
     splat_river_a:
       target: playfield_lcd
 
-  river_b_mini_first_hit:
+  river_b_bug_first_hit:
     bug_river_b:
       target: playfield_lcd #hades_playfield_slide # playfield_lcd
       action: update
     splat_river_b:
       target: playfield_lcd
-  river_b_mini_second_hit:
+  river_b_bug_second_hit:
     bug_river_b:
       target: playfield_lcd #hades_playfield_slide # playfield_lcd
       action: remove
     splat_river_b:
       target: playfield_lcd
 
-  river_c_mini_first_hit:
+  river_c_bug_first_hit:
     bug_river_c:
       target: playfield_lcd #hades_playfield_slide # playfield_lcd
       action: update
     splat_river_c:
       target: playfield_lcd
-  river_c_mini_second_hit:
+  river_c_bug_second_hit:
     bug_river_c:
       target: playfield_lcd #hades_playfield_slide # playfield_lcd
       action: remove
     splat_river_c:
       target: playfield_lcd
 
-  river_d_mini_first_hit:
+  river_d_bug_first_hit:
     bug_river_d:
       target: playfield_lcd #hades_playfield_slide # playfield_lcd
       action: update
     splat_river_d:
       target: playfield_lcd
-  river_d_mini_second_hit:
+  river_d_bug_second_hit:
     bug_river_d:
       target: playfield_lcd #hades_playfield_slide # playfield_lcd
       action: remove

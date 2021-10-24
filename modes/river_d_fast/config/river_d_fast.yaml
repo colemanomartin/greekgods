@@ -10,7 +10,7 @@
 mode:
   start_events:
     - accelerate_rivers
-    - mode_hades_mini_game_starting
+    - mode_hades_bug_game_starting
   stop_events: timer_handler_d_complete
   code: river_d_fast.river_d_fast
   priority: 6400 #Must be above hades' show player
@@ -20,7 +20,7 @@ event_player:
   left_river_top_to_bottom_hit: normalize_d
   timer_cooldown_d_complete: accelerate_d
   mode_hades_bonus_game_stopped: normalize_d
-  mode_hades_mini_game_stopped: normalize_d
+  mode_hades_bug_game_stopped: normalize_d
 
 timers:
   handler_d:
@@ -32,7 +32,7 @@ timers:
       - action: restart
         event: mode_hades_bonus_game_stopped
       - action: restart
-        event: mode_hades_mini_game_stopped
+        event: mode_hades_bug_game_stopped
   cooldown_d:
     start_value: 2
     end_value: 0

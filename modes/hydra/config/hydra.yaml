@@ -187,9 +187,73 @@ show_player:
       action: play
       priority: 1
 
+widgets:
+  hydra_3rd_head:
+    - type: image
+      image: hydra3
+      anchor_x: center
+      anchor_y: center
+      y: 42%
+      x: 23%
+      z: 5
+  hydra_4th_head:
+    - type: image
+      image: hydra4
+      anchor_x: center
+      anchor_y: center
+      y: 55%
+      x: 79%
+      z: 5
+  hydra_5th_head:
+    - type: image
+      image: hydra5
+      anchor_x: center
+      anchor_y: center
+      y: 43%
+      x: 57%
+      z: 5
+  hydra_6th_head:
+    - type: image
+      image: hydra6
+      anchor_x: center
+      anchor_y: center
+      y: 62%
+      x: 74%
+      z: 5
+  hydra_7th_head:
+    - type: image
+      image: hydra7
+      anchor_x: center
+      anchor_y: center
+      y: 35.4%
+      x: 79%
+      z: 5
+
+widget_player:
+  multiball_hydra_mb_started:
+    hydra_3rd_head:
+      slide: hydra_status_slide #Adds widget on top of this slide which was posted in temple display
+      action: add
+  base_hydra_hit{device.counters.hydra_health.value==12}:
+    hydra_4th_head:
+      slide: hydra_status_slide #Adds widget on top of this slide which was posted in temple display
+      action: add
+  base_hydra_hit{device.counters.hydra_health.value==9}:
+    hydra_5th_head:
+      slide: hydra_status_slide #Adds widget on top of this slide which was posted in temple display
+      action: add
+  base_hydra_hit{device.counters.hydra_health.value==6}:
+    hydra_6th_head:
+      slide: hydra_status_slide #Adds widget on top of this slide which was posted in temple display
+      action: add
+  base_hydra_hit{device.counters.hydra_health.value==3}:
+    hydra_7th_head:
+      slide: hydra_status_slide #Adds widget on top of this slide which was posted in temple display
+      action: add
+
 slide_player:
   mode_hydra_started: #counter_hydra_health_hit:
-    hydra_health_slide:
+    hydra_status_slide:
       target: playfield_lcd
       background_color: black
       widgets:
@@ -212,8 +276,8 @@ slide_player:
         anchor_y: center
         font_size: 30
       - type: image
-        image: heartbeat2
-        y: 75%
+        image: heartbeat5
+        y: 85%
         x: 20%
         anchor_x: center
         anchor_y: center
@@ -223,11 +287,11 @@ slide_player:
         number_grouping: true
         min_digits: 2
         color: red
-        y: 75%
+        y: 87%
         x: 20%
         anchor_x: center
         anchor_y: center
-        font_size: 40
+        font_size: 50
         font_name: greekgods3
         z: 10
       - type: image

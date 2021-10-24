@@ -46,7 +46,7 @@ modes:
   - field #200
   - temple_display # 400 adds widgets to playfield display to show where ball will go in response to ramp diverter flap
   - scoop_mb #650
-  - hydra #700
+  - hydra #700  Keypress V enters via back door.
   - goddess_mb #800
   - skill_shot #900 needs to be above goddess_mb
   - p_ramp_mb #1000
@@ -60,6 +60,7 @@ modes:
 #  - sound_loops #150
   - sound_effects # 175
 #  - drain_display #2000
+  - hades_bug_game #600
   - bottom_rotation # 1500
   - banked_l_bs #250000
   - banked_r_bs #2500
