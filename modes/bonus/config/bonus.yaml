@@ -171,14 +171,14 @@ slides:
 
   bonus_start_slide:
     target: score_lcd
-    background_color: 000080
+    background_color: 000000 #000008
     widgets:
     - type: image
       image: bonus_background
       anchor_y: top
-      y: 102% #Was 102
+      y: 102%
       z: 0
-      opacity: 0.50
+      opacity: 1 #0.50
     - type: text
       text: Bonus
       y: 90%
@@ -222,7 +222,7 @@ slides:
       color: black
       z: 1
     - type: text
-      text: "Sisiphus Powerball Arcs x 750"
+      text: "Sisyphus Powerball Arcs x 750"
       y: 50%
       x: 10%
       font_size: 130
@@ -232,7 +232,7 @@ slides:
       opacity: 1
       z: 2
     - type: text
-      text: "Sisiphus Powerball Arcs x 750"
+      text: "Sisyphus Powerball Arcs x 750"
       y: 49.8%
       x: 10.2%
       font_size: 130

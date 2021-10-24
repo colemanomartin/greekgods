@@ -28,6 +28,7 @@ kivy_config:
 # ****set resizable: false ; fullscreen: false to have window extend over both monitors with a title bar that can be grabbed (same as 1)   ****
 # ****set resizable: true ; fullscreen: false to have window limited to top screen. No bar. Can't be grabbed or changed. Not useful        ****
 # !!!!set resizable: false ; fullscreen: fake to have window covering both, no menu bar, no grabbing. Use for production.                  ****
+# Note on this last one, using it may alter the position of the widgets slightly as the system is tunded for the bar.                      ****
 #**********************************************************************************************************************************************
     resizable: false #use false when true after title bar grabbed, the window can be resized. false=no resizing
     fullscreen:  true #use true leaves a title bar which can be grabbed allowing display to be windowed. False no title bar, no grabbing, fake
