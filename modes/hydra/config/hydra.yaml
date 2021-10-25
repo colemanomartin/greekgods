@@ -285,7 +285,7 @@ slide_player:
       - type: text
         text: (hydra_hp) #(device.counters.hydra_health.value)
         number_grouping: true
-        min_digits: 2
+        min_digits: 1
         color: red
         y: 87%
         x: 20%

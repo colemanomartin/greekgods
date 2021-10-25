@@ -24,3 +24,6 @@ extra_balls:
   score_four:
     enabled: true
     award_events: player_score{value>=1000000}
+  eb_in_bonus_test:
+    enabled: true
+    award_events: mode_bonus_started{ball==0} 

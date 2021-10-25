@@ -24,7 +24,7 @@ mode:
     #- mode_field_started{device.counters.drop_hits.completed} #Field is where the counter lives
   stop_events:
     - mystery_solved
-    - mode_field_ending
+    - mode_field_stopping
 #    - ball_drain removed 10/24 becaue ball drain in underworld from bug game ejected ball from mystery
 
 #sequence_shots:
@@ -87,7 +87,7 @@ random_event_player:
       award_scoop_mb: 15
       award_goddess{device.sequences.base_aphrodite.completed==False}: 10
       award_super_spinner: 5
-      award_bug_game: 2
+      award_bug_game: 200
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, no mb modes qualified or running
     events:
       award_10000_points: 5
@@ -96,7 +96,7 @@ random_event_player:
       award_scoop_mb: 15
       award_goddess{device.sequences.base_aphrodite.completed==False}: 10
       award_super_spinner: 5
-      award_bug_game: 2
+      award_bug_game: 200
 #These next 4 cover one mb mode running ready to swap running mode if needed
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on left, p_ramp_mb running & sis on correct side
     events:

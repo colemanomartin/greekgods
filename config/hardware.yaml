@@ -282,26 +282,6 @@ keyboard:
       switch: s_poseidon_right_slingshot
   p:
       switch: s_olympus_rollover
-  1:
-    event: p_locking_elgible
-  2:
-    switch: o_locking_elgible
-  3:
-    switch: s_u_left_ear_2
-  4:
-    switch: s_u_left_ear_3 #Distal opto
-  5:
-    switch: s_u_right_ear_0 #Proximal opto
-  6:
-    switch: s_u_right_ear_1
-  7:
-    switch: s_u_right_ear_2
-  8:
-    switch: s_u_right_ear_3 #Distal opto
-  f:
-    switch: s_u_left_slingshot
-  g:
-    switch: s_u_right_slingshot
   r:
     switch: s_u_left_target
   t:
@@ -316,6 +296,25 @@ keyboard:
     event: key_v_pressed
   b:
     event: key_b_pressed
+  g:
+    event: logicblock_base_all_pops_complete #All pops hit, awards goddess if elgible.
+  1:
+    event: key_1_pressed
+  2:
+    event: key_2_pressed
+  3:
+    event: key_3_pressed
+  4:
+    event: key_4_pressed
+  5:
+    event: key_5_pressed
+  6:
+    event: key_6_pressed
+  7:
+    event: key_7_pressed
+  8:
+    event: key_8_pressed
+
 coils:
     #PD 16 lower playfield Address = 5 Right Bank A = 0 left side/poseidon mechs
     c_left_side_pop:
@@ -366,7 +365,8 @@ coils:
     #PD 16 lower playfield Address = 5 Left  Bank B = 1 bottom mechs
     c_shooter_lane_eject:
         number: A5-B1-0
-        default_pulse_ms: 25 #30 #Pulse power works with autofire rule but not pulse issued by eject.
+        default_pulse_ms: 30 #default 25 pp 100% #Pulse power works with autofire rule but not pulse issued by eject.
+        default_pulse_power: 0.8
     c_trough_eject:
         number: A5-B1-1
         default_pulse_ms: 25

@@ -1,66 +1,11 @@
 #config_version=5
-#Base mode has
-#              - shots defined for playfield switches
-#              - Basic scoring
-#              - Handles scoop
-#              - Handles cooldown on malstrom magnet and left poseidon SS
-#              - Handles score screen
+#issues most sound effects and all music loops.
 
 mode:
-  start_events: ball_started #maybe game started, non-game mode?
+  start_events: mode_attract_started #game_started #, non-game mode?
   priority: 175 # range 100-1M
+  game_mode: false
 
-accruals:  # These are designed to fire once to give instructions a single time during the game
-  sound_drop_target_instructions:
-    events: drop_target_bank_cluster_mixed
-    persist_state: true
-    reset_on_complete: false
-    disable_on_complete: true
-  sound_revealed_band_instructions:
-    events:
-      - drop_target_bank_cluster_down
-    persist_state: true
-    reset_on_complete: false
-    disable_on_complete: true
-  sound_ready_for_mystery_instructions:
-    events:
-      - field_says_mystery_time
-    persist_state: true
-    reset_on_complete: false
-    disable_on_complete: true
-  sound_lane_light_instructions:
-    events:
-      - base_right_inlane_hit
-      - base_left_inlane_hit
-    persist_state: true
-    reset_on_complete: false
-    disable_on_complete: true
-  sound_ready_locks_by_scoring_instructions:
-    events: #when either status bar gets half full, announce instructions
-      - logicblock_field_olympus_excitement_updated{device.counters.field_olympus_excitement.value==12},  logicblock_field_poseidon_excitement_updated{device.counters.field_poseidon_excitement.value==12}
-    persist_state: true
-    reset_on_complete: false
-    disable_on_complete: true
-  sound_outlane_ballsave_instructions:
-    events:
-      - left_ramp_hit, right_ramp_hit #hit either ramp
-    persist_state: true
-    reset_on_complete: false
-    disable_on_complete: true
-    disable_events: # Otherwise voice cues are too many
-      - ormb_light_o_lock_hit
-      - prmb_light_p_lock_hit
-
-counters: #This counter sends voice instruction to complete the pops for goddess It completes after 3 different pop hits
-  sound_tracking_base_pops:
-    enable_events: mode_sound_effects_started
-    count_events:
-      - logicblock_base_all_pops_hit
-    persist_state: True
-    reset_events:
-      - game_ending
-    count_complete_value: 3
-    disable_on_complete: True #Leave it working so it can subtract if field ends
 
 sound_player:
   #these instructions each play once early in game
@@ -119,27 +64,107 @@ sound_player:
   base_double_right_ramp_hit{not mode.banked_r_bs.active}: v_right_outlane_bs_awarded
   bottom_lane_group_hit_complete: v_double_outlane_bs_awarded
 
-#  river_a_hit: snd_river
-#  river_b_hit: snd_river
-#  river_c_hit: snd_river
-#  river_d_hit: snd_river
-#  river_a_mini_hit: snd_river
-#  river_b_mini_hit: snd_river
-#  river_c_mini_hit: snd_river
-#  river_d_mini_hit: snd_river
-#  s_right_drop_target_proximal_active: snd_drop_1
-#  s_right_drop_target_middle_active: snd_drop_2
-#  s_right_drop_target_distal_active: snd_drop_3
-#  multiball_celest_mb_started: multiball
-#  multiball_celest_mb_shoot_again: ballsave
-#  multiball_poseidon_ramp_shoot_again: ballsave
-#  multiball_olympus_ramp_shoot_again: ballsave
-#  multiball_hades_play_shoot_again: ballsave
-#  multiball_olympus_feast_shoot_again: ballsave
-#  multiball_poseidon_feast_shoot_again: ballsave
-#  ball_save_bs_default_saving_ball: ballsave
-#  ball_save_bs_left_side_pop_saving_ball: ballsave
-#  ball_save_bs_malstrom_saving_ball: ballsave
-#  mode_hades_bonus_game_started: hadeshasyou
-#  mode_hades_mini_game_started: hadeshasyou
-#  all_bugs_smashed: youreturnfromtheunderworld
+  river_a_hit: snd_river
+  river_b_hit: snd_river
+  river_c_hit: snd_river
+  river_d_hit: snd_river
+  river_a_bug_hit: snd_river
+  river_b_bug_hit: snd_river
+  river_c_bug_hit: snd_river
+  river_d_bug_hit: snd_river
+  mode_hades_bug_game_started: v_hades_has_you
+  mode_hades_bug_game_stopped: cmgg2_you_returned_underworld.ogg
+
+  game_start: snd_startbutton
+  mode_bonus_started: snd_bonus_riff3
+  mode_bonus_stopping:
+    snd_bonus_riff3:
+      action: stop
+      fade_out: 400 ms
+  mode_game_stopping: snd_sledge_tail
+  mode_hades_bonus_game_stopping: snd_deadmans_tail
+
+#State machine riffer moved to base.  could be spun into its own mode. It needs to reset with each turn over of ball which is Most easily
+#achieved by killing and respawning it with base stopping and starting.
+
+# To turn off music can use track player like scott does with mystery mode.
+sound_loop_player:
+#  relies on sound_loop_sets currently defigned at the bottom of sound config.
+
+  ball_started:
+    loops:
+      sound_loop_set: riff_shooter_start
+      action: play
+      timing: now #now #was loop end but that made no sense because bonus music does not come through loop player
+
+
+  loop_basic_and_minor:
+    loops:
+      sound_loop_set: riff_basic
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_minor
+  make_loop_with_minor:
+    loops:
+      sound_loop_set: riff_minor
+      action: play
+      timing: loop_end
+      events_when_played: loop_basic_and_minor
+
+  loop_basic_and_strings:
+    loops:
+      sound_loop_set: riff_strings
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_strings
+  make_loop_with_strings:
+    loops:
+      sound_loop_set: riff_basic
+      action: play
+      timing: loop_end
+      events_when_played: loop_basic_and_strings
+
+  loop_basic_and_cymbals:
+    loops:
+      sound_loop_set: riff_cymbals
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_cymbals
+  make_loop_with_cymbals:
+    loops:
+      sound_loop_set: riff_basic
+      action: play
+      timing: loop_end
+      events_when_played: loop_basic_and_cymbals
+
+  ball_will_end:
+    loops:
+      action: stop
+#      timing: now
+#     fade_out: 200 ms
+  mode_hades_bonus_game_started:
+    loops:
+      sound_loop_set: bonus_intro
+      action: play
+      timing: now
+      events_when_played: loop_deadmans_party_riff
+  loop_deadmans_party_riff:
+    loops:
+      sound_loop_set: bonus_riff
+      action: play
+      timing: now
+  mode_hades_bonus_game_stopping:
+    loops:
+      action: stop
+
+  key_4_pressed:
+    loops:
+      sound_loop_set: three_ball_mb
+      action: play
+      timing: loop_end
+  key_5_pressed:
+    loops:
+      sound_loop_set: ramp_lock_music
+      action: play
+      timing: loop_end
+#      fade_in: 200ms

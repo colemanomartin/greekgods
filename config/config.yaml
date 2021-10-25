@@ -3,8 +3,8 @@ hardware:
   platform: p3_roc
   driverboards: pdb
 
-#mpf:
-#  report_crashes: "never"
+mpf:
+  report_crashes: never
 
 p_roc:
 #  driverboards: pdb

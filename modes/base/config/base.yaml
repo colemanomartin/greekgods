@@ -293,6 +293,65 @@ queue_relay_player:
     post: enter_hades_from_relay_player
     wait_for: mode_hades_bonus_game_stopping
 
+state_machines:  #This state machine supports sound effects mode.
+  riffer:
+    states:
+      start:
+        label: undefined
+      basic_play:
+        label: nothing_locked
+      something_locked:
+        label: something_locked_somewhere
+      p_or_o_mb_running:
+        label: main_mode_mb_running
+
+    transitions:
+      - source: start
+        target: basic_play
+        events:
+          - balldevice_bd_plunger_ball_eject_success{device.ball_devices.bd_olympus_ramp.balls==0 and device.ball_devices.bd_poseidon_ramp.balls==0 and mode.base.active} #maybe s_shooterlane_inactive would be better
+        events_when_transitioning:
+          - loop_basic_and_minor
+
+      - source: start
+        target: something_locked
+        events:
+          - balldevice_bd_plunger_ball_eject_success{device.ball_devices.bd_olympus_ramp.balls > 0 or device.ball_devices.bd_poseidon_ramp.balls > 0 and mode.base.active}
+        events_when_transitioning:
+          - loop_basic_and_strings
+
+      - source: basic_play
+        target: something_locked
+        events:
+          - multiball_lock_poseidon_lock_locked_ball
+          - multiball_lock_olympus_lock_locked_ball
+        events_when_transitioning:
+          - loop_basic_and_strings
+
+      - source: something_locked
+        target: p_or_o_mb_running
+        events:
+          - multiball_poseidon_ramp_started
+          - multiball_olympus_ramp_started
+        events_when_transitioning:
+          - loop_basic_and_cymbals
+
+      - source: p_or_o_mb_running
+        target: something_locked
+        events:
+          - multiball_poseidon_ramp_ended{device.ball_devices.bd_olympus_ramp.balls > 0}
+          - multiball_olympus_ramp_ended{device.ball_devices.bd_poseidon_ramp.balls > 0}  ###Not sure what happens to riffs when double mb occurs.
+        events_when_transitioning:
+          - loop_basic_and_strings
+
+      - source: p_or_o_mb_running
+        target: basic_play
+        events:
+          - multiball_poseidon_ramp_ended{device.ball_devices.bd_olympus_ramp.balls == 0}
+          - multiball_olympus_ramp_ended{device.ball_devices.bd_poseidon_ramp.balls == 0}  ###Not sure what happens to riffs when double mb occurs.
+        events_when_transitioning:
+          - loop_basic_and_minor
+
 
 shot_profiles:
   off_on_flash:
@@ -1140,64 +1199,72 @@ slide_player:
 widgets:
   hestia:
   - type: text
-    text: Hestia Summoned
+    text: Hestia Awarded
     font_size: 260
-    y: 80%
+    y: 88%
     x: 50%
-    color: green
+    color: white
     font_name: greekgods3
     expire: 5s
+    z: 1
   hestia_coin:
   - type: image
     image: goddess_hestia2
     scale: 0.5
     anchor_x: middle
     anchor_y: top
+    z: 1
   artemus:
   - type: text
-    text: artemus Summoned
+    text: Artemus Awarded
     font_size: 260
-    y: 80%
+    y: 88%
     x: 50%
-    color: green
+    color: white
     font_name: greekgods3
     expire: 5s
+    z: 1
   artemus_coin:
   - type: image
     image: goddess_artemus1
     scale: 0.5
     anchor_x: middle
     anchor_y: top
+    z: 1
   aphrodite:
   - type: text
-    text: Aphrodite Summoned
+    text: Aphrodite Awarded
     font_size: 260
-    y: 80%
+    y: 88%
     x: 50%
-    color: green
+    color: white
     font_name: greekgods3
     expire: 5s
+    z: 1
   aphrodite_coin:
   - type: image
     image: goddess_aphrodites1
     scale: 0.5
     anchor_x: middle
     anchor_y: top
+    z: 1
   athena:
   - type: text
-    text: Athena Summoned
+    text: Athena Awarded
     font_size: 260
-    y: 80%
+    y: 88%
     x: 50%
-    color: green
+    color: white
     font_name: greekgods3
     expire: 5s
+    z: 1
   athena_coin:
   - type: image
     image: goddess_athena1
     scale: 0.5
     anchor_x: middle
     anchor_y: top
+    z: 1
 
   sp01:
   - type: image
@@ -2044,88 +2111,88 @@ widget_player:
     hestia_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 20%
-        y: 50%
+        x: 20.5%
+        y: 46%
   slide_basic_score_slide_active{current_player.player_base_goddesses_earned == 2}:
     hestia_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 20%
-        y: 50%
+        x: 20.5%
+        y: 46%
     artemus_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 40%
-        y: 50%
+        x: 39.5%
+        y: 46%
   slide_basic_score_slide_active{current_player.player_base_goddesses_earned == 3}:
     hestia_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 20%
-        y: 50%
+        x: 20.5%
+        y: 46%
     artemus_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 40%
-        y: 50%
+        x: 39.5%
+        y: 46%
     aphrodite_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 60%
-        y: 50%
+        x: 57.5%
+        y: 46%
   slide_basic_score_slide_active{current_player.player_base_goddesses_earned == 4}:
     hestia_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 20%
-        y: 50%
+        x: 20.5%
+        y: 46%
     artemus_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 40%
-        y: 50%
+        x: 39.5%
+        y: 46%
     aphrodite_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 60%
-        y: 50%
+        x: 57.5%
+        y: 46%
     athena_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 80%
-        y: 50%
+        x: 76.5%
+        y: 46%
   base_hestia_summoned:
     hestia:
       slide: basic_score_slide
     hestia_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 20%
-        y: 50%
+        x: 20.5%
+        y: 46%
   base_artemus_summoned:
     artemus:
       slide: basic_score_slide
     artemus_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 40%
-        y: 50%
+        x: 39.5%
+        y: 46%
   base_aphrodite_summoned:
     aphrodite:
       slide: basic_score_slide
     aphrodite_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 60%
-        y: 50%
+        x: 57.5%
+        y: 46%
   base_athena_summoned:
     athena:
       slide: basic_score_slide
     athena_coin:
       slide: basic_score_slide
       widget_settings:
-        x: 80%
-        y: 50%
+        x: 76.5%
+        y: 46%
   multiball_goddess_ended:
     athena_coin:
       action: remove

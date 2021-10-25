@@ -7,6 +7,10 @@ sound_system:  #http://docs.missionpinball.org/en/latest/sound/basic_setup.html?
     master_volume: 1
     tracks:
        music:
+          type: standard #sound_loop  Have to change it back to sound_loop if using them
+          simultaneous_sounds: 1
+          volume: 0.6
+       loops:
           type: sound_loop #standard #sound_loop  Have to change it back to sound_loop if using them
           simultaneous_sounds: 1
           volume: 0.6
@@ -302,37 +306,37 @@ sounds:
 #    volume: 1
     track: music
     streaming: false
-    loops: -1    #This is needed
+#    loops: -1    #This is needed
     mode_end_action: stop_looping
   snd_sledge_riff_0:
     file: sledge_riff_0.ogg
 #    volume: 1
     track: music
-    loops: -1
+#    loops: -1
     mode_end_action: stop_looping
   snd_sledge_riff_1:
     file: sledge_riff_1.ogg
 #    volume: 1
     track: music
-    loops: -1
+#    loops: -1
     mode_end_action: stop_looping
-  snd_sledge_riff_3_symbol:
-    file: sledge_riff_3_symbol.ogg
+  snd_sledge_riff_3_cymbals:
+    file: sledge_riff_3_cymbals.ogg
 #    volume: 1
     track: music
-    loops: -1
+#    loops: -1
     mode_end_action: stop_looping
   snd_sledge_riff_2:
     file: sledge_riff_2.ogg
 #    volume: 1
     track: music
-    loops: -1
+#    loops: -1
     mode_end_action: stop_looping
   snd_sledge_tail:
     file: sledge_tail.ogg
 #    volume: 1
     track: music
-    loops: 1
+#    loops: 1
   snd_startbutton:                      #### Add to attract
     file: startbutton.ogg
     volume: 0.6
@@ -370,17 +374,17 @@ sounds:
       attenuation: 0 #multiply music track by this
 
 sound_loop_sets:
-  base_start:
+  riff_shooter_start:
     sound: snd_sledge_riff_pre_0
-  base_running:
+  riff_basic:
     sound: snd_sledge_riff_0
-  one_ball_mb:
+  riff_minor:
     sound: snd_sledge_riff_1
-  three_ball_mb:
-    sound: snd_sledge_riff_3_symbol
+  riff_cymbals:
+    sound: snd_sledge_riff_3_cymbals
   game_over_without_bonus:
     sound: snd_sledge_tail
-  ramp_lock_music:
+  riff_strings:
     sound: snd_sledge_riff_2
 #  start_button_chord:
 #    sound: snd_startbutton

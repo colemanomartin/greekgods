@@ -137,7 +137,9 @@ shots:
     playfield: earth_pf
     profile: flashing_off_o
     enable_events: multiball_goddess_started
-    hit_events: base_hole_distal_hit
+    hit_events:
+      - base_hole_distal_hit
+      - base_hole_proximal_hit
     debug: true
 
 event_player:
@@ -325,7 +327,7 @@ widgets:
     font_name: greekgods3
   goddess_mb_shoot_cave:
   - type: text
-    text: "Enter A Cave"
+    text: "Enter A Hole"
     font_size: 60
     y: 80%
     x: 50%
@@ -394,7 +396,7 @@ widgets:
     y: 10%
     anchor_x: center
     anchor_y: center
-    font_size: 75
+    font_size: 60
 #Order hestia artemus aphrodite athena
 widget_player:
   #For some reason this always tests false  slide_pf_goddess_mb_gather_instructions_slide_active{device.ball_devices.bd_scoop.balls==0}: turns out conditional logic does not work on widget player mpf mc wall thing
@@ -553,7 +555,7 @@ slide_player:
       background_color: 000000
       widgets:
       - type: text
-        text: "Goddess Rebellion!\nHit Caves for Bonus\n\nHit Pop Sequence for\nBonus Multiplier"
+        text: "Goddess Rebellion!\nHit Holes for Bonus\n\nHit All Pops for\nBonus Multiplier"
         font_name: greekgods3
         color: green
         y: 50%
@@ -572,7 +574,7 @@ sound_player:
 
 variable_player:
   goddess_jackpot_hit:
-    score: 20000
+    score: 10000
   multiball_lock_subway_lock_locked_ball:
     score: 5000 * (device.counters.goddess_multiplier.value)
   logicblock_goddess_all_pops_complete:

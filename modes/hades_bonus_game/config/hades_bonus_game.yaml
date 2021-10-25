@@ -594,12 +594,12 @@ widgets:
       font_name: greekgods3
       color: black
       opacity: 1
-      z: 2
-      y: 90%
+      z: 3
+      y: 85%
       x: 10%
       anchor_x: center
       anchor_y: bottom
-      font_size: 50
+      font_size: 60
       expire: 1500ms
       animations:
         add_to_slide:
@@ -613,12 +613,12 @@ widgets:
       font_name: greekgods3
       color: black
       opacity: 1
-      z: 2
-      y: 90%
+      z: 3
+      y: 85%
       x: 81%
       anchor_x: center
       anchor_y: bottom
-      font_size: 50
+      font_size: 60
       expire: 1500ms
       animations:
         add_to_slide:
@@ -632,12 +632,12 @@ widgets:
       font_name: greekgods3
       color: black
       opacity: 1
-      z: 2
-      y: 90%
+      z: 3
+      y: 85%
       x: 50%
       anchor_x: center
       anchor_y: bottom
-      font_size: 50
+      font_size: 60
       expire: 1500ms
       animations:
         add_to_slide:

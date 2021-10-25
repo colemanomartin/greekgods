@@ -160,9 +160,59 @@ shots:
 #    led4: red
 #  "{current_player.test_player_var == 42}":
 #    led5: red
-
+accruals:  # These are designed to fire once to give instructions a single time during the game
+  #To run sound effects as non-game mode these accruals and the first counter were moved from sound effects and enable events changed in counter
+  sound_drop_target_instructions:
+    events: drop_target_bank_cluster_mixed
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  sound_revealed_band_instructions:
+    events:
+      - drop_target_bank_cluster_down
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  sound_ready_for_mystery_instructions:
+    events:
+      - field_says_mystery_time
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  sound_lane_light_instructions:
+    events:
+      - base_right_inlane_hit
+      - base_left_inlane_hit
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  sound_ready_locks_by_scoring_instructions:
+    events: #when either status bar gets half full, announce instructions
+      - logicblock_field_olympus_excitement_updated{device.counters.field_olympus_excitement.value==12},  logicblock_field_poseidon_excitement_updated{device.counters.field_poseidon_excitement.value==12}
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  sound_outlane_ballsave_instructions:
+    events:
+      - left_ramp_hit, right_ramp_hit #hit either ramp
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+    disable_events: # Otherwise voice cues are too many
+      - ormb_light_o_lock_hit
+      - prmb_light_p_lock_hit
 
 counters:
+  #This counter sends voice instruction to complete the pops for goddess It completes after 3 different pop hits
+  sound_tracking_base_pops:
+    enable_events: mode_field_started
+    count_events:
+      - logicblock_base_all_pops_hit
+    persist_state: True
+    reset_events:
+      - game_ending
+    count_complete_value: 3
+    disable_on_complete: True #Leave it working so it can subtract if field ends
   field_olympus_excitement: #Keeps score on olympus area to enable olympus lock to lock balls commands over ball lock in event player above
     starting_count: 0
     persist_state: True

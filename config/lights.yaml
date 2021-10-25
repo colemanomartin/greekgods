@@ -377,7 +377,7 @@ lights:
     y: 0.5594202898550724
   l_scoop_tongue:  #Driver 1 header 6
     number: 1-24-25-26 #4 pirahana flasher
-    type: grb
+    type: rgb #Old version was grb that why colors were funny on some mode. 
     subtype: led
     default_on_color: white
     platform_settings:
