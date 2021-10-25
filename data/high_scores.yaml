@@ -1,5 +1,8 @@
 score:
 - !!python/tuple
+  - KEL
+  - 516625
+- !!python/tuple
   - COM
   - 243050
 - !!python/tuple
@@ -29,6 +32,3 @@ score:
 - !!python/tuple
   - AAA
   - 116250
-- !!python/tuple
-  - AAA
-  - 111900
