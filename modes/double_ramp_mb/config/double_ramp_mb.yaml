@@ -8,7 +8,7 @@ mode:
     - multiball_lock_poseidon_lock_full{device.ball_devices.bd_olympus_ramp.balls==2}
     - multiball_lock_olympus_lock_full{device.ball_devices.bd_poseidon_ramp.balls==2}
   stop_events:
-    - mode_field_started # previously mode_servo_starting #starts when both MB ended
+    - mode_field_started # previously when field started 
 
 event_player:
   mode_double_ramp_mb_started: ramp_servo_middle

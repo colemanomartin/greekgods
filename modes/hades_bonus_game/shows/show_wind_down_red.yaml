@@ -6,6 +6,7 @@
   slides:
     hades_face:
       target: playfield_lcd
+      expire: 10s 
       priority: 100
       widgets:
       - type: image
@@ -15,6 +16,7 @@
       - type: text
         text: You Stay With Hades
         font_name: greekgods3
+        font_size: 50
         color: red
         y: 20%
 

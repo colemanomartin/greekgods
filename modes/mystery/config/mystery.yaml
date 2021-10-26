@@ -89,7 +89,7 @@ random_event_player:
       award_scoop_mb: 15
       award_goddess{device.sequences.base_aphrodite.completed==False}: 10
       award_super_spinner: 5
-      award_bug_game: 200
+      award_bug_game: 10
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, no mb modes qualified or running
     events:
       award_10000_points: 5
@@ -98,7 +98,7 @@ random_event_player:
       award_scoop_mb: 15
       award_goddess{device.sequences.base_aphrodite.completed==False}: 10
       award_super_spinner: 5
-      award_bug_game: 200
+      award_bug_game: 10
 #These next 4 cover one mb mode running ready to swap running mode if needed
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on left, p_ramp_mb running & sis on correct side
     events:

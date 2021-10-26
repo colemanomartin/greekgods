@@ -15,8 +15,8 @@
 mode:
   start_events:
     - mode_base_starting{mode.goddess_mb.active==False} # dont start if goddess mb is still trying to lock balls Alternatively could have mode stop if balls present in subway lock
-    - multiball_poseidon_ramp_ended
-    - multiball_olympus_ramp_ended
+    - multiball_poseidon_ramp_ended{not device.multiballs.olympus_ramp.balls_live_target > 1} #conditional added day before Expo aimed at keeping field from starting when other mb still running
+    - multiball_olympus_ramp_ended{not device.multiballs.poseidon_ramp.balls_live_target > 1} # conditional added day before Expo aimed at keeping field from starting when other mb still running
 #    - mode_celestial_mb_stopped
     - mode_scoop_mb_stopped
     - mode_hydra_stopped
@@ -25,6 +25,7 @@ mode:
   stop_events:
     - multiball_poseidon_ramp_started
     - multiball_olympus_ramp_started
+    - multiball_double_ramp_mb_started   #Added for Expo because mystery took a ball during double ramp mb
     - mode_scoop_mb_started
     - mode_hydra_started
     - mode_goddess_mb_started

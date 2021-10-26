@@ -57,7 +57,6 @@ modes:
   - sis_right #350 Just for showing slides associated with getting points in O area and enabling loop counts to feed mag diverter
   - mystery #2000
   - super_spinner #1400
-#  - sound_loops #150
   - sound_effects # 175
 #  - drain_display #2000
   - hades_bug_game #600

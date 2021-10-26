@@ -93,6 +93,7 @@ shots:
     enable_events: multiball_poseidon_ramp_started
     hit_events: base_poseidon_pop_hit
     debug: true
+    persist_enable: false  #Otherwise can continue to jackpot later in game. Added day before Expo 
 
 variable_player:
   prmb_jackpot_hit:

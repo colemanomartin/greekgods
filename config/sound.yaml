@@ -18,6 +18,13 @@ sound_system:  #http://docs.missionpinball.org/en/latest/sound/basic_setup.html?
           type: standard
           simultaneous_sounds: 1
           volume: 1
+          ducking:
+            target: loops
+            delay: 50 ms
+            attack: 50 ms
+            attenuation: 0.66
+            release_point: 1.2s #start releasing the ducking 100ms from end of callout
+            release: 200 ms
        sfx:
           type: standard
           simultaneous_sounds: 4
@@ -118,7 +125,13 @@ sounds:
   snd_shield:
     file: shield.ogg
     track: sfx
+  snd_splat-and-crunch:
+    file: splat-and-crunch.wav
+    track: sfx
 
+  snd_follow_bliss:
+    file: follow_bliss.ogg
+    track: music
   v_shoot_scoop_mb:
     file: cmgg2_shoot_scoop_for_mb.ogg
     volume: 1
@@ -163,9 +176,13 @@ sounds:
     volume: 1
     track: voice
     max_queue_time: 2s
-  v_welcome:
-    file: cmgg2_welcome.ogg
-    volume: 1.75
+#  v_welcome:
+#    file: cmgg2_welcome.ogg
+#    volume: 1.75
+#    track: voice
+  v_almost_there:
+    file: cmgg2_almost_there.ogg
+    volume: 1.5
     track: voice
   v_combo:
     file: cmgg2_combo.ogg
@@ -240,15 +257,19 @@ sounds:
     file: cmgg2_your_soul_stays.ogg
     volume: 1
     track: voice
-    max_queue_time: 2s
+    max_queue_time: 1s
   v_you_returned_underworld:
     file: cmgg2_you_returned_underworld.ogg
     volume: 1
     track: voice
-    max_queue_time: 2s
+    max_queue_time: 1s
+  v_underworld_cleansed:
+    file: cmgg2_the_underworld_is_cleansed.ogg
+    volume: 1
+    track: voice
   v_shoot_tunnels_bats:
     file: cmgg2_shoot_tunnels_bats.ogg
-    volume: 1
+    volume: 1.2
     track: voice
     max_queue_time: 2s
   v_super_spinner_engaged:
@@ -372,7 +393,12 @@ sounds:
       release_point: 1 sec
       release: 1 sec
       attenuation: 0 #multiply music track by this
-
+  snd_tiesto_athena:
+    file: tiesto_athena.ogg
+    track: music
+  snd_danesi_yaatra_riff:
+    file: danesi_yaatra_riff.ogg
+    track: music
 sound_loop_sets:
   riff_shooter_start:
     sound: snd_sledge_riff_pre_0
@@ -398,3 +424,7 @@ sound_loop_sets:
     sound: snd_greymattershort1
   bug_game_riff:
     sound: snd_greymatterlong
+  hydra_battle_riff:
+    sound: snd_tiesto_athena
+  goddess_mb_riff:
+    sound: snd_danesi_yaatra_riff

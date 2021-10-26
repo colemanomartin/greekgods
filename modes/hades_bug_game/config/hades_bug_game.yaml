@@ -14,7 +14,7 @@ mode:
 #    - mode_base_starting
 #    - s_centuar_skilltarget_active     #Remove when testing done
 
-  stop_events: all_bugs_smashed, lost_the_ball
+  stop_events: all_bugs_smashed, lost_the_bug_ball
 
 multiballs:
 #  hades_bug_play:
@@ -182,7 +182,7 @@ sequences:
        events:
          - multiball_bug_game_shoot_again_ended
          - balldevice_bd_u_trough_ball_enter
-       events_when_complete: lost_the_ball
+       events_when_complete: lost_the_bug_ball
 
 accruals:
   extermination: #tracks when all bugs splatted
@@ -239,21 +239,6 @@ show_player:
       speed: 20
       loops: 0
 
-
-#light_player:
-#  mode_hades_bug_game_started:
-#    l_backlight_rgb:
-#      color: 0000ff #000000
-#    l_backlight_w:
-#      color: A0
-#sound_player:
-#  river_a_bug_hit: splat-and-crunch
-#  river_b_bug_hit: splat-and-crunch
-#  river_c_bug_hit: splat-and-crunch
-#  river_d_bug_hit: splat-and-crunch
-#  left_corner_target_hit: splat-and-crunch
-#  right_corner_target_hit: splat-and-crunch
-#  middle_target_hit: splat-and-crunch
 
 widget_player: #http://docs.missionpinball.org/en/latest/config/widget_player.html
   start_bug_march:

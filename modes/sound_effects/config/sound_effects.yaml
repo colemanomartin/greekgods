@@ -17,7 +17,7 @@ sound_player:
   logicblock_sound_ready_locks_by_scoring_instructions_complete: v_ready_locks_by_scoring
   logicblock_sound_outlane_ballsave_instructions_complete: v_shoot_ramp_twice_outlane_bs
 
-  mode_sound_controller_started{player==1 and ball==1}: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
+  ball_starting{player==1 and ball==1}: v_almost_there # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
 
 #  mode_av_server_2k_started: snd_startbutton
   extra_ball_awarded: v_extra_ball_awarded
@@ -68,12 +68,17 @@ sound_player:
   river_b_hit: snd_river
   river_c_hit: snd_river
   river_d_hit: snd_river
-  river_a_bug_hit: snd_river
-  river_b_bug_hit: snd_river
-  river_c_bug_hit: snd_river
-  river_d_bug_hit: snd_river
+  #Bug mode sounds
+  river_a_bug_hit: snd_splat-and-crunch
+  river_b_bug_hit: snd_splat-and-crunch
+  river_c_bug_hit: snd_splat-and-crunch
+  river_d_bug_hit: snd_splat-and-crunch
+  left_corner_target_hit: snd_splat-and-crunch
+  right_corner_target_hit: snd_splat-and-crunch
+  middle_target_hit: snd_splat-and-crunch
   mode_hades_bug_game_started: v_hades_has_you
-  mode_hades_bug_game_stopped: cmgg2_you_returned_underworld.ogg
+  all_bugs_smashed: v_underworld_cleansed
+  lost_the_bug_ball: cmgg2_you_returned_underworld.ogg
 
   game_start: snd_startbutton
   mode_bonus_started: snd_bonus_riff3
@@ -83,6 +88,11 @@ sound_player:
       fade_out: 400 ms
   mode_game_stopping: snd_sledge_tail
   mode_hades_bonus_game_stopping: snd_deadmans_tail
+  high_score_enter_initials: snd_follow_bliss
+  mode_high_score_stopping:
+    snd_follow_bliss:
+      action: stop
+      fade_out: 400 ms
 
 #Sound loops will loop play sound loop sets defined in sound.  Each is played as a pair of riffs that recombine for variety.  The starting of
 #the pair is usually commanded by the state machine riffer which is living in base.  It needs to live somewhere that it can die and reset with each ball
@@ -149,7 +159,7 @@ sound_loop_player:
       sound_loop_set: riff_basic
       action: play
       timing: now
-      events_when_played: make_loop_with_minor #send it to the first double 
+      events_when_played: make_loop_with_minor #send it to the first double
 
   ball_will_end:
     loops:
@@ -170,3 +180,29 @@ sound_loop_player:
   mode_hades_bonus_game_stopping:
     loops:
       action: stop
+  game_ending:
+    loops:
+      action: stop
+  mode_hydra_started:
+    loops:
+      sound_loop_set: hydra_battle_riff
+      action: play
+      timing: now
+  mode_hydra_stopping: #This drops into the first looping sequence which is corrected with the followin command from state machine in base
+    loops:                      #ideally state machine would have another state for detour music this this but this hack will hopefully serve.
+      sound_loop_set: riff_basic
+      action: play
+      timing: now
+      events_when_played: make_loop_with_minor #send it to the first double
+
+  mode_goddess_mb_started:
+    loops:
+      sound_loop_set: goddess_mb_riff
+      action: play
+      timing: now
+  mode_goddess_mb_stopping: #This drops into the first looping sequence which is corrected with the followin command from state machine in base
+    loops:                      #ideally state machine would have another state for detour music this this but this hack will hopefully serve.
+      sound_loop_set: riff_basic
+      action: play
+      timing: now
+      events_when_played: make_loop_with_minor #send it to the first double

@@ -4,7 +4,7 @@
 # Look to oldmachine 1 May19 for working hades game.
 # Currently ball is brought into play using a multiball on the hades pf.
 #
-#
+#Message with hades face Redeemed or Stay is sent from led fades in shows.
 #
 #
 #
@@ -188,7 +188,7 @@ timers:
     start_value: 4
     end_value: 0
     direction: down
-    tick_interval: 5s
+    tick_interval: 5100 ms
     control_events:
       - action: start
         event: hades_bonus_intro_show_done
@@ -386,15 +386,26 @@ slide_player:
       target: playfield_lcd
       background_color: white
       widgets:
-#      - type: text
-#        text: Wake All Bats From Tunnels
-#        font_name: greekgods3
-#        color: white
-#        y: 6%
-#        anchor_x: center
-#        anchor_y: bottom
-#        font_size: 50
-#        z: 2
+      - type: text
+        text: Shoot The
+        font_name: greekgods3
+        color: white
+        y: 6%
+        x: 19%
+        anchor_x: center
+        anchor_y: bottom
+        font_size: 50
+        z: 3
+      - type: text
+        text: Tunnels
+        font_name: greekgods3
+        color: white
+        y: 6%
+        x: 85%
+        anchor_x: center
+        anchor_y: bottom
+        font_size: 50
+        z: 3
       - type: image
         image: hades_mask
         anchor_y: top
@@ -405,7 +416,7 @@ slide_player:
         image: bat
         scale: 0.3
         y: 88%
-        x: 70%
+        x: 67%
         anchor_x: center
         anchor_y: center
         z: 1

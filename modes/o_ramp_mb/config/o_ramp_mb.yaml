@@ -91,7 +91,8 @@ shots:
     enable_events: multiball_olympus_ramp_started
     hit_events: base_hole_proximal_hit
     debug: true
-
+    persist_enable: false
+    
 variable_player:
   ormb_jackpot_hit:
     score: 5000

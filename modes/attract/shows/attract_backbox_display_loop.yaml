@@ -245,7 +245,7 @@
         anchor_x: left
         z: 3
       - type: text
-        text: ">75,000      Chance to Redeem Your Soul"
+        text: ">50,000      Chance to Redeem Your Soul"
         font_name: greekgods3
         font_size: 130
         color: blue

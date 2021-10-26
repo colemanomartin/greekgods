@@ -68,7 +68,7 @@
         z: 3
       - type: image
         image: lower_screen_knee_switch
-        scale: 1
+        scale: 1.4
         y: 400
         x: 380
         anchor_y: center
@@ -99,3 +99,45 @@
         type: move_in
         duration: 1s
         direction: bottom
+
+
+- duration: 8
+  slides:
+    music_slide:
+      target: playfield_lcd
+      widgets:
+      - type: text
+        text: "Music Featured "
+        font_name: greekgods3
+        font_size: 60
+        color: white
+        y: 97%
+        x: 50%
+        anchor_y: top
+        anchor_x: center
+        z: 3
+      - type: rectangle
+        y: 100%
+        x: 0%
+        width: 780
+        height: 100
+        color: black
+        z: 2 #200
+        anchor_x: left
+        anchor_y: top
+      - type: text
+        text: "Scott Danesi\nA System of Parts\n\nOingo Boingo\nAnthology\n\nDanny Elfman\nSledge Hammer\n\nTiesto\nAthena\n\nThe B52's\nFollow Your Bliss"
+        font_name: greekgods3
+        font_size: 60
+        color: white
+        y: 75%
+        x: 50%
+        anchor_y: top
+        anchor_x: center
+        z: 1
+        animations:
+          add_to_slide:
+          - property: y
+            value: 80%
+            relative: true
+            duration: 14

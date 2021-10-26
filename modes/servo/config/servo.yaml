@@ -8,6 +8,7 @@
 # This is a one time correction. If it fails -> smoke.
 # 5/27/21: Ripped out old ramp_flap_tracking state machine and made servo control dictated by state machine.
 # Servo could be controlled diectly via state machine but I chose to relay it here for readability with mitigation steps.
+# Bug, rapid wagging of servo as in state machine or other modes sending conflicting data will give a double wag and false alarm.
 # Do: create some kind of counter that detects if a second jam occurs and shuts down game.
 mode:
   priority: 10000 # range 100-1M
