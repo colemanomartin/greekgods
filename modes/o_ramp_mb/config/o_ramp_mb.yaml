@@ -180,6 +180,8 @@ show_player:
     show_countdown99_yellow:
       speed: 10
       loops: 0
+    show_malstrom_spin_ccw_yellow:
+      speed: 8
   #Things to do when shutting down either from ball loss, first ball locked or MB ended
   multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1}:
     show_flash_ramp_arrow:
