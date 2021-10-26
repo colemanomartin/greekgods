@@ -23,7 +23,7 @@ multiballs:
     source_playfield: hades_pf
     ball_count: 1
     ball_count_type: add  # increase number of playfield balls by couny
-    shoot_again: 5s #21s #24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
+    shoot_again: 21s #21s #24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
     start_events: hades_backlight_show_done #mode_hades_bug_game_started
     debug: true
 

@@ -84,8 +84,10 @@ sound_player:
   mode_game_stopping: snd_sledge_tail
   mode_hades_bonus_game_stopping: snd_deadmans_tail
 
-#State machine riffer moved to base.  could be spun into its own mode. It needs to reset with each turn over of ball which is Most easily
-#achieved by killing and respawning it with base stopping and starting.
+#Sound loops will loop play sound loop sets defined in sound.  Each is played as a pair of riffs that recombine for variety.  The starting of
+#the pair is usually commanded by the state machine riffer which is living in base.  It needs to live somewhere that it can die and reset with each ball
+# it should probably get its own mode with the accruals that are used by this mode.
+
 
 # To turn off music can use track player like scott does with mystery mode.
 sound_loop_player:
@@ -96,7 +98,6 @@ sound_loop_player:
       sound_loop_set: riff_shooter_start
       action: play
       timing: now #now #was loop end but that made no sense because bonus music does not come through loop player
-
 
   loop_basic_and_minor:
     loops:
@@ -137,6 +138,19 @@ sound_loop_player:
       timing: loop_end
       events_when_played: loop_basic_and_cymbals
 
+  mode_hades_bug_game_started:
+    loops:
+      sound_loop_set: bug_game_riff
+      action: play
+      timing: now
+
+  mode_hades_bug_game_stopping: #This drops into the first looping sequence which is corrected with the followin command from state machine in base
+    loops:                      #ideally state machine would have another state for detour music this this but this hack will hopefully serve.
+      sound_loop_set: riff_basic
+      action: play
+      timing: now
+      events_when_played: make_loop_with_minor #send it to the first double 
+
   ball_will_end:
     loops:
       action: stop
@@ -156,15 +170,3 @@ sound_loop_player:
   mode_hades_bonus_game_stopping:
     loops:
       action: stop
-
-  key_4_pressed:
-    loops:
-      sound_loop_set: three_ball_mb
-      action: play
-      timing: loop_end
-  key_5_pressed:
-    loops:
-      sound_loop_set: ramp_lock_music
-      action: play
-      timing: loop_end
-#      fade_in: 200ms

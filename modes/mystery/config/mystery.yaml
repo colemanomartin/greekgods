@@ -24,7 +24,9 @@ mode:
     #- mode_field_started{device.counters.drop_hits.completed} #Field is where the counter lives
   stop_events:
     - mystery_solved
-    - mode_field_stopping
+#    - mode_hades_bonus_game_starting
+#    - mode_base_stopping
+    - ball_will_end #so it does not hang when ball drains
 #    - ball_drain removed 10/24 becaue ball drain in underworld from bug game ejected ball from mystery
 
 #sequence_shots:

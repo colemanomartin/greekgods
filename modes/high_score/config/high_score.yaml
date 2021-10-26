@@ -142,7 +142,7 @@ slides:
       anchor_y: middle
       anchor_x: middle
       x: 40%
-      y: 80%
+      y: 85%
       color: 00ff00
       z: 1
       animations:
@@ -167,7 +167,7 @@ slides:
       text: (value)
       style: big
       x: 60%
-      y: 80%
+      y: 85%
       color: 4040FF
       font_size: 160
       font_name: greekgods3
