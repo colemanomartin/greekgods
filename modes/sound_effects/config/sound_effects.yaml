@@ -17,7 +17,7 @@ sound_player:
   logicblock_sound_ready_locks_by_scoring_instructions_complete: v_ready_locks_by_scoring
   logicblock_sound_outlane_ballsave_instructions_complete: v_shoot_ramp_twice_outlane_bs
 
-  ball_starting{player==1 and ball==1}: v_almost_there # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
+#  ball_starting{player==1 and ball==1}: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
 
 #  mode_av_server_2k_started: snd_startbutton
   extra_ball_awarded: v_extra_ball_awarded

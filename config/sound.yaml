@@ -331,6 +331,8 @@ sounds:
     volume: 1
     track: voice
     max_queue_time: 1s
+
+  snd_sledge_riff_pre_0:
     file: sledge_riff_pre_0.ogg
 #    volume: 1
     track: music
@@ -394,13 +396,6 @@ sounds:
     file: bonus_riff3.ogg
     volume: 0.9
     track: music
-    ducking:
-      target: music
-      delay: 0 sec
-      attack: 0.3 sec #cross fade onset
-      release_point: 1 sec
-      release: 1 sec
-      attenuation: 0 #multiply music track by this
   snd_tiesto_athena:
     file: tiesto_athena.ogg
     track: music
