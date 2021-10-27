@@ -370,19 +370,19 @@ sounds:
 #    loops: 1
   snd_startbutton:                      #### Add to attract
     file: startbutton.ogg
-    volume: 0.6
+    volume: 0.3
     track: sfx
   snd_deadmans_intro:
     file: deadmans_intro.ogg
-#    volume: 1
+    volume: 0.8
     track: music
   snd_deadmansparty_riff:
     file: deadmansparty_riff.ogg
-#    volume: 1
+    volume: 0.8
     track: music
   snd_deadmans_tail:
     file: deadmans_tail.ogg
-#    volume: 1
+    volume: 0.8
     track: music
   snd_greymattershort1:
     file: greymattershort1.ogg
@@ -394,7 +394,7 @@ sounds:
     track: music
   snd_bonus_riff3:
     file: bonus_riff3.ogg
-    volume: 0.9
+    volume: 0.5
     track: music
   snd_tiesto_athena:
     file: tiesto_athena.ogg

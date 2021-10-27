@@ -13,6 +13,9 @@ score:
   - 226575
 - !!python/tuple
   - COM
+  - 223950
+- !!python/tuple
+  - COM
   - 186600
 - !!python/tuple
   - ''
@@ -29,6 +32,3 @@ score:
 - !!python/tuple
   - AAA
   - 128000
-- !!python/tuple
-  - AAA
-  - 126925
