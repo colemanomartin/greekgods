@@ -92,7 +92,7 @@ shots:
     hit_events: base_hole_proximal_hit
     debug: true
     persist_enable: false
-    
+
 variable_player:
   ormb_jackpot_hit:
     score: 5000
@@ -479,8 +479,8 @@ sound_player:
   mode_o_ramp_mb_started{not device.accruals.ormb_light_o_lock_already_hit.completed}: v_shoot_scoop_target_to_enable_lock
   mode_o_ramp_mb_started{device.state_machines.ramp_flap_control.state=="divert_right" and device.accruals.ormb_light_o_lock_already_hit.completed}:  v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball when mode starts and lock already lit
   ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_right"}:  v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball
-  ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_left"}: v_move_powerball_to_other_side_to_lock_ball
-  logicblock_move_powerball_instructions_o_complete: v_move_powerball_to_other_side_to_lock_ball #Announces once if ramp hit with flap in wrong spot
+  ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_left" and not mode.p_ramp_mb.active}: v_move_powerball_to_other_side_to_lock_ball #condition agains other mode running to decrease false alarms.
+  logicblock_move_powerball_instructions_o_complete{not mode.p_ramp_mb.active}: v_move_powerball_to_other_side_to_lock_ball #Announces once if ramp hit with flap in wrong spot
   multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1 and device.multiball_locks.poseidon_lock.locked_balls == 0}: v_ball_1_locked
   multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 2 and device.multiball_locks.poseidon_lock.locked_balls == 0}: v_ball_2_locked
   multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1 and device.multiball_locks.poseidon_lock.locked_balls == 1}: v_ball_2_locked

@@ -321,8 +321,16 @@ sounds:
     volume: 1
     track: voice
     max_queue_time: 2s
-
-  snd_sledge_riff_pre_0:
+  v_hydra_battle_victorious:
+    file: cmgg2_hydra_battle_victorious.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 1s
+  v_hydra_escped:
+    file: cmgg2_hydra_escaped.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 1s
     file: sledge_riff_pre_0.ogg
 #    volume: 1
     track: music
@@ -384,8 +392,8 @@ sounds:
     track: music
   snd_bonus_riff3:
     file: bonus_riff3.ogg
-    volume: 0.4
-    track: sfx
+    volume: 0.9
+    track: music
     ducking:
       target: music
       delay: 0 sec

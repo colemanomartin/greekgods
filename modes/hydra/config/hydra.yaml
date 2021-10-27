@@ -334,7 +334,7 @@ slide_player:
       background_color: black
       widgets:
       - type: text
-        text: HYDRA DEFEATED
+        text: HYDRA DEFEATED!
         font_name: greekgods3
         color: red
         y: 65%
@@ -351,3 +351,7 @@ slide_player:
         anchor_x: center
         anchor_y: center
         font_size: 80
+
+  sound_player:
+    logicblock_hydra_health_complete: v_hydra_battle_victorious
+    hydra_got_away: v_hydra_escped
