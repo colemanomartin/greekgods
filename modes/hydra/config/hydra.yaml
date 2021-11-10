@@ -12,7 +12,8 @@
 # Things to fix: Don't start if a ball is locked. If one ball is locked somewhere
 # When started divert the ramp and hold it diverted away from the lock. Might run
 # out of balls in this circumstance.
-
+#Notes: Hades game does not award an extra ball on its own, but winning hydra may push playter over edge.
+#Winning hydra does actuate the knocker though. 
 mode:
   priority: 700
   start_events:

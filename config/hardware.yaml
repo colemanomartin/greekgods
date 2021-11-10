@@ -299,7 +299,9 @@ keyboard:
   g:
     event: logicblock_base_all_pops_complete #All pops hit, awards goddess if elgible.
   h:
-    switch: s_hydra 
+    switch: s_hydra
+  f:
+    event: key_f_pressed
   1:
     event: key_1_pressed
   2:
@@ -367,7 +369,7 @@ coils:
     #PD 16 lower playfield Address = 5 Left  Bank B = 1 bottom mechs
     c_shooter_lane_eject:
         number: A5-B1-0
-        default_pulse_ms: 30 #default 25 pp 100% #Pulse power works with autofire rule but not pulse issued by eject.
+        default_pulse_ms: 42 # was using 30 at 0.8
         default_pulse_power: 0.8
     c_trough_eject:
         number: A5-B1-1
@@ -519,7 +521,7 @@ coils:
         default_hold_power: 0.2 # 0=0% 4=50% (1 ms on 1 ms off ) 8=100%
     c_u_trough_eject:
         number: A6-B1-3
-        default_pulse_ms: 12
+        default_pulse_ms: 9
     c_u_left_slingshot:
         number: A6-B1-6
         label:

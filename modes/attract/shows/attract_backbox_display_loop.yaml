@@ -255,7 +255,7 @@
         anchor_x: left
         z: 1
       - type: text
-        text: "150,000      Extra Ball"
+        text: "200,000      Extra Ball"
         font_name: greekgods3
         font_size: 130
         color: blue
@@ -265,7 +265,7 @@
         anchor_x: left
         z: 1
       - type: text
-        text: "300,000      Extra Ball"
+        text: "400,000      Extra Ball"
         font_name: greekgods3
         font_size: 130
         color: blue
@@ -275,7 +275,7 @@
         anchor_x: left
         z: 1
       - type: text
-        text: "600,000      Extra Ball"
+        text: "700,000      Extra Ball"
         font_name: greekgods3
         font_size: 130
         color: blue
@@ -415,7 +415,7 @@
         direction: bottom
       target: score_lcd
 
-- duration: 6
+- duration: 8
   slides:
     credit_slide:
       target: score_lcd
@@ -435,8 +435,18 @@
         font_name: greekgods3
         font_size: 120
         color: blue
-        y: 50%
+        y: 70%
         x: 20%
+        anchor_y: center
+        anchor_x: left
+        z: 3
+      - type: text
+        text: "During Game Play \nHolding Knee Switch\nGives Player Control\nOf Upper Slingshots"
+        font_name: greekgods3
+        font_size: 120
+        color: blue
+        y: 40%
+        x: 14%
         anchor_y: center
         anchor_x: left
         z: 3

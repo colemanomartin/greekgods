@@ -11,6 +11,13 @@ mode:
   priority: 100 # range 100-1M
 
 accruals:  # Has to live in base since field shuts down during mb
+  base_extra_ball_pending: #Used to see if an extra ball is pending
+    events: extra_ball_awarded
+    restart_events: ball_started{is_extra_ball}
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: false
+
   base_p_locking_engaged: #This remembers that p_locking_elgible has fired so that if ball is lost p_ramp_mb can start with next ball.
     events: p_locking_elgible
     restart_events:
@@ -289,7 +296,7 @@ coil_player:
       pulse_ms: 30
 
 queue_relay_player:
-  ball_ending{current_player.ball==3 and current_player.score >= 50000 and not device.accruals.base_visited_underworld.completed}:
+  ball_ending{current_player.ball==3 and current_player.score >= 50000 and not device.accruals.base_visited_underworld.completed and not device.accruals.base_extra_ball_pending.completed}: #and not is_extra_ball
     post: enter_hades_from_relay_player
     wait_for: mode_hades_bonus_game_stopping
 
@@ -657,6 +664,8 @@ variable_player:
 #    ramp_flap_player_variable:
 #      string: device.state_machines.ramp_flap.state
 #      action: set
+  key_f_pressed:
+    score: 50000
   logicblock_field_olympus_excitement_updated:
     o_excitement: # For animated bar graph of o area points
       int: device.counters.field_olympus_excitement.value * 21 # 55 - 300

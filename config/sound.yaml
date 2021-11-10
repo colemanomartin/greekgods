@@ -378,11 +378,11 @@ sounds:
     track: music
   snd_deadmansparty_riff:
     file: deadmansparty_riff.ogg
-    volume: 0.8
+    volume: 0.6
     track: music
   snd_deadmans_tail:
     file: deadmans_tail.ogg
-    volume: 0.8
+    volume: 0.6
     track: music
   snd_greymattershort1:
     file: greymattershort1.ogg
@@ -390,7 +390,7 @@ sounds:
     track: music
   snd_greymatterlong:
     file: greymatterlong.ogg
-#    volume: 1
+    volume: 0.7
     track: music
   snd_bonus_riff3:
     file: bonus_riff3.ogg

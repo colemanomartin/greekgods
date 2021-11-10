@@ -84,21 +84,21 @@ random_event_player:
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and not(mode.o_ramp_mb.active)}: #nothing locked, sis on left, no mb modes qualified or running
     events:
       award_10000_points: 5
-      award_light_p_lock: 60
+      award_light_p_lock: 35
       award_battle_hydra: 5
-      award_scoop_mb: 15
+      award_scoop_mb: 20
       award_goddess{device.sequences.base_aphrodite.completed==False}: 10
       award_super_spinner: 5
-      award_bug_game: 10
+      award_bug_game: 20
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, no mb modes qualified or running
     events:
       award_10000_points: 5
-      award_light_o_lock: 60
+      award_light_o_lock: 35
       award_battle_hydra: 5
-      award_scoop_mb: 15
+      award_scoop_mb: 20
       award_goddess{device.sequences.base_aphrodite.completed==False}: 10
       award_super_spinner: 5
-      award_bug_game: 10
+      award_bug_game: 25
 #These next 4 cover one mb mode running ready to swap running mode if needed
   timer_mystery_slide_number_complete{device.switches.s_sis_left.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on left, p_ramp_mb running & sis on correct side
     events:
@@ -108,7 +108,7 @@ random_event_player:
       award_goddess{device.sequences.base_aphrodite.completed==False}: 35
       award_extra_ball: 2
       award_super_spinner: 25
-      award_bug_game: 10
+      award_bug_game: 20
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and mode.p_ramp_mb.active and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, p_ramp_mb running but sis on wrong side
     events:
       award_50000_points: 10
