@@ -152,7 +152,7 @@ sudo pip3 install mpf-mc==0.52.1 --user
 
 *********EXPO *************
 10/21/21 currently on MPF v0.55.0-dev.50  mpf-mc 0.55.0.dev8
-upgraded to latest dev 
+upgraded to latest dev
 mpf-0.56.0.dev17 mpf-mc-0.56.0.dev1
 
 
@@ -248,7 +248,7 @@ To get to the repo from ssh have to generate a local ssh public and private key 
     xclip -sel clip < ~/.ssh/id_rsa.pub   This copies the key to the clipboard so the key can be pasted into the account, Title the key for the name of the compter
     ssh -T git@github.com  should verify that a SSH connection exists
 
-    git remote -v  shows the web location of the account pre...
+    git remote -v  shows the web location of the account pre... (must be in the local home directory for it to work gg/greekgods)
        origin	https://github.com/colemanomartin/greekgods (fetch)
        origin	https://github.com/colemanomartin/greekgods (push)
     git remote set-url origin git@github.com:colemanomartin/greekgods.git     moves it over to a ssh location
