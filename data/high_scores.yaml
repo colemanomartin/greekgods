@@ -3,9 +3,6 @@ score:
   - FUT
   - 931425
 - !!python/tuple
-  - UUU
-  - 862400
-- !!python/tuple
   - STI
   - 575200
 - !!python/tuple
@@ -14,12 +11,6 @@ score:
 - !!python/tuple
   - ZAC
   - 363225
-- !!python/tuple
-  - AAA
-  - 355750
-- !!python/tuple
-  - M
-  - 337525
 - !!python/tuple
   - SSD
   - 294525
@@ -32,3 +23,12 @@ score:
 - !!python/tuple
   - MSB
   - 245150
+- !!python/tuple
+  - COM
+  - 29675
+- !!python/tuple
+  - EJM
+  - 20000
+- !!python/tuple
+  - KJA
+  - 15000

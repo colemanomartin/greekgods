@@ -27,15 +27,15 @@ high_score:
   # set the defaults
   defaults:
     score:
-      - MPF: 100000
-      - BRI: 90000
-      - JAN: 80000
-      - QUI: 70000
-      - MAR: 60000
-      - JOH: 50000
-      - ELI: 40000
-      - MIK: 30000
-      - ANT: 20000
+      - FUT: 931425
+      - STI: 575200
+      - RMM: 432750
+      - ZAC: 363225
+      - SSD: 294525
+      - JDM: 262425
+      - COM: 247025
+      - MSB: 245150
+      - EJM: 20000
       - KJA: 15000
       - CAM: 10000
 #    sisyphus_completions:
