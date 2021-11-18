@@ -29,15 +29,14 @@ high_score:
     score:
       - FUT: 931425
       - STI: 575200
+      - KEL: 516625
       - RMM: 432750
       - ZAC: 363225
       - SSD: 294525
       - JDM: 262425
       - COM: 247025
       - MSB: 245150
-      - EJM: 20000
-      - KJA: 15000
-      - CAM: 10000
+      - JAN: 20000
 #    sisyphus_completions:
 #      - COM: 10
 # optional: change the slides (you can omit all the following)
