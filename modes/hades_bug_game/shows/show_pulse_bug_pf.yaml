@@ -21,8 +21,6 @@
     l_mouth_b:
       color: 000000
       fade: 10ms
-    l_u_left_ss_red: black
-    l_u_right_ss_red: black
 
 - duration: 10
   lights:
@@ -45,10 +43,6 @@
       color: ff0000 #000000
       fade: 1s
 
-- duration: 1
-  lights:
-    l_u_left_ss_red: white
-    l_u_right_ss_red: white
 
 - duration: 1
   lights:
@@ -70,8 +64,6 @@
     l_mouth_b:
       color: 000000
       fade: 10ms
-    l_u_left_ss_red: black
-    l_u_right_ss_red: black
 
 - duration: 10
   lights:
@@ -94,10 +86,6 @@
       color: ff0000 #000000
       fade: 1s
 
-- duration: 1
-  lights:
-    l_u_left_ss_red: white
-    l_u_right_ss_red: white
 
 - duration: 1
   lights:
@@ -119,8 +107,6 @@
     l_mouth_b:
       color: 000000
       fade: 10ms
-    l_u_left_ss_red: black
-    l_u_right_ss_red: black
 
 - duration: 10
   lights:
@@ -143,10 +129,6 @@
       color: ff0000 #000000
       fade: 1s
 
-- duration: 1
-  lights:
-    l_u_left_ss_red: white
-    l_u_right_ss_red: white
 
 - duration: 1
   lights:
@@ -168,8 +150,6 @@
     l_mouth_b:
       color: 000000
       fade: 10ms
-    l_u_left_ss_red: black
-    l_u_right_ss_red: black
 
 - duration: 10
   lights:
@@ -192,10 +172,6 @@
       color: ff0000 #000000
       fade: 1s
 
-- duration: 1
-  lights:
-    l_u_left_ss_red: white
-    l_u_right_ss_red: white
 
 - duration: 1
   lights:
@@ -217,5 +193,3 @@
     l_mouth_b:
       color: 0000ff
       fade: 10ms
-    l_u_left_ss_red: black
-    l_u_right_ss_red: black

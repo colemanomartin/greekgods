@@ -377,7 +377,7 @@ lights:
     y: 0.5594202898550724
   l_scoop_tongue:  #Driver 1 header 6
     number: 1-24-25-26 #4 pirahana flasher
-    type: rgb #Old version was grb that why colors were funny on some mode. 
+    type: rgb #Old version was grb that why colors were funny on some mode.
     subtype: led
     default_on_color: white
     platform_settings:
@@ -1093,35 +1093,38 @@ lights:
     tags: insert, right_orbit
     x: 0.8705913490174931
     y: 0.477890119572516
+
+# HUNT THESE DOWN AND REMOVE FROM SHOWS
+#
 #underworld driver lights (does not include rivers)
-  l_u_left_ss_red:
-    number: c_u_left_ss_red
-    platform: drivers
-    default_on_color: white
-    tags: hades
-    x: 0.25
-    y: 0.71
-  l_u_left_ss_white:
-    number: c_u_left_ss_white
-    platform: drivers
-    default_on_color: white
-    tags: hades
-    x: 0.25
-    y: 0.66
-  l_u_right_ss_red:
-    number: c_u_right_ss_red
-    platform: drivers
-    default_on_color: white
-    tags: hades
-    x: 0.65
-    y: 0.71
-  l_u_right_ss_white:
-    number: c_u_right_ss_white
-    platform: drivers
-    default_on_color: white
-    tags: hades
-    x: 0.65
-    y: 0.66
+#  l_u_left_ss_red:
+#    number: c_u_left_ss_red
+#    platform: drivers
+#    default_on_color: white
+#    tags: hades
+#    x: 0.25
+#    y: 0.71
+#  l_u_left_ss_white:
+#    number: c_u_left_ss_white
+#    platform: drivers
+#    default_on_color: white
+#    tags: hades
+#    x: 0.25
+#    y: 0.66
+#  l_u_right_ss_red:
+#    number: c_u_right_ss_red
+#    platform: drivers
+#    default_on_color: white
+#    tags: hades
+#    x: 0.65
+#    y: 0.71
+#  l_u_right_ss_white:
+#    number: c_u_right_ss_white
+#    platform: drivers
+#    default_on_color: white
+#    tags: hades
+#    x: 0.65
+#    y: 0.66
 
 #flippers
 #right inlane serial leds

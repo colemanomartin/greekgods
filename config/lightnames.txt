@@ -99,10 +99,6 @@
   l_olympus_spinner:
   l_right_orbit_triangle:
 
-  l_u_left_ss_red:
-  l_u_left_ss_white:
-  l_u_right_ss_red:
-  l_u_right_ss_white:
   l_mouth_a:
   l_mouth_b:
   l_mouth_c:

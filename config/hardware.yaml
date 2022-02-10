@@ -101,10 +101,10 @@ switches:
     #    number: 0/1/0  #    Switch available
     #    tags: earth_pf_active
     s_poseidon_lock_proximal: #proximal to release
-        number: 0/1/2
+        number: 0/1/1
         type: NC #opto switches are normally closed, become open when active
     s_poseidon_lock_distal: #distal to release
-        number: 0/1/1
+        number: 0/1/2
         type: NC #opto switches are normally closed, become open when active
     s_poseidon_right_slingshot:
         number: 0/1/3
@@ -209,25 +209,34 @@ switches:
         tags: earth_pf_active
         type: NC #opto switches are normally closed, become open when active
 
-    s_u_left_slingshot:
-        number: 4/1/5 # SW-16 board at address 3, Bank A=0 B=1, Switch n
-        label:
-        tags: visible_hades #, slingshot
+    s_u_right_ear_0: #Proximal opto
+        number: 4/0/0
+        type: NC
+        tags: hades_pf_active
+    s_u_right_ear_1:
+        number: 4/0/1
+        type: NC
+        tags: hades_pf_active
+    s_u_right_ear_2:
+        number: 4/0/2
+        type: NC
+        tags: hades_pf_active
+    s_u_right_ear_3: #Distal opto
+        number: 4/0/3
+        type: NC
+        tags: hades_pf_active
+    s_u_right_target:
+        number: 4/0/4
+        tags: hades_pf_active, visible_hades
     s_u_right_slingshot:
         number: 4/0/5
         label:
         tags: visible_hades #,slingshot #for some reason I had once commented out slingshot
-    s_u_left_target:
-        number: 4/1/4
-        tags: hades_pf_active, visible_hades
-    s_u_middle_target:
-        number: 4/1/6
-        tags: hades_pf_active, visible_hades
-    s_u_right_target:
-        number: 4/0/4
-        tags: hades_pf_active, visible_hades
     s_u_trough_1:
-        number: 4/0/6 # SW-16 board 3, Bank A, Switch 6
+        number: 4/0/6 # SW-16 board 4, Bank A, Switch 6
+        type: NC #opto switches are normally closed, become open when active
+    s_u_right_ear_midline:
+        number: 4/0/7 # SW-16 board 4, Bank A, Switch 7
         type: NC #opto switches are normally closed, become open when active
     s_u_left_ear_0: #Proximal opto
         number: 4/1/0
@@ -245,22 +254,20 @@ switches:
         number: 4/1/3
         type: NC
         tags: hades_pf_active
-    s_u_right_ear_0: #Proximal opto
-        number: 4/0/0
+    s_u_left_target:
+        number: 4/1/4
+        tags: hades_pf_active, visible_hades
+    s_u_left_slingshot:
+        number: 4/1/5 # SW-16 board at address 3, Bank A=0 B=1, Switch n
+        label:
+        tags: visible_hades #, slingshot
+    s_u_middle_target:
+        number: 4/1/6
+        tags: hades_pf_active, visible_hades
+    s_u_left_ear_midline:
+        number: 4/1/7
         type: NC
-        tags: hades_pf_active
-    s_u_right_ear_1:
-        number: 4/0/1
-        type: NC
-        tags: hades_pf_active
-    s_u_right_ear_2:
-        number: 4/0/2
-        type: NC
-        tags: hades_pf_active
-    s_u_right_ear_3: #Distal opto
-        number: 4/0/3
-        type: NC
-        tags: hades_pf_active
+        tags: hades_pf_active, visible_hades
 
 
 keyboard:
@@ -480,55 +487,7 @@ coils:
         default_pulse_ms: 65
         default_hold_power: 0.4 #Has to have a hold power to be used as a diverter.
 
-    #PD 16 Address = 6 Hades Bank 0 = A running 12V
-    c_u_left_ss_red:
-        number: A6-B0-1
-        label: # left corner flasher
-        max_hold_power: 1.0
-        tags:
-        default_pulse_ms: 300
-        allow_enable: true
-    c_u_right_ss_red:
-        number: A6-B0-0
-        label: # right corner flasher
-        max_hold_power: 1.0
-        tags:
-        default_pulse_ms: 300
-        allow_enable: true
-    c_u_left_ss_white:
-        number: A6-B0-7
-        label: # left sling shot flasher
-        max_hold_power: 1.0
-        tags:
-        default_pulse_ms: 300
-        allow_enable: true
-    c_u_right_ss_white:
-        number: A6-B0-4
-        label: # right sling shot flasher
-        max_hold_power: 1.0
-        tags:
-        default_pulse_ms: 300
-        allow_enable: true
-
     #PD 16 Address = 6 Hades Bank 1 = B running 48V
-    c_u_flipper_left:
-        number: A6-B1-5  # Board 0, Bank 0=A, output 4
-        default_pulse_ms: 13 # Give it a 20 ms pulse then off (effective range 14-100)
-        default_hold_power: 0.2 # 0=0% 4=50% (1 ms on 1 ms off ) 8=100%
-    c_u_flipper_right:
-        number: A6-B1-7  # Board 0, Bank 0=A, Output n
-        default_pulse_ms: 13
-        default_hold_power: 0.2 # 0=0% 4=50% (1 ms on 1 ms off ) 8=100%
-    c_u_trough_eject:
-        number: A6-B1-3
-        default_pulse_ms: 9
-    c_u_left_slingshot:
-        number: A6-B1-6
-        label:
-        tags:
-#        default_pulse_power: 0.6 # was 1
-        default_pulse_ms: 5
-        default_recycle: true
     c_u_right_slingshot:
         number: A6-B1-0
         label:
@@ -536,26 +495,50 @@ coils:
 #        default_pulse_power: 0.6 # was 1
         default_pulse_ms: 5
         default_recycle: true
-    c_u_right_magnet:
-        number: A6-B1-2
-        label:
-        tags:
-        default_pulse_ms: 100
-        default_hold_power: 0.3 # 0=0% 4=50% (1 ms on 1 ms off ) 8=100%
-        default_recycle: true #adds a short delay before allowing a re-fire
-    c_u_left_magnet:
-        number: A6-B1-4
-        label:
-        tags:
-        default_pulse_ms: 100
-        default_hold_power: 0.3 # 0=0% 4=50% (1 ms on 1 ms off ) 8=100%
-        default_recycle: true #adds a short delay before allowing a re-fire
     c_u_knocker:
         number: A6-B1-1
         label:
         tags:
         default_pulse_ms: 3
         default_recycle: false
+    c_u_flipper_right_main:
+        number: A6-B1-2  # Board 0, Bank 0=A, Output n
+        default_pulse_ms: 13
+    c_u_flipper_right_hold:
+        number: A6-B1-3
+        allow_enable: true
+    c_u_right_magnet:
+        number: A6-B1-4
+        label:
+        tags:
+        default_pulse_ms: 100
+        default_hold_power: 0.3 # 0=0% 4=50% (1 ms on 1 ms off ) 8=100%
+        default_recycle: true #adds a short delay before allowing a re-fire
+
+    #PD 16 Address = 6 Hades Bank 0 = A running 48V
+    c_u_left_magnet:
+        number: A6-B0-0
+        label:
+        tags:
+        default_pulse_ms: 100
+        default_hold_power: 0.3 # 0=0% 4=50% (1 ms on 1 ms off ) 8=100%
+        default_recycle: true #adds a short delay before allowing a re-fire
+    c_u_flipper_left_main:
+        number: A6-B0-1  # Board 0, Bank 0=A, output 4
+        default_pulse_ms: 13 # Give it a 20 ms pulse then off (effective range 14-100)
+    c_u_flipper_left_hold:
+        number: A6-B0-2
+        allow_enable: true
+    c_u_left_slingshot:
+        number: A6-B0-3
+        label:
+        tags:
+#        default_pulse_power: 0.6 # was 1
+        default_pulse_ms: 5
+        default_recycle: true
+    c_u_trough_eject:
+        number: A6-B0-4
+        default_pulse_ms: 9
 
 servos: #http://docs.missionpinball.org/en/dev/mechs/diverters/servo_as_diverter.html
   ramp_servo:
@@ -1141,7 +1124,8 @@ flippers:
   u_left_flipper:
     debug: true
     playfield: hades_pf
-    main_coil: c_u_flipper_left
+    main_coil: c_u_flipper_left_main
+    hold_coil: c_u_flipper_left_hold
     activation_switch: s_left_flipper
     enable_events: mode_hades_bonus_game_started, mode_hades_bug_game_started
     disable_events: mode_hades_bonus_game_stopped, mode_hades_bug_game_stopped
@@ -1149,7 +1133,8 @@ flippers:
   u_right_flipper:
     debug: true
     playfield: hades_pf
-    main_coil: c_u_flipper_right
+    main_coil: c_u_flipper_right_main
+    hold_coil: c_u_flipper_right_hold
     activation_switch: s_right_flipper
     enable_events: mode_hades_bonus_game_started, mode_hades_bug_game_started
     disable_events: mode_hades_bonus_game_stopped, mode_hades_bug_game_stopped

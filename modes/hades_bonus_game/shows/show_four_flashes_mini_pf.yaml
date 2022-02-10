@@ -21,8 +21,6 @@
     l_mouth_b:
       color: 000000
       fade: 10ms
-    l_u_left_ss_red: black
-    l_u_right_ss_red: black
 
 - duration: 1
   lights:
@@ -44,8 +42,6 @@
     l_mouth_b:
       color: ff0000 #000000
       fade: 30ms
-    l_u_left_ss_red: ff
-    l_u_right_ss_red: ff
 
 
 - duration: 9
@@ -68,8 +64,6 @@
     l_mouth_b:
       color: 000000
       fade: 10ms
-    l_u_left_ss_red: black
-    l_u_right_ss_red: black
 
 - duration: 1
   lights:
@@ -91,8 +85,6 @@
     l_mouth_b:
       color: ff0000 #000000
       fade: 30ms
-    l_u_left_ss_red: ff
-    l_u_right_ss_red: ff
 
 
 - duration: 9
@@ -115,8 +107,6 @@
     l_mouth_b:
       color: 000000
       fade: 10ms
-    l_u_left_ss_red: black
-    l_u_right_ss_red: black
 
 - duration: 1
   lights:
@@ -138,8 +128,6 @@
     l_mouth_b:
       color: ff0000 #000000
       fade: 30ms
-    l_u_left_ss_red: ff
-    l_u_right_ss_red: ff
 
 
 - duration: 9
@@ -162,8 +150,6 @@
     l_mouth_b:
       color: 000000
       fade: 10ms
-    l_u_left_ss_red: black
-    l_u_right_ss_red: black
 
 - duration: 1
   lights:
@@ -185,8 +171,6 @@
     l_mouth_b:
       color: ff0000 #000000
       fade: 30ms
-    l_u_left_ss_red: ff
-    l_u_right_ss_red: ff
 
 
 - duration: 20
@@ -209,5 +193,3 @@
     l_mouth_b:
       color: 000000
       fade: 10ms
-    l_u_left_ss_red: black
-    l_u_right_ss_red: black

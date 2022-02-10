@@ -29,7 +29,8 @@ mode:
 #    - ball_hold_hades_door_held_ball
 #     - mode_bonus_starting # enter_hades_from_bonus_mode
      - enter_hades_from_relay_player #posted by base
-#    - mode_base_started
+     - key_1_pressed
+#     - mode_base_started
 #     - s_ramp_opto_active     #Remove when testing done
   stop_events:
     - hades_final_show_finished
@@ -543,14 +544,6 @@ show_player:
   accelerate_rivers:
     show_pulse_leds_red:
       speed: 8 #Default loops=-1 meaning until the calling mode ends
-  s_u_left_slingshot_active:
-    show_hades_left_ss:
-      speed: 20
-      loops: 0
-  s_u_right_slingshot_active:
-    show_hades_right_ss:
-      speed: 20
-      loops: 0
 #  s_u_left_target_active:
 #    show_hades_left_target:
 #      speed: 20
@@ -564,22 +557,10 @@ show_player:
 #      speed: 20
 #      loops: 0
   #Next 4 shows give a 1 sec flash when a grab event happens
-  diverter_grab_a_activating:
-    show_hades_left_ss_red:
-      speed: 1
-      loops: 0
-  diverter_grab_b_activating:
-    show_hades_left_ss_red:
-      speed: 1
-      loops: 0
-  diverter_grab_c_activating:
-    show_hades_right_ss_red:
-      speed: 1
-      loops: 0
-  diverter_grab_d_activating:
-    show_hades_right_ss_red:
-      speed: 1
-      loops: 0
+#  diverter_grab_a_activating:
+#  diverter_grab_b_activating:
+#  diverter_grab_c_activating:
+#  diverter_grab_d_activating:
   #Next 4 shows give a red flash with an accelerate triggering event but flash unnecessarily if time out prevents a trigger
 #  left_river_top_to_bottom_hit{device.accruals.mag_holds.completed}:
 #    show_hades_left_ss_red:
@@ -710,10 +691,3 @@ light_player:
   timer_river_d_complete:
     l_mouth_d:
       color: black
-  hades_ball_awarded:
-    l_u_left_ss_red:
-      color: white
-      fade: 0 ms
-    l_u_right_ss_red:
-      color: white
-      fade: 0 ms

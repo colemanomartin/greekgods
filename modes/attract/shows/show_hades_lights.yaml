@@ -10,14 +10,6 @@
       color: white
     l_mouth_d:
       color: white
-    l_u_left_ss_red:
-      color: 00
-    l_u_left_ss_white:
-      color: 00
-    l_u_right_ss_red:
-      color: 00
-    l_u_right_ss_white:
-      color: 00
 - duration: 1
   lights:
     l_mouth_a:
@@ -28,14 +20,6 @@
       color: red
     l_mouth_d:
       color: red
-    l_u_left_ss_red:
-      color: ff
-    l_u_left_ss_white:
-      color: ff
-    l_u_right_ss_red:
-      color: 00
-    l_u_right_ss_white:
-      color: 00
 - duration: 1
   lights:
     l_mouth_a:
@@ -46,14 +30,6 @@
       color: green
     l_mouth_d:
       color: green
-    l_u_left_ss_red:
-      color: 00
-    l_u_left_ss_white:
-      color: 00
-    l_u_right_ss_red:
-      color: ff
-    l_u_right_ss_white:
-      color: ff
 - duration: 1
   lights:
     l_mouth_a:
@@ -64,14 +40,6 @@
       color: blue
     l_mouth_d:
       color: blue
-    l_u_left_ss_red:
-      color: ff
-    l_u_left_ss_white:
-      color: 00
-    l_u_right_ss_red:
-      color: ff
-    l_u_right_ss_white:
-      color: 00
 - duration: 1
   lights:
     l_mouth_a:
@@ -82,11 +50,3 @@
       color: black
     l_mouth_d:
       color: black
-    l_u_left_ss_red:
-      color: 00
-    l_u_left_ss_white:
-      color: ff
-    l_u_right_ss_red:
-      color: 00
-    l_u_right_ss_white:
-      color: ff

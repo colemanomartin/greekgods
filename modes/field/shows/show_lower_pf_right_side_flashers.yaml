@@ -2,10 +2,6 @@
 #Flashes the lights under olympus status bar with each hit
 - duration: 1
   lights:
-    l_u_right_ss_red:
-      color: white
-    l_u_right_ss_white:
-      color: white
     l_mouth_c:
       color: white
     l_mouth_d:

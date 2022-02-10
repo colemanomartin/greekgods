@@ -18,17 +18,17 @@ score:
   - SSD
   - 294525
 - !!python/tuple
-  - COM
-  - 279725
-- !!python/tuple
   - JDM
   - 262425
-- !!python/tuple
-  - COM
-  - 261725
 - !!python/tuple
   - COM
   - 247025
 - !!python/tuple
   - MSB
   - 245150
+- !!python/tuple
+  - AAA
+  - 224675
+- !!python/tuple
+  - AAA
+  - 30550
