@@ -1,7 +1,7 @@
 #config_version=5
 # This mode runs the scoop and balldrop. It should be running at all time.
 # It also flashes the lighting and drop target tongue on eject. This could propbably live in base.
-# Fix: IF BB was raised on new ball start dont restart the timer when something needs the scoop exposed to start a mode.
+#
 mode:
   priority: 10000 # range 100-1M
   start_events:
@@ -10,49 +10,47 @@ mode:
 #  stop_events:
 #    - scoop_hold_open
 timers:
-  scoop_drop: # used to raise ball block after every drop except when keeping door open
+  scoop_drop: # used to raise ball block if 1. locking balls for goddess MB or 2. There is a pending mode activation
     start_value: 2
     end_value: 0
     direction: down
     tick_interval: 1s
     control_events:
-      - event: mode_bb_down_started #Not sure when this would come up
-        action: pause
-      - event: balldevice_bd_scoop_ball_eject_success{mode.bb_down.active == False} #ball_waiting_to_eject_from_scoop_done
+      - event: balldevice_bd_scoop_ball_eject_success{device.shots.ormb_light_o_lock.state_name=='flashing'} #o_ramp_mb wants a light the lock shot
         action: restart #reset to starting value and start
-      - event: ballblock_hit{mode.bb_down.active == False} #Start the timer to raise ballblock when mode bb_down is not running.
-        action: restart #reset to starting value and start
-      - event: timer_scoop_drop_complete #Reset timer when it counts down to 0
-        action: reset #Goes back to starting value
-      - event: mode_open_hades_door_starting
-        action: pause
-      - event: pause_ballblock_timer #broadcasted when P and O mb ready to start
-        action: pause
-      - event: mode_scoop_mb_started #Hold open for jackpot shots
-        action: pause
-      - event: mode_bb_down_stopped #Added 11/28/20
-        action: restart
-      - event: o_locking_elgible #Reset and start timer (if not already running) to raise ball block in case other lock qualifies
-        action: restart
-      - event: p_locking_elgible #Reset and start timer (if not already running) to raise ball block in case other lock qualifies
-        action: restart
-      - event: resume_ballblock_timer #broadcasted when P and O MB starts
-        action: start
-      - event: ball_waiting_to_eject_from_scoop{mode.bb_down.active == False}
-        action: jump
-        value: 5
-      - event: invite_a_scoop_shot_10s #Not currently being used
-        action: jump
-        value: 10
-      - event: jump_ballblock_timer_to_1 #used to raise quickly when using BB as a shot by ramp_mb modes
-        action: jump
-        value: 1
-      - event: jump_ballblock_timer_to_0 #used to raise imeadiately when using BB as a shot by ramp_mb modes
-        action: jump
-        value: 0
-      - event: goddess_need_rapid_bb_reset_hit #in goddess_mb want to keep balls out of scoop. (Uses ballblock shot from base which is deactivated for ejects.)
-        action: jump
-        value: 0
+#      - event: ball_block_hit{mode.bb_down.active == False} #Start the timer to raise ball_block when mode bb_down is not running.
+#        action: restart #reset to starting value and start
+#      - event: timer_scoop_drop_complete #Reset timer when it counts down to 0
+#        action: reset #Goes back to starting value
+#      - event: mode_open_hades_door_starting
+#        action: pause
+#      - event: pause_ball_block_timer #broadcasted when P and O mb ready to start
+#        action: pause
+#      - event: mode_scoop_mb_started #Hold open for jackpot shots
+#        action: pause
+#      - event: mode_bb_down_stopped #Added 11/28/20
+#        action: restart
+#      - event: o_locking_elgible #Reset and start timer (if not already running) to raise ball block in case other lock qualifies
+#        action: restart
+#      - event: p_locking_elgible #Reset and start timer (if not already running) to raise ball block in case other lock qualifies
+#        action: restart
+#      - event: resume_ball_block_timer #broadcasted when P and O MB starts
+#        action: start
+#      - event: ball_waiting_to_eject_from_scoop{mode.bb_down.active == False}
+#        action: jump
+#        value: 5
+#      - event: invite_a_scoop_shot_10s #Not currently being used
+#        action: jump
+#        value: 10
+#      - event: jump_ball_block_timer_to_1 #used to raise quickly when using BB as a shot by ramp_mb modes
+#        action: jump
+#        value: 1
+#      - event: jump_ball_block_timer_to_0 #used to raise imeadiately when using BB as a shot by ramp_mb modes
+#        action: jump
+#        value: 0
+#      - event: goddess_need_rapid_bb_reset_hit #in goddess_mb want to keep balls out of scoop. (Uses ball_block shot from base which is deactivated for ejects.)
+#        action: jump
+#        value: 0
   sweep_hold:
     end_value: 1
     tick_interval: 200ms
@@ -83,7 +81,7 @@ ball_holds:
     hold_devices: bd_scoop
     balls_to_hold: 1
     enable_events: mystery_hole_received_ball_hit
-    release_all_events: mode_mystery_stopping # mystery_solved stops mystery mode and triggers this 
+    release_all_events: mode_mystery_stopping # mystery_solved stops mystery mode and triggers this
     disable_events: mode_mystery_stopping
 #  super_spinner_hold:  THIS WORKS BUT INTERFERS WITH MYSTERY SHOW WHEN ENTERING FROM MYSTERY
 #    source_playfield: earth_pf
@@ -104,7 +102,7 @@ ball_holds:
 coil_player:
   balldevice_bd_scoop_ball_eject_attempt:
 #  ball_waiting_to_eject_from_scoop:
-    c_ballblock_fall:
+    c_ball_block_fall:
       action: pulse
 show_player:
   balldevice_bd_scoop_ball_eject_attempt:

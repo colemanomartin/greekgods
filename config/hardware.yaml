@@ -114,7 +114,7 @@ switches:
         number: 0/1/5
         tags: earth_pf_active
         type: NC #opto switches are normally closed, become open when active
-    s_ballblock:
+    s_ball_block:
         number: 0/1/6
 #        tags: earth_pf_active
     s_scoop_chamber:
@@ -439,13 +439,13 @@ coils:
         tags:
         default_pulse_ms: 10
         default_hold_power: 0.3
-    c_ballblock_rise:
+    c_ball_block_rise:
         number: A3-B0-6
         label:
         tags:
         default_pulse_ms: 20 #was 15 might need patter.
         default_hold_power: 0.3
-    c_ballblock_fall:
+    c_ball_block_fall:
         number: A3-B0-7
         label:
         tags:
@@ -563,25 +563,22 @@ drop_targets:
   star_proximal:
     switch: s_drop_target_proximal
     playfield: earth_pf
-  ballblock:
+  ball_block:
     playfield: earth_pf
-    switch: s_ballblock
-    reset_coil: c_ballblock_rise
-    knockdown_coil: c_ballblock_fall
-    knockdown_events: game_will_end
-    reset_events: #Also reset in field when field shutting down for ball drain
-      - game_started #ball_started
-      - ball_searching
-      - field_says_raise_bb #used when ball drains on field after field invited a shot
-#      - machine_reset_phase_3 removed 4-19-2020
+    switch: s_ball_block
+    reset_coil: c_ball_block_rise
+    knockdown_coil: c_ball_block_fall
+    knockdown_events:
+      - game_will_end
+#      - mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2} #Ready to lock a ball
+#maybe in bonus mode knock down so if players switch there is a fresh state?
+    reset_events:
+      - player_shot_ormb_light_o_lock_enabled{device.shots.ormb_light_o_lock.state_name=='flashing'} #Enabled and ready for the activation shot
+#      - ball_searching
+#      - field_says_raise_bb #used when ball drains on field after field invited a shot
       - timer_scoop_drop_complete # this timer resets to very short when locking ball in subway
     ball_search_order: 0 # dont include in ball search
     debug: true
-#    ignore_switch_ms: 1000
-#     enable_keep_up_events: keep_up
-#     disable_keep_up_events: no_more_keep_up
-
-#    #can use enable_keep_up_events with a low hold power to keep the target up when hit
 
 
 drop_target_banks:

@@ -76,7 +76,7 @@ shots:
     reset_events: multiball_lock_poseidon_lock_locked_ball
     disable_events: prmb_light_p_lock_hit
     hit_events:
-      - ballblock_hit
+      - ball_block_hit
     debug: true
   prmb_start_shot:
     playfield: earth_pf
@@ -100,7 +100,7 @@ variable_player:
     score: 2000
 
 timers:
-  prmb_allow_ballblock_to_settle: # used to allow ball block to register hit and activate timer in mode_scoop so timer can be paused. Replace this timer with show when appropriate
+  prmb_allow_ball_block_to_settle: # used to allow ball block to register hit and activate timer in mode_scoop so timer can be paused. Replace this timer with show when appropriate
     #This timer was used when the scoop shot activated the multiball.  But this presented a problem for qualifying the other ramp's locks and was removed.
     start_value: 1
     end_value: 0
@@ -111,8 +111,8 @@ timers:
         action: restart #reset to starting value and start
 
 event_player:
-  timer_prmb_allow_ballblock_to_settle_complete: pause_ballblock_timer #invite scoop shot
-  prmb_light_p_lock_hit: jump_ballblock_timer_to_1 #Raise the BB fast by jumping timer to 1
+  timer_prmb_allow_ball_block_to_settle_complete: pause_ball_block_timer #invite scoop shot
+  prmb_light_p_lock_hit: jump_ball_block_timer_to_1 #Raise the BB fast by jumping timer to 1
   poseidon_mech_hit: bonus_pop #used by counter in base for bonus calculation
   multiball_lock_poseidon_lock_full: force_bb_down
   multiball_poseidon_ramp_started: release_bb_override #commented out 11/15/20 because when next ball starts ball block raises #Reinstated 11/27 because it does not raise until scoop hit at next ball (keeping down for super spinner presumably)
@@ -120,7 +120,7 @@ event_player:
 show_player:
   #Things to do when starting
   mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and not device.accruals.prmb_light_p_lock_already_hit.completed}: #mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls==0}:
-    show_attention_ballblock:
+    show_attention_ball_block:
       speed: 4
       sync_ms: 0
       show_tokens:
@@ -134,7 +134,7 @@ show_player:
         color2: black
   #Things to do when enable the lock shot hit
   prmb_light_p_lock_hit: #player has hit qualifying shot Here is where the locks are lit and arrow directs player to shoot ramp
-    show_attention_ballblock:
+    show_attention_ball_block:
       action: stop
     show_swirl_left_spk_blue:
       speed: 10

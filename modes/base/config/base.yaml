@@ -434,7 +434,7 @@ shots:
     restart_events: show_white_all_pops_x5_finished_playing
     show_tokens:
       leds: l_poseidon_pop
-  ballblock: #records hit to the ball block drop target. control of the drop is via bd events in mode scoop.
+  ball_block: #records hit to the ball block drop target. control of the drop is via bd events in mode scoop.
     enable_events:
       - mode_base_started
       #- mode_hades_door_stopping
@@ -443,7 +443,7 @@ shots:
       - mode_open_hades_door_starting
       - ball_waiting_to_eject_from_scoop #Dont count a hit if machine drops it as part of eject sequence
     playfield: earth_pf
-    switches: s_ballblock
+    switches: s_ball_block
   base_scoop_from_pf: #This logs hits only when the scoop receives the ball from the front. Alternatively might be able to code this using delay_switch
     playfield: earth_pf
     profile: one_state
@@ -738,7 +738,7 @@ variable_player:
     score: 400
   base_hole_distal_hit:
     score: 1000
-  ballblock_hit:
+  ball_block_hit:
     score: 500
   base_scoop_from_pf_hit:
     score: 500

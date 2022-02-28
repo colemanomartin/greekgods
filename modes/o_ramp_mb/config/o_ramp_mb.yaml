@@ -8,7 +8,9 @@
 # After the lock is full the state machine sends the ramp servo to the other lock until after MB is
 # finished or until P lock is full in which case the diverter points to the middle
 # and then a shot to the BB or ramp starts double MB.
-#10-17-21 added accrual to track if light lock shot already hit so mode wont require this on restart if ball drains before ball locked
+#10-17-21 added accrual device.accruals.base_o_locking_engaged to track if light lock shot already hit
+#so mode wont require this on restart if ball drains before ball locked. Internal to this mode is an
+#equivelent accrual that manages screen messages and widgets. It might be possible to just use the base one
 mode:
   priority: 1500 # range 100-1M
   start_events:
@@ -74,7 +76,7 @@ shots:
     reset_events: multiball_lock_olympus_lock_locked_ball
     disable_events: ormb_light_o_lock_hit
     hit_events:
-      - ballblock_hit
+      - ball_block_hit
     debug: true
   ormb_start_shot:
     playfield: earth_pf
@@ -98,7 +100,7 @@ variable_player:
     score: 5000
 
 timers:
-  ormb_allow_ballblock_to_settle: # used to allow ball block to register hit and activate timer in mode_scoop so timer can be paused. Replace this timer with show when appropriate
+  ormb_allow_ball_block_to_settle: # used to allow ball block to register hit and activate timer in mode_scoop so timer can be paused. Replace this timer with show when appropriate
     #This timer was used when the scoop shot activated the multiball.  But this presented a problem for qualifying the other ramp's locks and was removed.
     start_value: 1
     end_value: 0
@@ -109,8 +111,8 @@ timers:
         action: restart #reset to starting value and start
 
 event_player:
-  timer_ormb_allow_ballblock_to_settle_complete: pause_ballblock_timer # invite scoop shot
-  ormb_light_o_lock_hit: jump_ballblock_timer_to_1 #Raise the BB fast by jumping timer to 1
+  timer_ormb_allow_ball_block_to_settle_complete: pause_ball_block_timer # invite scoop shot
+#  ormb_light_o_lock_hit: jump_ball_block_timer_to_1 #Raise the BB fast by jumping timer to 1
   olympus_mech_hit: bonus_pop #used by counter in base for bonus calculation
   multiball_lock_olympus_lock_full: force_bb_down
   multiball_olympus_ramp_started: release_bb_override
@@ -118,7 +120,7 @@ event_player:
 show_player:
   #Things to do when starting
   mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2 and not device.accruals.ormb_light_o_lock_already_hit.completed}: #  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls==0}:
-    show_attention_ballblock:
+    show_attention_ball_block:
       speed: 4
       sync_ms: 250
       show_tokens:
@@ -132,7 +134,7 @@ show_player:
         color2: black
   #Things to do when enable the lock shot hit
   ormb_light_o_lock_hit: #player has hit qualifying shot Here is where the locks are lit and arrow directs player to shoot ramp
-    show_attention_ballblock:
+    show_attention_ball_block:
       action: stop
     show_swirl_right_spk_yellow:
       speed: 10

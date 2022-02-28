@@ -132,7 +132,7 @@ shots:
     disable_events: multiball_goddess_started
     playfield: earth_pf
     hit_events:
-      - ballblock_hit
+      - ball_block_hit
   goddess_jackpot:
     playfield: earth_pf
     profile: flashing_off_o
@@ -617,7 +617,7 @@ variable_player:
     score: 400 * (device.counters.goddess_multiplier.value)
   base_hole_distal_hit:
     score: 1000 * (device.counters.goddess_multiplier.value)
-  ballblock_hit:
+  ball_block_hit:
     score: 500 * (device.counters.goddess_multiplier.value)
   base_scoop_from_pf_hit:
     score: 500 * (device.counters.goddess_multiplier.value)

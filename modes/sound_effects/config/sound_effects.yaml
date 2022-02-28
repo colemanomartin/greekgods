@@ -47,7 +47,7 @@ sound_player:
   right_ramphit{not (mode.olympus_ramp_mb.active or mode.poseidon_ramp_mb.active)}: snd_ramp_2 #used for lock flash show and banked ball save
   bonus_orbit_counter_clockwise_hit: snd_orbit #used in bonus counting, for other orbit purposes, see field
   bonus_orbit_clockwise_hit: snd_orbit #used in bonus counting, for other orbit purposes, see field
-  ballblock_hit: snd_drop_3 #records hit to the ball block drop target. control of the drop is via bd events in mode scoop.
+  ball_block_hit: snd_drop_3 #records hit to the ball block drop target. control of the drop is via bd events in mode scoop.
 #  base_scoop_from_pf: #This logs hits only when the scoop receives the ball from the front. Alternatively might be able to code this using delay_switch
   ball_waiting_to_eject_from_scoop: explosionlong
   base_sis_left_arrived_hit: snd_sis #divert_left

@@ -29,7 +29,7 @@ variable_player:
     score: 300
   base_revieled_slingshot_hit:
     score: 1000
-  ballblock_hit:
+  ball_block_hit:
     score: 500
   base_scoop_from_pf_hit:
     score: 500
@@ -155,7 +155,7 @@ widget_player: #http://docs.missionpinball.org/en/latest/config/widget_player.ht
   ball_drain:
     big_rainbow_bottom_to_top:
       target: playfield_lcd
-  ballblock_hit:
+  ball_block_hit:
     big_rainbow_top_to_bottom:
       target: playfield_lcd
   base_olympus_spinner_hit:

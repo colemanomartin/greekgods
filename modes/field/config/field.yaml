@@ -7,7 +7,7 @@
 #    enabled by sis on left disabled by sis on right or not counting when field not running.
 # field_o_orbit_loops: counter every 3 orbit loops from either direction activates magnet in hardware to drop ball in 0 area
 #    enabled by sis on left disabled by sis on right or not counting when field not running.
-# field_hydra: counter when hydra hits = 10 ballblock drops and a hit to scoop starts battle hydra mode stopping field
+# field_hydra: counter when hydra hits = 10 ball_block rises and a hit to BB target starts battle hydra mode stopping field
 # field_spinner: counter when spinners total 100 post diverter is enabled and CCW orbit hit send ball to hidden hole for mystery award
 # field_subways: counter trips through subway. After 10, BB drops and hit to scoop causes subway locking mode to activate
 # Other potential field driven modes: ramp challenge, switch back and forth with doubling of score each time.
