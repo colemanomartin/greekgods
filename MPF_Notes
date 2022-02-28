@@ -315,31 +315,52 @@ Jackpot for Scoop MB: scoop (Keep BB down)
 Jackpot for double MB either gate or hole
 
 Things to fix:
-check state machine and make sure it turns off magnet pause after timer_base_timer_ball_launching_complete
-Not hitting scoop mb from mystery
+outlane ball save show needs to end when in hades
+light above hidden sling band does not go red with hades add it to the show
+decrease ball save on hades
+add blinking lightning to blinking ball block
+remove hades end music when won hades
+get rid of blue screen when won hades
+remove ball redeemed message from hades screen
 double ramp ball save hitting when it should not on ball restart.
-Sometimes call the shot show does not reset after goddess summoned.
-check serial of the ball counter PD-LED
-One time when playing hydra lights went out on lower playfield.  No clear reason why.  Saved log in weirdlogs
-Increase settle time on ramp ball locks.
-Don't de-activate pass through on ramp locks until the ramp is lit.
-When new ball starts and ball locked dont activate pass through diverter.
-Double ramp mb show does not deactivate when down to one ball.
+starting poseidion mb when ormb running (but not full) gives a 5 ball mb
+check state machine and make sure it turns off magnet pause after timer_base_timer_ball_launching_complete
+See why I never hit scoop mb from mystery
+
+MAKING BETTER USE OF SCOOP:
+  Don't raise BB on game start.
+  Raise BB to light a qualified o lock
+  Raise BB for start ormb
+  Raise BB to light a qualified p lock
+  Raise BB for start prmb
+  Raise BB to start goddess mb
+  Raise BB to start hydra mb
+  Things to change to make above work:
+    hardware: field_says_raise_bb, scoop_timer_complete
+    scoop: only use scoop timer when a BB shot is invited or when goddess mb running
+    mode_bb_down This should go away and might be better served with a state machine
+      depends on force_bb_down (in p_ramp and o_ramp and field) and release_bb_override (field p_ramp and o_ramp and scoop timer)
+
+
+MAKING GODDESS MB BETTER: allow goddesses to be awarded during MB except for last goddess.
+Make call out to hit all pops when half way through second goddess.
+Make call out to hit all pops when on last goddess
+raise BB to invite shot for goddess MB
 
 Deactivate ramp flap for all MB states. might have to have a stack counter of number of MB active and when down to
 0 reactivate servo could put in its own mode. Could also be used to make sure goddess, scoop and hydra dont run concurrently.
 
 
 Hardware:
-
-
-  adjust stitch under left powerball.
-  fix sling behind drops
-
+  Replace lights in coin doors and knee switch
+  Test orbit magnets
+  make shooter spring stronger
+  video shooter lane to see whats hanging up ball
+  Check level left/right
+  bend ball block for fewer airballs
   try a bigger rubber on the right orbit rail to delfect show balls to the left flipper.
+  Consider running underworld directly from 12V rail and using modulated power for coin door, knee, start and launch lights
 
-  Ball trapping next to ring on left Sis, maybe weld a deflector.
-  Rail on left poseidon pop plastic to prevent ball trapping
 
 Wish list:
   multiple_hits_window in shots
