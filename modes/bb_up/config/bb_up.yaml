@@ -1,0 +1,31 @@
+#config_version=5
+# This mode runs works similar to a simple state machine. I am unsing it over a state machine so it
+# will show up on the mode running list.  When shots to the ball block (scoop) drop target are invited by
+# p_ramp_mb (light lock), o_ramp_mb(light lock), hydra_mb(start mode) or goddess_mb, this mode raises the ball block
+# drop target. The mode ends when ball_block_hit (shot from base) is hit with exception of if goddess MB is running.
+# in that case mode ends when the goddess_mb_starts.
+# Test: drop target behavior with two players and with goddess mb.
+#
+# examine if dropping the BB at the end of the player turn might result in drained player getting points did not earn.
+# Incomplete editing. This mode can probably go away in favor of events in Hardware
+#
+mode:
+  priority: 9000 # range 100-1M
+  start_events:
+    - o_locking_elgible
+    - mode_field_started{device.accruals.base_o_locking_engaged.completed} #Same as start event for o_ramp_mb when elgible and calling for the light shot See accruals in o_ramp_mb mode
+  stop_events:
+    - ball_block_hit{mode.goddess_mb.active == False} # shot lives in base. Note this shot is diabled during scoop eject and re-enabled by eject balldevice_bd_scoop_ball_eject_success
+    - multiball_goddess_started
+#    - kill_o_locking #used by mystery mode to move locking to other side. Probably dont want to use this since player still needs to enable the lock with a shot
+#    - release_bb_override
+#    - game_ending
+  restart_on_next_ball: TRUE
+
+event_player:
+  - ball_block_hit{mode.goddess_mb.active} : bb_up_says_reset_ball_block #****************************************8
+
+coil_player:
+  mode_bb_up_will_stop{device.switches.s_ball_block.state==0}: #Drop the target at end of turn so it will be ready for next player. Note, it my go right back up again if next player or same player has a lock or hydra elgible.
+    c_ball_block_fall:
+      action: pulse

@@ -42,7 +42,7 @@ modes:
   - extra_balls #150 hades extra ball is triggered in hades.
   - servo #10000 Manager
   - scoop #10000 Manager
-#  - bb_down #Manager
+  - bb_up #9000 Manager
   - field #200
   - temple_display # 400 adds widgets to playfield display to show where ball will go in response to ramp diverter flap
   - scoop_mb #650

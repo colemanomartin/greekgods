@@ -350,6 +350,8 @@ raise BB to invite shot for goddess MB
 Deactivate ramp flap for all MB states. might have to have a stack counter of number of MB active and when down to
 0 reactivate servo could put in its own mode. Could also be used to make sure goddess, scoop and hydra dont run concurrently.
 
+MAKING HADES BUG GAME BETTER:
+After 20 scoop shots start the game
 
 Hardware:
   Replace lights in coin doors and knee switch
