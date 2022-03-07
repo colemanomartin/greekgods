@@ -570,10 +570,12 @@ drop_targets:
     knockdown_coil: c_ball_block_fall
     knockdown_events:
       - game_will_end
+      #Also ball will end pulses this coil from bb_up mode
 #      - mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2} #Ready to lock a ball
 #maybe in bonus mode knock down so if players switch there is a fresh state?
     reset_events:
-      - player_shot_ormb_light_o_lock_enabled{device.shots.ormb_light_o_lock.state_name=='flashing'} #Enabled and ready for the activation shot
+      - bb_up_says_reset_ball_block
+#      - player_shot_ormb_light_o_lock_enabled{device.shots.ormb_light_o_lock.state_name=='flashing'} #Enabled and ready for the activation shot
 #      - ball_searching
 #      - field_says_raise_bb #used when ball drains on field after field invited a shot
       - timer_scoop_drop_complete # this timer resets to very short when locking ball in subway

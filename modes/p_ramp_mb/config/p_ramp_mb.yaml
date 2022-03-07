@@ -112,10 +112,10 @@ timers:
 
 event_player:
   timer_prmb_allow_ball_block_to_settle_complete: pause_ball_block_timer #invite scoop shot
-  prmb_light_p_lock_hit: jump_ball_block_timer_to_1 #Raise the BB fast by jumping timer to 1
+#  prmb_light_p_lock_hit: jump_ball_block_timer_to_1 #Raise the BB fast by jumping timer to 1
   poseidon_mech_hit: bonus_pop #used by counter in base for bonus calculation
-  multiball_lock_poseidon_lock_full: force_bb_down
-  multiball_poseidon_ramp_started: release_bb_override #commented out 11/15/20 because when next ball starts ball block raises #Reinstated 11/27 because it does not raise until scoop hit at next ball (keeping down for super spinner presumably)
+#  multiball_lock_poseidon_lock_full: force_bb_down
+#  multiball_poseidon_ramp_started: release_bb_override #commented out 11/15/20 because when next ball starts ball block raises #Reinstated 11/27 because it does not raise until scoop hit at next ball (keeping down for super spinner presumably)
 
 show_player:
   #Things to do when starting

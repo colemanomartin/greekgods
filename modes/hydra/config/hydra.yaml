@@ -13,12 +13,12 @@
 # When started divert the ramp and hold it diverted away from the lock. Might run
 # out of balls in this circumstance.
 #Notes: Hades game does not award an extra ball on its own, but winning hydra may push playter over edge.
-#Winning hydra does actuate the knocker though. 
+#Winning hydra does actuate the knocker though.
 mode:
   priority: 700
   start_events:
     - mystery_says_battle_hydra
-    - field_invite_hydra_at_scoop_hit #This is the entry point from field.
+    - field_invite_hydra_at_bb_hit #This is the entry point from field.
     - key_v_pressed
 #    - s_accessory_active # for testing
   stop_events:

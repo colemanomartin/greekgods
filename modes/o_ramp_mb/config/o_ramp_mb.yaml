@@ -114,8 +114,8 @@ event_player:
   timer_ormb_allow_ball_block_to_settle_complete: pause_ball_block_timer # invite scoop shot
 #  ormb_light_o_lock_hit: jump_ball_block_timer_to_1 #Raise the BB fast by jumping timer to 1
   olympus_mech_hit: bonus_pop #used by counter in base for bonus calculation
-  multiball_lock_olympus_lock_full: force_bb_down
-  multiball_olympus_ramp_started: release_bb_override
+#  multiball_lock_olympus_lock_full: force_bb_down
+#  multiball_olympus_ramp_started: release_bb_override
 
 show_player:
   #Things to do when starting

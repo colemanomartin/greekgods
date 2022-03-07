@@ -10,14 +10,16 @@ mode:
 #  stop_events:
 #    - scoop_hold_open
 timers:
-  scoop_drop: # used to raise ball block if 1. locking balls for goddess MB or 2. There is a pending mode activation
+  scoop_drop: # used to raise ball block if 1. locking balls for goddess MB or 2. There is a pending mode activation. timer completion is used by reset drop in hardware
     start_value: 2
     end_value: 0
     direction: down
     tick_interval: 1s
     control_events:
-      - event: balldevice_bd_scoop_ball_eject_success{device.shots.ormb_light_o_lock.state_name=='flashing'} #o_ramp_mb wants a light the lock shot
+      - event: balldevice_bd_scoop_ball_eject_success{mode.bb_up.active} #Start the timer to raise BB when BB up mode is runnign because a shot is called.
         action: restart #reset to starting value and start
+#      - event: balldevice_bd_scoop_ball_eject_success{device.shots.ormb_light_o_lock.state_name=='flashing'} #o_ramp_mb wants a light the lock shot  //used prior to 4-6-22
+#        action: restart #reset to starting value and start
 #      - event: ball_block_hit{mode.bb_down.active == False} #Start the timer to raise ball_block when mode bb_down is not running.
 #        action: restart #reset to starting value and start
 #      - event: timer_scoop_drop_complete #Reset timer when it counts down to 0
@@ -100,7 +102,7 @@ ball_holds:
 #    disable_events: timer_sweep_hold_complete
 
 coil_player:
-  balldevice_bd_scoop_ball_eject_attempt:
+  balldevice_bd_scoop_ball_eject_attempt{device.switches.s_ball_block.state==0}: #Drop the scoop if it is up before ejecting
 #  ball_waiting_to_eject_from_scoop:
     c_ball_block_fall:
       action: pulse

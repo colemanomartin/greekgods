@@ -14,18 +14,36 @@ mode:
   start_events:
     - o_locking_elgible
     - mode_field_started{device.accruals.base_o_locking_engaged.completed} #Same as start event for o_ramp_mb when elgible and calling for the light shot See accruals in o_ramp_mb mode
+    - p_locking_elgible
+    - mode_field_started{device.accruals.base_p_locking_engaged.completed} #==True} #Starts the mode if the mode is qualified on prior ball
+    - field_says_invite_hydra_battle
   stop_events:
     - ball_block_hit{mode.goddess_mb.active == False} # shot lives in base. Note this shot is diabled during scoop eject and re-enabled by eject balldevice_bd_scoop_ball_eject_success
     - multiball_goddess_started
 #    - kill_o_locking #used by mystery mode to move locking to other side. Probably dont want to use this since player still needs to enable the lock with a shot
 #    - release_bb_override
 #    - game_ending
-  restart_on_next_ball: TRUE
+#  restart_on_next_ball: TRUE
+
+timers:
+  bb_ignore_scoop_drop: # used to disable base's ball_block_shot when dropping ball block. then shot re-enables when timer complete
+    start_value: 1
+    end_value: 0
+    direction: down
+    tick_interval: 500ms
+    control_events:
+      - event: ball_will_end
+        action: restart #reset to starting value and start
+
 
 event_player:
-  - ball_block_hit{mode.goddess_mb.active} : bb_up_says_reset_ball_block #****************************************8
+  ball_block_hit{mode.goddess_mb.active}:
+    - bb_up_says_reset_ball_block #keep raising BB to protect scoop from getting another ball during goddess  (Remmember BB is up until all balls locked)
+  mode_bb_up_started:
+    - bb_up_says_reset_ball_block #keep raising BB to protect scoop from getting another ball during goddess
 
-coil_player:
-  mode_bb_up_will_stop{device.switches.s_ball_block.state==0}: #Drop the target at end of turn so it will be ready for next player. Note, it my go right back up again if next player or same player has a lock or hydra elgible.
+coil_player:  #Making fall event at end of turn in hardware so switch hit wont register as a shot made.
+#  mode_bb_up_will_stop{device.switches.s_ball_block.state==0}: #Drop the target at end of turn so it will be ready for next player. Note, it my go right back up again if next player or same player has a lock or hydra elgible.
+  ball_will_end:
     c_ball_block_fall:
       action: pulse

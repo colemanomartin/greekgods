@@ -439,7 +439,9 @@ shots:
       - mode_base_started
       #- mode_hades_door_stopping
       - balldevice_bd_scoop_ball_eject_success
+      - timer_bb_ignore_scoop_drop_stopped #this might not be needed since shot starts with mode_base_started
     disable_events:
+      - timer_bb_ignore_scoop_drop_started
       - mode_open_hades_door_starting
       - ball_waiting_to_eject_from_scoop #Dont count a hit if machine drops it as part of eject sequence
     playfield: earth_pf
