@@ -376,8 +376,8 @@ coils:
     #PD 16 lower playfield Address = 5 Left  Bank B = 1 bottom mechs
     c_shooter_lane_eject:
         number: A5-B1-0
-        default_pulse_ms: 42 # was using 30 at 0.8
-        default_pulse_power: 0.8
+        default_pulse_ms: 35 # was using 42 at 0.8
+#        default_pulse_power: 0.8
     c_trough_eject:
         number: A5-B1-1
         default_pulse_ms: 25

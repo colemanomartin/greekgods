@@ -16,7 +16,7 @@ mode:
     - mode_field_started{device.accruals.base_o_locking_engaged.completed} #Same as start event for o_ramp_mb when elgible and calling for the light shot See accruals in o_ramp_mb mode
     - p_locking_elgible
     - mode_field_started{device.accruals.base_p_locking_engaged.completed} #==True} #Starts the mode if the mode is qualified on prior ball
-    - field_says_invite_hydra_battle
+    - mode_goddess_mb_started
   stop_events:
     - ball_block_hit{mode.goddess_mb.active == False} # shot lives in base. Note this shot is diabled during scoop eject and re-enabled by eject balldevice_bd_scoop_ball_eject_success
     - multiball_goddess_started

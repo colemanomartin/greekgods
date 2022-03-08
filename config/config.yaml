@@ -81,8 +81,8 @@ ball_saves:
   bs_default: #This could probably be moved to base.
     source_playfield: earth_pf
     active_time: 10s
-    hurry_up_time: 1s #does not add to BS, just posts for light
-    grace_period: 1s
+    hurry_up_time: 1s #does not add to BS, just posts for light if used
+    grace_period: 2s
     early_ball_save_events:
       - s_left_outlane_active
       - s_right_outlane_active
@@ -111,7 +111,7 @@ ball_saves:
     active_time: 2.5s
     hurry_up_time: 0s
     grace_period: 0s
-    enable_events: balldevice_bd_scoop_ball_eject_success
+    enable_events: balldevice_bd_scoop_ball_eject_success{device.counters.base_multiballs_active.value == 0}
     disable_events: mode_field_stopped
 #    timer_start_events: #balldevice_bd_scoop_ball_eject_success
     auto_launch: yes
@@ -246,6 +246,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - state_feed_poseidon_to_all_off
           - state_says_disable_poseidon_mag
           - state_says_disable_olympus_mag
+
       - source: feed_olympus
         target: magnets_off
         events:
@@ -301,8 +302,8 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
       - source: pause_poseidon
         target: feed_poseidon
         events:
-          - logicblock_base_timer_ball_launching_complete
-          - s_posideon_rollover_active
+          - logicblock_base_timer_ball_launching_complete{not mode.goddess_mb.active}
+          - s_posideon_rollover_active{not mode.goddess_mb.active}
         events_when_transitioning:
           - state_says_ok_resume_feed_poseidon_after_ball_injection
           - state_says_enable_poseidon_mag
@@ -315,11 +316,12 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
       - source: pause_olympus
         target: feed_olympus
         events:
-          - logicblock_base_timer_ball_launching_complete
-          - s_posideon_rollover_active
+          - logicblock_base_timer_ball_launching_complete{not mode.goddess_mb.active}
+          - s_posideon_rollover_active{not mode.goddess_mb.active}
         events_when_transitioning:
           - state_says_ok_resume_feed_olympus_after_ball_injection
           - state_says_enable_olympus_mag
+
         #Next 3 sent back to start condition when game ends. Maybe use mode_attract_started if this does not work.
       - source: feed_poseidon
         target: start

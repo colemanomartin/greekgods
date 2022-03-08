@@ -11,7 +11,7 @@
 # Bug, rapid wagging of servo as in state machine or other modes sending conflicting data will give a double wag and false alarm.
 # Do: create some kind of counter that detects if a second jam occurs and shuts down game.
 mode:
-  priority: 10000 # range 100-1M
+  priority: 11000 # range 100-1M
   start_events:
     - mode_base_started
 

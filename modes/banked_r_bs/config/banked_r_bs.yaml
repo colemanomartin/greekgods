@@ -21,6 +21,9 @@ mode:
     - ball_ended
     - ball_save_banked_right_saving_ball
     - timer_right_bs_expiration_complete
+    - mode_hades_bug_game_started
+    - mode_hades_bonus_game_started
+    - mode_hydra_started
 
 ball_saves:
   banked_right:
@@ -171,6 +174,6 @@ show_player:
 
 
 sound_player:
-#  mode_banked_r_bs_started: v_right_outlane_bs_awarded moved to sound effects mode 
+#  mode_banked_r_bs_started: v_right_outlane_bs_awarded moved to sound effects mode
   ball_save_banked_right_saving_ball: v_ball_saved
   right_ramp_hit{device.timers.right_bs_expiration.ticks<=6}: v_time_added

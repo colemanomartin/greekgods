@@ -22,6 +22,9 @@ mode:
     - ball_ended
     - ball_save_banked_left_saving_ball
     - timer_left_bs_expiration_complete
+    - mode_hades_bug_game_started
+    - mode_hades_bonus_game_started
+    - mode_hydra_started
 
 ball_saves:
   banked_left:

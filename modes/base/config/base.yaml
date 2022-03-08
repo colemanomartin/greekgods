@@ -118,7 +118,8 @@ sequences:
       - base_hestia_summoned
       - base_artemus_summoned
       - base_aphrodite_summoned
-      - logicblock_base_all_pops_complete{not mode.p_ramp_mb.active and not mode.o_ramp_mb.active and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0} # Only enter the mode if no balls are locked and bb not blinking
+#     changed 3/6/22 to allow prmb and ormb to be running but no balls locked this was the origional code     - logicblock_base_all_pops_complete{not mode.p_ramp_mb.active and not mode.o_ramp_mb.active and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0} # Only enter the mode if no balls are locked and bb not blinking
+      - logicblock_base_all_pops_complete{device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0} # Only enter the mode if no balls are locked and bb not blinking
     events_when_complete:
       - goddess_completed #Used for bonus mode
       - base_athena_summoned
@@ -175,12 +176,12 @@ counters:
       - multiball_goddess_ended
     persist_state: true
   base_multiballs_active:
-    #Used as a conditional by servo mode to turn off servo when MB happening
+    #Used as a conditional by scoop ball save (in config) to disable when mb running.
     count_events: #One event for each MB
       - multiball_poseidon_ramp_started
       - multiball_olympus_ramp_started
       - multiball_goddess_started
-      - multiball_hydra_mb_started
+      - mode_hydra_started
     control_events:
       - event: multiball_poseidon_ramp_ended
         action: subtract
@@ -191,7 +192,7 @@ counters:
       - event: multiball_goddess_ended
         action: subtract
         value: 1
-      - event: multiball_hydra_mb_ended
+      - event: mode_hydra_will_stop
         action: subtract
         value: 1
     debug: true

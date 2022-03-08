@@ -144,7 +144,7 @@ shots:
 #      - mode_field_started{device.switches.s_sis_right.state==1}
 #    disable_events:
 #      - base_sis_left_arrived_hit
-  field_invite_hydra_at_bb:
+  field_invite_hydra_at_scoop:
     playfield: earth_pf
     profile: one_state
     hit_events:
@@ -153,7 +153,7 @@ shots:
       - field_says_invite_hydra_battle
     disable_events:
       - mode_field_stopping
-      - field_invite_hydra_at_bb_hit
+      - field_invite_hydra_at_scoop_hit
 
 #Example
 #light_player:
@@ -193,7 +193,7 @@ accruals:  # These are designed to fire once to give instructions a single time 
     persist_state: true
     reset_on_complete: false
     disable_on_complete: true
-  sound_outlane_ballsave_instructions:
+  sound_outlane_ballsave_instructions: #ball saves are run by modes banked_l_bs and banked_r_bs
     events:
       - left_ramp_hit, right_ramp_hit #hit either ramp
     persist_state: true
@@ -285,9 +285,9 @@ counters:
       - event: logicblock_field_hydra_hits_updated{current_player.player_base_hydras>28 and (device.multiball_locks.poseidon_lock.locked_balls > 0 or device.multiball_locks.olympus_lock.locked_balls > 0)} #player_base_hydras>23 and
         action: jump
         value: 28 # cap it close to goal if there is a ball locked somehwere. This prevents starting hydra when a ball is locked.
-      - event: ball_drain{device.shots.field_invite_hydra_at_bb.enabled} # state_name=='default_one_state'}
+      - event: ball_drain{device.shots.field_invite_hydra_at_scoop.enabled} # state_name=='default_one_state'}
         action: jump
-        value: 28 #Dont start completely over if ball drained before bb hit, but player has to requalify with another hit 
+        value: 28 #Dont start completely over if ball drained before bb hit, but player has to requalify with another hit
 
   field_spins: #Counts spin hits to qualify super spinner mode which is started by invited scoop shot
     enable_events: mode_field_started
