@@ -7,7 +7,7 @@
     hades_face:
       target: playfield_lcd
       priority: 100
-      expire: 10s 
+      expire: 10s
       widgets:
       - type: image
         image: hadesface2
@@ -22,6 +22,7 @@
 
 - duration: 1
   lights:
+      l_jupiter_plastic: 660000
       l_olympus_lower_pop: 660000
       l_olympus_left_pop: 660000
       l_olympus_right_pop: 660000
@@ -292,6 +293,7 @@
       l_serial_49: 660000
 - duration: 1
   lights:
+      l_jupiter_plastic: 880000
       l_olympus_lower_pop: 880000
       l_olympus_left_pop: 880000
       l_olympus_right_pop: 880000
@@ -562,6 +564,7 @@
       l_serial_49: 880000
 - duration: 1
   lights:
+      l_jupiter_plastic: AA0000
       l_olympus_lower_pop: AA0000
       l_olympus_left_pop: AA0000
       l_olympus_right_pop: AA0000
@@ -832,6 +835,7 @@
       l_serial_49: AA0000
 - duration: 1
   lights:
+      l_jupiter_plastic: FF0000
       l_olympus_lower_pop: FF0000
       l_olympus_left_pop: FF0000
       l_olympus_right_pop: FF0000
@@ -1103,6 +1107,7 @@
 
 - duration: 1
   lights:
+      l_jupiter_plastic: FF4040
       l_olympus_lower_pop: FF4040
       l_olympus_left_pop: FF4040
       l_olympus_right_pop: FF4040
@@ -1373,6 +1378,7 @@
       l_serial_49: FF4040
 - duration: 1
   lights:
+      l_jupiter_plastic: FF8080
       l_olympus_lower_pop: FF8080
       l_olympus_left_pop: FF8080
       l_olympus_right_pop: FF8080
@@ -1643,6 +1649,7 @@
       l_serial_49: FF8080
 - duration: 1
   lights:
+      l_jupiter_plastic: FFA0A0
       l_olympus_lower_pop: FFA0A0
       l_olympus_left_pop: FFA0A0
       l_olympus_right_pop: FFA0A0
@@ -1913,6 +1920,7 @@
       l_serial_49: FFA0A0
 - duration: 1
   lights:
+      l_jupiter_plastic: FFC0C0
       l_olympus_lower_pop: FFC0C0
       l_olympus_left_pop: FFC0C0
       l_olympus_right_pop: FFC0C0
@@ -2183,6 +2191,7 @@
       l_serial_49: FFC0C0
 - duration: 1
   lights:
+      l_jupiter_plastic: FFE0E0
       l_olympus_lower_pop: FFE0E0
       l_olympus_left_pop: FFE0E0
       l_olympus_right_pop: FFE0E0
@@ -2454,6 +2463,7 @@
 
 - duration: 4
   lights:
+      l_jupiter_plastic: FFFFFF
       l_olympus_lower_pop: FFFFFF
       l_olympus_left_pop: FFFFFF
       l_olympus_right_pop: FFFFFF

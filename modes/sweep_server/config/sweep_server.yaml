@@ -1,5 +1,5 @@
 #config_version=5
-# This mode manages the display_light_player sweeps for all game modes
+# This mode manages the display_light_player sweeps
 # https://htmlcolorcodes.com/color-names/
 #Playfield Display width: 508 height: 1190
 #> 1000 or 84% is BB < 980 upper apron; < 920 orbit
@@ -22,6 +22,21 @@ display_light_player: #http://docs.missionpinball.org/en/latest/config/display_l
       lights: gi, insert
 
 widgets:
+  gradient_gbr_clockwise:
+    - type: image
+      image: grad_gbr_clockwise
+      scale: 1
+      x: 50%
+      y: 500
+      anchor_x: middle
+      anchor_y: middle
+      expire: 4.5s #1.8s
+#      animations:
+#        add_to_slide:
+#        - property: scale
+#          value: .1
+#          relative: false
+#          duration: .6s
   left_drain:
   - type: rectangle
     x: 0
@@ -224,6 +239,21 @@ widgets:
 #          value: .1
 #          relative: false
 #          duration: .6s
+  test_pattern:
+    - type: image
+      image: test_bars
+      scale: 1
+  #      z: 1
+      y: 400
+      anchor_x: middle
+      anchor_y: top
+      expire: 4s
+      animations:
+        add_to_slide:
+        - property: y
+          value: 1590
+          relative: false
+          duration: 4s
 
   red_box_step_ccw: #rectangle does a ccw dance 3 x around the inserts for P MB
     - type: rectangle
@@ -560,6 +590,12 @@ widgets:
 
 
 widget_player:
+  mode_sweep_server_started:
+    test_pattern:
+      slide: blank_transparent
+  key_r_pressed:
+    gradient_gbr_clockwise:
+      slide: blank_transparent
   balldevice_bd_trough_ball_enter:
 #  key_v_pressed:
     left_drain:

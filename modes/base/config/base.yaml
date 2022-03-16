@@ -275,6 +275,7 @@ timers:
     control_events:
       - event: left_ramp_hit
         action: restart
+
   base_right_ramp:
     #Purpose: This timer starts with a right ramp combo shot and is used to fine tune
     #the sequence shot of the right outlane ballsave.
@@ -554,6 +555,7 @@ shots:
       - timer_base_left_ramp_tick{device.timers.base_left_ramp.ticks==6} #timer_base_left_ramp_tick_started better?
     disable_events:
       - timer_base_left_ramp_complete
+      - mode_base_stopping #not sure this is needed but shot may restart as enabled on next ball Explicitly disabling may prevent this 3/12/22
     hit_events:
       - left_ramp_hit
   base_double_right_ramp: #used to activate banked ball save mode
@@ -563,6 +565,7 @@ shots:
       - timer_base_right_ramp_tick{device.timers.base_right_ramp.ticks==3}
     disable_events:
       - timer_base_right_ramp_complete
+      - mode_base_stopping  #not sure this is needed but shot may restart as enabled on next ball Explicitly disabling may prevent this 3/12/22
     hit_events:
       - right_ramp_hit
 

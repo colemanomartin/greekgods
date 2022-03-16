@@ -87,7 +87,6 @@ sound_player:
       action: stop
       fade_out: 400 ms
   mode_game_stopping: snd_sledge_tail
-  mode_hades_bonus_game_stopping: snd_deadmans_tail
   high_score_enter_initials: snd_follow_bliss
   mode_high_score_stopping:
     snd_follow_bliss:

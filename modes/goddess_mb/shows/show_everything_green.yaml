@@ -2,6 +2,7 @@
 #Everything gets full intensity yellow except serial through metal ball guides which get 003300
 - time: 0
   lights:
+      l_jupiter_plastic: 005010
       l_olympus_lower_pop: 005010
       l_olympus_left_pop: 005010
       l_olympus_right_pop: 005010

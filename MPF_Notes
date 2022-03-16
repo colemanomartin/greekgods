@@ -315,31 +315,21 @@ Jackpot for Scoop MB: scoop (Keep BB down)
 Jackpot for double MB either gate or hole
 
 Things to fix:
-outlane ball save show needs to end when in hades
-light above hidden sling band does not go red with hades add it to the show
-decrease ball save on hades
+[x] light above hidden sling band does not go red with hades add it to the show light is called l_jupiter_plastic:
+[x] Poseidon pass through not working after MB added mb start to hardware, test to make sure it does not mess up ball eject. add :3s?
 add blinking lightning to blinking ball block
-remove hades end music when won hades
+[x] remove hades end music when won hades moved player for deadman tail to hades bonus game mode
 get rid of blue screen when won hades
 remove ball redeemed message from hades screen
-double ramp ball save hitting when it should not on ball restart.
-starting poseidion mb when ormb running (but not full) gives a 5 ball mb
+[x] banked_l_bs and banked_r_bs  hitting when it should not on ball restart.  #added disable to the ramp shot when mode base stops 3/12/22
+starting poseidion mb when ormb running (but not full) gives a 5 ball mb - needs testing, sometimes happening?
 check state machine and make sure it turns off magnet pause after timer_base_timer_ball_launching_complete
 See why I never hit scoop mb from mystery
 
-MAKING BETTER USE OF SCOOP:
-  Don't raise BB on game start.
-  Raise BB to light a qualified o lock
-  Raise BB for start ormb
-  Raise BB to light a qualified p lock
-  Raise BB for start prmb
-  Raise BB to start goddess mb
-  Raise BB to start hydra mb
-  Things to change to make above work:
-    hardware: field_says_raise_bb, scoop_timer_complete
-    scoop: only use scoop timer when a BB shot is invited or when goddess mb running
-    mode_bb_down This should go away and might be better served with a state machine
-      depends on force_bb_down (in p_ramp and o_ramp and field) and release_bb_override (field p_ramp and o_ramp and scoop timer)
+Things to make better:
+New high score music
+make attract mode start with a show that does all lamps R, G , B and W
+Arrow to call hit the scoop target and hit the scoop
 
 
 MAKING GODDESS MB BETTER: allow goddesses to be awarded during MB except for last goddess.
@@ -351,7 +341,7 @@ Deactivate ramp flap for all MB states. might have to have a stack counter of nu
 0 reactivate servo could put in its own mode. Could also be used to make sure goddess, scoop and hydra dont run concurrently.
 
 MAKING HADES BUG GAME BETTER:
-After 20 scoop shots start the game
+After 3 scoop shots in rapid sequence start the bug game. Put a light show on the
 
 Hardware:
   Replace lights in coin doors and knee switch
@@ -359,13 +349,15 @@ Hardware:
   make shooter spring stronger
   video shooter lane to see whats hanging up ball
   Check level left/right
-  bend ball block for fewer airballs
+  add washers under back edge of mount on ball block for fewer airballs
   try a bigger rubber on the right orbit rail to delfect show balls to the left flipper.
   Consider running underworld directly from 12V rail and using modulated power for coin door, knee, start and launch lights
 
 
 Wish list:
   multiple_hits_window in shots
+  sequence shot made of hitting same shot twice within a window
   reset event for state machines that brings it back to start
   ability to repeat last n steps in an animation
   tie light activation sequence to a range on a counter
+  set arbitrary value to shot and other logic blocks

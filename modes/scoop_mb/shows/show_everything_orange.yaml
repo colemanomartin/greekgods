@@ -2,6 +2,7 @@
 #Everything gets full intensity yellow except serial through metal ball guides which get 331000
 - time: 0
   lights:
+      l_jupiter_plastic: FF6000
       l_olympus_lower_pop: FF6000
       l_olympus_left_pop: FF6000
       l_olympus_right_pop: FF6000

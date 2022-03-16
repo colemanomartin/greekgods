@@ -290,7 +290,7 @@ keyboard:
   p:
       switch: s_olympus_rollover
   r:
-    switch: s_u_left_target
+    event: key_r_pressed #switch: s_u_left_target
   t:
     switch: s_u_middle_target
   y:
@@ -582,7 +582,6 @@ drop_targets:
     ball_search_order: 0 # dont include in ball search
     debug: true
 
-
 drop_target_banks:
   cluster:
     drop_targets: star_distal, star_middle, star_proximal
@@ -592,6 +591,7 @@ drop_target_banks:
       - mode_game_started #- mode_field_started #previously mode_game_started
       - mystery_solved #Might want to change it to a list of each award, and end of hydra and scoop mb if more fun to have active.
       - game_will_end
+
 diverters:
   malstrom_mag:
     playfield: earth_pf
@@ -687,6 +687,7 @@ diverters:
       - s_poseidon_lock_distal # putting both on in case ball somehow gets past 1st
     enable_events:
       - ball_started{device.ball_devices.bd_poseidon_ramp.balls==0}
+      - multiball_poseidon_ramp_started # :3s (?) Added 3/12/22 This might interfere with ejecting from P-lock when MB starts. Needs testing.
     disable_events: mode_p_ramp_mb_starting #turns off when locking mode starts
     debug: true
   pass_olympus_lock:
@@ -702,7 +703,7 @@ diverters:
       - s_olympus_lock_distal # putting both on in case ball somehow gets past 1st
     enable_events:
       - ball_started{device.ball_devices.bd_olympus_ramp.balls==0}
-
+      - multiball_olympus_ramp_started #Added 3/12/22 This might interfere with ejecting from P-lock when MB starts. Needs testing.
 #      ball_started{device.ball_devices.bd_olympus_lock.balls==0}: 0.1s  #This only startes the diverter when its empty
 #      - multiball_olympus_ramp_started: 3s
 #      - balldevice.ball_devices.bd_poseidon_ramp{balls==0}

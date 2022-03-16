@@ -6,7 +6,7 @@
   slides:
     hades_face:
       target: playfield_lcd
-      expire: 10s 
+      expire: 10s
       priority: 100
       widgets:
       - type: image
@@ -23,6 +23,7 @@
 
 - duration: 1
   lights:
+      l_jupiter_plastic: FF0000
       l_olympus_lower_pop: FF0000
       l_olympus_left_pop: FF0000
       l_olympus_right_pop: FF0000
@@ -294,6 +295,7 @@
 
 - duration: 1
   lights:
+      l_jupiter_plastic: AA0000
       l_olympus_lower_pop: AA0000
       l_olympus_left_pop: AA0000
       l_olympus_right_pop: AA0000
@@ -564,6 +566,7 @@
       l_serial_49: AA0000
 - duration: 1
   lights:
+      l_jupiter_plastic: 880000
       l_olympus_lower_pop: 880000
       l_olympus_left_pop: 880000
       l_olympus_right_pop: 880000
@@ -834,6 +837,7 @@
       l_serial_49: 880000
 - duration: 1
   lights:
+      l_jupiter_plastic: 660000
       l_olympus_lower_pop: 660000
       l_olympus_left_pop: 660000
       l_olympus_right_pop: 660000
@@ -1104,6 +1108,7 @@
       l_serial_49: 660000
 - duration: 1
   lights:
+      l_jupiter_plastic: 440000
       l_olympus_lower_pop: 440000
       l_olympus_left_pop: 440000
       l_olympus_right_pop: 440000
@@ -1374,6 +1379,7 @@
       l_serial_49: 440000
 - duration: 1
   lights:
+      l_jupiter_plastic: 220000
       l_olympus_lower_pop: 220000
       l_olympus_left_pop: 220000
       l_olympus_right_pop: 220000
@@ -1644,6 +1650,7 @@
       l_serial_49: 220000
 - duration: 1
   lights:
+      l_jupiter_plastic: 000000
       l_olympus_lower_pop: 000000
       l_olympus_left_pop: 000000
       l_olympus_right_pop: 000000
