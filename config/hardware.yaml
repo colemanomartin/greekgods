@@ -292,7 +292,7 @@ keyboard:
   r:
     event: key_r_pressed #switch: s_u_left_target
   t:
-    switch: s_u_middle_target
+    event: key_t_pressed #    switch: s_u_middle_target
   y:
     switch: s_u_right_target
   x:

@@ -661,7 +661,7 @@ sound_player:
   extra_ball_not_earned: v_your_soul_stays
   hades_ball_awarded: v_you_returned_underworld
   hades_bonus_intro_show_done: v_shoot_tunnels_bats
-  extra_ball_not_earned: snd_deadmans_tail #Origionally in sound effects was this mode_hades_bonus_game_stopping: snd_deadmans_tail moved 3/12/22
+#  extra_ball_not_earned: snd_deadmans_tail #Origionally in sound effects was this mode_hades_bonus_game_stopping: snd_deadmans_tail moved 3/12/22
 light_player:
   mode_hades_bonus_game_started:
     l_backlight_rgb:

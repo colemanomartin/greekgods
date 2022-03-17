@@ -87,7 +87,7 @@
     l_middle_drop_arrow: 1463c9
     l_right_outlane: 91db80
     l_distal_drop_arrow: 202e71
-    l_backlight_rgb: 4ba666
+    l_backlight_rgb: white
     l_prox_drop_arrow: ddae0f
     l_ramp_arrow: white
     l_right_sling_prox: 901070
@@ -395,7 +395,6 @@
     l_middle_drop_arrow: 29dfba
     l_right_outlane: ca5478
     l_distal_drop_arrow: 5c9195
-    l_backlight_rgb: 18e5fa
     l_prox_drop_arrow: c02a54
     l_ramp_arrow: white
     l_right_sling_prox: 4d2e0b
@@ -703,7 +702,6 @@
     l_middle_drop_arrow: 52dcca
     l_right_outlane: 790810
     l_distal_drop_arrow: bf197d
-    l_backlight_rgb: f5a92f
     l_prox_drop_arrow: 778717
     l_ramp_arrow: white
     l_right_sling_prox: 58c864
@@ -1011,7 +1009,6 @@
     l_middle_drop_arrow: eea287
     l_right_outlane: 42b2a9
     l_distal_drop_arrow: 1e10f7
-    l_backlight_rgb: bd60f7
     l_prox_drop_arrow: 0de5c5
     l_ramp_arrow: red
     l_right_sling_prox: 97e429
@@ -1318,7 +1315,6 @@
     l_middle_drop_arrow: 605637
     l_right_outlane: ac41ad
     l_distal_drop_arrow: 039825
-    l_backlight_rgb: 0f0656
     l_prox_drop_arrow: 8deba4
     l_ramp_arrow: green
     l_right_sling_prox: eec9d2
@@ -1625,7 +1621,6 @@
     l_middle_drop_arrow: 75a6d2
     l_right_outlane: 9652e0
     l_distal_drop_arrow: 7a84f2
-    l_backlight_rgb: 79067c
     l_prox_drop_arrow: 115594
     l_ramp_arrow: blue
     l_right_sling_prox: 0bac4d
@@ -1932,7 +1927,6 @@
     l_middle_drop_arrow: e7f424
     l_right_outlane: 02f86a
     l_distal_drop_arrow: 6f740f
-    l_backlight_rgb: 01a736
     l_prox_drop_arrow: 974c3b
     l_ramp_arrow: black
     l_right_sling_prox: 5ce470
@@ -2239,7 +2233,6 @@
     l_middle_drop_arrow: 381e90
     l_right_outlane: a2bfb6
     l_distal_drop_arrow: 9dc5d7
-    l_backlight_rgb: 27c276
     l_prox_drop_arrow: 37cce1
     l_ramp_arrow: af0d0a
     l_right_sling_prox: 6bbdd4
@@ -2546,7 +2539,6 @@
     l_middle_drop_arrow: 566709
     l_right_outlane: d2259d
     l_distal_drop_arrow: fce375
-    l_backlight_rgb: edc42f
     l_prox_drop_arrow: 526288
     l_ramp_arrow: 4f27c5
     l_right_sling_prox: 9cd3b3
@@ -2853,7 +2845,6 @@
     l_middle_drop_arrow: 2bf845
     l_right_outlane: 3c6586
     l_distal_drop_arrow: a8a016
-    l_backlight_rgb: 041b65
     ##l_sis_flash_right: 6657ed
     ##l_sis_flash_left: 414d84
     l_prox_drop_arrow: 1bc449
@@ -3162,7 +3153,6 @@
     l_middle_drop_arrow: e6bcda
     l_right_outlane: 9adec8
     l_distal_drop_arrow: 87c18c
-    l_backlight_rgb: c8ad90
     ##l_sis_flash_right: 90add0
     #l_sis_flash_left: 66cbdd
     l_prox_drop_arrow: 9719ff
@@ -3471,7 +3461,6 @@
     l_middle_drop_arrow: 8fe6dd
     l_right_outlane: 736e44
     l_distal_drop_arrow: 0c7eb6
-    l_backlight_rgb: ea8aa1
     #l_sis_flash_right: dc07cf
     #l_sis_flash_left: c97543
     l_prox_drop_arrow: 1ddb3b

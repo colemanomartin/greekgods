@@ -1,18 +1,21 @@
 #show_version=5
 # see section on shows beginning on pg 554
-- duration: 3s
+- duration: 4.5s
+  events: give_gbr_cw_sweep
   slides:
     playfield_first_slide:
       target: playfield_lcd
       widgets:
+      - type: image
+        image: grad_gbr_clockwise
+        scale: 6
+#        duration: 4.5
+        z: 0
       - type: text
         text: Greek Gods
         font_size: 130
         font_name: greekgods3
-      transition:
-        type: push
-        duration: 1s
-        direction: left
+        z: 1
 
 - duration: 5s
   slides:

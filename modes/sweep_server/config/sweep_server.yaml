@@ -6,9 +6,12 @@
 mode:
   priority: 3000 # runs above the mb modes
   start_events:
-    - game_started
+     - reset_complete 
+#    - machine_reset_phase_3
+#    - game_started
   stop_events:
-    - game_ending
+    - shutdown
+#    - game_ending
   game_mode: false
 
 display_light_player: #http://docs.missionpinball.org/en/latest/config/display_light_player.html?highlight=display_light_player
@@ -25,7 +28,7 @@ widgets:
   gradient_gbr_clockwise:
     - type: image
       image: grad_gbr_clockwise
-      scale: 1
+      scale: 4
       x: 50%
       y: 500
       anchor_x: middle
@@ -247,13 +250,13 @@ widgets:
       y: 400
       anchor_x: middle
       anchor_y: top
-      expire: 4s
+      expire: 10s
       animations:
         add_to_slide:
         - property: y
           value: 1590
           relative: false
-          duration: 4s
+          duration: 10s
 
   red_box_step_ccw: #rectangle does a ccw dance 3 x around the inserts for P MB
     - type: rectangle
@@ -590,14 +593,13 @@ widgets:
 
 
 widget_player:
-  mode_sweep_server_started:
+  key_t_pressed:
     test_pattern:
       slide: blank_transparent
-  key_r_pressed:
+  give_gbr_cw_sweep:
     gradient_gbr_clockwise:
       slide: blank_transparent
   balldevice_bd_trough_ball_enter:
-#  key_v_pressed:
     left_drain:
       slide: blank_transparent
     right_drain:
