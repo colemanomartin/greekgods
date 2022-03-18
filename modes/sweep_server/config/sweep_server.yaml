@@ -6,7 +6,7 @@
 mode:
   priority: 3000 # runs above the mb modes
   start_events:
-     - reset_complete 
+     - reset_complete
 #    - machine_reset_phase_3
 #    - game_started
   stop_events:
@@ -18,7 +18,7 @@ display_light_player: #http://docs.missionpinball.org/en/latest/config/display_l
   mode_sweep_server_started: #mode_mystery_started:
     led_matrix:
       action: play  #Default
-      lights: gi, insert  #right_orbit
+      lights: gi, insert, ramp, shooter  #right_orbit
   mode_sweep_server_ended: #Otherwise the mode hangs
     led_matrix:
       action: stop
@@ -33,7 +33,25 @@ widgets:
       y: 500
       anchor_x: middle
       anchor_y: middle
-      expire: 4.5s #1.8s
+      expire: 4.8s #1.8s
+  gradient_bw_counterclockwise:
+    - type: image
+      image: grad_bw_counterclockwise
+      scale: 4
+      x: 50%
+      y: 500
+      anchor_x: middle
+      anchor_y: middle
+      expire: 4.8s #1.8s
+  gradient_yw_clockwise:
+    - type: image
+      image: grad_yw_clockwise
+      scale: 4
+      x: 50%
+      y: 500
+      anchor_x: middle
+      anchor_y: middle
+      expire: 4.8s #1.8s
 #      animations:
 #        add_to_slide:
 #        - property: scale
@@ -250,15 +268,84 @@ widgets:
       y: 400
       anchor_x: middle
       anchor_y: top
-      expire: 10s
+      expire: 8s
       animations:
         add_to_slide:
         - property: y
           value: 1590
           relative: false
           duration: 10s
+  green_box_step_ccw: #rectangle does a ccw dance 3 x around the inserts for attract
+    - type: rectangle
+      x: 0             #Start top left
+      y: 980
+      width: 250
+      height: 300
+      color: 00FF00
+      anchor_x: left
+      anchor_y: top
+      expire: 3.75 #3.25s This should be enough but it seems the animations slow add in extra time
+      animations:
+        add_to_slide:
+            - property: y #botton left
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: x #bottom right
+              value: 258
+              relative: false
+              duration: 0.25s
+            - property: y #Top right
+              value: 980
+              relative: false
+              duration: 0.25s
+            - property: x #Top left
+              value: 0
+              relative: false
+              duration: 0.25s
+            - property: y #bottm left
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: x #bottom right
+              value: 258
+              relative: false
+              duration: 0.25s
+            - property: y #top right
+              value: 980
+              relative: false
+              duration: 0.25s
+            - property: x #top left
+              value: 0
+              relative: false
+              duration: 0.25s
+            - property: y #bottom left
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: x #bottom right
+              value: 258
+              relative: false
+              duration: 0.25s
+            - property: y #top right
+              value: 980
+              relative: false
+              duration: 0.25s
+            - property: x #top left
+              value: 0
+              relative: false
+              duration: 0.25s
+            - property: y #bottom left
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: opacity #and fade
+              value: 0.1
+              duration: 0.25s
+              timing: with_previous
 
-  red_box_step_ccw: #rectangle does a ccw dance 3 x around the inserts for P MB
+############# REMOVE THIS AFTER GIF PLACED FOR MB
+  red_box_step_ccw: #rectangle does a ccw dance 3 x around the inserts for attract
     - type: rectangle
       x: 0             #Start top left
       y: 980
@@ -326,6 +413,8 @@ widgets:
               value: 0.1
               duration: 0.25s
               timing: with_previous
+
+################ REMOVE THIS ONE AFTER GIF PLACED AND TESTED FOR OLYMPUS MB
   red_box_step_cw: #rectangle does a clockwise dance 3 x around the inserts for O MB
     - type: rectangle
       x: 258             #Start top right
@@ -333,6 +422,74 @@ widgets:
       width: 250
       height: 300
       color: FF0000
+      anchor_x: left
+      anchor_y: top
+      expire: 3.75s #3.25added a little
+      animations:
+        add_to_slide:
+            - property: y #botton right
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: x #bottom left
+              value: 0
+              relative: false
+              duration: 0.25s
+            - property: y #Top left
+              value: 980
+              relative: false
+              duration: 0.25s
+            - property: x #Top right
+              value: 258
+              relative: false
+              duration: 0.25s
+            - property: y #botton right
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: x #bottom left
+              value: 0
+              relative: false
+              duration: 0.25s
+            - property: y #Top left
+              value: 980
+              relative: false
+              duration: 0.25s
+            - property: x #Top right
+              value: 258
+              relative: false
+              duration: 0.25s
+            - property: y #botton right
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: x #bottom left
+              value: 0
+              relative: false
+              duration: 0.25s
+            - property: y #Top left
+              value: 980
+              relative: false
+              duration: 0.25s
+            - property: x #Top right
+              value: 258
+              relative: false
+              duration: 0.25s
+            - property: y #botton right
+              value: 300
+              relative: false
+              duration: 0.25s
+            - property: opacity #and fade
+              value: 0.1
+              duration: 0.25s
+              timing: with_previous
+  blue_box_step_cw: #rectangle does a clockwise dance 3 x around the inserts for attract
+    - type: rectangle
+      x: 258             #Start top right
+      y: 980
+      width: 250
+      height: 300
+      color: 0000FF
       anchor_x: left
       anchor_y: top
       expire: 3.75s #3.25added a little
@@ -596,6 +753,9 @@ widget_player:
   key_t_pressed:
     test_pattern:
       slide: blank_transparent
+  give_test_pattern:
+    test_pattern:
+      slide: blank_transparent
   give_gbr_cw_sweep:
     gradient_gbr_clockwise:
       slide: blank_transparent
@@ -632,11 +792,17 @@ widget_player:
     scroll_line_up:
       key: widget_line_0 #To allow each line to instance each has a unique key
       slide: blank_transparent
+  give_green_box_step_ccw:
+    green_box_step_ccw:
+      slide: blank_transparent
+  give_blue_box_step_cw:
+    blue_box_step_cw:
+      slide: blank_transparent
   multiball_poseidon_ramp_started:
-    red_box_step_ccw:
+    gradient_bw_counterclockwise:
       slide: blank_transparent
   multiball_olympus_ramp_started:
-    red_box_step_cw:
+    gradient_yw_clockwise:
       slide: blank_transparent
   super_spinner_kickoff_hit:
     scoop_rainbow_in:

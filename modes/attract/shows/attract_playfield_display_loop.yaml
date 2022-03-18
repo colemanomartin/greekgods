@@ -31,7 +31,8 @@
         duration: 1s
         direction: bottom
 
-- duration: 3
+- duration: 3.5s
+  events: give_green_box_step_ccw
   slides:
     lower_p3roc_logo_slide:
       target: playfield_lcd
@@ -45,6 +46,7 @@
         duration: 1s
 
 - duration: 6
+  events: give_blue_box_step_cw
   slides:
     credit_slide:
       target: playfield_lcd
@@ -105,6 +107,7 @@
 
 
 - duration: 8
+  events: give_test_pattern
   slides:
     music_slide:
       target: playfield_lcd
