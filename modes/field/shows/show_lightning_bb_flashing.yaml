@@ -2,7 +2,7 @@
 - duration: 1
   lights:
     l_lightning:
-      color: FFFFF
+      color: FFFFFF
     l_scoop_tongue:
       color: 000000
 - duration: 1

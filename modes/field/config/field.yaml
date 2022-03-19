@@ -393,8 +393,16 @@ timers:
 show_player:
   base_hole_distal_hit{device.counters.field_revealed_sling_hits.value < 1}: #Dont start light show when mystery will be starting
     show_lightning_bb_flashing:
-      speed: 4
-      loops: 0
+      speed: 6
+      loops: -1
+  base_hole_proximal_hit:
+    show_lightning_bb_flashing:
+      speed: 6
+      loops: -1
+  base_scoop_from_pf_hit:
+    show_lightning_bb_flashing:
+      speed: 6
+      loops: -1
   balldevice_bd_scoop_ball_eject_success:
     show_lightning_bb_flashing:
       action: stop

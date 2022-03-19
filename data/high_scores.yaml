@@ -21,14 +21,14 @@ score:
   - JDM
   - 262425
 - !!python/tuple
-  - AAA
-  - 261075
-- !!python/tuple
   - COM
   - 247025
 - !!python/tuple
   - MSB
   - 245150
+- !!python/tuple
+  - AAA
+  - 144025
 - !!python/tuple
   - JAN
   - 20000
