@@ -119,7 +119,8 @@ sequences:
       - base_artemus_summoned
       - base_aphrodite_summoned
 #     changed 3/6/22 to allow prmb and ormb to be running but no balls locked this was the origional code     - logicblock_base_all_pops_complete{not mode.p_ramp_mb.active and not mode.o_ramp_mb.active and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0} # Only enter the mode if no balls are locked and bb not blinking
-      - logicblock_base_all_pops_complete{device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0} # Only enter the mode if no balls are locked and bb not blinking
+# changed again 3/18 b/c could become active after balls drop in a mb was  - logicblock_base_all_pops_complete{device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0} # Only enter the mode if no balls are locked and bb not blinking
+      - logicblock_base_all_pops_complete{not mode.scoop_mb.active and not mode.hydra.active and not mode.p_ramp_mb.active and not mode.o_ramp_mb.active and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0} # Only enter the mode if no balls are locked and no mb active
     events_when_complete:
       - goddess_completed #Used for bonus mode
       - base_athena_summoned
