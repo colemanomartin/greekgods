@@ -344,145 +344,6 @@ widgets:
               duration: 0.25s
               timing: with_previous
 
-############# REMOVE THIS AFTER GIF PLACED FOR MB
-  red_box_step_ccw: #rectangle does a ccw dance 3 x around the inserts for attract
-    - type: rectangle
-      x: 0             #Start top left
-      y: 980
-      width: 250
-      height: 300
-      color: FF0000
-      anchor_x: left
-      anchor_y: top
-      expire: 3.75 #3.25s This should be enough but it seems the animations slow add in extra time
-      animations:
-        add_to_slide:
-            - property: y #botton left
-              value: 300
-              relative: false
-              duration: 0.25s
-            - property: x #bottom right
-              value: 258
-              relative: false
-              duration: 0.25s
-            - property: y #Top right
-              value: 980
-              relative: false
-              duration: 0.25s
-            - property: x #Top left
-              value: 0
-              relative: false
-              duration: 0.25s
-            - property: y #bottm left
-              value: 300
-              relative: false
-              duration: 0.25s
-            - property: x #bottom right
-              value: 258
-              relative: false
-              duration: 0.25s
-            - property: y #top right
-              value: 980
-              relative: false
-              duration: 0.25s
-            - property: x #top left
-              value: 0
-              relative: false
-              duration: 0.25s
-            - property: y #bottom left
-              value: 300
-              relative: false
-              duration: 0.25s
-            - property: x #bottom right
-              value: 258
-              relative: false
-              duration: 0.25s
-            - property: y #top right
-              value: 980
-              relative: false
-              duration: 0.25s
-            - property: x #top left
-              value: 0
-              relative: false
-              duration: 0.25s
-            - property: y #bottom left
-              value: 300
-              relative: false
-              duration: 0.25s
-            - property: opacity #and fade
-              value: 0.1
-              duration: 0.25s
-              timing: with_previous
-
-################ REMOVE THIS ONE AFTER GIF PLACED AND TESTED FOR OLYMPUS MB
-  red_box_step_cw: #rectangle does a clockwise dance 3 x around the inserts for O MB
-    - type: rectangle
-      x: 258             #Start top right
-      y: 980
-      width: 250
-      height: 300
-      color: FF0000
-      anchor_x: left
-      anchor_y: top
-      expire: 3.75s #3.25added a little
-      animations:
-        add_to_slide:
-            - property: y #botton right
-              value: 300
-              relative: false
-              duration: 0.25s
-            - property: x #bottom left
-              value: 0
-              relative: false
-              duration: 0.25s
-            - property: y #Top left
-              value: 980
-              relative: false
-              duration: 0.25s
-            - property: x #Top right
-              value: 258
-              relative: false
-              duration: 0.25s
-            - property: y #botton right
-              value: 300
-              relative: false
-              duration: 0.25s
-            - property: x #bottom left
-              value: 0
-              relative: false
-              duration: 0.25s
-            - property: y #Top left
-              value: 980
-              relative: false
-              duration: 0.25s
-            - property: x #Top right
-              value: 258
-              relative: false
-              duration: 0.25s
-            - property: y #botton right
-              value: 300
-              relative: false
-              duration: 0.25s
-            - property: x #bottom left
-              value: 0
-              relative: false
-              duration: 0.25s
-            - property: y #Top left
-              value: 980
-              relative: false
-              duration: 0.25s
-            - property: x #Top right
-              value: 258
-              relative: false
-              duration: 0.25s
-            - property: y #botton right
-              value: 300
-              relative: false
-              duration: 0.25s
-            - property: opacity #and fade
-              value: 0.1
-              duration: 0.25s
-              timing: with_previous
   blue_box_step_cw: #rectangle does a clockwise dance 3 x around the inserts for attract
     - type: rectangle
       x: 258             #Start top right
@@ -941,6 +802,16 @@ widget_player:
     scroll_line_up:
       key: widget_line_25
       slide: blank_transparent
+  mode_attract_stopped: #Clean up any active wipes 
+    test_pattern:
+#      slide: blank_transparent
+      action: remove
+    gradient_gbr_clockwise:
+      action: remove
+    green_box_step_ccw:
+      action: remove
+    blue_box_step_cw:
+      action: remove
 
 slide_player:
   #This slide sits atop the playfield for the duration of the game and

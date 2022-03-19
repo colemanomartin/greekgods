@@ -1,0 +1,13 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_lightning:
+      color: FFFFF
+    l_scoop_tongue:
+      color: 000000
+- duration: 1
+  lights:
+    l_lightning:
+      color: 000000
+    l_scoop_tongue:
+      color: FFFFFF
