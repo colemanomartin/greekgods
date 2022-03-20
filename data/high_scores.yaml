@@ -18,6 +18,9 @@ score:
   - SSD
   - 294525
 - !!python/tuple
+  - AAA
+  - 273575
+- !!python/tuple
   - JDM
   - 262425
 - !!python/tuple
@@ -28,7 +31,4 @@ score:
   - 245150
 - !!python/tuple
   - AAA
-  - 144025
-- !!python/tuple
-  - JAN
-  - 20000
+  - 167375

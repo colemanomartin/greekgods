@@ -2,11 +2,11 @@
 - duration: 1
   lights:
     l_revealed_slingshot_flasher:
-      color: 444444
-      fade: 200ms
+      color: 111111
+      fade: 100ms
     l_jupiter_plastic:
-      color: 444444
-      fade: 200ms
+      color: 111111
+      fade: 100ms
     l_distal_drop_arrow:
       color: ff0000
       fade: 50ms
@@ -19,11 +19,11 @@
 - duration: 1
   lights:
     l_revealed_slingshot_flasher:
-      color: FF4444
-      fade: 200ms
+      color: FF0000
+      fade: 100ms
     l_jupiter_plastic:
-      color: FF4444
-      fade: 200ms
+      color: FF0000
+      fade: 100ms
     l_distal_drop_arrow:
       color: ff0000
       fade: 50ms
@@ -36,11 +36,11 @@
 - duration: 1
   lights:
     l_revealed_slingshot_flasher:
-      color: 444444
-      fade: 200ms
+      color: 111111
+      fade: 100ms
     l_jupiter_plastic:
-      color: 444444
-      fade: 200ms
+      color: 111111
+      fade: 100ms
     l_distal_drop_arrow:
       color: 00ff00
       fade: 50ms

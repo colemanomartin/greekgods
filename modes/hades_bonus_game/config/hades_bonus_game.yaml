@@ -49,9 +49,8 @@ mode:
 
 
 #This starts the ball in play.  Immunity ball save is handled thoough showplayer and a timer.
-#coil_player:
-#  hades_bonus_intro_show_done: c_u_trough_eject
-#  s_u_trough_1_active{device.timers.hades_immunity.running}: c_u_trough_eject
+coil_player:
+  hades_bonus_intro_show_done: c_u_trough_eject
 
 
 
@@ -107,7 +106,7 @@ event_player:
   timer_river_b_started{device.timers.river_a.running and device.timers.river_c.running and device.timers.river_d.running}: hades_ball_awarded
   timer_river_c_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_d.running}: hades_ball_awarded
   timer_river_d_started{device.timers.river_a.running and device.timers.river_b.running and device.timers.river_c.running}: hades_ball_awarded
-  #  s_accessory_active: hades_ball_awarded #just for testing 
+  #  s_accessory_active: hades_ball_awarded #just for testing
 
 sequence_shots: #using to activate timers
   left_river_top_to_bottom: #River A
@@ -193,18 +192,24 @@ timers:
     control_events:
       - action: start
         event: hades_bonus_intro_show_done
-#      - action: stop
-#        events:
+      #Next events stop ball save activity if extra ball awarded before timer finishes
+      - action: stop
+        event: extra_ball_not_earned
   ball_eject_refractory: #To keep eject coil from retriggering from plunger bouncing.
     start_value: 1
     end_value: 0
-    tick_interval: 1s
+    tick_interval: 600 ms
     direction: down
     control_events:
-      - action: start
-        event: hades_bonus_intro_show_done
-      - action: start
+#      - action: start
+#        event: hades_bonus_intro_show_done
+      - action: restart
         event: s_u_trough_1_active
+      #Next events stop ball save activity if extra ball awarded before timer finishes
+      - action: stop
+        event: extra_ball_not_earned
+      - action: stop
+        event: hades_ball_awarded
 #      - action: start
 #        event:
 #          - s_u_trough_1_active
@@ -515,9 +520,13 @@ slide_player:
 
 show_player:
   #Here is the hades ballsave. using a show to allow ball to settle before kicking it out.
-  timer_ball_eject_refractory_complete: #s_u_trough_1_active{device.timers.hades_immunity.running}:
-    show_hades_ballsave: #c_u_trough_eject
-      speed: 2
+  timer_ball_eject_refractory_complete{device.switches.s_u_trough_1.state==1}: #s_u_trough_1_active{device.timers.hades_immunity.running}:
+    show_lower_trough_eject: # this show pulses the trough eject.
+      speed: 1
+      loops: 0
+  s_u_trough_1_active{device.timers.hades_immunity.running}:
+    show_lower_trough_delayed_eject: # this show pulses the trough eject after a brief settle delay.
+      speed: 1
       loops: 0
   mode_hades_bonus_game_started:
     show_all_pf_bb_leds_red:
@@ -528,17 +537,29 @@ show_player:
       events_when_played: start_countdown_movie
       events_when_completed: hades_bonus_intro_show_done
   hades_ball_awarded:
+    #First 3 stops are to put a halt on BS timer display and ejecting the ball again while mode winds down Also timers are stopped above
+    countdown20_red: #LED ball save timer
+      action: stop
+    show_lower_trough_eject:
+      action: stop
+    show_lower_trough_delayed_eject:
+      action: stop
     show_leds_red_to_white:
       speed: 4
       loops: 0
       events_when_completed: hades_final_show_finished
   extra_ball_not_earned:
+    #First 2 stops are to put a halt on ejecting the ball again while mode winds down Also timers are stopped above
+    show_lower_trough_eject:
+      action: stop
+    show_lower_trough_delayed_eject:
+      action: stop
     show_wind_down_red:
       speed: 4
       loops: 0
       events_when_completed: hades_final_show_finished
   hades_bonus_intro_show_done:
-    countdown20_red:
+    countdown20_red: #LED ball save timer
       speed: 1
       loops: 0
   accelerate_rivers:
