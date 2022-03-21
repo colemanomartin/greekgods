@@ -1,7 +1,7 @@
 #config_version=5
 #
 # http://docs.missionpinball.org/en/latest/config/mode.html?highlight=pause%20mode use wait queue
-# This hades modes activates via mystery mode.  The goal is to smash all the bugs
+# This hades modes activates via mystery mode or tripple scoop shot The goal is to smash all the bugs
 # The bugs crawl in from the edges and dance near each of the targets, rivers and slings.
 # When all the bugs are smashed a bonus is awarded
 # Do: set target switches as shots
@@ -11,6 +11,7 @@ mode:
   start_events:
     - mystery_says_bug_game
     - key_b_pressed
+    - ball_hold_field_hades_bug_hold_held_ball # logicblock_field_scoop_tripple_shot_complete #Might need to be ball hold event
 #    - mode_base_starting
 #    - s_centuar_skilltarget_active     #Remove when testing done
 
