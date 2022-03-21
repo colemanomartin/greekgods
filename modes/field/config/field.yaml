@@ -389,27 +389,37 @@ timers:
     control_events:
       - action: restart
         event: logicblock_field_orbit_combo_clockwise_hit
+  field_scoop_tripple_shot_window:
+    start_value: 1
+    end_value: 0
+    tick_interval: 6s
+    direction: down 
+    control_events:
+      - action: restart
+        event: logicblock_field_scoop_tripple_shot_hit{device.sequences.field_scoop_tripple_shot.value==1}
 
 sequences:
   #Used to wake up hades bug game.  3 shots in a row get bug game going.
   #Add widget player of arrow with bug on it pointing at scoop after shot 2
   #Pay attention to reset of logic block to remove arrow. Check log for name
   field_scoop_tripple_shot:
-    logic_block_timer: 10 s
+#    sequence_timer: 10s
     events:
       - base_scoop_from_pf_hit
       - base_scoop_from_pf_hit
       - base_scoop_from_pf_hit
+    restart_events:
+      - timer_field_scoop_tripple_shot_window_complete
 ball_holds:
   field_hades_bug_hold:
     source_playfield: earth_pf
     hold_devices: bd_scoop
     balls_to_hold: 1
-    enable_events: logicblock_field_scoop_tripple_shot_hit{device_sequences_field_scoop_tripple_shot.value==2}
+    enable_events: logicblock_field_scoop_tripple_shot_complete #logicblock_field_scoop_tripple_shot_hit{device_sequences_field_scoop_tripple_shot.value==2}
     release_all_events:
       - mode_hades_bug_game_stopped
-      - Logicblock_field_scoop_tripple_shot_****RESET EVENT *****
-    disable_events: logicblock_field_scoop_tripple_shot_****RESET EVENT *****
+#      - Logicblock_field_scoop_tripple_shot_complete
+#    disable_events: logicblock_field_scoop_tripple_shot_****RESET EVENT *****
 
 show_player:
   base_hole_distal_hit{device.counters.field_revealed_sling_hits.value < 1}: #Dont start light show when mystery will be starting
