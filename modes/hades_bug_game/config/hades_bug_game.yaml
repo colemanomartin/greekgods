@@ -4,8 +4,10 @@
 # This hades modes activates via mystery mode or tripple scoop shot The goal is to smash all the bugs
 # The bugs crawl in from the edges and dance near each of the targets, rivers and slings.
 # When all the bugs are smashed a bonus is awarded
+# Note most shows are in the common show folder because they are shared with other hades game
 # Do: use we_have_a_river event to change mysic when a river is hit.
 # When above event triggered make a bat fly across the screen.
+#Figure out why bug_ball_eject_refractory is not used in code.  Safe to eliminate from this and sister mode?
 mode:
   priority: 2300 # For slides to work this mode has to run above mystery which starts it and runs in background until bug game done
   start_events:
@@ -56,7 +58,7 @@ variable_player:
     score: 750
 
 timers:
-  hades_immunity: #Ball save timer for underworld 20 sec total Used as conditional against u trough eject event in hardware
+  hades_bug_immunity: #Ball save timer for underworld 20 sec total Used as conditional against u trough eject event in hardware
     start_value: 4
     end_value: 0
     direction: down
@@ -67,7 +69,7 @@ timers:
       #Next events stop ball save activity if extra ball awarded before timer finishes
       - action: stop
         event: all_bugs_smashed
-  ball_eject_refractory: #To keep eject coil from retriggering from plunger bouncing.
+  bug_ball_eject_refractory: #To keep eject coil from retriggering from plunger bouncing.
     start_value: 1
     end_value: 0
     tick_interval: 600 ms
@@ -207,7 +209,7 @@ shots:
 sequences:
     bug_game_exit:
        events:
-         - timer_hades_immunity_complete
+         - timer_hades_bug_immunity_complete
          - balldevice_bd_u_trough_ball_enter
        events_when_complete: lost_the_bug_ball
 
@@ -246,11 +248,11 @@ slide_player:
 
 show_player:
   #Here is the hades ballsave. using a show to allow ball to settle before kicking it out.
-  timer_ball_eject_refractory_complete{device.switches.s_u_trough_1.state==1}: #s_u_trough_1_active{device.timers.hades_immunity.running}:
+  timer_ball_eject_refractory_complete{device.switches.s_u_trough_1.state==1}: #s_u_trough_1_active{device.timers.hades_bug_immunity.running}:
     show_lower_trough_eject: # this show pulses the trough eject.
       speed: 1
       loops: 0
-  s_u_trough_1_active{device.timers.hades_immunity.running}:
+  s_u_trough_1_active{device.timers.hades_bug_immunity.running}:
     show_lower_trough_delayed_eject: # this show pulses the trough eject after a brief settle delay.
       speed: 1
       loops: 0

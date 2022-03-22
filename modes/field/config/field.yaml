@@ -708,4 +708,3 @@ sound_player:
   logicblock_field_scoop_tripple_shot_hit{device.sequences.field_scoop_tripple_shot.value==2}: snd_buzz
   logicblock_field_orbit_combo_counter_clockwise_complete: v_combo
   logicblock_field_orbit_combo_clockwise_complete: v_combo
-  logicblock_field_scoop_tripple_shot_hit{device.sequences.field_scoop_tripple_shot.value==2}:

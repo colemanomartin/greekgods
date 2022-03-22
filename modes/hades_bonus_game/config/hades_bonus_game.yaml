@@ -5,7 +5,7 @@
 # Currently ball is brought into play using a multiball on the hades pf.
 #
 #Message with hades face Redeemed or Stay is sent from led fades in shows.
-#
+# Note most shows are in the common show folder because they are shared with other hades game
 #
 #
 #
@@ -15,7 +15,6 @@
 #
 #do:  Add a show for extra ball. Consider adding bats as widgets. Have bats fly across screen.
 # Consider controling mode with state machine to allow mode to continue after ball earned.
-# Check slings and accelerators. Look at accelerator rules. See if it terminates as it should
 # ways to improve: allow ball to play out after extra ball earned. May be best not to deal with this as an
 # multiball but rather a request ball to pf and enable a ball save. Consider switching lower trough
 # to an untagged ball device and control ball entry to underworld via its eject events and instead of
