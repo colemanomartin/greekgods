@@ -393,7 +393,7 @@ timers:
     start_value: 1
     end_value: 0
     tick_interval: 6s
-    direction: down 
+    direction: down
     control_events:
       - action: restart
         event: logicblock_field_scoop_tripple_shot_hit{device.sequences.field_scoop_tripple_shot.value==1}
@@ -660,6 +660,15 @@ widgets:
       y: 760
       anchor_x: center
       anchor_y: center
+  invite_bug_game:
+    - type: image
+      image: wedge_orange_hades
+      scale: 0.3
+      rotation: -25
+      x: 450
+      y: 760
+      anchor_x: center
+      anchor_y: center
 
 widget_player:
   field_says_invite_hydra_battle:
@@ -674,6 +683,21 @@ widget_player:
       slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in temple display
       action: remove
 
+  logicblock_field_scoop_tripple_shot_hit{device.sequences.field_scoop_tripple_shot.value==2}: #Two down, one more hit to go, prompt player to hit it again.
+    invite_bug_game:
+      slide: show_progress_to_ramp_mb #Adds widget on top of this slide which was posted in temple display
+      action: add
+      widget_settings:
+        z: 5
+  timer_field_scoop_tripple_shot_window_complete: #Hit scoop again to start bug game
+    invite_bug_game:
+      slide: show_progress_to_ramp_mb
+      action: remove
+  ball_hold_field_hades_bug_hold_held_ball: #Same event as to start bug game
+    invite_hydra:
+      slide: show_progress_to_ramp_mb
+      action: remove
+
 #The whole combo might be better in base
 variable_player:
   logicblock_field_orbit_combo_counter_clockwise_complete:
@@ -681,5 +705,7 @@ variable_player:
   logicblock_field_orbit_combo_clockwise_complete:
     score: 5000
 sound_player:
+  logicblock_field_scoop_tripple_shot_hit{device.sequences.field_scoop_tripple_shot.value==2}: snd_buzz
   logicblock_field_orbit_combo_counter_clockwise_complete: v_combo
   logicblock_field_orbit_combo_clockwise_complete: v_combo
+  logicblock_field_scoop_tripple_shot_hit{device.sequences.field_scoop_tripple_shot.value==2}:

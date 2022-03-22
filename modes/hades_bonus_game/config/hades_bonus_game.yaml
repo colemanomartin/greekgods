@@ -30,8 +30,7 @@ mode:
 #     - mode_bonus_starting # enter_hades_from_bonus_mode
      - enter_hades_from_relay_player #posted by base
      - key_1_pressed
-#     - mode_base_started
-#     - s_ramp_opto_active     #Remove when testing done
+
   stop_events:
     - hades_final_show_finished
 #  use_wait_queue: true

@@ -1,0 +1,6 @@
+#show_version=5
+# colors https://htmlcolorcodes.com/color-names/
+
+- time: 0
+  coils:
+    c_u_trough_eject: pulse

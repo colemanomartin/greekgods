@@ -4,32 +4,31 @@
 # This hades modes activates via mystery mode or tripple scoop shot The goal is to smash all the bugs
 # The bugs crawl in from the edges and dance near each of the targets, rivers and slings.
 # When all the bugs are smashed a bonus is awarded
-# Do: set target switches as shots
-#     Set sling lights as autofire
+# Do: use we_have_a_river event to change mysic when a river is hit.
+# When above event triggered make a bat fly across the screen.
 mode:
-  priority: 2200 # For slides to work this mode has to run above mystery which starts it and runs in background until bug game done
+  priority: 2300 # For slides to work this mode has to run above mystery which starts it and runs in background until bug game done
   start_events:
     - mystery_says_bug_game
     - key_b_pressed
     - ball_hold_field_hades_bug_hold_held_ball # logicblock_field_scoop_tripple_shot_complete #Might need to be ball hold event
-#    - mode_base_starting
-#    - s_centuar_skilltarget_active     #Remove when testing done
 
-  stop_events: all_bugs_smashed, lost_the_bug_ball
+  stop_events: hades_final_bug_show_finished
 
-multiballs:
+#multiballs:
 #  hades_bug_play:
 #  mode_hades_bug_game_started:
-  bug_game:
-    source_playfield: hades_pf
-    ball_count: 1
-    ball_count_type: add  # increase number of playfield balls by couny
-    shoot_again: 21s #21s #24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
-    start_events: hades_backlight_show_done #mode_hades_bug_game_started
-    debug: true
+#  bug_game:
+#    source_playfield: hades_pf
+#    ball_count: 1
+#    ball_count_type: add  # increase number of playfield balls by couny
+#    shoot_again: 21s #21s #24s #ball save for MB 10 sec is default  Ball save does not work if there is a ball in the upstairs trough
+#    start_events: hades_backlight_show_done #mode_hades_bug_game_started
+#    debug: true
 
 
 coil_player:
+  hades_backlight_show_done: c_u_trough_eject
   all_bugs_smashed:
     c_u_knocker:
       action: pulse
@@ -55,6 +54,33 @@ variable_player:
     score: 750
   right_river_bottom_to_top_hit: #River D
     score: 750
+
+timers:
+  hades_immunity: #Ball save timer for underworld 20 sec total Used as conditional against u trough eject event in hardware
+    start_value: 4
+    end_value: 0
+    direction: down
+    tick_interval: 5100 ms
+    control_events:
+      - action: start
+        event: hades_backlight_show_done
+      #Next events stop ball save activity if extra ball awarded before timer finishes
+      - action: stop
+        event: all_bugs_smashed
+  ball_eject_refractory: #To keep eject coil from retriggering from plunger bouncing.
+    start_value: 1
+    end_value: 0
+    tick_interval: 600 ms
+    direction: down
+    control_events:
+#      - action: start
+#        event: hades_bonus_intro_show_done
+      - action: restart
+        event: s_u_trough_1_active
+      #Next events stop ball save activity if all the bugs killed before immunity expired
+      - action: stop
+        event: all_bugs_smashed
+
 
 sequence_shots: #using to activate timers
   left_river_top_to_bottom_bug: #River A
@@ -181,7 +207,7 @@ shots:
 sequences:
     bug_game_exit:
        events:
-         - multiball_bug_game_shoot_again_ended
+         - timer_hades_immunity_complete
          - balldevice_bd_u_trough_ball_enter
        events_when_complete: lost_the_bug_ball
 
@@ -196,11 +222,11 @@ accruals:
       - river_c_bug_second_hit
       - river_d_bug_second_hit
     events_when_complete: all_bugs_smashed #All river fast modes activate when this is posted rules are cleared when this mode ends
-  monitor_rivers: #When any of the rivers hit get a one time event to change music.
+  monitor_rivers: #When any of the rivers hit get a one time event to change music. (Not currently used)
     events:
       - river_a_bug_hit, river_b_bug_hit, river_c_bug_hit, river_d_bug_hit
     events_when_complete: we_have_a_river
-    reset_on_complete: false
+    reset_on_complete: true
 
 
 slide_player:
@@ -219,6 +245,16 @@ slide_player:
         font_size: 50
 
 show_player:
+  #Here is the hades ballsave. using a show to allow ball to settle before kicking it out.
+  timer_ball_eject_refractory_complete{device.switches.s_u_trough_1.state==1}: #s_u_trough_1_active{device.timers.hades_immunity.running}:
+    show_lower_trough_eject: # this show pulses the trough eject.
+      speed: 1
+      loops: 0
+  s_u_trough_1_active{device.timers.hades_immunity.running}:
+    show_lower_trough_delayed_eject: # this show pulses the trough eject after a brief settle delay.
+      speed: 1
+      loops: 0
+
   mode_hades_bug_game_started:
     show_all_pf_bb_leds_red:
       speed: 1
@@ -231,14 +267,17 @@ show_player:
     countdown20_red:
       speed: 1
       loops: 0
-  s_u_left_slingshot_active:
-    show_hades_left_ss:
-      speed: 20
+  all_bugs_smashed:
+    show_leds_red_to_white:
+      speed: 2
       loops: 0
-  s_u_right_slingshot_active:
-    show_hades_right_ss:
-      speed: 20
+      events_when_completed: hades_final_bug_show_finished
+  lost_the_bug_ball:
+    show_leds_red_to_white:
+      speed: 2
       loops: 0
+      events_when_completed: hades_final_bug_show_finished
+
 
 
 widget_player: #http://docs.missionpinball.org/en/latest/config/widget_player.html

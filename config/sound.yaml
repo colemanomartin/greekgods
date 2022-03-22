@@ -128,7 +128,10 @@ sounds:
   snd_splat-and-crunch:
     file: splat-and-crunch.wav
     track: sfx
-
+  snd_buzz:
+    file: buzz.ogg
+    track: sfx
+    
   snd_follow_bliss:
     file: follow_bliss.ogg
     track: music
