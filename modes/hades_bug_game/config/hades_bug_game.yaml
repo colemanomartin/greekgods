@@ -5,9 +5,10 @@
 # The bugs crawl in from the edges and dance near each of the targets, rivers and slings.
 # When all the bugs are smashed a bonus is awarded
 # Note most shows are in the common show folder because they are shared with other hades game
+# Sound effects are in the sound_effects mode 
 # Do: use we_have_a_river event to change mysic when a river is hit.
 # When above event triggered make a bat fly across the screen.
-#Figure out why bug_ball_eject_refractory is not used in code.  Safe to eliminate from this and sister mode?
+
 mode:
   priority: 2300 # For slides to work this mode has to run above mystery which starts it and runs in background until bug game done
   start_events:
@@ -166,7 +167,7 @@ shots:
      hit_events: s_u_left_target_active
      profile: bugs_x_3
      restart_events: mode_hades_bug_game_started
-     disable_events: keft_corner_target_additional_hit
+     disable_events: left_corner_target_additional_hit
 #     show_tokens:
 #       lights: l_u_left_corner_rgb
   right_corner_target:
@@ -223,12 +224,15 @@ accruals:
       - river_b_bug_second_hit
       - river_c_bug_second_hit
       - river_d_bug_second_hit
-    events_when_complete: all_bugs_smashed #All river fast modes activate when this is posted rules are cleared when this mode ends
-  monitor_rivers: #When any of the rivers hit get a one time event to change music. (Not currently used)
+    events_when_complete: all_bugs_smashed
+  ball_traversed_left_rivers: #used to make a bat fly and squeek when activates logicblock_ball_traversed_left_rivers_complete
     events:
-      - river_a_bug_hit, river_b_bug_hit, river_c_bug_hit, river_d_bug_hit
-    events_when_complete: we_have_a_river
-    reset_on_complete: true
+      - left_river_top_to_bottom_bug_hit, left_river_bottom_to_top_bug_hit
+    reset_on_complete: false
+  ball_traversed_right_rivers: #used to make a bat fly and squeek when activates logicblock_ball_traversed_right_rivers_complete
+    events:
+      - right_river_top_to_bottom_bug_hit, right_river_bottom_to_top_bug_hit
+    reset_on_complete: false
 
 
 slide_player:
@@ -298,7 +302,6 @@ widget_player: #http://docs.missionpinball.org/en/latest/config/widget_player.ht
       target: playfield_lcd #hades_playfield_slide # playfield_lcd
     bug_river_d:
       target: playfield_lcd #hades_playfield_slide # playfield_lcd
-
 
   left_corner_target_first_hit:
     bug_left_target:
@@ -409,6 +412,13 @@ widget_player: #http://docs.missionpinball.org/en/latest/config/widget_player.ht
     splat_river_d:
       target: playfield_lcd
 
+  logicblock_ball_traversed_left_rivers_complete:
+    left_bat:
+      target: playfield_lcd
+  logicblock_ball_traversed_right_rivers_complete:
+    right_bat:
+      target: playfield_lcd
+
 widgets:
   splat_left_target:
       type: image
@@ -421,6 +431,38 @@ widgets:
       rotation: 0
       loops: 0
       expire: 2s
+  left_bat:
+      type: image
+      image: bat
+      scale: 0.3
+      y: 88%
+      x: -5%
+      anchor_x: center
+      anchor_y: center
+      z: 1
+      expire: 2.1s
+      animations:
+        add_to_slide:
+          - property: x
+            value: 105%
+            duration:  2s
+            easing: linear
+  right_bat:
+      type: image
+      image: bat
+      scale: 0.3
+      y: 88%
+      x: 105%
+      anchor_x: center
+      anchor_y: center
+      z: 1
+      expire: 2.1s
+      animations:
+        add_to_slide:
+          - property: x
+            value: -5%
+            duration:  2s
+            easing: linear
 
   bug_left_target:
       type: image
