@@ -663,7 +663,7 @@ widgets:
   invite_bug_game:
     - type: image
       image: wedge_orange_hades
-      scale: 0.3
+      scale: .66
       rotation: -25
       x: 450
       y: 760
@@ -694,7 +694,7 @@ widget_player:
       slide: show_progress_to_ramp_mb
       action: remove
   ball_hold_field_hades_bug_hold_held_ball: #Same event as to start bug game
-    invite_hydra:
+    invite_bug_game:
       slide: show_progress_to_ramp_mb
       action: remove
 

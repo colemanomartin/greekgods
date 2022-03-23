@@ -80,7 +80,7 @@ sound_player:
   all_bugs_smashed: v_underworld_cleansed
   lost_the_bug_ball: cmgg2_you_returned_underworld.ogg
   logicblock_ball_traversed_left_rivers_complete: snd_bat1
-  logicblock_ball_traversed_right_rivers_complete:: snd_bat3
+  logicblock_ball_traversed_right_rivers_complete:: snd_bat4
 
   game_start: snd_startbutton
   mode_bonus_started: snd_bonus_riff3
