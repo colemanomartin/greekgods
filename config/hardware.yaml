@@ -1095,7 +1095,7 @@ flippers:
     activation_switch: s_left_flipper
     enable_events:
       - ball_started
-      - mode_hades_bug_game_stopped # mode_hades_bonus_game_stopped,
+      - hades_bug_game_finishing
       - s_accessory_inactive{mode.base.active} # {mode.game.active and not mode.high_score_active} #so attract and high score modes mode can use switch
     disable_events:
       - ball_will_end
@@ -1112,7 +1112,7 @@ flippers:
     activation_switch: s_right_flipper
     enable_events:
       - ball_started
-      - mode_hades_bug_game_stopped # mode_hades_bonus_game_stopped,
+      - hades_bug_game_finishing
       - s_accessory_inactive{mode.base.active} #game.active and not mode.high_score_active} #so attract and high score modes can use switch
     disable_events:
       - ball_will_end
@@ -1128,7 +1128,7 @@ flippers:
     hold_coil: c_u_flipper_left_hold
     activation_switch: s_left_flipper
     enable_events: mode_hades_bonus_game_started, mode_hades_bug_game_started
-    disable_events: mode_hades_bonus_game_stopped, mode_hades_bug_game_stopped
+    disable_events: mode_hades_bonus_game_stopped, hades_bug_game_finishing
 
   u_right_flipper:
     debug: true
@@ -1137,4 +1137,4 @@ flippers:
     hold_coil: c_u_flipper_right_hold
     activation_switch: s_right_flipper
     enable_events: mode_hades_bonus_game_started, mode_hades_bug_game_started
-    disable_events: mode_hades_bonus_game_stopped, mode_hades_bug_game_stopped
+    disable_events: mode_hades_bonus_game_stopped, hades_bug_game_finishing
