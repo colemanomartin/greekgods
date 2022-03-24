@@ -131,7 +131,7 @@ sounds:
   snd_buzz:
     file: buzz.ogg
     track: sfx
-    
+
   snd_follow_bliss:
     file: follow_bliss.ogg
     track: music
@@ -393,11 +393,11 @@ sounds:
     track: music
   snd_greymatterlong:
     file: greymatterlong.ogg
-    volume: 0.7
+    volume: 0.4
     track: music
   snd_bonus_riff3:
     file: bonus_riff3.ogg
-    volume: 0.5
+    volume: 0.4
     track: music
   snd_tiesto_athena:
     file: tiesto_athena.ogg

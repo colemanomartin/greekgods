@@ -20,6 +20,9 @@
 # to an untagged ball device and control ball entry to underworld via its eject events and instead of
 # ball save simply have it re-eject if within the window
 #
+#Note: tag trough removed from hardware on lower trough. if problems, put back in and troubleshoot other haded mode.
+#Looks like trough having only tag home causes to re-eject (verify) adding tag trough registers a ball drain which was
+#OK for starting this as a mb but not for running it off the coil drivers.  May have to convert back. 
 mode:
   priority: 1500 # range 100-1M
   start_events:

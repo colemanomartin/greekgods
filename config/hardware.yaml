@@ -1127,8 +1127,12 @@ flippers:
     main_coil: c_u_flipper_left_main
     hold_coil: c_u_flipper_left_hold
     activation_switch: s_left_flipper
-    enable_events: mode_hades_bonus_game_started, mode_hades_bug_game_started
-    disable_events: mode_hades_bonus_game_stopped, hades_bug_game_finishing
+    enable_events:
+      - mode_hades_bonus_game_started
+      - mode_hades_bug_game_started
+    disable_events:
+      - mode_hades_bonus_game_stopped
+      - hades_bug_game_finishing
 
   u_right_flipper:
     debug: true
@@ -1136,5 +1140,9 @@ flippers:
     main_coil: c_u_flipper_right_main
     hold_coil: c_u_flipper_right_hold
     activation_switch: s_right_flipper
-    enable_events: mode_hades_bonus_game_started, mode_hades_bug_game_started
-    disable_events: mode_hades_bonus_game_stopped, hades_bug_game_finishing
+    enable_events:
+      - mode_hades_bonus_game_started
+      - mode_hades_bug_game_started
+    disable_events:
+      - mode_hades_bonus_game_stopped
+      - hades_bug_game_finishing

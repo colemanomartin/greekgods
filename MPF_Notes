@@ -321,6 +321,7 @@ Might be able to make lower playfield bonus game activate by firing it as an ext
 starting poseidion mb when ormb running (but not full) gives a 5 ball mb - needs testing, sometimes happening?
 check state machine and make sure it turns off magnet pause after timer_base_timer_ball_launching_complete
 See why I never hit scoop mb from mystery
+if scoop fires during regular ball save its ball save timer over writes the regular show.  change priorities of shows 
 
 Things to make better:
 New high score music
