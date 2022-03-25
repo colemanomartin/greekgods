@@ -10,8 +10,12 @@
 # Cheeck squeek on right to left flying bat.
 # put a blinking target show on the scoop when ball to eject
 # make lower trough deactivate when mode dies
-
-
+#May work best to comment out the u_trough ball device and lose all logic associted with it.  can also lose playfield designations
+#Need slide that covers lower playfield when mode ending (ball lost vs all bugs smashed)
+#Lower left brown bug does not update with splats
+#Smash the bug text still not right.
+#Music needs to cut out when ball lost
+#Need call outs for smash the bugs and ball lost and all bugs smashed. 
 mode:
   priority: 2300 # For slides to work this mode has to run above mystery which starts it and runs in background until bug game done
   start_events:
@@ -47,6 +51,10 @@ ball_holds:
     reset_events:
       - machine_reset_phase_3
     hold_devices: bd_u_trough
+    source_playfield: hades_pf
+    balls_to_hold: 1
+
+
 
 variable_player:
   s_u_left_slingshot_active:
@@ -93,6 +101,8 @@ timers:
       #Next events stop ball save activity if all the bugs killed before immunity expired
       - action: stop
         event: all_bugs_smashed
+      - action: stop
+        event: lost_the_bug_ball
 
 
 sequence_shots: #using to activate timers
