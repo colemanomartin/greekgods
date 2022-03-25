@@ -9,7 +9,8 @@
 # Do: check lights in lower pf to make sure they are in correct state when mode terminates
 # Cheeck squeek on right to left flying bat.
 # put a blinking target show on the scoop when ball to eject
-# make lower trough deactivate when mode dies 
+# make lower trough deactivate when mode dies
+
 
 mode:
   priority: 2300 # For slides to work this mode has to run above mystery which starts it and runs in background until bug game done
@@ -39,6 +40,13 @@ coil_player:
       action: pulse
       pulse_ms: 30
 
+ball_holds:
+  bug_game_keep_ball_in_trough:
+    enable_events:
+      - mode_hades_bug_game_started
+    reset_events:
+      - machine_reset_phase_3
+    hold_devices: bd_u_trough
 
 variable_player:
   s_u_left_slingshot_active:
