@@ -10,6 +10,17 @@ mode:
   start_events: ball_starting
   priority: 100 # range 100-1M
 
+ball_holds:
+  bug_game_keep_ball_in_trough:
+    enable_events:
+      - mode_hades_bug_game_started
+    reset_events:
+      - machine_reset_phase_3
+    hold_devices: bd_u_trough
+    source_playfield: hades_pf
+    balls_to_hold: 1
+
+
 accruals:  # Has to live in base since field shuts down during mb
   base_extra_ball_pending: #Used to see if an extra ball is pending
     events: extra_ball_awarded
@@ -50,7 +61,7 @@ accruals:  # Has to live in base since field shuts down during mb
     disable_on_complete: false
   base_olympus_pops: # keeps track of just these pops to run the middle (cloud) insert show
     events:
-      - base_olympus_left_pop_hit 
+      - base_olympus_left_pop_hit
       - base_olympus_right_pop_hit
       - base_olympus_lower_pop_hit
     persist_state: true

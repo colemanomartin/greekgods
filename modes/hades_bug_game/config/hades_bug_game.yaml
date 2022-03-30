@@ -44,15 +44,15 @@ coil_player:
       action: pulse
       pulse_ms: 30
 
-ball_holds:
-  bug_game_keep_ball_in_trough:
-    enable_events:
-      - mode_hades_bug_game_started
-    reset_events:
-      - machine_reset_phase_3
-    hold_devices: bd_u_trough
-    source_playfield: hades_pf
-    balls_to_hold: 1
+#ball_holds:
+#  bug_game_keep_ball_in_trough:
+#    enable_events:
+#      - mode_hades_bug_game_started
+#    reset_events:
+#      - machine_reset_phase_3
+#    hold_devices: bd_u_trough
+#    source_playfield: hades_pf
+#    balls_to_hold: 1
 
 
 
