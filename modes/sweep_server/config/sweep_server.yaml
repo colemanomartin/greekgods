@@ -551,7 +551,7 @@ widgets:
             easing: in_out_back
   hypno_rainbow_sweep:
     - type: image
-      image: wildspiral #_alpha
+      image: wildspiral_alpha #_alpha
       scale: 1
       x: 50%
       y: 50%
@@ -686,11 +686,22 @@ widget_player:
   mode_double_ramp_mb_stopping:
     hypno_rainbow_sweep:
       action: remove
+#Hades bug game continous play of spiral sweep
+  hades_backlight_show_done:
+    hypno_rainbow_sweep:
+      slide: blank_transparent
+  all_bugs_smashed:
+    hypno_rainbow_sweep:
+      action: remove
+  lost_the_bug_ball:
+    hypno_rainbow_sweep:
+      action: remove
+
 ############# Goddess MB Mode Sweeps ##################
   multiball_lock_subway_lock_locked_ball:
     scoop_rainbow_in:
       slide: blank_transparent
-  logicblock_goddess_all_pops_complete:
+  logicblock_all_pops_complete: #  was this but did not seem to do anything logicblock_goddess_all_pops_complete:
     hypno_rainbow_sweep_1s:
       slide: blank_transparent
 
@@ -802,7 +813,7 @@ widget_player:
     scroll_line_up:
       key: widget_line_25
       slide: blank_transparent
-  mode_attract_stopped: #Clean up any active wipes 
+  mode_attract_stopped: #Clean up any active wipes
     test_pattern:
 #      slide: blank_transparent
       action: remove

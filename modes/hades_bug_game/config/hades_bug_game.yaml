@@ -15,7 +15,7 @@
 #Lower left brown bug does not update with splats
 #Smash the bug text still not right.
 #Music needs to cut out when ball lost
-#Need call outs for smash the bugs and ball lost and all bugs smashed. 
+#Need call outs for smash the bugs and ball lost and all bugs smashed.
 mode:
   priority: 2300 # For slides to work this mode has to run above mystery which starts it and runs in background until bug game done
   start_events:
@@ -75,6 +75,8 @@ variable_player:
     score: 750
   right_river_bottom_to_top_hit: #River D
     score: 750
+  all_bugs_smashed:
+    score: 30000
 
 timers:
   hades_bug_immunity: #Ball save timer for underworld 20 sec total Used as conditional against u trough eject event in hardware
@@ -275,11 +277,83 @@ slide_player:
         text: Smash
         color: black
         y: 4%
-        x: 4%
+        x: 96%
         z: 2
         anchor_x: right
         anchor_y: bottom
         font_size: 50
+        font_name: greekgods3
+  all_bugs_smashed:
+    hades_game_won_slide:
+      target: playfield_lcd
+      background_color: black
+      transition:
+        type: fade
+        duration: 1s
+      widgets:
+      - type: text
+        text: HADES
+        color: white
+        y: 80%
+        z: 2
+        font_size: 100
+        font_name: greekgods3
+      - type: text
+        text: IS
+        color: white
+        y: 60%
+        z: 2
+        font_size: 100
+        font_name: greekgods3
+      - type: text
+        text: CLEANSED
+        color: white
+        y: 40%
+        z: 2
+        font_size: 100
+        font_name: greekgods3
+      - type: text
+        text: 30,000 POINTS!
+        color: white
+        y: 20%
+        z: 2
+        font_size: 100
+        font_name: greekgods3
+  lost_the_bug_ball:
+    hades_game_over_slide:
+      target: playfield_lcd
+      background_color: black
+      transition:
+        type: fade
+        duration: 1s
+      widgets:
+      - type: text
+        text: BUGS
+        color: white
+        y: 80%
+        z: 2
+        font_size: 100
+        font_name: greekgods3
+      - type: text
+        text: SURVIVE
+        color: white
+        y: 60%
+        z: 2
+        font_size: 100
+        font_name: greekgods3
+      - type: text
+        text: ANOTHER
+        color: white
+        y: 40%
+        z: 2
+        font_size: 100
+        font_name: greekgods3
+      - type: text
+        text: GAME!
+        color: white
+        y: 20%
+        z: 2
+        font_size: 100
         font_name: greekgods3
 
 show_player:
@@ -311,12 +385,22 @@ show_player:
       loops: 0
       events_when_played: hades_bug_game_finishing #Used by flipper enable
       events_when_completed: hades_final_bug_show_finished
+    show_attention_scoop:
+      speed: 2
+      loops: -1 #Repeat
+      priority: 1
+      sync_ms: 2000 #Start 2 seconds into show
   lost_the_bug_ball:
     show_leds_red_to_white:
       speed: 2
       loops: 0
       events_when_played: hades_bug_game_finishing #used by flipper enable
       events_when_completed: hades_final_bug_show_finished
+    show_attention_scoop:
+      speed: 4
+      loops: -1 #Repeat
+      priority: 1
+      sync_ms: 2000 #Start 2 seconds into show
 
 
 

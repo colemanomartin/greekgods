@@ -1,23 +1,17 @@
 #show_version=5
 - duration: 1
   lights:
-    l_zeus_eyes_flasher:
-      color: (color1)
-      fade: 200 ms
     l_lightning:
-      color: (color1)
+      color: 000000
       fade: 200 ms
     l_scoop_tongue:
-      color: (color1)
-      fade: 200 ms
+      color: FFFFFF
+      fade: 50 ms
 - duration: 1
   lights:
-    l_zeus_eyes_flasher:
-      color: (color2)
-      fade: 200 ms
     l_lightning:
-      color: (color2)
+      color: FFFFFF
       fade: 200 ms
     l_scoop_tongue:
-      color: (color2)
-      fade: 200 ms
+      color: 000000
+      fade: 50 ms

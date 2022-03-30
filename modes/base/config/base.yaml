@@ -50,7 +50,7 @@ accruals:  # Has to live in base since field shuts down during mb
     disable_on_complete: false
   base_olympus_pops: # keeps track of just these pops to run the middle (cloud) insert show
     events:
-#      - base_olympus_left_pop_hit fix this spoon
+      - base_olympus_left_pop_hit 
       - base_olympus_right_pop_hit
       - base_olympus_lower_pop_hit
     persist_state: true
