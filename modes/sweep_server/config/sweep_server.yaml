@@ -25,6 +25,14 @@ display_light_player: #http://docs.missionpinball.org/en/latest/config/display_l
       lights: gi, insert
 
 widgets:
+  spark_fire:
+    - type: image
+      image: rolling_spark_fire
+      scale: 4
+      x: 50%
+      y: 500
+      anchor_x: middle
+      anchor_y: middle
   gradient_gbr_clockwise:
     - type: image
       image: grad_gbr_clockwise
@@ -688,13 +696,13 @@ widget_player:
       action: remove
 #Hades bug game continous play of spiral sweep
   hades_backlight_show_done:
-    hypno_rainbow_sweep:
+    spark_fire:
       slide: blank_transparent
   all_bugs_smashed:
-    hypno_rainbow_sweep:
+    spark_fire:
       action: remove
   lost_the_bug_ball:
-    hypno_rainbow_sweep:
+    spark_fire:
       action: remove
 
 ############# Goddess MB Mode Sweeps ##################
