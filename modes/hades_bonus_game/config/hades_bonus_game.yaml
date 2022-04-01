@@ -22,7 +22,7 @@
 #
 #Note: tag trough removed from hardware on lower trough. if problems, put back in and troubleshoot other haded mode.
 #Looks like trough having only tag home causes to re-eject (verify) adding tag trough registers a ball drain which was
-#OK for starting this as a mb but not for running it off the coil drivers.  May have to convert back. 
+#OK for starting this as a mb but not for running it off the coil drivers.  May have to convert back.
 mode:
   priority: 1500 # range 100-1M
   start_events:
@@ -299,7 +299,8 @@ sequences:
     failing_path:
        events:
          - timer_hades_immunity_complete
-         - balldevice_bd_u_trough_ball_enter
+         - s_u_trough_1_active{not device.timers.hades_bug_immunity.running}
+         #- balldevice_bd_u_trough_ball_enter
        events_when_complete: extra_ball_not_earned
 
 slide_player:
