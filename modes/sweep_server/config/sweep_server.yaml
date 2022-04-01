@@ -27,7 +27,7 @@ display_light_player: #http://docs.missionpinball.org/en/latest/config/display_l
 widgets:
   spark_fire:
     - type: image
-      image: rolling_spark_fire
+      image: rolling_spark_fire2
       scale: 4
       x: 50%
       y: 500

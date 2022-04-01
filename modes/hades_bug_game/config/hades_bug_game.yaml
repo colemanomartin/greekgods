@@ -233,7 +233,8 @@ sequences:
     bug_game_exit:
        events:
          - timer_hades_bug_immunity_complete
-         - balldevice_bd_u_trough_ball_enter
+         # - balldevice_bd_u_trough_ball_enter
+         - s_u_trough_1_active{not device.timers.hades_bug_immunity.running}
        events_when_complete: lost_the_bug_ball
 
 accruals:

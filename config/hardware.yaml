@@ -876,22 +876,6 @@ ball_devices:
     jam_switch: s_trough_jam
     eject_coil_jam_pulse: 15ms
     debug: yes
-  bd_u_trough:
-    captures_from: hades_pf
-    eject_targets: hades_pf
-    ball_missing_target: hades_pf
-    eject_coil: c_u_trough_eject
-    ball_switches: s_u_trough_1
-    eject_timeouts: 500ms
-    entrance_count_delay: 100ms
-    entrance_event_timeout: 1s
-    auto_fire_on_unexpected_ball: false
-    target_on_unexpected_ball: hades_pf
-#    eject_events: This sould work but does not for some reason. moved it over to hades coil player
-#      - hades_bonus_intro_show_done
-#      - s_u_trough_1_active{device.timers.hades_immunity.running}
-    debug: True
-    tags: home #, trough #, drain must have trough tag or it keeps re-ejecting and wont drain
 #  bd_u_trough:
 #    captures_from: hades_pf
 #    eject_targets: hades_pf
@@ -901,12 +885,13 @@ ball_devices:
 #    eject_timeouts: 500ms
 #    entrance_count_delay: 100ms
 #    entrance_event_timeout: 1s
-#    target_on_unexpected_ball: hades_pf
 #    auto_fire_on_unexpected_ball: false
-#    eject_events: hades_bonus_intro_show_done
-#    debug: true
-#    tags: home, trough #, drain must have trough tag or it keeps re-ejecting and wont drain
-
+#    target_on_unexpected_ball: hades_pf
+#    eject_events: This sould work but does not for some reason. moved it over to hades coil player
+#      - hades_bonus_intro_show_done
+#      - s_u_trough_1_active{device.timers.hades_immunity.running}
+#    debug: True
+#    tags: home #, trough #, drain must have trough tag or it keeps re-ejecting and wont drain
 
 playfields:
   earth_pf:
@@ -914,7 +899,7 @@ playfields:
     default_source_device: bd_plunger
   hades_pf:
     tags: mini
-    default_source_device: bd_u_trough  # use None in steps before 8
+    default_source_device: None #bd_u_trough  # use None in steps before 8
 
 autofire_coils:
   orbit_spinner_knocker:

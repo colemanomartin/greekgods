@@ -10,15 +10,15 @@ mode:
   start_events: ball_starting
   priority: 100 # range 100-1M
 
-ball_holds:
-  bug_game_keep_ball_in_trough:
-    enable_events:
-      - mode_hades_bug_game_started
-    reset_events:
-      - machine_reset_phase_3
-    hold_devices: bd_u_trough
-    source_playfield: hades_pf
-    balls_to_hold: 1
+#ball_holds:
+#  bug_game_keep_ball_in_trough:
+#    enable_events:
+#      - mode_hades_bug_game_started
+#    reset_events:
+#      - machine_reset_phase_3
+#    hold_devices: bd_u_trough
+#    source_playfield: hades_pf
+#    balls_to_hold: 1
 
 
 accruals:  # Has to live in base since field shuts down during mb
