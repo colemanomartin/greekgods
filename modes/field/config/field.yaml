@@ -421,7 +421,7 @@ sequences:
       - timer_field_scoop_tripple_shot_window_complete
     reset_on_complete: false
     #Ball started does not work because this mode does not start until after the even is posted
-    enable_events: mode_field_started{not device.accruals.already_played_bug_game_this_ball.completed AND not device.accruals.already_won_bug_game.completed} #Only enable at ball start if game not already won once
+    enable_events: mode_field_started{not device.accruals.already_played_bug_game_this_ball.completed and not device.accruals.already_won_bug_game.completed} #Only enable at ball start if game not already won once
 
 ball_holds:
   field_hades_bug_hold:
@@ -432,8 +432,8 @@ ball_holds:
     release_all_events:
       - mode_hades_bug_game_stopped
 #      - Logicblock_field_scoop_tripple_shot_complete
-#    disable_events: logicblock_field_scoop_tripple_shot_****RESET EVENT *****
-
+    disable_events: #logicblock_field_scoop_tripple_shot_****RESET EVENT *****
+      - mode_hades_bug_game_stopped
 show_player:
   base_hole_distal_hit{device.counters.field_revealed_sling_hits.value < 1}: #Dont start light show when mystery will be starting
     show_lightning_bb_flashing:
