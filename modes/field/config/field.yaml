@@ -163,6 +163,7 @@ shots:
 #    led5: red
 accruals:  # These are designed to fire once to give instructions a single time during the game
   #To run sound effects as non-game mode these accruals and the first counter were moved from sound effects and enable events changed in counter
+
   sound_drop_target_instructions:
     events: drop_target_bank_cluster_mixed
     persist_state: true
@@ -202,6 +203,12 @@ accruals:  # These are designed to fire once to give instructions a single time 
     disable_events: # Otherwise voice cues are too many
       - ormb_light_o_lock_hit
       - prmb_light_p_lock_hit
+  #This makes is here to allow tracking so bug game can only be won once per player's game
+  bug_game_won:
+    events: all_bugs_smashed
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
 
 counters:
   #This counter sends voice instruction to complete the pops for goddess It completes after 3 different pop hits
@@ -400,16 +407,18 @@ timers:
 
 sequences:
   #Used to wake up hades bug game.  3 shots in a row get bug game going.
-  #Add widget player of arrow with bug on it pointing at scoop after shot 2
-  #Pay attention to reset of logic block to remove arrow. Check log for name
+  #player can get to bug game once per ball, after the player wins bug game he or she cant play again.
   field_scoop_tripple_shot:
-#    sequence_timer: 10s
     events:
       - base_scoop_from_pf_hit
       - base_scoop_from_pf_hit
       - base_scoop_from_pf_hit
-    restart_events:
+    reset_events:
       - timer_field_scoop_tripple_shot_window_complete
+    reset_on_complete: false
+    #Ball started does not work because this mode does not start until after the even is posted
+#    enable_events: ball_started #{not device.accruals.bug_game_won.completed} #Only enable at ball start if game not already won once
+
 ball_holds:
   field_hades_bug_hold:
     source_playfield: earth_pf
