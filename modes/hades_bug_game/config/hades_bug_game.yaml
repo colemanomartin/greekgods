@@ -264,25 +264,31 @@ slide_player:
       target: playfield_lcd
       background_color: white
       widgets:
+      - type: image
+        image: hades_lower_mask
+        anchor_y: top
+        y: 102%
+        opacity: 1
+        z: 2
       - type: text
         text: Bug
-        color: black
+        color: yellow
         y: 4%
         x: 4%
-        z: 2
+        z: 3
         anchor_x: left
         anchor_y: bottom
-        font_size: 50
+        font_size: 60
         font_name: greekgods3
       - type: text
         text: Smash
-        color: black
+        color: yellow
         y: 4%
         x: 96%
-        z: 2
+        z: 3
         anchor_x: right
         anchor_y: bottom
-        font_size: 50
+        font_size: 60
         font_name: greekgods3
   all_bugs_smashed:
     hades_game_won_slide:
