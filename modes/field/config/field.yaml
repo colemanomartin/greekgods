@@ -203,13 +203,17 @@ accruals:  # These are designed to fire once to give instructions a single time 
     disable_events: # Otherwise voice cues are too many
       - ormb_light_o_lock_hit
       - prmb_light_p_lock_hit
-  #This makes is here to allow tracking so bug game can only be won once per player's game
-  bug_game_won:
+  #Thes allow tracking so bug game can only be played once per ball and only won once per player's game
+  already_won_bug_game:
     events: all_bugs_smashed
     persist_state: true
     reset_on_complete: false
     disable_on_complete: true
-
+  already_played_bug_game_this_ball:
+    events: mode_hades_bug_game_started
+    persist_state: false
+    reset_on_complete: false
+    disable_on_complete: true
 counters:
   #This counter sends voice instruction to complete the pops for goddess It completes after 3 different pop hits
   sound_tracking_base_pops:
@@ -417,7 +421,7 @@ sequences:
       - timer_field_scoop_tripple_shot_window_complete
     reset_on_complete: false
     #Ball started does not work because this mode does not start until after the even is posted
-#    enable_events: ball_started #{not device.accruals.bug_game_won.completed} #Only enable at ball start if game not already won once
+    enable_events: mode_field_started{not device.accruals.already_played_bug_game_this_ball.completed AND not device.accruals.already_won_bug_game.completed} #Only enable at ball start if game not already won once
 
 ball_holds:
   field_hades_bug_hold:
