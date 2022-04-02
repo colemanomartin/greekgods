@@ -27,6 +27,12 @@ mode:
 #    - mode_hades_bonus_game_starting
 #    - mode_base_stopping
     - ball_will_end #so it does not hang when ball drains
+    - mode_goddess_mb_starting #Can happen when mystery shot called for my this mode and then a goddess is hit.
+     #These prevent mystery from starting with multible balls in play will have to hit blinking band to re-qualify
+     #Field should not run until after all mb are finished so it should not requalify during a mb.  If this is a
+     #problem might be able to overcome by {device.counters.base_multiballs_active.value==0}
+    - multiball_poseidon_ramp_started
+    - multiball_olympus_ramp_started
 #    - ball_drain removed 10/24 becaue ball drain in underworld from bug game ejected ball from mystery
 
 #sequence_shots:

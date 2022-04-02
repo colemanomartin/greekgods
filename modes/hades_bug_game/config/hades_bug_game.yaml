@@ -143,7 +143,7 @@ shot_profiles:
 #        show: flash #safe to remove?
       - name: third
 #        show: off #safe to remove?
-      - name: additional
+#      - name: additional
     loop: no
 
 shots:
@@ -155,7 +155,7 @@ shots:
 #       lights: l_mouth_a
      profile: bugs_x_3
      restart_events: mode_hades_bug_game_started  #Restart=reset and enable
-     disable_events: river_a_bug_additional_hit
+     disable_events: river_a_bug_third_hit
   river_b_bug: #bottom left to top left
      playfield: hades_pf
      enable_events: mode_hades_bug_game_started
@@ -164,7 +164,7 @@ shots:
 #       lights: l_mouth_b
      profile: bugs_x_3
      restart_events: mode_hades_bug_game_started
-     disable_events: river_b_bug_additional_hit
+     disable_events: river_b_bug_third_hit
   river_c_bug: #top right to bottom right
      playfield: hades_pf
      enable_events: mode_hades_bug_game_started
@@ -173,7 +173,7 @@ shots:
 #       lights: l_mouth_c
      profile: bugs_x_3
      restart_events: mode_hades_bug_game_started
-     disable_events: river_c_bug_additional_hit
+     disable_events: river_c_bug_third_hit
   river_d_bug: #bottom right to top right
      playfield: hades_pf
      enable_events: mode_hades_bug_game_started
@@ -182,14 +182,14 @@ shots:
 #       lights: l_mouth_d
      profile: bugs_x_3
      restart_events: mode_hades_bug_game_started
-     disable_events: river_d_bug_additional_hit
+     disable_events: river_d_bug_third_hit
   left_corner_target:
      playfield: hades_pf
      enable_events: mode_hades_bug_game_started
      hit_events: s_u_left_target_active
      profile: bugs_x_3
      restart_events: mode_hades_bug_game_started
-     disable_events: left_corner_target_additional_hit
+     disable_events: left_corner_target_third_hit
 #     show_tokens:
 #       lights: l_u_left_corner_rgb
   right_corner_target:
@@ -198,7 +198,7 @@ shots:
      hit_events: s_u_right_target_active
      profile: bugs_x_3
      restart_events: mode_hades_bug_game_started
-     disable_events: right_corner_target_additional_hit
+     disable_events: right_corner_target_third_hit
 #     show_tokens:
 #       lights: l_u_right_corner_rgb
   middle_target:
@@ -207,7 +207,7 @@ shots:
      hit_events: s_u_middle_target_active
      profile: bugs_x_3
      restart_events: mode_hades_bug_game_started
-     disable_events: middle_target_additional_hit
+     disable_events: middle_target_third_hit
 #     show_tokens:  #No flasher for this one add hardware?
 #       lights:
   left_sling:
@@ -216,7 +216,7 @@ shots:
      hit_events: s_u_left_slingshot_active
      profile: bugs_x_3
      restart_events: mode_hades_bug_game_started
-     disable_events: left_sling_additional_hit
+     disable_events: left_sling_third_hit
 #     show_tokens:
 #       lights:   l_u_left_ss_rgb
   right_sling:
@@ -225,7 +225,7 @@ shots:
      hit_events: s_u_right_slingshot_active
      profile: bugs_x_3
      restart_events: mode_hades_bug_game_started
-     disable_events: right_sling_additional_hit
+     disable_events: right_sling_third_hit
 #     show_tokens:
 #       lights:   l_u_right_ss_rgb
 
@@ -1369,3 +1369,4 @@ widgets:
             value: -1%, -1%, -3
             relative: true
             duration:  50ms
+# Sound_player functions in sound effects
