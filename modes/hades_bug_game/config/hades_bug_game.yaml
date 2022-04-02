@@ -236,6 +236,7 @@ sequences:
          # - balldevice_bd_u_trough_ball_enter
          - s_u_trough_1_active{not device.timers.hades_bug_immunity.running}
        events_when_complete: lost_the_bug_ball
+       disable_events: all_bugs_smashed
 
 accruals:
   extermination: #tracks when all bugs splatted
@@ -388,7 +389,7 @@ show_player:
       loops: 0
   all_bugs_smashed:
     show_leds_red_to_white:
-      speed: 2
+      speed: 4
       loops: 0
       events_when_played: hades_bug_game_finishing #Used by flipper enable
       events_when_completed: hades_final_bug_show_finished
@@ -399,7 +400,7 @@ show_player:
       sync_ms: 2000 #Start 2 seconds into show
   lost_the_bug_ball:
     show_leds_red_to_white:
-      speed: 2
+      speed: 4
       loops: 0
       events_when_played: hades_bug_game_finishing #used by flipper enable
       events_when_completed: hades_final_bug_show_finished

@@ -865,7 +865,7 @@ show_player:
     countdown20:
       speed: 10
       loops: 0
-      priority: 50
+      priority: 20 #Less than main ball save so does not overwrite
   bottom_lane_group_hit_complete:
     countdown50:
       speed: 10
