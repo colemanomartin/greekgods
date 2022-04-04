@@ -517,8 +517,8 @@ slide_player:
       - type: text
         text: Acceleration Mode!
         color: black
-        font_size: 300
-
+        font_size: 350
+        font_name: greekgods3
 
 show_player:
   #Here is the hades ballsave. using a show to allow ball to settle before kicking it out.

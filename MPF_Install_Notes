@@ -1,0 +1,46 @@
+Driskel ubunto from scratch notes.  Note change to regular install at end, python3 setup.py install --user
+
+1. Burn ISO of ubuntu to USB drive via etcher
+2. Load USB into new machine
+3. Reboot or turn on computer “Delete” key will get you into bios
+4. Set USB - SanDisk to boot device 1 and then install
+5. Create user:
+    username: pinball
+    password: pinball
+6. DO NOT INSTALL AUTO UPDATES
+Configure:
+1. Terminal
+cd ~
+ssh-keygen -t ed22519 -C “emailaddress”
+copy contents of .ssh/id_ed25519.pub
+SIGN INTO GITHUB
+  Settings
+    SSH and GPG Keys
+    and create a new key “PIN” and copy contents
+mkdir pinball
+mkdir pinball/install
+sudo apt install git
+git config --global user.name “me”
+git config --global user.email “email”
+sudo apt install openssh-server
+CHECK TO SEE IF IT IS RUNNING
+sudo systemctl status sshd
+FIREFOX
+    change no metric to developers
+    change download directory to ~/pinball/install
+cd ~/pinball/
+git clone git@github.com/driskel/pinball_games.git
+cd ~/pinball/pinball_games/ubuntu_install
+sudo cp 00-teensy.rules /etc/udev/rules.d/
+sudo reboot
+download MPF
+cd to MPF folder
+Change in the install-proc:
+    cd pypinproc
+    sudo python3 setup.py install
+to:
+   cd pypinproc
+   python3 setup.py install --user
+install MPF and Libpinproc for Multimorphic
+    https://docs.missionpinball.org/en/latest/install/linux/index.html
+INSTALL VSCODE
