@@ -1,9 +1,9 @@
 #config_version=5
-# This mode activates with p_locking_elgible. It then it calls for the lock to lite via
+# This mode activates with p_locking_elgible. It then it calls for the lock to light via
 # a hit to the ball_block target. After this the player locks a ball and mode quits. Second time
 # through it locks a ball as before and then while still active calls for the MB start at the scoop.
 # If the ball drains before the ball is locked, this mode starts when field starts because
-# accrual base_o_locking_engaged.completed==True. State machine conditions against if this mode running.
+# accrual base_p_locking_engaged.completed==True. State machine conditions against if this mode running.
 # widget prompts to the player and light shows are handled in this mode.
 # Qualifying a ball in olympus area raises BB for a hit to light O ramp lock. (This is handled in field)
 # After the lock is full the state machine sends flap to face the O ramp until after MB is finished or

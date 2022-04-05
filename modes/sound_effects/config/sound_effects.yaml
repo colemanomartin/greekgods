@@ -82,7 +82,12 @@ sound_player:
   logicblock_ball_traversed_left_rivers_complete: snd_bat1
   logicblock_ball_traversed_right_rivers_complete: snd_bat3
 
-  game_start: snd_startbutton
+  game_start:
+    snd_startbutton:
+      action: play
+    snd_sledge_tail:
+      action: stop
+      fade_out: 400 ms
   mode_bonus_started: snd_bonus_riff3
   mode_bonus_stopping:
     snd_bonus_riff3:
