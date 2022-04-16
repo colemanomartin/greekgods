@@ -50,7 +50,7 @@ widgets:
       y: 500
       anchor_x: middle
       anchor_y: middle
-      expire: 4.8s #1.8s
+#      expire: 4.8s #1.8s
   gradient_yw_clockwise:
     - type: image
       image: grad_yw_clockwise
@@ -59,13 +59,7 @@ widgets:
       y: 500
       anchor_x: middle
       anchor_y: middle
-      expire: 4.8s #1.8s
-#      animations:
-#        add_to_slide:
-#        - property: scale
-#          value: .1
-#          relative: false
-#          duration: .6s
+#      expire: 4.8s #1.8s
   left_drain:
   - type: rectangle
     x: 0
@@ -106,7 +100,7 @@ widgets:
     anchor_x: center
     anchor_y: bottom
     rotation: 0
-    z: 1
+    z: 2
     expire: 0.5s
     events_when_removed: triangle_sweep_complete #This is what causes scoop to eject
     animations:
@@ -565,6 +559,7 @@ widgets:
       y: 50%
       anchor_x: middle
       anchor_y: middle
+      z: 1 #ride above other sweeps if more than one active
       animations:
         add_to_slide:
         - property: rotation
@@ -670,9 +665,15 @@ widget_player:
   multiball_poseidon_ramp_started:
     gradient_bw_counterclockwise:
       slide: blank_transparent
+  multiball_poseidon_ramp_stopping:
+    gradient_bw_counterclockwise:
+      action: remove
   multiball_olympus_ramp_started:
     gradient_yw_clockwise:
       slide: blank_transparent
+  multiball_olympus_ramp_stopping:
+    gradient_yw_clockwise:
+      action: remove
   super_spinner_kickoff_hit:
     scoop_rainbow_in:
       slide: blank_transparent

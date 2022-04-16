@@ -24,7 +24,7 @@
 #Looks like trough having only tag home causes to re-eject (verify) adding tag trough registers a ball drain which was
 #OK for starting this as a mb but not for running it off the coil drivers.  May have to convert back.
 mode:
-  priority: 1500 # range 100-1M
+  priority: 2600 # range 100-1M
   start_events:
 #    - game_ending
 #    - ball_ending

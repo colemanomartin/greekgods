@@ -17,7 +17,7 @@
 #Music needs to cut out when ball lost
 #Need call outs for smash the bugs and ball lost and all bugs smashed.
 mode:
-  priority: 2300 # For slides to work this mode has to run above mystery which starts it and runs in background until bug game done
+  priority: 2600 # For slides to work this mode has to run above mystery which starts it and runs in background until bug game done
   start_events:
     - mystery_says_bug_game
     - key_b_pressed

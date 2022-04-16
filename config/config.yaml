@@ -56,15 +56,15 @@ modes:
   - sis_left #J 300 ust for showing slides associated with getting points in P area and enabling loop counts to feed mag diverter
   - sis_right #350 Just for showing slides associated with getting points in O area and enabling loop counts to feed mag diverter
   - mystery #2000
-  - super_spinner #1400
+  - super_spinner #2500
   - sound_effects # 175
 #  - drain_display #2000
-  - hades_bug_game #600
+  - hades_bug_game #2600 has to run over superspinner or pop call shot plays over red
   - bottom_rotation # 1500
   - banked_l_bs #250000
   - banked_r_bs #2500
   - sweep_server #3000
-  - hades_bonus_game #1500
+  - hades_bonus_game #2600 has to run over superspinner or pop call shot plays over red
   - bonus
   - high_score
   - river_a_fast #6100
