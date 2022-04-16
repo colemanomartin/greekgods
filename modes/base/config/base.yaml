@@ -49,6 +49,26 @@ accruals:  # Has to live in base since field shuts down during mb
     persist_state: true
     reset_on_complete: false
     disable_on_complete: false
+  #This two used to be in prmb/ormb but I moved them to base so that bb_up could use them too
+  base_light_p_lock_already_hit: #lets mode start with lock already lit
+    events:
+      - prmb_light_p_lock_hit
+    restart_events:
+      - multiball_lock_poseidon_lock_locked_ball
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+  base_light_o_lock_already_hit:   #lets mode start with lock already lit
+    events:
+      - ormb_light_o_lock_hit
+    restart_events:
+      - multiball_lock_olympus_lock_locked_ball
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
+
+
+
   base_all_pops: #Could have used a shot group here but would have lost persist state ability
     events:
       - base_left_side_pop_hit

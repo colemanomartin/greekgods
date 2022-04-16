@@ -21,13 +21,13 @@ mode:
     - multiball_olympus_ramp_ended
     - kill_o_locking #Used by mystery award to switch lock to other side because sis on wrong side.
     - multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1}
-    - mode_goddess_mb_started #When field restarts this mode should respon if engaged completed 
+    - mode_goddess_mb_started #When field restarts this mode should respon if engaged completed
 multiball_locks:
   olympus_lock:
     source_playfield: earth_pf
     enable_events:
       - ormb_light_o_lock_hit
-      - mode_o_ramp_mb_started{device.accruals.ormb_light_o_lock_already_hit.completed}
+      - mode_o_ramp_mb_started{device.accruals.base_light_o_lock_already_hit.completed}
     disable_events:
       - multiball_olympus_ramp_started
       - multiball_lock_olympus_lock_locked_ball
@@ -72,7 +72,7 @@ shots:
     playfield: earth_pf
     profile: flashing_off_o
     enable_events:
-      - mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2} # and not logicblock_ormb_light_o_lock_already_hit.completed} #This enables the shot when mode starts provide lock is not already full.
+      - mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2} # and not logicblock_base_light_o_lock_already_hit.completed} #This enables the shot when mode starts provide lock is not already full.
     reset_events: multiball_lock_olympus_lock_locked_ball
     disable_events: ormb_light_o_lock_hit
     hit_events:
@@ -119,7 +119,7 @@ event_player:
 
 show_player:
   #Things to do when starting
-  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2 and not device.accruals.ormb_light_o_lock_already_hit.completed}: #  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls==0}:
+  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2 and not device.accruals.base_light_o_lock_already_hit.completed}: #  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls==0}:
     show_attention_ball_block:
       speed: 4
       sync_ms: 250
@@ -310,7 +310,7 @@ widgets:
 
 widget_player:
   #Things to do when starting
-  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2 and not device.accruals.ormb_light_o_lock_already_hit.completed}: #Mode started hasnt lit
+  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2 and not device.accruals.base_light_o_lock_already_hit.completed}: #Mode started hasnt lit
     qualified_yellow:
       slide: show_progress_to_ramp_mb #Adds widget on top pillar of this slide which was posted in field
       action: add
@@ -322,7 +322,7 @@ widget_player:
       action: remove
     shoot_ramp_blue:
       action: remove
-  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2 and device.accruals.ormb_light_o_lock_already_hit.completed}: #Mode started has lit and lock not full
+  mode_o_ramp_mb_started{device.ball_devices.bd_olympus_ramp.balls<2 and device.accruals.base_light_o_lock_already_hit.completed}: #Mode started has lit and lock not full
     shoot_ramp_yellow:
       slide: show_progress_to_ramp_mb
       action: add
@@ -464,22 +464,13 @@ accruals:
     persist_state: true
     reset_on_complete: false
     disable_on_complete: true
-  #This one lets mode start with lock already lit
-  ormb_light_o_lock_already_hit:
-    events:
-      - ormb_light_o_lock_hit
-    restart_events:
-      - multiball_lock_olympus_lock_locked_ball
-    persist_state: true
-    reset_on_complete: false
-    disable_on_complete: true
 
 sound_player:
   multiball_olympus_ramp_started: v_multiball
   multiball_lock_olympus_lock_full: v_shoot_scoop_mb #defigned in sounds in config
   ormb_jackpot_hit: v_jackpot
-  mode_o_ramp_mb_started{not device.accruals.ormb_light_o_lock_already_hit.completed}: v_shoot_scoop_target_to_enable_lock
-  mode_o_ramp_mb_started{device.state_machines.ramp_flap_control.state=="divert_right" and device.accruals.ormb_light_o_lock_already_hit.completed}:  v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball when mode starts and lock already lit
+  mode_o_ramp_mb_started{not device.accruals.base_light_o_lock_already_hit.completed}: v_shoot_scoop_target_to_enable_lock
+  mode_o_ramp_mb_started{device.state_machines.ramp_flap_control.state=="divert_right" and device.accruals.base_light_o_lock_already_hit.completed}:  v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball when mode starts and lock already lit
   ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_right"}:  v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball
   ormb_light_o_lock_hit{device.state_machines.ramp_flap_control.state=="divert_left" and not mode.p_ramp_mb.active}: v_move_powerball_to_other_side_to_lock_ball #condition agains other mode running to decrease false alarms.
   logicblock_move_powerball_instructions_o_complete{not mode.p_ramp_mb.active}: v_move_powerball_to_other_side_to_lock_ball #Announces once if ramp hit with flap in wrong spot

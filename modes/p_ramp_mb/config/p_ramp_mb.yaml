@@ -28,7 +28,7 @@ multiball_locks:
     source_playfield: earth_pf
     enable_events:
       - prmb_light_p_lock_hit
-      - mode_p_ramp_mb_started{device.accruals.prmb_light_p_lock_already_hit.completed}
+      - mode_p_ramp_mb_started{device.accruals.base_light_p_lock_already_hit.completed}
     disable_events:
       - multiball_poseidon_ramp_started
       - multiball_lock_poseidon_lock_locked_ball
@@ -120,7 +120,7 @@ event_player:
 
 show_player:
   #Things to do when starting
-  mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and not device.accruals.prmb_light_p_lock_already_hit.completed}: #mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls==0}:
+  mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and not device.accruals.base_light_p_lock_already_hit.completed}: #mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls==0}:
     show_attention_ball_block:
       speed: 4
       sync_ms: 0
@@ -306,7 +306,7 @@ widgets:
 
 widget_player:
   #Things to do when starting
-  mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and not device.accruals.prmb_light_p_lock_already_hit.completed}: #Mode started hasnt lit
+  mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and not device.accruals.base_light_p_lock_already_hit.completed}: #Mode started hasnt lit
     qualified_blue:
       slide: show_progress_to_ramp_mb #Adds widget on top of pillar of this slide which was posted in field
       action: add
@@ -318,7 +318,7 @@ widget_player:
       action: remove
     shoot_ramp_yellow:
       action: remove
-  mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and device.accruals.prmb_light_p_lock_already_hit.completed}: #Mode started has lit and lock not full
+  mode_p_ramp_mb_started{device.ball_devices.bd_poseidon_ramp.balls<2 and device.accruals.base_light_p_lock_already_hit.completed}: #Mode started has lit and lock not full
     shoot_ramp_blue:
       slide: show_progress_to_ramp_mb
       action: add
@@ -460,24 +460,15 @@ accruals:
     persist_state: true
     reset_on_complete: false
     disable_on_complete: true
-  #This one lets mode start with lock already lit
-  prmb_light_p_lock_already_hit:
-    events:
-      - prmb_light_p_lock_hit
-    restart_events:
-      - multiball_lock_poseidon_lock_locked_ball
-    persist_state: true
-    reset_on_complete: false
-    disable_on_complete: true
 
 sound_player:
   multiball_poseidon_ramp_started: v_multiball
   multiball_lock_poseidon_lock_full: v_shoot_scoop_mb #defigned in sounds in config
   prmb_jackpot_hit: v_jackpot
-  mode_p_ramp_mb_started{not device.accruals.prmb_light_p_lock_already_hit.completed}: v_shoot_scoop_target_to_enable_lock
+  mode_p_ramp_mb_started{not device.accruals.base_light_p_lock_already_hit.completed}: v_shoot_scoop_target_to_enable_lock
   prmb_light_p_lock_hit{device.state_machines.ramp_flap_control.state=="divert_right" and not mode.o_ramp_mb.active}: v_move_powerball_to_other_side_to_lock_ball #Added conditional about other mode running to p and o rmb right before Expo to decrease false alarms
   prmb_light_p_lock_hit{device.state_machines.ramp_flap_control.state=="divert_left"}: v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball
-  mode_p_ramp_mb_started{device.state_machines.ramp_flap_control.state=="divert_left" and device.accruals.prmb_light_p_lock_already_hit.completed}: v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball when mode started and lock lit
+  mode_p_ramp_mb_started{device.state_machines.ramp_flap_control.state=="divert_left" and device.accruals.base_light_p_lock_already_hit.completed}: v_shoot_ramp_to_lock_ball #diverter is on correct side to lock ball when mode started and lock lit
   logicblock_move_powerball_instructions_p_complete{not mode.o_ramp_mb.active}: v_move_powerball_to_other_side_to_lock_ball #Announces once if ramp hit with flap in wrong spot
   multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1 and device.multiball_locks.olympus_lock.locked_balls == 0}: v_ball_1_locked
   multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 2 and device.multiball_locks.olympus_lock.locked_balls == 0}: v_ball_2_locked

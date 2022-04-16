@@ -324,6 +324,11 @@ check state machine and make sure it turns off magnet pause after timer_base_tim
 Things to make better:
 [ ] change playback speed on pulsing GIF depending on number of bats/ bugs
 [ ] hydra need a GIF, concentric coming inward?
+[] corner case where bb does not come up
+[] left side pop still blinks in hades if blinking when hades starts.  both bug and bonu game_start
+[] check pass through on right lock
+say how many bugs survive another dayu. Give bioonus for each bug killed?
+[]Give show before bug game_ending
 New high score music
 Arrows to call shots on bats
 Arrow to call hit the scoop target and hit the scoop
