@@ -12,9 +12,6 @@ score:
   - RMM
   - 432750
 - !!python/tuple
-  - AAA
-  - 416800
-- !!python/tuple
   - ZAC
   - 363225
 - !!python/tuple
@@ -31,4 +28,7 @@ score:
   - 245150
 - !!python/tuple
   - AAA
-  - 200550
+  - 199250
+- !!python/tuple
+  - AAA
+  - 106250

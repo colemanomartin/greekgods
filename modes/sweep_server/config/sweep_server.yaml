@@ -665,13 +665,13 @@ widget_player:
   multiball_poseidon_ramp_started:
     gradient_bw_counterclockwise:
       slide: blank_transparent
-  multiball_poseidon_ramp_stopping:
+  multiball_poseidon_ramp_ended:
     gradient_bw_counterclockwise:
       action: remove
   multiball_olympus_ramp_started:
     gradient_yw_clockwise:
       slide: blank_transparent
-  multiball_olympus_ramp_stopping:
+  multiball_olympus_ramp_ended:
     gradient_yw_clockwise:
       action: remove
   super_spinner_kickoff_hit:
