@@ -59,6 +59,7 @@ I had some weird performance issues running MPF as a systemd
 service so I use supervisord to manage it.  I run supervisord from
 rc.local and then start/stop MPF with supervisorctl.
 
+CM 4-21-22 Startup Shutdown Meanwhile I am having GG starts from the .bashrc script in the home directory. 
 
 event handling
 In a mode with slides "first_ball_intro" and lets_go defigned this would call

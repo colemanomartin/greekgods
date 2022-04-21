@@ -49,7 +49,7 @@ multiballs:
     disable_events:
       - multiball_olympus_ramp_ended
     start_events:
-      - ormb_start_shot_hit
+      - ormb_start_shot_hit   #####Probably here is my problem starting both mb without other lock full
       - prmb_start_shot_hit
       - balldevice_bd_olympus_ramp_ball_missing #Experimental fix for a ball that slipped through the lock 11/21/20
       - start_double_mb #Picks up a ramp opto hit broadcast from double_ramp_mb mode

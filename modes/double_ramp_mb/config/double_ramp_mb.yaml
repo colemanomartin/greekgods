@@ -8,11 +8,13 @@ mode:
     - multiball_lock_poseidon_lock_full{device.ball_devices.bd_olympus_ramp.balls==2}
     - multiball_lock_olympus_lock_full{device.ball_devices.bd_poseidon_ramp.balls==2}
   stop_events:
-    - mode_field_started # previously when field started 
-
+    - mode_field_started # previously when field started
+#    - multiball_poseidon_ramp_ended
+#    - multiball_olympus_ramp_ended
 event_player:
   mode_double_ramp_mb_started: ramp_servo_middle
   s_ramp_opto_active: start_double_mb #Start the mb for a ramp hit
+  base_scoop_from_pf_hit: start_double_mb #4/21/22
   mode_poseidon_ramp_mb_started: ramp_servo_divert_left #Pick up which ever one posts first.
   mode_olympus_ramp_mb_started: ramp_servo_divert_left
 

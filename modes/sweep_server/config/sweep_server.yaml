@@ -50,7 +50,7 @@ widgets:
       y: 500
       anchor_x: middle
       anchor_y: middle
-#      expire: 4.8s #1.8s
+      expire: 4.8s #1.8s
   gradient_yw_clockwise:
     - type: image
       image: grad_yw_clockwise
@@ -59,7 +59,7 @@ widgets:
       y: 500
       anchor_x: middle
       anchor_y: middle
-#      expire: 4.8s #1.8s
+      expire: 4.8s #1.8s
   left_drain:
   - type: rectangle
     x: 0
@@ -662,13 +662,13 @@ widget_player:
   give_blue_box_step_cw:
     blue_box_step_cw:
       slide: blank_transparent
-  multiball_poseidon_ramp_started:
+  multiball_poseidon_ramp_started{mode.double_ramp_mb.active==False}: #So as not to stack the gifs
     gradient_bw_counterclockwise:
       slide: blank_transparent
   multiball_poseidon_ramp_ended:
     gradient_bw_counterclockwise:
       action: remove
-  multiball_olympus_ramp_started:
+  multiball_olympus_ramp_started{mode.double_ramp_mb.active==False}: #So as not to stack the gifs
     gradient_yw_clockwise:
       slide: blank_transparent
   multiball_olympus_ramp_ended:
@@ -689,12 +689,13 @@ widget_player:
       slide: blank_transparent
     rotating_faded_bar_4:
       slide: blank_transparent
-  mode_double_ramp_mb_started: #Change to scoop shot hit
-    hypno_rainbow_sweep:
-      slide: blank_transparent
-  mode_double_ramp_mb_stopping:
-    hypno_rainbow_sweep:
-      action: remove
+#  mode_double_ramp_mb_started: #Change to scoop shot hit
+#    hypno_rainbow_sweep:
+#      slide: blank_transparent
+#  mode_double_ramp_mb_stopping:
+#    hypno_rainbow_sweep:
+#      action: remove
+
 #Hades bug game continous play of spiral sweep
   hades_backlight_show_done:
     spark_fire:
