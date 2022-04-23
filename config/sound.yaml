@@ -405,6 +405,19 @@ sounds:
   snd_danesi_yaatra_riff:
     file: danesi_yaatra_riff.ogg
     track: music
+  snd_underworld_bonus_game_music:
+    file: underworld_bonus_game_music.ogg
+    volume: 0.6
+    track: music
+  snd_highscore_music:
+    file: highscore_music.ogg
+    volume: 0.6
+    track: music
+  snd_instructions_music:
+    file: instructions_music.ogg
+    volume: 0.4
+    track: music
+
 sound_loop_sets:
   riff_shooter_start:
     sound: snd_sledge_riff_pre_0
@@ -420,11 +433,11 @@ sound_loop_sets:
     sound: snd_sledge_riff_2
 #  start_button_chord:
 #    sound: snd_startbutton
-  bonus_intro:
-    sound: snd_deadmans_intro
-  bonus_riff:
-    sound: snd_deadmansparty_riff
-  bonus_game_over:
+#  bonus_intro:
+#    sound: snd_deadmans_intro
+  bonus_game_riff:
+    sound: snd_underworld_bonus_game_music
+  bonus_game_over:             #I cant see that this gets played anywhere, listen
     sound: snd_deadmans_tail
   bug_game_intro:
     sound: snd_greymattershort1
@@ -434,3 +447,9 @@ sound_loop_sets:
     sound: snd_tiesto_athena
   goddess_mb_riff:
     sound: snd_danesi_yaatra_riff
+#  my_hades_bonus_music:
+#    sound: snd_underworld_bonus_game_music
+  my_highscore_music:
+    sound: snd_highscore_music
+  my_instructions_music:
+    sound: snd_knee_music.ogg

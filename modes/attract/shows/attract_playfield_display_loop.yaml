@@ -132,7 +132,7 @@
         anchor_x: left
         anchor_y: top
       - type: text
-        text: "Scott Danesi\nA System of Parts\n\nOingo Boingo\nAnthology\n\nDanny Elfman\nSledge Hammer\n\nTiesto\nAthena\n\nThe B52's\nFollow Your Bliss"
+        text: "Scott Danesi\nA System of Parts\n\nOingo Boingo\nAnthology\n\nDanny Elfman\nSledge Hammer\n\nTiesto\nAthena\n\nColeman Martin\nOP-Z Origionals"
         font_name: greekgods3
         font_size: 60
         color: white

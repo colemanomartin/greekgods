@@ -88,15 +88,15 @@ sound_player:
     snd_sledge_tail:
       action: stop
       fade_out: 400 ms
-  mode_bonus_started: snd_bonus_riff3
+  mode_bonus_started: snd_bonus_riff3 #End of ball bonus
   mode_bonus_stopping:
     snd_bonus_riff3:
       action: stop
       fade_out: 400 ms
   mode_game_stopping: snd_sledge_tail
-  high_score_enter_initials: snd_follow_bliss
+  high_score_enter_initials: my_highscore_music
   mode_high_score_stopping:
-    snd_follow_bliss:
+    snd_highscore_music: #Shouldnt this be my_highscore_music?
       action: stop
       fade_out: 400 ms
 
@@ -170,19 +170,23 @@ sound_loop_player:
   ball_will_end:
     loops:
       action: stop
-#      timing: now
-#     fade_out: 200 ms
+
   mode_hades_bonus_game_started:
     loops:
-      sound_loop_set: bonus_intro
+      sound_loop_set: bonus_game_riff #my music
       action: play
       timing: now
-      events_when_played: loop_deadmans_party_riff
-  loop_deadmans_party_riff:
-    loops:
-      sound_loop_set: bonus_riff
-      action: play
-      timing: now
+#  mode_hades_bonus_game_started:
+#    loops:
+#      sound_loop_set: bonus_intro
+#      action: play
+#      timing: now
+#      events_when_played: loop_deadmans_party_riff
+#  loop_deadmans_party_riff:
+#    loops:
+#      sound_loop_set: bonus_riff
+#      action: play
+#      timing: now
   mode_hades_bonus_game_stopping:
     loops:
       action: stop
