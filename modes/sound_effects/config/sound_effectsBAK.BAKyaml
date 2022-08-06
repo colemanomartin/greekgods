@@ -1,0 +1,214 @@
+#config_version=5
+#issues most sound effects and all music loops.
+
+mode:
+  start_events: mode_attract_started #game_started #, non-game mode?
+  priority: 175 # range 100-1M
+  game_mode: false
+
+
+sound_player:
+  #these instructions each play once early in game
+  logicblock_sound_drop_target_instructions_complete: v_complete_drop_targets_to_qualify_mystery_mode
+  logicblock_sound_revealed_band_instructions_complete: v_hit_blinking_band_enable_mystery_award
+  logicblock_sound_ready_for_mystery_instructions_complete: v_shoot_orbit_hole_for_mystery_award
+  logicblock_sound_lane_light_instructions_complete: v_completed_lane_lights_award_bs
+# logicblock_sound_tracking_base_pops_complete: v_hit_all_pops_to_summon_goddess
+  logicblock_sound_ready_locks_by_scoring_instructions_complete: v_ready_locks_by_scoring
+  logicblock_sound_outlane_ballsave_instructions_complete: v_shoot_ramp_twice_outlane_bs
+
+#  ball_starting{player==1 and ball==1}: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
+
+#  mode_av_server_2k_started: snd_startbutton
+  extra_ball_awarded: v_extra_ball_awarded
+  player_added: snd_startbutton
+  base_right_slingshot_hit: snd_right_main_ss
+  base_left_slingshot_hit: snd_left_main_ss
+  base_left_inlane_hit: snd_shield
+  base_left_outlane_hit: snd_shield
+  base_right_inlane_hit: snd_shield
+  base_right_outlane_hit: snd_shield
+  base_hole_distal_hit: snd_shield
+  base_hole_proximal_hit: snd_shield
+  base_orbit_spinner_hit: snd_spinner
+  base_olympus_spinner_hit: snd_spinner
+  base_poseidon_gate: snd_poseidon_mech
+  base_olympus_lower_pop_hit: snd_olympus_mech
+  base_olympus_left_pop_hit: snd_olympus_mech
+  base_olympus_right_pop_hit: snd_olympus_mech
+  base_poseidon_pop_hit: snd_poseidon_mech
+  base_poseidon_right_slingshot_hit: snd_poseidon_mech
+  base_poseidon_left_slingshot_hit: snd_poseidon_mech
+  base_left_side_pop_hit: snd_scott_pop
+  base_hydra_hit: snd_hydra
+  base_ramp_hit: snd_spinner
+  base_revealed_slingshot_hit: snd_scott_pop
+  left_ramp_hit{not (mode.olympus_ramp_mb.active or mode.poseidon_ramp_mb.active)}: snd_ramp_1  #used for lock flash show and banked ball save
+  right_ramphit{not (mode.olympus_ramp_mb.active or mode.poseidon_ramp_mb.active)}: snd_ramp_2 #used for lock flash show and banked ball save
+  bonus_orbit_counter_clockwise_hit: snd_orbit #used in bonus counting, for other orbit purposes, see field
+  bonus_orbit_clockwise_hit: snd_orbit #used in bonus counting, for other orbit purposes, see field
+  ball_block_hit: snd_drop_3 #records hit to the ball block drop target. control of the drop is via bd events in mode scoop.
+#  base_scoop_from_pf: #This logs hits only when the scoop receives the ball from the front. Alternatively might be able to code this using delay_switch
+  ball_waiting_to_eject_from_scoop: explosionlong
+  base_sis_left_arrived_hit: snd_sis #divert_left
+  base_sis_right_arrived_hit: snd_sis #divert_right
+
+  base_hestia_summoned: v_goddess_awarded
+  base_artemus_summoned: v_goddess_awarded
+  base_athena_summoned: v_goddess_awarded
+  base_aphrodite_summoned: v_goddess_awarded
+  ball_save_bs_default_saving_ball: v_ball_saved
+  ball_save_bs_scoop_eject_saving_ball: v_ball_saved
+
+  base_double_left_ramp_hit{not mode.banked_l_bs.active}: v_left_outlane_bs_awarded
+  base_double_right_ramp_hit{not mode.banked_r_bs.active}: v_right_outlane_bs_awarded
+  bottom_lane_group_hit_complete: v_double_outlane_bs_awarded
+
+  river_a_hit: snd_river
+  river_b_hit: snd_river
+  river_c_hit: snd_river
+  river_d_hit: snd_river
+  #Bug mode sounds
+  river_a_bug_hit: snd_splat-and-crunch
+  river_b_bug_hit: snd_splat-and-crunch
+  river_c_bug_hit: snd_splat-and-crunch
+  river_d_bug_hit: snd_splat-and-crunch
+  left_corner_target_hit: snd_splat-and-crunch
+  right_corner_target_hit: snd_splat-and-crunch
+  middle_target_hit: snd_splat-and-crunch
+  mode_hades_bug_game_started: v_hades_has_you
+  all_bugs_smashed: v_underworld_cleansed
+  lost_the_bug_ball: cmgg2_you_returned_underworld.ogg
+  logicblock_ball_traversed_left_rivers_complete: snd_bat1
+  logicblock_ball_traversed_right_rivers_complete: snd_bat3
+
+  game_start:
+    snd_startbutton:
+      action: play
+    snd_sledge_tail:
+      action: stop
+      fade_out: 400 ms
+  mode_bonus_started: snd_bonus_riff3
+  mode_bonus_stopping:
+    snd_bonus_riff3:
+      action: stop
+      fade_out: 400 ms
+  mode_game_stopping: snd_sledge_tail
+  high_score_enter_initials: snd_follow_bliss
+  mode_high_score_stopping:
+    snd_follow_bliss:
+      action: stop
+      fade_out: 400 ms
+
+#Sound loops will loop play sound loop sets defined in sound.  Each is played as a pair of riffs that recombine for variety.  The starting of
+#the pair is usually commanded by the state machine riffer which is living in base.  It needs to live somewhere that it can die and reset with each ball
+# it should probably get its own mode with the accruals that are used by this mode.
+
+
+# To turn off music can use track player like scott does with mystery mode.
+sound_loop_player:
+#  relies on sound_loop_sets currently defigned at the bottom of sound config.
+
+  ball_started:
+    loops:
+      sound_loop_set: riff_shooter_start
+      action: play
+      timing: now #now #was loop end but that made no sense because bonus music does not come through loop player
+
+  loop_basic_and_minor:
+    loops:
+      sound_loop_set: riff_basic
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_minor
+  make_loop_with_minor:
+    loops:
+      sound_loop_set: riff_minor
+      action: play
+      timing: loop_end
+      events_when_played: loop_basic_and_minor
+
+  loop_basic_and_strings:
+    loops:
+      sound_loop_set: riff_strings
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_strings
+  make_loop_with_strings:
+    loops:
+      sound_loop_set: riff_basic
+      action: play
+      timing: loop_end
+      events_when_played: loop_basic_and_strings
+
+  loop_basic_and_cymbals:
+    loops:
+      sound_loop_set: riff_cymbals
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_cymbals
+  make_loop_with_cymbals:
+    loops:
+      sound_loop_set: riff_basic
+      action: play
+      timing: loop_end
+      events_when_played: loop_basic_and_cymbals
+
+  mode_hades_bug_game_started:
+    loops:
+      sound_loop_set: bug_game_riff
+      action: play
+      timing: now
+
+  mode_hades_bug_game_stopping: #This drops into the first looping sequence which is corrected with the followin command from state machine in base
+    loops:                      #ideally state machine would have another state for detour music this this but this hack will hopefully serve.
+      sound_loop_set: riff_basic
+      action: play
+      timing: now
+      events_when_played: make_loop_with_minor #send it to the first double
+
+  ball_will_end:
+    loops:
+      action: stop
+#      timing: now
+#     fade_out: 200 ms
+  mode_hades_bonus_game_started:
+    loops:
+      sound_loop_set: bonus_intro
+      action: play
+      timing: now
+      events_when_played: loop_deadmans_party_riff
+  loop_deadmans_party_riff:
+    loops:
+      sound_loop_set: bonus_riff
+      action: play
+      timing: now
+  mode_hades_bonus_game_stopping:
+    loops:
+      action: stop
+  game_ending:
+    loops:
+      action: stop
+  mode_hydra_started:
+    loops:
+      sound_loop_set: hydra_battle_riff
+      action: play
+      timing: now
+  mode_hydra_stopping: #This drops into the first looping sequence which is corrected with the followin command from state machine in base
+    loops:                      #ideally state machine would have another state for detour music this this but this hack will hopefully serve.
+      sound_loop_set: riff_basic
+      action: play
+      timing: now
+      events_when_played: make_loop_with_minor #send it to the first double
+
+  mode_goddess_mb_started:
+    loops:
+      sound_loop_set: goddess_mb_riff
+      action: play
+      timing: now
+  mode_goddess_mb_stopping: #This drops into the first looping sequence which is corrected with the followin command from state machine in base
+    loops:                      #ideally state machine would have another state for detour music this this but this hack will hopefully serve.
+      sound_loop_set: riff_basic
+      action: play
+      timing: now
+      events_when_played: make_loop_with_minor #send it to the first double

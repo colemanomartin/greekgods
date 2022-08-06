@@ -325,6 +325,9 @@ check state machine and make sure it turns off magnet pause after timer_base_tim
 [] prmb raises drop target on next ball if lock qualified with tongue but ball not locked
 
 Things to make better:
+[] make blinking band faster
+[] deactivat start button after first ball started
+[] high score number spacing 
 [ ] change playback speed on pulsing GIF depending on number of bats/ bugs
 [ ] hydra need a GIF, concentric coming inward?
 [] corner case where bb does not come up
