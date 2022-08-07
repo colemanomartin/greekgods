@@ -59,7 +59,7 @@ I had some weird performance issues running MPF as a systemd
 service so I use supervisord to manage it.  I run supervisord from
 rc.local and then start/stop MPF with supervisorctl.
 
-CM 4-21-22 Startup Shutdown Meanwhile I am having GG starts from the .bashrc script in the home directory. 
+CM 4-21-22 Startup Shutdown Meanwhile I am having GG starts from the .bashrc script in the home directory.
 
 event handling
 In a mode with slides "first_ball_intro" and lets_go defigned this would call
@@ -269,6 +269,14 @@ Troubleshooting: One time it would not push because I added a directory to logs.
    Push
    To pull, click Fetch and then Pull.
 
+Setting up VS code
+Language server: download the server into a directory via this command.  git clone https://github.com/missionpinball/mpf-ls
+navigate to the directory and pip3 install .  (dont forget the .) This creates the binary needed by vscode
+Inside VS code go to view turn on extensions and inside the language EXTENSIONS click the ... and install from VSIX,
+navigate to the directory and inside it vscode-client and click on mpfls-0.0.1.vsix
+to get the language extensions to work on the yaml close out vscode and then navigate to the project directory and type
+code .  (dont forget the .) this starts vs code in the project directory.  To see the auto completions CTRL Space displays.
+
 Streaming: hive builder hotmail buzbuzbuz
 
 Things to add:
@@ -327,7 +335,7 @@ check state machine and make sure it turns off magnet pause after timer_base_tim
 Things to make better:
 [] make blinking band faster
 [] deactivat start button after first ball started
-[] high score number spacing 
+[] high score number spacing
 [ ] change playback speed on pulsing GIF depending on number of bats/ bugs
 [ ] hydra need a GIF, concentric coming inward?
 [] corner case where bb does not come up
