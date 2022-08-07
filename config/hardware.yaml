@@ -1050,25 +1050,24 @@ autofire_coils:
     switch: s_u_right_slingshot
     playfield: hades_pf
 
-#  test_poseidon_lock_0:
-#    coil: c_poseidon_lock
-#    switch: s_poseidon_ramp_lock0 #proximal to release
+#  auto_poseidon_lock_distal:
+#    coil: c_poseidon_lock_ball_release
+#    switch: s_poseidon_lock_distal #upfield to release
 #    playfield: earth_pf
+#   enable_events:
+#      - ball_started{device.ball_devices.bd_poseidon_ramp.balls==0}
+#      - multiball_poseidon_ramp_started # :3s (?) Added 3/12/22 This might interfere with ejecting from P-lock when MB starts. Needs testing.
+#    disable_events: mode_p_ramp_mb_starting #turns off when locking mode starts
+  
 
-#  test_poseidon_lock_1:
-#    coil: c_poseidon_lock
-#    switch: s_poseidon_ramp_lock1 #proximal to release
-#    playfield: earth_pf
-
-#  test_olympus_lock_0:
-#    coil: c_olympus_lock
-#    switch: s_olympus_ramp_lock0 #proximal to release
-#    playfield: earth_pf
-
-#  test_olympus_lock_1:
-#    coil: c_olympus_lock
-#    switch: s_olympus_ramp_lock1 #proximal to release
-#    playfield: earth_pf
+  auto_olympus_lock_distal: #This pulls the post down faster than the diverter function. but it wont hold the post down so the diverter is still needed.  It prevents the ball from bouncing off the post and going between the flippers.  
+    enable_events:
+      - ball_started{device.ball_devices.bd_olympus_ramp.balls==0}
+      - multiball_olympus_ramp_started #Added 8/6/22 This might interfere with ejecting from O-lock when MB starts. Needs testing.
+    disable_events:  mode_o_ramp_mb_starting # turns off when locking mode starts Would be better if tied to event that only works when trying to lock ball
+    coil: c_olympus_lock_ball_release
+    switch: s_olympus_lock_distal #distal to release
+    playfield: earth_pf
 
 
 flippers:
