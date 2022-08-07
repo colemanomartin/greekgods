@@ -94,12 +94,20 @@ sound_player:
       action: stop
       fade_out: 400 ms
   mode_game_stopping: snd_sledge_tail
-  high_score_enter_initials: my_highscore_music
+  high_score_enter_initials: snd_highscore_music
   mode_high_score_stopping:
     snd_highscore_music: #Shouldnt this be my_highscore_music?
       action: stop
       fade_out: 400 ms
-
+  timer_instructions_clock_started: snd_instructions_music #starts the instructions loop in attract
+  logicblock_instruction_slide_controller_complete:
+    snd_instructions_music:
+      action: stop
+      fade_out: 400 ms
+  mode_attract_will_stop:
+    snd_instructions_music:
+      action: stop
+      fade_out: 100 ms
 #Sound loops will loop play sound loop sets defined in sound.  Each is played as a pair of riffs that recombine for variety.  The starting of
 #the pair is usually commanded by the state machine riffer which is living in base.  It needs to live somewhere that it can die and reset with each ball
 # it should probably get its own mode with the accruals that are used by this mode.

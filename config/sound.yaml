@@ -452,4 +452,4 @@ sound_loop_sets:
   my_highscore_music:
     sound: snd_highscore_music
   my_instructions_music:
-    sound: snd_knee_music.ogg
+    sound: snd_instructions_music #snd_instructions_music.ogg
