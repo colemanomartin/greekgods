@@ -402,8 +402,9 @@ sounds:
   snd_tiesto_athena:
     file: tiesto_athena.ogg
     track: music
-  snd_danesi_yaatra_riff:
-    file: danesi_yaatra_riff.ogg
+  snd_cm_goddess2_riff:
+    file: cm_goddess2.wav
+    volume: 0.4
     track: music
   snd_underworld_bonus_game_music:
     file: underworld_bonus_game_music.ogg
@@ -415,7 +416,7 @@ sounds:
     track: music
   snd_instructions_music:
     file: instructions_music.ogg
-    volume: 0.4
+    volume: 0.25
     track: music
 
 sound_loop_sets:
@@ -446,7 +447,7 @@ sound_loop_sets:
   hydra_battle_riff:
     sound: snd_tiesto_athena
   goddess_mb_riff:
-    sound: snd_danesi_yaatra_riff
+    sound: snd_cm_goddess2_riff
 #  my_hades_bonus_music:
 #    sound: snd_underworld_bonus_game_music
   my_highscore_music:
