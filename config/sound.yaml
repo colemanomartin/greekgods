@@ -132,9 +132,9 @@ sounds:
     file: buzz.ogg
     track: sfx
 
-  snd_follow_bliss:
-    file: follow_bliss.ogg
-    track: music
+#  snd_follow_bliss:
+#    file: follow_bliss.ogg
+#    track: music
   v_shoot_scoop_mb:
     file: cmgg2_shoot_scoop_for_mb.ogg
     volume: 1
@@ -335,8 +335,8 @@ sounds:
     track: voice
     max_queue_time: 1s
 
-  snd_sledge_riff_pre_0:
-    file: sledge_riff_pre_0.ogg
+  snd_cm_lead-in: #plays while ball in in shooter lane ready to plunge
+    file: cm_lead-in.wav
 #    volume: 1
     track: music
     streaming: false
@@ -372,9 +372,11 @@ sounds:
     track: music
 #    loops: 1
   snd_startbutton:                      #### Add to attract
-    file: startbutton.ogg
+    file: cm_start-button.wav
     volume: 0.3
     track: sfx
+    #events_when_stopped: finished_playing_start_button_sound #Later use this or loopplayer to make start chord not overlap shooter start
+
   snd_deadmans_intro:
     file: deadmans_intro.ogg
     volume: 0.8
@@ -421,7 +423,7 @@ sounds:
 
 sound_loop_sets:
   riff_shooter_start:
-    sound: snd_sledge_riff_pre_0
+    sound: snd_cm_lead-in
   riff_basic:
     sound: snd_sledge_riff_0
   riff_minor:

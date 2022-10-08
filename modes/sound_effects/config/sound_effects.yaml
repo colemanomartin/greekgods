@@ -122,7 +122,7 @@ sound_loop_player:
       sound_loop_set: riff_shooter_start
       action: play
       timing: now #now #was loop end but that made no sense because bonus music does not come through loop player
-
+  #Base contains a state machine which directs the sound loop player into playing one of these themes. Each theme loops with subthemes 
   loop_basic_and_minor:
     loops:
       sound_loop_set: riff_basic
