@@ -335,63 +335,113 @@ queue_relay_player:
     wait_for: mode_hades_bonus_game_stopping
 
 state_machines:  #This state machine supports sound effects mode.
+  #Start can go to qualifying locks, ramp_half_full, ramp_full but not mb nor qualifying with ss or mm
+  #qualifying_locks can go from qualifying with ss or mm or to ramp_half_full
+  #qualifying with ss or mm can go to ramp_half full
+  #ramp_half_full can go to ramp_full
+  #ramp_full can go to p_or_o_mb_running
+  #p_or_o_mb_running can go to qualifying_locks or qualifying locks with ss or mm (when ss is running at end of mb) or to ramp_falf_full if there is a ball on a ramp but I dont think this happens as i beleive both ramps are released with a single mb
+  #might be an edge cases if a mb initiates and there is a retained ball on a lock because 3 balls were locked but double mb not entered
   riffer:
     states:
       start:
         label: undefined
-      basic_play:
+      qualifying_locks:
         label: nothing_locked
-      something_locked:
-        label: something_locked_somewhere
+      qualifying_with_ss_or_mm:
+        label: nothing_locked_but_more_happening
+      ramp_half_full: #legit to enter with both ramp locks half full too
+        label: ball_locked_somewhere
+      ramp_full: #legit to enter with both ramp locks full too
+        label: ready_for_mb_release
       p_or_o_mb_running:
         label: main_mode_mb_running
 
     transitions:
       - source: start
-        target: basic_play
+        target: qualifying_locks
         events:
           - balldevice_bd_plunger_ball_eject_success{device.ball_devices.bd_olympus_ramp.balls==0 and device.ball_devices.bd_poseidon_ramp.balls==0 and mode.base.active} #maybe s_shooterlane_inactive would be better
         events_when_transitioning:
-          - loop_basic_and_minor
-
+          - loop_main_theme_music_level_1
+        #Note: no legitimate pathway from shooter lane music to qualifying with ss or mystery music because have to hit blinking band first.
       - source: start
-        target: something_locked
+        target: ramp_half_full  #one or more ramps has a single ball
         events:
-          - balldevice_bd_plunger_ball_eject_success{device.ball_devices.bd_olympus_ramp.balls > 0 or device.ball_devices.bd_poseidon_ramp.balls > 0 and mode.base.active}
+          - balldevice_bd_plunger_ball_eject_success{device.ball_devices.bd_olympus_ramp.balls==1 or device.ball_devices.bd_poseidon_ramp.balls==1 and mode.base.active}
         events_when_transitioning:
-          - loop_basic_and_strings
+          - loop_main_theme_music_level_3
+      - source: start
+        target: ramp_full #one or more ramps ready to release
+        events:
+          - balldevice_bd_plunger_ball_eject_success{device.ball_devices.bd_olympus_ramp.balls==2 or device.ball_devices.bd_poseidon_ramp.balls==2 and mode.base.active}
+        events_when_transitioning:
+          - loop_main_theme_music_level_4
 
-      - source: basic_play
-        target: something_locked
+
+      - source: qualifying_locks
+        target: qualifying_with_ss_or_mm
+        events:
+          - super_spinner_kickoff_hit #pop shot starting super spinner hit
+          - field_says_mystery_time #Double check this event if not working properly
+        events_when_transitioning:
+          - loop_main_theme_music_level_2
+
+      - source: qualifying_locks
+        target: ramp_half_full
         events:
           - multiball_lock_poseidon_lock_locked_ball
           - multiball_lock_olympus_lock_locked_ball
         events_when_transitioning:
-          - loop_basic_and_strings
+          - loop_main_theme_music_level_3
 
-      - source: something_locked
+      - source: qualifying_with_ss_or_mm
+        target: ramp_half_full
+        events:
+          - multiball_lock_poseidon_lock_locked_ball
+          - multiball_lock_olympus_lock_locked_ball
+        events_when_transitioning:
+          - loop_main_theme_music_level_3
+
+      - source: ramp_half_full #Note no music change for locking a ball on other ramp and neither full
+        target: ramp_full
+        events:
+          - multiball_lock_poseidon_lock_full
+          - multiball_lock_olympus_lock_full
+        events_when_transitioning:
+          - loop_main_theme_music_level_4
+
+      - source: ramp_full
         target: p_or_o_mb_running
         events:
           - multiball_poseidon_ramp_started
           - multiball_olympus_ramp_started
         events_when_transitioning:
-          - loop_basic_and_cymbals
+          - loop_mb_music
 
-      - source: p_or_o_mb_running
-        target: something_locked
+      - source: p_or_o_mb_running #This probably does not ever enter since a single mb releases both locks. But if it does here it is
+        target: ramp_half_full
         events:
           - multiball_poseidon_ramp_ended{device.ball_devices.bd_olympus_ramp.balls > 0}
           - multiball_olympus_ramp_ended{device.ball_devices.bd_poseidon_ramp.balls > 0}  ###Not sure what happens to riffs when double mb occurs.
         events_when_transitioning:
-          - loop_basic_and_strings
+          - loop_main_theme_music_level_3
 
       - source: p_or_o_mb_running
-        target: basic_play
+        target: qualifying_locks
         events:
-          - multiball_poseidon_ramp_ended{device.ball_devices.bd_olympus_ramp.balls == 0}
-          - multiball_olympus_ramp_ended{device.ball_devices.bd_poseidon_ramp.balls == 0}  ###Not sure what happens to riffs when double mb occurs.
+          - multiball_poseidon_ramp_ended{device.ball_devices.bd_olympus_ramp.balls == 0 and not mode.super_spinner.active}
+          - multiball_olympus_ramp_ended{device.ball_devices.bd_poseidon_ramp.balls == 0 and not mode.super_spinner.active}  ###Not sure what happens to riffs when double mb occurs.
         events_when_transitioning:
-          - loop_basic_and_minor
+          - loop_main_theme_music_level_1
+
+      - source: p_or_o_mb_running
+        target: qualifying_with_ss_or_mm
+        events:
+          - multiball_poseidon_ramp_ended{device.ball_devices.bd_olympus_ramp.balls == 0 and mode.super_spinner.active}
+          - multiball_olympus_ramp_ended{device.ball_devices.bd_poseidon_ramp.balls == 0 and mode.super_spinner.active}
+        events_when_transitioning:
+          - loop_main_theme_music_level_2
 
 
 shot_profiles:
