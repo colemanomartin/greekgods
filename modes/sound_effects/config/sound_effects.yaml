@@ -273,6 +273,60 @@ sound_loop_player:
       timing: loop_end
       events_when_played: make_loop_with_core_drum_solo_short_of_lvl_4
 
+  loop_mb_music:
+    loops:
+      sound_loop_set: riff_drum_trans_very_short #Sounds better main 2 then main 1
+      action: play
+      timing: now
+      events_when_played: make_loop_with_mb_main2
+  make_loop_with_mb_main2:
+    loops:
+      sound_loop_set: riff_mb_main2 #Sounds better main 2 then main 1
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_mb_main1
+  make_loop_with_mb_main1:
+    loops:
+      sound_loop_set: riff_mb_main1
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_mb_main_build1
+  make_loop_with_mb_main_build1:
+    loops:
+      sound_loop_set: riff_mb_main_build
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_mb_interlude1
+  make_loop_with_mb_interlude1:
+    loops:
+      sound_loop_set: riff_mb_interlude1
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_mb_main3
+  make_loop_with_mb_main3:
+    loops:
+      sound_loop_set: riff_mb_main3
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_mb_main4
+  make_loop_with_mb_main4:
+    loops:
+      sound_loop_set: riff_mb_main4
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_mb_main_build2
+  make_loop_with_mb_main_build2:
+    loops:
+      sound_loop_set: riff_mb_main_build #reusing same build
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_mb_interlude2
+  make_loop_with_mb_interlude2:
+    loops:
+      sound_loop_set: riff_mb_interlude2
+      action: play
+      timing: loop_end
+      events_when_played: loop_mb_music
 
   mode_hades_bug_game_started:
     loops:

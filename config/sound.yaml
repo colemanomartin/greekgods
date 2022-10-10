@@ -411,17 +411,48 @@ sounds:
   snd_cm_drum_trans_short:
     file: cm_drum_trans_short.wav
     track: music
+  snd_cm_drum_trans_very_short:
+    file: cm_drum_trans_very_short.wav
+    track: music
     mode_end_action: stop_looping
-  snd_core0_fx_echo:
+  snd_cm_core0_fx_echo:
     file: cm_core0_fx_echo.wav
     track: music
     mode_end_action: stop_looping
-  snd_core1_fx_echo:
+  snd_cm_core1_fx_echo:
     file: cm_core1_fx_echo.wav
     track: music
     mode_end_action: stop_looping
   snd_cm_core_chords_runout:
     file: cm_core_chords_runout.wav
+    track: music
+    mode_end_action: stop_looping
+  snd_cm_mb_main1:
+    file: cm_mb_main1.wav
+    track: music
+    mode_end_action: stop_looping
+  snd_cm_mb_main2:
+    file: cm_mb_main2.wav
+    track: music
+    mode_end_action: stop_looping
+  snd_cm_mb_main3:
+    file: cm_mb_main3.wav
+    track: music
+    mode_end_action: stop_looping
+  snd_cm_mb_main4:
+    file: cm_mb_main4.wav
+    track: music
+    mode_end_action: stop_looping
+  snd_cm_mb_main_build:
+    file: cm_mb_main_build.wav
+    track: music
+    mode_end_action: stop_looping
+  snd_cm_mb_interlude1:
+    file: cm_mb_interlude1.wav
+    track: music
+    mode_end_action: stop_looping
+  snd_cm_mb_interlude2:
+    file: cm_mb_interlude2.wav
     track: music
     mode_end_action: stop_looping
 #    file: cm_.wav
@@ -519,11 +550,27 @@ sound_loop_sets:
   riff_drum_trans_short:
     sound: snd_cm_drum_trans_short
   riff_core0_fx_echo:
-    sound: snd_core0_fx_echo
+    sound: snd_cm_core0_fx_echo
   riff_core1_fx_echo:
-    sound: snd_core1_fx_echo
+    sound: snd_cm_core1_fx_echo
   riff_core_chords_runout:
     sound: snd_cm_core_chords_runout
+  riff_drum_trans_very_short:
+    sound: snd_cm_drum_trans_very_short
+  riff_mb_main1:
+    sound: snd_cm_mb_main1
+  riff_mb_main2:
+    sound: snd_cm_mb_main2
+  riff_mb_main3:
+    sound: snd_cm_mb_main3
+  riff_mb_main4:
+    sound: snd_cm_mb_main4
+  riff_mb_main_build:
+    sound: snd_cm_mb_main_build
+  riff_mb_interlude1:
+    sound: snd_cm_mb_interlude1
+  riff_mb_interlude2:
+    sound: snd_cm_mb_interlude2
   game_over_without_bonus:
     sound: snd_sledge_tail
 #  start_button_chord:
