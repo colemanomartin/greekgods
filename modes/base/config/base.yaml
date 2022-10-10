@@ -334,7 +334,7 @@ queue_relay_player:
     post: enter_hades_from_relay_player
     wait_for: mode_hades_bonus_game_stopping
 
-state_machines:  #This state machine supports sound effects mode.
+state_machines:  #This state machine drives the sound loop player in sound_effects. This player depends on sound loops defined in sound.yaml.
   #Start can go to qualifying locks, ramp_half_full, ramp_full but not mb nor qualifying with ss or mm
   #qualifying_locks can go from qualifying with ss or mm or to ramp_half_full
   #qualifying with ss or mm can go to ramp_half full
@@ -382,6 +382,7 @@ state_machines:  #This state machine supports sound effects mode.
       - source: qualifying_locks
         target: qualifying_with_ss_or_mm
         events:
+          - key_1_pressed
           - super_spinner_kickoff_hit #pop shot starting super spinner hit
           - field_says_mystery_time #Double check this event if not working properly
         events_when_transitioning:
@@ -390,6 +391,7 @@ state_machines:  #This state machine supports sound effects mode.
       - source: qualifying_locks
         target: ramp_half_full
         events:
+          - key_2_pressed
           - multiball_lock_poseidon_lock_locked_ball
           - multiball_lock_olympus_lock_locked_ball
         events_when_transitioning:
@@ -398,6 +400,7 @@ state_machines:  #This state machine supports sound effects mode.
       - source: qualifying_with_ss_or_mm
         target: ramp_half_full
         events:
+          - key_2_pressed
           - multiball_lock_poseidon_lock_locked_ball
           - multiball_lock_olympus_lock_locked_ball
         events_when_transitioning:
@@ -406,6 +409,7 @@ state_machines:  #This state machine supports sound effects mode.
       - source: ramp_half_full #Note no music change for locking a ball on other ramp and neither full
         target: ramp_full
         events:
+          - key_3_pressed
           - multiball_lock_poseidon_lock_full
           - multiball_lock_olympus_lock_full
         events_when_transitioning:
@@ -414,6 +418,7 @@ state_machines:  #This state machine supports sound effects mode.
       - source: ramp_full
         target: p_or_o_mb_running
         events:
+          - key_4_pressed
           - multiball_poseidon_ramp_started
           - multiball_olympus_ramp_started
         events_when_transitioning:
@@ -430,6 +435,7 @@ state_machines:  #This state machine supports sound effects mode.
       - source: p_or_o_mb_running
         target: qualifying_locks
         events:
+          - key_6_pressed
           - multiball_poseidon_ramp_ended{device.ball_devices.bd_olympus_ramp.balls == 0 and not mode.super_spinner.active}
           - multiball_olympus_ramp_ended{device.ball_devices.bd_poseidon_ramp.balls == 0 and not mode.super_spinner.active}  ###Not sure what happens to riffs when double mb occurs.
         events_when_transitioning:
@@ -438,6 +444,7 @@ state_machines:  #This state machine supports sound effects mode.
       - source: p_or_o_mb_running
         target: qualifying_with_ss_or_mm
         events:
+          - key_7_pressed
           - multiball_poseidon_ramp_ended{device.ball_devices.bd_olympus_ramp.balls == 0 and mode.super_spinner.active}
           - multiball_olympus_ramp_ended{device.ball_devices.bd_poseidon_ramp.balls == 0 and mode.super_spinner.active}
         events_when_transitioning:

@@ -116,51 +116,163 @@ sound_player:
 # To turn off music can use track player like scott does with mystery mode.
 sound_loop_player:
 #  relies on sound_loop_sets currently defigned at the bottom of sound config.
+# the events which trigger the sound loops are issued by the state machine in base
 
   ball_started:
     loops:
       sound_loop_set: riff_shooter_start
       action: play
       timing: now #now #was loop end but that made no sense because bonus music does not come through loop player
-  #Base contains a state machine which directs the sound loop player into playing one of these themes. Each theme loops with subthemes 
-  loop_basic_and_minor:
+  #Base contains a state machine called riffer which directs the sound loop player into playing one of these themes. Each theme loops with subthemes
+  #If not advancing properly make sure sound loop set name is correct. It does not crash if name invalid it just repeats last valid loop.
+  loop_main_theme_music_level_1:
     loops:
-      sound_loop_set: riff_basic
+      sound_loop_set: riff_core0_arp_mute
+      action: play
+      timing: now #loop_end
+      events_when_played: make_loop_with_core0_of_lvl_1
+  make_loop_with_core0_of_lvl_1:
+    loops:
+      sound_loop_set: riff_core0
       action: play
       timing: loop_end
-      events_when_played: make_loop_with_minor
-  make_loop_with_minor:
+      events_when_played: make_loop_with_core1_of_lvl_1
+  make_loop_with_core1_of_lvl_1:
     loops:
-      sound_loop_set: riff_minor
+      sound_loop_set: riff_core1
       action: play
       timing: loop_end
-      events_when_played: loop_basic_and_minor
+      events_when_played: make_loop_with_core_chords_no_arp_of_lvl_1
+  make_loop_with_core_chords_no_arp_of_lvl_1:
+    loops:
+      sound_loop_set: riff_core_chords_no_arp
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core0_of_lvl_1
 
-  loop_basic_and_strings:
+  loop_main_theme_music_level_2:
     loops:
-      sound_loop_set: riff_strings
+      sound_loop_set: riff_core_drum_solo
+      action: play
+      timing: now #loop_end
+      events_when_played: make_loop_with_core0_fx_sweep_of_lvl_2
+  make_loop_with_core0_fx_sweep_of_lvl_2:
+    loops:
+      sound_loop_set: riff_core0_fx_sweep
       action: play
       timing: loop_end
-      events_when_played: make_loop_with_strings
-  make_loop_with_strings:
+      events_when_played: make_loop_with_core1_of_lvl_2
+  make_loop_with_core1_of_lvl_2:
     loops:
-      sound_loop_set: riff_basic
+      sound_loop_set: riff_core1
       action: play
       timing: loop_end
-      events_when_played: loop_basic_and_strings
+      events_when_played: make_loop_with_core_chords_no_arp_of_lvl_2
+  make_loop_with_core_chords_no_arp_of_lvl_2:
+    loops:
+      sound_loop_set: riff_core_chords_no_arp
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core0_fx_sweep_of_lvl_2
 
-  loop_basic_and_cymbals:
+  loop_main_theme_music_level_3:
     loops:
-      sound_loop_set: riff_cymbals
+      sound_loop_set: riff_core_buildup
+      action: play
+      timing: now #loop_end
+      events_when_played: make_loop_with_core_bass_interlude_of_lvl_3
+  make_loop_with_core_bass_interlude_of_lvl_3:
+    loops:
+      sound_loop_set: riff_core_bass_interlude
       action: play
       timing: loop_end
-      events_when_played: make_loop_with_cymbals
-  make_loop_with_cymbals:
+      events_when_played: make_loop_with_core0_fx_drum_fill9sec_of_lvl_3
+  make_loop_with_core0_fx_drum_fill9sec_of_lvl_3:
     loops:
-      sound_loop_set: riff_basic
+      sound_loop_set: riff_core0_fx_drum_fill9sec
       action: play
       timing: loop_end
-      events_when_played: loop_basic_and_cymbals
+      events_when_played: make_loop_with_core0_fx_long_of_lvl_3
+  make_loop_with_core0_fx_long_of_lvl_3:
+    loops:
+      sound_loop_set: riff_core0_fx_long
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core1_fx_long_of_lvl_3
+  make_loop_with_core1_fx_long_of_lvl_3:
+    loops:
+      sound_loop_set: riff_core1_fx_long
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core0_ducking_drums_lvl_3
+  make_loop_with_core0_ducking_drums_lvl_3:
+    loops:
+      sound_loop_set: riff_core0_ducking_drums
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core1_ducking_drums_lvl_3
+  make_loop_with_core1_ducking_drums_lvl_3:
+    loops:
+      sound_loop_set: riff_core1_ducking_drums
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core0_fx_drum_fill9sec_of_lvl_3
+
+  loop_main_theme_music_level_4:
+    loops:
+      sound_loop_set: riff_core_buildup
+      action: play
+      timing: now #loop_end
+      events_when_played: make_loop_with_core_drum_solo_short_of_lvl_4
+  make_loop_with_core_drum_solo_short_of_lvl_4:
+    loops:
+      sound_loop_set: riff_core_drum_solo_short
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core0_all_synths_9sec_of_lvl_4
+  make_loop_with_core0_all_synths_9sec_of_lvl_4:
+    loops:
+      sound_loop_set: riff_core0_all_synths_9sec
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_drum_trans_short_of_lvl_4
+  make_loop_with_drum_trans_short_of_lvl_4:
+    loops:
+      sound_loop_set: riff_drum_trans_short
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core0_fx_echo_of_lvl_4
+  make_loop_with_core0_fx_echo_of_lvl_4:
+    loops:
+      sound_loop_set: riff_core0_fx_echo
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core1_fx_echo_of_lvl_4
+  make_loop_with_core1_fx_echo_of_lvl_4:
+    loops:
+      sound_loop_set: riff_core1_fx_echo
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core0_ducking_drums_lvl_4
+  make_loop_with_core0_ducking_drums_lvl_4:
+    loops:
+      sound_loop_set: riff_core0_ducking_drums
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core1_ducking_drums_lvl_4
+  make_loop_with_core1_ducking_drums_lvl_4:
+    loops:
+      sound_loop_set: riff_core1_ducking_drums
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core_chords_runout_of_lvl_4
+  make_loop_with_core_chords_runout_of_lvl_4:
+    loops:
+      sound_loop_set: riff_core_chords_runout
+      action: play
+      timing: loop_end
+      events_when_played: make_loop_with_core_drum_solo_short_of_lvl_4
+
 
   mode_hades_bug_game_started:
     loops:

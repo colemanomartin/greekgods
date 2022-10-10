@@ -306,9 +306,11 @@ keyboard:
   g:
     event: logicblock_base_all_pops_complete #All pops hit, awards goddess if elgible.
   h:
-    switch: s_hydra
+    switch: key_h_pressed
   f:
     event: key_f_pressed
+  0:
+    event: key_0_pressed
   1:
     event: key_1_pressed
   2:
@@ -1058,9 +1060,9 @@ autofire_coils:
 #      - ball_started{device.ball_devices.bd_poseidon_ramp.balls==0}
 #      - multiball_poseidon_ramp_started # :3s (?) Added 3/12/22 This might interfere with ejecting from P-lock when MB starts. Needs testing.
 #    disable_events: mode_p_ramp_mb_starting #turns off when locking mode starts
-  
 
-  auto_olympus_lock_distal: #This pulls the post down faster than the diverter function. but it wont hold the post down so the diverter is still needed.  It prevents the ball from bouncing off the post and going between the flippers.  
+
+  auto_olympus_lock_distal: #This pulls the post down faster than the diverter function. but it wont hold the post down so the diverter is still needed.  It prevents the ball from bouncing off the post and going between the flippers.
     enable_events:
       - ball_started{device.ball_devices.bd_olympus_ramp.balls==0}
       - multiball_olympus_ramp_started #Added 8/6/22 This might interfere with ejecting from O-lock when MB starts. Needs testing.

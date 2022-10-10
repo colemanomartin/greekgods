@@ -31,7 +31,7 @@ mode:
 #    - ball_hold_hades_door_held_ball
 #     - mode_bonus_starting # enter_hades_from_bonus_mode
      - enter_hades_from_relay_player #posted by base
-     - key_1_pressed
+     - key_h_pressed
 
   stop_events:
     - hades_final_show_finished
