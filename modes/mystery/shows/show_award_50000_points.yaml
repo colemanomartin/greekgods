@@ -1,5 +1,5 @@
 #show_version=5
-- duration: 2
+- duration: 3
   slides:
     award50000:
       target: playfield_lcd

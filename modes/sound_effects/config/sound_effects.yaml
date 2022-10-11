@@ -52,7 +52,7 @@ sound_player:
   ball_waiting_to_eject_from_scoop: explosionlong
   base_sis_left_arrived_hit: snd_sis #divert_left
   base_sis_right_arrived_hit: snd_sis #divert_right
-
+  mystery_hole_received_ball_hit: snd_cm_mystery
   base_hestia_summoned: v_goddess_awarded
   base_artemus_summoned: v_goddess_awarded
   base_athena_summoned: v_goddess_awarded
@@ -85,7 +85,7 @@ sound_player:
   game_start:
     snd_startbutton:
       action: play
-    snd_sledge_tail:
+    snd_cm_tail:
       action: stop
       fade_out: 400 ms
   mode_bonus_started: snd_bonus_riff3 #End of ball bonus
@@ -93,7 +93,7 @@ sound_player:
     snd_bonus_riff3:
       action: stop
       fade_out: 400 ms
-  mode_game_stopping: snd_sledge_tail
+  mode_game_stopping: snd_cm_tail
   high_score_enter_initials: snd_highscore_music
   mode_high_score_stopping:
     snd_highscore_music: #Shouldnt this be my_highscore_music?

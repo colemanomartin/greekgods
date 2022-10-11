@@ -455,12 +455,24 @@ sounds:
     file: cm_mb_interlude2.wav
     track: music
     mode_end_action: stop_looping
+  snd_cm_mystery:
+    file: cm_mystery.wav
+    track: sfx
+    volume: 0.6
+    ducking:
+      target: loops
+      delay: 0.1 sec
+      attack: 0.15 sec
+      attenuation: 0 #-120db
+      release_point: 0.01 sec
+      release: 0.003 sec
+
 #    file: cm_.wav
 #    track: music
 #    mode_end_action: stop_looping
 
-  snd_sledge_tail:
-    file: sledge_tail.ogg
+  snd_cm_tail:
+    file: cm_tail.wav
 #    volume: 1
     track: music
 #    loops: 1
@@ -491,8 +503,8 @@ sounds:
     volume: 0.4
     track: music
   snd_bonus_riff3:
-    file: bonus_riff3.ogg
-    volume: 0.4
+    file: cm_bonus.wav
+    volume: 0.6
     track: music
   snd_tiesto_athena:
     file: tiesto_athena.ogg
@@ -572,7 +584,7 @@ sound_loop_sets:
   riff_mb_interlude2:
     sound: snd_cm_mb_interlude2
   game_over_without_bonus:
-    sound: snd_sledge_tail
+    sound: snd_cm_tail
 #  start_button_chord:
 #    sound: snd_startbutton
 #  bonus_intro:

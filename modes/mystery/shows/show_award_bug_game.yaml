@@ -1,5 +1,5 @@
 #show_version=5
-- duration: 3
+- duration: 4
   slides:
     award_bug_game:
       target: playfield_lcd
