@@ -734,6 +734,12 @@ sequence_shots:
       - base_sis_right_vacated_hit
       - base_sis_left_arrived_hit
     sequence_timeout: 3s
+  base_retrograde_ramp_fall: #used to activate a ball save for an olympus post bounce
+    playfield: earth_pf
+    switch_sequence:
+      - s_olympus_lock_distal
+      - s_ramp_opto
+    sequence_timeout: 2s
 
 
 
@@ -1301,6 +1307,60 @@ slide_player:
 
 #Hestia, artemus, aphrodite, athena
 widgets:
+
+  mini_score_player_1:
+  - type: text
+    text: "Player 1\n"  (player1|score)
+    number_grouping: true
+    min_digits: 2
+    font_size: 60
+    anchor x: left
+    anchor_y: top
+    y: 80%
+    x: 15%
+    color: white
+    font_name: greekgods3
+    z: 1
+  mini_score_player_2:
+  - type: text
+    text: "Player 2\n"  (player2|score)
+    number_grouping: true
+    min_digits: 2
+    font_size: 60
+    anchor x: right
+    anchor_y: top
+    y: 80%
+    x: 15%
+    color: white
+    font_name: greekgods3
+    z: 1
+  mini_score_player_3:
+  - type: text
+    text: "Player 3\n"  (player3|score)
+    number_grouping: true
+    min_digits: 2
+    font_size: 60
+    anchor x: left
+    anchor_y: top
+    y: 70%
+    x: 15%
+    color: white
+    font_name: greekgods3
+    z: 1
+  mini_score_player_4:
+  - type: text
+    text: "Player 4\n"  (player4|score)
+    number_grouping: true
+    min_digits: 2
+    font_size: 60
+    anchor x: right
+    anchor_y: top
+    y: 80%
+    x: 15%
+    color: white
+    font_name: greekgods3
+    z: 1
+
   hestia:
   - type: text
     text: Hestia Awarded
@@ -2306,6 +2366,17 @@ widget_player:
       action: remove
     hestia_coin:
       action: remove
+  slide_basic_score_slide_active{game.num_players>1}:
+    mini_score_player_1:
+      slide: basic_score_slide
+    mini_score_player_2:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{game.num_players>2}:
+    mini_score_player_3:
+      slide: basic_score_slide
+  slide_basic_score_slide_active{game.num_players>3}:
+    mini_score_player_4:
+      slide: basic_score_slide
 
   counter_field_spins_hit{current_player.player_base_spins==2}:
     sp01:

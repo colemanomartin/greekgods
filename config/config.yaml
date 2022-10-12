@@ -71,7 +71,7 @@ modes:
   - servo #10000 Manager
   - scoop #10000 Manager
   - bb_up #9000 Manager
-  - stop_player_add # 15000 
+  - stop_player_add # 15000
 
 coil_player:
   machine_reset_phase_2: #drops block at startup in case a ball is in subway
@@ -122,6 +122,16 @@ ball_saves:
 
 #Dont know why this is present.  Shouldnt this just be for outlanes? Also missing start event
 #Alternatively make it work as in TNA?
+  bs_olympus_ramp_post_bounce:
+    source_playfield: earth_pf
+    active_time: 1.5s
+    hurry_up_time: 0s
+    grace_period: 0s
+    enable_events: base_retrograde_ramp_fall_hit
+    disable_events: mode_field_stopped
+    auto_launch: yes
+    balls_to_save: 1
+    debug: yes
 
   bs_bottom_lanes: #show player in base
     source_playfield: earth_pf

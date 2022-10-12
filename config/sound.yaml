@@ -508,8 +508,8 @@ sounds:
     volume: 0.4
     track: music
   snd_bonus_riff3:
-    file: cm_bonus.wav
-    volume: 0.6
+    file: cm_bonus_short.wav
+    volume: 0.65
     track: music
   snd_tiesto_athena:
     file: tiesto_athena.ogg

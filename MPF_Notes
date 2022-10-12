@@ -297,8 +297,6 @@ May be able to combine diverters for mystery and scoop using mystery's hole hit 
 
   adjust probabilities on mystery depending on locking
 
-  Don't raise BB after starting super spinner. #Not sure why I said this.
-
 Make hades mini game a mystery option when balls are locked somewhere.
 
 bonus mode with exit.
@@ -334,16 +332,13 @@ check state machine and make sure it turns off magnet pause after timer_base_tim
 
 Things to make better:
 [] make blinking band faster
-[] deactivat start button after first ball started
 [] high score number spacing
 [ ] change playback speed on pulsing GIF depending on number of bats/ bugs
 [ ] hydra need a GIF, concentric coming inward?
 [] corner case where bb does not come up
 [] left side pop still blinks in hades if blinking when hades starts.  both bug and bonu game_start
-[] check pass through on right lock
 say how many bugs survive another dayu. Give bioonus for each bug killed?
 []Give show before bug game_ending
-New high score music
 Arrows to call shots on bats
 Arrow to call hit the scoop target and hit the scoop
 put light shows for ramp pass through and make ramp locking show on ramp LED status indicators.
