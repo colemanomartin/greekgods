@@ -22,7 +22,7 @@ sound_player:
 #  mode_av_server_2k_started: snd_startbutton
   extra_ball_awarded: v_extra_ball_awarded
   player_added: snd_startbutton
-  player_added{num_players>1}: snd_addional_player_added
+  player_added{game.num_players>1}: v_additional_player_added
   base_right_slingshot_hit: snd_right_main_ss
   base_left_slingshot_hit: snd_left_main_ss
   base_left_inlane_hit: snd_shield
