@@ -40,9 +40,6 @@ config:
 modes:
   - base #100
   - extra_balls #150 hades extra ball is triggered in hades.
-  - servo #10000 Manager
-  - scoop #10000 Manager
-  - bb_up #9000 Manager
   - field #200
   - temple_display # 400 adds widgets to playfield display to show where ball will go in response to ramp diverter flap
   - scoop_mb #650
@@ -71,6 +68,11 @@ modes:
   - river_b_fast #6200
   - river_c_fast #6300
   - river_d_fast #6400
+  - servo #10000 Manager
+  - scoop #10000 Manager
+  - bb_up #9000 Manager
+  - stop_player_add # 15000 
+
 coil_player:
   machine_reset_phase_2: #drops block at startup in case a ball is in subway
     c_ball_block_fall:

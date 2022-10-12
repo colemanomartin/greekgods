@@ -333,6 +333,11 @@ sounds:
     volume: 1
     track: voice
     max_queue_time: 1s
+  v_additional_player_added:
+    file: cmgg2_additional_payer_added.ogg
+    volume: 1
+    track: voice
+    max_queue_time: 0.25s 
   snd_cm_lead-in: #plays while ball in in shooter lane ready to plunge
     file: cm_lead-in.wav
 #    volume: 1

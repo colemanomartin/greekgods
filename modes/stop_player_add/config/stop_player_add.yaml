@@ -1,0 +1,10 @@
+#config_version=5
+#This utility mode registers an event handler to block the adding of players
+#once player one ball one is complete. It runs at a higher mode than the one
+#that pickes up the add_player event.  Wolfmarch wrote the code for me.
+mode:
+  start_events: mode_bonus_started
+  stop_events: mode_attract_started
+  priority: 15000
+  code: stop_player_add.stop_player_add
+  game_mode: false
