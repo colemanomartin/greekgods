@@ -1308,58 +1308,104 @@ slide_player:
 #Hestia, artemus, aphrodite, athena
 widgets:
 
+  mini_score_player_1_title:
+  - type: text
+    text: Player 1
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 82%
+    x: 21%
+    color: white
+    font_name: greekgods3
+    z: 2
   mini_score_player_1:
   - type: text
-    text: "Player 1\n"  (player1|score)
+    text: (player1|score)
     number_grouping: true
     min_digits: 2
     font_size: 60
-    anchor x: left
+    anchor_x: center
     anchor_y: top
-    y: 80%
-    x: 15%
+    y: 79%
+    x: 21%
     color: white
     font_name: greekgods3
-    z: 1
+    z: 2
+  mini_score_player_2_title:
+  - type: text
+    text: Player 2
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 82%
+    x: 76%
+    color: white
+    font_name: greekgods3
+    z: 2
   mini_score_player_2:
   - type: text
-    text: "Player 2\n"  (player2|score)
+    text: (player2|score)
     number_grouping: true
     min_digits: 2
     font_size: 60
-    anchor x: right
+    anchor_x: center
     anchor_y: top
-    y: 80%
-    x: 15%
+    y: 79%
+    x: 76%
     color: white
     font_name: greekgods3
-    z: 1
+    z: 2
+  mini_score_player_3_title:
+  - type: text
+    text: Player 3
+    number_grouping: true
+    min_digits: 2
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 74%
+    x: 21%
+    color: white
+    font_name: greekgods3
+    z: 2
   mini_score_player_3:
   - type: text
-    text: "Player 3\n"  (player3|score)
+    text: (player3|score)
     number_grouping: true
     min_digits: 2
     font_size: 60
-    anchor x: left
+    anchor_x: center
     anchor_y: top
-    y: 70%
-    x: 15%
+    y: 71%
+    x: 21%
     color: white
     font_name: greekgods3
-    z: 1
+    z: 2
+  mini_score_player_4_title:
+  - type: text
+    text: Player 4
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 74%
+    x: 76%
+    color: white
+    font_name: greekgods3
+    z: 2
   mini_score_player_4:
   - type: text
-    text: "Player 4\n"  (player4|score)
+    text: (player4|score)
     number_grouping: true
     min_digits: 2
     font_size: 60
-    anchor x: right
+    anchor_x: center
     anchor_y: top
-    y: 80%
-    x: 15%
+    y: 71%
+    x: 76%
     color: white
     font_name: greekgods3
-    z: 1
+    z: 2
 
   hestia:
   - type: text
@@ -2366,17 +2412,6 @@ widget_player:
       action: remove
     hestia_coin:
       action: remove
-  slide_basic_score_slide_active{game.num_players>1}:
-    mini_score_player_1:
-      slide: basic_score_slide
-    mini_score_player_2:
-      slide: basic_score_slide
-  slide_basic_score_slide_active{game.num_players>2}:
-    mini_score_player_3:
-      slide: basic_score_slide
-  slide_basic_score_slide_active{game.num_players>3}:
-    mini_score_player_4:
-      slide: basic_score_slide
 
   counter_field_spins_hit{current_player.player_base_spins==2}:
     sp01:

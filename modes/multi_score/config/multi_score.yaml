@@ -1,0 +1,140 @@
+#config_version=5
+#multiplayer score display.
+mode:
+  priority: 120 #
+  start_events:
+    - player_added
+    - mode_base_started{game.num_players>1}
+  stop_events:
+    - mode_base_stopping
+#  restart_on_next_ball: true #alternatively might need a start event for a ball being present in the lock
+
+widgets:
+  mini_score_player_1_title:
+  - type: text
+    text: Player 1
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 81%
+    x: 21%
+    color: white
+    font_name: greekgods3
+    z: 2
+  mini_score_player_1:
+  - type: text
+    text: (player1|score)
+    number_grouping: true
+    min_digits: 2
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 78%
+    x: 21%
+    color: white
+    font_name: greekgods3
+    z: 2
+  mini_score_player_2_title:
+  - type: text
+    text: Player 2
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 81%
+    x: 76%
+    color: white
+    font_name: greekgods3
+    z: 2
+  mini_score_player_2:
+  - type: text
+    text: (player2|score)
+    number_grouping: true
+    min_digits: 2
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 78%
+    x: 76%
+    color: white
+    font_name: greekgods3
+    z: 2
+  mini_score_player_3_title:
+  - type: text
+    text: Player 3
+    number_grouping: true
+    min_digits: 2
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 75%
+    x: 21%
+    color: white
+    font_name: greekgods3
+    z: 2
+  mini_score_player_3:
+  - type: text
+    text: (player3|score)
+    number_grouping: true
+    min_digits: 2
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 72%
+    x: 21%
+    color: white
+    font_name: greekgods3
+    z: 2
+  mini_score_player_4_title:
+  - type: text
+    text: Player 4
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 75%
+    x: 76%
+    color: white
+    font_name: greekgods3
+    z: 2
+  mini_score_player_4:
+  - type: text
+    text: (player4|score)
+    number_grouping: true
+    min_digits: 2
+    font_size: 60
+    anchor_x: center
+    anchor_y: top
+    y: 72%
+    x: 76%
+    color: white
+    font_name: greekgods3
+    z: 2
+
+event_player:
+  #these are a work around because widget player wont do conditional logic on many non-player variables.
+  mode_multi_score_started{game.num_players>2}: multi_score_recognizes_player_3
+  mode_multi_score_started{game.num_players>3}: multi_score_recognizes_player_4
+  #These pick up additional players added after mode is already running.
+  player_added{game.num_players==3}: multi_score_recognizes_player_3
+  player_added{game.num_players==4}: multi_score_recognizes_player_4
+
+widget_player:
+  #This mode is running because we have at least 2 players already
+  mode_multi_score_started:
+    mini_score_player_1_title:
+      slide: basic_score_slide
+    mini_score_player_1:
+      slide: basic_score_slide
+    mini_score_player_2_title:
+      slide: basic_score_slide
+    mini_score_player_2:
+      slide: basic_score_slide
+  multi_score_recognizes_player_3:
+    mini_score_player_3_title:
+      slide: basic_score_slide
+    mini_score_player_3:
+      slide: basic_score_slide
+  multi_score_recognizes_player_4:
+    mini_score_player_4_title:
+      slide: basic_score_slide
+    mini_score_player_4:
+      slide: basic_score_slide
