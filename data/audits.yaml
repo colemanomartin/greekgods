@@ -1,6 +1,6 @@
 events:
-  game_ended: 1
-  game_started: 2
+  game_ended: 0
+  game_started: 1
 player:
   score:
     average: 124393.82022471911
@@ -20,7 +20,7 @@ shots:
   ball_block: 257
   base_double_left_ramp: 35
   base_double_right_ramp: 78
-  base_hole_distal: 236
+  base_hole_distal: 237
   base_hole_proximal: 815
   base_hydra: 2293
   base_left_inlane: 199
@@ -64,7 +64,7 @@ shots:
   goddess_olympus_right_pop: 34
   goddess_poseidon_pop: 77
   goddess_trigger_mb_release: 3
-  hidden_hole_lane: 66
+  hidden_hole_lane: 67
   left_corner_target: 55
   left_outlane_banked_ballsave: 7
   left_sling: 132
@@ -105,7 +105,7 @@ switches:
   s_drop_target_distal: 228
   s_drop_target_middle: 286
   s_drop_target_proximal: 203
-  s_hole_distal: 236
+  s_hole_distal: 237
   s_hole_proximal: 815
   s_hydra: 2293
   s_launch: 111
@@ -120,7 +120,7 @@ switches:
   s_olympus_lock_proximal: 374
   s_olympus_lower_pop: 549
   s_olympus_right_pop: 771
-  s_olympus_rollover: 1049
+  s_olympus_rollover: 1050
   s_olympus_spinner: 3959
   s_orbit_spinner: 2676
   s_poseidon_gate: 2366
@@ -137,20 +137,20 @@ switches:
   s_right_inlane: 362
   s_right_outlane: 44
   s_right_slingshot: 792
-  s_scoop_chamber: 958
-  s_scoop_lock_0: 422
-  s_scoop_lock_1: 402
-  s_shooterlane: 1150
+  s_scoop_chamber: 959
+  s_scoop_lock_0: 423
+  s_scoop_lock_1: 403
+  s_shooterlane: 1153
   s_sis_left: 288
   s_sis_right: 549
   s_start: 372
-  s_trough_0: 1057
-  s_trough_1: 1051
-  s_trough_2: 1037
-  s_trough_3: 1012
-  s_trough_4: 842
-  s_trough_chamber: 1057
-  s_trough_jam: 1058
+  s_trough_0: 1060
+  s_trough_1: 1054
+  s_trough_2: 1040
+  s_trough_3: 1015
+  s_trough_4: 843
+  s_trough_chamber: 1060
+  s_trough_jam: 1061
   s_u_left_ear_0: 342
   s_u_left_ear_1: 600
   s_u_left_ear_2: 642

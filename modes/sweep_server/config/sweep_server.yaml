@@ -611,6 +611,121 @@ widgets:
           relative: false
           duration: 1s
           repeat: true
+  #Playfield Display width: 508 height: 1190
+  #> 1000 or 84% is BB < 980 upper apron; < 920 orbit
+  bonus_blob_1:
+    - type: ellipse
+      x: 30%
+      y: 30%
+      width: 800
+      height: 800
+      scale: 0
+      color: yellow
+      segments: 16
+      anchor_x: middle
+      anchor_y: middle
+      expire: 1s
+      animations:
+        add_to_slide:
+        - property: scale
+          value: 1
+          relative: false
+          duration: 0.5s
+          easing: in_out_quad
+          timing: after_previous
+        - property: scale
+          value: 0
+          relative: false
+          duration: 0.5s
+          easing: in_out_quad
+          timing: after_previous
+  bonus_blob_2:
+    - type: ellipse
+      x: 60%
+      y: 60%
+      width: 800
+      height: 800
+      scale: 0
+      color: blue
+      segments: 16
+      anchor_x: middle
+      anchor_y: middle
+      expire: 1s
+      animations:
+        add_to_slide:
+        - property: scale
+          value: 1
+          relative: false
+          duration: 0.5s
+          easing: in_out_quad
+          timing: after_previous
+        - property: scale
+          value: 0
+          relative: false
+          duration: 0.5s
+          easing: in_out_quad
+          timing: after_previous
+  bonus_blob_3:
+    - type: ellipse
+      x: 30%
+      y: 60%
+      width: 800
+      height: 800
+      scale: 0
+      color: red
+      segments: 16
+      anchor_x: middle
+      anchor_y: middle
+      expire: 1s
+      animations:
+        add_to_slide:
+        - property: scale
+          value: 1
+          relative: false
+          duration: 0.5s
+          easing: in_out_quad
+          timing: after_previous
+        - property: scale
+          value: 0
+          relative: false
+          duration: 0.5s
+          easing: in_out_quad
+          timing: after_previous
+  bonus_blob_4:
+    - type: ellipse
+      x: 60%
+      y: 30%
+      width: 800
+      height: 800
+      scale: 0
+      color: white
+      segments: 16
+      anchor_x: middle
+      anchor_y: middle
+      expire: 1s
+      animations:
+        add_to_slide:
+        - property: scale
+          value: 1
+          relative: false
+          duration: 0.5s
+          easing: in_out_quad
+          timing: after_previous
+        - property: scale
+          value: 0
+          relative: false
+          duration: 0.5s
+          easing: in_out_quad
+          timing: after_previous
+**********************************************88
+shows:
+  bonus_show:
+    bonus_first:
+      - time: 0
+        widgets: bonus_blob_1
+
+show_player:
+  key_8_pressed: bonus_show
 
 
 widget_player:
