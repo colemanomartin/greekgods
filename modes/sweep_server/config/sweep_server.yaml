@@ -613,7 +613,7 @@ widgets:
           repeat: true
   #Playfield Display width: 508 height: 1190
   #> 1000 or 84% is BB < 980 upper apron; < 920 orbit
-  bonus_blob_1:
+  bonus_bulb_1:
     - type: ellipse
       x: 30%
       y: 30%
@@ -639,7 +639,7 @@ widgets:
           duration: 0.5s
           easing: in_out_quad
           timing: after_previous
-  bonus_blob_2:
+  bonus_bulb_2:
     - type: ellipse
       x: 60%
       y: 60%
@@ -665,7 +665,7 @@ widgets:
           duration: 0.5s
           easing: in_out_quad
           timing: after_previous
-  bonus_blob_3:
+  bonus_bulb_3:
     - type: ellipse
       x: 30%
       y: 60%
@@ -691,7 +691,7 @@ widgets:
           duration: 0.5s
           easing: in_out_quad
           timing: after_previous
-  bonus_blob_4:
+  bonus_bulb_4:
     - type: ellipse
       x: 60%
       y: 30%
@@ -717,12 +717,25 @@ widgets:
           duration: 0.5s
           easing: in_out_quad
           timing: after_previous
-**********************************************88
+
 shows:
   bonus_show:
-    bonus_first:
-      - time: 0
-        widgets: bonus_blob_1
+    - time: 0
+      widgets:
+        bonus_bulb_1:
+          slide: blank_transparent
+    - time: + 0.5
+      widgets:
+        bonus_bulb_2:
+          slide: blank_transparent
+    - time: + 0.5
+      widgets:
+        bonus_bulb_3:
+          slide: blank_transparent
+    - time: + 0.5
+      widgets:
+        bonus_bulb_4:
+          slide: blank_transparent
 
 show_player:
   key_8_pressed: bonus_show
