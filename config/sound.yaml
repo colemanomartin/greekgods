@@ -511,6 +511,13 @@ sounds:
     file: cm_bonus_short.wav
     volume: 0.65
     track: music
+    ducking:
+      target: loops
+      delay: 0.1 sec
+      attack: 0.15 sec
+      attenuation: 0 #-120db
+      release_point: 0.01 sec
+      release: 0.003 sec
   snd_tiesto_athena:
     file: tiesto_athena.ogg
     track: music

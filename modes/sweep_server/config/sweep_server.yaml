@@ -615,10 +615,10 @@ widgets:
   #> 1000 or 84% is BB < 980 upper apron; < 920 orbit
   bonus_bulb_1:
     - type: ellipse
-      x: 30%
-      y: 30%
-      width: 800
-      height: 800
+      x: 30% #bottom left
+      y: 25%
+      width: 700
+      height: 700
       scale: 0
       color: yellow
       segments: 16
@@ -626,25 +626,13 @@ widgets:
       anchor_y: middle
       expire: 1s
       animations:
-        add_to_slide:
-        - property: scale
-          value: 1
-          relative: false
-          duration: 0.5s
-          easing: in_out_quad
-          timing: after_previous
-        - property: scale
-          value: 0
-          relative: false
-          duration: 0.5s
-          easing: in_out_quad
-          timing: after_previous
+        add_to_slide: grow, shrink
   bonus_bulb_2:
     - type: ellipse
-      x: 60%
-      y: 60%
-      width: 800
-      height: 800
+      x: 70% #top right
+      y: 65%
+      width: 700
+      height: 700
       scale: 0
       color: blue
       segments: 16
@@ -652,25 +640,13 @@ widgets:
       anchor_y: middle
       expire: 1s
       animations:
-        add_to_slide:
-        - property: scale
-          value: 1
-          relative: false
-          duration: 0.5s
-          easing: in_out_quad
-          timing: after_previous
-        - property: scale
-          value: 0
-          relative: false
-          duration: 0.5s
-          easing: in_out_quad
-          timing: after_previous
+        add_to_slide: grow, shrink
   bonus_bulb_3:
     - type: ellipse
-      x: 30%
-      y: 60%
-      width: 800
-      height: 800
+      x: 30% #middle left
+      y: 45%
+      width: 700
+      height: 700
       scale: 0
       color: red
       segments: 16
@@ -678,45 +654,136 @@ widgets:
       anchor_y: middle
       expire: 1s
       animations:
-        add_to_slide:
-        - property: scale
-          value: 1
-          relative: false
-          duration: 0.5s
-          easing: in_out_quad
-          timing: after_previous
-        - property: scale
-          value: 0
-          relative: false
-          duration: 0.5s
-          easing: in_out_quad
-          timing: after_previous
+        add_to_slide: grow, shrink
   bonus_bulb_4:
     - type: ellipse
-      x: 60%
+      x: 70% #bottom right
       y: 30%
-      width: 800
-      height: 800
+      width: 700
+      height: 700
       scale: 0
-      color: white
+      color: slateblue
       segments: 16
       anchor_x: middle
       anchor_y: middle
       expire: 1s
       animations:
-        add_to_slide:
-        - property: scale
-          value: 1
-          relative: false
-          duration: 0.5s
-          easing: in_out_quad
-          timing: after_previous
-        - property: scale
-          value: 0
-          relative: false
-          duration: 0.5s
-          easing: in_out_quad
-          timing: after_previous
+        add_to_slide: grow, shrink
+  bonus_bulb_5:
+    - type: ellipse
+      x: 30% #top left
+      y: 65%
+      color: orangered
+      width: 700
+      height: 700
+      segments: 16
+      scale: 0
+      anchor_x: middle
+      anchor_y: middle
+      expire: 1s
+      animations:
+        add_to_slide: grow, shrink
+  bonus_bulb_6:
+    - type: ellipse
+      x: 70%
+      y: 45%
+      color: chartreuse
+      width: 700
+      height: 700
+      segments: 16
+      scale: 0
+      anchor_x: middle
+      anchor_y: middle
+      expire: 1s
+      animations:
+        add_to_slide: grow, shrink
+  bonus_bulb_7:
+    - type: ellipse
+      x: 30%
+      y: 25%
+      color: olive
+      width: 800
+      height: 800
+      segments: 16
+      scale: 0
+      anchor_x: middle
+      anchor_y: middle
+      expire: 0.5s
+      animations:
+        add_to_slide: grow_fast, shrink_fast
+  bonus_bulb_8:
+    - type: ellipse
+      x: 50%
+      y: 55%
+      color: magenta
+      width: 800
+      height: 800
+      segments: 16
+      scale: 0
+      anchor_x: middle
+      anchor_y: middle
+      expire: 0.5s
+      animations:
+        add_to_slide: grow_fast, shrink_fast
+  bonus_bulb_9:
+    - type: ellipse
+      x: 50%
+      y: 35%
+      color: teal
+      width: 800
+      height: 800
+      segments: 16
+      scale: 0
+      anchor_x: middle
+      anchor_y: middle
+      expire: 0.5s
+      animations:
+        add_to_slide: grow_fast, shrink_fast
+  bonus_bulb_10:
+    - type: ellipse
+      x: 50%
+      y: 45%
+      color: navy
+      width: 900
+      height: 1200
+      segments: 16
+      scale: 0
+      anchor_x: middle
+      anchor_y: middle
+      expire: 0.5s
+      animations:
+        add_to_slide: grow_fast, shrink_fast
+
+animations:
+  grow:
+    property: scale
+    value: 1
+    relative: false
+    duration: 0.5s
+    easing: in_out_quad
+    timing: after_previous
+  shrink:
+    property: scale
+    value: 0
+    relative: false
+    duration: 0.5s
+    easing: in_out_quad
+    timing: after_previous
+  grow_fast:
+    property: scale
+    value: 1
+    relative: false
+    duration: 0.25s
+    easing: in_out_quad
+    timing: after_previous
+  shrink_fast:
+    property: scale
+    value: 0
+    relative: false
+    duration: 0.25s
+    easing: in_out_quad
+    timing: after_previous
+
 
 shows:
   bonus_show:
@@ -724,21 +791,51 @@ shows:
       widgets:
         bonus_bulb_1:
           slide: blank_transparent
-    - time: + 0.5
+    - time: +0.5
       widgets:
         bonus_bulb_2:
           slide: blank_transparent
-    - time: + 0.5
+    - time: +0.5
       widgets:
         bonus_bulb_3:
           slide: blank_transparent
-    - time: + 0.5
+    - time: +0.5
       widgets:
         bonus_bulb_4:
           slide: blank_transparent
+    - time: +0.5
+      widgets:
+        bonus_bulb_5:
+          slide: blank_transparent
+    - time: +0.5
+      widgets:
+        bonus_bulb_6:
+          slide: blank_transparent
+    - time: +0.25
+      widgets:
+        bonus_bulb_7:
+          slide: blank_transparent
+    - time: +0.25
+      widgets:
+        bonus_bulb_8:
+          slide: blank_transparent
+    - time: +0.25
+      widgets:
+        bonus_bulb_9:
+          slide: blank_transparent
+    - time: +0.25
+      widgets:
+        bonus_bulb_9:
+          slide: blank_transparent
+    - time: +0.25
+      widgets:
+        bonus_bulb_10:
+          slide: blank_transparent
 
 show_player:
-  key_8_pressed: bonus_show
+  key_8_pressed:
+    bonus_show:
+      loops: 0
 
 
 widget_player:

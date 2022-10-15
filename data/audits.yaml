@@ -140,17 +140,17 @@ switches:
   s_scoop_chamber: 959
   s_scoop_lock_0: 423
   s_scoop_lock_1: 403
-  s_shooterlane: 1153
+  s_shooterlane: 1167
   s_sis_left: 288
   s_sis_right: 549
   s_start: 372
-  s_trough_0: 1060
-  s_trough_1: 1054
-  s_trough_2: 1040
-  s_trough_3: 1015
-  s_trough_4: 843
-  s_trough_chamber: 1060
-  s_trough_jam: 1061
+  s_trough_0: 1073
+  s_trough_1: 1067
+  s_trough_2: 1053
+  s_trough_3: 1028
+  s_trough_4: 844
+  s_trough_chamber: 1073
+  s_trough_jam: 1074
   s_u_left_ear_0: 342
   s_u_left_ear_1: 600
   s_u_left_ear_2: 642
