@@ -15,7 +15,10 @@ sound_player:
   logicblock_sound_lane_light_instructions_complete: v_completed_lane_lights_award_bs
 # logicblock_sound_tracking_base_pops_complete: v_hit_all_pops_to_summon_goddess
   logicblock_sound_ready_locks_by_scoring_instructions_complete: v_ready_locks_by_scoring
-  logicblock_sound_outlane_ballsave_instructions_complete: v_shoot_ramp_twice_outlane_bs
+  logicblock_sound_outlane_ballsave_instructions_complete: v_shoot_ramp_twice_outlane_protection
+  logicblock_sound_use_knee_switch_complete: v_use_knee_switch
+  logicblock_sound_poseidon_bonus_scoring_complete: v_poseidon_bonus_scoring #this is a sequence not a accrual
+  logicblock_sound_olympus_bonus_scoring_complete: v_olympus_bonus_scoring
 
 #  ball_starting{player==1 and ball==1}: v_welcome # mode_base_started'====== Args={'queue': <QueuedEvent>, 'player': 1, 'ball': 1,
 
@@ -61,9 +64,9 @@ sound_player:
   ball_save_bs_default_saving_ball: v_ball_saved
   ball_save_bs_scoop_eject_saving_ball: v_ball_saved
 
-  base_double_left_ramp_hit{not mode.banked_l_bs.active}: v_left_outlane_bs_awarded
-  base_double_right_ramp_hit{not mode.banked_r_bs.active}: v_right_outlane_bs_awarded
-  bottom_lane_group_hit_complete: v_double_outlane_bs_awarded
+  base_double_left_ramp_hit{not mode.banked_l_bs.active}: v_outlane_bs_awarded
+  base_double_right_ramp_hit{not mode.banked_r_bs.active}: v_outlane_bs_awarded
+  bottom_lane_group_hit_complete: v_outlane_bs_awarded
 
   river_a_hit: snd_river
   river_b_hit: snd_river
@@ -77,7 +80,7 @@ sound_player:
   left_corner_target_hit: snd_splat-and-crunch
   right_corner_target_hit: snd_splat-and-crunch
   middle_target_hit: snd_splat-and-crunch
-  mode_hades_bug_game_started: v_hades_has_you
+  mode_hades_bug_game_started: v_help_hades
   all_bugs_smashed: v_underworld_cleansed
   lost_the_bug_ball: cmgg2_you_returned_underworld.ogg
   logicblock_ball_traversed_left_rivers_complete: snd_bat1
@@ -337,10 +340,10 @@ sound_loop_player:
 
   mode_hades_bug_game_stopping: #This drops into the first looping sequence which is corrected with the followin command from state machine in base
     loops:                      #ideally state machine would have another state for detour music this this but this hack will hopefully serve.
-      sound_loop_set: riff_basic
+      sound_loop_set: riff_core0
       action: play
       timing: now
-      events_when_played: make_loop_with_minor #send it to the first double
+      events_when_played: make_loop_with_core1_of_lvl_1
 
   ball_will_end:
     loops:
@@ -375,10 +378,10 @@ sound_loop_player:
       timing: now
   mode_hydra_stopping: #This drops into the first looping sequence which is corrected with the followin command from state machine in base
     loops:                      #ideally state machine would have another state for detour music this this but this hack will hopefully serve.
-      sound_loop_set: riff_basic
+      sound_loop_set: riff_core0
       action: play
       timing: now
-      events_when_played: make_loop_with_minor #send it to the first double
+      events_when_played: make_loop_with_core1_of_lvl_1
 
   mode_goddess_mb_started:
     loops:
@@ -387,7 +390,7 @@ sound_loop_player:
       timing: now
   mode_goddess_mb_stopping: #This drops into the first looping sequence which is corrected with the followin command from state machine in base
     loops:                      #ideally state machine would have another state for detour music this this but this hack will hopefully serve.
-      sound_loop_set: riff_basic
+      sound_loop_set: riff_core0
       action: play
       timing: now
-      events_when_played: make_loop_with_minor #send it to the first double
+      events_when_played: make_loop_with_core1_of_lvl_1

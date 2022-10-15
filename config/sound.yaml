@@ -191,18 +191,25 @@ sounds:
     volume: 1.75
     track: voice
     max_queue_time: 2s
-  v_right_outlane_bs_awarded:
-    file: cmgg2_right_outlane_bs_awarded.ogg
+  v_outlane_bs_awarded:
+    file: cmgg2_outlane_protection_awarded.wav
     volume: 1
     track: voice
     priority: 1
     max_queue_time: 5s
-  v_left_outlane_bs_awarded:
-    file: cmgg2_left_outlane_bs_awarded.ogg
-    volume: 1
-    track: voice
-    priority: 0
-    max_queue_time: 5s
+
+#  v_right_outlane_bs_awarded:
+#    file: cmgg2_right_outlane_bs_awarded.ogg
+#    volume: 1
+#    track: voice
+#    priority: 1
+#    max_queue_time: 5s
+#  v_left_outlane_bs_awarded:
+#    file: cmgg2_left_outlane_bs_awarded.ogg
+#    volume: 1
+#    track: voice
+#    priority: 0
+#    max_queue_time: 5s
   v_move_powerball_to_other_side_to_lock_ball:
     file: cmgg2_move_powerball_to_other_side_to_lock_ball.ogg
     volume: 1
@@ -241,17 +248,47 @@ sounds:
     priority: 3
     max_queue_time: 2s
   v_completed_lane_lights_award_bs:
-    file: cmgg2_completed_lane_lights_award_bs.ogg
+    file: cmgg2_completed_lane_lights.wav
     volume: 1
     track: voice
     max_queue_time: 5s
+  v_use_knee_switch:
+    file: cmgg2_use_knee_switch.wav
+    volume: 1
+    track: voice
+    max_queue_time: 3s
+  v_poseidon_bonus_scoring:
+    file: cmgg2_poseidon_bonus_scoring.wav
+    volume: 1
+    track: voice
+    max_queue_time: 1s
+  v_olympus_bonus_scoring:
+    file: cmgg2_olympus_bonus_scoring.wav
+    volume: 1
+    track: voice
+    max_queue_time: 1s
   v_extra_ball_awarded:
     file: cmgg2_extra_ball_awarded.ogg
     volume: 1
     track: voice
     max_queue_time: 2s
-  v_hades_has_you:
-    file: cmgg2_hades_has_you.ogg
+  v_help_hades:
+    file: cmgg2_help_hades.wav
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_roll_ball_hydra:
+    file: cmgg2_roll_ball_hydra.wav
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_shoot_pops_shoot_holes:
+    file: cmgg2_shoot_pops_shoot_holes.wav
+    volume: 1
+    track: voice
+    max_queue_time: 2s
+  v_shoot_orbit_open_underworld:
+    file: cmgg2_shoot_orbit_open_underworld.wav
     volume: 1
     track: voice
     max_queue_time: 2s
@@ -298,8 +335,8 @@ sounds:
     volume: 1
     track: voice
     max_queue_time: 5s
-  v_shoot_ramp_twice_outlane_bs:
-    file: cmgg2_shoot_ramp_twice_outlane_bs.ogg
+  v_shoot_ramp_twice_outlane_protection:
+    file: cmgg2_shoot_ramp_again_for.wav
     volume: 1
     track: voice
     max_queue_time: 5s
@@ -334,7 +371,12 @@ sounds:
     track: voice
     max_queue_time: 1s
   v_additional_player_added:
-    file: cmgg2_additional_player_added.ogg
+    file: cmgg2_player_added.wav
+    volume: 1
+    track: voice
+    max_queue_time: 0.25s
+  v_game_not_over:
+    file: cmgg2_game_not_over.wav
     volume: 1
     track: voice
     max_queue_time: 0.25s

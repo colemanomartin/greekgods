@@ -833,7 +833,7 @@ shows:
           slide: blank_transparent
 
 show_player:
-  key_8_pressed:
+  mode_bonus_started:
     bonus_show:
       loops: 0
 

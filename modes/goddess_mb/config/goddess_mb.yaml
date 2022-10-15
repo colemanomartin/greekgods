@@ -564,12 +564,13 @@ slide_player:
         font_size: 45
 
 sound_player:
+  mode_goddess_mb_started: v_shoot_orbit_open_underworld
   goddess_jackpot_hit: v_jackpot
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==1}: v_ball_1_locked
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==2}: v_ball_2_locked
   multiball_lock_subway_lock_locked_ball{device.ball_devices.bd_scoop.balls==3}: v_ball_3_locked
   goddess_trigger_mb_release_hit: v_ball_4_locked
-  multiball_goddess_started: v_multiball
+  multiball_goddess_started: v_shoot_pops_shoot_holes
   goddess_made_orbit_hit: snd_underworld_open
 
 variable_player:

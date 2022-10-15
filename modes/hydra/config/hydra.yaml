@@ -15,7 +15,7 @@
 #Notes: Hades game does not award an extra ball on its own, but winning hydra may push playter over edge.
 #Winning hydra does actuate the knocker though.
 #If MPF crashes at end of hydra look at log. It might be because base ended before hydra posted its will end event and then there is
-#no valid variable for base_multiballs_active to decrement. 
+#no valid variable for base_multiballs_active to decrement.
 mode:
   priority: 700
   start_events:
@@ -356,5 +356,6 @@ slide_player:
         font_size: 80
 
 sound_player:
+  mode_hydra_started: v_roll_ball_hydra
   logicblock_hydra_health_complete: v_hydra_battle_victorious
   hydra_got_away: v_hydra_escped

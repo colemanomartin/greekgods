@@ -164,6 +164,12 @@ shots:
 accruals:  # These are designed to fire once to give instructions a single time during the game
   #To run sound effects as non-game mode these accruals and the first counter were moved from sound effects and enable events changed in counter
 
+  sound_use_knee_switch:
+    events:
+      - base_poseidon_right_slingshot_hit, base_poseidon_left_slingshot_hit, s_accessory_active # comma means or. Listed sequentially means each must fire in any order
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true
   sound_drop_target_instructions:
     events: drop_target_bank_cluster_mixed
     persist_state: true
@@ -214,6 +220,7 @@ accruals:  # These are designed to fire once to give instructions a single time 
     persist_state: false
     reset_on_complete: false
     disable_on_complete: true
+
 counters:
   #This counter sends voice instruction to complete the pops for goddess It completes after 3 different pop hits
   sound_tracking_base_pops:
@@ -422,6 +429,29 @@ sequences:
     reset_on_complete: false
     #Ball started does not work because this mode does not start until after the even is posted
     enable_events: mode_field_started{not device.accruals.already_played_bug_game_this_ball.completed and not device.accruals.already_won_bug_game.completed} #Only enable at ball start if game not already won once
+  #announces that hits in this area result in bonus scoring
+  sound_poseidon_bonus_scoring:
+    events:
+      - p_locking_elgible
+      - base_poseidon_right_slingshot_hit, base_poseidon_left_slingshot_hit, base_poseidon_pop_hit
+#    persist_state: true
+    reset_on_complete: false
+    reset_events:
+      - mode_field_started
+#      - ball_started
+#      - multiball_poseidon_ramp_ended
+    disable_on_complete: false
+  sound_olympus_bonus_scoring:
+    events:
+      - o_locking_elgible
+      - base_olympus_spinner_hit, base_olympus_lower_pop_hit, base_olympus_left_pop_hit, base_olympus_right_pop_hit
+#    persist_state: true
+    reset_on_complete: false
+    reset_events:
+      - mode_field_started
+#      - ball_started
+#      - multiball_olympus_ramp_ended
+    disable_on_complete: false
 
 ball_holds:
   field_hades_bug_hold:

@@ -361,7 +361,7 @@ state_machines:  #This state machine drives the sound loop player in sound_effec
       - source: start
         target: qualifying_locks
         events:
-          - balldevice_bd_plunger_ball_eject_success{device.ball_devices.bd_olympus_ramp.balls==0 and device.ball_devices.bd_poseidon_ramp.balls==0 and mode.base.active} #maybe s_shooterlane_inactive would be better
+          - balldevice_bd_plunger_ball_eject_success{device.ball_devices.bd_olympus_ramp.balls==0 and device.ball_devices.bd_poseidon_ramp.balls==0 and mode.base.active and not mode.goddess.active} #maybe s_shooterlane_inactive would be better
         events_when_transitioning:
           - loop_main_theme_music_level_1
         #Note: no legitimate pathway from shooter lane music to qualifying with ss or mystery music because have to hit blinking band first.
