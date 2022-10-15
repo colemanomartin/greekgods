@@ -19,6 +19,7 @@ mode:
 #    - key_c_pressed
   stop_events:
     - multiball_goddess_ended
+    - ball_drain{game.num_players>1}
   restart_on_next_ball: true #alternatively might need a start event for a ball being present in the lock
 
 
@@ -39,6 +40,7 @@ multiball_locks:
     lock_devices: bd_scoop
     balls_to_replace: 3 #2 #1=replace first ball locked from trough, use when triggering with lock full event.Default -1 = replace every ball locked with new ball
     debug: True
+    #note bd scoop has an eject all event to kick out its balls if mode closes and its a Multiplayer game
 
 multiballs:
   goddess:

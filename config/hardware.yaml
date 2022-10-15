@@ -856,6 +856,7 @@ ball_devices:
     eject_timeouts: 500ms
     debug: yes
     max_eject_attempts: 5
+    eject_all_events: mode_goddess_mb_stopping{game.num_players>1} #this kicks out all the balls during a multiplayer game so next player starts with an empty scoop lock.
   bd_plunger:
     captures_from: earth_pf
     eject_targets: earth_pf

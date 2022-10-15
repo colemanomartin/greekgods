@@ -432,8 +432,7 @@ sequences:
   #announces that hits in this area result in bonus scoring
   sound_poseidon_bonus_scoring:
     events:
-      - p_locking_elgible
-      - base_poseidon_right_slingshot_hit, base_poseidon_left_slingshot_hit, base_poseidon_pop_hit
+      - counter_base_poseidon_overdrive_hit
 #    persist_state: true
     reset_on_complete: false
     reset_events:
@@ -443,8 +442,8 @@ sequences:
     disable_on_complete: false
   sound_olympus_bonus_scoring:
     events:
-      - o_locking_elgible
-      - base_olympus_spinner_hit, base_olympus_lower_pop_hit, base_olympus_left_pop_hit, base_olympus_right_pop_hit
+      - counter_base_olympus_overdrive_hit      
+#      - base_olympus_spinner_hit, base_olympus_lower_pop_hit, base_olympus_left_pop_hit, base_olympus_right_pop_hit
 #    persist_state: true
     reset_on_complete: false
     reset_events:
