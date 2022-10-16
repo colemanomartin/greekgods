@@ -506,25 +506,34 @@
         z: 3
         #was one line text: "Art:        Claire Martin\n\nCallouts:   Claire Martin\n\nLogistics:   Kelli Andresen\n\nDesign:     Coleman Martin"
       - type: text
-        text: "Art:\n\nCallouts:\n\nLogistics:\n\nDesign:"
+        text: "Art:\n\nCallouts:\n\nLogistics:\n\nDesign:\n\nMusic:"
         font_name: greekgods3
         font_size: 130
         color: yellow
-        y: 70%
+        y: 75%
         x: 10%
         anchor_y: top
         anchor_x: left
         z: 1
       - type: text
-        text: "Claire Martin\n\nClaire Martin\n\nKelli Andresen\n\nColeman Martin"
+        text: "Claire Martin\n\nClaire Martin\n\nKelli Andresen\n\nColeman Martin\n\nColeman Martin"
         font_name: greekgods3
         font_size: 130
         color: yellow
-        y: 70%
+        y: 75%
         x: 60%
         anchor_y: top
         anchor_x: left
         z: 1
+      - type: image
+        image: opz
+        y: 10%
+        x: 50%
+        scale: 0.25
+        anchor_y: top
+        anchor_x: center
+        z: 1
+
       transition:
         type: move_in
         duration: 1s

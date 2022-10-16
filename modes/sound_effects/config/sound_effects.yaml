@@ -373,9 +373,22 @@ sound_loop_player:
       action: stop
   mode_hydra_started:
     loops:
-      sound_loop_set: hydra_battle_riff
+      sound_loop_set: hydra_battle_riff0
       action: play
       timing: now
+      events_when_played: loop_with_hydra_battle_riff1
+  loop_with_hydra_battle_riff1:
+    loops:
+      sound_loop_set: hydra_battle_riff1
+      action: play
+      timing: loop_end
+      events_when_played: loop_with_hydra_battle_riff2
+  loop_with_hydra_battle_riff2:
+    loops:
+      sound_loop_set: hydra_battle_riff2
+      action: play
+      timing: loop_end
+      events_when_played: loop_with_hydra_battle_riff1
   mode_hydra_stopping: #This drops into the first looping sequence which is corrected with the followin command from state machine in base
     loops:                      #ideally state machine would have another state for detour music this this but this hack will hopefully serve.
       sound_loop_set: riff_core0
