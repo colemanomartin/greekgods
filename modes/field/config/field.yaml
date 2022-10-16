@@ -345,8 +345,6 @@ counters:
     count_events:
       - bonus_cnt_pb_rolled_medial_hit
       - bonus_cnt_pb_rolled_lateral_hit
-#      - mode_sismedial_started
-#      - mode_sislateral_started
     reset_events: ball_started
   field_orbits:
     count_events:
@@ -442,7 +440,7 @@ sequences:
     disable_on_complete: false
   sound_olympus_bonus_scoring:
     events:
-      - counter_base_olympus_overdrive_hit      
+      - counter_base_olympus_overdrive_hit
 #      - base_olympus_spinner_hit, base_olympus_lower_pop_hit, base_olympus_left_pop_hit, base_olympus_right_pop_hit
 #    persist_state: true
     reset_on_complete: false

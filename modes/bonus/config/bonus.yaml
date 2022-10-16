@@ -9,7 +9,7 @@ mode_settings:
       score: (device.counters.base_poseidon_overdrive.value + device.counters.base_olympus_overdrive.value) * 200
       skip_if_zero: false
     - event: bonus_sis
-      score: device.counters.base_sis_completion.value * 750
+      score: device.counters.base_sis_arcs.value * 750 + device.counters.base_sis_taps.value * 100
       skip_if_zero: false
     - event: bonus_ballsaves
       score: device.counters.base_unused_ballsaves.value * 1000
@@ -62,7 +62,7 @@ widget_player:
        target: score_lcd
 
 widgets:
-  bonus_overdrive_widget:
+  bonus_sis_widget:
     - type: text
       text: (score)
       y: 65%
@@ -73,7 +73,7 @@ widgets:
       anchor_y: bottom
       opacity: 1
       z: 2
-  bonus_overdrive_widget_shadow:
+  bonus_sis_widget_shadow:
     - type: text
       text: (score)
       y: 64.8%
@@ -85,7 +85,7 @@ widgets:
       opacity: 0.66
       color: black
       z: 1
-  bonus_sis_widget:
+  bonus_overdrive_widget:
     - type: text
       text: (score)
       y: 50%
@@ -96,10 +96,10 @@ widgets:
       anchor_y: bottom
       opacity: 1
       z: 2
-  bonus_sis_widget_shadow:
+  bonus_overdrive_widget_shadow:
     - type: text
       text: (score)
-      y: 49.8%
+      y: 49.8.8%
       x: 84.2%
       font_size: 180
       font_name: greekgods3
@@ -201,7 +201,7 @@ slides:
       color: black
       z: 1
     - type: text
-      text: "Super Qualifying Pop Hits x 200"
+      text: "Sisyphus Powerball Motion"
       y: 65%
       x: 10%
       font_size: 130
@@ -211,8 +211,8 @@ slides:
       opacity: 1
       z: 2
     - type: text
-      text: "Super Qualifying Pop Hits x 200"
-      y: 64.8%
+      text: "Sisyphus Powerball Motion"
+      y: 64.8.8%
       x: 10.2%
       font_size: 130
       font_name: greekgods3
@@ -222,7 +222,7 @@ slides:
       color: black
       z: 1
     - type: text
-      text: "Sisyphus Powerball Arcs x 750"
+      text: "Super Qualifying Pop Hits x 200"
       y: 50%
       x: 10%
       font_size: 130
@@ -232,7 +232,7 @@ slides:
       opacity: 1
       z: 2
     - type: text
-      text: "Sisyphus Powerball Arcs x 750"
+      text: "Super Qualifying Pop Hits x 200"
       y: 49.8%
       x: 10.2%
       font_size: 130
