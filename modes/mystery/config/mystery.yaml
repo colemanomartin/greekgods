@@ -92,10 +92,10 @@ random_event_player:
       award_10000_points: 5
       award_light_p_lock: 35
       award_battle_hydra: 5
-      award_scoop_mb: 20
+      award_scoop_mb: 15
       award_goddess{device.sequences.base_aphrodite.completed==False}: 10
       award_super_spinner: 5
-      award_bug_game: 20
+      award_bug_game: 15
   timer_mystery_slide_number_complete{device.switches.s_sis_right.state==1 and device.ball_devices.bd_poseidon_ramp.balls==0 and device.ball_devices.bd_olympus_ramp.balls==0 and not(mode.p_ramp_mb.active) and not(mode.o_ramp_mb.active)}: #nothing locked, sis on right, no mb modes qualified or running
     events:
       award_10000_points: 5

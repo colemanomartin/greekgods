@@ -23,6 +23,65 @@
         direction: left
       target: score_lcd
 
+- duration: 7
+  slides:
+    credit_slide:
+      target: score_lcd
+      widgets:
+      - type: text
+        text: "Credits:"
+        font_name: greekgods3
+        font_size: 200
+        color: yellow
+        y: 85%
+        x: 10%
+        anchor_y: bottom
+        anchor_x: left
+        z: 3
+        #was one line text: "Art:        Claire Martin\n\nCallouts:   Claire Martin\n\nLogistics:   Kelli Andresen\n\nDesign:     Coleman Martin"
+      - type: text
+        text: "Art:\n\nCallouts:\n\nLogistics:\n\nDesign:\n\nMusic:"
+        font_name: greekgods3
+        font_size: 130
+        color: yellow
+        y: 75%
+        x: 10%
+        anchor_y: top
+        anchor_x: left
+        z: 3
+      - type: text
+        text: "Claire Martin\n\nClaire Martin\n\nKelli Andresen\n\nColeman Martin\n\nColeman Martin"
+        font_name: greekgods3
+        font_size: 130
+        color: yellow
+        y: 75%
+        x: 60%
+        anchor_y: top
+        anchor_x: left
+        z: 3
+      - type: image
+        image: opz
+#        y: 28%
+#        x: 44%
+        scale: 2
+        anchor_y: center
+        anchor_x: center
+        z: 1
+        opacity: 0.13
+#      - type: image
+#        image: opz
+#        y: 28%
+#        x: 44%
+#        scale: 0.5
+#        anchor_y: top
+#        anchor_x: center
+#        z: 1
+
+      transition:
+        type: move_in
+        duration: 1s
+        direction: left
+
 #- duration: 3s
 #  slides:
 #    press_start:
@@ -489,55 +548,6 @@
 
 
 
-- duration: 7
-  slides:
-    credit_slide:
-      target: score_lcd
-      widgets:
-      - type: text
-        text: "Credits:"
-        font_name: greekgods3
-        font_size: 200
-        color: yellow
-        y: 85%
-        x: 10%
-        anchor_y: bottom
-        anchor_x: left
-        z: 3
-        #was one line text: "Art:        Claire Martin\n\nCallouts:   Claire Martin\n\nLogistics:   Kelli Andresen\n\nDesign:     Coleman Martin"
-      - type: text
-        text: "Art:\n\nCallouts:\n\nLogistics:\n\nDesign:\n\nMusic:"
-        font_name: greekgods3
-        font_size: 130
-        color: yellow
-        y: 75%
-        x: 10%
-        anchor_y: top
-        anchor_x: left
-        z: 1
-      - type: text
-        text: "Claire Martin\n\nClaire Martin\n\nKelli Andresen\n\nColeman Martin\n\nColeman Martin"
-        font_name: greekgods3
-        font_size: 130
-        color: yellow
-        y: 75%
-        x: 60%
-        anchor_y: top
-        anchor_x: left
-        z: 1
-      - type: image
-        image: opz
-        y: 10%
-        x: 50%
-        scale: 0.25
-        anchor_y: top
-        anchor_x: center
-        z: 1
-
-      transition:
-        type: move_in
-        duration: 1s
-        direction: left
 
 # - duration: 5s
 #   slides:

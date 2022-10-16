@@ -529,18 +529,18 @@ sounds:
     track: sfx
     #events_when_stopped: finished_playing_start_button_sound #Later use this or loopplayer to make start chord not overlap shooter start
 
-  snd_deadmans_intro:
-    file: deadmans_intro.ogg
-    volume: 0.8
-    track: music
-  snd_deadmansparty_riff:
-    file: deadmansparty_riff.ogg
-    volume: 0.6
-    track: music
-  snd_deadmans_tail:
-    file: deadmans_tail.ogg
-    volume: 0.6
-    track: music
+#  snd_deadmans_intro:
+#    file: deadmans_intro.ogg
+#    volume: 0.8
+#    track: music
+#  snd_deadmansparty_riff:
+#    file: deadmansparty_riff.ogg
+#    volume: 0.6
+#    track: music
+#  snd_deadmans_tail:
+#    file: deadmans_tail.ogg
+#    volume: 0.6
+#    track: music
   snd_greymattershort1:
     file: greymattershort1.ogg
 #    volume: 1
@@ -563,12 +563,18 @@ sounds:
   snd_cm_hydra0:
     file: cm_hydra0.wav
     track: music  #Dont know why this is not track loops
+    volume: 0.8
   snd_cm_hydra1:
     file: cm_hydra1.wav
     track: music
+    volume: 0.8
+  snd_cm_hydra2:
+    file: cm_hydra2.wav
+    track: music
+    volume: 0.8
   snd_cm_goddess2_riff:
     file: cm_goddess2.wav
-    volume: 0.4
+    volume: 0.5
     track: music
   snd_underworld_bonus_game_music:
     file: underworld_bonus_game_music.ogg
@@ -648,8 +654,8 @@ sound_loop_sets:
 #    sound: snd_deadmans_intro
   bonus_game_riff:
     sound: snd_underworld_bonus_game_music
-  bonus_game_over:             #I cant see that this gets played anywhere, listen
-    sound: snd_deadmans_tail
+#  bonus_game_over:             #I cant see that this gets played anywhere, listen
+#    sound: snd_deadmans_tail
   bug_game_intro:
     sound: snd_greymattershort1
   bug_game_riff:
@@ -658,6 +664,8 @@ sound_loop_sets:
     sound: snd_cm_hydra0
   hydra_battle_riff1:
     sound: snd_cm_hydra1
+  hydra_battle_riff2:
+    sound: snd_cm_hydra2
   goddess_mb_riff:
     sound: snd_cm_goddess2_riff
 #  my_hades_bonus_music:
