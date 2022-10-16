@@ -433,7 +433,7 @@ sequences:
       - counter_base_poseidon_overdrive_hit
 #    persist_state: true
     reset_on_complete: false
-    reset_events:
+    restart_events:
       - mode_field_started
 #      - ball_started
 #      - multiball_poseidon_ramp_ended
@@ -444,7 +444,7 @@ sequences:
 #      - base_olympus_spinner_hit, base_olympus_lower_pop_hit, base_olympus_left_pop_hit, base_olympus_right_pop_hit
 #    persist_state: true
     reset_on_complete: false
-    reset_events:
+    restart_events:
       - mode_field_started
 #      - ball_started
 #      - multiball_olympus_ramp_ended

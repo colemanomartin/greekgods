@@ -182,10 +182,10 @@ sounds:
 #    file: cmgg2_welcome.ogg
 #    volume: 1.75
 #    track: voice
-  v_almost_there:
-    file: cmgg2_almost_there.ogg
-    volume: 1.5
-    track: voice
+#  v_almost_there:
+#    file: cmgg2_almost_there.ogg
+#    volume: 1.5
+#    track: voice
   v_combo:
     file: cmgg2_combo.ogg
     volume: 1.75
@@ -235,12 +235,12 @@ sounds:
     volume: 1
     track: voice
     max_queue_time: 2s
-  v_double_outlane_bs_awarded:
-    file: cmgg2_double_outlane_bs_awarded.ogg
-    volume: 1
-    track: voice
-    priority: 2
-    max_queue_time: 2s
+#  v_double_outlane_bs_awarded:
+#    file: cmgg2_double_outlane_bs_awarded.ogg
+#    volume: 1
+#    track: voice
+#    priority: 2
+#    max_queue_time: 2s
   v_time_added:
     file: cmgg2_time_added.ogg
     volume: 1.5
@@ -261,12 +261,12 @@ sounds:
     file: cmgg2_poseidon_bonus_scoring.wav
     volume: 1
     track: voice
-    max_queue_time: 1s
+    max_queue_time: 4s
   v_olympus_bonus_scoring:
     file: cmgg2_olympus_bonus_scoring.wav
     volume: 1
     track: voice
-    max_queue_time: 1s
+    max_queue_time: 4s
   v_extra_ball_awarded:
     file: cmgg2_extra_ball_awarded.ogg
     volume: 1

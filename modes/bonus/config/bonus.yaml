@@ -5,11 +5,11 @@ mode_settings:
   hurry_up_delay_ms: 1000ms
   hurry_up_event: flipper_cancel
   bonus_entries:
-    - event: bonus_overdrive
-      score: (device.counters.base_poseidon_overdrive.value + device.counters.base_olympus_overdrive.value) * 200
-      skip_if_zero: false
     - event: bonus_sis
       score: device.counters.base_sis_arcs.value * 750 + device.counters.base_sis_taps.value * 100
+      skip_if_zero: false
+    - event: bonus_overdrive
+      score: (device.counters.base_poseidon_overdrive.value + device.counters.base_olympus_overdrive.value) * 200
       skip_if_zero: false
     - event: bonus_ballsaves
       score: device.counters.base_unused_ballsaves.value * 1000
@@ -99,7 +99,7 @@ widgets:
   bonus_overdrive_widget_shadow:
     - type: text
       text: (score)
-      y: 49.8.8%
+      y: 49.8%
       x: 84.2%
       font_size: 180
       font_name: greekgods3
@@ -201,7 +201,7 @@ slides:
       color: black
       z: 1
     - type: text
-      text: "Sisyphus Powerball Motion"
+      text: "Sisyphus Powerball Distance"
       y: 65%
       x: 10%
       font_size: 130
@@ -211,8 +211,8 @@ slides:
       opacity: 1
       z: 2
     - type: text
-      text: "Sisyphus Powerball Motion"
-      y: 64.8.8%
+      text: "Sisyphus Powerball Distance"
+      y: 64.8%
       x: 10.2%
       font_size: 130
       font_name: greekgods3

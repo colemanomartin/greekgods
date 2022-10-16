@@ -258,12 +258,12 @@ counters:
       - super_spinner_olympus_mech_hit
   base_sis_arcs:
     count_events:
-      - base_sis_left_to_right_hit 
+      - base_sis_left_to_right_hit
       - base_sis_right_to_left_hit
   base_sis_taps:
     count_events:
-      - base_sis_left_arrived
-      - base_sis_right_arrived
+      - base_sis_left_arrived_hit
+      - base_sis_right_arrived_hit
   base_unused_ballsaves:
     count_events:
       - timer_left_bs_expiration_complete
