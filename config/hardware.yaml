@@ -592,6 +592,7 @@ drop_target_banks:
       - machine_reset_phase_3
       - mode_game_started #- mode_field_started #previously mode_game_started
       - mystery_solved #Might want to change it to a list of each award, and end of hydra and scoop mb if more fun to have active.
+      - mode_field_started{game.num_players>1} #reset the bank for each ball if multiplayer game 
       - game_will_end
 
 diverters:
