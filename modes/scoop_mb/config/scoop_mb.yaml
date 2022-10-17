@@ -79,42 +79,13 @@ slide_player:
     pf_celestial_mb_started_slide:
       target: playfield_lcd
       background_color: black
-      expire: 1s
       widgets:
-      - type: text
-        text: Jackpot!
-        color: white
-        y: 50%
-        anchor_x: center
-        anchor_y: center
-        font_size: 85
-  scoop_mb_proximal_hole_received_ball:
-    pf_celestial_mb_started_slide:
-      target: playfield_lcd
-      background_color: black
-      expire: 1s
-      widgets:
-      - type: text
-        text: Jackpot!
-        color: white
-        y: 50%
-        anchor_x: center
-        anchor_y: center
-        font_size: 85
-  base_scoop_from_pf_hit:
-    pf_celestial_mb_started_slide:
-      target: playfield_lcd
-      background_color: black
-      expire: 1s
-      widgets:
-      - type: text
-        text: Jackpot!
-        color: white
-        y: 50%
-        anchor_x: center
-        anchor_y: center
-        font_size: 85
+      - type: image
+        image: scoop_mb_pf_instruction
 
 sound_player:
-  #additional music handling by sound effects in loop player 
+  #additional music handling by sound effects in loop player
   mode_scoop_mb_started: snd_underworld_open
+  scoop_mb_proximal_hole_received_ball: v_jackpot
+  scoop_mb_distal_hole_received_ball_hit: v_jackpot
+  base_scoop_from_pf_hit: v_jackpot
