@@ -302,8 +302,8 @@ sequences:
          - s_u_trough_1_active{not device.timers.hades_bug_immunity.running}
          #- balldevice_bd_u_trough_ball_enter
        events_when_complete: extra_ball_not_earned
+       disable_events: hades_ball_awarded # added 10/17/22 because if player lets it drain before mode closes extra_ball_not earned fires and send callout.
 
-slide_player:
   start_countdown_movie:
     hades_score_screen_slide:
       target: score_lcd
