@@ -287,14 +287,21 @@ counters:
     count_complete_value: 1
 
   field_hydra_hits: #count hydra hits to qualify hydra battle which is started by invited scoop shot
+    #10-17-22 trying this: registered stopping events for prmb and ormb to continue with hydra so long as no balls locked.
+    #Then they would restart when hydra ends with mode_field_started{device.accruals.base_o_locking_engaged.completed}
+    #downside of this approach is that once scoop is invited player either has to drain ball or shoot scoop to continue progress
+    #If this works, add a timer to hydra so that mode quits after a min if scoop not hit and battle started.
+    #add counter reset_event for hydra_timer completion. Add Timer seconds left to widget to invite hydra wedge.
+    #Look into begavior of BB for ramp qualification when everything starts up again.
+    #Copy the gist of these comments to hydra mode comments shoud it all come together and work
+    #Replicate strategy for goddess qualification.  
     enable_events: mode_field_started
     count_events:
-      #- base_hydra_hit{not mode.hydra.active} dont know why I origionally put this in since this mode shuts down when hydra starts
-      - base_hydra_hit{device.counters.field_hydra_hits.value < 27 or (device.counters.field_hydra_hits.value >= 27 and not(mode.p_ramp_mb.active or mode.o_ramp_mb.active or device.ball_devices.bd_olympus_ramp.balls>0 or device.ball_devices.bd_poseidon_ramp.balls>0))} #Count final hits only when nothing locked and ramps not trying to lock.
+      - base_hydra_hit{device.counters.field_hydra_hits.value < 27 or (device.counters.field_hydra_hits.value >= 27 and not(device.ball_devices.bd_olympus_ramp.balls>0 or device.ball_devices.bd_poseidon_ramp.balls>0))} #Count final hits only when nothing locked.
       - base_hydra_hit{mode.super_spinner.active and device.counters.field_hydra_hits.value < 27} # count double for super spinner when up until threshold close
     persist_state: True
     reset_events:
-      - field_invite_hydra_at_scoop_hit # Causes mode_hydra_starting
+      - field_invite_hydra_at_scoop_hit # Causes mode_hydra_starting This effectively hangs qualifying lock or locking ball until either ball drains or scoop hit
       - game_ending
     events_when_complete: field_says_invite_hydra_battle ##battle_hydra #activate mode
     count_complete_value: 29

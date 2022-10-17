@@ -21,7 +21,8 @@ mode:
     - multiball_olympus_ramp_ended
     - kill_o_locking #Used by mystery award to switch lock to other side because sis on wrong side.
     - multiball_lock_olympus_lock_locked_ball{device.multiball_locks.olympus_lock.locked_balls == 1}
-    - mode_goddess_mb_started #When field restarts this mode should respon if engaged completed
+    - mode_goddess_mb_started #When field restarts this mode should re-spawn if engaged completed
+    - mode_hydra_started #When field restarts this mode should re-spawn if engaged completed
 multiball_locks:
   olympus_lock:
     source_playfield: earth_pf

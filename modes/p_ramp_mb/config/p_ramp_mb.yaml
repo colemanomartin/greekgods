@@ -22,6 +22,7 @@ mode:
     - kill_p_locking # used by mystery mode to shut down p_locking if sis in left position
     - multiball_lock_poseidon_lock_locked_ball{device.multiball_locks.poseidon_lock.locked_balls == 1}
     - mode_goddess_mb_started #When field restarts this mode should respon if engaged completed
+    - mode_hydra_started #When field restarts this mode should re-spawn if engaged completed
 
 multiball_locks:
   poseidon_lock:
