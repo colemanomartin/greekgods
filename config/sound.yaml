@@ -271,7 +271,7 @@ sounds:
     file: cmgg2_extra_ball_awarded.ogg
     volume: 1
     track: voice
-    max_queue_time: 2s
+    max_queue_time: 5s
   v_help_hades:
     file: cmgg2_help_hades.wav
     volume: 1

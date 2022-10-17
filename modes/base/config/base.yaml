@@ -1430,7 +1430,7 @@ widgets:
     z: 1
   artemus:
   - type: text
-    text: Artemus Awarded
+    text: Artemis Awarded
     font_size: 260
     y: 88%
     x: 50%

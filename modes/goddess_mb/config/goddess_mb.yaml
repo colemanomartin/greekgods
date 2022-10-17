@@ -19,7 +19,7 @@ mode:
 #    - key_c_pressed
   stop_events:
     - multiball_goddess_ended
-    - ball_drain{game.num_players>1}
+    - ball_drain{game.num_players>1} #kills the mode from restarting if in a multiplayer game 
   restart_on_next_ball: true #alternatively might need a start event for a ball being present in the lock
 
 
@@ -374,7 +374,7 @@ widgets:
     font_size: 75
   gmb_goddess_artemus_txt:
   - type: text
-    text: "Help artemus\nTo the Underworld"
+    text: "Help Artemis\nTo the Underworld"
     font_name: greekgods3
     color: green
     y: 10%

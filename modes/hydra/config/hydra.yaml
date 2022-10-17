@@ -1,21 +1,16 @@
 #config_version=5
 #battle hydra mode
-#Enter mode from mystery or after hitting hydra prox sensor 25 x during field while no balls locked.
-#Start with one ball, with every ball hit an extra ball is served up to 6 balls. Hit hydra n more times
-#and hydra is defeated. When back down to one ball mode terminates. Variations: no hold flippers
-# hydra starts and maxes at 100 HP HP regenerate 1 per second
-#When reaches 0 HP light show and 100K points and 5 second ballsave
-#
-# problem, can win but when ball lost hydra is defeated slide shown anyway.
+#Enter mode from mystery or after hitting field's scoop shot after hydra prox sensor hit 29 x during while no balls locked.
+#Start with one ball, with every ball hit an extra ball is served up to 6 balls. Hit hydra 15 more times
+#and hydra is defeated. When back down to one ball mode terminates.
+#10-17-22 previously, mode would not enter with either prmb or ormb running.  Now both have  stopping events
+#when thismode starts.  Field also stops when this mode starts (after scoop shot hit).
+#Field restarts when this mode ends and if appropriate {device.accruals.base_o/p_locking_engaged.completed}
+#the apporpriate locking mode also restarts. IF hydra shot invited by scoop and player subsiquently
+#locks a ball the scoop shot is disabled.  Then hits to hydra jump the score down to pre-threshold level if a ball is locked.
+#See field counter field_hydra_hits
+#Replicate strategy for goddess qualification.
 # If it keeps serving balls when it should not it is probably because there are not six balls in the trough.
-#
-# Things to fix: Don't start if a ball is locked. If one ball is locked somewhere
-# When started divert the ramp and hold it diverted away from the lock. Might run
-# out of balls in this circumstance.
-#Notes: Hades game does not award an extra ball on its own, but winning hydra may push playter over edge.
-#Winning hydra does actuate the knocker though.
-#If MPF crashes at end of hydra look at log. It might be because base ended before hydra posted its will end event and then there is
-#no valid variable for base_multiballs_active to decrement.
 mode:
   priority: 700
   start_events:

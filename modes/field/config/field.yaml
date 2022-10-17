@@ -7,7 +7,7 @@
 #    enabled by sis on left disabled by sis on right or not counting when field not running.
 # field_o_orbit_loops: counter every 3 orbit loops from either direction activates magnet in hardware to drop ball in 0 area
 #    enabled by sis on left disabled by sis on right or not counting when field not running.
-# field_hydra: counter when hydra hits = 10 ball_block rises and a hit to BB target starts battle hydra mode stopping field
+# field_hydra: counter when hydra hits = 29 ball_invites scoop shot starts battle hydra mode stopping field
 # field_spinner: counter when spinners total 100 post diverter is enabled and CCW orbit hit send ball to hidden hole for mystery award
 # field_subways: counter trips through subway. After 10, BB drops and hit to scoop causes subway locking mode to activate
 # Other potential field driven modes: ramp challenge, switch back and forth with doubling of score each time.
@@ -154,7 +154,8 @@ shots:
     disable_events:
       - mode_field_stopping
       - field_invite_hydra_at_scoop_hit
-
+      - multiball_lock_poseidon_lock_locked_ball
+      - multiball_lock_olympus_lock_locked_ball
 #Example
 #light_player:
 #  "{machine.test_machine_var == 23}":
@@ -287,14 +288,6 @@ counters:
     count_complete_value: 1
 
   field_hydra_hits: #count hydra hits to qualify hydra battle which is started by invited scoop shot
-    #10-17-22 trying this: registered stopping events for prmb and ormb to continue with hydra so long as no balls locked.
-    #Then they would restart when hydra ends with mode_field_started{device.accruals.base_o_locking_engaged.completed}
-    #downside of this approach is that once scoop is invited player either has to drain ball or shoot scoop to continue progress
-    #If this works, add a timer to hydra so that mode quits after a min if scoop not hit and battle started.
-    #add counter reset_event for hydra_timer completion. Add Timer seconds left to widget to invite hydra wedge.
-    #Look into begavior of BB for ramp qualification when everything starts up again.
-    #Copy the gist of these comments to hydra mode comments shoud it all come together and work
-    #Replicate strategy for goddess qualification.  
     enable_events: mode_field_started
     count_events:
       - base_hydra_hit{device.counters.field_hydra_hits.value < 27 or (device.counters.field_hydra_hits.value >= 27 and not(device.ball_devices.bd_olympus_ramp.balls>0 or device.ball_devices.bd_poseidon_ramp.balls>0))} #Count final hits only when nothing locked.
