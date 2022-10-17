@@ -115,7 +115,6 @@ slide_player:
         anchor_y: center
         font_size: 85
 
-
-
 sound_player:
+  #additional music handling by sound effects in loop player 
   mode_scoop_mb_started: snd_underworld_open

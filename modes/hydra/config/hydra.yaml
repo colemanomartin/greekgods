@@ -199,6 +199,14 @@ widgets:
       y: 42%
       x: 23%
       z: 5
+      opacity: 0
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 1
+            relative: false
+            duration: 0.75s
+            easing: linear
   hydra_4th_head:
     - type: image
       image: hydra4
@@ -207,6 +215,14 @@ widgets:
       y: 55%
       x: 79%
       z: 5
+      opacity: 0
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 1
+            relative: false
+            duration: 0.75s
+            easing: linear
   hydra_5th_head:
     - type: image
       image: hydra5
@@ -215,6 +231,14 @@ widgets:
       y: 43%
       x: 57%
       z: 5
+      opacity: 0
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 1
+            relative: false
+            duration: 0.75s
+            easing: linear
   hydra_6th_head:
     - type: image
       image: hydra6
@@ -223,6 +247,14 @@ widgets:
       y: 62%
       x: 74%
       z: 5
+      opacity: 0
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 1
+            relative: false
+            duration: 0.75s
+            easing: linear
   hydra_7th_head:
     - type: image
       image: hydra7
@@ -231,6 +263,14 @@ widgets:
       y: 35.4%
       x: 79%
       z: 5
+      opacity: 0
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 1
+            relative: false
+            duration: 0.75s
+            easing: linear
 
 widget_player:
   multiball_hydra_mb_started:

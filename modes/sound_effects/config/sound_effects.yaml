@@ -407,3 +407,16 @@ sound_loop_player:
       action: play
       timing: now
       events_when_played: make_loop_with_core1_of_lvl_1
+
+  mode_scoop_mb_started: #This drops it in the same chain as the main mb music
+    loops:
+      sound_loop_set: riff_drum_trans_very_short #Sounds better main 2 then main 1
+      action: play
+      timing: now
+      events_when_played: make_loop_with_mb_main2
+  mode_scoop_mb_stopping:
+    loops:                      #ideally state machine would have another state for detour music this this but this hack will hopefully serve.
+      sound_loop_set: riff_core0
+      action: play
+      timing: now
+      events_when_played: make_loop_with_core1_of_lvl_1
