@@ -660,8 +660,120 @@ widgets:
             value: 5%, -1
             relative: true
             duration:  1500ms
+  wedge_river_c:
+      type: image
+      image: wedge_red
+      scale: 0.15
+      z: 2
+      y: 88%
+      x: 67%
+      anchor_x: center
+      anchor_y: center
+      opacity: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+            relative: false
+            duration:  500ms
+          - property: opacity
+            value: 1
+            relative: false
+            duration:  500ms
+            repeat: yes
+  wedge_river_d:
+      type: image
+      image: wedge_red
+      scale: 0.15
+      z: 2
+      y: 65%
+      x: 80%
+      rotation: 90
+      anchor_x: center
+      anchor_y: center
+      opacity: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+            relative: false
+            duration:  500ms
+          - property: opacity
+            value: 1
+            relative: false
+            duration:  500ms
+            repeat: yes
+  wedge_river_b:
+      type: image
+      image: wedge_red
+      scale: 0.15
+      z: 2
+      y: 65%
+      x: 20%
+      rotation: 270
+      anchor_x: center
+      anchor_y: center
+      opacity: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+            relative: false
+            duration:  500ms
+          - property: opacity
+            value: 1
+            relative: false
+            duration:  500ms
+            repeat: yes
+  wedge_river_a:
+      type: image
+      image: wedge_red
+      scale: 0.15
+      z: 2
+      y: 88%
+      x: 25%
+      anchor_x: center
+      anchor_y: center
+      opacity: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+            relative: false
+            duration:  500ms
+          - property: opacity
+            value: 1
+            relative: false
+            duration:  500ms
+            repeat: yes
 
 widget_player:
+  timer_river_c_started:
+    wedge_river_c:
+      action: remove
+  timer_river_d_started:
+    wedge_river_d:
+      action: remove
+  timer_river_a_started:
+    wedge_river_a:
+      action: remove
+  timer_river_a_started:
+    wedge_river_a:
+      action: remove
+  slide_hades_score_screen_slide_active:
+    wedge_river_c:
+      slide: hades_playfield_slide
+      action: add
+    wedge_river_d:
+      slide: hades_playfield_slide
+      action: add
+    wedge_river_a:
+      slide: hades_playfield_slide
+      action: add
+    wedge_river_a:
+      slide: hades_playfield_slide
+      action: add
+
   s_u_left_target_active:
     scored_1000_left:
       target: playfield_lcd
