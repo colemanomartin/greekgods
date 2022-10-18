@@ -327,7 +327,7 @@ counters:
 #      - event: ball_drain{device.shots.field_invite_super_spinner_at_scoop.enabled} #state_name=='default_one_state'}
 #        action: jump
 #        value: 90 #Dont start completely over if ball drained before scoop hit.
-    debug: True
+    debug: no
   field_olympus_gate: #Lets spinner work as an olympyus mech. one hit per time throught the spinner.
     enable_events: mode_field_started
     multiple_hit_window: 2500ms

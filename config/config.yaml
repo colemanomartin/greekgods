@@ -73,6 +73,67 @@ modes:
   - bb_up #9000 Manager
   - stop_player_add # 15000
 
+logging:
+  console:
+    asset_manager: none
+    ball_controller: none
+    ball_search: basic
+    bcp: basic
+    bcp_client: basic
+    bcp_interface: basic
+    bcp_server: basic
+    clock: none
+    config_players: none       # todo
+    data_manager: none       # todo subclasses
+    delay_manager: none
+    device_manager: none
+    event_manager: none
+    file_manager: none       # todo
+    logic_blocks: none
+    machine_controller: basic
+    mode_controller: basic
+    placeholder_manager: none
+    platforms: none       # todo
+    players: basic       # todo
+    plugins: none       # todo
+    score_reel_controller: none
+    scriptlets: none       # todo
+    service_controller: basic
+    settings_controller: none
+    show_controller: none
+    switch_controller: basic
+    timers: basic
+  file:
+    asset_manager: basic
+    ball_controller: basic
+    ball_search: basic
+    bcp: basic
+    bcp_client: basic
+    bcp_interface: basic
+    bcp_server: basic
+    clock: none
+    config_players: basic
+    data_manager: basic
+    delay_manager: none
+    device_manager: basic
+    event_manager: basic
+    file_manager: basic
+    logic_blocks: basic
+    machine_controller: basic
+    mode_controller: basic
+    placeholder_manager: basic
+    platforms: basic
+    players: basic
+    plugins: basic
+    score_reel_controller: basic
+    scriptlets: basic
+    service_controller: basic
+    settings_controller: basic
+    show_controller: basic
+    switch_controller: basic
+    timers: basic
+
+
 coil_player:
   machine_reset_phase_2: #drops block at startup in case a ball is in subway
     c_ball_block_fall:
@@ -105,7 +166,7 @@ ball_saves:
 #    timer_start_events: diverter_malstrom_mag_activating #ball_started
 #    auto_launch: yes
 #    balls_to_save: 1
-#    debug: yes
+#    debug: no
 
 #Seems like this one should not work since it enables but does not have a start event
   bs_scoop_eject: #showplayer in base
@@ -118,7 +179,7 @@ ball_saves:
 #    timer_start_events: #balldevice_bd_scoop_ball_eject_success
     auto_launch: yes
     balls_to_save: 1
-    debug: yes
+    debug: no
 
 #Dont know why this is present.  Shouldnt this just be for outlanes? Also missing start event
 #Alternatively make it work as in TNA?
@@ -131,7 +192,7 @@ ball_saves:
     disable_events: mode_field_stopped
     auto_launch: yes
     balls_to_save: 1
-    debug: yes
+    debug: no
 
   bs_bottom_lanes: #show player in base
     source_playfield: earth_pf
@@ -141,7 +202,7 @@ ball_saves:
     enable_events: bottom_lane_group_hit_complete
     auto_launch: yes
     balls_to_save: 1
-    debug: yes
+    debug: no
 
 #ball_holds:
 #  quiet_underworld: #keeps underworld from ejecting ball when not in play
@@ -155,7 +216,7 @@ ball_saves:
 #      - hades_bonus_intro_show_done
 #    release_all_events:
 #      - hades_bonus_intro_show_done
-#    debug: true
+#    debug: no
 
 
 
@@ -357,7 +418,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
           - game_will_end
         events_when_transitioning:
           - state_is_resetting
-    debug: True
+    debug: no
     file_log: full #none basic full
     console_log: full
     persist_state: False # cant be True in config
@@ -486,7 +547,7 @@ state_machines: # http://docs.missionpinball.org/en/latest/config/state_machines
         events_when_transitioning:
           - ramp_flap_changing_state_from_divert_right_to_hold_current_position
           - ramp_flap_control_stay_in_current_position #This event is unregisterd by other modes, just here as a note to log.
-    debug: True
+    debug: no
     file_log: full #none basic full
     console_log: full
     persist_state: False # cant be True in config

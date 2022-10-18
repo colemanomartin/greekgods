@@ -228,7 +228,7 @@ counters:
       - event: mode_hydra_will_stop
         action: subtract
         value: 1
-    debug: true
+    debug: no
 #  base_count_test:   for some reason if game is not yet running the control event causes mpf to crash when subtracting. can occur if ball from trough lands on right sling during attract mode.
 #    count_events:
 #      - s_poseidon_left_slingshot_active
@@ -236,7 +236,7 @@ counters:
 #      - event: s_poseidon_right_slingshot_active
 #        action: subtract
 #        value: 1
-#    debug: true
+#    debug: no
 
   # Next four counters are used by bonus calculation
   base_poseidon_overdrive:

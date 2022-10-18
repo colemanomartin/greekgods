@@ -582,7 +582,7 @@ drop_targets:
 #      - field_says_raise_bb #used when ball drains on field after field invited a shot
       - timer_scoop_drop_complete # this timer resets to very short when locking ball in subway
     ball_search_order: 0 # dont include in ball search
-    debug: true
+    debug: no
 
 drop_target_banks:
   cluster:
@@ -612,7 +612,7 @@ diverters:
     disable_events:
       - ball_ended
       - logicblock_base_malstrom_magnet_activation_complete #counter in base hit it limit. enter cooldown period
-    debug: true
+    debug: no
   mystery_post_left: #apearing_post_left:
     playfield: earth_pf
     feeder_devices: earth_pf
@@ -626,7 +626,7 @@ diverters:
     disable_events:
       - mode_mystery_stopped
       - ball_ended
-    debug: true
+    debug: no
   mystery_post_right: #apearing_post_right:
     playfield: earth_pf
     feeder_devices: earth_pf
@@ -640,7 +640,7 @@ diverters:
     disable_events:
       - mode_mystery_stopped
       - ball_ended
-    debug: true
+    debug: no
   mission_post_left: #scoop_mb_special_purpose_apearing_post_left:
     playfield: earth_pf
     feeder_devices: earth_pf
@@ -658,7 +658,7 @@ diverters:
       - multiball_lock_subway_lock_locked_ball
       - multiball_goddess_started
       - mode_goddess_mb_stopped
-    debug: true
+    debug: no
   mission_post_right: #scoop_mb_special_purpose_apearing_post_right:
     playfield: earth_pf
     feeder_devices: earth_pf
@@ -676,7 +676,7 @@ diverters:
       - multiball_lock_subway_lock_locked_ball
       - multiball_goddess_started
       - mode_goddess_mb_stopped
-    debug: true
+    debug: no
   pass_poseidon_lock:
     playfield: earth_pf
     feeder_devices: earth_pf
@@ -692,7 +692,7 @@ diverters:
       - ball_started{device.ball_devices.bd_poseidon_ramp.balls==0}
       - multiball_poseidon_ramp_started # :3s (?) Added 3/12/22 This might interfere with ejecting from P-lock when MB starts. Needs testing.
     disable_events: mode_p_ramp_mb_starting #turns off when locking mode starts
-    debug: true
+    debug: no
   pass_olympus_lock:
     playfield: earth_pf
     feeder_devices: earth_pf
@@ -712,7 +712,7 @@ diverters:
 #      - balldevice.ball_devices.bd_poseidon_ramp{balls==0}
       # could probably use non-conditional event multiball_poseidon_ramp_ball_lost
     disable_events:  mode_o_ramp_mb_starting # turns off when locking mode starts
-    debug: true
+    debug: no
   feed_poseidon_mag:  #feeds poseidion area if power ball on same side but not if poseidon qualfied or mystery active or launchgin ball
     playfield: earth_pf
     feeder_devices: earth_pf
@@ -730,7 +730,7 @@ diverters:
     disable_events:
       - state_says_disable_poseidon_mag
       - launch_says_disable_poseidon_mag #triggerd by show started by showplayer in base
-    debug: true
+    debug: no
 
   feed_olympus_mag:  #feeds poseidion area if power ball on same side but not if poseidon qualfied or mystery active or launchgin ball
     playfield: earth_pf
@@ -749,7 +749,7 @@ diverters:
     disable_events:
       - state_says_disable_olympus_mag
       - launch_says_disable_olympus_mag #triggerd by show started by showplayer in base
-    debug: true
+    debug: no
 
   grab_a: #left river top to bottom
     playfield: hades_pf
@@ -765,7 +765,7 @@ diverters:
       - diverter_grab_a_deactivating
       - accelerate_rivers
       - mode_hades_bonus_game_stopping
-    debug: true
+    debug: no
   grab_b: #left ear bottom to top
     playfield: hades_pf
     feeder_devices: hades_pf
@@ -780,7 +780,7 @@ diverters:
       - diverter_grab_b_deactivating
       - accelerate_rivers
       - mode_hades_bonus_game_stopping
-    debug: true
+    debug: no
   grab_c: #right river top to bottom
     playfield: hades_pf
     feeder_devices: hades_pf
@@ -795,7 +795,7 @@ diverters:
       - diverter_grab_c_deactivating
       - accelerate_rivers
       - mode_hades_bonus_game_stopping
-    debug: true
+    debug: no
   grab_d: #First time through when base starts pin the ball in left ear
     playfield: hades_pf
     feeder_devices: hades_pf
@@ -810,7 +810,7 @@ diverters:
       - diverter_grab_d_deactivating
       - accelerate_rivers
       - mode_hades_bonus_game_stopping
-    debug: true
+    debug: no
 
 
 
@@ -829,7 +829,7 @@ ball_devices:
     entrance_count_delay: 1500ms  #Increased 12/10 from 1000ms
     #entrance_event_timeout: 1200ms this would only seem to apply if there is an enterence event also listed removed 12/10
     eject_all_events: mode_poseidion_ramp_mb_ending #Removing does not fix failure of lock to reactivate for second round of locking 5-1
-    debug: yes
+    debug: no
     max_eject_attempts: 10
     retries_before_increasing_pulse: 1
   bd_olympus_ramp:
@@ -844,7 +844,7 @@ ball_devices:
     entrance_count_delay: 1500ms #Increased 12/10 from 1000ms
     #entrance_event_timeout: 1200ms this would only seem to apply if there is an enterence event also listed removed 12/10
     eject_all_events: mode_olympus_ramp_mb_ending
-    debug: yes
+    debug: no
     max_eject_attempts: 10
     retries_before_increasing_pulse: 2
   bd_scoop: #http://docs.missionpinball.org/en/dev/mechs/scoops/index.html
@@ -855,7 +855,7 @@ ball_devices:
     eject_coil: c_scoop_eject
     ball_switches: s_scoop_chamber, s_scoop_lock_0, s_scoop_lock_1
     eject_timeouts: 500ms
-    debug: yes
+    debug: no
     max_eject_attempts: 5
     eject_all_events: mode_goddess_mb_stopping{game.num_players>1} #this kicks out all the balls during a multiplayer game so next player starts with an empty scoop lock.
   bd_plunger:
@@ -894,7 +894,7 @@ ball_devices:
 #    eject_events: This sould work but does not for some reason. moved it over to hades coil player
 #      - hades_bonus_intro_show_done
 #      - s_u_trough_1_active{device.timers.hades_immunity.running}
-#    debug: True
+#    debug: no
 #    tags: home #, trough #, drain must have trough tag or it keeps re-ejecting and wont drain
 
 playfields:
@@ -912,7 +912,7 @@ autofire_coils:
     enable_events: super_spinner_kickoff_hit
     disable_events: mode_super_spinner_stopped
     playfield: earth_pf
-    debug: true
+    debug: no
 #    coil_overwrite:
 #      recycle: False
 #    switch_overwrite:
@@ -923,7 +923,7 @@ autofire_coils:
     enable_events: super_spinner_kickoff_hit
     disable_events: mode_super_spinner_stopped
     playfield: earth_pf
-    debug: true
+    debug: no
 #    coil_overwrite:
 #      recycle: False
 #    switch_overwrite:
@@ -1076,7 +1076,7 @@ autofire_coils:
 
 flippers:
   left_flipper:
-    debug: true
+    debug: no
     playfield: earth_pf
     main_coil: c_flipper_left_main
     hold_coil: c_flipper_left_hold
@@ -1093,7 +1093,7 @@ flippers:
       - s_accessory_active
 
   right_flipper:
-    debug: true
+    debug: no
     playfield: earth_pf
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
@@ -1110,7 +1110,7 @@ flippers:
       - s_accessory_active
 
   u_left_flipper:
-    debug: true
+    debug: no
     playfield: hades_pf
     main_coil: c_u_flipper_left_main
     hold_coil: c_u_flipper_left_hold
@@ -1123,7 +1123,7 @@ flippers:
       - hades_bug_game_finishing
 
   u_right_flipper:
-    debug: true
+    debug: no
     playfield: hades_pf
     main_coil: c_u_flipper_right_main
     hold_coil: c_u_flipper_right_hold
