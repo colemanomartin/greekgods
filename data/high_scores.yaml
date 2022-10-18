@@ -15,9 +15,6 @@ score:
   - ZAC
   - 363225
 - !!python/tuple
-  - AAA
-  - 325125
-- !!python/tuple
   - SSD
   - 294525
 - !!python/tuple
@@ -31,4 +28,7 @@ score:
   - 245150
 - !!python/tuple
   - AAA
-  - 103725
+  - 244025
+- !!python/tuple
+  - ''
+  - 209750

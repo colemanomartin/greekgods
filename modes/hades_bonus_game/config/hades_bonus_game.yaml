@@ -304,6 +304,7 @@ sequences:
        events_when_complete: extra_ball_not_earned
        disable_events: hades_ball_awarded # added 10/17/22 because if player lets it drain before mode closes extra_ball_not earned fires and send callout.
 
+slide_player:
   start_countdown_movie:
     hades_score_screen_slide:
       target: score_lcd
@@ -665,8 +666,8 @@ widgets:
       image: wedge_red
       scale: 0.15
       z: 2
-      y: 88%
-      x: 67%
+      y: 83%
+      x: 64%
       anchor_x: center
       anchor_y: center
       opacity: 1
@@ -688,7 +689,7 @@ widgets:
       z: 2
       y: 65%
       x: 80%
-      rotation: 90
+      rotation: 290
       anchor_x: center
       anchor_y: center
       opacity: 1
@@ -710,7 +711,7 @@ widgets:
       z: 2
       y: 65%
       x: 20%
-      rotation: 270
+      rotation: 70
       anchor_x: center
       anchor_y: center
       opacity: 1
@@ -730,7 +731,7 @@ widgets:
       image: wedge_red
       scale: 0.15
       z: 2
-      y: 88%
+      y: 83%
       x: 25%
       anchor_x: center
       anchor_y: center
@@ -757,10 +758,10 @@ widget_player:
   timer_river_a_started:
     wedge_river_a:
       action: remove
-  timer_river_a_started:
-    wedge_river_a:
+  timer_river_b_started:
+    wedge_river_b:
       action: remove
-  slide_hades_score_screen_slide_active:
+  hades_bonus_intro_show_done:
     wedge_river_c:
       slide: hades_playfield_slide
       action: add
@@ -770,7 +771,7 @@ widget_player:
     wedge_river_a:
       slide: hades_playfield_slide
       action: add
-    wedge_river_a:
+    wedge_river_b:
       slide: hades_playfield_slide
       action: add
 
