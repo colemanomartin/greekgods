@@ -23,7 +23,7 @@ event_player:
 
 timers:
   moving_left:
-    start_value: 2
+    start_value: 4 #Incresed from 2 to 4 on 10/18/2022 to try not to detect a double wag 
     end_value: 0
     tick_interval: 250 ms
     direction: down
@@ -33,7 +33,7 @@ timers:
       - event: s_diverter_midpoint_inactive
         action: stop
   moving_right:
-    start_value: 2
+    start_value: 4
     end_value: 0
     tick_interval: 250 ms
     direction: down

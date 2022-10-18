@@ -50,7 +50,6 @@ modes:
   - p_ramp_mb #1000
   - o_ramp_mb #1100
   - double_ramp_mb #1200
-#  - celestial_mb
   - sis_left #J 300 ust for showing slides associated with getting points in P area and enabling loop counts to feed mag diverter
   - sis_right #350 Just for showing slides associated with getting points in O area and enabling loop counts to feed mag diverter
   - mystery #2000

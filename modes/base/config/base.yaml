@@ -335,7 +335,7 @@ coil_player:
       pulse_ms: 30
 
 queue_relay_player:
-  ball_ending{current_player.ball==3 and current_player.score >= 50000 and not device.accruals.base_visited_underworld.completed and not device.accruals.base_extra_ball_pending.completed}: #and not is_extra_ball
+  ball_ending{current_player.ball==3 and current_player.score >= 25000 and not device.accruals.base_visited_underworld.completed and not device.accruals.base_extra_ball_pending.completed}: #and not is_extra_ball
     post: enter_hades_from_relay_player
     wait_for: mode_hades_bonus_game_stopping
 
