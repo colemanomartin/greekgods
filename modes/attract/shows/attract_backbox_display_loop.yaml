@@ -23,6 +23,29 @@
         direction: left
       target: score_lcd
 
+- duration: 3s
+  slides:
+    last_game_score_slide:
+      target: score_lcd
+      widgets:
+      - type: text
+        text: Last Score
+        font_size: 200
+        font_name: greekgods3
+        y: 60%
+      - type: text
+      # player 1
+        text: (machine|player1_score)
+        number_grouping: true
+        min_digits: 2
+        font_size: 260
+        y: 40%
+        font_name: greekgods3
+      transition:
+        type: move_in
+        duration: 1s
+        direction: top
+
 - duration: 7
   slides:
     credit_slide:
@@ -304,7 +327,7 @@
         anchor_x: left
         z: 3
       - type: text
-        text: ">50,000      Chance to Redeem Your Soul"
+        text: ">100,000      Chance to Redeem Your Soul"
         font_name: greekgods3
         font_size: 130
         color: blue
@@ -522,29 +545,6 @@
         duration: 1s
         direction: right
 
-
-- duration: 3s
-  slides:
-    last_game_score_slide:
-      target: score_lcd
-      widgets:
-      - type: text
-        text: Last Score
-        font_size: 200
-        font_name: greekgods3
-        y: 60%
-      - type: text
-      # player 1
-        text: (machine|player1_score)
-        number_grouping: true
-        min_digits: 2
-        font_size: 260
-        y: 40%
-        font_name: greekgods3
-      transition:
-        type: move_in
-        duration: 1s
-        direction: top
 
 
 

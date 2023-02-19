@@ -5,7 +5,7 @@ mode:
   start_events: game_ending, start_high_score
   use_wait_queue: true
 high_score:
-  _overwrite: true
+  _overwrite: True
   enter_initials_timeout: 60
   award_slide_display_time: 4s
   # define your high score categories and the awards
@@ -27,16 +27,16 @@ high_score:
   # set the defaults
   defaults:
     score:
-      - FUT: 931425
-      - STI: 575200
-      - KEL: 516625
-      - RMM: 432750
-      - ZAC: 363225
-      - SSD: 294525
-      - JDM: 262425
-      - COM: 247025
-      - MSB: 245150
-      - JAN: 20000
+      - FUT: 400000
+      - STI: 350000
+      - KEL: 340000
+      - RMM: 320000
+      - ZAC: 300000
+      - SSD: 260000
+      - JDM: 220000
+      - COM: 180000
+      - MSB: 140000
+      - JAN: 120000
 #    sisyphus_completions:
 #      - COM: 10
 # optional: change the slides (you can omit all the following)

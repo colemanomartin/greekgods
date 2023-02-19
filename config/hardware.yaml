@@ -863,9 +863,10 @@ ball_devices:
     eject_targets: earth_pf
     ball_missing_target: earth_pf
     ball_switches: s_shooterlane
-    entrance_count_delay: 460ms
+    entrance_count_delay: 100ms #Changed from 460 on Feb 19, 2023
+    exit_count_delay: 250ms #added feb 19, 2023 default was 500ms
     player_controlled_eject_event: s_ball_launch_active
-    eject_timeouts: 1500 ms
+    eject_timeouts: 400 ms #Changed from 1500 on Feb 19,2023 to reduce non registrations of ball launch
     eject_coil: c_shooter_lane_eject
     max_eject_attempts: 5
   bd_trough:
